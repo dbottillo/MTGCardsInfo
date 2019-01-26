@@ -1,24 +1,20 @@
 buildscript {
-    ext.number_of_set = 182
-    ext.name_fifth_mtg_card = "Karn Liberated"
+    ext.number_of_set = 183
+    ext.name_fifth_mtg_card = "Bring to Trial"
 }
 
 apply plugin: 'com.android.library'
 apply from: '../config-android.gradle'
-
-def gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
 
 android {
     buildTypes {
         debug {
             buildConfigField 'int', 'NUMBER_OF_SET', "$number_of_set"
             buildConfigField 'String', 'MTG_CARD_FIFTH_NAME', "\"${name_fifth_mtg_card}\""
-            buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
         release {
             buildConfigField 'int', 'NUMBER_OF_SET', "$number_of_set"
             buildConfigField 'String', 'MTG_CARD_FIFTH_NAME', "\"${name_fifth_mtg_card}\""
-            buildConfigField "String", "GIT_SHA", "\"${gitSha}\""
         }
     }
 

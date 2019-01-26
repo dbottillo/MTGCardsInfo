@@ -58,12 +58,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 162747,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/732b65c1da94f3a3",
             "text": "+2: Each player draws a card.\n−1: Target player draws a card.\n−10: Target player puts the top twenty cards of their library into their graveyard.",
             "type": "Legendary Planeswalker — Jace",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "41aaad06-cd87-5f31-b18a-97dbce2232ab"
+            "uuid": "fd563290-584e-59b0-b381-dbf882e041d6"
         },
         {
             "artist": "Slawomir Maniak",
@@ -122,12 +123,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 162748,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e27c53c0f1816964",
             "text": "Choose one —\n• Counter target red spell.\n• Destroy target red permanent.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "62fd6ae6-8594-5274-be5f-3ede4a8a5b65"
+            "uuid": "d133c737-bbb6-5cee-b8b6-c834e229bb77"
         },
         {
             "artist": "Daarken",
@@ -193,12 +195,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 162749,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/482760b11fa8a65b",
             "text": "Draw three cards, then put two cards from your hand on top of your library in any order.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "00d0ee33-8648-52d2-8b95-1e014bde486c"
+            "uuid": "3bd5abd9-10b3-5485-b383-7423f1092913"
         },
         {
             "artist": "Jason Chan",
@@ -276,12 +279,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 162750,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1cc9ba30b66b67e0",
             "text": "Counter target spell.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "bbe941c0-dc4a-5c06-9d04-4d1ddfdda92b"
+            "uuid": "531d14be-da0d-5d23-9155-b4afde04dd33"
         },
         {
             "artist": "Chris Rallis",
@@ -316,6 +320,7 @@
                 "CHK",
                 "MM3",
                 "MMA",
+                "PRM",
                 "SS1",
                 "V09"
             ],
@@ -331,12 +336,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 162751,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f6c2942cc97fcafa",
             "text": "Search your library for up to four cards with different names and reveal them. Target opponent chooses two of those cards. Put the chosen cards into your graveyard and the rest into your hand. Then shuffle your library.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "cb8c5974-ba2a-5676-a721-8cd3efb8edbc"
+            "uuid": "afa6638d-04d1-5fec-b4e6-e013b2deb576"
         },
         {
             "artist": "Yongjae Choi",
@@ -371,6 +377,7 @@
                 "6ED",
                 "EMA",
                 "MIR",
+                "PRM",
                 "SS1",
                 "V09",
                 "WC00"
@@ -387,12 +394,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 162752,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ed95420fa83265f8",
             "text": "Search your library for an instant or sorcery card and reveal that card. Shuffle your library, then put the card on top of it.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "732b54b4-684d-50a9-975b-2013ac601f84"
+            "uuid": "54092739-029b-529f-a5ec-e5f1a9004fc7"
         },
         {
             "artist": "Jason Rainville",
@@ -461,12 +469,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 162753,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/aab2eee017a3578c",
             "text": "Counter target noncreature spell.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "ecb997c4-a8bd-5052-b8d2-05aa8530000b"
+            "uuid": "f087d831-e01e-5197-81df-ce4e6955d2c5"
         },
         {
             "artist": "Tyler Jacobson",
@@ -502,6 +511,7 @@
                 "BOK",
                 "E02",
                 "MP2",
+                "PRM",
                 "SS1"
             ],
             "rarity": "rare",
@@ -526,20 +536,21 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 162754,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/04ac960b5340092d",
             "text": "Enchant creature with converted mana cost 2 or less\nYou control enchanted creature.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "ae465555-87bf-56a7-8cb8-1b14bc077bcd"
+            "uuid": "917c150a-b4d5-5f27-ae26-8e081c0472c8"
         }
     ],
-    "code": "ss1",
+    "code": "SS1",
     "meta": {
-        "date": "2018-12-18",
-        "version": "4.2.0"
+        "date": "2018-01-12",
+        "version": "4.2.1"
     },
-    "mtgoCode": null,
+    "mtgoCode": "",
     "name": "Signature Spellbook: Jace",
     "releaseDate": "2018-06-15",
     "tcgplayerGroupId": 2220,

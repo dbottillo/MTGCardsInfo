@@ -6,6 +6,7 @@ def Group(Closure closure) {
 ext {
     core = Group {
         implementation deps.google.androidx.appcompat
+        implementation deps.google.androidx.core
         implementation deps.kotlin.core
         implementation deps.kotlin.reflect
         implementation deps.dagger.core

@@ -1,7 +1,10 @@
 {
     "baseSetSize": 268,
     "boosterV3": [
-        "rare",
+        [
+            "rare",
+            "mythic rare"
+        ],
         "uncommon",
         "uncommon",
         "uncommon",
@@ -63,13 +66,14 @@
                 "Host"
             ],
             "tcgplayerProductId": 152648,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/447144ea1b4f9c7f",
             "text": "When this creature enters the battlefield, roll a six-sided die. You gain life equal to the result.",
             "toughness": "1",
             "type": "Host Creature — Cat",
             "types": [
                 "Creature"
             ],
-            "uuid": "27987fea-4130-5b1c-91d9-1529a0336160"
+            "uuid": "42e7023a-178b-5ff2-846f-8eae899aaa8f"
         },
         {
             "artist": "Carl Critchlow",
@@ -106,6 +110,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 151980,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cf49e150cfce1fd8",
             "text": "Flying\n{3}{W}, Sacrifice another artifact: Aerial Toastmaster assembles a Contraption. (Put the top card of your Contraption deck face up onto one of your sprockets.)",
             "toughness": "2",
             "type": "Artifact Creature — Cyborg Rigger",
@@ -113,7 +118,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "023e2d67-4cc3-5463-91d1-f283c58bc215",
+            "uuid": "6a30ee0a-c868-54d5-8b06-9af27ee6b9f6",
             "watermark": "orderofthewidget"
         },
         {
@@ -156,7 +161,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "58d9db21-4d8a-5454-9261-965c2946eb5d"
+            "uuid": "d2aa8860-656c-568f-baeb-3857eecf7be2"
         },
         {
             "artist": "McLean Kendree",
@@ -193,13 +198,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154424,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2c153951856fcf4d",
             "text": "Sacrifice Amateur Auteur: Destroy target enchantment.",
             "toughness": "2",
             "type": "Creature — Human",
             "types": [
                 "Creature"
             ],
-            "uuid": "b46b31d2-9421-566f-b362-724e33fca3c8"
+            "uuid": "20e05af7-442f-57fc-9268-f1b65c4f72c1"
         },
         {
             "artist": "McLean Kendree",
@@ -236,13 +242,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154428,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/816b5f46430f6c54",
             "text": "Sacrifice Amateur Auteur: Destroy target enchantment.",
             "toughness": "2",
             "type": "Creature — Human",
             "types": [
                 "Creature"
             ],
-            "uuid": "640ea85a-e7eb-55ee-bfbe-11ce02893083"
+            "uuid": "d13aaed4-45a0-5b7b-b6a8-e4a818115b54"
         },
         {
             "artist": "McLean Kendree",
@@ -279,13 +286,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154430,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f6b0ed834cb4eacd",
             "text": "Sacrifice Amateur Auteur: Destroy target enchantment.",
             "toughness": "2",
             "type": "Creature — Human",
             "types": [
                 "Creature"
             ],
-            "uuid": "4b00f2d9-c890-5f8e-bb61-82dcad4a24db"
+            "uuid": "70de00ed-96cc-55ca-b4b0-32af49ad7bec"
         },
         {
             "artist": "Sean Murray",
@@ -325,12 +333,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152599,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/990580889494a550",
             "text": "{1}{W}, Remove a counter from a permanent you control: Create a 1/1 colorless Gnome artifact creature token.\n{1}{W}, Sacrifice an artifact: Choose any kind of counter a printed card refers to, then put one of that counter on target permanent.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "62e0dc24-0164-597b-9f49-360df63b4f88",
+            "uuid": "aea6b522-b57e-553c-916d-9a8bc4ca15ae",
             "watermark": "orderofthewidget"
         },
         {
@@ -382,6 +391,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152929,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/08a1bf905b3a3141",
             "text": "Flying\nWhen Chivalrous Chevalier enters the battlefield, return a creature you control to its owner's hand unless you compliment an opponent.",
             "toughness": "3",
             "type": "Artifact Creature — Cyborg Knight",
@@ -389,7 +399,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "b20c415d-9899-5232-828b-c001b1af8ce2",
+            "uuid": "7a25fa15-ac95-5c4b-aca8-ab456f638569",
             "watermark": "orderofthewidget"
         },
         {
@@ -444,6 +454,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152434,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/935e9d37ecc1dae6",
             "text": "Flying\nWhenever Do-It-Yourself Seraph attacks, you may search your library for an artifact card, exile it, then shuffle your library.\nDo-It-Yourself Seraph has the text box of each card exiled with Do-It-Yourself Seraph in addition to its own.",
             "toughness": "4",
             "type": "Artifact Creature — Cyborg Angel",
@@ -451,7 +462,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "a39ba38e-44a4-595e-a045-5a9dec765c86",
+            "uuid": "4e0fd848-97d8-58aa-a387-9eacd689785c",
             "watermark": "orderofthewidget"
         },
         {
@@ -503,12 +514,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152997,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c7bc36a76ce418da",
             "text": "You gain 1 life for each person who high-fives you in the next thirty seconds. Each player in a silver-bordered game who high-fives you gains 1 life. (Offer high fives. Don't hit people.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "e9df4b7d-4bd9-5696-92ff-667371d43c23",
+            "uuid": "e7f599df-883d-52b7-b80e-01c728a1134f",
             "watermark": "crossbreedlabs"
         },
         {
@@ -551,12 +563,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 153075,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ad9d973571ebc12a",
             "text": "When GO TO JAIL enters the battlefield, exile target creature an opponent controls until GO TO JAIL leaves the battlefield.\nAt the beginning of the upkeep of the exiled card's owner, that player rolls two six-sided dice. If they roll doubles, sacrifice GO TO JAIL.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "dba4b122-7c29-51ec-a02c-5938ff3d43c0"
+            "uuid": "6e689e7a-c051-5fd8-ba35-97d569b5787f"
         },
         {
             "artist": "Andrea Radeck",
@@ -623,13 +636,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153215,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b577c16783e4a347",
             "text": "Whenever you're dealt damage,\nAugment {2}{W} ({2}{W}, Reveal this card from your hand: Combine it with target host. Augment only as a sorcery.)",
             "toughness": "+2",
             "type": "Creature — Cat",
             "types": [
                 "Creature"
             ],
-            "uuid": "27779137-3915-5d74-9a9d-491b01046755"
+            "uuid": "443c440b-e393-5b86-b21a-eaf000f2bce9"
         },
         {
             "artist": "Mark Behm",
@@ -696,13 +710,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153118,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0ed7fca8c3158504",
             "text": "Flying\nWhenever you attack with two or more creatures,\nAugment {3}{W} ({3}{W}, Reveal this card from your hand: Combine it with target host. Augment only as a sorcery.)",
             "toughness": "+3",
             "type": "Creature — Bird",
             "types": [
                 "Creature"
             ],
-            "uuid": "6f228172-3497-5424-812a-ed1c6eddb7d4"
+            "uuid": "5f45ebc6-a092-56e3-a53a-9c299aa8d3cf"
         },
         {
             "artist": "Ben Wootten",
@@ -740,6 +755,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152506,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/980b6a18f29929d8",
             "text": "Whenever another artifact enters the battlefield under your control, put a +1/+1 counter on Jackknight. If that artifact is a Contraption, Jackknight gains lifelink until end of turn.",
             "toughness": "1",
             "type": "Artifact Creature — Cyborg Knight",
@@ -747,7 +763,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "8a98f946-db12-5c44-b88a-0bb626f174bb",
+            "uuid": "6f3747a3-1b7b-5f72-8764-11302f8003d5",
             "watermark": "orderofthewidget"
         },
         {
@@ -792,7 +808,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "c9ca4bb9-d988-58ad-8298-8cbf176d8c44",
+            "uuid": "f8389762-5864-5680-a5a7-7972db7edbff",
             "watermark": "orderofthewidget"
         },
         {
@@ -831,6 +847,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154449,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f46e30b188b1a48b",
             "text": "First strike, protection from even collector numbers (Nothing with an even collector number can block, target, deal damage to, or attach to this creature.)",
             "toughness": "2",
             "type": "Artifact Creature — Cyborg Knight",
@@ -838,7 +855,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "e6d7d6d2-94ff-5d80-9ddf-ef39bc0200b9",
+            "uuid": "07470ad6-0dfe-5e9f-be31-5eaf925d3c08",
             "watermark": "orderofthewidget"
         },
         {
@@ -882,6 +899,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154450,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/506d52edc63b6068",
             "text": "First strike, protection from loose lips (Nothing with an open mouth in its artwork can block, target, deal damage to, or attach to this creature.)",
             "toughness": "2",
             "type": "Artifact Creature — Cyborg Knight",
@@ -889,7 +907,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "559b92e8-dbd2-543a-88c1-aaaf2e58ab8b",
+            "uuid": "0c3e3e0b-4610-5509-9105-412eb5d611cb",
             "watermark": "orderofthewidget"
         },
         {
@@ -928,6 +946,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154451,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d9ff5109ea16ae63",
             "text": "First strike, protection from odd collector numbers (Nothing with an odd collector number can block, target, deal damage to, or attach to this creature.)",
             "toughness": "2",
             "type": "Artifact Creature — Cyborg Knight",
@@ -935,7 +954,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "86403b21-30c1-5a69-8945-c7802f419978",
+            "uuid": "85e739f7-8c22-5a75-9041-1b2afe0187da",
             "watermark": "orderofthewidget"
         },
         {
@@ -974,6 +993,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154453,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e8b23580fc3fb679",
             "text": "First strike, protection from two-word names (Nothing with exactly two words in its name can block, target, deal damage to, or attach to this creature. Hyphenated words are one word.)",
             "toughness": "2",
             "type": "Artifact Creature — Cyborg Knight",
@@ -981,7 +1001,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "036a8279-7820-56cb-9f81-9cb49719225a",
+            "uuid": "8c4697c1-467c-56fa-82ea-fbba8813746a",
             "watermark": "orderofthewidget"
         },
         {
@@ -1020,6 +1040,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154454,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c949d1a6e4b36b40",
             "text": "First strike, protection from watermarks (Nothing with a watermark can block, target, deal damage to, or attach to this creature.)",
             "toughness": "2",
             "type": "Artifact Creature — Cyborg Knight",
@@ -1027,7 +1048,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "193977eb-3ca8-5f1b-8e9c-b3bc5aef1091",
+            "uuid": "d57a7989-e92e-51b9-801a-96ddf16187b7",
             "watermark": "orderofthewidget"
         },
         {
@@ -1066,6 +1087,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153197,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0de3f9d786caecb6",
             "text": "Vigilance\nKnight of the Widget's power and toughness are each equal to the number of Order of the Widget watermarks among permanents you control.",
             "toughness": "*",
             "type": "Artifact Creature — Cyborg Knight",
@@ -1073,7 +1095,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "1c7444ae-b016-58b7-85e4-57235aa45a89",
+            "uuid": "b40e82f3-0be0-57f1-8400-479d52d6ec58",
             "watermark": "orderofthewidget"
         },
         {
@@ -1107,12 +1129,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 151981,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ca5830e18cd02f6c",
             "text": "As an additional cost to cast this spell, sacrifice X Contraptions.\nAssemble X plus one Contraptions. (To assemble a Contraption, put the top card of your Contraption deck face up onto one of your sprockets.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "db8aaff1-1480-53de-90de-edbb018550f7",
+            "uuid": "6d17af6f-afc2-56a7-95f8-cdc14d586513",
             "watermark": "orderofthewidget"
         },
         {
@@ -1156,12 +1179,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 153200,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4b093c1e82afed05",
             "text": "Choose one —\n• Destroy each creature with an odd number of words in its name. (Hyphenated words are one word.)\n• Destroy each creature with an even number of words in its name.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "99f3d8bd-f72c-5484-9b72-22f83cf3eeae"
+            "uuid": "60252786-e608-5599-901e-5f5e6623d37b"
         },
         {
             "artist": "David Sladek",
@@ -1199,6 +1223,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153189,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3f82d0df75036f0f",
             "text": "{W}, {T}: Tap target creature without reminder text. (Reminder text is still any italicized text in parentheses that explains rules you already know.)",
             "toughness": "1",
             "type": "Artifact Creature — Cyborg Soldier",
@@ -1206,7 +1231,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "e8e8dd5c-8c9b-5e6b-b255-8d5b977fe888",
+            "uuid": "fcbdaa9d-2e5a-52c0-8d98-bd4311fd7b90",
             "watermark": "orderofthewidget"
         },
         {
@@ -1258,13 +1283,14 @@
                 "Host"
             ],
             "tcgplayerProductId": 152904,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f5321f4f368a66f3",
             "text": "When this creature enters the battlefield, you may exile target non-Horse creature you control that wasn't put onto the battlefield with this ability this turn, then return it to the battlefield under its owner's control.",
             "toughness": "3",
             "type": "Host Creature — Horse",
             "types": [
                 "Creature"
             ],
-            "uuid": "8bdddcf3-cb56-51b3-a08f-2ca364ef0b79"
+            "uuid": "fb9b4656-a0a6-5884-befb-7055677c52a9"
         },
         {
             "artist": "YW Tang",
@@ -1331,13 +1357,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153204,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3e1ad08952edf7aa",
             "text": "Whenever this creature blocks,\nAugment {3}{W} ({3}{W}, Reveal this card from your hand: Combine it with target host. Augment only as a sorcery.)",
             "toughness": "+4",
             "type": "Creature — Rhino",
             "types": [
                 "Creature"
             ],
-            "uuid": "876dd34b-92a1-5271-95c7-ce6e65fabb73"
+            "uuid": "58c956a0-ee66-5930-8171-106020c1c474"
         },
         {
             "artist": "Mark A. Nelson",
@@ -1375,6 +1402,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153186,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/00d4072be0a9f9cc",
             "text": "When Riveting Rigger enters the battlefield, you may sacrifice another artifact. If you do, put two +1/+1 counters on Riveting Rigger and it assembles a Contraption. (Put the top card of your Contraption deck face up onto one of your sprockets.)",
             "toughness": "2",
             "type": "Artifact Creature — Cyborg Rigger",
@@ -1382,7 +1410,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "c1cfb5c4-7ba3-5ed7-a73a-d844103b89b8",
+            "uuid": "818aa7ca-f0de-5fad-9128-ab78f59348ad",
             "watermark": "orderofthewidget"
         },
         {
@@ -1506,6 +1534,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152433,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a5ba99d58caafa43",
             "text": "State-based actions don't apply to you or other permanents you control. (You don't lose the game due to having 0 or less life or drawing from an empty library. Your creatures aren't destroyed due to damage or deathtouch and aren't put into a graveyard due to having 0 or less toughness. Your planeswalkers aren't put into a graveyard if they have 0 loyalty. You don't put a legendary permanent into a graveyard if you control two with the same name. Counters aren't removed from your permanents due to game rules. Permanents you control attached or combined illegally remain on the battlefield. For complete rules and regulations, see rule 704.)",
             "toughness": "1",
             "type": "Artifact Creature — Cyborg Advisor",
@@ -1513,7 +1542,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "77107e44-4b6b-58d8-b3ff-1c8c9e8357af",
+            "uuid": "1405a8b9-73ab-5bc1-b1de-5876264de9e4",
             "watermark": "orderofthewidget"
         },
         {
@@ -1561,12 +1590,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152905,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/38a7d535fc8f7a13",
             "text": "A person outside the game chooses an attacking or blocking creature target opponent controls. That player sacrifices that creature.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "9f8cdca8-2539-5425-a8a3-a4d8f8d4efeb",
+            "uuid": "c1c9c94e-959e-5a36-8f29-bdb6c444c40b",
             "watermark": "orderofthewidget"
         },
         {
@@ -1610,13 +1640,14 @@
                 "Host"
             ],
             "tcgplayerProductId": 153168,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/14860409d87ad108",
             "text": "When this creature enters the battlefield, creatures you control get +1/+1 until end of turn.",
             "toughness": "3",
             "type": "Host Creature — Camel",
             "types": [
                 "Creature"
             ],
-            "uuid": "3d2f1efb-52f7-5d21-9ddf-32780e36d7c3"
+            "uuid": "9ed5b1a8-0d45-57de-907a-cceceeb193c8"
         },
         {
             "artist": "Alex Konstad",
@@ -1654,12 +1685,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152674,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e607b9a37075d2e0",
             "text": "Target player in a silver-bordered game you can see from your seat gains control of target creature you control until your next turn. At the beginning of your next upkeep, put two +1/+1 counters on that creature. (A creature is on the battlefield of only the game its controller is playing.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "29aefd93-0429-5fbc-81ab-a2a679da9546"
+            "uuid": "01d13c15-2429-5c8b-b59a-c1da31a1d559"
         },
         {
             "artist": "Andrea Radeck",
@@ -1693,12 +1725,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 153181,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cf0ee0149b1dcd26",
             "text": "Target creature gets +2/+2 until end of turn. If it's a host or has augment, it gains lifelink until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "fdfaadf6-5e0d-5de5-aa64-a3578fffb121",
+            "uuid": "90363f7b-9b89-5e6f-8ff4-bf1e6f300fa4",
             "watermark": "crossbreedlabs"
         },
         {
@@ -1738,13 +1771,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153172,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c1fba24de1aa882d",
             "text": "{2}{W}, Sacrifice Teacher's Pet: Search your library for a card with augment, combine it with target host you control, then shuffle your library.",
             "toughness": "1",
             "type": "Creature — Cat Bird Scientist",
             "types": [
                 "Creature"
             ],
-            "uuid": "4bde1d82-b103-5dc5-8a15-9152b76542ca",
+            "uuid": "2bc51019-7313-5d03-84ef-ce7f9beee307",
             "watermark": "crossbreedlabs"
         },
         {
@@ -1798,12 +1832,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153070,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/687a00f946427372",
             "text": "Enchant your library\nEnchanted library is an artifact creature on the battlefield with power and toughness each equal to the number of cards in it. It's still a library.\nIf enchanted library would leave the battlefield, exile Animate Library instead.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "1415f4ce-7ef7-5c6e-8c57-be23e4e9a80d",
+            "uuid": "cb8fc669-ef66-570a-bc8b-fdea43f22568",
             "watermark": "orderofthewidget"
         },
         {
@@ -1862,6 +1897,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153123,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4e0edce54d2485d9",
             "text": "Blurry (This creature can be blocked only if defending player was wearing glasses as it was cast.)\nWhenever Blurry Beeble deals combat damage to a player, you may draw a card. If you do, discard a card.",
             "toughness": "1",
             "type": "Artifact Creature — Cyborg Beeble",
@@ -1869,7 +1905,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "cee86519-0197-57eb-83da-32b991be161b",
+            "uuid": "f2c2743c-d34c-5289-8411-98fd4a14fe08",
             "watermark": "orderofthewidget"
         },
         {
@@ -1907,6 +1943,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153140,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/159049b47b52cb1e",
             "text": "Flying\nWhen Chipper Chopper enters the battlefield, you may sacrifice another artifact. If you do, put two +1/+1 counters on Chipper Chopper and it assembles a Contraption. (Put the top card of your Contraption deck face up onto one of your sprockets.)",
             "toughness": "1",
             "type": "Artifact Creature — Cyborg Rigger",
@@ -1914,7 +1951,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "53936b6c-e6f6-59d4-8167-0d5fd1ae9087",
+            "uuid": "7d23864b-1e6e-51bd-a3d9-37b2804cdb23",
             "watermark": "orderofthewidget"
         },
         {
@@ -1977,13 +2014,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153018,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5c547b080a3a6181",
             "text": "When Clocknapper enters the battlefield, choose beginning phase, precombat main phase, combat phase, postcombat main phase, or ending phase. Steal that phase from target player during their next turn. (That phase occurs as though it's your turn instead.)",
             "toughness": "2",
             "type": "Creature — Human Spy",
             "types": [
                 "Creature"
             ],
-            "uuid": "9eb847ed-b181-5ad9-9d3f-4e1fb1996519",
+            "uuid": "85a643ff-0d7e-5168-80e2-1de59c8829a8",
             "watermark": "agentsofsneak"
         },
         {
@@ -2028,13 +2066,14 @@
                 "Host"
             ],
             "tcgplayerProductId": 153165,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/eefbc22ee0fe220f",
             "text": "When this creature enters the battlefield, this creature assembles a Contraption. (Put the top card of your Contraption deck face up onto one of your sprockets.)",
             "toughness": "3",
             "type": "Host Creature — Octopus Rigger",
             "types": [
                 "Creature"
             ],
-            "uuid": "16899a17-53e2-5510-bdea-f2e964c5f6f0"
+            "uuid": "483de843-45e3-567a-9983-54fbfc0a60ed"
         },
         {
             "artist": "YW Tang",
@@ -2069,12 +2108,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152430,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f34f9b6a04516628",
             "text": "Create a 1/2 blue Bird creature token with flying named Storm Crow.\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "d047075d-c385-5951-a571-ba955eb96b82"
+            "uuid": "6ea629c9-ca89-521b-b862-6677b4fd7ddd"
         },
         {
             "artist": "Matt Dixon",
@@ -2125,13 +2165,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153178,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/840e542391f484d6",
             "text": "Defective Detective can't be blocked.\nWhen Defective Detective enters the battlefield, a person outside the game looks at target opponent's hand and chooses a card from it. That player reveals that card.",
             "toughness": "1",
             "type": "Creature — Human Spy",
             "types": [
                 "Creature"
             ],
-            "uuid": "be441a54-940a-5958-b3e4-cdec9519781a",
+            "uuid": "77597ad1-8c68-578d-9e79-35e9ea42c3d1",
             "watermark": "agentsofsneak"
         },
         {
@@ -2175,12 +2216,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 153206,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9a073e78af1223d8",
             "text": "Put target nonland permanent into your hand. You may spend mana as though it were mana of any color the next time you cast that card.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "25264519-19dd-58e0-90dd-0d03795cf156",
+            "uuid": "60fae095-56cc-5102-8b23-49bb6d70f46b",
             "watermark": "agentsofsneak"
         },
         {
@@ -2240,13 +2282,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153072,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/109c8edaf9c9bedb",
             "text": "All graveyards are also your graveyards.\nGraveyard Busybody's power and toughness are each equal to the number of cards with flavor text in your graveyards.",
             "toughness": "*",
             "type": "Creature — Human Spy",
             "types": [
                 "Creature"
             ],
-            "uuid": "847ad0f9-0b9e-57bb-8020-07eb2ff0a21a",
+            "uuid": "1136bd3e-322d-5a81-84d6-b836082df180",
             "watermark": "agentsofsneak"
         },
         {
@@ -2314,13 +2357,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153152,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/83f912da9a04e219",
             "text": "At the beginning of your upkeep,\nAugment {5}{U} ({5}{U}, Reveal this card from your hand: Combine it with target host. Augment only as a sorcery.)",
             "toughness": "+3",
             "type": "Creature — Fish",
             "types": [
                 "Creature"
             ],
-            "uuid": "c433ffbd-12fc-5b66-87f5-631c56be1b6c"
+            "uuid": "ef2ca65c-f8c3-5d5a-adf1-197ec94e5cbe"
         },
         {
             "artist": "David Sladek",
@@ -2354,12 +2398,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152436,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bb7d9c3b61b736df",
             "text": "Assemble X Contraptions. (To assemble a Contraption, put the top card of your Contraption deck face up onto one of your sprockets.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "48fdcdb2-0d89-5df8-ace1-cb61d589526c",
+            "uuid": "ca9a2127-5ef8-5738-86cf-5b0cb9938da9",
             "watermark": "orderofthewidget"
         },
         {
@@ -2403,6 +2448,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 151982,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/757c8551d5c9291b",
             "text": "Spells you cast that refer to artifacts or Contraptions in their rules text cost {1} less to cast.",
             "toughness": "3",
             "type": "Artifact Creature — Cyborg Artificer",
@@ -2410,7 +2456,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "a9933e2f-3445-51ed-a501-e4ec3e105600",
+            "uuid": "eeedb2a7-9a65-57c8-94f9-1dfdec6c7c0b",
             "watermark": "orderofthewidget"
         },
         {
@@ -2446,12 +2492,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153156,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/76c4a413779f6441",
             "text": "Enchant creature\nAs Magic Word enters the battlefield, choose a word.\nWhisper the chosen word: Tap enchanted creature.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "55ecb898-7402-53dc-97b8-a2e44d71db39",
+            "uuid": "ecf538c8-9959-53ca-b590-26175a4c0c04",
             "watermark": "agentsofsneak"
         },
         {
@@ -2496,13 +2543,14 @@
                 "Host"
             ],
             "tcgplayerProductId": 152675,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2dabb1c683ebc5c9",
             "text": "When this creature enters the battlefield, you may draw a card.",
             "toughness": "3",
             "type": "Host Creature — Human Fish",
             "types": [
                 "Creature"
             ],
-            "uuid": "36b02097-d68e-5741-8f2a-08c6d862cfa7"
+            "uuid": "6b4ec1e9-df4f-5eb6-8549-22c5230fef8e"
         },
         {
             "artist": "Chris Seaman",
@@ -2565,12 +2613,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152600,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5daf25b45a168488",
             "text": "Add or subtract 1 or one from a number or number word on target spell or permanent until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "94e3c05a-d16a-5272-93c0-90d8519eb0f7"
+            "uuid": "57390c3e-c283-5ea3-91dd-57d63f07fe0c"
         },
         {
             "artist": "Tom Babbey",
@@ -2612,7 +2661,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "6d371a2e-d98d-58f9-a9b8-ae88c5efa800"
+            "uuid": "a8afb6e5-a93d-589f-b05e-c8102f55dfdd"
         },
         {
             "artist": "Tom Babbey",
@@ -2649,13 +2698,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154444,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d71109918489054d",
             "text": "Flying\nNovellamental can block only creatures with flying.",
             "toughness": "1",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "da309230-f786-5334-ad6d-14df15041757"
+            "uuid": "1594b5c6-5b9a-5dab-88bb-5fd0e68bd429"
         },
         {
             "artist": "Tom Babbey",
@@ -2692,13 +2742,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154446,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4077fba1a3de75da",
             "text": "Flying\nNovellamental can block only creatures with flying.",
             "toughness": "1",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "d3e0bb72-11e7-5477-a9d5-68715e3f75e4"
+            "uuid": "acf9b549-4ef5-5ea9-9f79-261913d05365"
         },
         {
             "artist": "Tom Babbey",
@@ -2735,13 +2786,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154447,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2bac72221de59cfb",
             "text": "Flying\nNovellamental can block only creatures with flying.",
             "toughness": "1",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "f644ad92-2dea-5808-9adf-28f80a679e29"
+            "uuid": "1f38af4d-9237-52e2-b497-d41e42746ead"
         },
         {
             "artist": "Matt Dixon",
@@ -2784,13 +2836,14 @@
                 "Host"
             ],
             "tcgplayerProductId": 153148,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/22cf160637c3c9ec",
             "text": "When this creature enters the battlefield, roll a six-sided die. Target player puts the top X cards of their library into their graveyard, where X is the result.",
             "toughness": "3",
             "type": "Host Creature — Jellyfish",
             "types": [
                 "Creature"
             ],
-            "uuid": "135664a3-0dfe-5195-8ff1-878296528c01"
+            "uuid": "63b96cee-2d7d-5076-bd61-cecc575e0c73"
         },
         {
             "artist": "John Thacker",
@@ -2827,13 +2880,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153163,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b82be7d9f185906f",
             "text": "{2}{U}, {T}: Look at the top card of target player's library. If it has an Agents of S.N.E.A.K. watermark, you may reveal it and put it into your hand. Otherwise, put it on the top or bottom of its owner's library.",
             "toughness": "1",
             "type": "Creature — Human Spy",
             "types": [
                 "Creature"
             ],
-            "uuid": "4a171a3b-84df-5d4d-963a-926495f822b0",
+            "uuid": "f4ec8a49-cced-556b-af0b-b25ec3d3af45",
             "watermark": "agentsofsneak"
         },
         {
@@ -2876,6 +2930,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153188,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/11557970a8f69bf0",
             "text": "{T}: Uninstall all results from Socketed Sprocketer, then roll a six-sided die. Install the result on Socketed Sprocketer. (Put the die on this card.)\nYou may uninstall a result from Socketed Sprocketer to use it for a die you rolled.\nUninstall a 6 from Socketed Sprocketer: Draw a card.",
             "toughness": "1",
             "type": "Artifact Creature — Cyborg Knight",
@@ -2883,7 +2938,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "02ff7b05-c504-5021-a692-1831143d6c88",
+            "uuid": "4b4f301e-8817-5b48-9999-1daa565a18c6",
             "watermark": "orderofthewidget"
         },
         {
@@ -2918,12 +2973,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 153142,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7090c6ed879fa61e",
             "text": "Counter target spell, then assemble a Contraption. (Put the top card of your Contraption deck face up onto one of your sprockets.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "4b8a8265-6883-5369-97c3-6f15f6a1986f",
+            "uuid": "9e6df0fc-76f9-503d-8012-8a5f3fa58d19",
             "watermark": "agentsofsneak"
         },
         {
@@ -2962,13 +3018,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153160,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cd6a242d9865c956",
             "text": "Flying\nWhenever Spy Eye deals combat damage to a player, you may draw a card from that player's library.",
             "toughness": "3",
             "type": "Creature — Eye Spy",
             "types": [
                 "Creature"
             ],
-            "uuid": "4aa480ac-10dd-520e-bc5e-e09e409b243e",
+            "uuid": "510b4f64-0cc5-502c-8b3f-aad3dbce233c",
             "watermark": "agentsofsneak"
         },
         {
@@ -3008,13 +3065,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153019,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e6fafbabc94b8de3",
             "text": "Whenever Suspicious Nanny deals combat damage to a player, it reassembles target Contraption that player controls. (Gain control of it and move it onto one of your sprockets.)",
             "toughness": "4",
             "type": "Creature — Human Spy Rigger",
             "types": [
                 "Creature"
             ],
-            "uuid": "05ea7dc2-f356-5382-a3a4-be80ded55086",
+            "uuid": "b6ea20c7-c4ec-5a7d-9f2f-d3d9d84065d6",
             "watermark": "agentsofsneak"
         },
         {
@@ -3049,12 +3107,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 153150,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0a49ce3a0427ce6e",
             "text": "Roll a six-sided die. Put target nonland permanent into its owner's library just beneath the top X cards of that library, where X is the result.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "e73f0c6d-f3b5-5b79-bb5e-0e03a33c4c82",
+            "uuid": "aaf0e03e-384c-557f-bea1-dc426ee8cebf",
             "watermark": "agentsofsneak"
         },
         {
@@ -3092,7 +3151,7 @@
             "types": [
                 "Instant"
             ],
-            "uuid": "c80e862b-0290-5e9b-bb1a-ce6fbf197c0c"
+            "uuid": "aa3e865c-bca3-54d0-a8d4-64d90e731579"
         },
         {
             "artist": "Zoltan Boros",
@@ -3130,12 +3189,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152906,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b0b793266afb2deb",
             "text": "Choose two —\n• Untap two target permanents.\n• Tap each permanent target player controls with exactly one word in its name.\n• Discard all the cards in your hand, then draw that many cards.\n• Return target instant or sorcery card from your graveyard to your hand.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "fcecc595-98ea-5d29-af21-32777d387307"
+            "uuid": "7d9bddad-da2b-54f9-8536-08f4ed5ee205"
         },
         {
             "artist": "Zoltan Boros",
@@ -3168,12 +3228,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 154420,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4028430b5b9b29c0",
             "text": "Choose two —\n• Draw a card from an opponent's library.\n• Copy target instant or sorcery spell. You may choose new targets for the copy.\n• Until end of turn, target creature loses all abilities and becomes a blue Frog with base power and toughness 1/1.\n• Create a 1/1 colorless Gnome artifact creature token.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "19e7fb23-4ced-5f83-9f37-a4a9d56d5e37"
+            "uuid": "bc48f0a9-6bb6-5c8a-9b27-473afbeb60b5"
         },
         {
             "artist": "Zoltan Boros",
@@ -3211,12 +3272,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 154421,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/95d3c736d41eb257",
             "text": "Choose two —\n• Return target permanent to its controller's hand.\n• Draw two cards, then discard a card.\n• Change the target of target spell with a single target.\n• Turn over target nontoken creature.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "a1dbe890-9fa8-5d00-986a-6c9bcc4f8407"
+            "uuid": "4c534ac4-7297-55e6-9330-e8ca6181bb63"
         },
         {
             "artist": "Zoltan Boros",
@@ -3249,12 +3311,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 154422,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ff1a52607ac7398b",
             "text": "Choose two —\n• Counter target black-bordered spell.\n• Return target creature to its owner's hand.\n• Untap each permanent you control with a watermark.\n• Roll two six-sided dice. Target player puts the top X cards of their library into their graveyard, where X is the total of those results.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "0f8ae91f-0eb9-57f4-91e6-0debd4ff66e4"
+            "uuid": "de98fd61-2af5-583c-b877-3ccdee01c4c6"
         },
         {
             "artist": "Zoltan Boros",
@@ -3287,12 +3350,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 154423,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e0e13fe144b2a4b6",
             "text": "Choose two —\n• Scry 3.\n• Create a 2/2 black Rogue creature token with menace.\n• Add or subtract 1 or one from a number or number word on target spell or permanent until end of turn.\n• Return all artifacts target player controls to their owner's hand.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "c0449088-c9b4-5488-abf2-26bbfa9f96dc"
+            "uuid": "517464ca-61b6-56e5-b02b-1b561081ebde"
         },
         {
             "artist": "Tom Babbey",
@@ -3334,6 +3398,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152442,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4e38c0ee2a26459a",
             "text": "Defender\nYou may tap an untapped Wall you control to have any player reroll a die that player rolled.",
             "toughness": "4",
             "type": "Artifact Creature — Wall",
@@ -3341,7 +3406,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "30d03347-ebbc-507b-9845-7904497eaf7c",
+            "uuid": "ca51fc9c-fe79-54e0-93e5-698c6395f890",
             "watermark": "orderofthewidget"
         },
         {
@@ -3385,13 +3450,14 @@
                 "Host"
             ],
             "tcgplayerProductId": 153201,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4bd1c68d661e94e0",
             "text": "When this creature enters the battlefield, roll a six-sided die. Target opponent loses life equal to the result.",
             "toughness": "2",
             "type": "Host Creature — Snake",
             "types": [
                 "Creature"
             ],
-            "uuid": "a963d3e3-02ac-5ceb-9b4c-90d3f3507cb8"
+            "uuid": "f6f77700-2345-571c-8acb-f75c9fc3f112"
         },
         {
             "artist": "Matt Dixon",
@@ -3434,12 +3500,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152443,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e5382feecb4b6c79",
             "text": "target creature gets -x/-x until end of turn, where x is the number of times a capital letter appears in its rules text. (ignore reminder text and flavor text.)",
             "type": "instant",
             "types": [
                 "instant"
             ],
-            "uuid": "7f5523f4-30b6-555a-a3ee-3ff70b22b997",
+            "uuid": "aa2ac9ae-c542-5268-88ba-97f3ce14f702",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -3483,13 +3550,14 @@
                 "Host"
             ],
             "tcgplayerProductId": 153203,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c04dd8aeda80341a",
             "text": "When this creature enters the battlefield, target opponent discards a card.",
             "toughness": "1",
             "type": "Host Creature — Rat",
             "types": [
                 "Creature"
             ],
-            "uuid": "a9e17a2c-c54a-53de-8907-70d6cd5d371d"
+            "uuid": "8399dcc5-781c-5eea-afc4-b6ec7cdac911"
         },
         {
             "artist": "Emrah Elmasli",
@@ -3540,7 +3608,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "3788468e-649c-5fb2-8788-62e8332cbdb0"
+            "uuid": "72c4a476-ebc2-5aa0-8766-a7e85819fc88"
         },
         {
             "artist": "Emrah Elmasli",
@@ -3586,13 +3654,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154455,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/88b032e798e70aba",
             "text": "Last strike (This creature deals combat damage after creatures without last strike.)",
             "toughness": "3",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "0de7879d-aa20-5daf-84ed-b0b46251477c"
+            "uuid": "8a3be3d6-8fd0-5040-b8d8-078807cb110e"
         },
         {
             "artist": "Emrah Elmasli",
@@ -3638,13 +3707,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154456,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d48b4f48b4f1aba9",
             "text": "Last strike (This creature deals combat damage after creatures without last strike.)",
             "toughness": "3",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "91828d7a-6170-53fc-a3ca-cd319b7347ab"
+            "uuid": "842a2a98-330c-5798-a17d-2d679edb7520"
         },
         {
             "artist": "Emrah Elmasli",
@@ -3690,13 +3760,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154457,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4b4097d8f3007a17",
             "text": "Last strike (This creature deals combat damage after creatures without last strike.)",
             "toughness": "3",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "bdcbc4a6-538e-5065-baa3-8d594e7fc1a7"
+            "uuid": "21e8c123-da0b-5c72-8ded-a82b98528d52"
         },
         {
             "artist": "Mark Behm",
@@ -3730,12 +3801,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 151983,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bb73f588b1dcce72",
             "text": "Destroy target creature, then assemble a Contraption. (Put the top card of your Contraption deck face up onto one of your sprockets.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "3f90abce-a3a4-5896-8929-5e39ee406c84",
+            "uuid": "f6285645-b3cd-5cfe-9d6f-993a611fde7b",
             "watermark": "agentsofsneak"
         },
         {
@@ -3794,13 +3866,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 151984,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ccd22160c18ef65e",
             "text": "As Hangman enters the battlefield, secretly note a word with six to eight letters.\n{1}: Target player who doesn't control Hangman guesses the noted word or an unguessed letter in that word. If they guess wrong, put a +1/+1 counter on Hangman. Any player may activate this ability.\nWhen a player guesses the noted word or all of its letters, sacrifice Hangman.",
             "toughness": "1",
             "type": "Creature — Human Villain",
             "types": [
                 "Creature"
             ],
-            "uuid": "d6437ec5-2892-5d9b-b2f8-58627a934e06",
+            "uuid": "b8afa6ec-bea4-5493-afa7-9e9326435078",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -3849,12 +3922,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153208,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c627d01aae2a97b3",
             "text": "Enchant creature\nEnchanted creature gets +2/+1 and has menace.\nWhenever a player's skin or fingernail touches enchanted creature, that player loses 2 life.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "67803963-d2c5-5ba8-864b-21784e31b6e9",
+            "uuid": "72ef0cf0-f501-5233-9fdd-41f108116a64",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -3892,13 +3966,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153132,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/311b5240e9d2c880",
             "text": "Hoisted Hireling has flying as long as it's being held above the battlefield.",
             "toughness": "1",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "46530f3b-425b-53d1-98a4-cad2b04e789b",
+            "uuid": "3789ab8e-28cd-5776-a18c-257ecb1d6377",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -3936,13 +4011,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153185,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/19d7babfecf76640",
             "text": "At the beginning of your upkeep, roll a six-sided die. On a 3 or 4, put a +1/+1 counter on Inhumaniac. On a 5 or higher, put two +1/+1 counters on it. On a 1, remove all +1/+1 counters from Inhumaniac.",
             "toughness": "1",
             "type": "Creature — Brainiac",
             "types": [
                 "Creature"
             ],
-            "uuid": "d3a28828-fbe4-5869-b9fe-e788476a5678",
+            "uuid": "ebfd4dd7-f484-556c-904e-78cc252de50a",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -4005,13 +4081,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152954,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9e9e77d4384fd712",
             "text": "Haste\nReveal Masterful Ninja from your hand: Masterful Ninja is on the battlefield and in your hand until end of turn.\n{1}{B}: Masterful Ninja gets +1/+1 until end of turn.",
             "toughness": "1",
             "type": "Creature — Troll Ninja",
             "types": [
                 "Creature"
             ],
-            "uuid": "ad121caa-a048-5301-8130-02b67c012770",
+            "uuid": "8f0fe4d5-0df3-5225-893f-cbe1191a45f5",
             "watermark": "agentsofsneak"
         },
         {
@@ -4079,13 +4156,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153214,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0fef8193a23f058f",
             "text": "You may activate Ninja's augment ability any time you could cast an instant.\nWhenever this creature deals combat damage to a player,\nAugment {2}{B} ({2}{B}, Reveal this card from your hand: Combine it with target host. Augment only as—oh, nevermind.)",
             "toughness": "+0",
             "type": "Creature — Ninja",
             "types": [
                 "Creature"
             ],
-            "uuid": "dc13f3a0-2e7e-5f61-8eb2-93c1af26ef25"
+            "uuid": "95210b44-6423-5ffd-b628-4346ad118615"
         },
         {
             "artist": "Simon Dominic",
@@ -4122,13 +4200,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152907,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6d2834ded0c58d44",
             "text": "Flying\nOld-Fashioned Vampire gets +2/+2 and has deathtouch as long as it's dark outdoors.",
             "toughness": "3",
             "type": "Creature — Vampyre",
             "types": [
                 "Creature"
             ],
-            "uuid": "d0f155d6-c789-52a0-a9d2-d6e8eda168ba"
+            "uuid": "0ac646c2-4cd5-5d0c-867f-212c320ccc18"
         },
         {
             "artist": "Even Amundsen",
@@ -4198,12 +4277,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152908,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d8d4733a4bf14b0e",
             "text": "Creature cards in graveyards can attack and block as though they were on the battlefield, can block or be blocked only by creature cards in graveyards, are Zombies in addition to their other types, and have undeathtouch. (If they would deal damage to a creature card, exile that creature card instead.)\nCreature cards in your graveyard have haste.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "0c12bfbc-e2b3-56cf-ade5-c5788d5cf188",
+            "uuid": "82e321e1-e79d-56b7-ad31-0cb95b6cd347",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -4243,13 +4323,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153162,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/73aa4b6ab6e9ebff",
             "text": "Menace\nWhenever Overt Operative deals combat damage to a player, it assembles a Contraption. (Put the top card of your Contraption deck face up onto one of your sprockets.)",
             "toughness": "3",
             "type": "Creature — Human Ninja Rigger",
             "types": [
                 "Creature"
             ],
-            "uuid": "31de060f-2a43-5972-a11e-36f2c75e3e0e",
+            "uuid": "cb64aa69-9369-566d-842c-96011e583bbb",
             "watermark": "agentsofsneak"
         },
         {
@@ -4288,7 +4369,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "b3c9eca1-a19e-5d7b-aa34-d9a2c70e92a8",
+            "uuid": "e063f191-1995-5495-962c-3154775cf674",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -4344,13 +4425,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153076,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f54349c08954c1db",
             "text": "Flying\nWhen Skull Saucer enters the battlefield, destroy target creature and put your head on the table. Sacrifice Skull Saucer when your head stops touching the table.",
             "toughness": "1",
             "type": "Creature — Zombie Head",
             "types": [
                 "Creature"
             ],
-            "uuid": "32bbf7f6-5311-5ad6-a647-afb11eaa3a2a",
+            "uuid": "646e4489-f467-5c41-865e-dc028f522acb",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -4399,7 +4481,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "ed912ec1-4a2c-5d17-ba68-25f45d32ac14",
+            "uuid": "b960a0f6-d292-5c73-97ac-e9e2cbd9b457",
             "watermark": "agentsofsneak"
         },
         {
@@ -4447,13 +4529,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154429,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/34fba64de768cf54",
             "text": "Whenever Sly Spy deals combat damage to a player, you may destroy target creature facing left in its art. (Creatures without faces don't face anywhere.)",
             "toughness": "2",
             "type": "Creature — Human Spy",
             "types": [
                 "Creature"
             ],
-            "uuid": "e78227b9-fe27-5894-b1aa-490bdfc1c766",
+            "uuid": "6cd3ad94-5dc2-52c1-869f-0043bb9dc6c8",
             "watermark": "agentsofsneak"
         },
         {
@@ -4501,13 +4584,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154431,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5bba31b4bd982833",
             "text": "Whenever Sly Spy deals combat damage to a player, that player loses a finger until Sly Spy leaves the battlefield. (The finger is chosen by its owner and can't roll dice or touch cards.)",
             "toughness": "2",
             "type": "Creature — Human Spy",
             "types": [
                 "Creature"
             ],
-            "uuid": "017af867-b318-5f77-99bf-bdbe2e9137d0",
+            "uuid": "cdb330ee-497f-5e07-876f-138b05d18429",
             "watermark": "agentsofsneak"
         },
         {
@@ -4555,13 +4639,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154432,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/960682de71795a93",
             "text": "Whenever Sly Spy deals combat damage to a player, you may destroy target creature facing right in its art. (Creatures without faces don't face anywhere.)",
             "toughness": "2",
             "type": "Creature — Human Spy",
             "types": [
                 "Creature"
             ],
-            "uuid": "bbcdf5ca-fafc-5627-a5da-7db3aaa8b2ae",
+            "uuid": "6f5035b0-17d4-5767-a10c-46156cf620d1",
             "watermark": "agentsofsneak"
         },
         {
@@ -4613,13 +4698,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154433,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b0a3467ab4af6f5f",
             "text": "Whenever Sly Spy deals combat damage to a player, that player reveals the top card of their library. Put that card into your hand and you lose life equal to its converted mana cost.",
             "toughness": "2",
             "type": "Creature — Human Spy",
             "types": [
                 "Creature"
             ],
-            "uuid": "61cfadf7-f9a7-5048-9cb2-cdef5cc27609",
+            "uuid": "a9aaef6d-cb14-5409-9f25-65d662584809",
             "watermark": "agentsofsneak"
         },
         {
@@ -4658,13 +4744,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154435,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b34429f31e589169",
             "text": "Whenever Sly Spy deals combat damage to a player, roll a six-sided die. That player loses life equal to the result.",
             "toughness": "2",
             "type": "Creature — Human Spy",
             "types": [
                 "Creature"
             ],
-            "uuid": "1928b18b-0d7f-569f-971f-f391987d06a7",
+            "uuid": "7715f461-2de7-5176-9481-97d909df6ba0",
             "watermark": "agentsofsneak"
         },
         {
@@ -4720,13 +4807,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152451,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/03130a95bd9221c6",
             "text": "You may tap Snickering Squirrel to increase the result of a die any player rolled by 1.",
             "toughness": "1",
             "type": "Creature — Squirrel Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "ac9f16e4-f76b-575e-8435-b48a72f66c00",
+            "uuid": "89f354e9-6eac-532f-ad34-3de88b064db0",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -4772,13 +4860,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 152432,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f82a6a18bc628c02",
             "text": "({B/P} can be paid with either {B} or 2 life.)\n{B/P}{B/P}{B/P}{B/P}: Choose a card you own from outside the game that has been banned or restricted in a Constructed format, reveal that card, and put it into your hand.",
             "toughness": "1",
             "type": "Legendary Creature — Human Gamer",
             "types": [
                 "Creature"
             ],
-            "uuid": "f187d32a-85f3-5900-8d81-e0a5abc7df38"
+            "uuid": "3f700c13-fbe2-5cf7-97b1-448640e6935b"
         },
         {
             "artist": "Even Amundsen",
@@ -4812,12 +4901,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152453,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fa12e28a0b1831b4",
             "text": "Increase the result of each die you roll by 2.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "60ee0008-5d40-5b6f-8123-661f8a543f2e",
+            "uuid": "9cbbc4f8-fb19-504a-a979-14a48f81c37b",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -4856,13 +4946,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153176,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/419cacb4c2973a6a",
             "text": "Deathtouch\nWhen Steady-Handed Mook enters the battlefield, it assembles a Contraption. (Put the top card of your Contraption deck face up onto one of your sprockets.)",
             "toughness": "1",
             "type": "Creature — Human Rigger",
             "types": [
                 "Creature"
             ],
-            "uuid": "0cc28955-181d-52e5-9bd7-5de36ac61a8d",
+            "uuid": "f4108f15-5ad7-54a4-8161-712fb2ea77f4",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -4906,13 +4997,14 @@
                 "Host"
             ],
             "tcgplayerProductId": 153115,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dfdc38b3e8af9315",
             "text": "When this creature enters the battlefield, target creature an opponent controls gets -1/-1 until end of turn.",
             "toughness": "2",
             "type": "Host Creature — Scorpion",
             "types": [
                 "Creature"
             ],
-            "uuid": "67de0cfb-a706-5153-ba2d-accb158093a8"
+            "uuid": "dc817666-8db0-528d-94b8-e409c715f2af"
         },
         {
             "artist": "Hector Ortiz",
@@ -4959,12 +5051,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 153117,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/910163c40e82789e",
             "text": "A person outside the game looks at target opponent's hand and chooses a nonland card from it. That player discards that card.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "aea03a18-e5ca-5140-87ed-e21e110a07ad",
+            "uuid": "574fbdd2-41ed-5639-908b-ab5487eeb7cf",
             "watermark": "agentsofsneak"
         },
         {
@@ -5011,12 +5104,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152461,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f715a93325124f76",
             "text": "Open a sealed Magic booster pack, reveal the cards, and put all creature cards revealed this way onto the battlefield under your control. They're Zombies in addition to their other types. (Remove those cards from your deck before beginning a new game.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "3a381bb8-4df7-5cd3-bd88-f5d7325820fc",
+            "uuid": "df9dc659-da6c-52d8-9c6a-0103fd8cd6f5",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -5084,13 +5178,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153199,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c0d9c97d6f3dea5d",
             "text": "{4}{B}: Combine Zombified from your graveyard with target host.\n{2}{B}, Exile a creature card from your graveyard:\nAugment {4}{B} ({4}{B}, Reveal this card from your hand: Combine it with target host. Augment only as a sorcery.)",
             "toughness": "+2",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "05d32c2f-79b9-5359-b4f8-a6bf0d182c0f"
+            "uuid": "d2ec03fb-d6a5-5873-853e-83b2d4de4709"
         },
         {
             "artist": "Bram Sels",
@@ -5144,13 +5239,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 153026,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/199ac7060a8c21c4",
             "text": "{2}{B/R}{B/R}, {T}: Roll a six-sided die. Create a number of 1/1 red Brainiac creature tokens equal to the result.\nTap three untapped Brainiacs you control: The next time you would roll a six-sided die, instead roll two six-sided dice and use the total of those results.",
             "toughness": "4",
             "type": "Legendary Creature — Brainiac Villain",
             "types": [
                 "Creature"
             ],
-            "uuid": "67bac9ef-97b5-5605-a6db-94ba29ac4223",
+            "uuid": "c9dbdb30-1578-5c80-8200-5b95f5d2d7a6",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -5186,12 +5282,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 153194,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6a8d7626091e967e",
             "text": "Roll a six-sided die. Create a number of 1/1 red Goblin creature tokens equal to the result.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "67f53561-22d1-5cae-a40e-421a5523f35f",
+            "uuid": "bb4077fc-4e73-5c7d-8871-907c259e41e1",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -5236,13 +5333,14 @@
                 "Host"
             ],
             "tcgplayerProductId": 153196,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f1b855dfe9d87a0f",
             "text": "When this creature enters the battlefield, you may destroy target artifact.",
             "toughness": "2",
             "type": "Host Creature — Pangolin Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "0caa3835-bf0f-5d9e-a0ea-2b89103a497d"
+            "uuid": "9fea13b2-e846-53e7-9daf-edbd0cb16518"
         },
         {
             "artist": "Brynn Metheney",
@@ -5285,13 +5383,14 @@
                 "Host"
             ],
             "tcgplayerProductId": 153164,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bddb600f18337ed2",
             "text": "When this creature enters the battlefield, you may discard a card. If you do, draw a card.",
             "toughness": "3",
             "type": "Host Creature — Lizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "8407ac70-083c-5c51-911c-ab391d10990e"
+            "uuid": "f32156df-a679-58c2-bc6c-5bc1184243e0"
         },
         {
             "artist": "Jesper Ejsing",
@@ -5341,12 +5440,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152508,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8b09fed068a62e62",
             "text": "Players play a Magic subgame, starting at 1 life and using their libraries as their decks. For the rest of the main game, if a source would deal damage to a player who didn't win the subgame, it deals double that damage to that player instead.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "01c7d7c7-e623-5f30-a667-f26a5e552481",
+            "uuid": "97390731-8e02-5526-a602-a826e268d6ca",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -5390,13 +5490,14 @@
                 "Host"
             ],
             "tcgplayerProductId": 153158,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9e06bcb609c4a380",
             "text": "When this creature enters the battlefield, roll a six-sided die. This creature deals damage equal to the result to target creature an opponent controls.",
             "toughness": "1",
             "type": "Host Creature — Dinosaur",
             "types": [
                 "Creature"
             ],
-            "uuid": "111327d3-3028-5b7e-9a33-78dda2314251"
+            "uuid": "1115d306-a314-591c-95c2-32f35850a877"
         },
         {
             "artist": "Hector Ortiz",
@@ -5437,7 +5538,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "3d9df7be-b9c5-5ae4-9902-8a422c5c893c"
+            "uuid": "9e47d77e-2d98-5e33-a881-f57b2873ea02"
         },
         {
             "artist": "Hector Ortiz",
@@ -5474,13 +5575,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154458,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ab756c47b3073812",
             "text": "When Garbage Elemental enters the battlefield, it assembles a Contraption. (Put the top card of your Contraption deck face up onto one of your sprockets.)Undying (When this creature dies, if it had no +1/+1 counters on it, return it to the battlefield under its owner's control with a +1/+1 counter on it.)",
             "toughness": "1",
             "type": "Creature — Elemental Rigger",
             "types": [
                 "Creature"
             ],
-            "uuid": "ebbd6b14-f9b6-5e7b-b8f1-348075f1dea6"
+            "uuid": "2c5dad69-9987-5af6-b3f8-29f2e371567c"
         },
         {
             "artist": "Hector Ortiz",
@@ -5516,13 +5618,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154462,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/28844ba9e289e6f5",
             "text": "Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.)\nWhen Garbage Elemental enters the battlefield, roll two six-sided dice. Create a number of 1/1 red Goblin creature tokens equal to the difference between those results.",
             "toughness": "2",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "d6329a0a-0235-5917-b9b0-56b27111c283"
+            "uuid": "e0344d48-d9de-5a3e-bbbc-d611e4ba9055"
         },
         {
             "artist": "Hector Ortiz",
@@ -5558,13 +5661,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154463,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3eaf0ca253f901db",
             "text": "Cascade (When you cast this spell, exile cards from the top of your library until you exile a nonland card that costs less. You may cast it without paying its mana cost. Put the exiled cards on the bottom of your library in a random order.)\nWhen Garbage Elemental enters the battlefield, roll a six-sided die. Garbage Elemental deals damage equal to the result to target opponent or planeswalker.",
             "toughness": "3",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "46bf2154-9dc5-5082-bcd9-8b27886ee258"
+            "uuid": "4e607c4d-47fe-577b-8e07-8de9082ab408"
         },
         {
             "artist": "Hector Ortiz",
@@ -5605,13 +5709,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154464,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5a2c38df1a74ceb7",
             "text": "Unleash (You may have this creature enter the battlefield with a +1/+1 counter on it. It can't block as long as it has a +1/+1 counter on it.)\nEach creature you control with any kind of counter on it has art menace. (They can't be blocked except by creatures with two or more visible figures in their art.)",
             "toughness": "3",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "1b541c96-7b63-54b3-8839-99a37833cfdb"
+            "uuid": "b34b6419-8b9b-5a8c-967a-6b052bae72fe"
         },
         {
             "artist": "Hector Ortiz",
@@ -5656,13 +5761,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154466,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d5647a33d9b13c2d",
             "text": "Last strike (This creature deals combat damage after creatures without last strike.)\nBattalion — Whenever Garbage Elemental and at least two other creatures attack, target creature can't block this turn.",
             "toughness": "5",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "e223d421-2909-5bff-86ec-5a2225eeab73"
+            "uuid": "af30844e-01b8-59ae-9d22-cfe320b6f2c5"
         },
         {
             "artist": "Jesper Ejsing",
@@ -5709,13 +5815,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153209,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5a681893176c33c3",
             "text": "Menace (This creature can't be blocked except by two or more creatures.)\nOther creatures you control wearing hats in their art have menace.",
             "toughness": "2",
             "type": "Creature — Goblin Hatificer",
             "types": [
                 "Creature"
             ],
-            "uuid": "95251d4c-6488-5b5f-ab97-8fed3f10d365",
+            "uuid": "4dfdd864-3103-522b-b831-99b7012064ac",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -5784,13 +5891,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153180,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/76f6df7ea904b0ef",
             "text": "Trample\nAt the beginning of each end step, if an opponent was dealt damage this turn,\nAugment {1}{R}{R} ({1}{R}{R}, Reveal this card from your hand: Combine it with target host. Augment only as a sorcery.)",
             "toughness": "+1",
             "type": "Creature — Orc Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "877d394c-049f-5b9b-b5d1-ce39a1e35c4c"
+            "uuid": "eea11042-dd90-563a-be00-d5206f1ae842"
         },
         {
             "artist": "Dave Allsop",
@@ -5824,12 +5932,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 153173,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/79a41818216ec8ea",
             "text": "Gain control of target creature until end of turn. Untap that creature and roll a six-sided die. Until end of turn, it gains haste and gets +X/+0, where X is the result.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "ca06d787-26f8-5db4-9d1a-68d12114fc6a",
+            "uuid": "eb409793-3edd-5169-b0c8-d436d7b70827",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -5867,13 +5976,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152910,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/63a7e0e0b04dc784",
             "text": "As Hammer Jammer enters the battlefield, roll a six-sided die. Hammer Jammer enters the battlefield with a number of +1/+1 counters on it equal to the result.\nWhenever you roll a die, remove all +1/+1 counters from Hammer Jammer, then put a number of +1/+1 counters on it equal to the result.",
             "toughness": "0",
             "type": "Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "371a6b45-4e1f-5bd3-9390-1fe762b280ee",
+            "uuid": "20e9c4b6-d2af-5aab-8444-30bafda73a85",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -5908,12 +6018,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 151979,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/714b29fe94d8fadc",
             "text": "Whenever you cast a spell with a Goblin Explosioneers watermark, Hammerfest Boomtacular deals 2 damage to any target.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "9298c453-c763-55b9-ad97-c90b2ca2da29",
+            "uuid": "be9921ae-052f-52fe-8367-903c7fb8293e",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -5960,13 +6071,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153080,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/aaa95d9fc7ff1879",
             "text": "(This creature has INFINITE POWER.)",
             "toughness": "5",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "f4c2a3c9-c4a5-5bf4-81dd-4663e8338566"
+            "uuid": "23d887f9-b407-5a47-b5db-46ad263a547c"
         },
         {
             "artist": "Jesper Ejsing",
@@ -6025,13 +6137,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153077,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/02fda3497fc5c7a3",
             "text": "When It That Gets Left Hanging enters the battlefield, ask a person outside the game to high-five you. If they won't, It That Gets Left Hanging gains haste until end of turn.",
             "toughness": "4",
             "type": "Creature — Elemental Horror",
             "types": [
                 "Creature"
             ],
-            "uuid": "8c992ead-0408-5838-a2c7-41a2382fb868",
+            "uuid": "bf8e07dc-1251-5b74-8144-d7d107b87ff4",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -6075,12 +6188,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 153210,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d6d65f928f81d63f",
             "text": "Just Desserts deals π damage to target creature. (π is the ratio of a circle's circumference to its diameter. (It's a smidgen more than 3.))",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "a8cdcb6d-1788-5155-a6da-d9ab6803aee7"
+            "uuid": "2e00af51-abcd-57eb-906a-6e3400b1945f"
         },
         {
             "artist": "McLean Kendree",
@@ -6117,13 +6231,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153159,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/903bdad83392d24a",
             "text": "At the beginning of your upkeep, roll a six-sided die. Painiac gets +X/+0 until end of turn, where X is the result.",
             "toughness": "3",
             "type": "Creature — Brainiac",
             "types": [
                 "Creature"
             ],
-            "uuid": "15e60417-78e7-5ddd-aad8-ef4ae388be55",
+            "uuid": "70126ab4-8fb0-51df-9328-7946398cdec5",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -6171,13 +6286,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152509,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4bce7b27201e8923",
             "text": "Haste\nYou can attack with Party Crasher once each combat during each opponent's turn.",
             "toughness": "3",
             "type": "Creature — Goblin Berserker",
             "types": [
                 "Creature"
             ],
-            "uuid": "0c775a95-cdb7-5704-8114-49e9c0ff6b90",
+            "uuid": "6db57643-4d86-5dbf-815e-9c41480df4e1",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -6225,13 +6341,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 151978,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/76f3d89bf053b7cd",
             "text": "Other Riggers you control get +1/+0 and have haste.\nIf a Rigger you control would assemble a Contraption, it assembles two Contraptions instead.",
             "toughness": "3",
             "type": "Creature — Goblin Rigger",
             "types": [
                 "Creature"
             ],
-            "uuid": "f1d61b2c-b7d8-548b-8ed7-a3d161bc3e98",
+            "uuid": "4d99d7ed-e4f6-5424-b911-e5aecf4bf918",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -6270,13 +6387,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152233,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5dc146becb1cbc25",
             "text": "When Steamflogger of the Month enters the battlefield, it assembles a Contraption for each Contraption you control. (To assemble a Contraption, put the top card of your Contraption deck face up onto one of your sprockets.)",
             "toughness": "3",
             "type": "Creature — Goblin Rigger",
             "types": [
                 "Creature"
             ],
-            "uuid": "084d971c-a70c-5db3-84bc-1e9c839b969b",
+            "uuid": "80815dce-1ddb-5fd1-a3a8-32c6803c1bc6",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -6315,13 +6433,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153205,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b44ffa965eca8b29",
             "text": "{6}, {T}: Steamflogger Temp assembles a Contraption. (Put the top card of your Contraption deck face up onto one of your sprockets.)",
             "toughness": "1",
             "type": "Creature — Goblin Rigger",
             "types": [
                 "Creature"
             ],
-            "uuid": "4841b559-4f28-5f7d-8ce5-8d9ae89da69d",
+            "uuid": "8b87a9c8-fdbe-5788-916f-dbcf27ea03ef",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -6356,12 +6475,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 153161,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0d1d5d090690781b",
             "text": "Roll a six-sided die. Assemble a number of Contraptions equal to the result. (To assemble a Contraption, put the top card of your Contraption deck face up onto one of your sprockets.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "2b0308a8-0309-5a10-9a47-64322224d156",
+            "uuid": "c11b6fe2-9121-5756-a9ec-0a2a92920d81",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -6396,12 +6516,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152655,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e6dbba22307b235b",
             "text": "Trample (This spell can deal excess damage to its target's controller.)\nSuper-Duper Death Ray deals 4 damage to target creature.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "7edf2378-c6ba-58fb-919e-4290820c579c",
+            "uuid": "4620f1b1-8cf8-53db-a0c4-9f9911b9d9c8",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -6445,7 +6566,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "0ed359a9-880e-573a-9496-e0d3503e8539"
+            "uuid": "bb62542e-e245-5f97-a653-245211a49bfe"
         },
         {
             "artist": "Warren Mahy",
@@ -6483,13 +6604,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154425,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c9f90e72254dafc9",
             "text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)",
             "toughness": "1",
             "type": "Creature — Minotaur Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "4770884d-f945-5139-a52f-3fc12ba78c5b"
+            "uuid": "2ea24784-49f1-53ac-a9f9-26fda1c751f7"
         },
         {
             "artist": "Warren Mahy",
@@ -6527,13 +6649,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154426,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e75c3d204d578c62",
             "text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)",
             "toughness": "1",
             "type": "Creature — Minotaur Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "aa97625d-ef6b-55d9-9af9-464f3fbd7a2d"
+            "uuid": "06926fe5-4075-5884-8868-7d839908a467"
         },
         {
             "artist": "Warren Mahy",
@@ -6571,13 +6694,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154427,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d696aab7b30416ee",
             "text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)",
             "toughness": "1",
             "type": "Creature — Minotaur Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "2274a5ef-cf0e-5910-9217-48e788acfb83"
+            "uuid": "60b511c3-1c69-51f1-b39d-028e9bc0016f"
         },
         {
             "artist": "Mike Burns",
@@ -6620,13 +6744,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152660,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ca03a6ffae54d332",
             "text": "Triple strike (This creature deals first-strike, regular, and last-strike combat damage.)",
             "toughness": "3",
             "type": "Creature — Goblin Mutant",
             "types": [
                 "Creature"
             ],
-            "uuid": "63a25581-0911-547e-834c-362887286633",
+            "uuid": "3952388b-0264-512d-a2fd-0ae1a0c350f4",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -6661,12 +6786,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152427,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/301e1a6723e75f0d",
             "text": "Assemble two Contraptions. (Put the top card of your Contraption deck face up onto one of your sprockets. Then repeat this process.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "f8ccc142-445d-59b7-b479-86fd2441b33a",
+            "uuid": "663fc7dc-ebc4-50da-8929-a94d08aacbfa",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -6705,13 +6831,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153135,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0a8d81381872723d",
             "text": "When Wrench-Rigger enters the battlefield, it assembles a Contraption. (Put the top card of your Contraption deck face up onto one of your sprockets.)",
             "toughness": "1",
             "type": "Creature — Goblin Rigger",
             "types": [
                 "Creature"
             ],
-            "uuid": "90fcd590-62b3-5e1c-a9ed-c68731bb0afd",
+            "uuid": "e17904bd-b536-59ba-b204-ceb4ad650dd9",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -6754,12 +6881,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 153191,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/97291f498b65eb13",
             "text": "Hexproof\nWhenever you roll a die, put a number of luck counters on As Luck Would Have It equal to the result. Then if there are 100 or more luck counters on As Luck Would Have It, you win the game. (Count both rolls if you reroll a die.)",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "6a7abee3-ab87-5548-9205-ecbcbae553ff"
+            "uuid": "5600998e-255a-5438-b09f-f16d1a1a5887"
         },
         {
             "artist": "Mike Burns",
@@ -6801,7 +6929,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "ebfad58e-3601-5e1d-8235-444787b99804"
+            "uuid": "2a04f546-ff7f-527e-a2e4-73c6c5adea75"
         },
         {
             "artist": "Mike Burns",
@@ -6838,13 +6966,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154434,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c365a452e1da523f",
             "text": "Trample",
             "toughness": "4",
             "type": "Creature — Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "25cc0efb-f912-586f-ab19-8f1e2cb71e56"
+            "uuid": "e9af2d18-6016-5e2d-a327-df3f05cd78f9"
         },
         {
             "artist": "Mike Burns",
@@ -6881,13 +7010,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154436,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d005834f72032bcc",
             "text": "Trample",
             "toughness": "4",
             "type": "Creature — Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "e49c1711-bcbe-53e4-a9ea-bb9bef67f11d"
+            "uuid": "adcaa39e-adc3-5062-9275-116231992115"
         },
         {
             "artist": "Mike Burns",
@@ -6924,13 +7054,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154437,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d37d5008e72b36c0",
             "text": "Trample",
             "toughness": "4",
             "type": "Creature — Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "85627202-db7b-5108-977e-0f7e662a329e"
+            "uuid": "518abc71-6365-59ea-ad7e-3554473b6e4f"
         },
         {
             "artist": "Kari Christensen",
@@ -6974,12 +7105,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 153211,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bcb8845faad083f9",
             "text": "Whenever you roll a 4 or higher on a die, create a 1/1 green Squirrel creature token.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "17898399-5f27-53d6-9079-1672477ca6c3"
+            "uuid": "e7b55577-696d-503d-89b2-3c795846f55c"
         },
         {
             "artist": "Kev Walker",
@@ -7013,12 +7145,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 153175,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/aa2018bdead338c3",
             "text": "Search your library for a host card or a card with augment, reveal it, put it into your hand, then shuffle your library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "07ef6d8b-0b82-55b2-95e3-4ede6ba5932e",
+            "uuid": "ed2c90a4-ec82-5161-867f-4ef94fd9ce60",
             "watermark": "crossbreedlabs"
         },
         {
@@ -7059,13 +7192,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152676,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/df0790d92a58f96e",
             "text": "{T}: Add {G} for each Crossbreed Labs watermark among permanents you control.",
             "toughness": "2",
             "type": "Creature — Deer Bird Ape Druid",
             "types": [
                 "Creature"
             ],
-            "uuid": "dee769d1-138d-5377-8087-392cbb4ed1e5",
+            "uuid": "8577d712-a649-5dce-868f-2ee03c02dc98",
             "watermark": "crossbreedlabs"
         },
         {
@@ -7109,13 +7243,14 @@
                 "Host"
             ],
             "tcgplayerProductId": 153137,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/869597478597296f",
             "text": "When this creature enters the battlefield, you may untap target permanent.",
             "toughness": "2",
             "type": "Host Creature — Beaver",
             "types": [
                 "Creature"
             ],
-            "uuid": "a4552ee5-7baf-5c0a-be70-82b4e33f01e1"
+            "uuid": "66839d58-5c75-578d-83dd-01531b412333"
         },
         {
             "artist": "Milivoj Ćeran",
@@ -7163,13 +7298,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152360,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0be1f8dcc5a1b894",
             "text": "Squirrellink (Damage dealt by this creature also causes you to create that many 1/1 green Squirrel creature tokens.)\nCreature tokens you control are Squirrels in addition to their other creature types.\nOther Squirrels you control get +1/+1.",
             "toughness": "4",
             "type": "Creature — Squirrel Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "44c860a5-9dc8-5f83-be97-83e5583b596f"
+            "uuid": "3606b5f1-f4ed-571a-9f31-8e27894a988b"
         },
         {
             "artist": "John Thacker",
@@ -7203,12 +7339,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152696,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/acd2ae7930d107a5",
             "text": "Destroy target artifact or enchantment. Assemble a Contraption. (Put the top card of your Contraption deck face up onto one of your sprockets.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "708a7926-6423-51d2-98ff-accb866f0f80",
+            "uuid": "04b7de75-2a51-52d1-a5e2-063ae2d9158f",
             "watermark": "crossbreedlabs"
         },
         {
@@ -7247,13 +7384,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153190,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a425d6f2bbad838e",
             "text": "{3}{G}: Roll a six-sided die. Ground Pounder gets +X/+X until end of turn, where X is the result.\nWhenever you roll a 5 or higher on a die, Ground Pounder gains trample until end of turn.",
             "toughness": "2",
             "type": "Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "73a08981-8787-5c67-a531-b80f27b72925",
+            "uuid": "1ad58edc-6c06-56f2-8012-9bcbba9074f7",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -7321,13 +7459,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152913,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f67a0ee7b016a41a",
             "text": "Whenever a nontoken creature enters the battlefield,\nAugment {G} ({G}, Reveal this card from your hand: Combine it with target host. Augment only as a sorcery.)",
             "toughness": "-0",
             "type": "Creature — Squirrel",
             "types": [
                 "Creature"
             ],
-            "uuid": "42876bb1-c714-58a0-b2d8-ed5bdceed9ca"
+            "uuid": "a03af56a-3f37-5bf7-900e-c19ffde36b31"
         },
         {
             "artist": "Mathias Kollros",
@@ -7370,13 +7509,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152677,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/26df98538bcd64bc",
             "text": "As Hydradoodle enters the battlefield, roll X six-sided dice. Hydradoodle enters the battlefield with a number of +1/+1 counters on it equal to the total of those results.\nReach, trample",
             "toughness": "0",
             "type": "Creature — Hydra Hound",
             "types": [
                 "Creature"
             ],
-            "uuid": "24d2cf18-2100-5496-8443-a75bd6591f63",
+            "uuid": "d0a9cd72-7383-5f80-98dd-119e645bb39c",
             "watermark": "crossbreedlabs"
         },
         {
@@ -7424,7 +7564,7 @@
             "types": [
                 "Enchantment"
             ],
-            "uuid": "edec6aa1-e5f2-5a55-97b3-82fded4f1bb4"
+            "uuid": "b9d5b376-9904-510d-bc73-b1f8d4414ca6"
         },
         {
             "artist": "Milivoj Ćeran",
@@ -7467,12 +7607,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 154467,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/395d6fa561df69b7",
             "text": "As Ineffable Blessing enters the battlefield, choose an artist.\nWhenever a creature with art by the chosen artist enters the battlefield under your control, draw a card.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "4e9acee4-a7b0-5a58-bdf3-75447fff1df4"
+            "uuid": "5d9d9b3a-00b8-5da3-a28e-1e2e2a7c3550"
         },
         {
             "artist": "Milivoj Ćeran",
@@ -7506,12 +7647,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 154468,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a0840a3213e9ee5b",
             "text": "As Ineffable Blessing enters the battlefield, choose white-bordered or silver-bordered.\nWhenever a creature with the chosen border enters the battlefield under your control, draw a card.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "bd38bab2-3981-5136-93cf-a59e2d642162"
+            "uuid": "1b1e8e86-e324-5cd1-8614-3dc371ddbdff"
         },
         {
             "artist": "Milivoj Ćeran",
@@ -7550,12 +7692,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 154469,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fb220873877f538b",
             "text": "As Ineffable Blessing enters the battlefield, choose a rarity.\nWhenever a creature with the chosen rarity enters the battlefield under your control, draw a card.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "ef9b0b22-1df5-5f03-9582-db2d943dfb32"
+            "uuid": "9433056c-afa5-58e2-9601-a35a090d3c25"
         },
         {
             "artist": "Milivoj Ćeran",
@@ -7589,12 +7732,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 154470,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/64b06fb1b50ebd07",
             "text": "As Ineffable Blessing enters the battlefield, choose odd or even.\nWhenever a creature with a collector number of the chosen value enters the battlefield under your control, draw a card.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "201d6a12-0dc6-5c0e-a157-a7454fd06369"
+            "uuid": "043a0caf-69c4-514e-adcf-b605de5d32f8"
         },
         {
             "artist": "Milivoj Ćeran",
@@ -7633,12 +7777,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 154471,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/90bcafd7d43bf55c",
             "text": "As Ineffable Blessing enters the battlefield, choose a number.\nWhenever a creature with exactly the chosen number of words in its name enters the battlefield under your control, draw a card. (Hyphenated words are one word.)",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "72b650c2-bd4a-5c51-b367-532d43216470"
+            "uuid": "77dc69b7-cc48-5362-9abd-67f40f6dffe7"
         },
         {
             "artist": "Wayne Reynolds",
@@ -7676,13 +7821,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153184,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/274288f6b0cd7da3",
             "text": "When Joyride Rigger enters the battlefield, it assembles a Contraption. (Put the top card of your Contraption deck face up onto one of your sprockets.)",
             "toughness": "3",
             "type": "Creature — Goblin Rigger",
             "types": [
                 "Creature"
             ],
-            "uuid": "063e474a-e7a2-5c9e-a05a-6d683c97b354",
+            "uuid": "64bb3c65-7ec2-58e9-b255-de9f8f333dc0",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -7750,13 +7896,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152663,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/38c9e531002940a5",
             "text": "Whenever a nontoken creature you control dies,\nAugment {2}{G} ({2}{G}, Reveal this card from your hand: Combine it with target host. Augment only as a sorcery.)",
             "toughness": "+2",
             "type": "Creature — Monkey",
             "types": [
                 "Creature"
             ],
-            "uuid": "54b8390e-fa2a-5244-8015-c0e4bb00a96c"
+            "uuid": "70545c4f-5061-525d-9f04-6fd663a2c4f6"
         },
         {
             "artist": "Andrea Radeck",
@@ -7799,13 +7946,14 @@
                 "Host"
             ],
             "tcgplayerProductId": 153128,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6cb1f820a5e1330b",
             "text": "When this creature enters the battlefield, roll a six-sided die. Put a number of +1/+1 counters on this creature equal to the result.",
             "toughness": "1",
             "type": "Host Creature — Kangaroo",
             "types": [
                 "Creature"
             ],
-            "uuid": "43c715c3-9d6b-5be0-8d0b-e5e44f4f6682"
+            "uuid": "879e3c27-1786-5f08-8d03-11cfb02c4cea"
         },
         {
             "artist": "YW Tang",
@@ -7872,13 +8020,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152678,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4e1337eac0ca9c0c",
             "text": "At the beginning of each end step, if you rolled a die this turn,\nAugment {4}{G} ({4}{G}, Reveal this card from your hand: Combine it with target host. Augment only as a sorcery.)",
             "toughness": "+4",
             "type": "Creature — Hydra",
             "types": [
                 "Creature"
             ],
-            "uuid": "5a84cb1d-f523-5444-af6d-466abe207d4a"
+            "uuid": "6aa7ce60-3ecd-53c0-9587-bb9ab9ff2b62"
         },
         {
             "artist": "Ben Wootten",
@@ -7925,12 +8074,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152914,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1858cad492d99107",
             "text": "Target creature you control gets +2/+2 if it's a host or has augment. Then it fights target creature you don't control.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "b0688858-b6a3-5b8e-8436-be4fa7955560",
+            "uuid": "b1dc27ac-31d8-5a88-bc4d-a3bfb130cf4e",
             "watermark": "crossbreedlabs"
         },
         {
@@ -7974,12 +8124,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152507,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/564157a49de82e21",
             "text": "Search your library for a basic land card and reveal it. If there's a tree in its art, put it onto the battlefield tapped. Otherwise, put it into your hand. Then shuffle your library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "bc2e76ef-ea09-5f6e-8b48-cfa2f69610b2"
+            "uuid": "fb8ae814-8b6d-5ade-a9e3-52ed44b51a6f"
         },
         {
             "artist": "Kari Christensen",
@@ -8046,13 +8197,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152915,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/99e8dd40843542d3",
             "text": "Whenever a land enters the battlefield under your control,\nAugment {2}{G} ({2}{G}, Reveal this card from your hand: Combine it with target host. Augment only as a sorcery.)",
             "toughness": "+3",
             "type": "Creature — Wurm",
             "types": [
                 "Creature"
             ],
-            "uuid": "427b64f5-d488-5ee0-9660-214498915fde"
+            "uuid": "8657edff-becb-5521-b1aa-00f56171287e"
         },
         {
             "artist": "Hector Ortiz",
@@ -8103,13 +8255,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152694,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fc7e95e6d3f4131a",
             "text": "{0}: Choose one. You may activate this ability while Shellephant is in any zone.\n• Shellephant has base power and toughness 1/4.\n• Shellephant has base power and toughness 3/3.",
             "toughness": "?",
             "type": "Creature — Turtle and/or Elephant",
             "types": [
                 "Creature"
             ],
-            "uuid": "5afa6ce8-5ceb-50c7-ad21-e8494fd9398b",
+            "uuid": "e217b951-3dda-5cec-acfd-81fe87897d1a",
             "watermark": "crossbreedlabs"
         },
         {
@@ -8172,13 +8325,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152510,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/451a128d7f3e04a8",
             "text": "Just a second (As long as this spell is on the stack, players can't move cards on the battlefield.)\nSlaying Mantis enters the battlefield by being thrown from a distance of at least three feet.\nWhen Slaying Mantis enters the battlefield, it fights each creature an opponent controls that it touched as it entered.",
             "toughness": "6",
             "type": "Creature — Insect Wrestler",
             "types": [
                 "Creature"
             ],
-            "uuid": "3248d8da-3e21-5e2a-af93-c04dda684012",
+            "uuid": "071c8768-7f2b-5aca-8cdc-a88c9c9574c9",
             "watermark": "crossbreedlabs"
         },
         {
@@ -8232,13 +8386,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153212,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/25cc1d116af8db9e",
             "text": "When Squirrel Dealer enters the battlefield, ask a person outside the game \"Do you like Squirrels?\" If they do, create a 1/1 green Squirrel creature token.",
             "toughness": "1",
             "type": "Creature — Raccoon Lizard Bird",
             "types": [
                 "Creature"
             ],
-            "uuid": "293f4d06-8b6d-54d9-986e-2fbbe05d5756",
+            "uuid": "94460aa5-65eb-5d05-a9e3-22126024dc67",
             "watermark": "crossbreedlabs"
         },
         {
@@ -8277,13 +8432,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152472,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/23ed40c204ec4173",
             "text": "Whenever another Goblin enters the battlefield under your control, you may pay {1}. If you do, Steamflogger Service Rep assembles a Contraption. (Put the top card of your Contraption deck face up onto one of your sprockets.)",
             "toughness": "1",
             "type": "Creature — Goblin Rigger",
             "types": [
                 "Creature"
             ],
-            "uuid": "a6b192f2-e499-5c48-aa14-6be19760f7b2",
+            "uuid": "2f580aa3-1fed-5500-a0db-3f53bb454f6b",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -8327,13 +8483,14 @@
                 "Host"
             ],
             "tcgplayerProductId": 153187,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c3a1ce97a4e92bf4",
             "text": "When this creature enters the battlefield, search your library for a basic land card, reveal it, put it into your hand, then shuffle your library.",
             "toughness": "1",
             "type": "Host Creature — Crocodile",
             "types": [
                 "Creature"
             ],
-            "uuid": "f31ebbb8-646d-5b30-94d8-3b827f9f5c37"
+            "uuid": "01babc47-1278-5e25-a28c-b544f9d9d28d"
         },
         {
             "artist": "Dmitry Burmak",
@@ -8371,13 +8528,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152918,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dd020f7c3e07d12d",
             "text": "Reach\nWhenever you roll a 4 or higher on a die, put a +1/+1 counter on Willing Test Subject.\n{6}: Roll a six-sided die.",
             "toughness": "2",
             "type": "Creature — Spider Monkey Scientist",
             "types": [
                 "Creature"
             ],
-            "uuid": "73f830f5-eb6c-5d79-aee9-9c997ad5f5ed",
+            "uuid": "09ce76e1-3af5-5a5c-86d1-0dcf634c8d63",
             "watermark": "crossbreedlabs"
         },
         {
@@ -8436,13 +8594,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 152588,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/58ea24389d62b069",
             "text": "Baron Von Count enters the battlefield with a doom counter on \"5.\"\nWhenever you cast a spell with the indicated numeral in its mana cost, text box, power, or toughness, move the doom counter one numeral to the left.\nWhen the doom counter moves from \"1,\" destroy target player and put that doom counter on \"5.\"",
             "toughness": "3",
             "type": "Legendary Creature — Human Villain",
             "types": [
                 "Creature"
             ],
-            "uuid": "14fa05de-3e1c-5018-b205-f68b5d52b751",
+            "uuid": "b397a38c-70dd-578e-8a75-1e52863e8999",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -8511,12 +8670,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152664,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c577bd63aa9e4fbb",
             "text": "A person outside the game becomes your teammate. (Choose any number of cards in your hand, on top of your library, or on the battlefield under your control. Those cards become your teammate's hand, library, and permanents, respectively.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "d2e4a5f4-1a69-572d-a27a-3e833efbbe8b",
+            "uuid": "e88d3b03-05dd-5b52-929a-57ed75941f45",
             "watermark": "crossbreedlabs"
         },
         {
@@ -8561,12 +8721,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 153121,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ef807e4ca05152a4",
             "text": "At the beginning of each opponent's upkeep, that player moves a permanent they control to touch Cramped Bunker and no other permanents. If the player can't, destroy each permanent they control that isn't touching Cramped Bunker, then sacrifice it.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "ab2de2d0-7181-54c6-b678-4561d2378a7e"
+            "uuid": "56231aca-8335-587a-8d01-2d71729db4b0"
         },
         {
             "artist": "Simon Dominic",
@@ -8604,13 +8765,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 152691,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9dde07c9accd92aa",
             "text": "Dr. Julius Jumblemorph is every creature type (even if this card isn't on the battlefield).\nWhenever a host enters the battlefield under your control, you may search your library and/or graveyard for a card with augment and combine it with that host. If you search your library this way, shuffle it.",
             "toughness": "4",
             "type": "Legendary Creature",
             "types": [
                 "Creature"
             ],
-            "uuid": "61c4452f-5b64-5334-a68e-c3990edb1732",
+            "uuid": "2b20b102-691d-5f42-9016-518b8b355ea7",
             "watermark": "crossbreedlabs"
         },
         {
@@ -8669,12 +8831,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 152473,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9039d6628648d137",
             "text": "When The Grand Calcutron enters the battlefield, each player's hand becomes a program (an ordered row of revealed cards).\nPlayers can only play the first card of their program.\nIf a card would be put into a player's hand from anywhere, that player reveals it and places it anywhere within their program instead.\nAt the beginning of each player's end step, if that player's program has fewer than five cards, they draw cards equal to the difference.",
             "type": "Legendary Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "9295f03f-d943-55d7-b7bc-a37113069511",
+            "uuid": "abf10e3a-ea9e-5370-885e-6e108004c644",
             "watermark": "orderofthewidget"
         },
         {
@@ -8733,13 +8896,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 152511,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a9ffaeee82c65cb4",
             "text": "Combined, enchanted, and equipped creatures you control have menace.\n{3}{B}{R}, {T}: Put two target creature cards from graveyards onto the battlefield combined into one creature under your control. (Its power is equal to their total power, its toughness is equal to their total toughness, and it has their names, mana costs, types, text boxes, etc.)",
             "toughness": "4",
             "type": "Legendary Creature — Zombie Villain",
             "types": [
                 "Creature"
             ],
-            "uuid": "29fc7e91-ee9b-5819-ad8c-d256a13bbaab",
+            "uuid": "120f8b45-9e18-5491-99e7-71f0c85995c4",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -8789,12 +8953,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152930,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/79f2220b123acfe2",
             "text": "You have ten seconds to look at and rearrange the cards in your library. At the end of those ten seconds, if you're touching one or more of those cards, shuffle your library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "4f54354b-d03d-50b4-9ce1-79ff0a5c4271",
+            "uuid": "a2f3c277-4b1c-54e1-b632-fdf4f743b07a",
             "watermark": "orderofthewidget"
         },
         {
@@ -8861,13 +9026,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 152916,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/de879ee77c71f02f",
             "text": "When Ol' Buzzbark enters the battlefield, roll X six-sided dice onto the battlefield from a height of at least X inches. For each die, put a number of +1/+1 counters equal to the result on each creature you control that die is touching. For each die, Ol' Buzzbark deals damage equal to the result to each creature an opponent controls that die is touching.",
             "toughness": "3",
             "type": "Legendary Creature — Goblin Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "5bdf5b1f-55ac-5e99-9345-1f8365dcd06f",
+            "uuid": "2d2b091f-97d0-5953-ae91-358569bd6cfd",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -8939,13 +9105,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 152988,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a9ed914c5cf2d703",
             "text": "Phoebe, Head of S.N.E.A.K. can't be blocked by creatures with flavor text.\n{2}{U}{B}: Phoebe permanently steals target creature's text box. (That creature loses all rules text, flavor text, and watermarks. This creature gains them.)",
             "toughness": "3",
             "type": "Legendary Creature — Human Spy",
             "types": [
                 "Creature"
             ],
-            "uuid": "966b748b-3db0-5621-80c8-7df1ccaa294c",
+            "uuid": "bc893ecf-6baf-51ca-8786-c71f553d43ce",
             "watermark": "agentsofsneak"
         },
         {
@@ -9009,12 +9176,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 153079,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2363dd037f65d6ff",
             "text": "+1: Head to AskUrza.com and click +1.\n-1: Head to AskUrza.com and click -1.\n-6: Head to AskUrza.com and click -6.",
             "type": "Legendary Planeswalker — Urza",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "8e6d98b5-0bee-5403-a45c-5144407170af"
+            "uuid": "86124b1e-2d20-54e8-a501-910750e11b10"
         },
         {
             "artist": "Dmitry Burmak",
@@ -9072,13 +9240,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 152969,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2b2bddc0dfadf9f9",
             "text": "As long as X is in X's owner's opponent's hand, X's owner may cast X and activate X's abilities. That opponent can't cast X and plays with their hand revealed.\n{U}{B}, {T}: Put X into target opponent's hand.\n{3}{U}{B}: You may play a card in the same hand as X without paying its mana cost.",
             "toughness": "2",
             "type": "Legendary Creature — Human Spy",
             "types": [
                 "Creature"
             ],
-            "uuid": "d201d4d8-fb92-5615-afed-9cde1cbea362",
+            "uuid": "bd36d488-e6b5-5cdc-b574-1c66413857ae",
             "watermark": "agentsofsneak"
         },
         {
@@ -9133,13 +9302,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 152512,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/33b8eef68092c6b1",
             "text": "{1}{B/R}: Switch a Killbot or Mary O'Kill in your hand with one on the battlefield. (If a creature is tapped, the switched creature is tapped. The same is true for untapped, attacking, blocking, enchanted, equipped, and targeted. Any counters on a creature are on the switched creature instead.)",
             "toughness": "5",
             "type": "Legendary Creature — Human Villain",
             "types": [
                 "Creature"
             ],
-            "uuid": "03df81b8-278d-5518-98bb-406c45550ff7",
+            "uuid": "d151b1d3-5732-5eb0-9102-28a15091f6f5",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -9179,6 +9349,7 @@
                 "Host"
             ],
             "tcgplayerProductId": 153177,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/290fdc9bf803c93f",
             "text": "Flying\nWhen this creature enters the battlefield, you may destroy target nonland permanent.",
             "toughness": "4",
             "type": "Artifact Host Creature — Angel",
@@ -9186,7 +9357,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "d14694a3-df35-5c64-90b9-f0b7cbe085dd"
+            "uuid": "c95d005f-933c-599b-9066-4ba8a20e5632"
         },
         {
             "artist": "Chris Seaman",
@@ -9223,6 +9394,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153130,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3ac83b3c0e88b26b",
             "text": "Whenever you cast a silver-bordered spell, put a +1/+1 counter on Border Guardian.\nWhenever you cast a black-bordered spell, Border Guardian can't be blocked this turn.\nWhenever you cast a white-bordered spell, Border Guardian gains double strike until end of turn.",
             "toughness": "1",
             "type": "Artifact Creature — Knight",
@@ -9230,7 +9402,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "8a7fc84f-b676-5490-84f0-b910f06407f0",
+            "uuid": "104434a4-4237-57b5-a5f1-07d74c358213",
             "watermark": "orderofthewidget"
         },
         {
@@ -9260,12 +9432,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152672,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c2ecba6a6e283993",
             "text": "As Buzzing Whack-a-Doodle enters the battlefield, you and an opponent each secretly choose Whack or Doodle. Then those choices are revealed. If the choices match, Buzzing Whack-a-Doodle has that ability. Otherwise, it has Buzz.\n• Whack — {T}: Target player loses 2 life.\n• Doodle — {T}: You gain 3 life.\n• Buzz — {2}, {T}: Draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "37fd618e-c5d6-593b-88cd-68742b0eaaaa"
+            "uuid": "d7d62a28-dd64-576c-9bbb-8736f588a32a"
         },
         {
             "artist": "Tom Babbey",
@@ -9304,12 +9477,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152424,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/043c9a140484b1f4",
             "text": "{4}, {T}: Move the CRANK! counter to your Contraption deck's next sprocket and crank any number of that sprocket's Contraptions.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "aca9cf9b-ba37-5bfa-80d2-421711cd506c",
+            "uuid": "278a5afe-6785-5e30-afa7-d6499753ef48",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -9349,6 +9523,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152975,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/205a7c133ac26446",
             "text": "Flying\n{4}: Reassemble target Contraption you control. (Move it onto another one of your sprockets.)",
             "toughness": "1",
             "type": "Artifact Creature — Gnome Rigger",
@@ -9356,7 +9531,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "6339d3de-5a71-53b2-8ac0-7f9d639ed32c",
+            "uuid": "6be1f07f-7b43-54fb-996d-3ed748063965",
             "watermark": "orderofthewidget"
         },
         {
@@ -9387,12 +9562,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 153157,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/afc1d8e7bf209fe5",
             "text": "{2}, Sacrifice Contraption Cannon: It deals damage to any target equal to the number of Contraptions you control.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "ca7009d3-b2e2-53cf-89f4-7885cfbdb591",
+            "uuid": "102d27d5-7f1c-5652-aa02-050c53922589",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -9426,13 +9602,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152513,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d9b2c03cb2c62709",
             "toughness": "1",
             "type": "Artifact Creature — Killbot",
             "types": [
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "d1224ee5-d135-5052-92a5-6280f4920c52",
+            "uuid": "b271b842-3a80-5382-ae57-749656f28967",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -9466,13 +9643,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154459,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/83c5e7092011cffb",
             "toughness": "1",
             "type": "Artifact Creature — Killbot",
             "types": [
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "6214934c-8728-50fd-b590-988710c35d9e",
+            "uuid": "e1da2337-7461-5468-882d-6671b40a3515",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -9506,13 +9684,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154460,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4c737de369b57678",
             "toughness": "1",
             "type": "Artifact Creature — Killbot",
             "types": [
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "28461405-3b0b-55e0-8783-14ed53082252",
+            "uuid": "e5e0f1a4-663b-5569-a9d3-c8629b785c3f",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -9546,13 +9725,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 154461,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3164bb9a84a23570",
             "toughness": "1",
             "type": "Artifact Creature — Killbot",
             "types": [
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "b49d3970-3e80-5a82-bceb-c31f8ee55d9b",
+            "uuid": "1ff8596b-a673-5fe7-a71e-8aab129cae7f",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -9594,12 +9774,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152926,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/79b1a32cea548a90",
             "text": "During your turn, if Entirely Normal Armchair is in your hand, you may hide it on the battlefield.\n{0}: Return Entirely Normal Armchair to its owner's hand. Only any opponent may activate this ability and only if they see Entirely Normal Armchair.\n{2}, Sacrifice Entirely Normal Armchair: Destroy target attacking creature.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "86660aa7-f613-515b-b7fe-55c2ccf49ddf",
+            "uuid": "27fbf066-8538-5ebd-921c-b725d7790760",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -9642,7 +9823,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "74ab6b6b-329e-5100-8aae-ac9b86562e6f"
+            "uuid": "cf2182df-5a62-5aa2-a340-6be74bc8e579"
         },
         {
             "artist": "Chris Seaman",
@@ -9671,12 +9852,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 154441,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fae214cb3a23305b",
             "text": "{2}, {T}: Draw a card. Activate this ability only if you have no cards in hand.\n{8}, {T}: You gain 10 life.\n{4}, {T}, Sacrifice Everythingamajig: You may put a silver-bordered permanent card from your hand onto the battlefield.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "19f800ae-2a63-54ea-b705-4e0ed67fda3b"
+            "uuid": "2994bf57-fc51-518d-9c7f-0ca4887c09e5"
         },
         {
             "artist": "Chris Seaman",
@@ -9705,12 +9887,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 154443,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/48748379191660e7",
             "text": "{1}: Flip a coin. If you win the flip, add {C}{C}. Activate this ability only any time you could cast an instant.\n{3}, {T}: Target player discards a card. Activate this ability only during your turn.\n{X}: Everythingamajig becomes an X/X Construct artifact creature until end of turn.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "8aa09cd2-65ad-5cc9-873b-958c028e2100"
+            "uuid": "4644cfd4-cc09-519e-8f7c-d0fccd995261"
         },
         {
             "artist": "Chris Seaman",
@@ -9744,12 +9927,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 154445,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/73b74b7f6ff71658",
             "text": "{T}: Add one mana of any color.\n{1}, {T}: Say the flavor text on a card in your hand. Target opponent guesses that card's name. You may reveal that card. If you do and your opponent guessed wrong, draw a card.\n{8}, {T}: Everythingamajig deals 12 damage to target creature.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "d0548c38-f005-52b7-8ffe-2677964d2082"
+            "uuid": "aebca870-b782-5772-83d9-47e7a8fea6fa"
         },
         {
             "artist": "Chris Seaman",
@@ -9783,12 +9967,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 154448,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7473e46a713610f3",
             "text": "Sacrifice a land: You gain 2 life.\nSacrifice a creature: Add {C}{C}.\n{2}, Discard a card: Search your library for a card that shares a complete word in its name with the name of the discarded card, reveal it, put it into your hand, then shuffle your library.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "a46396cc-ba83-5072-a4e2-4dd4ddb3e2b6"
+            "uuid": "9a97ea68-b7f0-5ff3-8293-e46d95c5fac8"
         },
         {
             "artist": "Chris Seaman",
@@ -9826,12 +10011,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 154452,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ab6e68bd72ae7dcf",
             "text": "{1}, {T}: Scry 2.\n{1}, {T}, Pay 1 life: Create a 0/1 white Goat creature token.\n{7}, {T}, Sacrifice Everythingamajig: Choose target player. At the beginning of the next end step, exchange life totals with that player, exchange control of all permanents you and that player control, and exchange cards in your hands, cards in your libraries, and cards in your graveyards.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "99938e20-c52e-5353-aa62-5a30a871c22f"
+            "uuid": "ecb45dfb-67b8-5a20-8957-2cb86b4a998a"
         },
         {
             "artist": "Sean Murray",
@@ -9871,6 +10057,7 @@
                 "Host"
             ],
             "tcgplayerProductId": 153202,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/17ed7464e76e9b49",
             "text": "When this creature enters the battlefield, create a 1/1 colorless Gnome artifact creature token.",
             "toughness": "2",
             "type": "Artifact Host Creature — Construct",
@@ -9878,7 +10065,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "0a00b2e7-7dc2-58f0-94e4-09900702aad3"
+            "uuid": "d74517bb-29ac-5d93-8fbe-03ad2395cb94"
         },
         {
             "artist": "Mike Burns",
@@ -9917,12 +10104,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152977,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/08c199def910a6d5",
             "text": "{2}, {T}: Create a 2/2 colorless Homunculus creature token. It must be represented by a unique hand and two fingers at all times, or it ceases to exist.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "23c9a501-ce50-5b4b-a2ac-35b0f2a63426",
+            "uuid": "237e99fe-2895-5690-bc86-14f1559028be",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -9984,12 +10172,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 152917,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/88247dfbc26f8206",
             "text": "{5}, {T}, Sacrifice Kindslaver: A person outside the game controls target player during that player's next turn. Neither player may advise that person until the end of that turn.",
             "type": "Legendary Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "982e5434-e9df-5df8-b07a-050cd9874d29"
+            "uuid": "bff1eeef-0fa2-5824-a312-869f41ecd7b5"
         },
         {
             "artist": "Jeff Miracola",
@@ -10042,12 +10231,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 152919,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8dfd1c6d3385bf73",
             "text": "If you would roll a die, instead roll two of those dice and ignore one of those results.",
             "type": "Legendary Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "53ed6360-8b3a-5405-81dd-dea2b8fdf3ec",
+            "uuid": "ba2ee72b-50a8-52b7-b982-6b2edc68e7ca",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -10087,6 +10277,7 @@
                 "Host"
             ],
             "tcgplayerProductId": 152695,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e39d11e6c1189da6",
             "text": "When this creature enters the battlefield, return target host card or card with augment from your graveyard to your hand.",
             "toughness": "3",
             "type": "Artifact Host Creature — Hound",
@@ -10094,7 +10285,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "b7c5a21d-0fe3-5dda-a813-de3c30ef56e4"
+            "uuid": "9b787dbd-f491-5963-95a4-f5d6bea843fc"
         },
         {
             "artist": "Dmitry Burmak",
@@ -10126,12 +10317,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153170,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/47aea826ae4d7464",
             "text": "Equipped creature has \"{T}: This creature deals 1 damage to target player or planeswalker. Roll a six-sided die. On a 5 or higher, untap it.\"\nEquip {2}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "c11a0a8d-484d-5dbf-9302-22793b782e58",
+            "uuid": "f4a50e88-8a5b-5749-8a03-da622be525e1",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -10162,12 +10354,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 153147,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0eef28c73200c552",
             "text": "{T}: Roll a six-sided die. On a 3 or lower,\ntarget player adds {C}. Otherwise, that player adds one mana of any color they choose.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "4905c6cc-7415-5783-93b2-b7dc06a808c6",
+            "uuid": "188a6c02-3cbe-5a26-b350-2f0f70fa6673",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -10217,6 +10410,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152920,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/433c24be35a57bed",
             "text": "Whenever an opponent casts a spell, you have five seconds to choose a keyword you haven't chosen for a card named Modular Monstrosity today that's been printed on a creature card. If you do, Modular Monstrosity gains that ability. Otherwise, Modular Monstrosity loses all keyword abilities.",
             "toughness": "3",
             "type": "Artifact Creature — Construct",
@@ -10224,7 +10418,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "a6679b2f-335d-5adb-ae47-204bdcd76f29"
+            "uuid": "8b449ecb-643c-58cd-a685-217258a7f102"
         },
         {
             "artist": "Tom Babbey",
@@ -10264,12 +10458,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152921,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1a050428cdc1f66e",
             "text": "Equipped creature gets +2/+1 and has protection from die rolls. (Nothing that lets a player roll a die can block, target, deal damage to, or attach to equipped creature.)\nEquip {2}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "e48e5c96-35ca-5841-a9bb-289444fe8003",
+            "uuid": "774f0b82-5c2d-5364-815d-65d596d9d90f",
             "watermark": "crossbreedlabs"
         },
         {
@@ -10330,6 +10525,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153183,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/538dd80905c0c184",
             "text": "At the beginning of each end step, if an artifact entered the battlefield under your control this turn,\nAugment {2} ({2}, Reveal this card from your hand: Combine it with target host. Augment only as a sorcery.)",
             "toughness": "+1",
             "type": "Artifact Creature — Construct",
@@ -10337,7 +10533,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "5c5d2dee-ca07-576d-bf52-2caa05cc2d02"
+            "uuid": "4e6af147-c98c-5fab-b7b9-6d81a0938776"
         },
         {
             "artist": "Simon Dominic",
@@ -10387,12 +10583,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152505,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4943f5c1c1ee2603",
             "text": "When Split Screen enters the battlefield, shuffle your library and deal it into four libraries. If anything refers to your library, choose one of your libraries for it.\nPlay with your libraries' top cards revealed.\nWhen Split Screen leaves the battlefield, shuffle your libraries together.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "4526d7cf-0e0b-5bea-85ce-e710baeec99a",
+            "uuid": "3d864668-c19c-53c2-bb61-d2f3b24323f8",
             "watermark": "agentsofsneak"
         },
         {
@@ -10423,12 +10620,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 153122,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/78142cbb832caa18",
             "text": "As Staff of the Letter Magus enters the battlefield, choose a consonant other than N, R, S, or T.\nWhenever a player casts a spell, you gain 1 life for each time the chosen letter appears in that spell's name.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "bb30a146-1cd5-54e8-a5c5-8f0b3f235c86"
+            "uuid": "f484f22a-534e-5b94-ae87-20ce3aba41a6"
         },
         {
             "artist": "Zoltan Boros",
@@ -10458,12 +10656,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152234,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/82cc3ec41cf4d5df",
             "text": "As Stamp of Approval enters the battlefield, choose a watermark.\nCreatures you control with the chosen watermark get +1/+1.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "ae906cc2-d87d-59be-b90e-64e5abc70ea6"
+            "uuid": "e7880ce1-52ab-5255-9988-92d352b0aaab"
         },
         {
             "artist": "Carl Critchlow",
@@ -10523,6 +10722,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153192,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cbfc0e1b757ea1c5",
             "text": "{5}:\nAugment {4} ({4}, Reveal this card from your hand: Combine it with target host. Augment only as a sorcery.)",
             "toughness": "+4",
             "type": "Artifact Creature — Construct",
@@ -10530,7 +10730,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "aadad3ea-c8b8-5995-a7d0-f0e14a0e4026"
+            "uuid": "854bbe9e-4996-57ce-822e-b61560522c89"
         },
         {
             "artist": "Carl Critchlow",
@@ -10572,6 +10772,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153213,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4a927eac0e979297",
             "text": "Whenever you roll a 5 or higher on a die, Steel Squirrel gets +X/+X until end of turn, where X is the result.\n{6}: Roll a six-sided die.",
             "toughness": "1",
             "type": "Artifact Creature — Squirrel",
@@ -10579,7 +10780,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "ba745e3f-aedc-57bc-a248-e44197df088d"
+            "uuid": "5168848a-376f-515f-85ef-d355c9cd433e"
         },
         {
             "artist": "Chris Rahn",
@@ -10612,12 +10813,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152361,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ff044c226c1dabcc",
             "text": "Equipped creature gets +2/+2 and has protection from Rogues and from Clerics.\nWhenever equipped creature deals combat damage to a player, create a 4/4 gold Dragon creature token with flying and roll a d20 (a twenty-sided die). If you roll a 20, repeat this process.\nEquip {2}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "d8b22f69-28d9-51fc-8aae-49f31a71b03b"
+            "uuid": "338b180a-8f64-5f6b-8055-e8c70f62ca6b"
         },
         {
             "artist": "Matt Dixon",
@@ -10656,6 +10858,7 @@
                 "Host"
             ],
             "tcgplayerProductId": 153155,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6c6baa047a529f88",
             "text": "When this creature enters the battlefield, put a +1/+1 counter on target creature.",
             "toughness": "1",
             "type": "Artifact Host Creature — Construct",
@@ -10663,7 +10866,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "0368aa45-aa18-5d91-8fde-33d2cba5f7a0"
+            "uuid": "fc2bc4a8-6534-5a28-b2d4-6a600f8a8ec9"
         },
         {
             "artist": "John Thacker",
@@ -10696,7 +10899,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "f12fcebe-4b46-5791-b0d3-a60c0d8ffb9a",
+            "uuid": "5ae52043-dc18-5593-9fe2-a8a453d8aa03",
             "watermark": "orderofthewidget"
         },
         {
@@ -10726,12 +10929,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 153073,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/74c7da47f15fdeb2",
             "text": "{T}: Add {C}.\n{T}: Add one mana of any color. Spend this mana only to cast a spell that shares a watermark with Secret Base.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "4ed14ed6-84e1-5891-bb4e-bf4d6120cc6e",
+            "uuid": "42bb41ee-de4f-5883-b3cf-5917b0db1793",
             "watermark": "agentsofsneak"
         },
         {
@@ -10761,12 +10965,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 154439,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/82b10341348e6c8e",
             "text": "{T}: Add {C}.\n{T}: Add one mana of any color. Spend this mana only to cast a spell that shares a watermark with Secret Base.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "5c499d7f-6919-5311-8329-b4a13afb15dc",
+            "uuid": "40961dd5-c024-5270-b8c6-e747a4487d43",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -10796,12 +11001,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 154440,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e900f89a0f561521",
             "text": "{T}: Add {C}.\n{T}: Add one mana of any color. Spend this mana only to cast a spell that shares a watermark with Secret Base.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "e269d737-6fcd-516f-9c62-fc59c377911a",
+            "uuid": "38fcb53b-5236-5669-b4c1-dca401a0585a",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -10831,12 +11037,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 154442,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dba0eb708904200c",
             "text": "{T}: Add {C}.\n{T}: Add one mana of any color. Spend this mana only to cast a spell that shares a watermark with Secret Base.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "4b8440ce-6e51-5664-9603-bdebd0b22d4f",
+            "uuid": "12ac651f-ee46-55b5-9cc3-1a4862095696",
             "watermark": "crossbreedlabs"
         },
         {
@@ -10866,12 +11073,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 152362,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/11fe56b4651c7759",
             "text": "{T}: Add {C}{C}. Spend this mana only to cast spells with watermarks.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "bae55308-1beb-5452-b293-2ca0403c126a"
+            "uuid": "499fe408-2aae-5035-b2d9-8839e4976bc9"
         },
         {
             "artist": "Ralph Horsley",
@@ -10950,12 +11158,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153169,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2efbbf8375f55b99",
             "text": "Whenever you crank Accessories to Murder, target creature gets +X/+0 until end of turn, where X is the number of creatures you control.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "558e7574-3194-51f8-b492-c621d5eb576c",
+            "uuid": "7ea93330-8f10-5d2f-96cd-fc61d452f357",
             "watermark": "agentsofsneak"
         },
         {
@@ -11035,12 +11244,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153114,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fc8de4f27d370692",
             "text": "Whenever you crank Applied Aeronautics, until end of turn, target creature gets +1/+0, gains flying, and becomes an artifact in addition to its other types.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "ac730b51-ab90-5faf-8b18-d94b57fbe66b",
+            "uuid": "d72e977d-310b-5e5f-b815-811d6aeaf259",
             "watermark": "orderofthewidget"
         },
         {
@@ -11120,12 +11330,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153207,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ab4ce6166c17dbcd",
             "text": "Whenever you crank Arms Depot, put two +1/+1 counters on target creature.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "b80e5ba1-a854-5533-b5db-dd1bba04dff2",
+            "uuid": "801e152a-9161-5c9f-9ddf-14ee573b02f3",
             "watermark": "crossbreedlabs"
         },
         {
@@ -11205,12 +11416,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153151,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2247f2599c9b6c04",
             "text": "Whenever you crank Auto-Key, until end of turn, target creature becomes an artifact in addition to its other types and gains \"{T}: You gain 3 life.\"",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "5fa30ec3-ac9f-5692-80f1-fcafc74f3491",
+            "uuid": "926c9392-c63a-56ef-8c11-b92ba8e05504",
             "watermark": "orderofthewidget"
         },
         {
@@ -11290,12 +11502,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152363,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7c9b2125c2ca2d01",
             "text": "Whenever you crank Bee-Bee Gun, until end of turn, target creature gains \"{2}: This creature fights another target creature.\"",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "3cebe4d2-4eca-5e86-969e-6eab36715f6c",
+            "uuid": "d57ed0db-c455-5942-8b3a-a29d33166de1",
             "watermark": "crossbreedlabs"
         },
         {
@@ -11375,12 +11588,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152423,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8b1533b61fa5fed0",
             "text": "Whenever you crank Boomflinger, roll two six-sided dice. Boomflinger deals damage to target player or planeswalker equal to the difference between those results.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "aea3f976-1f38-5bee-9184-5a1b4853bb76",
+            "uuid": "194d2623-63ef-50c8-b8d0-b2f6b8e77fa8",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -11460,12 +11674,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153193,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/732341103b0a2ba8",
             "text": "Whenever you crank Buzz Buggy, target creature gets +2/+0 and gains trample until end of turn.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "3fa0dc63-e67d-5157-b414-15074a2e193b",
+            "uuid": "5b5592ec-33ef-5cd2-a30b-22fb18bc24fa",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -11545,12 +11760,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153179,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bf167cf53de7ce3e",
             "text": "Whenever you crank Deadly Poison Sampler, until end of turn, target creature gains \"Whenever this creature deals combat damage to a player, destroy target creature that player controls.\"",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "d0cf48d4-5d4b-5eb4-9b37-ba06ad76ef70",
+            "uuid": "432ff242-27ea-51c2-8a19-570dfd06426b",
             "watermark": "agentsofsneak"
         },
         {
@@ -11630,12 +11846,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153153,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2396eef17a54adeb",
             "text": "Whenever you crank Dictation Quillograph, until end of turn, target creature gains \"Whenever this creature deals combat damage to a player, you may draw a card. If you do, discard a card.\"",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "ef5163e0-6da4-54cd-b115-98705e4ca336",
+            "uuid": "c3fecfae-942b-5c87-bc06-f357f480ed91",
             "watermark": "agentsofsneak"
         },
         {
@@ -11716,12 +11933,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153144,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4d8ac48603b9fb70",
             "text": "Whenever you crank Dispatch Dispensary, create a 2/2 black Rogue creature token with menace.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "8ed4199b-953d-5a72-880b-df38aecc76c1",
+            "uuid": "65a581d8-a580-56c9-860f-0f4a2f9dcfc3",
             "watermark": "agentsofsneak"
         },
         {
@@ -11801,12 +12019,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152425,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9648c7a9e11e39f6",
             "text": "Whenever you crank Division Table, target player loses 2 life.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "75900c2b-2db4-58d9-b6d3-32887baab372",
+            "uuid": "8b9b8576-e4b1-52b8-a813-513e165c764f",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -11886,12 +12105,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152364,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/40f0eb26a974e9a6",
             "text": "Whenever you crank Dogsnail Engine, target player gains life equal to the greatest power among creatures you control.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "f81e8221-adc6-572b-8666-05afe5024427",
+            "uuid": "334127bf-5880-528f-be23-2ac8eb0d5d5e",
             "watermark": "crossbreedlabs"
         },
         {
@@ -11971,12 +12191,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152426,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/66d3c898dacdfa25",
             "text": "Whenever you crank Dual Doomsuits, each time a source you control would deal damage this turn, it deals double that damage instead.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "272082fd-3a2b-555a-bd7a-c3567c2ef009",
+            "uuid": "8bbba25c-90f7-58b2-85a2-2eb8ec0f4361",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -12056,12 +12277,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153111,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dc07b3af4cc70d40",
             "text": "Whenever you crank Duplication Device, until end of turn, target creature becomes a copy of any creature on the battlefield, except it's an artifact in addition to its other types.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "8e5287c9-7055-567f-a85b-3795ad835300",
+            "uuid": "285dc9fb-18b8-52f9-a9c8-26e59a15a097",
             "watermark": "orderofthewidget"
         },
         {
@@ -12142,12 +12364,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153182,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/94d4e30bfe9bce2f",
             "text": "Whenever you crank Faerie Aerie, create two 1/1 blue Faerie Spy creature tokens with flying, haste, and \"Whenever this creature deals combat damage to a player, draw a card.\" Exile them at the beginning of the next end step.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "0f80ad5d-f75d-56cc-aa7c-628fabd7275a",
+            "uuid": "b60e885d-0dfe-5d5a-bfbf-4c821e877858",
             "watermark": "agentsofsneak"
         },
         {
@@ -12227,12 +12450,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152365,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8a1164ed7923d60a",
             "text": "Whenever you crank Genetic Recombinator, up to two target creatures each get +2/+2 until end of turn.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "1033707b-cb0b-5430-87d8-bd17b3e76106",
+            "uuid": "cca5c5a1-192e-55f9-9187-369cefa3d182",
             "watermark": "crossbreedlabs"
         },
         {
@@ -12313,12 +12537,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152922,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b34a7e301ba80c8f",
             "text": "Whenever you crank Gift Horse, roll two six-sided dice. Create a number of 1/1 red Goblin creature tokens equal to the difference between those results.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "0c52886e-f574-5e6d-9620-bf558c247b42",
+            "uuid": "b1ca0a2d-ab02-518f-80ae-95fcabfa3b9f",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -12399,12 +12624,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153131,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/147cebf7e4979b33",
             "text": "Whenever you crank Gnomeball Machine, create two 1/1 colorless Gnome artifact creature tokens.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "fb5fc2a4-7a7b-5067-b63b-0beb97cd124f",
+            "uuid": "16ac7475-8e20-510e-8226-df9c94a34d5f",
             "watermark": "orderofthewidget"
         },
         {
@@ -12484,12 +12710,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153146,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/842c932783f4b93f",
             "text": "Whenever you crank Goblin Slingshot, creatures you control get +2/+0 and gain trample until end of turn.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "ad7a3daa-eca7-5ea7-9e97-923e730f6af8",
+            "uuid": "65a661b8-2546-57ac-a959-b99678ad5eb8",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -12569,12 +12796,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153116,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/43869e4da72373d1",
             "text": "Whenever you crank Guest List, target creature gets -X/-X until end of turn, where X is the number of creature cards in its controller's graveyard.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "fb57500e-bb8c-5e7f-b156-817cdb9fe9fe",
+            "uuid": "1dc38477-b3ee-5af6-b454-e80233551012",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -12654,12 +12882,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152366,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/33dbe8955925bc44",
             "text": "Whenever you crank Hard Hat Area, roll two six-sided dice. Hard Hat Area assembles a number of Contraptions equal to the difference between those results. (To assemble a Contraption, put the top card of your Contraption deck face up onto one of your sprockets.)",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "56260dd7-5a44-5a3e-9b38-86a600a79cdc",
+            "uuid": "49b713da-86d7-5373-a1c6-22306cd4c2c7",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -12739,12 +12968,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153134,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3c54887530786b80",
             "text": "Whenever you crank Head Banger, target creature must be blocked this turn if able.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "92f117a5-3616-57c2-a95f-2efcbef99123",
+            "uuid": "76ab1919-ab1f-5631-a09e-23695d392062",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -12824,12 +13054,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153167,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5f8f355843050035",
             "text": "Whenever you crank Hypnotic Swirly Disc, target player puts the top X cards of their library into their graveyard, where X is the number of creatures you control.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "68b24385-7ef0-5c10-b3ba-24a4f12f2489",
+            "uuid": "fdfb6f29-c88b-5729-a00f-25c4cf8f685a",
             "watermark": "agentsofsneak"
         },
         {
@@ -12909,12 +13140,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152923,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f358038d41ecd26a",
             "text": "Whenever you crank Inflation Station, target creature gets +3/+3 until end of turn.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "b53cd2f0-cbcd-5f0b-98c9-3aac1f0d9fae",
+            "uuid": "7d41d9e9-fce2-544f-8837-074ef9d5c29b",
             "watermark": "crossbreedlabs"
         },
         {
@@ -12994,12 +13226,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153141,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ff53a9b5b87e5791",
             "text": "Whenever you crank Insufferable Syphon, target player discards a card.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "7cb045c1-3494-5115-9e19-cfdd24437c3d",
+            "uuid": "0c6ccafd-14fe-524a-a462-657a66cca327",
             "watermark": "agentsofsneak"
         },
         {
@@ -13079,12 +13312,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153154,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c886ec6b8feab387",
             "text": "Whenever you crank Jamming Device, creatures target player controls get -1/-1 until end of turn.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "b5fce6c0-3b06-5dc5-bded-500be10a95a8",
+            "uuid": "23d73e09-ee7d-5450-b3e3-8eab1b4ea049",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -13164,12 +13398,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153129,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/098d3264fe9bbf65",
             "text": "Whenever you crank Lackey Recycler, put target creature card from your graveyard on top of your library.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "8fe3a4d4-5b2f-5034-a4e0-698e2dfa94b1",
+            "uuid": "7cb8f56a-fdaa-5271-a2d5-9ecb64ec1033",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -13249,12 +13484,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153136,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1075c6f6f801770f",
             "text": "Whenever you crank Mandatory Friendship Shackles, target creature gets -1/-1 until end of turn.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "0094c5b8-b1c6-56b2-90d5-1f005a2aa022",
+            "uuid": "5aa31809-e3e6-58d8-8b56-f47a3f91445f",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -13334,12 +13570,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153120,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/60255f2b7b9cc5e3",
             "text": "Whenever you crank Neural Network, gain control of target creature an opponent controls with power less than or equal to the number of creature cards in its controller's graveyard until end of turn. Untap that creature. It gains haste until end of turn.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "0605e8f8-353a-582a-b4ca-ad66d7c7821c",
+            "uuid": "8ebfbe0a-7c9e-5b9c-9929-69c96de1f13d",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -13419,12 +13656,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153119,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/24ff4d25c9349497",
             "text": "Whenever you crank Oaken Power Suit, target creature gets +X/+X until end of turn, where X is the greatest power among creatures you control.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "b3f89902-d94b-5429-965e-8f03ef803490",
+            "uuid": "b75fc1c2-2c02-51d0-8560-dda2997fed95",
             "watermark": "crossbreedlabs"
         },
         {
@@ -13504,12 +13742,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153133,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0d32fc25e45f6335",
             "text": "Whenever you crank Optical Optimizer, until end of turn, target creature becomes an artifact in addition to its other types and gains \"{T}: Draw a card.\"",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "948cb355-9e59-5c08-b5dc-61da19f81e9e",
+            "uuid": "e852c0df-dd32-539f-9f61-44bae57eedc3",
             "watermark": "orderofthewidget"
         },
         {
@@ -13589,12 +13828,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153139,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2e684a0ccc63573e",
             "text": "Whenever you crank Pet Project, put target creature card from an opponent's graveyard onto the battlefield under your control.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "ec84d933-1683-5f0d-abf0-25c998c31334",
+            "uuid": "68a4e4fa-4ad3-59cf-83f1-5bdff0d472f6",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -13674,12 +13914,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152924,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/79467ce7898eff7c",
             "text": "Whenever you crank Quick-Stick Lick Trick, target creature gets +1/+1 and gains lifelink until end of turn.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "9dfc4136-bb25-55e9-9910-1e524f673be1",
+            "uuid": "d3023b92-3cdd-5647-a98e-60e4a3a7d18c",
             "watermark": "crossbreedlabs"
         },
         {
@@ -13760,12 +14001,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153127,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a0c79d294fcc75ea",
             "text": "Whenever you crank Rapid Prototyper, create an X/X colorless Construct artifact creature token, where X is the number of artifacts you control.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "9ca8160b-6dd8-5fd5-9bb2-6342a56f661d",
+            "uuid": "d78c7967-fdd1-5c9e-9551-21a4ef2a1d26",
             "watermark": "orderofthewidget"
         },
         {
@@ -13845,12 +14087,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153112,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d46cb51343896ed3",
             "text": "Whenever you crank Record Store, look at the top X cards of your library, where X is the number of artifacts you control. Put one of those cards into your hand and the rest on the bottom of your library in a random order.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "b363c8be-98e5-5380-b524-a67d84a3ecc1",
+            "uuid": "a44d1fb8-4dce-5952-b6d4-dff552ef68f2",
             "watermark": "orderofthewidget"
         },
         {
@@ -13930,12 +14173,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 152925,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f252c6a42baaa50a",
             "text": "Whenever you crank Refibrillator, return target creature card from your graveyard to your hand.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "0c4bc0e4-dc67-5453-aa35-0943465720d3",
+            "uuid": "d1b39fd8-22c4-5175-99c5-9109af088d99",
             "watermark": "crossbreedlabs"
         },
         {
@@ -14017,12 +14261,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153195,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/04b4c4120f58a633",
             "text": "Whenever you crank Sap Sucker, add {G}. Until end of turn, you don't lose this mana as steps and phases end.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "d222dfa3-a719-5882-a951-82b62239a122",
+            "uuid": "58b0f637-3c4e-5543-8d0d-640bad8b51c5",
             "watermark": "crossbreedlabs"
         },
         {
@@ -14102,12 +14347,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153149,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d3d101d746ed0adf",
             "text": "Whenever you crank Sundering Fork, destroy target artifact.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "ae2a2953-77a4-5f12-87ea-757a7ee1f11b",
+            "uuid": "961d2bf5-0c03-5cc7-8540-781d3e8ae690",
             "watermark": "leagueofdastardlydoom"
         },
         {
@@ -14187,12 +14433,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153113,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e713ebfecb8b5437",
             "text": "Whenever you crank Targeting Rocket, target creature blocks this turn if able.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "ed4ce80d-d39d-5fb5-bf54-880d072e5820",
+            "uuid": "30bb95f6-5da4-568f-979a-37cd82155057",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -14272,12 +14519,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153126,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/df61f49fa0306253",
             "text": "Whenever you crank Thud-for-Duds, roll two six-sided dice. Thud-for-Duds deals damage to target creature equal to the difference between those results.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "7c4c11bf-7189-5704-aab7-4af1c99aa16a",
+            "uuid": "8977695b-548f-5a25-a9c2-aabbb9cb82db",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -14357,12 +14605,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153124,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/848e6c8fe6a5aaca",
             "text": "Whenever you crank Top-Secret Tunnel, target creature can't be blocked this turn.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "62905dc4-7df4-59d2-a26d-b2db06805af2",
+            "uuid": "cbef4642-b96f-58d0-a04e-f2f910d02b5b",
             "watermark": "agentsofsneak"
         },
         {
@@ -14442,12 +14691,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153143,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8edea17038e5a0b6",
             "text": "Whenever you crank Tread Mill, until end of turn, target creature gets +1/+2, gains vigilance, and becomes an artifact in addition to its other types.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "76eec82b-f5bc-527e-9a0a-bae9876a5e9d",
+            "uuid": "296036cf-cee6-5203-b816-1ccc9652298d",
             "watermark": "orderofthewidget"
         },
         {
@@ -14527,12 +14777,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153166,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/580599c6ccc425ae",
             "text": "Whenever you crank Turbo-Thwacking Auto-Hammer, target creature gains double strike until end of turn.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "f3c68b0a-2568-5c6d-82b0-6849257196b7",
+            "uuid": "72730c04-9f9a-5c40-a4c0-c6f80492db7d",
             "watermark": "goblinexplosioneers"
         },
         {
@@ -14612,12 +14863,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153171,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8c03f57ac7b45c3b",
             "text": "Whenever you crank Twiddlestick Charger, tap or untap target creature.",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "e22e348e-0ee5-5a67-a268-3f2a2ba1cbc2",
+            "uuid": "0eac4e98-433e-564e-9c38-617146e28446",
             "watermark": "agentsofsneak"
         },
         {
@@ -14697,12 +14949,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 153125,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3c1469f818dc030b",
             "text": "Whenever you crank Widget Contraption, it assembles a Contraption. (Put the top card of your Contraption deck face up onto one of your sprockets.)",
             "type": "Artifact — Contraption",
             "types": [
                 "Artifact"
             ],
-            "uuid": "f24ab88e-e7ae-5c7c-87af-cc0de93b5887",
+            "uuid": "1ced717a-2484-5479-bef8-56e31553661c",
             "watermark": "orderofthewidget"
         },
         {
@@ -14785,6 +15038,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -14803,12 +15057,13 @@
                 "Basic"
             ],
             "tcgplayerProductId": 151824,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a42b9c85b2853db6",
             "text": "({T}: Add {W}.)",
             "type": "Basic Land — Plains",
             "types": [
                 "Land"
             ],
-            "uuid": "51db7b24-a2ab-514f-bd1b-8517682c9137"
+            "uuid": "ffae3650-ae70-5205-aeab-3e155379e288"
         },
         {
             "artist": "John Avon",
@@ -14854,7 +15109,6 @@
                 "C18",
                 "CM2",
                 "CMA",
-                "DDI",
                 "DDJ",
                 "DDM",
                 "DDN",
@@ -14890,6 +15144,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -14908,12 +15163,13 @@
                 "Basic"
             ],
             "tcgplayerProductId": 151825,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0497518ddca62826",
             "text": "({T}: Add {U}.)",
             "type": "Basic Land — Island",
             "types": [
                 "Land"
             ],
-            "uuid": "4eda828a-dab9-5b87-87e1-12646ce60c85"
+            "uuid": "724020e1-5af0-537c-a978-0fde7b3cbe17"
         },
         {
             "artist": "John Avon",
@@ -15011,12 +15267,13 @@
                 "Basic"
             ],
             "tcgplayerProductId": 151826,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8d344645a10c4aa5",
             "text": "({T}: Add {B}.)",
             "type": "Basic Land — Swamp",
             "types": [
                 "Land"
             ],
-            "uuid": "893d4b15-cdab-5d77-bbd9-41ee726d1003"
+            "uuid": "593fb6df-a453-59f2-bd06-7d04713a5064"
         },
         {
             "artist": "John Avon",
@@ -15097,6 +15354,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -15115,12 +15373,13 @@
                 "Basic"
             ],
             "tcgplayerProductId": 151827,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ed6e51ee28b3fd50",
             "text": "({T}: Add {R}.)",
             "type": "Basic Land — Mountain",
             "types": [
                 "Land"
             ],
-            "uuid": "6fb5913e-14ed-5173-a96f-9e81e1a15fcb"
+            "uuid": "c9978f18-abb4-5477-9b6d-73d985cfbaa0"
         },
         {
             "artist": "John Avon",
@@ -15199,6 +15458,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -15217,20 +15477,21 @@
                 "Basic"
             ],
             "tcgplayerProductId": 151828,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/59c285968be5b702",
             "text": "({T}: Add {G}.)",
             "type": "Basic Land — Forest",
             "types": [
                 "Land"
             ],
-            "uuid": "80d75634-e5a8-56b1-b667-2f364037d5a4"
+            "uuid": "7dfc5777-c194-56ca-b6c6-aeeb8af9e495"
         }
     ],
-    "code": "ust",
+    "code": "UST",
     "meta": {
-        "date": "2018-12-18",
-        "version": "4.2.0"
+        "date": "2018-01-12",
+        "version": "4.2.1"
     },
-    "mtgoCode": null,
+    "mtgoCode": "",
     "name": "Unstable",
     "releaseDate": "2017-12-08",
     "tcgplayerGroupId": 2092,
@@ -15253,7 +15514,7 @@
             "scryfallId": "c4b44a88-85e8-4f82-8968-cf1352f0fb87",
             "toughness": "1",
             "type": "Token Creature — Goat",
-            "uuid": "9132d99a-284c-53bf-b5f9-5fe334f31ec0"
+            "uuid": "3a21cdb3-aafa-5201-bc58-0ca200921142"
         },
         {
             "artist": "Dmitry Burmak",
@@ -15274,7 +15535,7 @@
             "text": "Flying, haste\nWhenever this creature deals combat damage to a player, draw a card.",
             "toughness": "1",
             "type": "Token Creature — Faerie Spy",
-            "uuid": "f679ab8d-64b1-5aff-8ee3-38aa11820f35",
+            "uuid": "eec4de54-3026-5014-80ac-a389096ad615",
             "watermark": "agentsofsneak"
         },
         {
@@ -15296,7 +15557,7 @@
             "text": "Flying",
             "toughness": "2",
             "type": "Token Creature — Bird",
-            "uuid": "bb73a785-7e59-5855-bd9e-bd199bf16ec9"
+            "uuid": "61a3ed40-1c1f-5aa6-af2e-e87fe469848a"
         },
         {
             "artist": "Emrah Elmasli",
@@ -15318,7 +15579,7 @@
             "text": "Menace",
             "toughness": "2",
             "type": "Token Creature — Rogue",
-            "uuid": "26e35155-6619-5adc-afac-723b81f1595a",
+            "uuid": "e9f7fac1-aaf3-5b92-a6e2-66c98c4e6886",
             "watermark": "agentsofsneak"
         },
         {
@@ -15339,7 +15600,7 @@
             "scryfallId": "af1a8115-127d-4268-a4d0-95360862e5fb",
             "toughness": "1",
             "type": "Token Creature — Brainiac",
-            "uuid": "3e6a2376-cc8f-54d9-ae24-25114e6462d1"
+            "uuid": "3edb5529-0895-5bd1-9852-365d42474f39"
         },
         {
             "artist": "Dave Allsop",
@@ -15361,7 +15622,7 @@
             "scryfallId": "6be4b0d5-b3f8-4a5d-8a38-eb0e1886f655",
             "toughness": "1",
             "type": "Token Creature — Goblin",
-            "uuid": "c3eee4e4-1650-59e5-b592-04f63e99fbba"
+            "uuid": "4c9633ee-7a49-52bb-b8a1-b18a63ff01d2"
         },
         {
             "artist": "John Thacker",
@@ -15383,7 +15644,7 @@
             "scryfallId": "53500f0f-ef65-4534-a8db-80ce73030bc1",
             "toughness": "1",
             "type": "Token Creature — Squirrel",
-            "uuid": "4ceee816-4da6-5cee-b823-575436d745a4"
+            "uuid": "cd0bc4fc-1d9a-5412-a763-2d8537606f91"
         },
         {
             "artist": "Autumn Rain Turkel",
@@ -15400,7 +15661,7 @@
             "text": "Flying",
             "toughness": "4",
             "type": "Token Creature — Dragon",
-            "uuid": "c56cab88-3f25-5a59-9dcf-8499258c7c1f"
+            "uuid": "15f1b0f6-e14b-5616-874c-22d18c45e051"
         },
         {
             "artist": "Matt Gaser",
@@ -15416,7 +15677,7 @@
             "scryfallId": "1935902c-d84f-496a-b9f1-f96d1f5e2b84",
             "toughness": "*",
             "type": "Token Artifact Creature — Construct",
-            "uuid": "d66300e2-61d8-5a44-a173-c8dce345196a"
+            "uuid": "2c544ad9-3561-51cd-b8e5-8b11858d50c5"
         },
         {
             "artist": "Dmitry Burmak",
@@ -15435,7 +15696,7 @@
             "scryfallId": "dbf33cc3-254f-4c5c-be22-3a2d96f29b80",
             "toughness": "1",
             "type": "Token Artifact Creature — Gnome",
-            "uuid": "4912bada-644b-5b37-99e2-6faad78f3b33"
+            "uuid": "9b2f5144-7b2b-5e6f-82ef-1de75df1a89d"
         }
     ],
     "totalSetSize": 268,

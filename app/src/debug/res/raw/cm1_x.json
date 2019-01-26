@@ -68,12 +68,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67184,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d31738afe02906ae",
             "text": "The owner of target permanent shuffles it into their library, then reveals the top card of their library. If it's a permanent card, they put it onto the battlefield.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "6bf780d0-6e74-522e-b01c-3a994100df2b"
+            "uuid": "34fd81e7-0781-5097-b365-ec5ee0f7b7e1"
         },
         {
             "artist": "Adam Paquette",
@@ -134,12 +135,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67191,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/347440105f85ca6c",
             "text": "{T}: Add one mana of any color in your commander's color identity.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "95326231-778c-5ac0-8c6d-035d048d2c8e"
+            "uuid": "ff93a7e0-dfe0-5055-b61f-f64314bc95f6"
         },
         {
             "artist": "Mathias Kollros",
@@ -197,12 +199,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67183,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/18e8d2b0e78d3611",
             "text": "Destroy all creatures. They can't be regenerated. Draw a card for each creature destroyed this way.\nCycling {3}{B}{B} ({3}{B}{B}, Discard this card: Draw a card.)\nWhen you cycle Decree of Pain, all creatures get -2/-2 until end of turn.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "4ba5e659-20db-550e-b101-f471eaf323ec"
+            "uuid": "63cd55ff-9a20-52a4-ad79-8d64c9883e84"
         },
         {
             "artist": "Richard Kane Ferguson",
@@ -261,12 +264,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67185,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e0fe3ea866643ccc",
             "text": "Counter target spell. If an artifact or creature spell is countered this way, put that card onto the battlefield under your control instead of into its owner's graveyard.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "6a99d97f-060c-5733-8de6-e0bf122afef1"
+            "uuid": "195ec4fa-1bcd-5895-943d-1fdd386d1f55"
         },
         {
             "artist": "Miao Aili",
@@ -320,13 +324,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 67179,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2f2bc75ee8eb0dbb",
             "text": "{T}: Destroy target creature of your choice, then destroy target creature of an opponent's choice. Activate this ability only during your turn, before attackers are declared.",
             "toughness": "1",
             "type": "Legendary Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "42f702e0-a49e-5423-bb47-45c19cffafb8"
+            "uuid": "11defafa-80a7-53aa-a607-f1aa8f7ca8c4"
         },
         {
             "artist": "Carl Critchlow",
@@ -385,13 +390,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67182,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e43b7c8861ca0d19",
             "text": "Reach\nWhenever an opponent casts a spell, create a 1/1 green Insect creature token.",
             "toughness": "6",
             "type": "Creature — Spider",
             "types": [
                 "Creature"
             ],
-            "uuid": "0acc5537-b7f9-55e1-b632-47bd4618b40c"
+            "uuid": "e32b28fb-c537-53e7-bb93-31f22d6ffae7"
         },
         {
             "artist": "Marco Nelor",
@@ -460,6 +466,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67181,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/23a9897414eaa70a",
             "text": "Imprint — When Duplicant enters the battlefield, you may exile target nontoken creature.\nAs long as a card exiled with Duplicant is a creature card, Duplicant has the power, toughness, and creature types of the last creature card exiled with Duplicant. It's still a Shapeshifter.",
             "toughness": "4",
             "type": "Artifact Creature — Shapeshifter",
@@ -467,7 +474,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "1209a47d-83fd-5537-aaaf-8f2baffb96c1"
+            "uuid": "3f40b6d4-737e-5c0d-9f07-73fdc96c7569"
         },
         {
             "artist": "Volkan Baga",
@@ -535,13 +542,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 67176,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cd4797d4a08283d8",
             "text": "Whenever a creature deals combat damage to one of your opponents, its controller may draw a card.",
             "toughness": "2",
             "type": "Legendary Creature — Elf Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "8fabda15-ed81-50f6-8864-be1bba7c8400"
+            "uuid": "88a34f33-a249-5e6f-bfef-91592398b807"
         },
         {
             "artist": "Michael Komarck",
@@ -609,13 +617,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 67174,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1b82c136e976ed39",
             "text": "Flying\nWhenever Kaalia of the Vast attacks an opponent, you may put an Angel, Demon, or Dragon creature card from your hand onto the battlefield tapped and attacking that opponent.",
             "toughness": "2",
             "type": "Legendary Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "7e31f3d6-86b5-5072-9c45-dfb77f60d390"
+            "uuid": "d75d96af-8355-5db6-b7cf-ee234ec72b8d"
         },
         {
             "artist": "Solomon Au Yeung",
@@ -669,13 +678,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 67180,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9fb851a830698a3e",
             "text": "Sacrifice Loyal Retainers: Return target legendary creature card from your graveyard to the battlefield. Activate this ability only during your turn, before attackers are declared.",
             "toughness": "1",
             "type": "Creature — Human Advisor",
             "types": [
                 "Creature"
             ],
-            "uuid": "c2a51eba-12c6-5173-a65b-96f441db5e0c"
+            "uuid": "b08f2877-1817-5325-93fc-388556fcfa60"
         },
         {
             "artist": "Thomas M. Baxa",
@@ -741,13 +751,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 67177,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f5183fd1165770c9",
             "text": "Creatures you control have haste.\nCascade, cascade (When you cast this spell, exile cards from the top of your library until you exile a nonland card that costs less. You may cast it without paying its mana cost. Put the exiled cards on the bottom of your library in a random order. Then do it again.)",
             "toughness": "5",
             "type": "Legendary Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "084ffda3-69aa-5210-8a87-dd052ab29201"
+            "uuid": "ae778e73-3f47-5498-841d-d207c5f3c92c"
         },
         {
             "artist": "Svetlin Velinov",
@@ -821,13 +832,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 67175,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0bf02ace7b61ffda",
             "text": "As The Mimeoplasm enters the battlefield, you may exile two creature cards from graveyards. If you do, it enters the battlefield as a copy of one of those cards with a number of additional +1/+1 counters on it equal to the power of the other card.",
             "toughness": "0",
             "type": "Legendary Creature — Ooze",
             "types": [
                 "Creature"
             ],
-            "uuid": "4a3811c4-ce8e-5597-ad92-f5a17647b42f"
+            "uuid": "923e25dc-d61c-5e6d-a4d3-3a60deff0465"
         },
         {
             "artist": "Karl Kopinski",
@@ -870,12 +882,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67190,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ed2a002c0a372911",
             "text": "Whenever an opponent draws a card, you may pay {1}. If you do, draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "c4574a09-7d16-5681-8633-29c8a161702b"
+            "uuid": "fd2e6698-e27f-520f-851d-90537fd731b0"
         },
         {
             "artist": "Volkan Baga",
@@ -926,12 +939,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67186,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8f975fdb9484bbec",
             "text": "Creatures you control get +1/+1.\nWhenever you tap a land for mana, add one mana of any type that land produced.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "c2d1d9af-854f-5bdc-8b11-19e02c1172c5"
+            "uuid": "cf525048-2165-55f5-8ef7-bd4ae6408be9"
         },
         {
             "artist": "Terese Nielsen",
@@ -965,6 +979,7 @@
             "originalType": "Enchantment",
             "printings": [
                 "CM1",
+                "J18",
                 "PCY",
                 "PRM",
                 "PZ1",
@@ -986,12 +1001,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67188,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7d43c167bb6d88cb",
             "text": "Whenever an opponent casts a spell, you may draw a card unless that player pays {1}.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "d23f26c6-36cb-59e7-8abb-45bd8b96c555"
+            "uuid": "db80fd77-4ede-5133-84db-8ef6ef624794"
         },
         {
             "artist": "Heather Hudson",
@@ -1037,12 +1053,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67189,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0074ba770b88dbfb",
             "text": "{1}, {T}: Exile any number of cards from your hand face down. Put that many cards from the top of your library into your hand. Then look at the exiled cards and put them on top of your library in any order.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "84ffa9ee-d9e4-5e59-9693-41eb000beb13"
+            "uuid": "f54ce97b-9e68-5d92-a561-c4954b34ece6"
         },
         {
             "artist": "Yeong-Hao Han",
@@ -1121,12 +1138,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 67187,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e5f412c826850dd8",
             "text": "At the beginning of your draw step, you may draw two additional cards. If you do, choose two cards in your hand drawn this turn. For each of those cards, pay 4 life or put the card on top of your library.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "7d6c1cdb-9db0-5743-9a2c-68b1c0eef022"
+            "uuid": "ebe1d39a-3b14-5f00-b2fa-ed7f3fc01ccf"
         },
         {
             "artist": "Allen Williams",
@@ -1184,22 +1202,23 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 67178,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9c9ab6f3fbccfeeb",
             "text": "Intimidate (This creature can't be blocked except by artifact creatures and/or creatures that share a color with it.)\nOther creatures you control have intimidate.\nWhenever Vela the Night-Clad or another creature you control leaves the battlefield, each opponent loses 1 life.",
             "toughness": "4",
             "type": "Legendary Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "aca13879-a89e-5127-9de0-3fe6f8a60818"
+            "uuid": "ebcb761b-e0ae-5100-a61c-9dfd72d71fce"
         }
     ],
-    "code": "cm1",
+    "code": "CM1",
     "isFoilOnly": true,
     "meta": {
-        "date": "2018-12-18",
-        "version": "4.2.0"
+        "date": "2018-01-12",
+        "version": "4.2.1"
     },
-    "mtgoCode": null,
+    "mtgoCode": "",
     "name": "Commander's Arsenal",
     "releaseDate": "2012-11-02",
     "tcgplayerGroupId": 568,

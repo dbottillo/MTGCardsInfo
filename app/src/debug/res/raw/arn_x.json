@@ -1,5 +1,5 @@
 {
-    "baseSetSize": 92,
+    "baseSetSize": 78,
     "boosterV3": [
         [
             "rare",
@@ -59,13 +59,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3160,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d31b04b46bdb26af",
             "text": "When Abu Ja'far dies, destroy all creatures blocking or blocked by it. They can't be regenerated.",
             "toughness": "1",
             "type": "Creature — Human",
             "types": [
                 "Creature"
             ],
-            "uuid": "0213a1ce-d4f0-5996-813b-0342e2c6f7a3"
+            "uuid": "1b709bd0-b38d-52b5-8143-bc4bf80d2e43"
         },
         {
             "artist": "Brian Snõddy",
@@ -92,7 +93,7 @@
             "manaCost": "{1}{W}{W}",
             "multiverseId": 969,
             "name": "Army of Allah",
-            "number": "2a",
+            "number": "2",
             "originalText": "All attacking creatures gain +2/+0 until end of turn.",
             "originalType": "Instant",
             "printings": [
@@ -104,62 +105,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3166,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/593543ef557c79fc",
             "text": "Attacking creatures get +2/+0 until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "66748a86-77e8-57cf-ab46-364d5e7bb4ff",
-            "variations": [
-                "257da641-a343-5991-ba9b-93b9076aa183"
-            ]
-        },
-        {
-            "artist": "Brian Snõddy",
-            "borderColor": "black",
-            "colorIdentity": [
-                "W"
-            ],
-            "colors": [
-                "W"
-            ],
-            "convertedManaCost": 3.0,
-            "flavorText": "On the day of victory no one is tired. —Arab proverb",
-            "foreignData": [],
-            "frameVersion": "1993",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "layout": "normal",
-            "legalities": {
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{1}{W}{W}",
-            "multiverseId": 970,
-            "name": "Army of Allah",
-            "number": "2b",
-            "originalText": "All attacking creatures gain +2/+0 until end of turn.",
-            "originalType": "Instant",
-            "printings": [
-                "ARN"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "scryfallId": "9899352a-a4c9-47bf-b9cb-0c34060ae1c4",
-            "subtypes": [],
-            "supertypes": [],
-            "tcgplayerProductId": 3166,
-            "text": "Attacking creatures get +2/+0 until end of turn.",
-            "type": "Instant",
-            "types": [
-                "Instant"
-            ],
-            "uuid": "257da641-a343-5991-ba9b-93b9076aa183",
-            "variations": [
-                "66748a86-77e8-57cf-ab46-364d5e7bb4ff"
-            ]
+            "uuid": "28c30f88-7b12-54bb-9438-ee6979934042"
         },
         {
             "artist": "Sandra Everingham",
@@ -222,13 +174,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3173,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/46957db596ec41cc",
             "text": "Banding (Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding you control are blocking or being blocked by a creature, you divide that creature's combat damage, not its controller, among any of the creatures it's being blocked by or is blocking.)\nAs long as Camel is attacking, prevent all damage Deserts would deal to Camel and to creatures banded with Camel.",
             "toughness": "1",
             "type": "Creature — Camel",
             "types": [
                 "Creature"
             ],
-            "uuid": "884a4a63-af96-5c12-9b11-e630f3ba6e46"
+            "uuid": "8ac3b85b-3333-517e-bcd6-f2d11f12fda6"
         },
         {
             "artist": "Mark Poole",
@@ -282,12 +235,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3191,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5b4202c5f7f05694",
             "text": "The next time a source of your choice would deal damage to you this turn, instead that source deals that much damage to you and Eye for an Eye deals that much damage to that source's controller.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "e0b67547-9cb7-58e8-90c6-42673cbece77"
+            "uuid": "43a860ff-5499-50cd-a602-5fad2e3616c5"
         },
         {
             "artist": "Brian Snõddy",
@@ -331,12 +285,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3209,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/53e38ea20dcd0179",
             "text": "As Jihad enters the battlefield, choose a color and an opponent.\nWhite creatures get +2/+1 as long as the chosen player controls a nontoken permanent of the chosen color.\nWhen the chosen player controls no nontoken permanents of the chosen color, sacrifice Jihad.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "e1b1d39b-dbf1-548b-a304-252bfa7fed6e"
+            "uuid": "90528d8d-b852-54fc-9173-e9d36d72a435"
         },
         {
             "artist": "Mark Poole",
@@ -379,13 +334,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3213,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fe6340be87fd5e43",
             "text": "{T}: Destroy target Djinn or Efreet.",
             "toughness": "1",
             "type": "Creature — Human",
             "types": [
                 "Creature"
             ],
-            "uuid": "0bb6d3ad-dde4-5d45-8070-925e45f07a62"
+            "uuid": "e0c74823-982c-5b96-9b6e-6065da332566"
         },
         {
             "artist": "Dameon Willich",
@@ -415,7 +371,7 @@
             "manaCost": "{2}{W}{W}",
             "multiverseId": 975,
             "name": "Moorish Cavalry",
-            "number": "7a",
+            "number": "7",
             "originalText": "Trample",
             "originalType": "Summon - Cavalry",
             "power": "3",
@@ -432,72 +388,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3220,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/698eddbc91b225fd",
             "text": "Trample",
             "toughness": "3",
             "type": "Creature — Human Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "31991cfa-2aec-53e7-8b87-55e56f73ecf0",
-            "variations": [
-                "44e03d54-7dda-5f95-8a1d-c5e6d1ffe3ea"
-            ]
-        },
-        {
-            "artist": "Dameon Willich",
-            "borderColor": "black",
-            "colorIdentity": [
-                "W"
-            ],
-            "colors": [
-                "W"
-            ],
-            "convertedManaCost": 4.0,
-            "flavorText": "Members of the elite Moorish Cavalry are very particular about their mounts, choosing only those whose bloodlines have been pure for generations.",
-            "foreignData": [],
-            "frameVersion": "1993",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{2}{W}{W}",
-            "multiverseId": 976,
-            "name": "Moorish Cavalry",
-            "number": "7b",
-            "originalText": "Trample",
-            "originalType": "Summon - Cavalry",
-            "power": "3",
-            "printings": [
-                "ARN",
-                "TSB"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "scryfallId": "113a6b31-3748-48c1-a915-ab0b613eabb3",
-            "subtypes": [
-                "Human",
-                "Knight"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 3220,
-            "text": "Trample",
-            "toughness": "3",
-            "type": "Creature — Human Knight",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "44e03d54-7dda-5f95-8a1d-c5e6d1ffe3ea",
-            "variations": [
-                "31991cfa-2aec-53e7-8b87-55e56f73ecf0"
-            ]
+            "uuid": "dea3f550-e875-506a-b317-40a49cb714a2"
         },
         {
             "artist": "Mark Poole",
@@ -524,7 +422,7 @@
             "manaCost": "{2}{W}",
             "multiverseId": 978,
             "name": "Piety",
-            "number": "8a",
+            "number": "8",
             "originalText": "All defending creatures gain +0/+3 until end of turn.",
             "originalType": "Instant",
             "printings": [
@@ -538,64 +436,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3229,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fcfe44d0a0769b1a",
             "text": "Blocking creatures get +0/+3 until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "6422a7ba-6bf2-5389-ba51-7a4e59ecb92b",
-            "variations": [
-                "2355609c-a752-59b4-b83f-ee4c975b116b"
-            ]
-        },
-        {
-            "artist": "Mark Poole",
-            "borderColor": "black",
-            "colorIdentity": [
-                "W"
-            ],
-            "colors": [
-                "W"
-            ],
-            "convertedManaCost": 3.0,
-            "flavorText": "\"Whoever obeys God and His Prophet, fears God and does his duty to Him, will surely find success.\" —The Qur'an, 24:52",
-            "foreignData": [],
-            "frameVersion": "1993",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "layout": "normal",
-            "legalities": {
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{2}{W}",
-            "multiverseId": 977,
-            "name": "Piety",
-            "number": "8b",
-            "originalText": "All defending creatures gain +0/+3 until end of turn.",
-            "originalType": "Instant",
-            "printings": [
-                "4ED",
-                "ARN",
-                "REN"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "scryfallId": "8a5a1a13-dfc8-49b7-9b17-3f0c5ca1b8be",
-            "subtypes": [],
-            "supertypes": [],
-            "tcgplayerProductId": 3229,
-            "text": "Blocking creatures get +0/+3 until end of turn.",
-            "type": "Instant",
-            "types": [
-                "Instant"
-            ],
-            "uuid": "2355609c-a752-59b4-b83f-ee4c975b116b",
-            "variations": [
-                "6422a7ba-6bf2-5389-ba51-7a4e59ecb92b"
-            ]
+            "uuid": "d398c3cf-07f1-589d-a607-c49d2f319452"
         },
         {
             "artist": "Drew Tucker",
@@ -640,13 +487,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3232,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b85bf0f7330be079",
             "text": "Protection from red",
             "toughness": "2",
             "type": "Creature — Human",
             "types": [
                 "Creature"
             ],
-            "uuid": "905dce18-27bd-569f-8e90-1651517cfc1b"
+            "uuid": "4ea0caa2-a5a6-5989-a61d-b3c7dccb09e5"
         },
         {
             "artist": "Kaja Foglio",
@@ -702,12 +550,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3240,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8e690b5f73876692",
             "text": "Players play a Magic subgame, using their libraries as their decks. Each player who doesn't win the subgame loses half their life, rounded up.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "825b7e46-7d0c-5c76-9f46-7d108fae9f16"
+            "uuid": "fe993ab5-23da-5830-b5a0-cb5a0fd996ea"
         },
         {
             "artist": "Kristen Bishop",
@@ -734,7 +583,7 @@
             "manaCost": "{3}{W}",
             "multiverseId": 981,
             "name": "War Elephant",
-            "number": "11a",
+            "number": "11",
             "originalText": "Trample, bands",
             "originalType": "Summon - Elephant",
             "power": "2",
@@ -768,86 +617,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3247,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/32ec692a60618d8c",
             "text": "Trample; banding (Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding you control are blocking or being blocked by a creature, you divide that creature's combat damage, not its controller, among any of the creatures it's being blocked by or is blocking.)",
             "toughness": "2",
             "type": "Creature — Elephant",
             "types": [
                 "Creature"
             ],
-            "uuid": "e187d8ab-f7b7-521a-ad1f-23f19116359d",
-            "variations": [
-                "b35c5594-b710-5c4c-a7ec-bfc4b2fd3a5a"
-            ]
-        },
-        {
-            "artist": "Kristen Bishop",
-            "borderColor": "black",
-            "colorIdentity": [
-                "W"
-            ],
-            "colors": [
-                "W"
-            ],
-            "convertedManaCost": 4.0,
-            "flavorText": "\"When elephants fight it is the grass that suffers.\" —Kikuyu Proverb",
-            "foreignData": [],
-            "frameVersion": "1993",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "layout": "normal",
-            "legalities": {
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{3}{W}",
-            "multiverseId": 982,
-            "name": "War Elephant",
-            "number": "11b",
-            "originalText": "Trample, bands",
-            "originalType": "Summon - Elephant",
-            "power": "2",
-            "printings": [
-                "ARN",
-                "CHR",
-                "RIN"
-            ],
-            "rarity": "common",
-            "rulings": [
-                {
-                    "date": "2008-10-01",
-                    "text": "If a creature with banding attacks, it can team up with any number of other attacking creatures with banding (and up to one nonbanding creature) and attack as a unit called a “band.” The band can be blocked by any creature that could block a single creature in the band. Blocking any creature in a band blocks the entire band. If a creature with banding is blocked, the attacking player chooses how the blockers’ damage is assigned."
-                },
-                {
-                    "date": "2008-10-01",
-                    "text": "A maximum of one nonbanding creature can join an attacking band no matter how many creatures with banding are in it."
-                },
-                {
-                    "date": "2008-10-01",
-                    "text": "Creatures in the same band must all attack the same player or planeswalker."
-                },
-                {
-                    "date": "2009-10-01",
-                    "text": "If a creature in combat has banding, its controller assigns damage for creatures blocking or blocked by it. That player can ignore the damage assignment order when making this assignment."
-                }
-            ],
-            "scryfallId": "cd87344d-9113-4fec-9a93-38bc1abe2af5",
-            "subtypes": [
-                "Elephant"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 3247,
-            "text": "Trample; banding (Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding you control are blocking or being blocked by a creature, you divide that creature's combat damage, not its controller, among any of the creatures it's being blocked by or is blocking.)",
-            "toughness": "2",
-            "type": "Creature — Elephant",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "b35c5594-b710-5c4c-a7ec-bfc4b2fd3a5a",
-            "variations": [
-                "e187d8ab-f7b7-521a-ad1f-23f19116359d"
-            ]
+            "uuid": "4a4eba3b-f756-5b0d-b4e1-33942867ca79"
         },
         {
             "artist": "Drew Tucker",
@@ -900,7 +677,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "779e7514-f07c-5727-a880-7852cf98f234"
+            "uuid": "58d0887a-d998-57df-b402-f9f4daf2aaaf"
         },
         {
             "artist": "Anson Maddocks",
@@ -931,7 +708,7 @@
             "manaCost": "{1}{U}",
             "multiverseId": 930,
             "name": "Fishliver Oil",
-            "number": "13a",
+            "number": "13",
             "originalText": "Target creature gains islandwalk ability.",
             "originalType": "Enchant Creature",
             "printings": [
@@ -948,71 +725,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3192,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/59f6c59d4e41b4a7",
             "text": "Enchant creature (Target a creature as you cast this. This card enters the battlefield attached to that creature.)\nEnchanted creature has islandwalk. (It can't be blocked as long as defending player controls an Island.)",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "6473bf24-be82-5cbe-b551-6552f0345bb2",
-            "variations": [
-                "2ff1dd6f-6683-5a94-af0d-8da83ae74e92"
-            ]
-        },
-        {
-            "artist": "Anson Maddocks",
-            "borderColor": "black",
-            "colorIdentity": [
-                "U"
-            ],
-            "colors": [
-                "U"
-            ],
-            "convertedManaCost": 2.0,
-            "flavorText": "Then the maiden bade him cast off his robes and cover his body with fishliver oil, that he might safely follow her into the sea.",
-            "foreignData": [],
-            "frameVersion": "1993",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{1}{U}",
-            "multiverseId": 931,
-            "name": "Fishliver Oil",
-            "number": "13b",
-            "originalText": "Target creature gains islandwalk ability.",
-            "originalType": "Enchant Creature",
-            "printings": [
-                "9ED",
-                "ARN",
-                "CHR",
-                "RIN"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "scryfallId": "c066c452-1d87-4946-8d3b-6cc160a82282",
-            "subtypes": [
-                "Aura"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 3192,
-            "text": "Enchant creature (Target a creature as you cast this. This card enters the battlefield attached to that creature.)\nEnchanted creature has islandwalk. (It can't be blocked as long as defending player controls an Island.)",
-            "type": "Enchantment — Aura",
-            "types": [
-                "Enchantment"
-            ],
-            "uuid": "2ff1dd6f-6683-5a94-af0d-8da83ae74e92",
-            "variations": [
-                "6473bf24-be82-5cbe-b551-6552f0345bb2"
-            ]
+            "uuid": "91593ac4-9b05-5e70-9b5f-59638cf0b0ed"
         },
         {
             "artist": "Christopher Rush",
@@ -1058,13 +777,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3195,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fdd25b9aeb3d9e62",
             "text": "Flying",
             "toughness": "1",
             "type": "Creature — Human",
             "types": [
                 "Creature"
             ],
-            "uuid": "cc80115a-0be7-5165-a93c-0f522b7e3bd1"
+            "uuid": "ac91ae35-307c-595a-8df0-02f4842254dc"
         },
         {
             "artist": "Kaja Foglio",
@@ -1093,7 +813,7 @@
             "manaCost": "{1}{U}",
             "multiverseId": 934,
             "name": "Giant Tortoise",
-            "number": "15a",
+            "number": "15",
             "originalText": "Giant Tortoise gains +0/+3 while untapped.",
             "originalType": "Summon - Tortoise",
             "power": "1",
@@ -1114,75 +834,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3197,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ceab64951a30f684",
             "text": "Giant Tortoise gets +0/+3 as long as it's untapped.",
             "toughness": "1",
             "type": "Creature — Turtle",
             "types": [
                 "Creature"
             ],
-            "uuid": "77fa77cc-597c-5795-936e-3f9a2859e63f",
-            "variations": [
-                "785f3775-069d-5929-a6e9-2032e7fb4e55"
-            ]
-        },
-        {
-            "artist": "Kaja Foglio",
-            "borderColor": "black",
-            "colorIdentity": [
-                "U"
-            ],
-            "colors": [
-                "U"
-            ],
-            "convertedManaCost": 2.0,
-            "foreignData": [],
-            "frameVersion": "1993",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{1}{U}",
-            "multiverseId": 933,
-            "name": "Giant Tortoise",
-            "number": "15b",
-            "originalText": "Giant Tortoise gains +0/+3 while untapped.",
-            "originalType": "Summon - Tortoise",
-            "power": "1",
-            "printings": [
-                "4ED",
-                "ARN",
-                "EMA",
-                "ME1",
-                "ME4",
-                "REN",
-                "RIN"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "scryfallId": "170fa026-c17b-4731-b520-455c39ccbe6d",
-            "subtypes": [
-                "Turtle"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 3197,
-            "text": "Giant Tortoise gets +0/+3 as long as it's untapped.",
-            "toughness": "1",
-            "type": "Creature — Turtle",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "785f3775-069d-5929-a6e9-2032e7fb4e55",
-            "variations": [
-                "77fa77cc-597c-5795-936e-3f9a2859e63f"
-            ]
+            "uuid": "e083bcff-6015-509c-9706-17c2041d7590"
         },
         {
             "artist": "Jesper Myrfors",
@@ -1232,13 +891,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3204,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/38177ec3e146433b",
             "text": "Island Fish Jasconius doesn't untap during your untap step.\nAt the beginning of your upkeep, you may pay {U}{U}{U}. If you do, untap Island Fish Jasconius.\nIsland Fish Jasconius can't attack unless defending player controls an Island.\nWhen you control no Islands, sacrifice Island Fish Jasconius.",
             "toughness": "8",
             "type": "Creature — Fish",
             "types": [
                 "Creature"
             ],
-            "uuid": "afcec9a7-c595-5a24-aee3-0532f1e9e939"
+            "uuid": "dd77c4e1-e0b7-52b3-9091-a59d1aa3ba0d"
         },
         {
             "artist": "Tom Wänerstrand",
@@ -1285,13 +945,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3217,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5d4048cb5ff48fce",
             "text": "Merchant Ship can't attack unless defending player controls an Island.\nWhenever Merchant Ship attacks and isn't blocked, you gain 2 life.\nWhen you control no Islands, sacrifice Merchant Ship.",
             "toughness": "2",
             "type": "Creature — Human",
             "types": [
                 "Creature"
             ],
-            "uuid": "3001932e-2429-5063-914d-76392c53a1c0"
+            "uuid": "78123d36-7b4c-54a0-8ed5-cebf57134f7f"
         },
         {
             "artist": "Susan Van Camp",
@@ -1353,13 +1014,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3226,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2cb8b923f6d89703",
             "text": "You may choose not to untap Old Man of the Sea during your untap step.\n{T}: Gain control of target creature with power less than or equal to Old Man of the Sea's power for as long as Old Man of the Sea remains tapped and that creature's power remains less than or equal to Old Man of the Sea's power.",
             "toughness": "3",
             "type": "Creature — Djinn",
             "types": [
                 "Creature"
             ],
-            "uuid": "17fb1193-57a2-5af9-a05c-f16ef350efdc"
+            "uuid": "88fca1c1-c08b-50f9-95d5-7395c59211e2"
         },
         {
             "artist": "Anson Maddocks",
@@ -1408,13 +1070,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3238,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a96fe578bd6bfa16",
             "text": "Flying\nAt the beginning of your upkeep, sacrifice a land. If you sacrifice an Island this way, Serendib Djinn deals 3 damage to you.\nWhen you control no lands, sacrifice Serendib Djinn.",
             "toughness": "6",
             "type": "Creature — Djinn",
             "types": [
                 "Creature"
             ],
-            "uuid": "3db06b03-45e0-5bc7-b3e8-947ba2e77927"
+            "uuid": "6a435bca-eabd-5bd2-affa-c1401cab5024"
         },
         {
             "artist": "Anson Maddocks",
@@ -1465,13 +1128,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3239,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/59c260251c827eea",
             "text": "Flying\nAt the beginning of your upkeep, Serendib Efreet deals 1 damage to you.",
             "toughness": "4",
             "type": "Creature — Efreet",
             "types": [
                 "Creature"
             ],
-            "uuid": "4f7e772f-f8fa-5b23-8b42-f5b194393353"
+            "uuid": "444970c7-6722-5f0c-9386-e0c476db86b3"
         },
         {
             "artist": "Julie Baroh",
@@ -1528,13 +1192,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3241,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b3b130b344c28e52",
             "text": "{T}: Draw a card and reveal it. If it isn't a land card, discard it.",
             "toughness": "1",
             "type": "Creature — Human",
             "types": [
                 "Creature"
             ],
-            "uuid": "3f129fa2-6947-5955-9d0f-8ae229557d3e"
+            "uuid": "f60660ec-f891-5b00-8db9-343364173534"
         },
         {
             "artist": "Douglas Shuler",
@@ -1588,12 +1253,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3246,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fcd3ea094503446a",
             "text": "Enchant creature\nEnchanted creature gets +3/+3.\nAt the beginning of the upkeep of enchanted creature's controller, put a -1/-1 counter on that creature.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "5aafab48-ecea-59b2-83ce-5dcf31ad6471"
+            "uuid": "e72a01a2-3d58-52dd-b7a6-40b35e968e4e"
         },
         {
             "artist": "Kaja Foglio",
@@ -1659,13 +1325,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3176,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/73e7f3f802b0e919",
             "text": "{T}: Cuombajj Witches deals 1 damage to any target and 1 damage to any target of an opponent's choice.",
             "toughness": "3",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "538d1502-0a67-58e6-a314-c94cb25cb533"
+            "uuid": "4f4b336b-3a12-59b0-b6ca-dd6b09cada64"
         },
         {
             "artist": "Dameon Willich",
@@ -1716,7 +1383,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "10d23a72-a0ff-58e2-8649-29b786911a0b"
+            "uuid": "8df0778f-cef8-5e8e-83bd-acb405948301"
         },
         {
             "artist": "Dameon Willich",
@@ -1745,7 +1412,7 @@
             "manaCost": "{1}{B}",
             "multiverseId": 916,
             "name": "Erg Raiders",
-            "number": "25a",
+            "number": "25",
             "originalText": "If you do not attack with Raiders, they do 2 damage to you at end of turn. Raiders do no damage to you during the turn in which they are summoned.",
             "originalType": "Summon - Raiders",
             "power": "2",
@@ -1773,82 +1440,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3188,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5d1a8659abe2b8e0",
             "text": "At the beginning of your end step, if Erg Raiders didn't attack this turn, Erg Raiders deals 2 damage to you unless it came under your control this turn.",
             "toughness": "3",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "94cebb67-a0e4-57e0-963f-a1dcaf8646dd",
-            "variations": [
-                "35703ad7-2b1a-55f4-aca0-134ffa072743"
-            ]
-        },
-        {
-            "artist": "Dameon Willich",
-            "borderColor": "black",
-            "colorIdentity": [
-                "B"
-            ],
-            "colors": [
-                "B"
-            ],
-            "convertedManaCost": 2.0,
-            "foreignData": [],
-            "frameVersion": "1993",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{1}{B}",
-            "multiverseId": 917,
-            "name": "Erg Raiders",
-            "number": "25b",
-            "originalText": "If you do not attack with Raiders, they do 2 damage to you at end of turn. Raiders do no damage to you during the turn in which they are summoned.",
-            "originalType": "Summon - Raiders",
-            "power": "2",
-            "printings": [
-                "3ED",
-                "4ED",
-                "5ED",
-                "A25",
-                "ARN",
-                "FBB",
-                "ME1",
-                "SUM"
-            ],
-            "rarity": "common",
-            "rulings": [
-                {
-                    "date": "2018-03-16",
-                    "text": "A creature “comes under your control” if it enters the battlefield under your control or if you gain control of it while it’s already on the battlefield."
-                }
-            ],
-            "scryfallId": "2717b2e2-bea8-4ba8-9ad1-abb60abf6e4c",
-            "subtypes": [
-                "Human",
-                "Warrior"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 3188,
-            "text": "At the beginning of your end step, if Erg Raiders didn't attack this turn, Erg Raiders deals 2 damage to you unless it came under your control this turn.",
-            "toughness": "3",
-            "type": "Creature — Human Warrior",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "35703ad7-2b1a-55f4-aca0-134ffa072743",
-            "variations": [
-                "94cebb67-a0e4-57e0-963f-a1dcaf8646dd"
-            ]
+            "uuid": "3e54c9af-5bb0-5f0a-8fca-98ed412e0da6"
         },
         {
             "artist": "Ken Meyer, Jr.",
@@ -1897,13 +1496,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3199,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b39885a157fd0cbf",
             "text": "As long as Guardian Beast is untapped, noncreature artifacts you control can't be enchanted, they have indestructible, and other players can't gain control of them. This effect doesn't remove Auras already attached to those artifacts.",
             "toughness": "4",
             "type": "Creature — Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "a929e265-661a-5972-863a-f09f31e6db7f"
+            "uuid": "f5562d27-01ee-56f0-808b-dccc159205f1"
         },
         {
             "artist": "Dan Frazier",
@@ -1932,7 +1532,7 @@
             "manaCost": "{B}{B}",
             "multiverseId": 920,
             "name": "Hasran Ogress",
-            "number": "27a",
+            "number": "27",
             "originalText": "Unless you pay o2 each time Hasran Ogress\nattacks, Hasran Ogress does 3 damage to you.",
             "originalType": "Summon - Ogre",
             "power": "3",
@@ -1955,77 +1555,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3200,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/620e9c1f98e4730c",
             "text": "Whenever Hasran Ogress attacks, it deals 3 damage to you unless you pay {2}.",
             "toughness": "2",
             "type": "Creature — Ogre",
             "types": [
                 "Creature"
             ],
-            "uuid": "4e4679d1-8065-5911-965b-93e5d53df597",
-            "variations": [
-                "cd46d9a4-8f3d-594a-bd8d-682a66341e6f"
-            ]
-        },
-        {
-            "artist": "Dan Frazier",
-            "borderColor": "black",
-            "colorIdentity": [
-                "B"
-            ],
-            "colors": [
-                "B"
-            ],
-            "convertedManaCost": 2.0,
-            "foreignData": [],
-            "frameVersion": "1993",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{B}{B}",
-            "multiverseId": 919,
-            "name": "Hasran Ogress",
-            "number": "27b",
-            "originalText": "Unless you pay o2 each time Hasran Ogress\nattacks, Hasran Ogress does 3 damage to you.",
-            "originalType": "Summon - Ogre",
-            "power": "3",
-            "printings": [
-                "ARN",
-                "CHR",
-                "ME4",
-                "RIN"
-            ],
-            "rarity": "common",
-            "rulings": [
-                {
-                    "date": "2004-10-04",
-                    "text": "You either take damage or pay the 2 mana during resolution."
-                }
-            ],
-            "scryfallId": "d8fcc83f-c67f-46a2-bb0e-dafbf0a2bfc0",
-            "subtypes": [
-                "Ogre"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 3200,
-            "text": "Whenever Hasran Ogress attacks, it deals 3 damage to you unless you pay {2}.",
-            "toughness": "2",
-            "type": "Creature — Ogre",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "cd46d9a4-8f3d-594a-bd8d-682a66341e6f",
-            "variations": [
-                "4e4679d1-8065-5911-965b-93e5d53df597"
-            ]
+            "uuid": "b9734aba-90e7-55d9-bb4e-b3105c9f6730"
         },
         {
             "artist": "Christopher Rush",
@@ -2077,7 +1614,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "f6f22b38-ef39-517b-9051-850ad10ea2d2"
+            "uuid": "da6d74ea-1eb5-5abb-88af-9281a68640f8"
         },
         {
             "artist": "Mark Tedin",
@@ -2127,7 +1664,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "63485cc5-86d9-5854-9f32-d14622874288"
+            "uuid": "9ef4d030-e6a9-5bdc-bcd4-ca74c12133fa"
         },
         {
             "artist": "Douglas Shuler",
@@ -2183,7 +1720,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "a0501d0b-6ecf-5cb3-a4a9-c6087a7a64db"
+            "uuid": "76cda95e-8c88-5e62-8312-f47fc2900980"
         },
         {
             "artist": "Douglas Shuler",
@@ -2211,7 +1748,7 @@
             "manaCost": "{1}{B}{B}",
             "multiverseId": 925,
             "name": "Oubliette",
-            "number": "31a",
+            "number": "31",
             "originalText": "Select a creature in play when Oubliette is cast. That creature is considered out of play as long as Oubliette is in play. Hence the creature cannot be the target of spells and cannot receive damage, use special powers, attack, or defend. All counters and enchantments on the creature remain but are also out of play. If Oubliette is removed, creature returns to play tapped.",
             "originalType": "Enchantment",
             "printings": [
@@ -2237,77 +1774,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3227,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fdc4dddb01a836f6",
             "text": "When Oubliette enters the battlefield, exile target creature and all Auras attached to it. Note the number and kind of counters that were on that creature.\nWhen Oubliette leaves the battlefield, return that exiled card to the battlefield under its owner's control tapped with the noted number and kind of counters on it. If you do, return the other exiled cards to the battlefield under their owner's control attached to that permanent.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "d730d85b-f3bd-53b9-893c-9da3992cf18f",
-            "variations": [
-                "3c77dd47-58b6-5488-944f-eb879c98c88a"
-            ]
-        },
-        {
-            "artist": "Douglas Shuler",
-            "borderColor": "black",
-            "colorIdentity": [
-                "B"
-            ],
-            "colors": [
-                "B"
-            ],
-            "convertedManaCost": 3.0,
-            "foreignData": [],
-            "frameVersion": "1993",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "pauper": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{1}{B}{B}",
-            "multiverseId": 924,
-            "name": "Oubliette",
-            "number": "31b",
-            "originalText": "Select a creature in play when Oubliette is cast. That creature is considered out of play as long as Oubliette is in play. Hence the creature cannot be the target of spells and cannot receive damage, use special powers, attack, or defend. All counters and enchantments on the creature remain but are also out of play. If Oubliette is removed, creature returns to play tapped.",
-            "originalType": "Enchantment",
-            "printings": [
-                "ARN",
-                "ME1"
-            ],
-            "rarity": "common",
-            "rulings": [
-                {
-                    "date": "2007-09-16",
-                    "text": "If Oubliette leaves the battlefield before its first ability has resolved, its second ability will trigger and do nothing. Then its first ability will resolve and exile the targeted creature forever."
-                },
-                {
-                    "date": "2007-09-16",
-                    "text": "If the targeted creature is a token, it will cease to exist after being exiled. Any Auras that were attached to it will remain exiled forever."
-                },
-                {
-                    "date": "2007-09-16",
-                    "text": "If the exiled card is returned to the battlefield and, for some reason, it now can’t be enchanted by an Aura that was also exiled by Oubliette, that Aura will remain exiled."
-                }
-            ],
-            "scryfallId": "58d74d1d-3f68-4cab-903e-e146a33258f3",
-            "subtypes": [],
-            "supertypes": [],
-            "tcgplayerProductId": 3227,
-            "text": "When Oubliette enters the battlefield, exile target creature and all Auras attached to it. Note the number and kind of counters that were on that creature.\nWhen Oubliette leaves the battlefield, return that exiled card to the battlefield under its owner's control tapped with the noted number and kind of counters on it. If you do, return the other exiled cards to the battlefield under their owner's control attached to that permanent.",
-            "type": "Enchantment",
-            "types": [
-                "Enchantment"
-            ],
-            "uuid": "3c77dd47-58b6-5488-944f-eb879c98c88a",
-            "variations": [
-                "d730d85b-f3bd-53b9-893c-9da3992cf18f"
-            ]
+            "uuid": "628d604d-57a0-50f6-9483-044211caf3e0"
         },
         {
             "artist": "Kaja Foglio",
@@ -2356,13 +1829,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3243,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/46008e02d0ac39b1",
             "text": "{T}: Target creature other than Sorceress Queen has base power and toughness 0/2 until end of turn.",
             "toughness": "1",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "7b597b0f-a177-5a32-98c4-6bf7da9f47e7"
+            "uuid": "f553ca86-26ae-57e3-8ac8-1804a9cc5ce9"
         },
         {
             "artist": "Ken Meyer, Jr.",
@@ -2389,7 +1863,7 @@
             "manaCost": "{B}",
             "multiverseId": 927,
             "name": "Stone-Throwing Devils",
-            "number": "33a",
+            "number": "33",
             "originalText": "First strike",
             "originalType": "Summon - Devils",
             "power": "1",
@@ -2404,67 +1878,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3244,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3157fb5efb99f26b",
             "text": "First strike",
             "toughness": "1",
             "type": "Creature — Devil",
             "types": [
                 "Creature"
             ],
-            "uuid": "3535af48-408f-5466-a275-3a24fd35e4dc",
-            "variations": [
-                "9456e279-7e68-5bed-9b22-0810c8d55bdb"
-            ]
-        },
-        {
-            "artist": "Ken Meyer, Jr.",
-            "borderColor": "black",
-            "colorIdentity": [
-                "B"
-            ],
-            "colors": [
-                "B"
-            ],
-            "convertedManaCost": 1.0,
-            "flavorText": "Sometimes those with the most sin cast the first stones.",
-            "foreignData": [],
-            "frameVersion": "1993",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "layout": "normal",
-            "legalities": {
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{B}",
-            "multiverseId": 928,
-            "name": "Stone-Throwing Devils",
-            "number": "33b",
-            "originalText": "First strike",
-            "originalType": "Summon - Devils",
-            "power": "1",
-            "printings": [
-                "ARN"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "scryfallId": "cb0b28ac-144e-43c5-84f3-d4a2a229f49b",
-            "subtypes": [
-                "Devil"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 3244,
-            "text": "First strike",
-            "toughness": "1",
-            "type": "Creature — Devil",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "9456e279-7e68-5bed-9b22-0810c8d55bdb",
-            "variations": [
-                "3535af48-408f-5466-a275-3a24fd35e4dc"
-            ]
+            "uuid": "08fba67c-307a-56d5-82f3-e438078095a4"
         },
         {
             "artist": "Julie Baroh",
@@ -2519,13 +1940,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3161,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fbfd6393c2b37ff4",
             "text": "{1}{R}{R}, {T}: Gain control of target artifact for as long as you control Aladdin.",
             "toughness": "1",
             "type": "Creature — Human Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "7b7d2449-8618-5f33-81a7-3e284537e994"
+            "uuid": "a787ac3a-c67a-5530-b169-366d60134dc5"
         },
         {
             "artist": "Julie Baroh",
@@ -2580,13 +2002,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3164,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/de27088fdf91b0a5",
             "text": "{R}: Tap target Wall.",
             "toughness": "1",
             "type": "Creature — Human Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "30a1310f-197d-5dd3-9430-1d4e28159be6"
+            "uuid": "f3442af2-a867-5ed8-bdde-c0dc919cb4f9"
         },
         {
             "artist": "Mark Poole",
@@ -2643,13 +2066,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3165,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8d57a52196dfab70",
             "text": "Damage that would reduce your life total to less than 1 reduces it to 1 instead.",
             "toughness": "1",
             "type": "Creature — Human",
             "types": [
                 "Creature"
             ],
-            "uuid": "55f034a9-aee7-52bc-bffe-4e0a3f289f94"
+            "uuid": "9e684d75-38ae-56e9-9816-be18e7d50160"
         },
         {
             "artist": "Kaja Foglio",
@@ -2678,7 +2102,7 @@
             "manaCost": "{2}{R}",
             "multiverseId": 959,
             "name": "Bird Maiden",
-            "number": "37a",
+            "number": "37",
             "originalText": "Flying",
             "originalType": "Summon - Bird Maiden",
             "power": "1",
@@ -2699,75 +2123,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3169,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7ac7a7fb16bdf38f",
             "text": "Flying",
             "toughness": "2",
             "type": "Creature — Human Bird",
             "types": [
                 "Creature"
             ],
-            "uuid": "24aebc36-785e-5994-8563-b5107fa7f6b1",
-            "variations": [
-                "ea6aacaa-1902-516e-a7dd-61459412a9d2"
-            ]
-        },
-        {
-            "artist": "Kaja Foglio",
-            "borderColor": "black",
-            "colorIdentity": [
-                "R"
-            ],
-            "colors": [
-                "R"
-            ],
-            "convertedManaCost": 3.0,
-            "flavorText": "\"Four things that never meet do here unite To shed my blood and to ravage my heart, A radiant brow and tresses that beguile And rosy cheeks and a glittering smile.\" —The Arabian Nights, trans. Haddawy",
-            "foreignData": [],
-            "frameVersion": "1993",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "pauper": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{2}{R}",
-            "multiverseId": 958,
-            "name": "Bird Maiden",
-            "number": "37b",
-            "originalText": "Flying",
-            "originalType": "Summon - Bird Maiden",
-            "power": "1",
-            "printings": [
-                "4ED",
-                "5ED",
-                "ARN",
-                "ME4",
-                "REN",
-                "RIN"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "scryfallId": "709532d8-cd3e-4844-b580-e6925ce837ff",
-            "subtypes": [
-                "Human",
-                "Bird"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 3169,
-            "text": "Flying",
-            "toughness": "2",
-            "type": "Creature — Human Bird",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "ea6aacaa-1902-516e-a7dd-61459412a9d2",
-            "variations": [
-                "24aebc36-785e-5994-8563-b5107fa7f6b1"
-            ]
+            "uuid": "852a0a9e-e756-58f2-b750-78e9a5ee27ae"
         },
         {
             "artist": "Christopher Rush",
@@ -2809,13 +2172,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3181,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c7416a96f9f2180e",
             "text": "Desertwalk\nPrevent all damage that would be dealt to Desert Nomads by Deserts.",
             "toughness": "2",
             "type": "Creature — Human Nomad",
             "types": [
                 "Creature"
             ],
-            "uuid": "4e155877-2eae-5122-bfcf-cc52ff6605ef"
+            "uuid": "3c87f394-1f14-5702-98e2-1f336d6287b0"
         },
         {
             "artist": "Drew Tucker",
@@ -2859,13 +2223,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3202,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2851eb1b0839402a",
             "text": "{T}: Target creature can't be regenerated this turn.",
             "toughness": "1",
             "type": "Creature — Jackal",
             "types": [
                 "Creature"
             ],
-            "uuid": "8e46b852-04cb-511d-984a-d9efc383d711"
+            "uuid": "a2d888c2-d334-57bb-ad3e-cb43235d3ce7"
         },
         {
             "artist": "Ken Meyer, Jr.",
@@ -2919,13 +2284,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3214,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1ef3f6149e996293",
             "text": "Kird Ape gets +1/+2 as long as you control a Forest.",
             "toughness": "1",
             "type": "Creature — Ape",
             "types": [
                 "Creature"
             ],
-            "uuid": "84f59fa0-49d0-51fd-bc1e-e3fe7f296cc1"
+            "uuid": "09193c6f-58ba-59ee-a9ab-a46e6fd13c13"
         },
         {
             "artist": "Susan Van Camp",
@@ -2967,12 +2333,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3216,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7b31c40281e40541",
             "text": "Blue creatures don't untap during their controllers' untap steps.\nAt the beginning of each player's upkeep, that player may choose any number of tapped blue creatures they control and pay {4} for each creature chosen this way. If the player does, untap those creatures.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "e0f74b38-325a-5941-be5d-24a5f572d134"
+            "uuid": "840a24ad-b399-51d6-a1f2-40f0f1d032ac"
         },
         {
             "artist": "Susan Van Camp",
@@ -3031,13 +2398,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3219,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/be1dfca7b57921df",
             "text": "Whenever Mijae Djinn attacks, flip a coin. If you lose the flip, remove Mijae Djinn from combat and tap it.",
             "toughness": "3",
             "type": "Creature — Djinn",
             "types": [
                 "Creature"
             ],
-            "uuid": "d261efce-9afc-5fa5-b50e-d1ec9794afda"
+            "uuid": "89870ff9-7ca5-5973-a97e-c613e987fb18"
         },
         {
             "artist": "Christopher Rush",
@@ -3066,7 +2434,7 @@
             "manaCost": "{3}{R}",
             "multiverseId": 965,
             "name": "Rukh Egg",
-            "number": "43a",
+            "number": "43",
             "originalText": "If Rukh Egg goes to the graveyard, a Rukh—a 4/4 red flying creature—comes into play on your side at the end of that turn. Use a counter to represent Rukh. Rukh is treated exactly like a normal creature except that if it leaves play it is removed from the game entirely.",
             "originalType": "Summon - Egg",
             "power": "0",
@@ -3103,91 +2471,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3234,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/49982c8e082e073b",
             "text": "When Rukh Egg dies, create a 4/4 red Bird creature token with flying at the beginning of the next end step.",
             "toughness": "3",
             "type": "Creature — Bird Egg",
             "types": [
                 "Creature"
             ],
-            "uuid": "44b32304-3300-5d34-ac4a-327fcc8bb76a",
-            "variations": [
-                "31157745-847e-57f9-99e1-a305997ed493"
-            ]
-        },
-        {
-            "artist": "Christopher Rush",
-            "borderColor": "black",
-            "colorIdentity": [
-                "R"
-            ],
-            "colors": [
-                "R"
-            ],
-            "convertedManaCost": 4.0,
-            "foreignData": [],
-            "frameVersion": "1993",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "modern": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{3}{R}",
-            "multiverseId": 966,
-            "name": "Rukh Egg",
-            "number": "43b",
-            "originalText": "If Rukh Egg goes to the graveyard, a Rukh—a 4/4 red flying creature—comes into play on your side at the end of that turn. Use a counter to represent Rukh. Rukh is treated exactly like a normal creature except that if it leaves play it is removed from the game entirely.",
-            "originalType": "Summon - Egg",
-            "power": "0",
-            "printings": [
-                "8ED",
-                "9ED",
-                "ARN",
-                "PREL",
-                "PRM"
-            ],
-            "rarity": "common",
-            "rulings": [
-                {
-                    "date": "2004-10-04",
-                    "text": "If the Rukh Egg card is removed from the graveyard in the same turn it is put there, a Bird will still be put onto the battlefield."
-                },
-                {
-                    "date": "2005-10-01",
-                    "text": "If the Egg is exiled instead of being put into the graveyard, no Bird is put onto the battlefield."
-                },
-                {
-                    "date": "2005-10-01",
-                    "text": "Text-changing effects can be used to change the color of the Bird that will be put onto the battlefield."
-                },
-                {
-                    "date": "2005-10-01",
-                    "text": "If the Egg is destroyed while under the control of another player, the controller of the Egg gets the Bird."
-                }
-            ],
-            "scryfallId": "9c4defc2-b1a2-4ae2-bda0-24ecd4ff8181",
-            "subtypes": [
-                "Bird",
-                "Egg"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 3234,
-            "text": "When Rukh Egg dies, create a 4/4 red Bird creature token with flying at the beginning of the next end step.",
-            "toughness": "3",
-            "type": "Creature — Bird Egg",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "31157745-847e-57f9-99e1-a305997ed493",
-            "variations": [
-                "44b32304-3300-5d34-ac4a-327fcc8bb76a"
-            ]
+            "uuid": "4d8797e1-02c2-5912-9cfb-01f31be810cc"
         },
         {
             "artist": "Drew Tucker",
@@ -3236,13 +2527,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3251,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/87e9749e8d854ca2",
             "text": "Whenever Ydwen Efreet blocks, flip a coin. If you lose the flip, remove Ydwen Efreet from combat and it can't block this turn. Creatures it was blocking that had become blocked by only Ydwen Efreet this combat become unblocked.",
             "toughness": "6",
             "type": "Creature — Efreet",
             "types": [
                 "Creature"
             ],
-            "uuid": "0cfcfda6-d23a-531c-8f5c-aee003547e63"
+            "uuid": "166dd3c2-5659-5e0e-8b5d-ffe577df539d"
         },
         {
             "artist": "Mark Tedin",
@@ -3285,12 +2577,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3177,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/61d8c465a85f889f",
             "text": "At the beginning of your upkeep, put a wind counter on Cyclone, then sacrifice Cyclone unless you pay {G} for each wind counter on it. If you pay, Cyclone deals damage equal to the number of wind counters on it to each creature and each player.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "889a05e6-d240-5d39-9342-617faf2431dd"
+            "uuid": "b222f8d3-1d54-5751-87ec-8898fa578d31"
         },
         {
             "artist": "Susan Van Camp",
@@ -3341,12 +2634,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3182,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6749ccd704f8c8bf",
             "text": "Destroy target permanent.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "1ddcb30f-0bf7-5966-b60f-cd8b55c0e748"
+            "uuid": "b782fedd-5b7c-5502-93bb-7f02ac0cf242"
         },
         {
             "artist": "Anson Maddocks",
@@ -3400,12 +2694,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3184,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2ffb714522d67ca2",
             "text": "At the beginning of your upkeep, destroy the creature with the least power. It can't be regenerated. If two or more creatures are tied for least power, you choose one of them.\nWhen there are no creatures on the battlefield, sacrifice Drop of Honey.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "c136a503-4ed9-5e48-b7d0-1f0cc37ecf20"
+            "uuid": "43bdd865-ffc2-5ef1-81dd-f3499097b5b5"
         },
         {
             "artist": "Ken Meyer, Jr.",
@@ -3468,13 +2763,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3190,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5119e090c80757fe",
             "text": "At the beginning of your upkeep, target non-Wall creature an opponent controls gains forestwalk until your next upkeep. (It can't be blocked as long as defending player controls a Forest.)",
             "toughness": "5",
             "type": "Creature — Djinn",
             "types": [
                 "Creature"
             ],
-            "uuid": "dc1c83e5-bc59-5ed0-a4ba-6be86f929aa2"
+            "uuid": "44e1bce6-a505-50bc-b8b6-fb57b24d568d"
         },
         {
             "artist": "Jesper Myrfors",
@@ -3527,7 +2823,7 @@
             "types": [
                 "Creature"
             ],
-            "uuid": "138c2e84-1984-5c0f-8e48-8620c6e02db2"
+            "uuid": "8002dee5-f987-5fe8-9316-3e2a29f19e03"
         },
         {
             "artist": "Jesper Myrfors",
@@ -3573,13 +2869,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3203,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c50f690cc8d00710",
             "text": "Flying\n{G}: Ifh-Bíff Efreet deals 1 damage to each creature with flying and each player. Any player may activate this ability.",
             "toughness": "3",
             "type": "Creature — Efreet",
             "types": [
                 "Creature"
             ],
-            "uuid": "9584f1a5-9d02-51d8-9867-bf38ebcd56af"
+            "uuid": "93ebda7a-d5e8-58ca-9ff6-0de8d29943d7"
         },
         {
             "artist": "Christopher Rush",
@@ -3635,12 +2932,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3218,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/abbbff138efe2415",
             "text": "As an additional cost to cast this spell, sacrifice a creature.\nAdd X mana of any one color, where X is 1 plus the sacrificed creature's converted mana cost. Spend this mana only to cast creature spells.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "b6cc425a-f5a8-5c7b-b835-8a0f008fc762"
+            "uuid": "845c1d97-01b2-5774-a1af-c1e1c37f600b"
         },
         {
             "artist": "Christopher Rush",
@@ -3666,7 +2964,7 @@
             "manaCost": "{G}",
             "multiverseId": 950,
             "name": "Nafs Asp",
-            "number": "52a",
+            "number": "52",
             "originalText": "If Asp inflicts any damage on your opponent, your opponent must spend o1 before the draw phase of his or her next turn or lose an additional 1 life.",
             "originalType": "Summon - Asp",
             "power": "1",
@@ -3701,86 +2999,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3223,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/94f802729d9e69d6",
             "text": "Whenever Nafs Asp deals damage to a player, that player loses 1 life at the beginning of their next draw step unless they pay {1} before that draw step.",
             "toughness": "1",
             "type": "Creature — Snake",
             "types": [
                 "Creature"
             ],
-            "uuid": "8a2ee2f2-584b-5e81-a583-08cb9f09ad55",
-            "variations": [
-                "9504c8e6-6aae-5d17-ba82-8ae6c7d2f90e"
-            ]
-        },
-        {
-            "artist": "Christopher Rush",
-            "borderColor": "black",
-            "colorIdentity": [
-                "G"
-            ],
-            "colors": [
-                "G"
-            ],
-            "convertedManaCost": 1.0,
-            "foreignData": [],
-            "frameVersion": "1993",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "layout": "normal",
-            "legalities": {
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{G}",
-            "multiverseId": 949,
-            "name": "Nafs Asp",
-            "number": "52b",
-            "originalText": "If Asp inflicts any damage on your opponent, your opponent must spend o1 before the draw phase of his or her next turn or lose an additional 1 life.",
-            "originalType": "Summon - Asp",
-            "power": "1",
-            "printings": [
-                "4ED",
-                "ARN",
-                "REN",
-                "RIN"
-            ],
-            "rarity": "common",
-            "rulings": [
-                {
-                    "date": "2004-10-04",
-                    "text": "If its damage gets redirected to its controller, it will still trigger the ability."
-                },
-                {
-                    "date": "2004-10-04",
-                    "text": "The player can pay the {1} mana at any time after damage is done before the draw step of that player’s turn. People commonly pay during upkeep."
-                },
-                {
-                    "date": "2004-10-04",
-                    "text": "If it damages a player twice, they get to pay or take damage twice during their next draw step."
-                },
-                {
-                    "date": "2004-10-04",
-                    "text": "The ability does not cause itself to trigger again. It cause loss of life, and not damage."
-                }
-            ],
-            "scryfallId": "3ecc8d7c-c64f-4ada-b389-756728401b64",
-            "subtypes": [
-                "Snake"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 3223,
-            "text": "Whenever Nafs Asp deals damage to a player, that player loses 1 life at the beginning of their next draw step unless they pay {1} before that draw step.",
-            "toughness": "1",
-            "type": "Creature — Snake",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "9504c8e6-6aae-5d17-ba82-8ae6c7d2f90e",
-            "variations": [
-                "8a2ee2f2-584b-5e81-a583-08cb9f09ad55"
-            ]
+            "uuid": "9c95028e-8a6b-5dfa-8d2e-13dd5d61f281"
         },
         {
             "artist": "Brian Snõddy",
@@ -3827,12 +3053,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3237,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/078468f27b81b84b",
             "text": "Sandstorm deals 1 damage to each attacking creature.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "d59958b5-e92f-522e-becd-17447c113217"
+            "uuid": "4ac9ea48-78a6-5474-98db-0499302472b5"
         },
         {
             "artist": "Rob Alexander",
@@ -3886,13 +3113,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3242,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c7d86cb26af8d434",
             "text": "{T}: Target attacking creature has base power 0 until end of turn.",
             "toughness": "3",
             "type": "Creature — Plant",
             "types": [
                 "Creature"
             ],
-            "uuid": "d76ffc2d-2cb0-55a6-9ee6-38b26efe9c0c"
+            "uuid": "4ca3614a-d089-5e0d-a80e-31ceec23a12f"
         },
         {
             "artist": "Susan Van Camp",
@@ -3922,7 +3150,7 @@
             "manaCost": "{1}{G}",
             "multiverseId": 954,
             "name": "Wyluli Wolf",
-            "number": "55a",
+            "number": "55",
             "originalText": "Tap to give any creature in play +1/+1 until end of turn.",
             "originalType": "Summon - Wolf",
             "power": "1",
@@ -3940,73 +3168,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3249,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b92a65abeeab7f4a",
             "text": "{T}: Target creature gets +1/+1 until end of turn.",
             "toughness": "1",
             "type": "Creature — Wolf",
             "types": [
                 "Creature"
             ],
-            "uuid": "1b0ff860-71ab-5f7d-a480-4d1f762fce8c",
-            "variations": [
-                "ab599f60-e5c2-58ec-bc08-c78e92d8828e"
-            ]
-        },
-        {
-            "artist": "Susan Van Camp",
-            "borderColor": "black",
-            "colorIdentity": [
-                "G"
-            ],
-            "colors": [
-                "G"
-            ],
-            "convertedManaCost": 2.0,
-            "flavorText": "\"When one wolf calls, others follow. Who wants to fight creatures that eat scorpions?\" —Maimun al-Wyluli, Diary",
-            "foreignData": [],
-            "frameVersion": "1993",
-            "hasFoil": false,
-            "hasNonFoil": true,
-            "layout": "normal",
-            "legalities": {
-                "1v1": "Legal",
-                "commander": "Legal",
-                "duel": "Legal",
-                "legacy": "Legal",
-                "pauper": "Legal",
-                "penny": "Legal",
-                "vintage": "Legal"
-            },
-            "manaCost": "{1}{G}",
-            "multiverseId": 953,
-            "name": "Wyluli Wolf",
-            "number": "55b",
-            "originalText": "Tap to give any creature in play +1/+1 until end of turn.",
-            "originalType": "Summon - Wolf",
-            "power": "1",
-            "printings": [
-                "5ED",
-                "6ED",
-                "ARN",
-                "ME1"
-            ],
-            "rarity": "common",
-            "rulings": [],
-            "scryfallId": "1cc1188c-4331-41dc-a577-bd4bedd7ca76",
-            "subtypes": [
-                "Wolf"
-            ],
-            "supertypes": [],
-            "tcgplayerProductId": 3249,
-            "text": "{T}: Target creature gets +1/+1 until end of turn.",
-            "toughness": "1",
-            "type": "Creature — Wolf",
-            "types": [
-                "Creature"
-            ],
-            "uuid": "ab599f60-e5c2-58ec-bc08-c78e92d8828e",
-            "variations": [
-                "1b0ff860-71ab-5f7d-a480-4d1f762fce8c"
-            ]
+            "uuid": "141fc0d7-ed7d-5d37-aa47-aa75e3f815d8"
         },
         {
             "artist": "Mark Tedin",
@@ -4049,12 +3218,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3162,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/77f1eef97df6f4e1",
             "text": "{X}, {T}: The next time you would draw a card this turn, instead look at the top X cards of your library, put all but one of them on the bottom of your library in a random order, then draw a card. X can't be 0.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "ff3b350e-6851-5336-a5c1-ec5bc0c6c923"
+            "uuid": "2aed47fb-c923-51c6-94e5-e11426068790"
         },
         {
             "artist": "Dan Frazier",
@@ -4101,12 +3271,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3163,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e5c31b7a40373b64",
             "text": "{8}, {T}: Aladdin's Ring deals 4 damage to any target.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "9b5c2646-0ded-5a38-9d38-d22f5f2724f8"
+            "uuid": "4edbf124-e629-501e-8771-618cd35133a5"
         },
         {
             "artist": "Jesper Myrfors",
@@ -4153,12 +3324,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3171,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dba91922f9ead2a8",
             "text": "{1}, Sacrifice Bottle of Suleiman: Flip a coin. If you win the flip, create a 5/5 colorless Djinn artifact creature token with flying. If you lose the flip, Bottle of Suleiman deals 5 damage to you.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "c8229ef0-b8ec-53e4-825b-63f7d0e3a9f5"
+            "uuid": "0eed6918-1acb-5720-960f-bbd69fc89763"
         },
         {
             "artist": "Christopher Rush",
@@ -4208,6 +3380,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3172,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/976d5deeab73696c",
             "text": "Brass Man doesn't untap during your untap step.\nAt the beginning of your upkeep, you may pay {1}. If you do, untap Brass Man.",
             "toughness": "3",
             "type": "Artifact Creature — Construct",
@@ -4215,7 +3388,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "7e7e119f-353d-5bc4-8bac-da6e4ced93b7"
+            "uuid": "45fb15b7-7ab3-5899-baba-0464c0e6015e"
         },
         {
             "artist": "Drew Tucker",
@@ -4261,12 +3434,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3174,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/144dc53d5dff011b",
             "text": "Whenever another nontoken permanent with a name originally printed in the Arabian Nights expansion is on the battlefield, its controller sacrifices it.\nPlayers can't cast spells or play lands with a name originally printed in the Arabian Nights expansion.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "835ad0d3-e483-52fc-955d-a9bd8d8436df"
+            "uuid": "45a8f260-55d1-56c0-862e-196ff3492f64"
         },
         {
             "artist": "Anson Maddocks",
@@ -4314,6 +3488,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3178,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a0a5df5022dc9c2f",
             "text": "Flying (This creature can't be blocked except by creatures with flying or reach.)",
             "toughness": "5",
             "type": "Artifact Creature — Spirit",
@@ -4321,7 +3496,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "11664abd-105b-503c-906a-f195ef3d38ac"
+            "uuid": "b021cd77-c77a-51c7-960e-8c7719de273e"
         },
         {
             "artist": "Dameon Willich",
@@ -4363,12 +3538,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3185,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/69faa6aa09a3c744",
             "text": "{2}, {T}: Untap target attacking creature you control. Prevent all combat damage that would be dealt to and dealt by that creature this turn.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "fd76545c-9781-51d4-aa32-9cbd628b8b0f"
+            "uuid": "2e657131-9a0a-5ea0-baf4-b1992f8f0917"
         },
         {
             "artist": "Mark Tedin",
@@ -4415,12 +3591,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3194,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2eab8676deafcd25",
             "text": "{2}, {T}: Target creature gains flying until end of turn.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "bf16891d-352e-53d5-a0b0-4e8cc566f84f"
+            "uuid": "7478eee1-a108-5aa7-a9b3-c9651e1521e6"
         },
         {
             "artist": "Dan Frazier",
@@ -4466,12 +3643,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3206,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9f1852598c610728",
             "text": "{2}, {T}, Discard the last card you drew this turn: Draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "93f4021f-6036-5a04-b0dc-a01d35853663"
+            "uuid": "09bc083a-fdfc-518e-aec9-762da3e4171f"
         },
         {
             "artist": "Dameon Willich",
@@ -4514,12 +3692,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3207,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/098ce5419c70dd06",
             "text": "{3}, {T}: Untap target creature.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "528d5f9a-b2f4-595e-9742-d42d628c8f23"
+            "uuid": "f2bda95d-c0c1-56e7-85ab-37c740a478cf"
         },
         {
             "artist": "Amy Weber",
@@ -4560,12 +3739,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3208,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/204d81c4117dbac5",
             "text": "Remove Jeweled Bird from your deck before playing if you're not playing for ante.\n{T}: Ante Jeweled Bird. If you do, put all other cards you own from the ante into your graveyard, then draw a card.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "f5e129ee-10c3-577f-b31e-6b14ad1ed523"
+            "uuid": "bbcaa75d-0fc2-5caf-96f0-efdf4cd8674d"
         },
         {
             "artist": "Amy Weber",
@@ -4600,12 +3780,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3231,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3c2ef1901bee3a48",
             "text": "{2}: Choose one —\n• Destroy target Aura attached to a land.\n• The next time target land would be destroyed this turn, remove all damage marked on it instead.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "1d11aa74-e87a-5e33-a7c1-e35450372638"
+            "uuid": "5549478d-e763-501c-a144-4c23df18cb4d"
         },
         {
             "artist": "Dan Frazier",
@@ -4652,7 +3833,7 @@
             "types": [
                 "Artifact"
             ],
-            "uuid": "533c572b-a7b2-5d43-93f5-422cea8bc876"
+            "uuid": "1e7c3e6c-f947-56fc-8dc3-ccab2b36827a"
         },
         {
             "artist": "Dan Frazier",
@@ -4687,12 +3868,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3236,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/83f317efec40450f",
             "text": "{2}, {T}: Target creature gains islandwalk until end of turn. When that creature dies this turn, destroy Sandals of Abdallah. (A creature with islandwalk can't be blocked as long as defending player controls an Island.)",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "424baba1-fd02-58e4-a1ce-b4a4ed4ef0fd"
+            "uuid": "c3e4c4c4-0086-52bd-8b62-a6085814ee95"
         },
         {
             "artist": "Jeff A. Menges",
@@ -4734,12 +3916,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3168,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4fdc8d7d404bc073",
             "text": "{T}: Draw two cards, then discard three cards.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "89904984-2c11-5a09-a01b-e96295efbbbb"
+            "uuid": "192d0e65-be6c-56ef-9256-661a9269d7f1"
         },
         {
             "artist": "Mark Tedin",
@@ -4805,12 +3988,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3175,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cba8e6252ab5d5b8",
             "text": "Whenever City of Brass becomes tapped, it deals 1 damage to you.\n{T}: Add one mana of any color.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "71296a79-0051-5a7a-994a-1ad5a3027db9"
+            "uuid": "cd148ee5-a910-56f0-89e3-2d142c3f56ba"
         },
         {
             "artist": "Jesper Myrfors",
@@ -4860,12 +4044,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 3180,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9335bcf86fc2a92e",
             "text": "{T}: Add {C}.\n{T}: Desert deals 1 damage to target attacking creature. Activate this ability only during the end of combat step.",
             "type": "Land — Desert",
             "types": [
                 "Land"
             ],
-            "uuid": "9526225a-86d3-5301-b994-8ddaa1a968d8"
+            "uuid": "6ec70722-23c6-5079-ae16-a5723b3c9852"
         },
         {
             "artist": "Brian Snõddy",
@@ -4901,12 +4086,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3183,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/92a7194ae5db4ecb",
             "text": "{T}, Sacrifice a creature: You gain life equal to the sacrificed creature's toughness.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "f9c169fc-1e49-59f9-9cf1-7e12eb63b990"
+            "uuid": "21a13364-79b1-56ef-b9e1-a71affce1d21"
         },
         {
             "artist": "Rob Alexander",
@@ -4942,12 +4128,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3187,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d5b5fab21d68556e",
             "text": "{T}: Add {C}.\n{T}: Regenerate target Elephant.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "764dfd65-9dd6-56d7-a574-0202c819fafb"
+            "uuid": "0648332b-0a34-5120-ae25-eb31658d370a"
         },
         {
             "artist": "Douglas Shuler",
@@ -4997,12 +4184,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3205,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/74f71382d09d6d1a",
             "text": "{T}: Target creature with flying has base power 0 until end of turn.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "d8681524-3c73-5aa7-9d35-0057beaa637d"
+            "uuid": "fa7cc8d8-7e8e-5375-b1ab-37806bc8c5a4"
         },
         {
             "artist": "Mark Poole",
@@ -5045,12 +4233,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3215,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9a094988ee453389",
             "text": "{T}: Add {C}.\n{T}: Draw a card. Activate this ability only if you have exactly seven cards in hand.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "e262d114-6080-5f33-a3c0-789b95017477"
+            "uuid": "5722e5f8-46fe-54c3-8ff7-26a01197408b"
         },
         {
             "artist": "Douglas Shuler",
@@ -5132,6 +4321,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -5154,7 +4344,7 @@
             "types": [
                 "Land"
             ],
-            "uuid": "707f60e7-2ed6-5e28-beeb-686e2a14eef9"
+            "uuid": "27473387-4e56-508c-8a16-2d8a2f6508cc"
         },
         {
             "artist": "Brian Snõddy",
@@ -5194,24 +4384,25 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 3225,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/283fb243c9b850e7",
             "text": "{T}: Prevent the next 1 damage that would be dealt to target creature this turn.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "782c51e5-b85b-51b9-b1d2-1d9a088c60c8"
+            "uuid": "dc6c82ad-4818-56f1-a50b-ff4215e3b687"
         }
     ],
-    "code": "arn",
+    "code": "ARN",
     "meta": {
-        "date": "2018-12-18",
-        "version": "4.2.0"
+        "date": "2018-01-12",
+        "version": "4.2.1"
     },
-    "mtgoCode": null,
+    "mtgoCode": "",
     "name": "Arabian Nights",
     "releaseDate": "1993-12-17",
     "tcgplayerGroupId": 11,
     "tokens": [],
-    "totalSetSize": 92,
+    "totalSetSize": 78,
     "type": "expansion"
 }

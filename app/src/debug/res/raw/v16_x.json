@@ -60,12 +60,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 121167,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/275bc4587e0e2bc6",
             "text": "({2/B} can be paid with any two mana or with {B}. This card's converted mana cost is 6.)\nSearch your library for a card with converted mana cost less than or equal to the number of lands you control, reveal it, and put it into your hand. Then shuffle your library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "74431c18-c365-5702-aa94-e2071db7faa1"
+            "uuid": "1696b796-f904-5b56-a665-e5666d8ffcc9"
         },
         {
             "artist": "Kieran Yanner",
@@ -109,12 +110,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 121168,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b5413a1dadebaf03",
             "text": "Add {B}{B}{B}.\nThreshold — Add {B}{B}{B}{B}{B} instead if seven or more cards are in your graveyard.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "d97e557a-b4b9-513e-a6d3-e0e29f15af4c"
+            "uuid": "7a21cf9c-e8a4-58cd-9ac4-d9b649f8c28e"
         },
         {
             "artist": "Karl Kopinski",
@@ -175,12 +177,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 121169,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/847de907803491ba",
             "text": "Search your library for a white card, a blue card, a black card, a red card, and a green card. Reveal those cards and put them into your hand. Then shuffle your library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "79e358f4-8708-5201-833a-2407c60e0930"
+            "uuid": "ff8bd740-393e-55a5-86a4-983be3ff065c"
         },
         {
             "artist": "Stephan Martiniere",
@@ -236,12 +239,13 @@
                 "Snow"
             ],
             "tcgplayerProductId": 121170,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5e236142ca80d8f7",
             "text": "Dark Depths enters the battlefield with ten ice counters on it.\n{3}: Remove an ice counter from Dark Depths.\nWhen Dark Depths has no ice counters on it, sacrifice it. If you do, create Marit Lage, a legendary 20/20 black Avatar creature token with flying and indestructible.",
             "type": "Legendary Snow Land",
             "types": [
                 "Land"
             ],
-            "uuid": "07b19b0f-ee8e-5ec9-aadd-3fdb5aa1f38a"
+            "uuid": "50131510-f4c5-537e-8264-858c0ddfcd39"
         },
         {
             "artist": "Chris Rahn",
@@ -300,13 +304,15 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 121171,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5811850ed15d9a9c",
             "text": "First strike, deathtouch\nWhenever a creature an opponent controls dies, you may return target artifact card from your graveyard to your hand.",
             "toughness": "3",
             "type": "Legendary Creature — Zombie Elf",
             "types": [
                 "Creature"
             ],
-            "uuid": "48774049-d4d8-5d8d-82a0-a2aa960caf9e"
+            "uuid": "5ac2d253-6b68-5379-b9f0-fc6b804aee09",
+            "watermark": "phyrexian"
         },
         {
             "artist": "Jaime Jones",
@@ -351,12 +357,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 121172,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/547c010b7110e8cc",
             "text": "{1}, {T}: Exile target creature you control.\n{7}, {T}: Exile target creature you don't control.\nWhen Helvault is put into a graveyard from the battlefield, return all cards exiled with it to the battlefield under their owners' control.",
             "type": "Legendary Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "1abd6f78-7e33-53b6-901c-2c224aa082e6"
+            "uuid": "2c03217d-e7b3-5621-b66c-ed0858fa0972"
         },
         {
             "artist": "Carl Critchlow",
@@ -412,6 +419,7 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 121174,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2b08af4f8ad08349",
             "text": "{1}{U}{U}: Target permanent becomes an artifact in addition to its other types. (This effect lasts indefinitely.)\n{3}{U}: Gain control of target artifact. (This effect lasts indefinitely.)",
             "toughness": "5",
             "type": "Legendary Artifact Creature — Wizard",
@@ -419,7 +427,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "8696b14f-1ab0-55fa-b63b-afd5e2947abe"
+            "uuid": "bcf5c8c4-fb5d-57a8-9078-35daceb1263f"
         },
         {
             "artist": "Adam Paquette",
@@ -489,12 +497,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 121175,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e848c17c8a7afb57",
             "text": "Shuffle your library. Then exile the top card of your library. Until end of turn, you may play that card without paying its mana cost. (If it has X in its mana cost, X is 0.)\nStorm (When you cast this spell, copy it for each spell cast before it this turn.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "cf407851-eb5e-5dc8-9a4e-5beda28cc9ec"
+            "uuid": "0a00b674-18f5-53e1-8338-e007e5ad351b"
         },
         {
             "artist": "Victor Adame Minguez",
@@ -549,13 +558,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 121176,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/21d3364ea93d1678",
             "text": "Whenever you cast a green creature spell, you may search your library for a creature card and reveal it. If you do, shuffle your library and put that card on top of it.\nWhenever you cast a blue creature spell, reveal the top card of your library. If it's a creature card, put that card into your hand.",
             "toughness": "2",
             "type": "Legendary Creature — Elf Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "e392614e-3f8d-589e-9aa8-41617ddd64c8"
+            "uuid": "1f774eab-980c-582d-adf1-411600a61fb0"
         },
         {
             "artist": "Dan Scott",
@@ -608,12 +618,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 121177,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a20b2a9fbcf6ec0c",
             "text": "At the beginning of your upkeep, if you have exactly 1 life, you win the game.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "0816692c-b2db-58e4-b587-66e040d34083"
+            "uuid": "5eaff436-c23e-5dda-867b-84c3a3e323a7"
         },
         {
             "artist": "Kev Walker",
@@ -663,12 +674,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 121178,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b24a441ceaab09ee",
             "text": "This spell can't be countered.\nDestroy all artifacts, creatures, and lands. They can't be regenerated.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "d5250237-bd3f-5fbc-ae35-51eb24208337"
+            "uuid": "269e3b1c-0d40-5d59-91cf-11982f2b3c2a"
         },
         {
             "artist": "Dave Kendall",
@@ -713,12 +725,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 121179,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6dc9041d14f287da",
             "text": "As Phyrexian Processor enters the battlefield, pay any amount of life.\n{4}, {T}: Create an X/X black Minion creature token, where X is the life paid as Phyrexian Processor entered the battlefield.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "5e3d9ea2-e214-52fd-84e5-23b95805cb41"
+            "uuid": "3348bd3e-e708-5b15-8674-9f4b1dd32f17"
         },
         {
             "artist": "Khang Le",
@@ -762,12 +775,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 121180,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/504c0dfa698b8945",
             "text": "Tolaria West enters the battlefield tapped.\n{T}: Add {U}.\nTransmute {1}{U}{U} ({1}{U}{U}, Discard this card: Search your library for a card with converted mana cost 0, reveal it, and put it into your hand. Then shuffle your library. Transmute only as a sorcery.)",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "8eb9c937-4e1d-53ba-9f0e-73d4098a6dbb"
+            "uuid": "26b3a409-c6c9-5087-a7e6-a12f247f9e77"
         },
         {
             "artist": "Christopher Moeller",
@@ -833,12 +847,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 121181,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/355fe08d7dcd7232",
             "text": "Whenever equipped creature deals combat damage, put two charge counters on Umezawa's Jitte.\nRemove a charge counter from Umezawa's Jitte: Choose one —\n• Equipped creature gets +2/+2 until end of turn.\n• Target creature gets -1/-1 until end of turn.\n• You gain 2 life.\nEquip {2}",
             "type": "Legendary Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "cb308459-1b71-59cb-bec7-d331eb1f8665"
+            "uuid": "eba32aca-1b2e-5b72-b85b-fe94c744c6b9"
         },
         {
             "artist": "rk post",
@@ -884,21 +899,22 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 121182,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/26853a958ac62c5d",
             "text": "You may exile a black card from your hand rather than pay this spell's mana cost.\nTarget player reveals their hand. You choose a nonland card from it. That player discards that card.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "3cfd326f-d984-5dad-a67f-b6d1f363e1a3"
+            "uuid": "5aca9d7d-89ee-5e30-b552-986d5382876c"
         }
     ],
-    "code": "v16",
+    "code": "V16",
     "isFoilOnly": true,
     "meta": {
-        "date": "2018-12-18",
-        "version": "4.2.0"
+        "date": "2018-01-12",
+        "version": "4.2.1"
     },
-    "mtgoCode": "v16",
+    "mtgoCode": "V16",
     "name": "From the Vault: Lore",
     "releaseDate": "2016-08-19",
     "tcgplayerGroupId": 1821,
@@ -922,7 +938,7 @@
             "text": "Flying\nIndestructible",
             "toughness": "20",
             "type": "Token Legendary Creature — Avatar",
-            "uuid": "21b402ca-7323-5384-8f07-0ce0755553b0"
+            "uuid": "10c2d7b1-9735-5a31-92a1-4aede4eba599"
         }
     ],
     "totalSetSize": 16,

@@ -152,13 +152,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58311,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2c7a00fbd6a791a6",
             "text": "Flying\nWhen Angel of Glory's Rise enters the battlefield, exile all Zombies, then return all Human creature cards from your graveyard to the battlefield.",
             "toughness": "6",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "19d189e9-a000-5ffb-b5f8-04e1f84b5cc4"
+            "uuid": "d467d59e-b1eb-59f4-aeb1-dc560baf1b1f"
         },
         {
             "artist": "Terese Nielsen",
@@ -296,13 +297,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58195,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/417c14223d73ec66",
             "text": "Flying\nOther nonblack creatures you control get +1/+1.\nPlayers can't pay life or sacrifice creatures to cast spells or activate abilities.",
             "toughness": "3",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "b30b75a3-7589-5d3c-89ff-ca14eee59804"
+            "uuid": "1a786119-dd20-58ce-82dd-835a7cf6ab87"
         },
         {
             "artist": "Greg Staples",
@@ -429,12 +431,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58843,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1e71c3f45031dfc0",
             "text": "You gain 7 life.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "6a3f115b-6b2d-5eaf-81a6-1ac04ae4cd04"
+            "uuid": "1468cf94-88ec-53d1-8a13-63598f63547f"
         },
         {
             "artist": "Allen Williams",
@@ -565,13 +568,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58844,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/71e0d74440152619",
             "text": "Defender (This creature can't attack.)\nFlying",
             "toughness": "4",
             "type": "Creature — Wall",
             "types": [
                 "Creature"
             ],
-            "uuid": "13c42a50-6e53-5434-970f-4491bdadd2b3"
+            "uuid": "914a5199-b68a-5f1c-922a-6565a61bb98a"
         },
         {
             "artist": "Cynthia Sheppard",
@@ -691,6 +695,7 @@
                 "AVR",
                 "C13",
                 "P02",
+                "PMEI",
                 "POR",
                 "S99",
                 "VIS"
@@ -703,13 +708,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58845,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7e8b7480b453be4d",
             "text": "Flying, vigilance",
             "toughness": "5",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "8c31c80d-85bf-5f21-9cdd-93f09aa5b737"
+            "uuid": "dab38760-5ba2-5904-b314-54119550c8e6"
         },
         {
             "artist": "Jason Chan",
@@ -858,13 +864,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 58167,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/19c9441fc3767e07",
             "text": "Flying, vigilance, indestructible\nOther permanents you control have indestructible.",
             "toughness": "8",
             "type": "Legendary Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "4a263ea4-ee52-509a-9bb9-4fdd479c9c93"
+            "uuid": "2b7f8a4a-5733-5e68-a43e-e6bfa377cad2"
         },
         {
             "artist": "Igor Kieryluk",
@@ -1024,12 +1031,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58173,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f3e136716bf16f8d",
             "text": "Put target artifact, creature, or enchantment on the bottom of its owner's library.\nMiracle {W} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "ec53995b-37ac-5058-b0a3-fc40dc906068"
+            "uuid": "2618c029-9ae8-5b96-a970-02a781192e40"
         },
         {
             "artist": "John Stanko",
@@ -1152,12 +1160,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58846,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2fd2305fba2f75bb",
             "text": "Untapped creatures you control get +0/+2.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "c79e56d4-2992-5e0a-840c-d092a59fc588"
+            "uuid": "f20374cc-2b0e-56fc-a7c3-d2c6366527d0"
         },
         {
             "artist": "Jaime Jones",
@@ -1288,12 +1297,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58847,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1008111dbca1aebd",
             "text": "Enchant nonblack creature\nEnchanted creature gets +1/+2, has flying, and is an Angel in addition to its other types.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "4a9fe5c3-02fa-58af-aab0-63bfc6cd3d37"
+            "uuid": "18714d45-4de6-5b3f-9b16-065089a76acd"
         },
         {
             "artist": "Karl Kopinski",
@@ -1423,12 +1433,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58297,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cc46cace13edf7ec",
             "text": "Whenever a creature enters the battlefield under your control, put a +1/+1 counter on each creature you control.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "a38ef962-ac3e-515c-8c0d-21657f18064c"
+            "uuid": "6b9dd882-52f2-5edc-9dd5-8204cead64a6"
         },
         {
             "artist": "Michael C. Hayes",
@@ -1556,13 +1567,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58848,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9a29ca9422053b6b",
             "text": "When Cathedral Sanctifier enters the battlefield, you gain 3 life.",
             "toughness": "1",
             "type": "Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "ab5bbd93-af3e-575c-9088-bf8ded8a3ee1"
+            "uuid": "b48c03f1-72fa-5f8d-bbf0-1a477fa41294"
         },
         {
             "artist": "Howard Lyon",
@@ -1703,12 +1715,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58174,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ad42fe8a415587d4",
             "text": "Exile target creature you control, then return that card to the battlefield under your control.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "214eca64-dbc9-5e09-8f00-af534d62c530"
+            "uuid": "d1fb3584-f9eb-5997-9f3a-e938f7ff3ba3"
         },
         {
             "artist": "Johannes Voss",
@@ -1839,12 +1852,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58358,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4c1e061d3f0c63ab",
             "text": "Enchant creature\nEnchanted creature has \"At the beginning of your upkeep, create a 1/1 white Human creature token.\"",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "3101a6bd-8d3f-5c27-9637-2b8aaa9e7502"
+            "uuid": "565ddc4e-9b47-5660-a373-1bdb077784cd"
         },
         {
             "artist": "Sam Wolfe Connelly",
@@ -1973,12 +1987,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58849,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4e2c8b0cc7ae24d5",
             "text": "Destroy target enchantment. You gain 2 life.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "d9596832-fe71-58f5-a69d-2498d6efb820"
+            "uuid": "aa53cc31-afb5-5f44-a65e-7769fd4f1274"
         },
         {
             "artist": "Steven Belledin",
@@ -2104,12 +2119,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58850,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/63c14ef07314fc5a",
             "text": "Enchant creature\nPrevent all damage that would be dealt by enchanted creature.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "aea0cfdf-5dfe-5aad-adec-893bbb44b0e4"
+            "uuid": "011040bc-cb7e-51df-b52d-467eebe3e5f4"
         },
         {
             "artist": "Karl Kopinski",
@@ -2241,12 +2257,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58312,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f86d506d3fb6af0c",
             "text": "Return target creature card from your graveyard to the battlefield. If it's an Angel, put two +1/+1 counters on it.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "9a9b54d8-38a9-5390-824b-558764f68afd"
+            "uuid": "8766430e-adba-5890-8f77-41df872bb40d"
         },
         {
             "artist": "Lucas Graciano",
@@ -2378,13 +2395,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58851,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f8283892735b16d3",
             "text": "{T}, Tap two untapped Humans you control: Exile target artifact or enchantment.",
             "toughness": "2",
             "type": "Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "88bbc760-08c7-5dd1-b63f-c1ba1bb4d546"
+            "uuid": "9c54da3d-10f0-5f9e-92c9-10c7ae952245"
         },
         {
             "artist": "Steve Prescott",
@@ -2533,12 +2551,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58852,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e638b5ffbe6e2e92",
             "text": "Prevent the next X damage that would be dealt to you and/or permanents you control this turn. If damage is prevented this way, Divine Deflection deals that much damage to any target.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "48566006-38e5-51d3-99c0-c62825981a01"
+            "uuid": "b6cbbc8c-f425-5092-9621-0a38f94f9332"
         },
         {
             "artist": "Scott Chou",
@@ -2675,13 +2694,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58292,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ba993daca2c61d4f",
             "text": "Flying\nWhen Emancipation Angel enters the battlefield, return a permanent you control to its owner's hand.",
             "toughness": "3",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "0fbaa5bf-326f-5183-b735-df53f8f1e967"
+            "uuid": "db891b3b-5e9d-5b4a-883c-ba095ee423b0"
         },
         {
             "artist": "Todd Lockwood",
@@ -2850,12 +2870,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58310,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a8a3183afa576707",
             "text": "Create X 4/4 white Angel creature tokens with flying.\nMiracle {X}{W}{W} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "81303a38-7422-528b-b743-485e8cb74f07"
+            "uuid": "10c990d8-1052-5cff-a84f-f1ca2fdc3995"
         },
         {
             "artist": "Scott Chou",
@@ -2982,13 +3003,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58853,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/10af80f326e58936",
             "text": "Swampwalk (This creature can't be blocked as long as defending player controls a Swamp.)",
             "toughness": "3",
             "type": "Creature — Human Scout",
             "types": [
                 "Creature"
             ],
-            "uuid": "ecf71445-9c89-5f86-a783-e09ebec734e2"
+            "uuid": "624201cb-8741-5311-bf06-7e639c88203b"
         },
         {
             "artist": "Chris Rahn",
@@ -3121,13 +3143,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58854,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6c2c898d07361b23",
             "text": "Whenever another creature enters the battlefield under your control, creatures you control get +1/+1 until end of turn.",
             "toughness": "2",
             "type": "Creature — Human Cleric Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "9de45ec8-1dff-5510-859f-610b91502730"
+            "uuid": "a6a32104-9633-5b2e-9a89-955bb82a1d95"
         },
         {
             "artist": "Karl Kopinski",
@@ -3259,13 +3282,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58305,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c69f8fa1a0579eb3",
             "text": "Flying\nWhen Goldnight Redeemer enters the battlefield, you gain 2 life for each other creature you control.",
             "toughness": "4",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "00436b64-d803-5a62-b49b-fb3d672ae560"
+            "uuid": "0a83d012-9818-56a6-aec2-809d3ecdc80c"
         },
         {
             "artist": "Eric Deschamps",
@@ -3396,13 +3420,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58301,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f6b70f50d9d330db",
             "text": "Flying\nWhenever Herald of War attacks, put a +1/+1 counter on it.\nAngel spells and Human spells you cast cost {1} less to cast for each +1/+1 counter on Herald of War.",
             "toughness": "3",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "2a3c6137-904d-555b-8f46-1fb4762b7c01"
+            "uuid": "e86d0b2d-a0a5-5b6a-9a3b-5c26838c7617"
         },
         {
             "artist": "David Rapoza",
@@ -3534,13 +3559,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58855,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c5d41761bc030b55",
             "text": "{2}{W}, {T}: Tap target creature. If that creature is a Zombie, exile it.",
             "toughness": "1",
             "type": "Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "25bf7e3a-3ac7-5cd2-9f37-644c4cb3dc51"
+            "uuid": "bf489c47-fe09-5a90-9124-76cacee912bc"
         },
         {
             "artist": "Gabor Szikszai",
@@ -3664,12 +3690,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58856,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f2cbfde5fcd36cd9",
             "text": "Target creature gains flying until end of turn. Prevent all damage that would be dealt to that creature this turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "2549822f-50ec-5934-925b-0e77a56c727b"
+            "uuid": "84d4ee0c-354b-5da4-85d9-08409f925195"
         },
         {
             "artist": "Bud Cook",
@@ -3797,13 +3824,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58857,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a4cf36dbd3516039",
             "text": "Protection from Vampires",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "97bf62de-4e61-5881-a153-a6a0ce0b4684"
+            "uuid": "2c3c26f4-0b47-5cdc-ae4e-39d80e7f3e0c"
         },
         {
             "artist": "James Ryman",
@@ -3930,13 +3958,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58858,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/df9a7842c37197c7",
             "text": "When Midvast Protector enters the battlefield, target creature you control gains protection from the color of your choice until end of turn.",
             "toughness": "3",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "a13a33c6-81aa-573c-9a8b-d196a96dd7b4"
+            "uuid": "00be2d37-588a-5ebb-9418-a5fb20948660"
         },
         {
             "artist": "Dan Scott",
@@ -4062,13 +4091,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58859,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dbbaa9823577dbe3",
             "text": "Flying\n{3}{W}: Prevent all combat damage that would be dealt to and dealt by Moonlight Geist this turn.",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "e30be51b-65b7-54d8-984b-77f6d7dcfb11"
+            "uuid": "559034d4-83fb-5e8d-948b-b9e28ca7c562"
         },
         {
             "artist": "David Palumbo",
@@ -4197,13 +4227,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58860,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/94e6ac32db05a2ca",
             "text": "{2}{W}: Moorland Inquisitor gains first strike until end of turn.",
             "toughness": "2",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "e677aeab-687e-521b-a006-8d9bdb2edec8"
+            "uuid": "3ae2414a-cb8a-5971-9482-9a69aa0e5f7f"
         },
         {
             "artist": "Erica Yang",
@@ -4319,13 +4350,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58861,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2f230acd2cf76ad6",
             "text": "Soulbond (You may pair this creature with another unpaired creature when either enters the battlefield. They remain paired for as long as you control both of them.)\nAs long as Nearheath Pilgrim is paired with another creature, both creatures have lifelink.",
             "toughness": "1",
             "type": "Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "1b23e890-963e-5cae-8763-f1938bbb6492"
+            "uuid": "758fb1b9-10d5-5e92-80a0-4fe45decb073"
         },
         {
             "artist": "Johannes Voss",
@@ -4460,13 +4492,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58175,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c0d2495b03236dda",
             "text": "Flash\nFlying\nWhen Restoration Angel enters the battlefield, you may exile target non-Angel creature you control, then return that card to the battlefield under your control.",
             "toughness": "4",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "32f78a7f-7871-5c78-9380-7276b9064c89"
+            "uuid": "f66d3fd1-b66b-5539-a7bc-234b17f06fdb"
         },
         {
             "artist": "Volkan Baga",
@@ -4586,13 +4619,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58862,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ef199e6fc690e97c",
             "text": "Vigilance\nAs Riders of Gavony enters the battlefield, choose a creature type.\nHuman creatures you control have protection from creatures of the chosen type.",
             "toughness": "3",
             "type": "Creature — Human Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "b6f9c1d0-a359-5383-b605-d3edf43b7719"
+            "uuid": "2d09bc08-3795-5d8f-9aa2-56df53b30699"
         },
         {
             "artist": "Clint Cearley",
@@ -4721,12 +4755,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58863,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/78422873b3525e05",
             "text": "Righteous Blow deals 2 damage to target attacking or blocking creature.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "41280e5b-8663-527b-bc53-cb4e9cbadebf"
+            "uuid": "7dc70f80-f88d-57cb-97df-a2e3c93e4873"
         },
         {
             "artist": "Todd Lockwood",
@@ -4852,13 +4887,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58864,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d8b504d98e252685",
             "text": "Flying\nLifelink (Damage dealt by this creature also causes you to gain that much life.)",
             "toughness": "4",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "1f6eb835-c3a3-58dc-a42d-154e5e35dda0"
+            "uuid": "9e40c7b4-d2fb-531d-83ce-94ba5d56eb92"
         },
         {
             "artist": "Jason Chan",
@@ -4976,13 +5012,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58176,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0f823627945e3639",
             "text": "Soulbond (You may pair this creature with another unpaired creature when either enters the battlefield. They remain paired for as long as you control both of them.)\nAs long as Silverblade Paladin is paired with another creature, both creatures have double strike.",
             "toughness": "2",
             "type": "Creature — Human Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "d96524a5-f022-5180-a222-cd13f4ef5914"
+            "uuid": "0a1fe1e8-feac-51e5-ae0b-d1c3437b884f"
         },
         {
             "artist": "Wayne England",
@@ -5100,13 +5137,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58865,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fdd09747e326c51d",
             "text": "Soulbond (You may pair this creature with another unpaired creature when either enters the battlefield. They remain paired for as long as you control both of them.)\nAs long as Spectral Gateguards is paired with another creature, both creatures have vigilance.",
             "toughness": "5",
             "type": "Creature — Spirit Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "b34a05ff-ec46-5adc-af5c-22586dc91976"
+            "uuid": "a83ad510-3a8e-5b09-86b6-2e01f176d0a3"
         },
         {
             "artist": "James Paick",
@@ -5270,12 +5308,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58368,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/90066941d08e068c",
             "text": "Put all creatures on the bottom of their owners' libraries.\nMiracle {W} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "0e1b6176-12d3-5d03-b7d0-ee395388cdd2"
+            "uuid": "a20bed99-0d1c-51c6-8c78-053bccb06332"
         },
         {
             "artist": "Jason Chan",
@@ -5404,13 +5443,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58866,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b2382cbe3987b0a2",
             "text": "Vigilance",
             "toughness": "1",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "9ebfc32e-95af-57ba-8200-459f54ab491c"
+            "uuid": "95a2862d-3385-5faa-a5b4-e9418c3e76fb"
         },
         {
             "artist": "Igor Kieryluk",
@@ -5539,13 +5579,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58867,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/deaca861f26c497d",
             "text": "Flying\nWhen Voice of the Provinces enters the battlefield, create a 1/1 white Human creature token.",
             "toughness": "3",
             "type": "Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "14951327-5f4d-5ad2-925b-2df5a439605a"
+            "uuid": "70c0a376-9b96-598c-b463-5cb8aaf0dc5a"
         },
         {
             "artist": "Bud Cook",
@@ -5670,12 +5711,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58868,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cbcb73b02f9f6240",
             "text": "Target creature gets +2/+2 and gains first strike until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "c0554f64-9550-5d5d-9356-d5516675ad02"
+            "uuid": "eec22019-f7c6-5b87-8c17-03d93e452f62"
         },
         {
             "artist": "David Palumbo",
@@ -5803,13 +5845,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58869,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b76deac06744e1b3",
             "text": "Sacrifice Alchemist's Apprentice: Draw a card.",
             "toughness": "1",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "7194b743-a8aa-5188-975a-bab397ba8494"
+            "uuid": "288663a4-0a00-56ec-ab1c-32312d5c9669"
         },
         {
             "artist": "Matt Stewart",
@@ -5939,12 +5982,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58870,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/baddc2b75af49ede",
             "text": "Draw three cards, then put a card from your hand on the bottom of your library.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "6b3d5680-f477-54fc-bc35-7be9908c86bf"
+            "uuid": "1700c5ac-4443-5d52-a3fa-1fdd5e8b8844"
         },
         {
             "artist": "Jaime Jones",
@@ -6085,12 +6129,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58269,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/232ba6813dc2583a",
             "text": "Instant and sorcery spells cost {2} less to cast.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "118bf4c7-c976-5457-9f62-97fdfbe9b584"
+            "uuid": "5046487b-b11d-50da-ab05-fccaf10d1ffb"
         },
         {
             "artist": "Allen Williams",
@@ -6218,13 +6263,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58871,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2800fbcadff49bf5",
             "text": "Whenever another Human enters the battlefield under your control, untap Captain of the Mists.\n{1}{U}, {T}: You may tap or untap target permanent.",
             "toughness": "3",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "8af91ef0-f6e0-5fd9-a8d3-e3b80eb94190"
+            "uuid": "0ba87312-5a10-59c0-817e-b20a25461cb1"
         },
         {
             "artist": "Svetlin Velinov",
@@ -6356,12 +6402,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58872,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cb95165e68ff07b5",
             "text": "Tap target creature. It doesn't untap during its controller's next untap step.\nDraw a card.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "b140c8e3-b83b-5ce7-8655-2da3d1cbe92e"
+            "uuid": "38b1ae04-ff09-5fc6-9b6a-19d7e94211c5"
         },
         {
             "artist": "Tomasz Jedruszek",
@@ -6485,13 +6532,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58873,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8820f605afd3acf6",
             "text": "Soulbond (You may pair this creature with another unpaired creature when either enters the battlefield. They remain paired for as long as you control both of them.)\nAs long as Deadeye Navigator is paired with another creature, each of those creatures has \"{1}{U}: Exile this creature, then return it to the battlefield under your control.\"",
             "toughness": "5",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "ed7fa096-143f-5547-997d-826c85d030e3"
+            "uuid": "ad6b7f8b-d837-5f5f-ba9e-490dfc125a0a"
         },
         {
             "artist": "Raymond Swanland",
@@ -6661,12 +6709,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58874,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/eb8969e2ac2ad944",
             "text": "Return all nonland permanents to their owners' hands.\nMiracle {1}{U} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "005874b8-0f12-5f7f-a6e0-637b4215b300"
+            "uuid": "af3706eb-f779-5700-be40-42c8f9afe093"
         },
         {
             "artist": "Cliff Childs",
@@ -6797,12 +6846,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58875,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/73c025c047b603bd",
             "text": "Target player puts the top X cards of their library into their graveyard, where X is the number of lands you control.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "e955db2d-ba1e-5d4f-8406-75d8e70f40e5"
+            "uuid": "326194d4-c13a-5195-8281-160b74623ab2"
         },
         {
             "artist": "Anthony Palumbo",
@@ -6919,13 +6969,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58876,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d049086dc8f203f1",
             "text": "Soulbond (You may pair this creature with another unpaired creature when either enters the battlefield. They remain paired for as long as you control both of them.)\nAs long as Elgaud Shieldmate is paired with another creature, both creatures have hexproof. (They can't be the targets of spells or abilities your opponents control.)",
             "toughness": "3",
             "type": "Creature — Human Soldier",
             "types": [
                 "Creature"
             ],
-            "uuid": "c0ef65af-0969-5cc8-b442-d2e51607af54"
+            "uuid": "f67c6385-b929-58f1-b906-bfeef5b8d905"
         },
         {
             "artist": "Winona Nelson",
@@ -7055,12 +7106,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58877,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/aefe1ff8610ad1db",
             "text": "Creatures you control with flying get +1/+1.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "0f60b2a6-a470-5660-bae1-f51ec0e6c674"
+            "uuid": "85c1e5c3-8288-5666-9547-9dbb23811feb"
         },
         {
             "artist": "Izzy",
@@ -7191,13 +7243,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58878,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/df916570217b98a6",
             "text": "Flying\nAt the beginning of your upkeep, sacrifice Fettergeist unless you pay {1} for each other creature you control.",
             "toughness": "4",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "dd7a5df6-355b-5093-bcb9-fa6891018e70"
+            "uuid": "b73cb4a3-2098-5cc9-9bed-3f67c4a4f054"
         },
         {
             "artist": "Ryan Yee",
@@ -7333,12 +7386,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58879,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/463b7818afe820b2",
             "text": "Target creature gets -1/-0 until end of turn.\nDraw a card.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "7058c34e-224e-5e68-9764-26527d0e1bc0"
+            "uuid": "6d483e0c-3c18-5aa8-8fdb-dc40df7dddb5"
         },
         {
             "artist": "Svetlin Velinov",
@@ -7454,13 +7508,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58880,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/23313e7af95d37ac",
             "text": "Soulbond (You may pair this creature with another unpaired creature when either enters the battlefield. They remain paired for as long as you control both of them.)\nAs long as Galvanic Alchemist is paired with another creature, each of those creatures has \"{2}{U}: Untap this creature.\"",
             "toughness": "4",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "5bf7f5e2-7b35-5c4c-a382-ae53d63ef672"
+            "uuid": "125ebb49-0899-510f-be53-bf07bdf317d8"
         },
         {
             "artist": "Dan Scott",
@@ -7593,12 +7648,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58881,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a08f3ec23c81b789",
             "text": "Counter target creature spell. Create a 1/1 blue Spirit creature token with flying.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "4a54800e-3915-5639-aa2e-24f7968eeb43"
+            "uuid": "789a93c0-073d-52d2-a339-d5dc9a50e645"
         },
         {
             "artist": "Scott Chou",
@@ -7727,12 +7783,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58882,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f6980fb1bd75008a",
             "text": "Up to two target creatures can't be blocked this turn.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "8f1bd379-2835-5380-86bb-ab885139d825"
+            "uuid": "972f1a14-d4a2-53bb-ab6d-bd94eea142ee"
         },
         {
             "artist": "Raymond Swanland",
@@ -7861,12 +7918,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58293,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/717a5eb5575d5a33",
             "text": "Exile two target artifacts, creatures, and/or lands you control, then return those cards to the battlefield under your control.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "92af836a-b8d8-5c9a-892d-287d0ecc891d"
+            "uuid": "5073729d-f801-5f93-a113-87ade5eaf1c1"
         },
         {
             "artist": "Jason Felix",
@@ -7991,12 +8049,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58883,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a5de0c369da8a18e",
             "text": "Enchant creature\nEnchanted creature has \"Whenever this creature attacks, you may tap or untap target permanent.\"",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "39dcf1bc-c318-5471-8807-19edc9675afe"
+            "uuid": "fdbd6355-2820-51fb-b3eb-989dc2175ad5"
         },
         {
             "artist": "Jason Chan",
@@ -8125,13 +8184,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58884,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/93fe2889b79a0675",
             "text": "Flying\nWhen Gryff Vanguard enters the battlefield, draw a card.",
             "toughness": "2",
             "type": "Creature — Human Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "e56a6cf9-57be-5ef9-8932-6b2cb9291f6a"
+            "uuid": "0f0aa5be-36bd-5029-88f7-3c957fbf75e7"
         },
         {
             "artist": "Vincent Proce",
@@ -8264,13 +8324,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58885,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/00edfe6c5b5aca7c",
             "text": "Whenever Havengul Skaab attacks, return another creature you control to its owner's hand.",
             "toughness": "5",
             "type": "Creature — Zombie Horror",
             "types": [
                 "Creature"
             ],
-            "uuid": "6d337064-a0d1-59dc-b942-c88a07d3996d"
+            "uuid": "217b6de5-e039-5256-be2d-9604b6cf55a7"
         },
         {
             "artist": "Igor Kieryluk",
@@ -8430,12 +8491,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58369,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cd5845ff51ebde46",
             "text": "Enchant creature\nWhen Infinite Reflection enters the battlefield attached to a creature, each other nontoken creature you control becomes a copy of that creature.\nNontoken creatures you control enter the battlefield as a copy of enchanted creature.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "cae0b346-b7f6-5010-8e44-98f1876c4e03"
+            "uuid": "bd7bf9ed-8900-5450-882a-dfb65f8481d3"
         },
         {
             "artist": "Daarken",
@@ -8562,12 +8624,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58886,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/760cd5ef26fcb180",
             "text": "Return up to two target creatures to their owners' hands.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "7c66d746-37b8-5dad-bd0e-683e27589977"
+            "uuid": "4df6bc51-9ccc-5bfc-904e-26df46f685cb"
         },
         {
             "artist": "Vincent Proce",
@@ -8695,13 +8758,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58190,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/12d7c8f7d9c0999a",
             "text": "Latch Seeker can't be blocked.",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "e6713bf5-eb32-5507-be76-29a9fc228a3b"
+            "uuid": "f135a090-9998-5aa8-b9d2-20597eac68f6"
         },
         {
             "artist": "Jaime Jones",
@@ -8834,13 +8898,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58887,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/214a7995ab1bd440",
             "text": "Hexproof (This creature can't be the target of spells or abilities your opponents control.)\nWhenever Lone Revenant deals combat damage to a player, if you control no other creatures, look at the top four cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order.",
             "toughness": "4",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "16d9a42f-2bbb-5e67-bec7-9045573d2f95"
+            "uuid": "68c09531-f098-5e91-aacc-c06c23a95762"
         },
         {
             "artist": "Wesley Burt",
@@ -8976,13 +9041,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58888,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7697a34e95e06eb4",
             "text": "Whenever you cast an instant spell, you may pay {1}. If you do, draw a card.",
             "toughness": "2",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "47f7fe94-5d15-5c0a-a1a1-1076470a0403"
+            "uuid": "c05c8d39-e449-54c3-90a7-e347ca64d851"
         },
         {
             "artist": "Christopher Moeller",
@@ -9110,12 +9176,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58889,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ba5d2d0be07022f2",
             "text": "Draw a card for each Human you control.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "c7f17c31-dd57-59d6-bbf7-5a0d51cb4001"
+            "uuid": "24ef486d-6339-5a60-9fd2-933c80d8c5ea"
         },
         {
             "artist": "John Avon",
@@ -9249,13 +9316,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58890,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/04df65f2ecdc7ba1",
             "text": "Flying\nWhen Mist Raven enters the battlefield, return target creature to its owner's hand.",
             "toughness": "2",
             "type": "Creature — Bird",
             "types": [
                 "Creature"
             ],
-            "uuid": "4d3ebff1-2b49-5d2d-9fda-6e886fc3910d"
+            "uuid": "b13c70be-68e9-5077-a02a-d7060c7dc878"
         },
         {
             "artist": "Jaime Jones",
@@ -9397,13 +9465,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58372,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/665a2bc0c690875c",
             "text": "Flying\nYou may cast Misthollow Griffin from exile.",
             "toughness": "3",
             "type": "Creature — Griffin",
             "types": [
                 "Creature"
             ],
-            "uuid": "039c4111-0be2-5bd6-a82f-a51c16951a34"
+            "uuid": "31c8c547-e18c-51e0-b1ad-6570a3b70a68"
         },
         {
             "artist": "Matt Stewart",
@@ -9531,13 +9600,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58304,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5c24d41b8b94508a",
             "text": "{3}{U}, {T}: Exile another target creature you control, then return that card to the battlefield under your control.",
             "toughness": "1",
             "type": "Creature — Human Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "6c1d0a11-023d-563c-b3cd-90ec8de03407"
+            "uuid": "80dc1da7-b18b-577f-9e59-b3af4eb63280"
         },
         {
             "artist": "Erica Yang",
@@ -9665,12 +9735,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58891,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/39802bbfa1c7a1d9",
             "text": "Counter target spell that targets a player.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "05301a2b-6b61-5647-8132-556c7bd82c6a"
+            "uuid": "b31f3282-b2df-5874-aba8-dee12ee7c2e1"
         },
         {
             "artist": "Jason Felix",
@@ -9798,12 +9869,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58892,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0aa3a065794f9bfd",
             "text": "Return target creature you control and target creature you don't control to their owners' hands.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "812c5bb2-ae39-5b5e-8b5f-d60ec5970549"
+            "uuid": "2105705b-d741-52a3-a75e-0ffae2a7cc54"
         },
         {
             "artist": "Dave Kendall",
@@ -9930,13 +10002,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58893,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3d23e6f586785487",
             "text": "When Rotcrown Ghoul dies, target player puts the top five cards of their library into their graveyard.",
             "toughness": "3",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "2b173296-f163-5496-b179-1db662533340"
+            "uuid": "3286f1ef-0027-5ca7-b945-d5ee3bc98196"
         },
         {
             "artist": "Kev Walker",
@@ -10067,13 +10140,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58894,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e64eb5ccefb1b7ff",
             "text": "Flying (This creature can't be blocked except by creatures with flying or reach.)\nScrapskin Drake can block only creatures with flying.",
             "toughness": "3",
             "type": "Creature — Zombie Drake",
             "types": [
                 "Creature"
             ],
-            "uuid": "0fe8861c-76f5-5f31-b00a-3d88f9e149a5"
+            "uuid": "d5d61e10-846d-5fa6-9a4a-492aa0bf24b5"
         },
         {
             "artist": "Karl Kopinski",
@@ -10209,12 +10283,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58895,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dbea1031d757da2d",
             "text": "Counter target spell that's the second spell cast this turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "e5c10904-6557-522d-b6b6-e0687bc80195"
+            "uuid": "30617b70-6068-574d-974c-b50712d0b746"
         },
         {
             "artist": "Vincent Proce",
@@ -10329,12 +10404,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58896,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e2015fe5a53e5484",
             "text": "Enchant creature\nEnchanted creature doesn't untap during its controller's untap step.\nWhen enchanted creature becomes the target of a spell, sacrifice Spectral Prison.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "91be43d3-c09a-5335-bfba-9d3c8bf0f9d1"
+            "uuid": "38d481f9-c5fe-5a1a-9189-d3bfebecdb06"
         },
         {
             "artist": "Greg Staples",
@@ -10459,12 +10535,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58897,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/16d84d6897eb8e46",
             "text": "Enchant creature\nYou control enchanted creature.\nEnchanted creature gets +2/+2 and has flying.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "a5e1822a-b3b9-585a-b26e-b32cf71fdb71"
+            "uuid": "2add99db-45ee-51b2-b7c6-5e85a55059fa"
         },
         {
             "artist": "Igor Kieryluk",
@@ -10580,13 +10657,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58898,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4b805c09995909a7",
             "text": "Soulbond (You may pair this creature with another unpaired creature when either enters the battlefield. They remain paired for as long as you control both of them.)\nAs long as Stern Mentor is paired with another creature, each of those creatures has \"{T}: Target player puts the top two cards of their library into their graveyard.\"",
             "toughness": "2",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "b08ba88e-c9d1-51cb-997d-73b08b864bc3"
+            "uuid": "59a3f252-c290-50b1-8557-1f0e35c8b532"
         },
         {
             "artist": "Anthony Francisco",
@@ -10724,12 +10802,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58899,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dc0670b0d8dc88a1",
             "text": "Target opponent exiles cards from the top of their library until they exile a nonland card. Until end of turn, you may cast that card without paying its mana cost.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "578297a4-2dff-5a8e-b5ba-2a6f80a24b7e"
+            "uuid": "ee8fed62-8413-5132-8653-4e422f40102c"
         },
         {
             "artist": "Eric Deschamps",
@@ -10834,7 +10913,8 @@
             "originalText": "+1: Tap target permanent. It doesn't untap during its controller's next untap step.\n-2: Draw a card for each tapped creature target player controls.\n-8: You get an emblem with \"You have no maximum hand size\" and \"Whenever a card is put into your graveyard from anywhere, you may return it to your hand.\"",
             "originalType": "Planeswalker — Tamiyo",
             "printings": [
-                "AVR"
+                "AVR",
+                "MED"
             ],
             "rarity": "mythic",
             "rulings": [
@@ -10871,12 +10951,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 58290,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0a6bb7ad8455e54f",
             "text": "+1: Tap target permanent. It doesn't untap during its controller's next untap step.\n−2: Draw a card for each tapped creature target player controls.\n−8: You get an emblem with \"You have no maximum hand size\" and \"Whenever a card is put into your graveyard from anywhere, you may return it to your hand.\"",
             "type": "Legendary Planeswalker — Tamiyo",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "91e13e1f-7cb1-5d33-871b-270fa3bea452"
+            "uuid": "eb159b1e-43df-59cd-93a0-770384361363"
         },
         {
             "artist": "Kev Walker",
@@ -11000,13 +11081,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58267,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b55c5134f66d2f05",
             "text": "Soulbond (You may pair this creature with another unpaired creature when either enters the battlefield. They remain paired for as long as you control both of them.)\nAs long as Tandem Lookout is paired with another creature, each of those creatures has \"Whenever this creature deals damage to an opponent, draw a card.\"",
             "toughness": "1",
             "type": "Creature — Human Scout",
             "types": [
                 "Creature"
             ],
-            "uuid": "be1015bb-e77c-5343-b869-c93ac8c0de32"
+            "uuid": "162b9aae-4381-5440-a123-1d065135f848"
         },
         {
             "artist": "Franz Vohwinkel",
@@ -11130,12 +11212,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58177,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/23bc1f8f27d320b9",
             "text": "Take an extra turn after this one. Exile Temporal Mastery.\nMiracle {1}{U} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "03c7ff71-c68c-5f15-b4f7-c54eb2625145"
+            "uuid": "9c11a444-4354-591e-8843-f8dec199da3b"
         },
         {
             "artist": "Daarken",
@@ -11248,12 +11331,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58900,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/884687b014a323cd",
             "text": "Put target nonland permanent on top of its owner's library.\nMiracle {U} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "2caf89f7-b069-5cc5-9c11-0f1718510bc5"
+            "uuid": "9c2f9712-1da8-584c-9631-0ebb67c2cb39"
         },
         {
             "artist": "Matt Stewart",
@@ -11371,13 +11455,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58178,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fa67a776bc241c99",
             "text": "Soulbond (You may pair this creature with another unpaired creature when either enters the battlefield. They remain paired for as long as you control both of them.)\nAs long as Wingcrafter is paired with another creature, both creatures have flying.",
             "toughness": "1",
             "type": "Creature — Human Wizard",
             "types": [
                 "Creature"
             ],
-            "uuid": "7938cb08-2b64-501c-ac76-6afc3b7d78b7"
+            "uuid": "6b9325ef-3cdd-582f-989d-1c99f64a2bac"
         },
         {
             "artist": "Michael C. Hayes",
@@ -11507,12 +11592,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58307,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0fdc9e6c9c75d93a",
             "text": "Target opponent reveals their hand. You choose a card from it with converted mana cost 4 or greater and exile that card.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "9dfe99aa-f880-50a3-b0fb-d7ea3876ff62"
+            "uuid": "064057d0-14bf-53d6-aa3a-66a940a39a7e"
         },
         {
             "artist": "Eric Deschamps",
@@ -11655,12 +11741,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58901,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fdeb3d6b36f67842",
             "text": "Each player sacrifices two creatures.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "e93d4932-e314-5284-9760-c42b01845a45"
+            "uuid": "d8d77d7c-2a95-5702-8103-fac6cef1b9e1"
         },
         {
             "artist": "Johannes Voss",
@@ -11792,13 +11879,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58902,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ac7cc1acfb964142",
             "text": "Whenever Blood Artist or another creature dies, target player loses 1 life and you gain 1 life.",
             "toughness": "1",
             "type": "Creature — Vampire",
             "types": [
                 "Creature"
             ],
-            "uuid": "8e4ce0ed-ad5b-5773-9f4a-763cbd17084f"
+            "uuid": "e4a32b13-83d5-5f2c-a9a8-7286303249ac"
         },
         {
             "artist": "Slawomir Maniak",
@@ -11930,13 +12018,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58903,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/135586ac1ebd2003",
             "text": "Sacrifice a creature: Put a +1/+1 counter on Bloodflow Connoisseur.",
             "toughness": "1",
             "type": "Creature — Vampire",
             "types": [
                 "Creature"
             ],
-            "uuid": "f51a72c2-b3f4-5a59-ba2d-4fc24c2ff03e"
+            "uuid": "ccb9c51a-0bf3-56c4-a82c-a18fc47fd47c"
         },
         {
             "artist": "Nils Hamm",
@@ -12080,12 +12169,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58904,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f2c7cf839c3e3b84",
             "text": "As an additional cost to cast this spell, sacrifice a creature.\nDestroy target creature.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "d6fe60df-baf8-5210-90da-ba255b346764"
+            "uuid": "d5bb6916-4a4b-5da8-b939-9e7566c96918"
         },
         {
             "artist": "Christopher Moeller",
@@ -12212,13 +12302,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58905,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/45092229652e554b",
             "text": "Undying (When this creature dies, if it had no +1/+1 counters on it, return it to the battlefield under its owner's control with a +1/+1 counter on it.)",
             "toughness": "1",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "1d9fb9ae-8058-5aa2-ba44-220d5647ffcb"
+            "uuid": "3b3f6a26-4dc6-5347-91b5-b2e1d6e7f04b"
         },
         {
             "artist": "Kev Walker",
@@ -12355,13 +12446,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58906,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/62bb4451a420dda4",
             "text": "{2}{B}, Sacrifice a creature: Target opponent reveals their hand. You choose a card from it. That player discards that card. Activate this ability only any time you could cast a sorcery.",
             "toughness": "3",
             "type": "Creature — Human Rogue",
             "types": [
                 "Creature"
             ],
-            "uuid": "49e00972-57dc-5845-ac94-1333038b38a9"
+            "uuid": "e8ed39cf-4ac0-51c2-95ed-e46d653ca212"
         },
         {
             "artist": "Scott Chou",
@@ -12494,13 +12586,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58907,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/602a332df15f1899",
             "text": "Sacrifice Crypt Creeper: Exile target card from a graveyard.",
             "toughness": "1",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "af2087ec-e58b-5f4a-a73e-1d9fc1a5d485"
+            "uuid": "4366331f-74e7-52b4-9abb-2b0ddd22d511"
         },
         {
             "artist": "Johannes Voss",
@@ -12648,13 +12741,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58908,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d201b69fafec035b",
             "text": "{4}{B}{B}: Exile target creature and put a +1/+1 counter on Dark Impostor.\nDark Impostor has all activated abilities of all creature cards exiled with it.",
             "toughness": "2",
             "type": "Creature — Vampire Assassin",
             "types": [
                 "Creature"
             ],
-            "uuid": "1acdb4b2-3663-5d45-8997-bced3ae244b2"
+            "uuid": "1c9cbd04-b7ed-5822-9248-96a3132dba6e"
         },
         {
             "artist": "Tomasz Jedruszek",
@@ -12781,12 +12875,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58909,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/72abf0b23a3a4400",
             "text": "Target creature gets -X/-X until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "43188f00-60aa-5812-b886-16cadcbb187b"
+            "uuid": "04d3a2fd-49cd-521a-af35-d59d10abf9fd"
         },
         {
             "artist": "Trevor Claxton",
@@ -12919,12 +13014,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58313,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/19869af7e87cfd50",
             "text": "At the beginning of your end step, if you control exactly one creature, create a 5/5 black Demon creature token with flying.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "577da688-e107-5f36-982b-1a73b1542ff6"
+            "uuid": "fc8ea930-bdd3-5263-bbe9-b800edf39f3f"
         },
         {
             "artist": "Chris Rahn",
@@ -13059,13 +13155,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58179,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e51c49f973a495b0",
             "text": "Flying\nAt the beginning of your upkeep, sacrifice a creature other than Demonic Taskmaster.",
             "toughness": "3",
             "type": "Creature — Demon",
             "types": [
                 "Creature"
             ],
-            "uuid": "8d116c74-f56e-5f00-bd62-2394e170619d"
+            "uuid": "24ff3363-e26d-5550-9453-15d5cddf21a9"
         },
         {
             "artist": "Lucas Graciano",
@@ -13189,13 +13286,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58180,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/df6706251975c8eb",
             "text": "Flying\nWhen Demonlord of Ashmouth enters the battlefield, exile it unless you sacrifice another creature.\nUndying (When this creature dies, if it had no +1/+1 counters on it, return it to the battlefield under its owner's control with a +1/+1 counter on it.)",
             "toughness": "4",
             "type": "Creature — Demon",
             "types": [
                 "Creature"
             ],
-            "uuid": "7f28fd53-af17-5010-bc8b-d62a9cac680f"
+            "uuid": "83523f02-e2ba-5237-a0e9-45c4179d41b1"
         },
         {
             "artist": "Anthony Francisco",
@@ -13334,12 +13432,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58308,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2153c9488d4b9b98",
             "text": "At the beginning of your upkeep, put a despair counter on Descent into Madness, then each player exiles X permanents they control and/or cards from their hand, where X is the number of despair counters on Descent into Madness.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "e1d4f7cd-6e8e-5d7d-acb3-000094d43fa0"
+            "uuid": "5a0d1e28-2ebf-5076-81d3-58babb00db88"
         },
         {
             "artist": "Dave Kendall",
@@ -13483,13 +13582,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58910,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0e63c30b54a9c00d",
             "text": "Whenever a creature dealt damage by Dread Slaver this turn dies, return it to the battlefield under your control. That creature is a black Zombie in addition to its other colors and types.",
             "toughness": "5",
             "type": "Creature — Zombie Horror",
             "types": [
                 "Creature"
             ],
-            "uuid": "bc920468-4a7b-50ad-bd58-94dbeaccdd32"
+            "uuid": "8122cc7e-8638-5e62-92a6-11a3da02f3f9"
         },
         {
             "artist": "James Ryman",
@@ -13623,13 +13723,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58911,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3ae480feceb03739",
             "text": "When Driver of the Dead dies, return target creature card with converted mana cost 2 or less from your graveyard to the battlefield.",
             "toughness": "2",
             "type": "Creature — Vampire",
             "types": [
                 "Creature"
             ],
-            "uuid": "da9fcae6-fcaf-5f3d-ac63-93a91e0ba83a"
+            "uuid": "8e64fe8a-0b6f-5df4-b468-7335354f6beb"
         },
         {
             "artist": "Daarken",
@@ -13761,12 +13862,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58912,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1f1a8783ea07a6dd",
             "text": "Target player loses X life and you gain X life, where X is the greatest power among creatures you control.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "971fd3a9-1485-5fd4-a9f3-20bb73b2353e"
+            "uuid": "7cbdbd2d-c0d1-5bf6-be2f-3246ae3dbd51"
         },
         {
             "artist": "Nic Klein",
@@ -13887,13 +13989,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58913,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4ab696332b8e22b7",
             "text": "{B}: Evernight Shade gets +1/+1 until end of turn.\nUndying (When this creature dies, if it had no +1/+1 counters on it, return it to the battlefield under its owner's control with a +1/+1 counter on it.)",
             "toughness": "1",
             "type": "Creature — Shade",
             "types": [
                 "Creature"
             ],
-            "uuid": "099db60f-4c14-5502-9973-ad98c96d1b25"
+            "uuid": "a2f56059-d466-5ed9-948f-92ef55f0a9c7"
         },
         {
             "artist": "Cynthia Sheppard",
@@ -14024,12 +14127,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58373,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b8e5bd71192e0c58",
             "text": "Whenever an opponent loses life, you gain that much life.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "18abac21-243d-561e-80a6-3db68aef44f7"
+            "uuid": "a95c5eed-7c45-5d6a-b51b-b538844fdf91"
         },
         {
             "artist": "Igor Kieryluk",
@@ -14159,12 +14263,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58914,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8fa6ce1ecdfbdfce",
             "text": "Enchant creature\nEnchanted creature gets -1/-1 and is a black Zombie in addition to its other colors and types.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "13ecacd9-8cf2-55bd-bb63-55edc630c8aa"
+            "uuid": "abe74373-0d82-5f74-9830-252821bbdc5a"
         },
         {
             "artist": "Volkan Baga",
@@ -14299,13 +14404,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58915,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1a858816f5b98015",
             "text": "If combat damage would be dealt to Gloom Surgeon, prevent that damage and exile that many cards from the top of your library.",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "ede8280e-0c6d-51c3-ae08-b8e5535af294"
+            "uuid": "c9f86243-0d18-5e55-9de6-17d40a404f25"
         },
         {
             "artist": "Sam Wolfe Connelly",
@@ -14437,12 +14543,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58916,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3f2929b302a921ac",
             "text": "Return target creature card from your graveyard to your hand. Target player sacrifices a creature.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "24f8c43f-5c05-55e4-8825-2903908bcf16"
+            "uuid": "c98334cf-523d-5bd6-bb3d-ef8c9a22b0d1"
         },
         {
             "artist": "Igor Kieryluk",
@@ -14578,13 +14685,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 58181,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b665acb737d11153",
             "text": "Flying, lifelink\nPay 7 life: Draw seven cards.",
             "toughness": "7",
             "type": "Legendary Creature — Demon",
             "types": [
                 "Creature"
             ],
-            "uuid": "9897222b-b906-504e-ad6c-8c776a2e670b"
+            "uuid": "935439a3-ad5a-5b9d-bf52-26244eedec1c"
         },
         {
             "artist": "Slawomir Maniak",
@@ -14712,13 +14820,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58289,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fddc0f890453f937",
             "text": "Deathtouch\nWhenever another nontoken creature dies, you may draw a card.",
             "toughness": "5",
             "type": "Creature — Demon",
             "types": [
                 "Creature"
             ],
-            "uuid": "c6b9e63c-3ff0-5da4-94ad-7a2567f09724"
+            "uuid": "af1865e5-cad4-57ae-a749-61d833be8950"
         },
         {
             "artist": "Cliff Childs",
@@ -14841,12 +14950,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58359,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/85eeadccc1794b55",
             "text": "As long as you control exactly one creature, that creature gets +3/+1 and has lifelink.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "181ca005-a125-59f8-9e18-f21df208e759"
+            "uuid": "a8a0fc17-0dd2-566b-9108-017fdf298fc7"
         },
         {
             "artist": "David Palumbo",
@@ -14970,12 +15080,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58314,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ced19d5f38e8c09f",
             "text": "Destroy target Human creature.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "87086826-4184-5620-b95b-d93ab3f498e5"
+            "uuid": "3f7db541-438d-5e02-b43a-43f66f8e178f"
         },
         {
             "artist": "Ryan Pancoast",
@@ -15102,13 +15213,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58917,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0f32596c9edd1a72",
             "text": "Hunted Ghoul can't block Humans.",
             "toughness": "2",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "8f4d0725-0f5f-5be7-9a7b-56750725d7ff"
+            "uuid": "f9d36533-f86e-512f-ac38-e20634c459d4"
         },
         {
             "artist": "Steve Argyle",
@@ -15249,12 +15361,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58192,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5ca16e365a26913e",
             "text": "For each creature, its controller sacrifices it unless they pay X life.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "b5df4b50-6612-5a5e-b91a-3570be72ee76"
+            "uuid": "427d3bdc-af86-5393-b0aa-43ca27bb6d01"
         },
         {
             "artist": "Mike Sass",
@@ -15381,13 +15494,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58918,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b648c7bc3e2a681a",
             "text": "When Maalfeld Twins dies, create two 2/2 black Zombie creature tokens.",
             "toughness": "4",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "8b4866be-5cac-5925-98e9-74f3bfcbd255"
+            "uuid": "b2262a29-9643-5463-81a1-2124dcbc21e1"
         },
         {
             "artist": "Jason A. Engle",
@@ -15515,13 +15629,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58919,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e6e66d87d972f1c4",
             "text": "Flying\nPay 4 life: Regenerate Marrow Bats.",
             "toughness": "1",
             "type": "Creature — Bat Skeleton",
             "types": [
                 "Creature"
             ],
-            "uuid": "2b77f3d8-f281-52f8-bf73-3db5ad0a09cc"
+            "uuid": "efcb4658-e6e3-5f27-b565-4334536cf333"
         },
         {
             "artist": "Greg Staples",
@@ -15650,12 +15765,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58920,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9b6a538072caaf24",
             "text": "Target player discards two cards and loses 2 life.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "3001fd68-56a4-58d9-b6cd-be9c26198242"
+            "uuid": "bfd043ce-cfbf-5dbb-a585-fd00254d2192"
         },
         {
             "artist": "Nils Hamm",
@@ -15782,12 +15898,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58921,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/866d29ea0d6bd9c1",
             "text": "Target creature gains deathtouch until end of turn. Regenerate it. (The next time that creature would be destroyed this turn, it isn't. Instead tap it, remove all damage from it, and remove it from combat. Any amount of damage a creature with deathtouch deals to a creature is enough to destroy it.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "cef6f1ff-4c13-54ba-8234-9b593c86b5a5"
+            "uuid": "2d32a6b5-0d68-58d0-8efb-cf170ed9692f"
         },
         {
             "artist": "Jason A. Engle",
@@ -15914,13 +16031,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58922,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/31df104d92a71b53",
             "text": "When Polluted Dead dies, destroy target land.",
             "toughness": "3",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "a27dddff-8c36-59d5-9b5c-68790f290366"
+            "uuid": "7f921968-792b-52da-befd-746b4297abb9"
         },
         {
             "artist": "Zoltan Boros",
@@ -16035,12 +16153,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58923,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/253dd90b01901eb8",
             "text": "Enchant creature\nEnchanted creature gets +2/+1.\nEnchanted creature has intimidate as long as its controller controls no other creatures. (It can't be blocked except by artifact creatures and/or creatures that share a color with it.)",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "c8f5a460-42f1-59d4-960f-e58889d8f144"
+            "uuid": "af4284ac-1c06-52ab-8bd4-d26504a8faf8"
         },
         {
             "artist": "Tomasz Jedruszek",
@@ -16157,12 +16276,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58924,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b1c8016d84cd99dd",
             "toughness": "3",
             "type": "Creature — Demon",
             "types": [
                 "Creature"
             ],
-            "uuid": "b05b938b-1532-5908-9d65-e09989939e32"
+            "uuid": "6ebfdf4d-859e-54f4-b8a9-8db3bfdae2ed"
         },
         {
             "artist": "Steven Belledin",
@@ -16289,13 +16409,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58925,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1f5a5151f9c4f141",
             "text": "Flying\n{3}{B}: Searchlight Geist gains deathtouch until end of turn. (Any amount of damage it deals to a creature is enough to destroy it.)",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "8bfa2111-e00f-5e8f-b3bf-b6e78a57ba42"
+            "uuid": "304b8bba-dda6-5965-b93f-c53990054a01"
         },
         {
             "artist": "Jason A. Engle",
@@ -16422,13 +16543,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58926,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a1661e3d82a336f5",
             "text": "When Soulcage Fiend dies, each player loses 3 life.",
             "toughness": "2",
             "type": "Creature — Demon",
             "types": [
                 "Creature"
             ],
-            "uuid": "814b3b75-be1d-5f32-abb3-d8629a183878"
+            "uuid": "54350354-fd66-581a-b70f-ba7ab20bb262"
         },
         {
             "artist": "Svetlin Velinov",
@@ -16542,13 +16664,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58360,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/11c61369576544fb",
             "text": "When Treacherous Pit-Dweller enters the battlefield from a graveyard, target opponent gains control of it.\nUndying (When this creature dies, if it had no +1/+1 counters on it, return it to the battlefield under its owner's control with a +1/+1 counter on it.)",
             "toughness": "3",
             "type": "Creature — Demon",
             "types": [
                 "Creature"
             ],
-            "uuid": "09d930bf-cf70-5aba-a331-33487cd9e387"
+            "uuid": "3aab92ce-3efb-5bad-9e5a-33e63154c5df"
         },
         {
             "artist": "Izzy",
@@ -16676,12 +16799,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58361,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cb2f7b5f27239060",
             "text": "At the beginning of your upkeep, target opponent discards a card if you control the creature with the greatest power or tied for the greatest power.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "e80aac2f-5986-5e64-8315-12fdec2354dd"
+            "uuid": "b5f1af65-c6db-5994-9abb-44c852f4d652"
         },
         {
             "artist": "Dave Kendall",
@@ -16807,13 +16931,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58927,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cb5e9b908fb7e321",
             "text": "When Undead Executioner dies, you may have target creature get -2/-2 until end of turn.",
             "toughness": "2",
             "type": "Creature — Zombie",
             "types": [
                 "Creature"
             ],
-            "uuid": "123eb4a6-363e-52f1-b20f-dea9ed25773a"
+            "uuid": "8dded76f-4cb8-5381-ac4f-d1a1e2954263"
         },
         {
             "artist": "Volkan Baga",
@@ -16950,12 +17075,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58928,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0f59641ef896425b",
             "text": "Enchant creature\nWhen enchanted creature dies, return that card to the battlefield under your control.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "92f79926-a838-5788-82ca-50f1f95d5a9f"
+            "uuid": "8dc8ef97-b2f4-58ed-9962-d94d2363d167"
         },
         {
             "artist": "Matt Stewart",
@@ -17091,12 +17217,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58929,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ce0ecf0a03ffa4ce",
             "text": "Aggravate deals 1 damage to each creature target player controls. Each creature dealt damage this way attacks this turn if able.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "751a5558-9b5a-5a5b-a7c6-86fda8f02389"
+            "uuid": "c4dae035-c971-5cd1-9a1a-a4fc363b1db6"
         },
         {
             "artist": "Daarken",
@@ -17226,13 +17353,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58371,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a0f929eb633b9e3b",
             "text": "Flying, haste\nAt the beginning of the end step, return Archwing Dragon to its owner's hand.",
             "toughness": "4",
             "type": "Creature — Dragon",
             "types": [
                 "Creature"
             ],
-            "uuid": "de5e891e-c24f-5e57-a71d-1da7e4713449"
+            "uuid": "6775b5ed-2efc-591b-8903-1a03298ee8ee"
         },
         {
             "artist": "Mike Bierek",
@@ -17361,12 +17489,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58930,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cf88fe6b02bdcf5b",
             "text": "Creatures you control get +1/+0 until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "9c080aa1-20ff-574c-928f-5eff89cbf9fa"
+            "uuid": "f1ebaf94-f4c6-5bdf-9607-177ba28d1cee"
         },
         {
             "artist": "Nils Hamm",
@@ -17494,12 +17623,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58931,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a6c48dd1be196cc8",
             "text": "Add {R} for each creature you control.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "5e133409-9f3a-5e00-be3a-288c3b92f7b8"
+            "uuid": "0e6b16c5-8842-50cc-87cb-34708a1d6d9d"
         },
         {
             "artist": "James Paick",
@@ -17633,12 +17763,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58296,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bcadf4c56d55cce1",
             "text": "Bonfire of the Damned deals X damage to target player or planeswalker and each creature that player or that planeswalker's controller controls.\nMiracle {X}{R} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "38eca98e-0536-51b0-9fc1-beb30b19b907"
+            "uuid": "3b1844da-b645-5575-862f-ba539dd9bfd3"
         },
         {
             "artist": "Zoltan Boros",
@@ -17762,12 +17893,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58932,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e15dcb3ea9aa3fd0",
             "text": "As an additional cost to cast this spell, tap any number of untapped creatures you control.\nBurn at the Stake deals damage to any target equal to three times the number of creatures tapped this way.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "13eb2475-999e-5a6b-b96a-1e9b47a6ab2e"
+            "uuid": "0992f669-cfea-59ca-9e5e-2c6511f98b54"
         },
         {
             "artist": "Drew Baker",
@@ -17895,12 +18027,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58933,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/13ba9a2e734012d6",
             "text": "Discard your hand, then draw two cards.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "c6ecac31-41e7-5e6d-9caf-32417755676b"
+            "uuid": "e3ff8c8a-17ba-5fb8-91d6-9f67dd19d8c9"
         },
         {
             "artist": "Raymond Swanland",
@@ -18040,12 +18173,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58934,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/96dceb529da1bc54",
             "text": "Destroy target artifact or land.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "390a0b35-242b-5f05-9596-a4042b33cf0e"
+            "uuid": "5aa35b20-c239-52f6-a3a3-1490b5e23278"
         },
         {
             "artist": "Johannes Voss",
@@ -18195,12 +18329,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58935,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/41796d4e56d01e1b",
             "text": "Enchant creature\nEnchanted creature has \"{R}, {T}: Copy target instant or sorcery spell you control. You may choose new targets for the copy.\"",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "94b15692-aae8-507c-97a7-a279382535d0"
+            "uuid": "51b42f01-f145-569c-9b68-bf5f3c25aeae"
         },
         {
             "artist": "Winona Nelson",
@@ -18316,13 +18451,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58936,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cde3e67555ac0128",
             "text": "Whenever Falkenrath Exterminator deals combat damage to a player, put a +1/+1 counter on it.\n{2}{R}: Falkenrath Exterminator deals damage to target creature equal to the number of +1/+1 counters on Falkenrath Exterminator.",
             "toughness": "1",
             "type": "Creature — Vampire Archer",
             "types": [
                 "Creature"
             ],
-            "uuid": "0bfa5ff3-1187-5c85-9ed6-8f62e7d5062f"
+            "uuid": "7b28fb6d-2e9c-57f5-b4e8-0b1677ab0d35"
         },
         {
             "artist": "Steven Belledin",
@@ -18456,13 +18592,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58937,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8a421aff194b9602",
             "text": "Haste\nWhen Fervent Cathar enters the battlefield, target creature can't block this turn.",
             "toughness": "1",
             "type": "Creature — Human Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "87ff4835-b9a0-55b5-bf79-4297f719534a"
+            "uuid": "799a19f2-ae52-5697-a075-90d35b879363"
         },
         {
             "artist": "Erica Yang",
@@ -18595,13 +18732,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58938,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5072038da35aae16",
             "text": "When Gang of Devils dies, it deals 3 damage divided as you choose among one, two, or three targets.",
             "toughness": "3",
             "type": "Creature — Devil",
             "types": [
                 "Creature"
             ],
-            "uuid": "b82322ae-5f91-53ee-bb95-6dfb5df04681"
+            "uuid": "a3b06186-2fb9-5d25-b9e9-4a845ff8e8f6"
         },
         {
             "artist": "Dave Kendall",
@@ -18736,12 +18874,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58939,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5a1955b2b08699ea",
             "text": "Enchant creature\nEnchanted creature gets +1/-1 and attacks each combat if able.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "c11b80b3-976f-5c62-a249-947c74516b9a"
+            "uuid": "92902f14-b709-555a-be05-46db2a43ff3a"
         },
         {
             "artist": "Steve Prescott",
@@ -18859,13 +18998,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58940,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6c5a7117ffd652de",
             "text": "Soulbond (You may pair this creature with another unpaired creature when either enters the battlefield. They remain paired for as long as you control both of them.)\nAs long as Hanweir Lancer is paired with another creature, both creatures have first strike.",
             "toughness": "2",
             "type": "Creature — Human Knight",
             "types": [
                 "Creature"
             ],
-            "uuid": "eebcae0d-b8bf-550d-a973-36a1f98b9220"
+            "uuid": "5eabad43-2934-59f3-a4d1-6b98711ff9d4"
         },
         {
             "artist": "James Ryman",
@@ -18992,13 +19132,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58941,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ad9a07f98948c357",
             "text": "Whenever Havengul Vampire deals combat damage to a player, put a +1/+1 counter on it.\nWhenever another creature dies, put a +1/+1 counter on Havengul Vampire.",
             "toughness": "2",
             "type": "Creature — Vampire",
             "types": [
                 "Creature"
             ],
-            "uuid": "6dc06784-141b-51f7-9ec4-6105aa34bbef"
+            "uuid": "861dc657-d5e7-5093-9f49-63befbce8f89"
         },
         {
             "artist": "Winona Nelson",
@@ -19114,13 +19255,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58942,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4f4a96863c413465",
             "text": "Intimidate (This creature can't be blocked except by artifact creatures and/or creatures that share a color with it.)\nWhenever Heirs of Stromkirk deals combat damage to a player, put a +1/+1 counter on it.",
             "toughness": "2",
             "type": "Creature — Vampire",
             "types": [
                 "Creature"
             ],
-            "uuid": "fc80ea9a-16af-5478-80ad-9ce39657801a"
+            "uuid": "9b75e4c9-8383-5170-8574-d4367709c95a"
         },
         {
             "artist": "Svetlin Velinov",
@@ -19236,13 +19378,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58943,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/35f628bd24cc1714",
             "text": "Double strike\nUndying (When this creature dies, if it had no +1/+1 counters on it, return it to the battlefield under its owner's control with a +1/+1 counter on it.)",
             "toughness": "2",
             "type": "Creature — Elemental Hound",
             "types": [
                 "Creature"
             ],
-            "uuid": "dc760e3d-88b8-56b0-833e-0cf0efdaecb8"
+            "uuid": "5b657561-6ea0-587b-8b2c-1eb0e20aeb20"
         },
         {
             "artist": "John Stanko",
@@ -19373,13 +19516,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58944,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/01371ec0c43b9e8d",
             "text": "When Kessig Malcontents enters the battlefield, it deals damage to target player or planeswalker equal to the number of Humans you control.",
             "toughness": "1",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "739ee668-0299-5c18-9a5d-fabda11f6c7e"
+            "uuid": "f3a7476a-e096-559e-bf4b-32d434afb7f8"
         },
         {
             "artist": "Christopher Moeller",
@@ -19508,13 +19652,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58945,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/42593b2ce4de6293",
             "text": "Whenever another creature enters the battlefield under your control, Kruin Striker gets +1/+0 and gains trample until end of turn.",
             "toughness": "1",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "e97e7093-7e9a-5cd4-af4f-d44a25cc276b"
+            "uuid": "8a7e966f-3ecf-5a23-b2df-9915de873013"
         },
         {
             "artist": "Dave Kendall",
@@ -19635,13 +19780,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58362,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1c5b387a0c46e450",
             "text": "Soulbond (You may pair this creature with another unpaired creature when either enters the battlefield. They remain paired for as long as you control both of them.)\nAs long as Lightning Mauler is paired with another creature, both creatures have haste.",
             "toughness": "1",
             "type": "Creature — Human Berserker",
             "types": [
                 "Creature"
             ],
-            "uuid": "4ee9c6db-5c46-5ba4-9fbd-2e8ed3079995"
+            "uuid": "f95382c9-8c55-5d79-9eea-79ce5fe9c49f"
         },
         {
             "artist": "David Rapoza",
@@ -19766,12 +19912,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58946,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cf181d769f673a83",
             "text": "Enchant creature\nEnchanted creature has haste and \"{T}: This creature deals 1 damage to any target.\"",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "204283d8-7348-513a-b153-60230e2ab915"
+            "uuid": "b8b83c2c-ec56-556b-8229-68765eb2d774"
         },
         {
             "artist": "Wayne Reynolds",
@@ -19908,13 +20055,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58947,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e3836e41903cb095",
             "text": "Haste\n{T}, Discard a card: Draw a card.",
             "toughness": "2",
             "type": "Creature — Human Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "fca8ee91-c80c-5a18-8661-6002f8cc7d66"
+            "uuid": "b85195c6-474f-50e5-b62d-8441a5a8d512"
         },
         {
             "artist": "Kev Walker",
@@ -20045,12 +20193,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58948,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/78dc27b116a54d78",
             "text": "Enchant creature\nEnchanted creature has \"{T}: Target creature can't block this turn.\"",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "d07edda3-2913-5771-8330-f5acd0a64198"
+            "uuid": "131fffff-4a35-537e-9abe-25cc8d725480"
         },
         {
             "artist": "Jung Park",
@@ -20181,13 +20330,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58367,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/96c72ec000aa10b1",
             "text": "Malignus's power and toughness are each equal to half the highest life total among your opponents, rounded up.\nDamage that would be dealt by Malignus can't be prevented.",
             "toughness": "*",
             "type": "Creature — Elemental Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "edff7ab7-fc36-59dc-ac5c-951e3ba5250c"
+            "uuid": "14596b1e-6775-50f5-98d2-c47a5a437174"
         },
         {
             "artist": "Karl Kopinski",
@@ -20323,12 +20473,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58838,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1203c096527ef935",
             "text": "Pillar of Flame deals 2 damage to any target. If a creature dealt damage this way would die this turn, exile it instead.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "2b0839cd-370b-5b0e-a3ec-dc2d80549e1b"
+            "uuid": "1f506612-c5ef-5410-b385-8796d47a32b0"
         },
         {
             "artist": "Slawomir Maniak",
@@ -20444,12 +20595,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58949,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/91d79f75dbab09a9",
             "toughness": "1",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "bcb2b2d9-ef9e-5c46-9682-8ffa5b7dcb5d"
+            "uuid": "3fa3889d-b81e-5c65-8824-63b8894ea926"
         },
         {
             "artist": "Jaime Jones",
@@ -20573,12 +20725,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58302,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e86a4be8028841a8",
             "text": "Each player discards their hand, then draws seven cards.\nMiracle {1}{R} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "7c03ef5a-0ff7-5bd9-84fb-4427bcbf1037"
+            "uuid": "4bd131c1-2f47-57c0-b73a-256526b28f6b"
         },
         {
             "artist": "Gabor Szikszai",
@@ -20706,13 +20859,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58950,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0532102868278c80",
             "text": "Whenever Riot Ringleader attacks, Human creatures you control get +1/+0 until end of turn.",
             "toughness": "2",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "77082a9d-2b8f-5dfc-95c1-1201076f4a46"
+            "uuid": "5d5d8a8e-232c-55d2-8090-c4d6b8c01680"
         },
         {
             "artist": "Clint Cearley",
@@ -20848,12 +21002,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58363,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d17bb8f1ab3d739a",
             "text": "Choose an order for artifacts, creatures, and lands. Each player sacrifices one permanent of the first type, sacrifices two of the second type, then sacrifices three of the third type.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "f037921f-ff61-540a-a48a-6401902f6aca"
+            "uuid": "87920f5c-d726-5f61-ba23-7e2454a33a24"
         },
         {
             "artist": "Cynthia Sheppard",
@@ -20981,12 +21136,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58951,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e936319d74c2904b",
             "text": "Target creature gets +X/+0 until end of turn, where X is its power.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "3168eee9-4b00-5f76-81c5-2dd6128797d5"
+            "uuid": "e99ae9fd-e0ec-54ac-be95-2cdfe223bf85"
         },
         {
             "artist": "Erica Yang",
@@ -21113,13 +21269,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58953,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b6a865e19b8954e2",
             "text": "{2}{R}: Scalding Devil deals 1 damage to target player or planeswalker.",
             "toughness": "1",
             "type": "Creature — Devil",
             "types": [
                 "Creature"
             ],
-            "uuid": "28bd184a-1103-587b-92ef-0ce367f93b52"
+            "uuid": "34af6379-6947-521b-8567-ac8aecb924ae"
         },
         {
             "artist": "John Stanko",
@@ -21257,13 +21414,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58952,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8220ac522fdc75ae",
             "text": "Whenever Somberwald Vigilante becomes blocked by a creature, Somberwald Vigilante deals 1 damage to that creature.",
             "toughness": "1",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "7f6bb67a-4c0a-56ec-95fd-86c804a0cee9"
+            "uuid": "c165d110-aa6e-5f93-8ccc-405b83618939"
         },
         {
             "artist": "Wesley Burt",
@@ -21379,13 +21537,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58298,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/aca4308e631fd1f8",
             "text": "Soulbond (You may pair this creature with another unpaired creature when either enters the battlefield. They remain paired for as long as you control both of them.)\nAs long as Stonewright is paired with another creature, each of those creatures has \"{R}: This creature gets +1/+0 until end of turn.\"",
             "toughness": "1",
             "type": "Creature — Human Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "c095bd95-1065-597a-8a7c-8a7f582ad9e1"
+            "uuid": "5fb6d2b5-2db3-5635-8ff7-29e31895d9d5"
         },
         {
             "artist": "Ryan Pancoast",
@@ -21509,12 +21668,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58954,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/86c8d8a74ed71109",
             "text": "Create three 1/1 red Human creature tokens with haste. Sacrifice those tokens at the beginning of the next end step.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "31ef6879-ffe8-5e37-ba07-e1e53129d356"
+            "uuid": "b1b00dd4-aae6-5cfb-88f3-fed1e140d25c"
         },
         {
             "artist": "Anthony Francisco",
@@ -21641,12 +21801,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58955,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8dd15640b34cd404",
             "text": "Choose one —\n• Thunderbolt deals 3 damage to target player or planeswalker.\n• Thunderbolt deals 4 damage to target creature with flying.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "a66d571b-b331-5f46-bb67-b770b58adce2"
+            "uuid": "055ee4df-2955-5531-8713-a44c9029a7e4"
         },
         {
             "artist": "Adam Paquette",
@@ -21760,12 +21921,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58182,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f3acbc4ec140e33c",
             "text": "Thunderous Wrath deals 5 damage to any target.\nMiracle {R} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "a19db888-b2e1-5ff6-b273-218b2b82ceb7"
+            "uuid": "1a9e0205-0b53-5ec2-9541-c0b3cf16117c"
         },
         {
             "artist": "Peter Mohrbacher",
@@ -21891,12 +22053,13 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 58295,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5297f1cca960e8a8",
             "text": "+1: Draw a card, then discard a card at random.\n−4: Tibalt, the Fiend-Blooded deals damage equal to the number of cards in target player's hand to that player.\n−6: Gain control of all creatures until end of turn. Untap them. They gain haste until end of turn.",
             "type": "Legendary Planeswalker — Tibalt",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "c0368b8c-9d34-52bb-8fa9-37257e06f85c"
+            "uuid": "dee3547c-f848-58d8-830c-75a67a3e8834"
         },
         {
             "artist": "Richard Wright",
@@ -22027,13 +22190,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58956,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/33ac858663dbc89b",
             "text": "When Tyrant of Discord enters the battlefield, target opponent chooses a permanent they control at random and sacrifices it. If a nonland permanent is sacrificed this way, repeat this process.",
             "toughness": "7",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "e3631330-41fc-5738-95dc-9575c4a9d344"
+            "uuid": "c42fabc0-9a6f-54be-bbd6-9c7545a6f20a"
         },
         {
             "artist": "Raymond Swanland",
@@ -22156,12 +22320,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58957,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/87bb862b0bcc75cb",
             "text": "Target creature gets +3/+0 and gains haste until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "61af5764-e7f0-52ae-82bd-7effca564a8c"
+            "uuid": "99222a5c-f1b5-5f5d-8372-c76435d11760"
         },
         {
             "artist": "Lucas Graciano",
@@ -22300,13 +22465,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58287,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5a614a81cbcc02c4",
             "text": "When Vexing Devil enters the battlefield, any opponent may have it deal 4 damage to them. If a player does, sacrifice Vexing Devil.",
             "toughness": "3",
             "type": "Creature — Devil",
             "types": [
                 "Creature"
             ],
-            "uuid": "674325d3-5b23-5635-8f31-5757ea78cc53"
+            "uuid": "823d3b80-4652-536e-a1d4-788715bcb802"
         },
         {
             "artist": "Steve Prescott",
@@ -22429,12 +22595,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58958,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6eacf0710a5bee93",
             "text": "Whenever a Human enters the battlefield under your control, Vigilante Justice deals 1 damage to any target.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "5ba1af73-15f6-5a36-add2-d0ba5b01725b"
+            "uuid": "f99394ea-9c29-5eec-a546-6b197cc0892c"
         },
         {
             "artist": "Steve Prescott",
@@ -22556,13 +22723,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58300,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b171f0eb875d603c",
             "text": "Haste\nWhen Zealous Conscripts enters the battlefield, gain control of target permanent until end of turn. Untap that permanent. It gains haste until end of turn.",
             "toughness": "3",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "686dc444-a2d9-5f1f-b625-625e2124bba7"
+            "uuid": "8570daca-2d79-5aef-af19-e0d7535582df"
         },
         {
             "artist": "Vincent Proce",
@@ -22682,12 +22850,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58959,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b7cf47e3e432886e",
             "text": "Enchant land\nWhen Abundant Growth enters the battlefield, draw a card.\nEnchanted land has \"{T}: Add one mana of any color.\"",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "9e8ed424-75e5-548f-a69d-5e6d88ff0482"
+            "uuid": "1b0ac7f5-b417-588d-858d-77a5b03269cd"
         },
         {
             "artist": "Anthony Francisco",
@@ -22804,12 +22973,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58960,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a512301b4889a970",
             "text": "Distribute four +1/+1 counters among any number of target creatures.\nMiracle {G} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "5b9ece31-2f66-5f3e-83dd-e875aa983067"
+            "uuid": "14d5cb2d-4651-5f0c-8029-e1aaa870ac52"
         },
         {
             "artist": "Zoltan Boros",
@@ -22940,13 +23110,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58961,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/80741d617e13c808",
             "text": "When Borderland Ranger enters the battlefield, you may search your library for a basic land card, reveal it, and put it into your hand. If you do, shuffle your library.",
             "toughness": "2",
             "type": "Creature — Human Scout",
             "types": [
                 "Creature"
             ],
-            "uuid": "99d9ca4c-28aa-5e24-93ef-a960a2457c7a"
+            "uuid": "a5b2ecc7-9680-545f-a823-d77932732fe9"
         },
         {
             "artist": "Cliff Childs",
@@ -23078,12 +23249,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58962,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9ac46ddb98de3262",
             "text": "Creatures with flying can't block creatures you control.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "365ffad7-79b5-543f-b109-730ea16a739d"
+            "uuid": "310a904a-e15a-51e9-8da4-2ea84bb06e68"
         },
         {
             "artist": "Christopher Moeller",
@@ -23213,13 +23385,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58306,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/fc11f43a1cd812a9",
             "text": "Creatures with power less than Champion of Lambholt's power can't block creatures you control.\nWhenever another creature enters the battlefield under your control, put a +1/+1 counter on Champion of Lambholt.",
             "toughness": "1",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "1ac985f4-c702-59fa-9cca-89b6ba075937"
+            "uuid": "44985c96-72c2-5b45-beef-3c4b195aab49"
         },
         {
             "artist": "Chris Rahn",
@@ -23354,13 +23527,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58187,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a019b2d5de923f3c",
             "text": "Haste\nWhen Craterhoof Behemoth enters the battlefield, creatures you control gain trample and get +X/+X until end of turn, where X is the number of creatures you control.",
             "toughness": "5",
             "type": "Creature — Beast",
             "types": [
                 "Creature"
             ],
-            "uuid": "0175398c-cc5b-5abc-8e86-09a254b1199c"
+            "uuid": "cf949a9a-b678-5b17-931d-40ccafa8660d"
         },
         {
             "artist": "Terese Nielsen",
@@ -23484,12 +23658,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58288,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/eba4c66f900e5ba8",
             "text": "At the beginning of your upkeep, reveal the top card of your library. If it's a creature card that shares a creature type with a creature you control, you may cast that card without paying its mana cost. Otherwise, put that card on the bottom of your library.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "537587e4-f72d-59db-9ab8-2c4d3938104f"
+            "uuid": "a5c141b3-dc63-5663-af66-52b08da6ba5f"
         },
         {
             "artist": "Ryan Pancoast",
@@ -23611,13 +23786,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58963,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d9c78325d7b4997a",
             "text": "Soulbond (You may pair this creature with another unpaired creature when either enters the battlefield. They remain paired for as long as you control both of them.)\nAs long as Diregraf Escort is paired with another creature, both creatures have protection from Zombies.",
             "toughness": "1",
             "type": "Creature — Human Cleric",
             "types": [
                 "Creature"
             ],
-            "uuid": "622daf4f-3973-5d12-992f-6280e0eec7a9"
+            "uuid": "08f26baa-2b9e-5b62-9bec-3feee19dd511"
         },
         {
             "artist": "Adam Paquette",
@@ -23736,13 +23912,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58964,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6956b9a3729f63ed",
             "text": "Soulbond (You may pair this creature with another unpaired creature when either enters the battlefield. They remain paired for as long as you control both of them.)\nAs long as Druid's Familiar is paired with another creature, each of those creatures gets +2/+2.",
             "toughness": "2",
             "type": "Creature — Bear",
             "types": [
                 "Creature"
             ],
-            "uuid": "3b1d0205-1815-5a13-a9b9-3ba34656a563"
+            "uuid": "1ff0801d-7941-57c9-9937-0b4dbe6059ff"
         },
         {
             "artist": "Daarken",
@@ -23862,12 +24039,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58186,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/cc56b1c11d196f7f",
             "text": "Whenever a creature you control attacks, put a charge counter on Druids' Repository.\nRemove a charge counter from Druids' Repository: Add one mana of any color.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "ba42df49-3585-5582-b87e-1b1292fae940"
+            "uuid": "db8ca974-7a10-599b-84c7-d7f9bd7b9833"
         },
         {
             "artist": "Slawomir Maniak",
@@ -23990,12 +24168,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58965,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/12f9c7daa90d74e0",
             "text": "Destroy target creature with flying and all Equipment attached to that creature.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "0ba2d837-4207-5326-b349-04b6a7a35d0a"
+            "uuid": "ae5461a5-757d-564e-aa80-f4a1e37ec0b4"
         },
         {
             "artist": "Nic Klein",
@@ -24131,13 +24310,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58966,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0e36e32f66e6b383",
             "text": "Flowering Lumberknot can't attack or block unless it's paired with a creature with soulbond.",
             "toughness": "5",
             "type": "Creature — Treefolk",
             "types": [
                 "Creature"
             ],
-            "uuid": "9e65d1b4-22e1-5d75-83ca-1f2834117f47"
+            "uuid": "ee78f2d5-66db-515a-ab63-4d2c462f657c"
         },
         {
             "artist": "Anthony Palumbo",
@@ -24253,13 +24433,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58967,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/91bdf689a570b6b5",
             "text": "Soulbond (You may pair this creature with another unpaired creature when either enters the battlefield. They remain paired for as long as you control both of them.)\nAs long as Geist Trappers is paired with another creature, both creatures have reach.",
             "toughness": "5",
             "type": "Creature — Human Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "96478d07-cf9b-5cbf-8847-c92b47a0194f"
+            "uuid": "aaeecb8d-e0b9-58ad-9cba-2455de10ffae"
         },
         {
             "artist": "Svetlin Velinov",
@@ -24388,13 +24569,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58968,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/725ff0d642631390",
             "text": "Reach\nGloomwidow can block only creatures with flying.",
             "toughness": "3",
             "type": "Creature — Spider",
             "types": [
                 "Creature"
             ],
-            "uuid": "c1d0f8d9-61e4-57ca-8f48-65eb6349ad58"
+            "uuid": "cdf68cd9-9ce7-5f0c-85b9-75a3acf73619"
         },
         {
             "artist": "Greg Staples",
@@ -24525,12 +24707,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58969,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ab8d985d3228bded",
             "text": "Enchant creature\nEnchanted creature loses flying.",
             "type": "Enchantment — Aura",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "a35d2e36-7ec6-542d-8b97-1b4b65afbf9a"
+            "uuid": "d2926c29-0d37-5119-88e0-cd26b0d6e2a2"
         },
         {
             "artist": "David Rapoza",
@@ -24651,13 +24834,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58183,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d953fdeee4fc2cfe",
             "text": "Creatures with power less than Howlgeist's power can't block it.\nUndying (When this creature dies, if it had no +1/+1 counters on it, return it to the battlefield under its owner's control with a +1/+1 counter on it.)",
             "toughness": "2",
             "type": "Creature — Spirit Wolf",
             "types": [
                 "Creature"
             ],
-            "uuid": "696115c3-0049-5aa3-a359-a1ef38eb1259"
+            "uuid": "07fe5ffb-f77c-57b4-b040-cae8c09f8533"
         },
         {
             "artist": "Raymond Swanland",
@@ -24789,12 +24973,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58184,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/933e376c3af7b622",
             "text": "Target creature gets +2/+2 until end of turn. If it's paired with a creature, that creature also gets +2/+2 until end of turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "dea688c4-fc7c-5eee-89a3-c669bf7c09c8"
+            "uuid": "b00cf739-6997-532a-bb6e-d7bd6b5d253e"
         },
         {
             "artist": "Jason A. Engle",
@@ -24918,12 +25103,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58970,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/17a7bfe3e1c55741",
             "text": "Reveal the top two cards of your library. Put all creature and land cards revealed this way into your hand and the rest on the bottom of your library in any order.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "2aa9ed51-bb89-5e09-8c2c-b404838b1cb2"
+            "uuid": "f724c650-c17f-52a2-9280-2db33cd514c1"
         },
         {
             "artist": "Scott Chou",
@@ -25052,12 +25238,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58971,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9875694519832462",
             "text": "Destroy target artifact or enchantment. You gain 3 life.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "66aa3b3c-1e48-5421-acdb-fd3ac1c58fde"
+            "uuid": "bb07d08a-70e1-58fe-83b0-2c8cedeb5025"
         },
         {
             "artist": "Christopher Moeller",
@@ -25172,12 +25359,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58972,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/67d2ad307799b175",
             "toughness": "3",
             "type": "Creature — Boar",
             "types": [
                 "Creature"
             ],
-            "uuid": "22b0b7ff-c051-5620-8a46-0838ea589a23"
+            "uuid": "49b0af03-85f4-582e-bd68-92f604bcd5fd"
         },
         {
             "artist": "John Stanko",
@@ -25294,13 +25482,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58270,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9e767d2349b91834",
             "text": "Soulbond (You may pair this creature with another unpaired creature when either enters the battlefield. They remain paired for as long as you control both of them.)\nAs long as Nightshade Peddler is paired with another creature, both creatures have deathtouch.",
             "toughness": "1",
             "type": "Creature — Human Druid",
             "types": [
                 "Creature"
             ],
-            "uuid": "125e05ef-9dbb-5199-867c-ddb05d4ef7b2"
+            "uuid": "94156434-a71f-56a2-b22f-d52fb882cf37"
         },
         {
             "artist": "Nils Hamm",
@@ -25416,13 +25605,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58973,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/77f74692a5ecf8e6",
             "text": "Soulbond (You may pair this creature with another unpaired creature when either enters the battlefield. They remain paired for as long as you control both of them.)\nAs long as Pathbreaker Wurm is paired with another creature, both creatures have trample.",
             "toughness": "4",
             "type": "Creature — Wurm",
             "types": [
                 "Creature"
             ],
-            "uuid": "f71bd7dc-912d-5d2b-992f-95360fdaca55"
+            "uuid": "6bf6a761-3dea-596c-b342-6f45d78671cf"
         },
         {
             "artist": "David Rapoza",
@@ -25561,12 +25751,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58840,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/71f675fdf0b57051",
             "text": "Exile the top card of your library. If it's a permanent card, you may put it onto the battlefield. If you do, repeat this process.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "1fafe758-aa3d-579d-b77c-f0e05ffe10cb"
+            "uuid": "0ddcb912-8e44-5b07-b0d4-04dabf2098ab"
         },
         {
             "artist": "Sam Burley",
@@ -25695,12 +25886,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58974,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/84a7e314b185ee2a",
             "text": "Choose one or more —\n• Destroy target artifact.\n• Destroy target enchantment.\n• Destroy target land.",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "0757d032-bf46-53aa-8b63-ee3907cb5c8b"
+            "uuid": "973b6e38-59c3-5c99-8171-3e3fe0577507"
         },
         {
             "artist": "Christopher Moeller",
@@ -25813,12 +26005,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58294,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bb4c31827e235de4",
             "text": "Until end of turn, target creature gets +6/+6 and gains trample, and all creatures able to block it this turn do so.\nMiracle {G} (You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.)",
             "type": "Sorcery",
             "types": [
                 "Sorcery"
             ],
-            "uuid": "02521748-8cca-57c0-a279-55d2e271af1e"
+            "uuid": "33683118-2b65-58ff-9329-3507bda48cb9"
         },
         {
             "artist": "Igor Kieryluk",
@@ -25935,12 +26128,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58975,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/05ddd5976deedbb3",
             "text": "Target creature you control gains hexproof until end of turn. You gain life equal to that creature's toughness. (A creature with hexproof can't be the target of spells or abilities your opponents control.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "12f8e797-eecc-5ed4-bc38-b6f43f3717dc"
+            "uuid": "17f76368-5882-5aa6-ab4c-e9a7982f6b28"
         },
         {
             "artist": "Ryan Yee",
@@ -26063,12 +26257,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58976,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/77726fd6bd95ae18",
             "text": "Target creature gets +1/+1 and gains reach until end of turn. (It can block creatures with flying.)",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "78ff0c3b-030d-509a-9d48-ebb88e74ebf1"
+            "uuid": "43e7e380-2f51-5944-8798-970ef5f20e21"
         },
         {
             "artist": "Steve Argyle",
@@ -26207,13 +26402,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58364,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4fdb86f9847793b3",
             "text": "{T}: Add three mana of any one color. Spend this mana only to cast creature spells.",
             "toughness": "1",
             "type": "Creature — Human Druid",
             "types": [
                 "Creature"
             ],
-            "uuid": "ad6dad6c-935a-50d7-9127-a871656675e6"
+            "uuid": "3ea63a15-aafe-56e5-96bc-0b6870fd8caa"
         },
         {
             "artist": "Eytan Zana",
@@ -26348,13 +26544,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58366,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/7cd60d810dcc67cc",
             "text": "Trample\nWhenever another nontoken creature enters the battlefield under your control, you may draw a card.",
             "toughness": "6",
             "type": "Creature — Elemental",
             "types": [
                 "Creature"
             ],
-            "uuid": "ef807005-cfae-52a2-a28f-c7cfd12926ba"
+            "uuid": "4a7ca605-0034-5a62-9e9d-a000fe114601"
         },
         {
             "artist": "Jaime Jones",
@@ -26484,12 +26681,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58977,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/93ce5f40610ecb7f",
             "text": "Prevent all combat damage that would be dealt by creatures other than target creature this turn.",
             "type": "Instant",
             "types": [
                 "Instant"
             ],
-            "uuid": "380f8078-56e8-5bb7-a34b-5f3ab0817181"
+            "uuid": "8590973a-53cf-5a56-94cd-050dd325cab3"
         },
         {
             "artist": "Zoltan Boros",
@@ -26623,13 +26821,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58978,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/8aeebbb5978bcd00",
             "text": "When Timberland Guide enters the battlefield, put a +1/+1 counter on target creature.",
             "toughness": "1",
             "type": "Creature — Human Scout",
             "types": [
                 "Creature"
             ],
-            "uuid": "0a29e165-bd81-5d5b-9840-46da247cab4c"
+            "uuid": "d04ae1ab-c09b-51e5-bde1-a9e655dead64"
         },
         {
             "artist": "James Ryman",
@@ -26758,12 +26957,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58365,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/2f0dc619cfa38a87",
             "text": "At the beginning of your upkeep, draw a card if you control the creature with the greatest power or tied for the greatest power.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "b60aea96-8ba4-5dd3-81a7-f03cc464e66c"
+            "uuid": "3cf1196e-2737-5bcd-a87c-1d1815693c16"
         },
         {
             "artist": "Cynthia Sheppard",
@@ -26880,13 +27080,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58979,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b19576ae39d8dbfb",
             "text": "Soulbond (You may pair this creature with another unpaired creature when either enters the battlefield. They remain paired for as long as you control both of them.)\nAs long as Trusted Forcemage is paired with another creature, each of those creatures gets +1/+1.",
             "toughness": "2",
             "type": "Creature — Human Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "f3401aad-831b-558a-a7cc-3ecb3c11c862"
+            "uuid": "feabc4c7-539b-5419-913f-3d7019e32775"
         },
         {
             "artist": "Christopher Moeller",
@@ -27023,13 +27224,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58839,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5a87c163a8320568",
             "text": "{1}{G}, {T}: Target creature you control fights another target creature.",
             "toughness": "1",
             "type": "Creature — Human Shaman",
             "types": [
                 "Creature"
             ],
-            "uuid": "edb9a638-e048-5b92-9428-ac7f03406b48"
+            "uuid": "f851756e-820f-56c1-9984-d02f8a1eedaf"
         },
         {
             "artist": "Lucas Graciano",
@@ -27145,12 +27347,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58980,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4252082697ce663e",
             "toughness": "7",
             "type": "Creature — Elemental Horror",
             "types": [
                 "Creature"
             ],
-            "uuid": "06d4a9f3-f7e6-5b8a-958d-660d4e8289e0"
+            "uuid": "442c3f7c-7917-51d2-b497-a35f70d1cad5"
         },
         {
             "artist": "Tomasz Jedruszek",
@@ -27283,13 +27486,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58981,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/44be0224d9fffeee",
             "text": "Creatures with power less than Wandering Wolf's power can't block it.",
             "toughness": "1",
             "type": "Creature — Wolf",
             "types": [
                 "Creature"
             ],
-            "uuid": "4e2108b3-743d-5d3f-84f8-58a7c79fced7"
+            "uuid": "88191859-2fa9-50aa-8323-cc086658cbc2"
         },
         {
             "artist": "Slawomir Maniak",
@@ -27420,12 +27624,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58982,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a974f89604a43fe6",
             "text": "Whenever a creature you control becomes the target of an instant or sorcery spell, that creature gets +3/+3 until end of turn.",
             "type": "Enchantment",
             "types": [
                 "Enchantment"
             ],
-            "uuid": "2a8f3382-efec-5897-9487-df14ba965b9c"
+            "uuid": "db83f409-1dec-5ad6-b4e8-efcfa4a1a16c"
         },
         {
             "artist": "Lars Grant-West",
@@ -27552,13 +27757,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58983,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c543fcef4f5437f1",
             "text": "Wildwood Geist gets +2/+2 as long as it's your turn.",
             "toughness": "3",
             "type": "Creature — Spirit",
             "types": [
                 "Creature"
             ],
-            "uuid": "01c1de3c-c1c7-543c-a1fb-850da57ea010"
+            "uuid": "31f97b11-1382-5250-98ef-bd64ff5fcfd4"
         },
         {
             "artist": "Daniel Ljunggren",
@@ -27685,13 +27891,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58841,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/9029fd2ca145d4f5",
             "text": "Flash (You may cast this spell any time you could cast an instant.)\n{1}{G}: Regenerate Wolfir Avenger.",
             "toughness": "3",
             "type": "Creature — Wolf Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "71157408-0a07-5e51-bc66-aab7c23b9d35"
+            "uuid": "631a2b7a-08ef-5272-b7b9-8ae5e5e9b8af"
         },
         {
             "artist": "Raymond Swanland",
@@ -27806,13 +28013,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58303,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d3ef9083c4b6b487",
             "text": "Soulbond (You may pair this creature with another unpaired creature when either enters the battlefield. They remain paired for as long as you control both of them.)\nAs long as Wolfir Silverheart is paired with another creature, each of those creatures gets +4/+4.",
             "toughness": "4",
             "type": "Creature — Wolf Warrior",
             "types": [
                 "Creature"
             ],
-            "uuid": "71ac3de8-e4e5-56af-b932-3382ea1be8a6"
+            "uuid": "4dcc6779-4aa9-54c5-831a-754373ecdcaf"
         },
         {
             "artist": "Dan Scott",
@@ -27948,13 +28156,14 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58984,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5abe63073ca0f8a3",
             "text": "{2}{G}{G}: Yew Spirit gets +X/+X until end of turn, where X is its power.",
             "toughness": "3",
             "type": "Creature — Spirit Treefolk",
             "types": [
                 "Creature"
             ],
-            "uuid": "9faaa990-1a01-50c4-a148-2cfc12898055"
+            "uuid": "7774f9c9-8b0b-56e8-a6eb-505241d562e1"
         },
         {
             "artist": "Winona Nelson",
@@ -28083,13 +28292,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 58291,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/ab35ef02d4ef86f5",
             "text": "Flying, vigilance\nWhenever Bruna, Light of Alabaster attacks or blocks, you may attach to it any number of Auras on the battlefield and you may put onto the battlefield attached to it any number of Aura cards that could enchant it from your graveyard and/or hand.",
             "toughness": "5",
             "type": "Legendary Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "b0130df6-3467-5aa3-ada5-51b330dcb29c"
+            "uuid": "26229d82-bc3e-5ea0-9c09-ca1d1c36692f"
         },
         {
             "artist": "Jason Chan",
@@ -28224,13 +28434,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 58268,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/90f87fc3661aa1d2",
             "text": "Flying, first strike\nIf a source would deal damage to an opponent or a permanent an opponent controls, that source deals double that damage to that player or permanent instead.\nIf a source would deal damage to you or a permanent you control, prevent half that damage, rounded up.",
             "toughness": "5",
             "type": "Legendary Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "737d10a7-e992-5a68-a369-18c2e0a52884"
+            "uuid": "da3d1f47-1cdf-5885-92d8-e61fbe6c71a8"
         },
         {
             "artist": "Chris Rahn",
@@ -28375,13 +28586,14 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 58185,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/d8fee4a270058b69",
             "text": "Flying, hexproof\nSpells and abilities your opponents control can't cause you to sacrifice permanents.",
             "toughness": "5",
             "type": "Legendary Creature — Angel",
             "types": [
                 "Creature"
             ],
-            "uuid": "521c512f-04b8-5e0f-8c7f-e519e57f6c5d"
+            "uuid": "d79b0f68-b31f-57fd-921d-b93f0c331905"
         },
         {
             "artist": "Dan Scott",
@@ -28511,12 +28723,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58271,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/76fe83bfd957a162",
             "text": "Whenever a creature enters the battlefield under your control, you may have Angel's Tomb become a 3/3 white Angel artifact creature with flying until end of turn.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "f0e005de-6f63-53c3-83c5-45011208ef89"
+            "uuid": "333dad42-b136-5a7b-8297-68af7f8e6e36"
         },
         {
             "artist": "Daniel Ljunggren",
@@ -28637,12 +28850,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58985,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/0970084b84275ebc",
             "text": "Equipped creature gets +2/+2, has flying, and is a white Angel in addition to its other colors and types.\nEquip {4}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "eb69c87b-e952-5fb2-b370-761dc497b68d"
+            "uuid": "bff6c5e7-1924-5b3e-8059-30a956c3b860"
         },
         {
             "artist": "Ryan Yee",
@@ -28764,12 +28978,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58986,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dc7927726f17355e",
             "text": "Equipped creature gets +1/+1.\nAs long as equipped creature is a Human or an Angel, it has vigilance.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "32931f3c-555b-5fa4-ac09-b4cd89de0ee0"
+            "uuid": "22c3cb48-c2e6-5f73-9584-de4cd82d4020"
         },
         {
             "artist": "Jason Felix",
@@ -28889,12 +29104,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58987,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/3dee6284b6eadf23",
             "text": "At the beginning of your end step, you may exile target creature you control, then return that card to the battlefield under your control.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "0163ff52-fed2-5973-9382-faeb0c071b11"
+            "uuid": "8b6d8116-68fd-57ba-b6fc-844c8416c8ff"
         },
         {
             "artist": "John Avon",
@@ -29012,12 +29228,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58988,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bfae17864f9cc5cc",
             "text": "{3}, {T}, Tap three untapped Humans you control: Destroy target creature. Its controller creates a 1/1 white Spirit creature token with flying.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "943e56a0-ee18-5a4b-8f69-2e1e1297e8a7"
+            "uuid": "dfe21355-9534-59e6-8656-e964fd51b3d3"
         },
         {
             "artist": "Daniel Ljunggren",
@@ -29139,6 +29356,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58989,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dc383e782ef0d93e",
             "text": "Defender, first strike",
             "toughness": "1",
             "type": "Artifact Creature — Construct",
@@ -29146,7 +29364,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "51e5ea0e-2574-5ac1-b389-d6065fea9729"
+            "uuid": "a030c496-ab73-5875-94f6-be2092a0550a"
         },
         {
             "artist": "James Paick",
@@ -29260,12 +29478,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58188,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/1341866efbc25d5e",
             "text": "Equipped creature has first strike.\nWhenever equipped creature attacks, create a 4/4 white Angel creature token with flying.\nEquip {4}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "b249b6a6-dfce-5e6a-b53e-6c256d4795f0"
+            "uuid": "1b8e6cd0-99ce-5ace-bbdd-6cbfef83f4e4"
         },
         {
             "artist": "Steven Belledin",
@@ -29387,6 +29606,7 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58990,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/dc2d8e9a5d2c268e",
             "text": "{2}: Narstad Scrapper gets +1/+0 until end of turn.",
             "toughness": "3",
             "type": "Artifact Creature — Construct",
@@ -29394,7 +29614,7 @@
                 "Artifact",
                 "Creature"
             ],
-            "uuid": "5b41df7c-7e17-5172-9e20-ec3f3659307f"
+            "uuid": "5a465452-ecb0-5d64-87c0-c5acc117d146"
         },
         {
             "artist": "Sam Wolfe Connelly",
@@ -29512,12 +29732,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58991,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/201a69fb3e56385f",
             "text": "{T}: Put a charge counter on Otherworld Atlas.\n{T}: Each player draws a card for each charge counter on Otherworld Atlas.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "3845523f-77a3-5471-9e18-8824fa1936e2"
+            "uuid": "34131618-2b8b-5d29-bc75-c7727d3dacf3"
         },
         {
             "artist": "Cliff Childs",
@@ -29642,12 +29863,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58992,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c275c7313840c133",
             "text": "{1}, Sacrifice Scroll of Avacyn: Draw a card. If you control an Angel, you gain 5 life.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "cea2b2f5-5911-507a-ad71-309a0312134a"
+            "uuid": "aeebf978-eab8-54c6-bb94-fff8abfb7137"
         },
         {
             "artist": "Cliff Childs",
@@ -29772,12 +29994,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58993,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/c2ec3eb9c971a71a",
             "text": "{1}, Sacrifice Scroll of Griselbrand: Target opponent discards a card. If you control a Demon, that player loses 3 life.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "73dfb9dc-9a4d-5dbe-973a-0a32b0693038"
+            "uuid": "5d332e81-863e-5f20-8721-c3897f8f26b0"
         },
         {
             "artist": "Anthony Palumbo",
@@ -29906,12 +30129,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58994,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/25d7e9c299f731a4",
             "text": "Equipped creature gets +3/+0 and attacks each combat if able.\nEquip {3}",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "73553543-a1d5-5330-9542-cf2253ea48e1"
+            "uuid": "5b1a68f7-c74e-5a9f-a0f2-e3b86e1d50bd"
         },
         {
             "artist": "Ryan Pancoast",
@@ -30038,12 +30262,13 @@
             ],
             "supertypes": [],
             "tcgplayerProductId": 58995,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/14f1446ab782cfdb",
             "text": "Equipped creature gets +0/+3 and can block an additional creature each combat.\nEquip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
             "type": "Artifact — Equipment",
             "types": [
                 "Artifact"
             ],
-            "uuid": "5e491e93-e36d-5c35-abcf-4001a28ab48c"
+            "uuid": "0a10be11-cb2e-53b7-9064-5c6d2601095f"
         },
         {
             "artist": "John Avon",
@@ -30153,12 +30378,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58996,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/5b533a2b1b5cb90f",
             "text": "When Vessel of Endless Rest enters the battlefield, put target card from a graveyard on the bottom of its owner's library.\n{T}: Add one mana of any color.",
             "type": "Artifact",
             "types": [
                 "Artifact"
             ],
-            "uuid": "0e2a4d8e-a8a4-5cd6-8b8e-41d583bf235b"
+            "uuid": "df9a0e98-fb43-58b3-8f6c-873c91801b0d"
         },
         {
             "artist": "Dan Scott",
@@ -30287,12 +30513,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58370,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a2aab50514acffde",
             "text": "{T}: Add {C}.\n{G}{U}, {T}: You may cast spells this turn as though they had flash.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "e45bbad8-40ef-5c7f-b544-43569f0242a4"
+            "uuid": "1a06a921-89fe-5c57-8a1c-7c5951d74520"
         },
         {
             "artist": "Cliff Childs",
@@ -30410,12 +30637,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58842,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bd54bc687b32aba4",
             "text": "As Cavern of Souls enters the battlefield, choose a creature type.\n{T}: Add {C}.\n{T}: Add one mana of any color. Spend this mana only to cast a creature spell of the chosen type, and that spell can't be countered.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "fe063db1-eaaf-5ff2-962d-05d4576acafe"
+            "uuid": "fafd0bd6-3929-56ac-a3e1-d4815616a008"
         },
         {
             "artist": "Scott Chou",
@@ -30536,12 +30764,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58299,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4bbcbcc79d8fea81",
             "text": "{T}: Add {C}.\n{1}{U}{R}, {T}: Draw a card, then discard a card.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "7a68b6ba-3fa5-56a3-bf12-b55ffe26917c"
+            "uuid": "e3c67cb1-0316-5ec8-9902-0d649a4ff383"
         },
         {
             "artist": "David Palumbo",
@@ -30649,12 +30878,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58997,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/219db4bba70220a6",
             "text": "When Seraph Sanctuary enters the battlefield, you gain 1 life.\nWhenever an Angel enters the battlefield under your control, you gain 1 life.\n{T}: Add {C}.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "e202779a-0164-5847-b3fe-5f84a3b52aa3"
+            "uuid": "6bd59c8e-5f8e-5df2-9a29-564ee1d06244"
         },
         {
             "artist": "Karl Kopinski",
@@ -30774,12 +31004,13 @@
             "subtypes": [],
             "supertypes": [],
             "tcgplayerProductId": 58309,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/6fa9518f7d624895",
             "text": "{T}: Add {C}.\n{R}{W}, {T}: Target creature gets +2/+0 and gains vigilance and haste until end of turn.",
             "type": "Land",
             "types": [
                 "Land"
             ],
-            "uuid": "ec531fe7-eff7-54dc-b9dd-3a018baa24b6"
+            "uuid": "2b538200-a933-5843-8ef1-5d6ee4ac55f1"
         },
         {
             "artist": "Adam Paquette",
@@ -30862,6 +31093,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -30884,10 +31116,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "ad541a9c-6965-5cd7-bfbb-0a6d4913a72f",
+            "uuid": "b56a659b-8ed0-5172-8679-45c6738586b5",
             "variations": [
-                "12ebce49-7122-504a-95ed-ac51476bd4db",
-                "3294b13f-e861-55c9-905a-fcb4fff13216"
+                "b882eebc-af04-562c-883b-49414640ccb6",
+                "99a6a6a0-f870-597c-9f15-61bd50f65ef3"
             ]
         },
         {
@@ -30971,6 +31203,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -30993,10 +31226,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "12ebce49-7122-504a-95ed-ac51476bd4db",
+            "uuid": "b882eebc-af04-562c-883b-49414640ccb6",
             "variations": [
-                "ad541a9c-6965-5cd7-bfbb-0a6d4913a72f",
-                "3294b13f-e861-55c9-905a-fcb4fff13216"
+                "b56a659b-8ed0-5172-8679-45c6738586b5",
+                "99a6a6a0-f870-597c-9f15-61bd50f65ef3"
             ]
         },
         {
@@ -31080,6 +31313,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -31102,10 +31336,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "3294b13f-e861-55c9-905a-fcb4fff13216",
+            "uuid": "99a6a6a0-f870-597c-9f15-61bd50f65ef3",
             "variations": [
-                "ad541a9c-6965-5cd7-bfbb-0a6d4913a72f",
-                "12ebce49-7122-504a-95ed-ac51476bd4db"
+                "b56a659b-8ed0-5172-8679-45c6738586b5",
+                "b882eebc-af04-562c-883b-49414640ccb6"
             ]
         },
         {
@@ -31153,7 +31387,6 @@
                 "C18",
                 "CM2",
                 "CMA",
-                "DDI",
                 "DDJ",
                 "DDM",
                 "DDN",
@@ -31189,6 +31422,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -31211,10 +31445,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "71809329-d0d5-510a-8ee7-3a6f30f98860",
+            "uuid": "1e2361a1-8a7a-5c31-985c-acafdb3b63b7",
             "variations": [
-                "ca6a0bdb-754b-52aa-8f2b-91c04d96e0f6",
-                "fa0fe32c-8a6e-5d80-891c-a9cd49c7b999"
+                "dafba7ca-044e-5113-a584-cc0a4cd11612",
+                "1ff52123-11d9-5be3-8c27-efd6fe5cf7e4"
             ]
         },
         {
@@ -31262,7 +31496,6 @@
                 "C18",
                 "CM2",
                 "CMA",
-                "DDI",
                 "DDJ",
                 "DDM",
                 "DDN",
@@ -31298,6 +31531,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -31320,10 +31554,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "ca6a0bdb-754b-52aa-8f2b-91c04d96e0f6",
+            "uuid": "dafba7ca-044e-5113-a584-cc0a4cd11612",
             "variations": [
-                "71809329-d0d5-510a-8ee7-3a6f30f98860",
-                "fa0fe32c-8a6e-5d80-891c-a9cd49c7b999"
+                "1e2361a1-8a7a-5c31-985c-acafdb3b63b7",
+                "1ff52123-11d9-5be3-8c27-efd6fe5cf7e4"
             ]
         },
         {
@@ -31371,7 +31605,6 @@
                 "C18",
                 "CM2",
                 "CMA",
-                "DDI",
                 "DDJ",
                 "DDM",
                 "DDN",
@@ -31407,6 +31640,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -31429,10 +31663,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "fa0fe32c-8a6e-5d80-891c-a9cd49c7b999",
+            "uuid": "1ff52123-11d9-5be3-8c27-efd6fe5cf7e4",
             "variations": [
-                "71809329-d0d5-510a-8ee7-3a6f30f98860",
-                "ca6a0bdb-754b-52aa-8f2b-91c04d96e0f6"
+                "1e2361a1-8a7a-5c31-985c-acafdb3b63b7",
+                "dafba7ca-044e-5113-a584-cc0a4cd11612"
             ]
         },
         {
@@ -31536,10 +31770,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "feab1668-d902-5adb-a270-6dae4700b572",
+            "uuid": "5d9d8cdb-4039-5fd4-8b28-67c356dfe70c",
             "variations": [
-                "49288b78-6cc4-5c22-83df-59409afd4a45",
-                "3fc680d5-056a-5ac9-8a40-950c1ba41672"
+                "51e6a2c6-2fab-5064-9b05-0b5255fd7c12",
+                "501cd427-9d0f-5643-b229-9aa5ab400faf"
             ]
         },
         {
@@ -31643,10 +31877,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "49288b78-6cc4-5c22-83df-59409afd4a45",
+            "uuid": "51e6a2c6-2fab-5064-9b05-0b5255fd7c12",
             "variations": [
-                "feab1668-d902-5adb-a270-6dae4700b572",
-                "3fc680d5-056a-5ac9-8a40-950c1ba41672"
+                "5d9d8cdb-4039-5fd4-8b28-67c356dfe70c",
+                "501cd427-9d0f-5643-b229-9aa5ab400faf"
             ]
         },
         {
@@ -31750,10 +31984,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "3fc680d5-056a-5ac9-8a40-950c1ba41672",
+            "uuid": "501cd427-9d0f-5643-b229-9aa5ab400faf",
             "variations": [
-                "feab1668-d902-5adb-a270-6dae4700b572",
-                "49288b78-6cc4-5c22-83df-59409afd4a45"
+                "5d9d8cdb-4039-5fd4-8b28-67c356dfe70c",
+                "51e6a2c6-2fab-5064-9b05-0b5255fd7c12"
             ]
         },
         {
@@ -31836,6 +32070,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -31858,10 +32093,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "211662e2-08b9-5f31-933e-957075a9833f",
+            "uuid": "ca058503-479a-55f5-b9ef-e466463dca6c",
             "variations": [
-                "65f44a85-7944-5584-b34c-416c90c07c47",
-                "deeca0a9-db76-541a-ae74-554f242fa0ab"
+                "d2b4c39a-f718-532e-badf-bda8d1d58a1a",
+                "bb6c6e6f-0f43-5a33-a63c-601d3982cb6a"
             ]
         },
         {
@@ -31944,6 +32179,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -31966,10 +32202,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "65f44a85-7944-5584-b34c-416c90c07c47",
+            "uuid": "d2b4c39a-f718-532e-badf-bda8d1d58a1a",
             "variations": [
-                "211662e2-08b9-5f31-933e-957075a9833f",
-                "deeca0a9-db76-541a-ae74-554f242fa0ab"
+                "ca058503-479a-55f5-b9ef-e466463dca6c",
+                "bb6c6e6f-0f43-5a33-a63c-601d3982cb6a"
             ]
         },
         {
@@ -32052,6 +32288,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -32074,10 +32311,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "deeca0a9-db76-541a-ae74-554f242fa0ab",
+            "uuid": "bb6c6e6f-0f43-5a33-a63c-601d3982cb6a",
             "variations": [
-                "211662e2-08b9-5f31-933e-957075a9833f",
-                "65f44a85-7944-5584-b34c-416c90c07c47"
+                "ca058503-479a-55f5-b9ef-e466463dca6c",
+                "d2b4c39a-f718-532e-badf-bda8d1d58a1a"
             ]
         },
         {
@@ -32158,6 +32395,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -32180,10 +32418,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "87be45be-10d4-5e6e-b94e-3a876581f5c3",
+            "uuid": "4413a25e-284b-562c-959c-5980bcb66099",
             "variations": [
-                "353abce3-1a30-54e2-927e-c1070c0b1a8c",
-                "869b9e14-3b19-53d2-aad0-4419ac71ce7c"
+                "bcdb57a9-4b7a-5e61-baef-9772ba9b5bfc",
+                "41ed1910-ccf8-5018-a4d0-4fa2e428619c"
             ]
         },
         {
@@ -32264,6 +32502,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -32286,10 +32525,10 @@
             "types": [
                 "Land"
             ],
-            "uuid": "353abce3-1a30-54e2-927e-c1070c0b1a8c",
+            "uuid": "bcdb57a9-4b7a-5e61-baef-9772ba9b5bfc",
             "variations": [
-                "87be45be-10d4-5e6e-b94e-3a876581f5c3",
-                "869b9e14-3b19-53d2-aad0-4419ac71ce7c"
+                "4413a25e-284b-562c-959c-5980bcb66099",
+                "41ed1910-ccf8-5018-a4d0-4fa2e428619c"
             ]
         },
         {
@@ -32370,6 +32609,7 @@
                 "PRWK",
                 "PSS2",
                 "PSS3",
+                "PZ2",
                 "RIX",
                 "RTR",
                 "SOI",
@@ -32392,19 +32632,19 @@
             "types": [
                 "Land"
             ],
-            "uuid": "869b9e14-3b19-53d2-aad0-4419ac71ce7c",
+            "uuid": "41ed1910-ccf8-5018-a4d0-4fa2e428619c",
             "variations": [
-                "87be45be-10d4-5e6e-b94e-3a876581f5c3",
-                "353abce3-1a30-54e2-927e-c1070c0b1a8c"
+                "4413a25e-284b-562c-959c-5980bcb66099",
+                "bcdb57a9-4b7a-5e61-baef-9772ba9b5bfc"
             ]
         }
     ],
-    "code": "avr",
+    "code": "AVR",
     "meta": {
-        "date": "2018-12-18",
-        "version": "4.2.0"
+        "date": "2018-01-12",
+        "version": "4.2.1"
     },
-    "mtgoCode": "avr",
+    "mtgoCode": "AVR",
     "name": "Avacyn Restored",
     "releaseDate": "2012-05-04",
     "tcgplayerGroupId": 362,
@@ -32430,7 +32670,7 @@
             "text": "Flying",
             "toughness": "4",
             "type": "Token Creature — Angel",
-            "uuid": "6327a4a1-603f-5385-9f27-23bc127cf24b"
+            "uuid": "cf8d1b8e-6045-53d1-91c6-7db6a8eda708"
         },
         {
             "artist": "Michael C. Hayes",
@@ -32454,7 +32694,7 @@
             "scryfallId": "8894949b-f190-461e-996a-cf2b39f08a5d",
             "toughness": "1",
             "type": "Token Creature — Human",
-            "uuid": "d0bb564b-bffd-5b33-8b76-0c250dfd2096"
+            "uuid": "dd898a95-676b-5b5f-b2b0-f2eacc8a0827"
         },
         {
             "artist": "Ryan Yee",
@@ -32484,7 +32724,7 @@
             "text": "Flying",
             "toughness": "1",
             "type": "Token Creature — Spirit",
-            "uuid": "c8de2b68-64e0-5514-a639-65bf18391965"
+            "uuid": "df55107c-2b8b-5ff7-9e32-0da31cc46cd8"
         },
         {
             "artist": "Dan Scott",
@@ -32505,7 +32745,7 @@
             "text": "Flying",
             "toughness": "1",
             "type": "Token Creature — Spirit",
-            "uuid": "e948c520-a5ff-531b-b4a2-7254b0ac0f59"
+            "uuid": "b00142a4-05c2-5f91-974d-55f195cc30c7"
         },
         {
             "artist": "Kev Walker",
@@ -32527,7 +32767,7 @@
             "text": "Flying",
             "toughness": "5",
             "type": "Token Creature — Demon",
-            "uuid": "0e48b76c-c839-53ca-9000-60ea1cd49da9"
+            "uuid": "8a1b3902-726f-5757-8735-384fde8ca4f8"
         },
         {
             "artist": "Lucas Graciano",
@@ -32555,7 +32795,7 @@
             "scryfallId": "b877c19d-6022-4377-92e7-4511e24eb98e",
             "toughness": "2",
             "type": "Token Creature — Zombie",
-            "uuid": "f1f354dc-c917-5530-8fe9-1ee80baf87d6"
+            "uuid": "845feeb5-52bd-5d5b-9e91-3f6d4414ca25"
         },
         {
             "artist": "Ryan Pancoast",
@@ -32575,7 +32815,7 @@
             "scryfallId": "5da1ef9d-878a-49d8-afe5-86ad18e30c3d",
             "toughness": "1",
             "type": "Token Creature — Human",
-            "uuid": "4a1f0fca-5fe8-5e8f-9a21-3ce926d8bf5e"
+            "uuid": "4f3cd565-0c9f-58ec-afd7-b194bdc88b93"
         },
         {
             "artist": "Eric Deschamps",
@@ -32590,7 +32830,7 @@
             "scryfallId": "cce7547c-6d3d-4586-83b2-3d208113b045",
             "text": "You have no maximum hand size.\nWhenever a card is put into your graveyard from anywhere, you may return it to your hand.",
             "type": "Emblem — Tamiyo",
-            "uuid": "4af7c5aa-f07b-5489-9f45-1d38133a684f"
+            "uuid": "8c7b7ae9-d547-5ba6-a056-a58ffc7a2bf1"
         }
     ],
     "totalSetSize": 244,

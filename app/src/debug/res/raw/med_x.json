@@ -76,12 +76,71 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 175241,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b8686c2250532a36",
             "text": "+1: Create a 1/1 white Soldier creature token.\n+1: Target creature gets +3/+3 and gains flying until end of turn.\n−8: You get an emblem with \"Artifacts, creatures, enchantments, and lands you control have indestructible.\"",
             "type": "Legendary Planeswalker — Elspeth",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "e0111088-ad19-5c1e-92dc-1706684917a2"
+            "uuid": "fc1f3ae3-3328-5f7f-babd-52bb89640eb3"
+        },
+        {
+            "artist": "Adam Paquette",
+            "borderColor": "black",
+            "colorIdentity": [],
+            "colors": [],
+            "convertedManaCost": 4.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "loyalty": "5",
+            "manaCost": "{4}",
+            "name": "Karn, Scion of Urza",
+            "number": "RA1",
+            "printings": [
+                "DOM",
+                "MED",
+                "PDOM"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2018-04-27",
+                    "text": "A token created by Karn’s last ability will count itself, so it’ll be at least 1/1."
+                },
+                {
+                    "date": "2018-04-27",
+                    "text": "Karn is colorless but not an artifact. The Construct tokens created by Karn’s last ability don’t count Karn."
+                }
+            ],
+            "scryfallId": "0cd43687-0ae1-47e9-b0d6-2af56bdbe2e9",
+            "starter": true,
+            "subtypes": [
+                "Karn"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "text": "+1: Reveal the top two cards of your library. An opponent chooses one of them. Put that card into your hand and exile the other with a silver counter on it.\n−1: Put a card you own with a silver counter on it from exile into your hand.\n−2: Create a 0/0 colorless Construct artifact creature token with \"This creature gets +1/+1 for each artifact you control.\"",
+            "type": "Legendary Planeswalker — Karn",
+            "types": [
+                "Planeswalker"
+            ],
+            "uuid": "fbc5161b-6da8-5c30-ab49-2260fb4f9f46"
         },
         {
             "artist": "Kieran Yanner",
@@ -145,12 +204,86 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 175244,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/4837dd38c4457562",
             "text": "+1: Up to one target creature gets -2/-1 until your next turn.\n−2: Put the top two cards of your library into your graveyard, then you may return a creature card from your graveyard to your hand.\n−7: You get an emblem with \"At the beginning of your end step, create X 2/2 black Zombie creature tokens, where X is two plus the number of Zombies you control.\"",
             "type": "Legendary Planeswalker — Liliana",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "2f82bf79-3d45-53a1-94af-e3fbbdc7f540"
+            "uuid": "02c87c1e-c763-590b-b48b-a05d5c2b37ae"
+        },
+        {
+            "artist": "Lius Lasahido",
+            "borderColor": "black",
+            "colorIdentity": [
+                "U"
+            ],
+            "colors": [
+                "U"
+            ],
+            "convertedManaCost": 5.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "loyalty": "4",
+            "manaCost": "{3}{U}{U}",
+            "name": "Tamiyo, the Moon Sage",
+            "number": "RA2",
+            "printings": [
+                "AVR",
+                "MED"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2012-05-01",
+                    "text": "Tamiyo’s first ability tracks the permanent, but not its controller. If the permanent changes controllers before its first controller’s next untap step has come around, then it won’t untap during its new controller’s next untap step."
+                },
+                {
+                    "date": "2012-05-01",
+                    "text": "The number of tapped creatures the player controls is determined when Tamiyo’s second ability resolves."
+                },
+                {
+                    "date": "2012-05-01",
+                    "text": "Tamiyo’s third ability creates one emblem with two abilities."
+                },
+                {
+                    "date": "2012-05-01",
+                    "text": "If you activate Tamiyo’s third ability when she has eight loyalty counters on her, she’ll be put into your graveyard before the emblem is created. She won’t return to your hand."
+                },
+                {
+                    "date": "2012-05-01",
+                    "text": "Cards that are put into your graveyard can be returned to your hand by the emblem’s ability even if they were never in your hand."
+                },
+                {
+                    "date": "2013-07-01",
+                    "text": "The ability can target a tapped permanent. If the targeted permanent is already tapped when it resolves, that permanent just remains tapped and doesn’t untap during its controller’s next untap step."
+                }
+            ],
+            "scryfallId": "0d237175-0bda-44df-af32-ca963d0a0520",
+            "starter": true,
+            "subtypes": [
+                "Tamiyo"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "text": "+1: Tap target permanent. It doesn't untap during its controller's next untap step.\n−2: Draw a card for each tapped creature target player controls.\n−8: You get an emblem with \"You have no maximum hand size\" and \"Whenever a card is put into your graveyard from anywhere, you may return it to your hand.\"",
+            "type": "Legendary Planeswalker — Tamiyo",
+            "types": [
+                "Planeswalker"
+            ],
+            "uuid": "4cb14e12-fa01-5b76-a3be-6d0c9826c5ba"
         },
         {
             "artist": "Svetlin Velinov",
@@ -209,12 +342,127 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 175245,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/bd44118c750be4d7",
             "text": "+1: Create a 1/1 colorless Construct artifact creature token with defender.\n−1: You may sacrifice an artifact. If you do, destroy target artifact or creature.\n−6: Choose target artifact card in a graveyard or artifact on the battlefield. Create three tokens that are copies of it.",
             "type": "Legendary Planeswalker — Daretti",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "87b05653-1b36-5cbb-b196-6a8351ee5b7f"
+            "uuid": "4b980b94-bf25-519b-aad1-8c02c17586ce"
+        },
+        {
+            "artist": "Kieran Yanner",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B"
+            ],
+            "colors": [
+                "B"
+            ],
+            "convertedManaCost": 6.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "loyalty": "4",
+            "manaCost": "{3}{B}{B}{B}",
+            "name": "Sorin Markov",
+            "number": "RA3",
+            "printings": [
+                "M12",
+                "MED",
+                "ZEN"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2009-10-01",
+                    "text": "The player who is being controlled is still the active player."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "While controlling another player, you also continue to make your own choices and decisions."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "While controlling another player, you make all choices and decisions that player is allowed to make or is told to make during that turn. For example: -- You choose which lands the other player plays. -- You choose which spells the other player casts, and make all decisions as those spells are cast and as they resolve. For example, you choose the value of X for that player's Earthquake, the target for that player's Lightning Bolt, what mana that player spends to cast Day of Judgment, and what card that player gets with Diabolic Tutor. -- You choose which activated abilities the other player activates, and make all decisions as those abilities are activated and as they resolve. For example, you can have your opponent sacrifice their creatures to their Vampire Aristocrat or have your opponent's Caller of Gales give one of your creatures flying. -- You make all decisions for the other player's triggered abilities, including what they target and any decisions made when they resolve. -- You choose which creatures controlled by the other player attack, who or what they attack, and how they assign their combat damage. -- You make any choices and decisions that player would make for any other reason. For example, you could cast Fact or Fiction, choose that player to divide the revealed cards into piles, and thus divide those cards into piles yourself."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "You can’t make the affected player concede. That player may choose to concede at any time, even while you’re controlling their turn."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "You can’t make any illegal decisions or illegal choices — you can’t do anything that player couldn’t do. You can’t make choices or decisions for that player that aren’t called for by the game rules or by any cards, permanents, spells, abilities, and so on. If an effect causes another player to make decisions that the affected player would normally make (such as Master Warcraft does), that effect takes precedence. (In other words, if the affected player wouldn’t make a decision, you wouldn’t make that decision on their behalf.) You also can’t make any choices or decisions for the player that would be called for by the tournament rules (such as whether to take an intentional draw or whether to call a judge)."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "If the targeted permanent or player is an illegal target by the time Sorin’s first ability resolves, the entire ability doesn’t resolve. You won’t gain life."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "You only control the player. You don’t control any of the other player’s permanents, spells, or abilities."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "If the player affected by Sorin’s third ability skips their next turn, the ability will wait. You’ll control the next turn the affected player actually takes."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "Multiple player-controlling effects that affect the same player overwrite each other. The last one to be created is the one that works."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "You could gain control of yourself using Sorin’s third ability, but unless you do so to overwrite someone else’s player-controlling effect, this doesn’t do anything."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "You can use only the affected player’s resources (cards, mana, and so on) to pay costs for that player; you can’t use your own. Similarly, you can use the affected player’s resources only to pay that player’s costs; you can’t spend them on your costs."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "For a player’s life total to become 10, what actually happens is that the player gains or loses the appropriate amount of life. For example, if the targeted opponent’s life total is 4 when this ability resolves, it will cause that player to gain 6 life; alternately, if the targeted player’s life total is 17 when this ability resolves, it will cause that player to lose 7 life. Other cards that interact with life gain or life loss will interact with this effect accordingly."
+                },
+                {
+                    "date": "2009-10-01",
+                    "text": "Sorin’s third ability allows you to control another player. This effect applies to the next turn that the affected player actually takes."
+                },
+                {
+                    "date": "2010-06-15",
+                    "text": "In a Two-Headed Giant game, Sorin’s second ability causes the targeted opponent’s team’s life total to become 10. Only the targeted player is actually considered to have actually gained or lost life."
+                },
+                {
+                    "date": "2016-07-13",
+                    "text": "While controlling another player, you can see all cards in the game that player can see. This includes cards in that player’s hand, face-down cards that player controls, and any cards in that player’s library the player may look at."
+                },
+                {
+                    "date": "2016-07-13",
+                    "text": "Controlling a player doesn’t allow you to look at that player’s sideboard. If an effect instructs that player to choose a card from outside the game, you can’t have that player choose any card."
+                }
+            ],
+            "scryfallId": "ab6ccbe1-937e-405b-afd5-333abfd5c6a5",
+            "starter": true,
+            "subtypes": [
+                "Sorin"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "text": "+2: Sorin Markov deals 2 damage to any target and you gain 2 life.\n−3: Target opponent's life total becomes 10.\n−7: You control target player during that player's next turn.",
+            "type": "Legendary Planeswalker — Sorin",
+            "types": [
+                "Planeswalker"
+            ],
+            "uuid": "b1d81e0a-cfbd-5f6c-b6ab-6eaa0a3c66af"
         },
         {
             "artist": "Slawomir Maniak",
@@ -282,12 +530,83 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 175247,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/b477de83fda26bb7",
             "text": "+3: Destroy target noncreature permanent.\n−2: Gain control of target creature.\n−9: Nicol Bolas, Planeswalker deals 7 damage to target player or planeswalker. That player or that planeswalker's controller discards seven cards, then sacrifices seven permanents.",
             "type": "Legendary Planeswalker — Bolas",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "d37181da-ce12-5b96-8c9c-c095e4ff709d"
+            "uuid": "9ce0cccc-4d07-5101-abc8-68c89f40c806"
+        },
+        {
+            "artist": "Kieran Yanner",
+            "borderColor": "black",
+            "colorIdentity": [
+                "R"
+            ],
+            "colors": [
+                "R"
+            ],
+            "convertedManaCost": 5.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "brawl": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "frontier": "Legal",
+                "future": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "standard": "Legal",
+                "vintage": "Legal"
+            },
+            "loyalty": "5",
+            "manaCost": "{2}{R}{R}{R}",
+            "name": "Jaya Ballard",
+            "number": "RA4",
+            "printings": [
+                "DOM",
+                "MED",
+                "PDOM"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2018-04-27",
+                    "text": "Mana produced by Jaya’s first ability can be spent among any number of instant and/or sorcery spells."
+                },
+                {
+                    "date": "2018-04-27",
+                    "text": "You choose how many cards to discard while Jaya’s second ability is resolving. You can choose to discard zero cards this way (and then draw zero cards) if you wish."
+                },
+                {
+                    "date": "2018-04-27",
+                    "text": "Jaya’s emblem doesn’t grant you permission to do anything with instant and sorcery cards in your graveyard except cast them. For example, you can’t cycle instant or sorcery cards with cycling from your graveyard."
+                },
+                {
+                    "date": "2018-06-08",
+                    "text": "Because it’s a loyalty ability, Jaya’s first ability isn’t a mana ability. It can be activated only any time you could cast a sorcery. It uses the stack and can be responded to."
+                }
+            ],
+            "scryfallId": "f4da5284-52a4-4999-9e95-9495cee5cade",
+            "starter": true,
+            "subtypes": [
+                "Jaya"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "text": "+1: Add {R}{R}{R}. Spend this mana only to cast instant or sorcery spells.\n+1: Discard up to three cards, then draw that many cards.\n−8: You get an emblem with \"You may cast instant and sorcery cards from your graveyard. If a card cast this way would be put into your graveyard, exile it instead.\"",
+            "type": "Legendary Planeswalker — Jaya",
+            "types": [
+                "Planeswalker"
+            ],
+            "uuid": "ab6b1ed2-7199-5872-aca0-f733d23ea1d0"
         },
         {
             "artist": "Daniel Ljunggren",
@@ -361,12 +680,72 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 175246,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/e915a81d3daa2f88",
             "text": "+1: Look at the top two cards of your library. Put one of them into your hand and the other into your graveyard.\n-3: Ral, Izzet Viceroy deals damage to target creature equal to the total number of instant and sorcery cards you own in exile and in your graveyard.\n-8: You get an emblem with \"Whenever you cast an instant or sorcery spell, this emblem deals 4 damage to any target and you draw two cards.\"",
             "type": "Legendary Planeswalker — Ral",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "4928bb44-acc6-56fe-8956-060f2333a128"
+            "uuid": "cc39e8ea-5d58-5a15-ae70-4608cbc9303b"
+        },
+        {
+            "artist": "Bram Sels",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G",
+                "W"
+            ],
+            "colors": [
+                "G",
+                "W"
+            ],
+            "convertedManaCost": 5.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "modern": "Legal",
+                "vintage": "Legal"
+            },
+            "loyalty": "4",
+            "manaCost": "{3}{G}{W}",
+            "name": "Ajani, Mentor of Heroes",
+            "number": "RA5",
+            "printings": [
+                "JOU",
+                "MED"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2014-04-26",
+                    "text": "You announce how many counters will be placed on each target creature as you activate Ajani’s first ability. Each target must receive at least one counter."
+                },
+                {
+                    "date": "2014-04-26",
+                    "text": "If one or more, but not all, of the targets of the first ability are illegal when that ability tries to resolve, no counters will be placed on illegal targets. You can’t change the distribution you announced when you activated the ability; the excess counters are just lost."
+                }
+            ],
+            "scryfallId": "596f6812-2cee-4f0b-b1e5-ddf1f57c3f95",
+            "starter": true,
+            "subtypes": [
+                "Ajani"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "text": "+1: Distribute three +1/+1 counters among one, two, or three target creatures you control.\n+1: Look at the top four cards of your library. You may reveal an Aura, creature, or planeswalker card from among them and put it into your hand. Put the rest on the bottom of your library in any order.\n−8: You gain 100 life.",
+            "type": "Legendary Planeswalker — Ajani",
+            "types": [
+                "Planeswalker"
+            ],
+            "uuid": "30955feb-edd0-5d89-af05-b494a2260628"
         },
         {
             "artist": "Yongjae Choi",
@@ -430,12 +809,86 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 175242,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/a56f42ec22b545ba",
             "text": "+1: Draw a card. At the beginning of the next end step, untap up to two lands.\n−3: Put target nonland permanent into its owner's library third from the top.\n−8: You get an emblem with \"Whenever you draw a card, exile target permanent an opponent controls.\"",
             "type": "Legendary Planeswalker — Teferi",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "bfba646e-d05e-5dd5-b2ab-c49c9ba8dc55"
+            "uuid": "01316b1b-9fc8-5078-bd70-ea78d644357a"
+        },
+        {
+            "artist": "Jason Rainville",
+            "borderColor": "black",
+            "colorIdentity": [
+                "R",
+                "U"
+            ],
+            "colors": [
+                "R",
+                "U"
+            ],
+            "convertedManaCost": 3.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "1v1": "Legal",
+                "commander": "Legal",
+                "duel": "Legal",
+                "legacy": "Legal",
+                "vintage": "Legal"
+            },
+            "loyalty": "3",
+            "manaCost": "{1}{U}{R}",
+            "name": "Dack Fayden",
+            "number": "RA6",
+            "printings": [
+                "CNS",
+                "EMA",
+                "MED",
+                "PZ1",
+                "VMA"
+            ],
+            "rarity": "mythic",
+            "rulings": [
+                {
+                    "date": "2016-06-08",
+                    "text": "The targeted player draws two cards and discards two cards all while Dack’s first ability is resolving. Nothing can happen between the two, and no player may choose to take actions."
+                },
+                {
+                    "date": "2016-06-08",
+                    "text": "The ability of Dack’s emblem will resolve before the spell that caused it to trigger."
+                },
+                {
+                    "date": "2016-06-08",
+                    "text": "The effect of Dack’s second ability and the effect of the emblem’s ability last indefinitely. You won’t lose control of the permanents if Dack leaves the battlefield."
+                },
+                {
+                    "date": "2016-06-08",
+                    "text": "If you gain control of a permanent, and you leave the game, the control-changing effect will end. Unless there’s another control-changing effect affecting that permanent, it will return to its owner’s control."
+                },
+                {
+                    "date": "2016-06-08",
+                    "text": "If you gain control of a permanent another player owns, and that player leaves the game, the permanent will also leave the game."
+                }
+            ],
+            "scryfallId": "5335ad67-5145-48f5-b5af-19996c4d11c0",
+            "starter": true,
+            "subtypes": [
+                "Dack"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "text": "+1: Target player draws two cards, then discards two cards.\n−2: Gain control of target artifact.\n−6: You get an emblem with \"Whenever you cast a spell that targets one or more permanents, gain control of those permanents.\"",
+            "type": "Legendary Planeswalker — Dack",
+            "types": [
+                "Planeswalker"
+            ],
+            "uuid": "fc752387-8a28-5a22-a9b8-546e8f4e9cc4"
         },
         {
             "artist": "Aleksi Briclot",
@@ -501,12 +954,58 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 175243,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/f9a113928f84781d",
             "text": "+1: Look at the top five cards of your library. You may reveal an artifact card from among them and put it into your hand. Put the rest on the bottom of your library in any order.\n−1: Target artifact becomes an artifact creature with base power and toughness 5/5.\n−4: Target player loses X life and you gain X life, where X is twice the number of artifacts you control.",
             "type": "Legendary Planeswalker — Tezzeret",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "9bdb739a-d302-5790-8497-ca7589f10de4"
+            "uuid": "97ff619f-31bd-54c3-be5e-7781b8f1a749"
+        },
+        {
+            "artist": "Jason Rainville",
+            "borderColor": "black",
+            "colorIdentity": [
+                "G",
+                "R"
+            ],
+            "colors": [
+                "G",
+                "R"
+            ],
+            "convertedManaCost": 4.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "future": "Legal"
+            },
+            "loyalty": "5",
+            "manaCost": "{2}{R}{G}",
+            "name": "Domri, Chaos Bringer",
+            "number": "RA7",
+            "printings": [
+                "MED",
+                "RNA"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "4bd12cfd-7e99-4b6e-9e6a-05440594462a",
+            "starter": true,
+            "subtypes": [
+                "Domri"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "text": "+1: Add {R} or {G}. If that mana is spent on a creature spell, it gains riot.\n−3: Look at the top four cards of your library. You may reveal up to two creature cards from among them and put them into your hand. Put the rest on the bottom of your library in a random order.\n−8: You get an emblem with \"At the beginning of each end step, create a 4/4 red and green Beast creature token with trample.\"",
+            "type": "Legendary Planeswalker — Domri",
+            "types": [
+                "Planeswalker"
+            ],
+            "uuid": "4baa5b40-6c41-5383-bed4-c9633299cb43"
         },
         {
             "artist": "Livia Prima",
@@ -573,21 +1072,67 @@
                 "Legendary"
             ],
             "tcgplayerProductId": 176849,
+            "tcgplayerPurchaseUrl": "https://mtgjson.com/links/92f1950055b197e7",
             "text": "+2: You may sacrifice another permanent. If you do, you gain 1 life and draw a card.\n-3: Destroy target nonland permanent with converted mana cost 3 or less.\n-9: You get an emblem with \"Whenever a creature you control deals combat damage to a player, that player loses the game.\"",
             "type": "Legendary Planeswalker — Vraska",
             "types": [
                 "Planeswalker"
             ],
-            "uuid": "3f7742cd-8709-5670-92c2-8bb07355dc90"
+            "uuid": "74566e65-f120-5cf1-a3dd-7c72706f9d65"
+        },
+        {
+            "artist": "Chris Rallis",
+            "borderColor": "black",
+            "colorIdentity": [
+                "B",
+                "W"
+            ],
+            "colors": [
+                "B",
+                "W"
+            ],
+            "convertedManaCost": 3.0,
+            "foreignData": [],
+            "frameVersion": "2015",
+            "hasFoil": true,
+            "hasNonFoil": true,
+            "layout": "normal",
+            "legalities": {
+                "future": "Legal"
+            },
+            "loyalty": "3",
+            "manaCost": "{1}{W}{B}",
+            "name": "Kaya, Orzhov Usurper",
+            "number": "RA8",
+            "printings": [
+                "MED",
+                "RNA"
+            ],
+            "rarity": "mythic",
+            "rulings": [],
+            "scryfallId": "e360f0de-375e-4ba5-8f0c-0ee630b5b1a3",
+            "starter": true,
+            "subtypes": [
+                "Kaya"
+            ],
+            "supertypes": [
+                "Legendary"
+            ],
+            "text": "+1: Exile up to two target cards from a single graveyard. You gain 2 life if at least one creature card was exiled this way.\n-1: Exile target nonland permanent with converted mana cost 1 or less.\n-5: Kaya, Orzhov Usurper deals damage to target player equal to the number of cards that player owns in exile and you gain that much life.",
+            "type": "Legendary Planeswalker — Kaya",
+            "types": [
+                "Planeswalker"
+            ],
+            "uuid": "e6477e3a-5b75-5dba-b742-175ab23020cb"
         }
     ],
-    "code": "med",
+    "code": "MED",
     "isFoilOnly": true,
     "meta": {
-        "date": "2018-12-18",
-        "version": "4.2.0"
+        "date": "2018-01-12",
+        "version": "4.2.1"
     },
-    "mtgoCode": "ms4",
+    "mtgoCode": "MS4",
     "name": "Mythic Edition",
     "releaseDate": "2018-10-05",
     "tcgplayerGroupId": 2326,
@@ -610,7 +1155,7 @@
             "scryfallId": "de12b41f-abc6-4057-bda2-ea1d5e60321b",
             "toughness": "1",
             "type": "Token Creature — Soldier",
-            "uuid": "89f5890b-b18c-5ee2-b0ad-2bc9ab076d70"
+            "uuid": "affab8f9-5d6a-5bd2-b43a-47d8657f9431"
         },
         {
             "artist": "Anna Steinbauer",
@@ -630,7 +1175,7 @@
             "scryfallId": "0645e544-e395-4ab5-add2-ba46f6c2ad51",
             "toughness": "2",
             "type": "Token Creature — Zombie",
-            "uuid": "aa3d66e3-c5fb-5d69-964a-d0da4974217c"
+            "uuid": "3de00786-caf1-56dc-ae48-4cc0c55dc38d"
         },
         {
             "artist": "Victor Adame Minguez",
@@ -647,7 +1192,7 @@
             "text": "Defender",
             "toughness": "1",
             "type": "Token Artifact Creature — Construct",
-            "uuid": "d6dc419e-dc27-5591-9f1a-e81ffbcdea2e"
+            "uuid": "1c64819d-d873-5030-a628-344cac8eeb9b"
         },
         {
             "artist": "Zack Stella",
@@ -662,7 +1207,7 @@
             "scryfallId": "6a62619f-a432-4314-b018-7eacda9252a7",
             "text": "Artifacts, creatures, enchantments, and lands you control have indestructible.",
             "type": "Emblem — Elspeth",
-            "uuid": "965838ed-4eaa-558b-b328-f0248ad49848"
+            "uuid": "a8906abf-57d4-539a-ae90-eaef257b7708"
         },
         {
             "artist": "Kieran Yanner",
@@ -677,7 +1222,7 @@
             "scryfallId": "5a23656c-3af3-49e3-ad15-aa1056027df7",
             "text": "At the beginning of your end step, create X 2/2 black Zombie creature tokens, where X is two plus the number of Zombies you control.",
             "type": "Emblem — Liliana",
-            "uuid": "6c3faa86-1c7b-54e1-8aea-08d8bb4b20be"
+            "uuid": "ad9e236d-fe6f-5738-9ae9-d8f875340c51"
         },
         {
             "artist": "Daniel Ljunggren",
@@ -690,7 +1235,7 @@
             "scryfallId": "18a2790c-0dcd-4564-bd5e-7d453d1c4edf",
             "text": "Whenever you cast an instant or sorcery spell, this emblem deals 4 damage to any target and you draw two cards.",
             "type": "Emblem — Ral",
-            "uuid": "e0e8ed45-a353-56a7-89ca-b7aba0e89a80"
+            "uuid": "ef41bf69-ba34-56b2-a281-7b85f554a2d1"
         },
         {
             "artist": "Yongjae Choi",
@@ -705,7 +1250,7 @@
             "scryfallId": "3caeb24f-b4b3-4ede-9bee-4b4272b2bbcd",
             "text": "Whenever you draw a card, exile target permanent an opponent controls.",
             "type": "Emblem — Teferi",
-            "uuid": "99285e3d-f63f-55ff-b3ff-69bff94d6bae"
+            "uuid": "6c9ec2fc-cb7b-5eb2-bdbf-3d52a87085fa"
         },
         {
             "artist": "Livia Prima",
@@ -720,9 +1265,9 @@
             "scryfallId": "828f3798-a495-42f8-b989-97f0fe662326",
             "text": "Whenever a creature you control deals combat damage to a player, that player loses the game.",
             "type": "Emblem — Vraska",
-            "uuid": "6ad4d00f-479d-50ac-9d98-03a070510e39"
+            "uuid": "133008ee-29b0-5e29-b6ea-1842854842a8"
         }
     ],
-    "totalSetSize": 8,
+    "totalSetSize": 16,
     "type": "masterpiece"
 }
