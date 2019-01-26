@@ -15,6 +15,7 @@ import com.dbottillo.mtgsearchfree.interactors.SchedulerProvider
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractorImpl
 import com.dbottillo.mtgsearchfree.database.SetDataSource
+import com.dbottillo.mtgsearchfree.repository.CardRepository
 import com.dbottillo.mtgsearchfree.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.storage.CardsStorage
 import com.dbottillo.mtgsearchfree.storage.DecksStorage
@@ -41,9 +42,10 @@ class InteractorsModule {
         cardsStorage: CardsStorage,
         fileManager: FileManager,
         schedulerProvider: SchedulerProvider,
-        logger: Logger
+        logger: Logger,
+        cardRepository: CardRepository
     ): CardsInteractor {
-        return CardsInteractorImpl(cardsStorage, fileManager, schedulerProvider, logger)
+        return CardsInteractorImpl(cardsStorage, fileManager, schedulerProvider, logger, cardRepository)
     }
 
     @Provides

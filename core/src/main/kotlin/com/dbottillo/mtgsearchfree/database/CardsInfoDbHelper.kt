@@ -81,6 +81,9 @@ class CardsInfoDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
         if (!columns.contains(CardDataSource.COLUMNS.TCG_PLAYER_PRODUCT_ID.noun)) {
             db.execSQL(CardDataSource.SQL_ADD_COLUMN_TCG_PLAYER_PRODUCT_ID)
         }
+        if (!columns.contains(CardDataSource.COLUMNS.TCG_PLAYER_PURCHASE_URL.noun)) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_TCG_PLAYER_PRODUCT_URL)
+        }
     }
 
     override fun onDowngrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {}
@@ -113,4 +116,4 @@ class CardsInfoDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
     }
 }
 
-private const val DATABASE_VERSION = 10
+private const val DATABASE_VERSION = 11

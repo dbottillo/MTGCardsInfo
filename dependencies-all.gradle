@@ -39,6 +39,16 @@ ext.deps = [
                 'core': "io.reactivex.rxjava2:rxjava:$versions.rx_java",
                 'android': "io.reactivex.rxjava2:rxandroid:$versions.rx_android"
         ],
+        'okhttp': [
+                'core': "com.squareup.okhttp3:okhttp:$versions.okhttp.core",
+                'logging': "com.squareup.okhttp3:logging-interceptor:$versions.okhttp.logging",
+                'mockWebServer': "com.squareup.okhttp3:mockwebserver:$versions.okhttp.core"
+        ],
+        'retrofit': [
+                'core': "com.squareup.retrofit2:retrofit:$versions.retrofit.core",
+                'rxjava': "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit.rxjava",
+                'gson': "com.squareup.retrofit2:converter-gson:$versions.retrofit.gsonConverter"
+        ],
         'gson': "com.google.code.gson:gson:$versions.gson",
         'leakCanary': "com.squareup.leakcanary:leakcanary-android:$versions.leak_canary",
         'leakCanaryNoOp': "com.squareup.leakcanary:leakcanary-android-no-op:$versions.leak_canary",

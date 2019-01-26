@@ -56,10 +56,11 @@ class CardDataSourceIntegrationTest {
     fun test_generate_table_is_correct() {
         val query = CardDataSource.generateCreateTable()
         assertNotNull(query)
-        assertThat(query, `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT,colorIdentity TEXT,uuid TEXT,scryfallId TEXT,tcgplayerProductId INTEGER)"))
+        assertThat(query, `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT,colorIdentity TEXT,uuid TEXT,scryfallId TEXT,tcgplayerProductId INTEGER,tcgplayerPurchaseUrl TEXT)"))
         assertThat(CardDataSource.generateCreateTable(1), `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT)"))
         assertThat(CardDataSource.generateCreateTable(2), `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT)"))
         assertThat(CardDataSource.generateCreateTable(3), `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT)"))
+        assertThat(CardDataSource.generateCreateTable(10), `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT,colorIdentity TEXT,uuid TEXT,scryfallId TEXT,tcgplayerProductId INTEGER)"))
     }
 
     @Test
@@ -133,6 +134,7 @@ class CardDataSourceIntegrationTest {
         assertThat(cardFromDb.uuid, `is`(card.uuid))
         assertThat(cardFromDb.scryfallId, `is`(card.scryfallId))
         assertThat(cardFromDb.tcgplayerProductId, `is`(card.tcgplayerProductId))
+        assertThat(cardFromDb.tcgplayerPurchaseUrl, `is`(card.tcgplayerPurchaseUrl))
         cursor.close()
     }
 
@@ -220,6 +222,8 @@ class CardDataSourceIntegrationTest {
         assertThat(card.legalities[0].legality, `is`("Banned"))
         assertThat(card.legalities[1].format, `is`("Vintage"))
         assertThat(card.legalities[1].legality, `is`("Restricted"))
+
+        assertThat(card.tcgplayerPurchaseUrl, `is`("tcg_player_url"))
     }
 
     @Test
@@ -304,6 +308,8 @@ class CardDataSourceIntegrationTest {
             }
             assertThat(contentValues.getAsString(CardDataSource.COLUMNS.LEGALITIES.noun), `is`(legalities.toString()))
         }
+
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.TCG_PLAYER_PURCHASE_URL.noun), `is`(card.tcgplayerPurchaseUrl))
     }
 
     private fun setupCursorCard() {
@@ -408,5 +414,8 @@ class CardDataSourceIntegrationTest {
 
         whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.TCG_PLAYER_PRODUCT_ID.noun)).thenReturn(34)
         whenever(cursor.getInt(34)).thenReturn(129859)
+
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.TCG_PLAYER_PURCHASE_URL.noun)).thenReturn(35)
+        whenever(cursor.getString(35)).thenReturn("tcg_player_url")
     }
 }

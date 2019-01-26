@@ -67,7 +67,8 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
         COLORS_IDENTITY("colorIdentity", "TEXT"),
         UUID("uuid", "TEXT"),
         SCRYFALLID("scryfallId", "TEXT"),
-        TCG_PLAYER_PRODUCT_ID("tcgplayerProductId", "INTEGER")
+        TCG_PLAYER_PRODUCT_ID("tcgplayerProductId", "INTEGER"),
+        TCG_PLAYER_PURCHASE_URL("tcgplayerPurchaseUrl", "TEXT")
     }
 
     fun saveCard(card: MTGCard): Long {
@@ -166,6 +167,7 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
         values.put(COLUMNS.UUID.noun, card.uuid)
         values.put(COLUMNS.SCRYFALLID.noun, card.scryfallId)
         values.put(COLUMNS.TCG_PLAYER_PRODUCT_ID.noun, card.tcgplayerProductId)
+        values.put(COLUMNS.TCG_PLAYER_PURCHASE_URL.noun, card.tcgplayerPurchaseUrl)
         return values
     }
 
@@ -343,6 +345,10 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
             card.tcgplayerProductId = cursor.getInt(cursor.getColumnIndex(COLUMNS.TCG_PLAYER_PRODUCT_ID.noun))
         }
 
+        if (cursor.getColumnIndex(COLUMNS.TCG_PLAYER_PURCHASE_URL.noun) != -1) {
+            card.tcgplayerPurchaseUrl = cursor.getString(cursor.getColumnIndex(COLUMNS.TCG_PLAYER_PURCHASE_URL.noun)) ?: ""
+        }
+
         return card
     }
 
@@ -421,12 +427,16 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
                 TABLE + " ADD COLUMN " +
                 COLUMNS.TCG_PLAYER_PRODUCT_ID.noun + " " + COLUMNS.TCG_PLAYER_PRODUCT_ID.type)
 
+        internal val SQL_ADD_COLUMN_TCG_PLAYER_PRODUCT_URL = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.TCG_PLAYER_PURCHASE_URL.noun + " " + COLUMNS.TCG_PLAYER_PURCHASE_URL.type)
+
         fun generateCreateTable(): String {
             val builder = StringBuilder("CREATE TABLE IF NOT EXISTS ")
             builder.append(TABLE).append(" (_id INTEGER PRIMARY KEY, ")
             for (column in COLUMNS.values()) {
                 builder.append(column.noun).append(' ').append(column.type)
-                if (column != COLUMNS.TCG_PLAYER_PRODUCT_ID) {
+                if (column != COLUMNS.TCG_PLAYER_PURCHASE_URL) {
                     builder.append(',')
                 }
             }
@@ -441,7 +451,8 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
                 version < EIGTH -> COLUMNS.ORIGINAL_TEXT
                 version < NINE -> COLUMNS.COLORS_IDENTITY
                 version < TEN -> COLUMNS.UUID
-                else -> COLUMNS.TCG_PLAYER_PRODUCT_ID
+                version < ELEVEN -> COLUMNS.TCG_PLAYER_PRODUCT_ID
+                else -> COLUMNS.TCG_PLAYER_PURCHASE_URL
             }
         }
 
@@ -479,6 +490,8 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
             } else if ((column == COLUMNS.SCRYFALLID || column == COLUMNS.TCG_PLAYER_PRODUCT_ID) &&
                     version <= NINE) {
                 addColumn = false
+            } else if ((column == COLUMNS.TCG_PLAYER_PURCHASE_URL) && version <= TEN) {
+                addColumn = false
             }
             return addColumn
         }
@@ -512,3 +525,4 @@ private const val SEVEN = 7
 private const val EIGTH = 8
 private const val NINE = 9
 private const val TEN = 10
+private const val ELEVEN = 11

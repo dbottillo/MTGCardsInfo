@@ -30,12 +30,12 @@ checkstyle {
 }
 
 dependencies {
-    implementation project(":core")
+    api project(":network")
 
     core()
     ui()
     monitoring()
-    network()
+    image()
 
     test()
     instrumentation()

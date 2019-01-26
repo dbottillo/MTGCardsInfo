@@ -1,15 +1,10 @@
 package com.dbottillo.mtgsearchfree.ui.views
 
-import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.content.IntentFilter
 import android.content.res.Configuration
 import android.graphics.Point
-import android.net.ConnectivityManager
 import android.net.Uri
-import android.os.Bundle
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import android.text.SpannableStringBuilder
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -20,9 +15,8 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.dbottillo.mtgsearchfree.R
+import com.dbottillo.mtgsearchfree.repository.CardPriceException
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.TCGPrice
-import com.dbottillo.mtgsearchfree.model.network.NetworkIntentService
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.dbottillo.mtgsearchfree.util.addBold
@@ -31,6 +25,7 @@ import com.dbottillo.mtgsearchfree.util.calculateSizeCardImage
 import com.dbottillo.mtgsearchfree.util.loadInto
 import com.dbottillo.mtgsearchfree.util.newLine
 import com.dbottillo.mtgsearchfree.util.setBoldAndItalic
+import io.reactivex.disposables.Disposable
 
 class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : RelativeLayout(context, attrs, defStyle), CardView {
 
@@ -45,9 +40,10 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
     private var isLandscape = false
 
     var card: MTGCard? = null
-    internal var price: TCGPrice? = null
 
     private lateinit var cardPresenter: CardPresenter
+
+    private var disposable: Disposable? = null
 
     @JvmOverloads constructor(ctx: Context, attrs: AttributeSet? = null) : this(ctx, attrs, -1) {}
 
@@ -88,21 +84,10 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
         cardPresenter.init(this)
     }
 
-    private val priceReceiver = object : BroadcastReceiver() {
-        override fun onReceive(context: Context, intent: Intent) {
-            price = intent.getParcelableExtra(NetworkIntentService.REST_RESULT)
-            updatePrice()
-            if (price != null && price!!.isNotFound && isNetworkAvailable) {
-                val url = intent.getStringExtra(NetworkIntentService.REST_URL)
-                TrackingManager.trackPriceError(url)
-            }
-        }
-    }
-
     public override fun onDetachedFromWindow() {
         super.onDetachedFromWindow()
         LOG.d()
-        LocalBroadcastManager.getInstance(context).unregisterReceiver(priceReceiver)
+        disposable?.dispose()
     }
 
     internal var showImage: Boolean = false
@@ -144,13 +129,14 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
             }
         }
 
-        val intent = Intent(context, NetworkIntentService::class.java)
-        val params = Bundle()
-        params.putString(NetworkIntentService.EXTRA_ID, card.multiVerseId.toString() + "")
-        params.putString(NetworkIntentService.EXTRA_CARD_NAME, card.name)
-        card.set?.let { params.putString(NetworkIntentService.EXTRA_SET_NAME, it.name) }
-        intent.putExtra(NetworkIntentService.EXTRA_PARAMS, params)
-        context.startService(intent)
+        disposable = cardPresenter.fetchPrice(card).subscribe({
+            cardPrice.text = it.toDisplay(isLandscape)
+        }, {
+            cardPrice.text = context.getText(R.string.price_error)
+            if (it is CardPriceException) {
+                TrackingManager.trackPriceError(it.toString())
+            }
+        })
 
         retry.visibility = View.GONE
 
@@ -161,22 +147,7 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
             cardImageContainer.visibility = View.GONE
         }
 
-        LocalBroadcastManager.getInstance(context).unregisterReceiver(priceReceiver)
-        val cardFilter = IntentFilter(card.multiVerseId.toString() + "")
-        LocalBroadcastManager.getInstance(context).registerReceiver(priceReceiver, cardFilter)
-
         flipCardButton.visibility = if (card.isDoubleFaced) View.VISIBLE else View.GONE
-    }
-
-    private fun updatePrice() {
-        LOG.d()
-        price?.let {
-            if (it.isAnError) {
-                cardPrice.text = it.errorPrice
-            } else {
-                cardPrice.text = it.toDisplay(isLandscape)
-            }
-        }
     }
 
     private fun loadImage() {
@@ -184,24 +155,14 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
         card?.loadInto(cardLoader, cardImage, retry)
     }
 
-    private val isNetworkAvailable: Boolean
-        get() {
-            val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-            val activeNetworkInfo = connectivityManager.activeNetworkInfo
-            return activeNetworkInfo != null && activeNetworkInfo.isConnected
-        }
-
     private fun retryImage() {
         loadImage()
     }
 
     private fun openPrice() {
         LOG.d()
-        price?.let {
-            if (!it.isAnError) {
-                val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(it.link))
-                context.startActivity(browserIntent)
-            }
+        card?.tcgplayerPurchaseUrl?.takeIf { it.isNotEmpty() }?.let {
+            context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(it)))
         }
     }
 
