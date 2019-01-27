@@ -23,6 +23,7 @@ class CardsInfoDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
         db.execSQL(FavouritesDataSource.generateCreateTable())
     }
 
+    @Suppress("LongMethod", "ComplexMethod")
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         if (oldVersion < 3 && newVersion >= 3) {
             db.execSQL(PlayerDataSource.generateCreateTable())

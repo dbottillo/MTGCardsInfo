@@ -115,9 +115,9 @@ abstract class BasicActivity : AppCompatActivity() {
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (PermissionUtil.isGranted(grantResults)) {
-            permissionListener!!.permissionGranted()
+            permissionListener?.permissionGranted()
         } else {
-            permissionListener!!.permissionNotGranted()
+            permissionListener?.permissionNotGranted()
         }
     }
 }

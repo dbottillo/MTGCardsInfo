@@ -34,8 +34,8 @@ class CardsLuckyPresenterImpl(
             var idCard: Int? = null
 
             intent?.let {
-                if (it.hasExtra(CARD)) {
-                    idCard = it.getIntExtra(CARD, 0)
+                if (intent.hasExtra(CARD)) {
+                    idCard = intent.getIntExtra(CARD, 0)
                 }
             }
 
@@ -43,8 +43,8 @@ class CardsLuckyPresenterImpl(
                 idCard = bundle.getInt(CARD)
             }
 
-            idCard?.let {
-                cardsInteractor.loadCardById(it).subscribe { card ->
+            idCard?.let { id ->
+                cardsInteractor.loadCardById(id).subscribe { card ->
                     currentCard = card
                     loadCurrentCard()
                 }

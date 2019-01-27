@@ -42,7 +42,7 @@ class NetworkModule {
     ): ApiInterface {
         return Retrofit.Builder()
                 .client(okHttpClient)
-                .baseUrl("http://api.tcgplayer.com/v1.19.0/")
+                .baseUrl("https://api.tcgplayer.com/v1.19.0/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
@@ -60,7 +60,7 @@ class NetworkModule {
         }
         return Retrofit.Builder()
                 .client(okHttpClientBuilder.build())
-                .baseUrl("http://api.tcgplayer.com/")
+                .baseUrl("https://api.tcgplayer.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
