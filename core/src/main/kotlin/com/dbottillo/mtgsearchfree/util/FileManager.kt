@@ -105,7 +105,7 @@ private fun Deck.toFile(fileOutputStream: FileOutputStream?, cards: List<MTGCard
         }
         writer.append(card.quantity.toString())
         writer.append(" ")
-        writer.append(name)
+        writer.append(card.name)
         writer.append("\n")
     }
     writer.flush()
