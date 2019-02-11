@@ -255,7 +255,7 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
         val type = object : TypeToken<List<String>>() {}.type
 
         if (cursor.getColumnIndex(COLUMNS.LAYOUT.noun) != -1) {
-            card.layout = cursor.getString(cursor.getColumnIndex(COLUMNS.LAYOUT.noun))
+            card.layout = cursor.getString(cursor.getColumnIndex(COLUMNS.LAYOUT.noun)) ?: "normal"
         }
         if (cursor.getColumnIndex(COLUMNS.NUMBER.noun) != -1) {
             card.number = cursor.getString(cursor.getColumnIndex(COLUMNS.NUMBER.noun)) ?: ""

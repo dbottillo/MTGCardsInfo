@@ -103,6 +103,11 @@ class DeckStartingHandFragment : BasicFragment(), StartingHandView {
             outRect.top = space
         }
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        presenter.onDestroyView()
+    }
 }
 
 const val BUNDLE_KEY_SHOWN = "BUNDLE_KEY_SHOWN"
