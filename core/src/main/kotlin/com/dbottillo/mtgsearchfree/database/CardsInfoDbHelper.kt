@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.database
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.dbottillo.mtgsearchfree.core.BuildConfig
 
 import java.util.HashSet
 
@@ -14,6 +15,13 @@ import java.util.HashSet
  * - players (for life counter)
  */
 class CardsInfoDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+
+    init {
+        if (BuildConfig.DEBUG) {
+            this.readableDatabase.disableWriteAheadLogging()
+            this.writableDatabase.disableWriteAheadLogging()
+        }
+    }
 
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(CardDataSource.generateCreateTable())

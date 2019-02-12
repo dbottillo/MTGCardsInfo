@@ -217,9 +217,9 @@ class CardDataSource(private val database: SQLiteDatabase, private val gson: Gso
         }
 
         val rarity: Rarity = when (cursor.getString(cursor.getColumnIndex(COLUMNS.RARITY.noun))) {
-            "uncommon", "timeshifted uncommon" -> Rarity.UNCOMMON
-            "rare", "timeshifted rare" -> Rarity.RARE
-            "mythic", "timeshifted mythic" -> Rarity.MYTHIC
+            "uncommon", "timeshifted uncommon", "Uncommon" -> Rarity.UNCOMMON
+            "rare", "timeshifted rare", "Rare" -> Rarity.RARE
+            "mythic", "timeshifted mythic", "Mythic Rare" -> Rarity.MYTHIC
             else -> Rarity.COMMON
         }
         card.rarity = rarity
