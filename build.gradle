@@ -14,10 +14,10 @@ buildscript {
         classpath 'com.android.tools.build.jetifier:jetifier-processor:1.0.0-beta02'
         classpath 'com.android.tools.build:gradle:3.3.1'
         classpath 'com.google.gms:google-services:4.2.0'
-        classpath 'io.fabric.tools:gradle:1.27.0'
+        classpath 'io.fabric.tools:gradle:1.27.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
         classpath "com.github.ben-manes:gradle-versions-plugin:0.20.0"
-        classpath "com.diffplug.spotless:spotless-plugin-gradle:3.17.0"
+        classpath "com.diffplug.spotless:spotless-plugin-gradle:3.18.0"
     }
 }
 
@@ -27,12 +27,85 @@ plugins {
 
 allprojects {
     repositories {
-        google()
-        mavenCentral()
-        maven { url 'https://maven.fabric.io/public' }
-        maven { url "https://maven.google.com" }
-        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
-        jcenter()
+        maven {
+            url "https://maven.google.com"
+            content {
+                includeGroupByRegex "androidx.*"
+                includeGroup "android.arch.lifecycle"
+                includeGroup "android.arch.core"
+                includeGroupByRegex "com.android.*"
+                includeGroup "com.google.firebase"
+                includeGroup "com.google.android.material"
+                includeGroup "com.google.android.gms"
+            }
+        }
+        maven {
+            url "https://repo.maven.apache.org/maven2"
+            content {
+                includeGroupByRegex "org.jetbrains.*"
+                includeGroupByRegex "io.reactivex.*"
+                includeGroup "org.reactivestreams"
+                includeGroup "com.google"
+                includeGroup "com.google.code.gson"
+                includeGroup "com.google.guava"
+                includeGroupByRegex "com.squareup.*"
+                includeGroup "org.hamcrest"
+                includeGroupByRegex "javax.*"
+                includeGroup "org.mockito"
+                includeGroup "com.nhaarman"
+                includeGroup "com.google.dagger"
+                includeGroup "com.google.googlejavaformat"
+                includeGroup "com.github.bumptech.glide"
+                includeGroup "com.google.protobuf"
+                includeGroup "junit"
+                includeGroup "org.robolectric"
+                includeGroup "org.easytesting"
+                includeGroup "net.bytebuddy"
+                includeGroup "org.objenesis"
+                includeGroup "org.bouncycastle"
+                includeGroupByRegex "org.apache.*"
+                includeGroup "org.ow2.asm"
+                includeGroup "com.almworks.sqlite4java"
+                includeGroup "com.ibm.icu"
+                includeGroup "com.jakewharton.android.repackaged"
+                includeGroup "com.google.android.apps.common.testing.accessibility.framework"
+                includeGroup "com.google.code.findbugs"
+                includeGroupByRegex "net.sf.*"
+                includeGroup "nekohtml"
+                includeGroup "backport-util-concurrent"
+                includeGroup "org.codehaus.plexus"
+                includeGroup "classworlds"
+                includeGroup "org.ow2"
+                includeGroup "org.sonatype.oss"
+                includeGroup "org.jacoco"
+                includeGroup "org.checkerframework"
+                includeGroup "com.google.errorprone"
+                includeGroup "com.google.j2objc"
+                includeGroup "org.codehaus.mojo"
+                includeGroup "org.codehaus.groovy"
+                includeGroup "it.unimi.dsi"
+                includeGroupByRegex "com.googlecode.*"
+                includeGroupByRegex "com.sun.*"
+                includeGroupByRegex "org.glassfish.*"
+                includeGroup "com.google.jimfs"
+                includeGroup "commons-logging"
+                includeGroup "commons-codec"
+                includeGroup "org.jvnet.staxex"
+            }
+        }
+        maven {
+            url 'https://maven.fabric.io/public'
+            content {
+                includeGroupByRegex "com.crashlytics.*"
+                includeGroupByRegex "io.fabric.*"
+            }
+        }
+        jcenter {
+            url "http://jcenter.bintray.com"
+            content {
+                includeGroup "org.jetbrains.trove4j"
+            }
+        }
     }
 
     dependencies { apply from: "$rootProject.rootDir/dependencies-groups.gradle" }

@@ -18,12 +18,12 @@ class FileUtil(private val fileManager: FileManagerI) {
 
     @Throws(Exception::class)
     fun readFileContent(uri: Uri): CardsBucket {
-        val `is` = fileManager.loadUri(uri)
+        val inputStream = fileManager.loadUri(uri)
         val bucket: CardsBucket
         try {
-            bucket = `is`.readFileStream(uri.lastPathSegment)
+            bucket = inputStream.readFileStream(uri.lastPathSegment)
         } catch (e: Exception) {
-            `is`.close()
+            inputStream.close()
             throw e
         }
         return bucket
