@@ -45,10 +45,15 @@ class DecksStorageImpl @Inject constructor(
         return load()
     }
 
-    override fun loadDeck(deck: Deck): DeckCollection {
-        logger.d("loadDeck $deck")
-        val cards = deckDataSource.getCards(deck)
+    override fun loadDeck(deckId: Long): DeckCollection {
+        logger.d("loadDeck $deckId")
+        val cards = deckDataSource.getCards(deckId)
         return DeckCollection().addCards(cards)
+    }
+
+    override fun loadDeckById(deckId: Long): Deck {
+        logger.d("loadDeckById $deckId")
+        return deckDataSource.getDeck(deckId)
     }
 
     override fun editDeck(deck: Deck, name: String): Deck {
@@ -61,7 +66,7 @@ class DecksStorageImpl @Inject constructor(
         logger.d("add $quantity $card to $deck")
         deckDataSource.addCardToDeck(deck.id, card, quantity)
         generalData.lastDeckSelected = deck.id
-        return loadDeck(deck)
+        return loadDeck(deck.id)
     }
 
     override fun addCard(name: String, card: MTGCard, quantity: Int): DeckCollection {
@@ -75,13 +80,13 @@ class DecksStorageImpl @Inject constructor(
     override fun removeCard(deck: Deck, card: MTGCard): DeckCollection {
         logger.d("remove $card from $deck")
         deckDataSource.addCardToDeck(deck.id, card, -1)
-        return loadDeck(deck)
+        return loadDeck(deck.id)
     }
 
     override fun removeAllCard(deck: Deck, card: MTGCard): DeckCollection {
         logger.d("remove all $card from $deck")
         deckDataSource.removeCardFromDeck(deck.id, card)
-        return loadDeck(deck)
+        return loadDeck(deck.id)
     }
 
     @Throws(MTGException::class)
@@ -99,12 +104,12 @@ class DecksStorageImpl @Inject constructor(
     override fun moveCardFromSideboard(deck: Deck, card: MTGCard, quantity: Int): DeckCollection {
         logger.d("move [$quantity]$card from sideboard of$deck")
         deckDataSource.moveCardFromSideBoard(deck.id, card, quantity)
-        return loadDeck(deck)
+        return loadDeck(deck.id)
     }
 
     override fun moveCardToSideboard(deck: Deck, card: MTGCard, quantity: Int): DeckCollection {
         logger.d("move [$quantity]$card to sideboard of$deck")
         deckDataSource.moveCardToSideBoard(deck.id, card, quantity)
-        return loadDeck(deck)
+        return loadDeck(deck.id)
     }
 }

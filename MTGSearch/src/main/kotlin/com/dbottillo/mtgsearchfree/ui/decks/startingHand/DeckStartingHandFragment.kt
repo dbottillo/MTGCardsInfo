@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.ui.BasicFragment
+import com.dbottillo.mtgsearchfree.ui.decks.deck.DECK_KEY
 import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.parcel.Parcelize
 import javax.inject.Inject
@@ -33,7 +34,7 @@ class DeckStartingHandFragment : BasicFragment(), StartingHandView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        presenter.init(this, arguments)
+        presenter.init(this, arguments?.getLong(DECK_KEY, 0) ?: 0)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -55,7 +56,9 @@ class DeckStartingHandFragment : BasicFragment(), StartingHandView {
         grid.setHasFixedSize(true)
         grid.layoutManager = glm
 
-        presenter.loadDeck(bundle)
+        val array = bundle?.getParcelableArrayList<StartingHandCard>(BUNDLE_KEY_LEFT)
+        val shown = bundle?.getParcelableArrayList<StartingHandCard>(BUNDLE_KEY_SHOWN)
+        presenter.loadDeck(Pair(array, shown))
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

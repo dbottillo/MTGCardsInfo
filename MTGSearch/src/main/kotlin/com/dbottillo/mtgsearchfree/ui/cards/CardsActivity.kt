@@ -37,11 +37,8 @@ class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, Car
 
     private var adapter: CardsPagerAdapter? = null
 
-    @Inject
-    lateinit var cardsPresenter: CardsActivityPresenter
-
-    @Inject
-    lateinit var cardPresenter: CardPresenter
+    @Inject lateinit var cardsPresenter: CardsActivityPresenter
+    @Inject lateinit var cardPresenter: CardPresenter
 
     public override val currentCard: MTGCard?
         get() {
@@ -192,12 +189,17 @@ class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, Car
     override fun shareUri(uri: Uri) {
         shareUriArtwork(currentCard?.name ?: "", uri)
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        cardsPresenter.onDestroy()
+    }
 }
 
 fun Context.startCardsActivity(deck: Deck, position: Int): Intent {
     return Intent(this, CardsActivity::class.java).also {
         it.putExtra(POSITION, position)
-        it.putExtra(KEY_DECK, deck)
+        it.putExtra(KEY_DECK, deck.id)
     }
 }
 

@@ -33,6 +33,7 @@ class CardsActivityPresenterImplTest {
     @Rule @JvmField var mockitoRule = MockitoJUnit.rule()!!
 
     lateinit var underTest: CardsActivityPresenter
+
     private val idFavs = intArrayOf(2, 3, 4)
 
     @Mock lateinit var cardsInteractor: CardsInteractor
@@ -125,17 +126,20 @@ class CardsActivityPresenterImplTest {
         whenever(cardsInteractor.loadIdFav()).thenReturn(Observable.just(idFavs))
         whenever(intent.hasExtra(KEY_SET)).thenReturn(false)
         whenever(intent.hasExtra(KEY_DECK)).thenReturn(true)
-        whenever(intent.getParcelableExtra<Deck>(KEY_DECK)).thenReturn(deck)
+        whenever(intent.getLongExtra(KEY_DECK, 0)).thenReturn(2L)
         whenever(intent.getIntExtra(POSITION, 0)).thenReturn(5)
         whenever(cardsPreferences.showImage()).thenReturn(true)
         whenever(deckCollection.toCardsCollection()).thenReturn(cards)
-        whenever(decksInteractor.loadDeck(deck)).thenReturn(Observable.just(deckCollection))
+        whenever(deck.id).thenReturn(2L)
+        whenever(decksInteractor.loadDeckById(2L)).thenReturn(Single.just(deck))
+        whenever(decksInteractor.loadDeck(2L)).thenReturn(Observable.just(deckCollection))
         whenever(deck.name).thenReturn("Deck name")
 
         underTest.init(view, intent)
 
         verify(cardsInteractor).loadIdFav()
-        verify(decksInteractor).loadDeck(deck)
+        verify(decksInteractor).loadDeckById(2L)
+        verify(decksInteractor).loadDeck(2L)
         verify(cardsPreferences).showImage()
         verify(view).showLoading()
         verify(view).hideLoading()
@@ -150,18 +154,20 @@ class CardsActivityPresenterImplTest {
         whenever(error.localizedMessage).thenReturn("error message")
         whenever(intent.hasExtra(KEY_SET)).thenReturn(false)
         whenever(intent.hasExtra(KEY_DECK)).thenReturn(true)
-        whenever(intent.getParcelableExtra<Deck>(KEY_DECK)).thenReturn(deck)
+        whenever(intent.getLongExtra(KEY_DECK, 0)).thenReturn(2L)
         whenever(intent.getIntExtra(POSITION, 0)).thenReturn(5)
-        whenever(decksInteractor.loadDeck(deck)).thenReturn(Observable.error(error))
+        whenever(deck.id).thenReturn(2L)
+        whenever(decksInteractor.loadDeckById(2L)).thenReturn(Single.just(deck))
+        whenever(decksInteractor.loadDeck(2L)).thenReturn(Observable.error(error))
         whenever(deck.name).thenReturn("Deck name")
 
         underTest.init(view, intent)
 
         verify(cardsInteractor).loadIdFav()
-        verify(decksInteractor).loadDeck(deck)
+        verify(decksInteractor).loadDeckById(2L)
+        verify(decksInteractor).loadDeck(2L)
         verify(view).showLoading()
         verify(view).hideLoading()
-        verify(view).updateTitle("Deck name")
         verify(view).showError("error message")
         verifyNoMoreInteractions(view, cardsInteractor, savedCardsInteractor, decksInteractor, cardsPreferences)
     }

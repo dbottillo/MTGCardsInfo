@@ -16,6 +16,7 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
+import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnit
 
 class DeckActivityPresenterTest {
@@ -36,8 +37,8 @@ class DeckActivityPresenterTest {
 
     @Before
     fun setup() {
+        whenever(interactor.loadDeckById(2L)).thenReturn(Single.just(deck))
         underTest = DeckActivityPresenter(interactor, logger)
-        underTest.init(view, deck)
     }
 
     @Test
@@ -45,10 +46,11 @@ class DeckActivityPresenterTest {
         whenever(deck.name).thenReturn("name")
         whenever(deck.numberOfCards).thenReturn(0)
 
-        underTest.load()
+        underTest.init(view, 2L)
 
         verify(view).showEmptyScreen()
         verify(view).showTitle("name")
+        verify(interactor).loadDeckById(2L)
         verifyNoMoreInteractions(view, interactor)
     }
 
@@ -58,15 +60,18 @@ class DeckActivityPresenterTest {
         whenever(deck.numberOfCards).thenReturn(75)
         whenever(deck.sizeOfSideboard).thenReturn(15)
 
-        underTest.load()
+        underTest.init(view, 2L)
 
         verify(view).showDeck(deck)
         verify(view).showTitle("name (60/15)")
+        verify(interactor).loadDeckById(2L)
         verifyNoMoreInteractions(view, interactor)
     }
 
     @Test
     fun `edit deck name, should call interactor and update view`() {
+        underTest.init(view, 2L)
+        Mockito.reset(view, interactor)
         whenever(editedDeck.name).thenReturn("new name")
         whenever(editedDeck.numberOfCards).thenReturn(75)
         whenever(editedDeck.sizeOfSideboard).thenReturn(15)
@@ -81,6 +86,8 @@ class DeckActivityPresenterTest {
 
     @Test
     fun `export deck, should call interactor and update view`() {
+        underTest.init(view, 2L)
+        Mockito.reset(view, interactor)
         whenever(interactor.exportDeck(deck)).thenReturn(Single.just(uri))
 
         underTest.exportDeck()
@@ -92,6 +99,8 @@ class DeckActivityPresenterTest {
 
     @Test
     fun `export deck, should react to a failure in the interactor`() {
+        underTest.init(view, 2L)
+        Mockito.reset(view, interactor)
         whenever(interactor.exportDeck(deck)).thenReturn(Single.error(Throwable("error")))
 
         underTest.exportDeck()
@@ -103,6 +112,8 @@ class DeckActivityPresenterTest {
 
     @Test
     fun `copy deck, should call interactor and update view`() {
+        underTest.init(view, 2L)
+        Mockito.reset(view, interactor)
         whenever(interactor.copy(deck)).thenReturn(Single.just(decks))
 
         underTest.copyDeck()

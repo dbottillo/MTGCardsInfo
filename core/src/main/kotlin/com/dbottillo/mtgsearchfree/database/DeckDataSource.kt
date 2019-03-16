@@ -25,13 +25,12 @@ class DeckDataSource(
             val deckCursor = database.rawQuery(query, null)
             deckCursor.moveToFirst()
             while (!deckCursor.isAfterLast) {
-                val newDeck = fromCursor(deckCursor)
-                decks.add(newDeck)
+                val (id, name, archived) = fromCursor(deckCursor)
+                val (numberOfCards, sizeOfSideboard) = getQuantityOfCards(id)
+                decks.add(Deck(id, name, archived, numberOfCards, sizeOfSideboard))
                 deckCursor.moveToNext()
             }
             deckCursor.close()
-            setQuantityOfCards(decks, false)
-            setQuantityOfCards(decks, true)
             return decks
         }
 
@@ -122,12 +121,35 @@ class DeckDataSource(
         val cursor = database.rawQuery(query, arrayOf(deckId.toString() + ""))
         LOG.query(query)
         cursor.moveToFirst()
-        val deck = fromCursor(cursor)
+        val (id, name, archived) = fromCursor(cursor)
+        val (numberOfCards, sizeOfSideboard) = getQuantityOfCards(id)
+        val deck = Deck(id, name, archived, numberOfCards, sizeOfSideboard)
         cursor.close()
         return deck
     }
 
-    private fun setQuantityOfCards(decks: ArrayList<Deck>, side: Boolean) {
+    private fun getQuantityOfCards(deckId: Long): Pair<Int, Int> {
+        val query = "select DC.side,DC.quantity from deck_card DC left join decks D on (D._id = DC.deck_id) where deck_id=$deckId"
+        LOG.query(query)
+        val cursor = database.rawQuery(query, null)
+        cursor.moveToFirst()
+        var cards = 0
+        var side = 0
+        while (!cursor.isAfterLast) {
+            val sideboard = cursor.getInt(0) == 1
+            val quantity = cursor.getInt(1)
+            if (sideboard) {
+                side += quantity
+            } else {
+                cards += quantity
+            }
+            cursor.moveToNext()
+        }
+        cursor.close()
+        return Pair(cards, side)
+    }
+
+    /*private fun setQuantityOfCards(decks: ArrayList<Deck>, side: Boolean) {
         // need to loadSet cards now
         // select SUM(quantity),* from deck_card DC left join decks D on (D._id = DC.deck_id) where side= 0 group by DC.deck_id
         // Cursor cursor = database.rawQuery("Select * from decks D left join deck_card DC on (D._id = DC.deck_id) where DC.side=0", null);
@@ -150,7 +172,7 @@ class DeckDataSource(
             cursor.moveToNext()
         }
         cursor.close()
-    }
+    }*/
 
     fun getCards(deck: Deck): List<MTGCard> {
         return getCards(deck.id)
@@ -242,7 +264,7 @@ class DeckDataSource(
         val after = if (fromDeckToSide) 1 else 0
 
         val cursor = runQuery("select quantity from deck_card where deck_id=? and card_id=? and side = ?",
-                deckId.toString(), card.multiVerseId.toString(), before.toString())
+            deckId.toString(), card.multiVerseId.toString(), before.toString())
         if (cursor.moveToFirst()) {
             if (cursor.getInt(0) - quantity <= 0) {
                 removeCard = true
@@ -253,7 +275,7 @@ class DeckDataSource(
         cursor.close()
 
         val cursorSideboard = runQuery("select quantity from deck_card where deck_id=? and card_id=? and side = ?",
-                deckId.toString(), card.multiVerseId.toString(), after.toString())
+            deckId.toString(), card.multiVerseId.toString(), after.toString())
         if (cursorSideboard.moveToFirst()) {
             updateQuantity(deckId, cursorSideboard.getInt(0) + quantity, card.multiVerseId, after)
         } else {
@@ -286,11 +308,11 @@ class DeckDataSource(
         return database.update(TABLE, contentValues, "_id=$deckId", null)
     }
 
-    fun fromCursor(cursor: Cursor): Deck {
-        val deck = Deck(cursor.getLong(cursor.getColumnIndex("_id")))
-        deck.name = cursor.getString(cursor.getColumnIndex(COLUMNS.NAME.noun))
-        deck.isArchived = cursor.getInt(cursor.getColumnIndex(COLUMNS.ARCHIVED.noun)) == 1
-        return deck
+    private fun fromCursor(cursor: Cursor): Triple<Long, String, Boolean> {
+        val id = cursor.getLong(cursor.getColumnIndex("_id"))
+        val name = cursor.getString(cursor.getColumnIndex(COLUMNS.NAME.noun)) ?: ""
+        val archived = cursor.getInt(cursor.getColumnIndex(COLUMNS.ARCHIVED.noun)) == 1
+        return Triple(id, name, archived)
     }
 
     private fun runQuery(query: String, vararg args: String): Cursor {

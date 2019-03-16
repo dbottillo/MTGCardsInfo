@@ -74,7 +74,7 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.Perm
                 selected = {
                     LOG.d()
                     val intent = Intent(activity, DeckActivity::class.java)
-                    intent.putExtra("deck", it)
+                    intent.putExtra("deck", it.id)
                     startActivity(intent)
                 })
         decksList.adapter = adapter

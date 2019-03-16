@@ -1,13 +1,9 @@
 package com.dbottillo.mtgsearchfree.ui.decks
 
-import android.os.Bundle
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.ui.decks.deck.DECK_KEY
-import com.dbottillo.mtgsearchfree.ui.decks.startingHand.BUNDLE_KEY_LEFT
-import com.dbottillo.mtgsearchfree.ui.decks.startingHand.BUNDLE_KEY_SHOWN
 import com.dbottillo.mtgsearchfree.ui.decks.startingHand.StartingHandCard
 import com.dbottillo.mtgsearchfree.ui.decks.startingHand.StartingHandPresenter
 import com.dbottillo.mtgsearchfree.ui.decks.startingHand.StartingHandView
@@ -16,28 +12,25 @@ import com.nhaarman.mockito_kotlin.argumentCaptor
 import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
 import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Observable
-import org.junit.Assert.assertNotNull
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
+import org.junit.Assert.assertNotNull
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito
-import org.mockito.Mockito.`when`
 import org.mockito.Mockito.verify
 import org.mockito.junit.MockitoJUnit
 
 class StartingHandPresenterTest {
 
-    @Rule @JvmField val mockitoRule = MockitoJUnit.rule()
+    @Rule @JvmField val mockitoRule = MockitoJUnit.rule()!!
 
     @Mock lateinit var interactor: DecksInteractor
     @Mock internal lateinit var logger: Logger
     @Mock lateinit var view: StartingHandView
     @Mock lateinit var deck: Deck
-    @Mock lateinit var bundle: Bundle
-    @Mock lateinit var arguments: Bundle
     @Mock lateinit var card: MTGCard
     @Mock lateinit var cards: DeckCollection
 
@@ -53,18 +46,17 @@ class StartingHandPresenterTest {
         deckCollection.other.add(MTGCard(name = "other", quantity = 3, isSideboard = false))
         deckCollection.lands.add(MTGCard(name = "lands", quantity = 4, isSideboard = false))
         deckCollection.side.add(MTGCard(name = "side", quantity = 4, isSideboard = true))
-        `when`(arguments.get(DECK_KEY)).thenReturn(deck)
         underTest = StartingHandPresenter(interactor)
-        underTest.init(view, arguments)
+        underTest.init(view, 2L)
     }
 
     @Test
     fun `load deck should call interactor if bundle is null`() {
-        whenever(interactor.loadDeck(deck)).thenReturn(Observable.just(deckCollection))
+        whenever(interactor.loadDeck(2L)).thenReturn(Observable.just(deckCollection))
 
-        underTest.loadDeck(null)
+        underTest.loadDeck(Pair(null, null))
 
-        verify(interactor).loadDeck(deck)
+        verify(interactor).loadDeck(2L)
         argumentCaptor<MutableList<StartingHandCard>>().apply {
             verify(view).showOpeningHands(capture())
 
@@ -77,11 +69,11 @@ class StartingHandPresenterTest {
     fun `load deck should call interactor if bundle is null and handle deck with less than 7 cards`() {
         val smallDeckCollection = DeckCollection()
         smallDeckCollection.creatures.add(MTGCard(name = "creature", quantity = 2, isSideboard = false))
-        whenever(interactor.loadDeck(deck)).thenReturn(Observable.just(smallDeckCollection))
+        whenever(interactor.loadDeck(2L)).thenReturn(Observable.just(smallDeckCollection))
 
-        underTest.loadDeck(null)
+        underTest.loadDeck(Pair(null, null))
 
-        verify(interactor).loadDeck(deck)
+        verify(interactor).loadDeck(2L)
         argumentCaptor<MutableList<StartingHandCard>>().apply {
             verify(view).showOpeningHands(capture())
 
@@ -92,13 +84,11 @@ class StartingHandPresenterTest {
 
     @Test
     fun `load deck should call interactor if bundle is not null and it doesn't contain cards`() {
-        whenever(bundle.getParcelableArray(BUNDLE_KEY_LEFT)).thenReturn(arrayOf<StartingHandCard>())
-        whenever(bundle.getParcelableArray(BUNDLE_KEY_SHOWN)).thenReturn(arrayOf<StartingHandCard>())
-        whenever(interactor.loadDeck(deck)).thenReturn(Observable.just(deckCollection))
+        whenever(interactor.loadDeck(2L)).thenReturn(Observable.just(deckCollection))
 
-        underTest.loadDeck(bundle)
+        underTest.loadDeck(Pair(listOf(), listOf()))
 
-        verify(interactor).loadDeck(deck)
+        verify(interactor).loadDeck(2L)
         argumentCaptor<MutableList<StartingHandCard>>().apply {
             verify(view).showOpeningHands(capture())
 
@@ -109,10 +99,10 @@ class StartingHandPresenterTest {
 
     @Test
     fun `load deck should restore bundle if contains cards`() {
-        whenever(bundle.getParcelableArrayList<StartingHandCard>(BUNDLE_KEY_LEFT)).thenReturn(arrayListOf(StartingHandCard(gathererImage = "image12", name = "name1")))
-        whenever(bundle.getParcelableArrayList<StartingHandCard>(BUNDLE_KEY_SHOWN)).thenReturn(arrayListOf(StartingHandCard(gathererImage = "image22", name = "name2")))
+        val left = arrayListOf(StartingHandCard(gathererImage = "image12", name = "name1"))
+        val shown = arrayListOf(StartingHandCard(gathererImage = "image22", name = "name2"))
 
-        underTest.loadDeck(bundle)
+        underTest.loadDeck(Pair(left, shown))
 
         argumentCaptor<MutableList<StartingHandCard>>().apply {
             verify(view).showOpeningHands(capture())
@@ -126,11 +116,11 @@ class StartingHandPresenterTest {
 
     @Test
     fun `repeat should clear view and reload a deck`() {
-        whenever(interactor.loadDeck(deck)).thenReturn(Observable.just(deckCollection))
+        whenever(interactor.loadDeck(2L)).thenReturn(Observable.just(deckCollection))
 
         underTest.repeat()
 
-        verify(interactor).loadDeck(deck)
+        verify(interactor).loadDeck(2L)
         verify(view).clear()
         argumentCaptor<MutableList<StartingHandCard>>().apply {
             verify(view).showOpeningHands(capture())
@@ -142,8 +132,8 @@ class StartingHandPresenterTest {
 
     @Test
     fun `next should show next card`() {
-        whenever(interactor.loadDeck(deck)).thenReturn(Observable.just(deckCollection))
-        underTest.loadDeck(null)
+        whenever(interactor.loadDeck(2L)).thenReturn(Observable.just(deckCollection))
+        underTest.loadDeck(Pair(null, null))
         Mockito.reset(interactor, view)
 
         underTest.next()

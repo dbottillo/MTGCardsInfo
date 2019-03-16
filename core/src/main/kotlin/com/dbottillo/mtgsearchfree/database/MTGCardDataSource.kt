@@ -33,7 +33,7 @@ class MTGCardDataSource(
     }
 
     fun getSet(set: MTGSet): List<MTGCard> {
-        LOG.d("get set  " + set.toString())
+        LOG.d("get set  $set")
         val query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE " + CardDataSource.COLUMNS.SET_CODE.noun + " = '" + set.code + "';"
         LOG.query(query, set.code!!)
 
@@ -52,7 +52,7 @@ class MTGCardDataSource(
     }
 
     fun searchCards(searchParams: SearchParams): List<MTGCard> {
-        LOG.d("search cards  " + searchParams.toString())
+        LOG.d("search cards  $searchParams")
         val queryComposer = QueryComposer("SELECT * FROM " + CardDataSource.TABLE)
         queryComposer.addLikeParam(CardDataSource.COLUMNS.NAME.noun, searchParams.name.trim { it <= ' ' }.toLowerCase(Locale.getDefault()))
         if (searchParams.types.isNotEmpty()) {

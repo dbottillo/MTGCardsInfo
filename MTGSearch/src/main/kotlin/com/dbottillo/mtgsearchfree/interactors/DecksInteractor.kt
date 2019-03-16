@@ -9,7 +9,8 @@ import io.reactivex.Single
 
 interface DecksInteractor {
     fun load(): Single<List<Deck>>
-    fun loadDeck(deck: Deck): Observable<DeckCollection>
+    fun loadDeck(deckId: Long): Observable<DeckCollection>
+    fun loadDeckById(deckId: Long): Single<Deck>
     fun addDeck(name: String): Observable<List<Deck>>
     fun deleteDeck(deck: Deck): Observable<List<Deck>>
     fun editDeck(deck: Deck, name: String): Single<Deck>

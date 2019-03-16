@@ -56,14 +56,14 @@ class DecksStorageIntegrationTest {
 
     @Test
     @Throws(MTGException::class)
-    fun DecksStorage_willImportEldraziDeck() {
+    fun `will Import Eldrazi Deck`() {
         val decks = storage.importDeck(Uri.parse("assets/Eldrazi.dec"))
         assertTrue(decks.isNotEmpty())
         val deck = decks[0]
         assertThat(deck.name, `is`("NAME: "))
         assertThat(deck.numberOfCards, `is`(60))
         assertThat(deck.sizeOfSideboard, `is`(15))
-        val cards = storage.loadDeck(deck).allCards()
+        val cards = storage.loadDeck(deck.id).allCards()
         assertCardInDeck(cards, "Chalice of the Void", 4)
         assertCardInDeck(cards, "Ancient Tomb", 4)
         assertCardInDeck(cards, "City of Traitors", 2)
@@ -103,7 +103,7 @@ class DecksStorageIntegrationTest {
         assertThat(deck.name, `is`("GB Ramp, a Standard deck by CLYDE THE GLIDE DREXLER"))
         assertThat(deck.numberOfCards, `is`(60))
         assertThat(deck.sizeOfSideboard, `is`(15))
-        val cards = storage.loadDeck(deck).allCards()
+        val cards = storage.loadDeck(deck.id).allCards()
         assertCardInDeck(cards, "Blisterpod", 4)
         assertCardInDeck(cards, "Catacomb Sifter", 4)
         assertCardInDeck(cards, "Duskwatch Recruiter", 4)
@@ -138,7 +138,7 @@ class DecksStorageIntegrationTest {
         assertThat(deck.name, `is`("protour.txt"))
         assertThat(deck.numberOfCards, `is`(60))
         assertThat(deck.sizeOfSideboard, `is`(15))
-        val cards = storage.loadDeck(deck).allCards()
+        val cards = storage.loadDeck(deck.id).allCards()
         assertCardInDeck(cards, "Elspeth, Sun's Champion", 2)
         assertCardInDeck(cards, "Obzedat, Ghost Council", 1)
         assertCardInDeck(cards, "Desecration Demon", 3)

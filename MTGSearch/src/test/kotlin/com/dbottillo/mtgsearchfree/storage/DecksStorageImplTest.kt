@@ -26,8 +26,8 @@ class DecksStorageImplTest {
 
     lateinit var underTest: DecksStorage
 
-    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()
-    @Rule @JvmField var exception = ExpectedException.none()
+    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()!!
+    @Rule @JvmField var exception = ExpectedException.none()!!
 
     @Mock lateinit var deckDataSource: DeckDataSource
     @Mock lateinit var deck: Deck
@@ -37,28 +37,30 @@ class DecksStorageImplTest {
     @Mock lateinit var cardsBucket: CardsBucket
     @Mock lateinit var generalData: GeneralData
     @Mock lateinit var logger: Logger
+    @Mock lateinit var decks: List<Deck>
 
     private val deckCards = listOf(MTGCard(18, 1), MTGCard(19, 2))
-    private val decks = listOf(Deck(1), Deck(2))
 
     @Before
     fun setup() {
         whenever(deck.id).thenReturn(DECK_ID)
         whenever(deckDataSource.decks).thenReturn(decks)
         whenever(deckDataSource.getDeck(DECK_ID)).thenReturn(deck)
-        whenever(deckDataSource.addDeck("deck2")).thenReturn(2L)
+        whenever(deckDataSource.addDeck("deck2")).thenReturn(DECK_ID)
         whenever(deckDataSource.addDeck(cardsBucket)).thenReturn(DECK_ID)
         whenever(deckDataSource.getCards(deck)).thenReturn(deckCards)
-        whenever(deckDataSource.getCards(2L)).thenReturn(deckCards)
+        whenever(deckDataSource.getCards(DECK_ID)).thenReturn(deckCards)
+        whenever(deckDataSource.getDeck(DECK_ID)).thenReturn(deck)
         underTest = DecksStorageImpl(fileUtil, deckDataSource, generalData, logger)
     }
 
     @Test
     fun testLoad() {
         val decksLoaded = underTest.load()
-        verify(deckDataSource).decks
+
         assertNotNull(decksLoaded)
         assertThat(decksLoaded, `is`(decks))
+        verify(deckDataSource).decks
         verifyNoMoreInteractions(fileUtil, deckDataSource, generalData)
     }
 
@@ -83,10 +85,19 @@ class DecksStorageImplTest {
 
     @Test
     fun testLoadDeck() {
-        val cards = underTest.loadDeck(deck)
+        val cards = underTest.loadDeck(DECK_ID)
 
-        verify(deckDataSource).getCards(deck)
+        verify(deckDataSource).getCards(DECK_ID)
         assertThat(cards.allCards(), `is`(deckCards))
+        verifyNoMoreInteractions(fileUtil, deckDataSource, generalData)
+    }
+
+    @Test
+    fun testLoadDeckById() {
+        val deck = underTest.loadDeckById(DECK_ID)
+
+        verify(deckDataSource).getDeck(DECK_ID)
+        assertThat(deck, `is`(deck))
         verifyNoMoreInteractions(fileUtil, deckDataSource, generalData)
     }
 
@@ -109,7 +120,7 @@ class DecksStorageImplTest {
         verify(deckDataSource).addCardToDeck(DECK_ID, card, 2)
         assertThat(cards.allCards(), `is`(deckCards))
         verify(generalData).lastDeckSelected = DECK_ID
-        verify(deckDataSource).getCards(deck)
+        verify(deckDataSource).getCards(DECK_ID)
         verifyNoMoreInteractions(fileUtil, deckDataSource, generalData)
     }
 
@@ -118,10 +129,10 @@ class DecksStorageImplTest {
         val cards = underTest.addCard("deck2", card, 2)
 
         verify(deckDataSource).addDeck("deck2")
-        verify(deckDataSource).addCardToDeck(2L, card, 2)
-        verify(deckDataSource).getCards(2L)
+        verify(deckDataSource).addCardToDeck(DECK_ID, card, 2)
+        verify(deckDataSource).getCards(DECK_ID)
         assertThat(cards.allCards(), `is`(deckCards))
-        verify(generalData).lastDeckSelected = 2L
+        verify(generalData).lastDeckSelected = DECK_ID
         verifyNoMoreInteractions(fileUtil, deckDataSource, generalData)
     }
 
@@ -130,7 +141,7 @@ class DecksStorageImplTest {
         val cards = underTest.removeCard(deck, card)
 
         verify(deckDataSource).addCardToDeck(DECK_ID, card, -1)
-        verify(deckDataSource).getCards(deck)
+        verify(deckDataSource).getCards(DECK_ID)
         assertThat(cards.allCards(), `is`(deckCards))
         verifyNoMoreInteractions(fileUtil, deckDataSource, generalData)
     }
@@ -140,7 +151,7 @@ class DecksStorageImplTest {
         val cards = underTest.moveCardFromSideboard(deck, card, 2)
 
         verify(deckDataSource).moveCardFromSideBoard(DECK_ID, card, 2)
-        verify(deckDataSource).getCards(deck)
+        verify(deckDataSource).getCards(DECK_ID)
         assertThat(cards.allCards(), `is`(deckCards))
         verifyNoMoreInteractions(fileUtil, deckDataSource, generalData)
     }
@@ -150,7 +161,7 @@ class DecksStorageImplTest {
         val cards = underTest.moveCardToSideboard(deck, card, 2)
 
         verify(deckDataSource).moveCardToSideBoard(DECK_ID, card, 2)
-        verify(deckDataSource).getCards(deck)
+        verify(deckDataSource).getCards(DECK_ID)
         assertThat(cards.allCards(), `is`(deckCards))
         verifyNoMoreInteractions(fileUtil, deckDataSource, generalData)
     }
@@ -160,7 +171,7 @@ class DecksStorageImplTest {
         val cards = underTest.removeAllCard(deck, card)
 
         verify(deckDataSource).removeCardFromDeck(DECK_ID, card)
-        verify(deckDataSource).getCards(deck)
+        verify(deckDataSource).getCards(DECK_ID)
         assertThat(cards.allCards(), `is`(deckCards))
         verifyNoMoreInteractions(fileUtil, deckDataSource, generalData)
     }

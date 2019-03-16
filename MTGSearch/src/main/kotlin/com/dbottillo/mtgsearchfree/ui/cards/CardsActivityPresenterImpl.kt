@@ -7,52 +7,57 @@ import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
 import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor
 import com.dbottillo.mtgsearchfree.model.CardsCollection
-import com.dbottillo.mtgsearchfree.model.Deck
-import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Observable
+import io.reactivex.disposables.CompositeDisposable
 
 class CardsActivityPresenterImpl(
-    val cardsInteractor: CardsInteractor,
-    val savedCardsInteractor: SavedCardsInteractor,
-    val decksInteractor: DecksInteractor,
-    val cardsPreferences: CardsPreferences,
-    val logger: Logger
+    private val cardsInteractor: CardsInteractor,
+    private val savedCardsInteractor: SavedCardsInteractor,
+    private val decksInteractor: DecksInteractor,
+    private val cardsPreferences: CardsPreferences,
+    private val logger: Logger
 ) : CardsActivityPresenter {
 
     var set: MTGSet? = null
     var search: SearchParams? = null
-    var deck: Deck? = null
+    var deckId: Long? = null
     var startPosition: Int = 0
-    var isFavs: Boolean = false
+    var isFavs: Boolean = false/**/
     var currentData: CardsCollection? = null
     var favs: MutableList<Int> = mutableListOf()
+
     lateinit var view: CardsActivityView
+
+    private var disposable: CompositeDisposable = CompositeDisposable()
 
     override fun init(view: CardsActivityView, intent: Intent?) {
         logger.d()
         this.view = view
 
         if (intent != null) {
-            if (intent.hasExtra(KEY_SET)) {
-                set = intent.getParcelableExtra(KEY_SET)
-                set?.let { view.updateTitle(it.name) }
-            } else if (intent.hasExtra(KEY_SEARCH)) {
-                search = intent.getParcelableExtra(KEY_SEARCH)
-                view.updateTitle(R.string.action_search)
-            } else if (intent.hasExtra(KEY_DECK)) {
-                deck = intent.getParcelableExtra(KEY_DECK)
-                deck?.let { view.updateTitle(it.name) }
-            } else if (intent.hasExtra(KEY_FAV)) {
-                isFavs = true
-                view.updateTitle(R.string.action_saved)
-            } else {
-                view.finish()
-                return
+            when {
+                intent.hasExtra(KEY_SET) -> {
+                    set = intent.getParcelableExtra(KEY_SET)
+                    set?.let { view.updateTitle(it.name) }
+                }
+                intent.hasExtra(KEY_SEARCH) -> {
+                    search = intent.getParcelableExtra(KEY_SEARCH)
+                    view.updateTitle(R.string.action_search)
+                }
+                intent.hasExtra(KEY_DECK) -> deckId = intent.getLongExtra(KEY_DECK, 0)
+                intent.hasExtra(KEY_FAV) -> {
+                    isFavs = true
+                    view.updateTitle(R.string.action_saved)
+                }
+                else -> {
+                    view.finish()
+                    return
+                }
             }
             startPosition = intent.getIntExtra(POSITION, 0)
         } else {
@@ -61,45 +66,52 @@ class CardsActivityPresenterImpl(
         }
 
         view.showLoading()
-        cardsInteractor.loadIdFav().subscribe({
+        disposable.add(cardsInteractor.loadIdFav().subscribe({
             favs.addAll(it.toList())
             when {
                 set != null -> set?.let { loadData(cardsInteractor.loadSet(it)) }
-                deck != null -> deck?.let { loadDeck(decksInteractor.loadDeck(it)) }
+                deckId != null -> deckId?.let { loadDeck(deckId!!) }
                 search != null -> search?.let { loadData(cardsInteractor.doSearch(it)) }
                 else -> loadData(savedCardsInteractor.load())
             }
         }, {
             view.hideLoading()
             showError(it)
-        })
+        }))
     }
 
     private fun loadData(obs: Observable<CardsCollection>) {
         logger.d()
-        obs.subscribe({
+        disposable.add(obs.subscribe({
             view.hideLoading()
             currentData = it
             updateView()
         }, {
             view.hideLoading()
             showError(it)
-        })
+        }))
     }
 
-    internal fun loadDeck(obs: Observable<DeckCollection>) {
+    private fun loadDeck(deckId: Long) {
         logger.d()
-        obs.subscribe({
-            view.hideLoading()
-            currentData = it.toCardsCollection()
-            updateView()
-        }, {
-            view.hideLoading()
-            showError(it)
-        })
+        disposable.add(decksInteractor.loadDeckById(deckId)
+                .toObservable()
+                .flatMap { deck ->
+                    decksInteractor.loadDeck(deck.id).map {
+                        Pair(deck, it)
+                    }
+                }.subscribe({
+                    view.hideLoading()
+                    view.updateTitle(it.first.name)
+                    currentData = it.second.toCardsCollection()
+                    updateView()
+                }, {
+                    view.hideLoading()
+                    showError(it)
+                }))
     }
 
-    internal fun updateView() {
+    private fun updateView() {
         currentData?.let { view.updateAdapter(it, cardsPreferences.showImage(), startPosition) }
     }
 
@@ -137,7 +149,7 @@ class CardsActivityPresenterImpl(
     }
 
     override fun isDeck(): Boolean {
-        return deck != null
+        return deckId != null
     }
 
     override fun toggleImage(show: Boolean) {
@@ -151,10 +163,14 @@ class CardsActivityPresenterImpl(
     }
 
     override fun shareImage(bitmap: Bitmap) {
-        cardsInteractor.getArtworkUri(bitmap).subscribe({
+        disposable.add(cardsInteractor.getArtworkUri(bitmap).subscribe({
             view.shareUri(it)
         }, {
             showError(it)
-        })
+        }))
+    }
+
+    override fun onDestroy() {
+        disposable.clear()
     }
 }

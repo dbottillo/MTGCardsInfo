@@ -11,4 +11,5 @@ interface CardsActivityPresenter {
     fun favClicked(currentCard: MTGCard?)
     fun toggleImage(show: Boolean)
     fun shareImage(bitmap: Bitmap)
+    fun onDestroy()
 }

@@ -21,10 +21,10 @@ import org.mockito.Mockito.verifyNoMoreInteractions
 import org.mockito.junit.MockitoJUnit
 
 class DecksInteractorImplTest {
-
     @Rule @JvmField var mockitoRule = MockitoJUnit.rule()!!
 
     @Mock lateinit var deck: Deck
+    @Mock lateinit var decks: List<Deck>
     @Mock lateinit var editedDeck: Deck
     @Mock lateinit var card: MTGCard
     @Mock lateinit var cards: List<MTGCard>
@@ -34,8 +34,6 @@ class DecksInteractorImplTest {
     @Mock lateinit var logger: Logger
     @Mock lateinit var deckCollection: DeckCollection
     @Mock lateinit var schedulerProvider: SchedulerProvider
-
-    private val decks = listOf(Deck(2), Deck(3))
 
     lateinit var underTest: DecksInteractor
 
@@ -63,14 +61,29 @@ class DecksInteractorImplTest {
 
     @Test
     fun testLoadDeck() {
-        whenever(storage.loadDeck(deck)).thenReturn(deckCollection)
+        whenever(storage.loadDeck(2L)).thenReturn(deckCollection)
         val testSubscriber = TestObserver<DeckCollection>()
 
-        underTest.loadDeck(deck).subscribe(testSubscriber)
+        underTest.loadDeck(2L).subscribe(testSubscriber)
 
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(deckCollection)
-        verify(storage).loadDeck(deck)
+        verify(storage).loadDeck(2L)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(storage, schedulerProvider)
+    }
+
+    @Test
+    fun testLoadDeckById() {
+        whenever(storage.loadDeckById(2L)).thenReturn(deck)
+        val testSubscriber = TestObserver<Deck>()
+
+        underTest.loadDeckById(2L).subscribe(testSubscriber)
+
+        testSubscriber.assertNoErrors()
+        testSubscriber.assertValue(deck)
+        verify(storage).loadDeckById(2L)
         verify(schedulerProvider).io()
         verify(schedulerProvider).ui()
         verifyNoMoreInteractions(storage, schedulerProvider)
@@ -173,28 +186,36 @@ class DecksInteractorImplTest {
         testSubscriber.assertValue(deckCollection)
         verify(schedulerProvider).io()
         verify(schedulerProvider).ui()
-        verify<DecksStorage>(storage).removeAllCard(deck, card)
-    }
-
-    /*@Test
-    public void movesCardFromSideboard() {
-        when(storage.moveCardFromSideboard(deck, card, 2)).thenReturn(deckDeckCollection);
-        TestObserver<List<MTGCard>> testSubscriber = new TestObserver<>();
-        underTest.moveCardFromSideboard(deck, card, 2).subscribe(testSubscriber);
-        testSubscriber.assertNoErrors();
-        testSubscriber.assertValue(deckCards);
-        verify(storage).moveCardFromSideboard(deck, card, 2);
+        verify(storage).removeAllCard(deck, card)
     }
 
     @Test
-    public void movesCardToSideboard() {
-        when(storage.moveCardToSideboard(deck, card, 2)).thenReturn(deckCards);
-        TestObserver<List<MTGCard>> testSubscriber = new TestObserver<>();
-        underTest.moveCardToSideboard(deck, card, 2).subscribe(testSubscriber);
-        testSubscriber.assertNoErrors();
-        testSubscriber.assertValue(deckCards);
-        verify(storage).moveCardToSideboard(deck, card, 2);
-    }*/
+    fun movesCardFromSideboard() {
+        whenever(storage.moveCardFromSideboard(deck, card, 2)).thenReturn(deckCollection)
+
+        val result = underTest.moveCardFromSideboard(deck, card, 2).test()
+
+        result.assertNoErrors()
+        result.assertValue(deckCollection)
+        verify(storage).moveCardFromSideboard(deck, card, 2)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(storage, schedulerProvider)
+    }
+
+    @Test
+    fun movesCardToSideboard() {
+        whenever(storage.moveCardToSideboard(deck, card, 2)).thenReturn(deckCollection)
+
+        val result = underTest.moveCardToSideboard(deck, card, 2).test()
+
+        result.assertNoErrors()
+        result.assertValue(deckCollection)
+        verify(storage).moveCardToSideboard(deck, card, 2)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(storage, schedulerProvider)
+    }
 
     @Test
     @Throws(Throwable::class)
@@ -210,15 +231,16 @@ class DecksInteractorImplTest {
     }
 
     @Test
-    fun `export deck should load card, call file util and complete if successfull`() {
-        whenever(storage.loadDeck(deck)).thenReturn(deckCollection)
+    fun `export deck should load card, call file util and complete if successful`() {
+        whenever(deck.id).thenReturn(2L)
+        whenever(storage.loadDeck(2L)).thenReturn(deckCollection)
         whenever(deckCollection.allCards()).thenReturn(cards)
         whenever(fileManager.saveDeckToFile(deck, cards)).thenReturn(uri)
 
         val testObserver = underTest.exportDeck(deck).test()
 
         testObserver.assertValue(uri)
-        verify(storage).loadDeck(deck)
+        verify(storage).loadDeck(2L)
         verify(fileManager).saveDeckToFile(deck, cards)
         verifyNoMoreInteractions(storage, fileManager)
     }

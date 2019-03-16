@@ -1,31 +1,35 @@
 package com.dbottillo.mtgsearchfree.ui.decks.deck
 
-import android.os.Bundle
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
 import com.dbottillo.mtgsearchfree.model.Deck
+import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject
 
 class DeckPresenter @Inject constructor(
-    private val interactor: DecksInteractor,
-    private val logger: Logger
+    private val interactor: DecksInteractor
 ) {
 
     lateinit var view: DeckView
     lateinit var deck: Deck
     private var disposable: CompositeDisposable = CompositeDisposable()
 
-    fun init(view: DeckView, arguments: Bundle?) {
+    fun init(view: DeckView, deckId: Long) {
         this.view = view
-        deck = arguments?.get(DECK_KEY) as Deck
+        disposable.add(interactor.loadDeckById(deckId)
+                .toObservable()
+                .concatMap { deck ->
+                    interactor.loadDeck(deck.id).map {
+                        Pair(deck, it)
+                    }
+                }
+                .subscribe(this::deckLoaded, {}))
     }
 
-    fun loadDeck() {
-        disposable.add(interactor.loadDeck(deck).subscribe {
-            view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})", it)
-        })
+    private fun deckLoaded(data: Pair<Deck, DeckCollection>) {
+        this.deck = data.first
+        view.deckLoaded("${deck.name} (${data.second.numberOfCardsWithoutSideboard()}/${data.second.numberOfCardsInSideboard()})", data.second)
     }
 
     fun addCardToDeck(card: MTGCard, quantity: Int) {

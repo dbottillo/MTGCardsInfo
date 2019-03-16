@@ -50,8 +50,7 @@ class DeckActivity : BasicActivity(), DeckActivityView {
 
         setupToolbar(R.id.toolbar)
 
-        val deck = intent.getParcelableExtra("deck") as Deck
-        title = if (deck.name.isEmpty()) getString(R.string.deck_title) else deck.name
+        val deckId = intent.getLongExtra("deck", 0)
 
         supportActionBar?.let {
             it.setHomeButtonEnabled(true)
@@ -62,8 +61,7 @@ class DeckActivity : BasicActivity(), DeckActivityView {
 
         tabLayout.setupWithViewPager(viewPager)
 
-        presenter.init(this, deck)
-        presenter.load()
+        presenter.init(this, deckId)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -114,6 +112,7 @@ class DeckActivity : BasicActivity(), DeckActivityView {
         tabLayout.show()
         viewPager.show()
         toolbar.elevation = 0f
+        title = if (deck.name.isEmpty()) getString(R.string.deck_title) else deck.name
         viewPager.adapter = DeckPagerAdapter(supportFragmentManager, deck,
                 listOf(getString(R.string.deck_list), getString(R.string.deck_starting_hand)))
     }
@@ -158,8 +157,6 @@ class DeckActivity : BasicActivity(), DeckActivityView {
             val value = editText.text.toString()
             presenter.editDeck(value)
             TrackingManager.trackEditDeck()
-            presenter.deck.name = value
-            title = presenter.deck.name
             dialog.dismiss()
         }
 
@@ -168,6 +165,11 @@ class DeckActivity : BasicActivity(), DeckActivityView {
         }
 
         alert.show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.onDestroy()
     }
 }
 
@@ -180,9 +182,9 @@ class DeckPagerAdapter(
     override fun getItem(position: Int): Fragment {
         return when (position) {
             0 -> {
-                DeckFragment().apply { arguments = Bundle().apply { putParcelable(DECK_KEY, deck) } }
+                DeckFragment().apply { arguments = Bundle().apply { putLong(DECK_KEY, deck.id) } }
             }
-            else -> DeckStartingHandFragment().apply { arguments = Bundle().apply { putParcelable(DECK_KEY, deck) } }
+            else -> DeckStartingHandFragment().apply { arguments = Bundle().apply { putLong(DECK_KEY, deck.id) } }
         }
     }
 

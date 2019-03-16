@@ -30,9 +30,16 @@ constructor(
                 .observeOn(schedulerProvider.ui())
     }
 
-    override fun loadDeck(deck: Deck): Observable<DeckCollection> {
-        logger.d("loadSet " + deck.toString())
-        return Observable.fromCallable { storage.loadDeck(deck) }
+    override fun loadDeck(deckId: Long): Observable<DeckCollection> {
+        logger.d("loadDeck $deckId")
+        return Observable.fromCallable { storage.loadDeck(deckId) }
+                .subscribeOn(schedulerProvider.io())
+                .observeOn(schedulerProvider.ui())
+    }
+
+    override fun loadDeckById(deckId: Long): Single<Deck> {
+        logger.d("loadDeckById $deckId")
+        return Single.fromCallable { storage.loadDeckById(deckId) }
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }
@@ -52,49 +59,49 @@ constructor(
     }
 
     override fun deleteDeck(deck: Deck): Observable<List<Deck>> {
-        logger.d("delete " + deck.toString())
+        logger.d("delete $deck")
         return Observable.fromCallable { storage.deleteDeck(deck) }
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }
 
     override fun editDeck(deck: Deck, name: String): Single<Deck> {
-        logger.d("edit " + deck.toString() + " with name: " + name)
+        logger.d("edit $deck with name: $name")
         return Single.fromCallable { storage.editDeck(deck, name) }
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }
 
     override fun addCard(deck: Deck, card: MTGCard, quantity: Int): Observable<DeckCollection> {
-        logger.d("add " + quantity + " " + card.toString() + " to deck: " + deck)
+        logger.d("add $quantity $card to deck: $deck")
         return Observable.fromCallable { storage.addCard(deck, card, quantity) }
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }
 
     override fun addCard(name: String, card: MTGCard, quantity: Int): Observable<DeckCollection> {
-        logger.d("add " + quantity + " " + card.toString() + " to new deck with name: " + name)
+        logger.d("add $quantity $card to new deck with name: $name")
         return Observable.fromCallable { storage.addCard(name, card, quantity) }
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }
 
     override fun removeCard(deck: Deck, card: MTGCard): Observable<DeckCollection> {
-        logger.d("remove " + card.toString() + " from deck: " + deck)
+        logger.d("remove $card from deck: $deck")
         return Observable.fromCallable { storage.removeCard(deck, card) }
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }
 
     override fun removeAllCard(deck: Deck, card: MTGCard): Observable<DeckCollection> {
-        logger.d("remove all " + card.toString() + " from deck: " + deck)
+        logger.d("remove all $card from deck: $deck")
         return Observable.fromCallable { storage.removeAllCard(deck, card) }
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }
 
     override fun importDeck(uri: Uri): Observable<List<Deck>> {
-        logger.d("import " + uri.toString())
+        logger.d("import $uri")
         return try {
             Observable.fromCallable { storage.importDeck(uri) }
                     .subscribeOn(schedulerProvider.io())
@@ -107,21 +114,21 @@ constructor(
     override fun exportDeck(deck: Deck): Single<Uri> {
         logger.d("export deck to file/uri")
         return Single.defer<Uri> {
-            val cards = storage.loadDeck(deck).allCards()
+            val cards = storage.loadDeck(deck.id).allCards()
             Single.just(fileManager.saveDeckToFile(deck, cards))
         }.subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }
 
     override fun moveCardToSideboard(deck: Deck, card: MTGCard, quantity: Int): Observable<DeckCollection> {
-        logger.d("move " + card.toString() + " to sideboard deck: " + deck)
+        logger.d("move $card to sideboard deck: $deck")
         return Observable.fromCallable { storage.moveCardToSideboard(deck, card, quantity) }
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }
 
     override fun moveCardFromSideboard(deck: Deck, card: MTGCard, quantity: Int): Observable<DeckCollection> {
-        logger.d("move " + card.toString() + " from sideboard deck: " + deck)
+        logger.d("move $card from sideboard deck: $deck")
         return Observable.fromCallable { storage.moveCardFromSideboard(deck, card, quantity) }
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())

@@ -30,11 +30,6 @@ class DeckFragment : BasicFragment(), DeckView {
         super.onAttach(context)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        presenter.init(this, arguments)
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_deck, container, false)
     }
@@ -87,7 +82,8 @@ class DeckFragment : BasicFragment(), DeckView {
         cardList.setHasFixedSize(true)
         cardList.layoutManager = LinearLayoutManager(view.context)
 
-        presenter.loadDeck()
+        val deckId = arguments?.getLong(DECK_KEY) ?: 0
+        presenter.init(this, deckId)
     }
 
     override fun onDestroyView() {
