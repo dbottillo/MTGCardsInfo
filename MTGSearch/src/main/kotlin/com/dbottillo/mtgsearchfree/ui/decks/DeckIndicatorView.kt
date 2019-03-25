@@ -12,6 +12,7 @@ import androidx.core.content.ContextCompat
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.Color
 
+@Suppress("MagicNumber")
 class DeckIndicatorView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,

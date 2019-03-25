@@ -93,6 +93,7 @@ allprojects {
                 includeGroup "commons-logging"
                 includeGroup "commons-codec"
                 includeGroup "org.jvnet.staxex"
+                includeGroup "org.yaml"
             }
         }
         maven {
@@ -102,10 +103,17 @@ allprojects {
                 includeGroupByRegex "io.fabric.*"
             }
         }
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+            content {
+                includeGroup "io.gitlab.arturbosch.detekt"
+            }
+        }
         jcenter {
             url "http://jcenter.bintray.com"
             content {
                 includeGroup "org.jetbrains.trove4j"
+                includeGroup "com.beust"
             }
         }
     }
