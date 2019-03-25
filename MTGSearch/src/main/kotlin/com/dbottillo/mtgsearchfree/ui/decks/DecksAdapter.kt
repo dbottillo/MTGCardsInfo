@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.ui.lifecounter
+package com.dbottillo.mtgsearchfree.ui.decks
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
@@ -45,6 +45,7 @@ class DecksAdapter(
             holder.delete.setOnClickListener { delete(deck) }
             holder.copy.setOnClickListener { copy(deck) }
             holder.parent.setOnClickListener { selected(deck) }
+            holder.indicator.colors = deck.colors
         }
     }
 
@@ -68,6 +69,7 @@ class DecksAdapter(
 
     class DeckViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
         val parent: View = row.findViewById(R.id.deck_parent)
+        val indicator: DeckIndicatorView = row.findViewById(R.id.deck_indicator)
         val name: TextView = row.findViewById(R.id.deck_name)
         val number: TextView = row.findViewById(R.id.deck_number)
         val copy: ImageButton = row.findViewById(R.id.deck_copy)

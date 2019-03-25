@@ -48,6 +48,8 @@ allprojects {
                 includeGroup "com.google"
                 includeGroup "com.google.code.gson"
                 includeGroup "com.google.guava"
+                includeGroup "com.google.truth"
+                includeGroupByRegex "com.google.auto.*"
                 includeGroupByRegex "com.squareup.*"
                 includeGroup "org.hamcrest"
                 includeGroupByRegex "javax.*"

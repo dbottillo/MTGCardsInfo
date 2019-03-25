@@ -7,14 +7,11 @@
     android:layout_height="wrap_content"
     android:background="@drawable/bg_card">
 
-    <ImageView
-        android:id="@+id/deck_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="@dimen/base_margin"
-        android:contentDescription="@string/cd_deck_icon"
-        android:src="@drawable/deck"
+    <com.dbottillo.mtgsearchfree.ui.decks.DeckIndicatorView
+        android:id="@+id/deck_indicator"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="@dimen/base_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -24,12 +21,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginLeft="@dimen/base_margin"
+        android:layout_marginStart="@dimen/base_margin"
         android:layout_marginTop="@dimen/base_margin"
         android:textColor="@color/color_primary_almost_dark"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/deck_copy"
-        app:layout_constraintStart_toEndOf="@id/deck_image"
+        app:layout_constraintStart_toEndOf="@id/deck_indicator"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="U/R aggro"/>
 
@@ -39,12 +36,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginBottom="@dimen/base_margin"
-        android:layout_marginLeft="@dimen/base_margin"
+        android:layout_marginStart="@dimen/base_margin"
         android:ellipsize="end"
         android:textColor="#555"
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/deck_copy"
-        app:layout_constraintStart_toEndOf="@id/deck_image"
+        app:layout_constraintStart_toEndOf="@id/deck_indicator"
         app:layout_constraintTop_toBottomOf="@+id/deck_name"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:text="23 bucket"/>

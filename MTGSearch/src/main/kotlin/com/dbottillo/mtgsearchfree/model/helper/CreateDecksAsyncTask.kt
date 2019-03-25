@@ -5,9 +5,11 @@ import android.os.AsyncTask
 import android.widget.Toast
 import com.dbottillo.mtgsearchfree.database.CardDataSource
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper
+import com.dbottillo.mtgsearchfree.database.DeckColorMapper
 import com.dbottillo.mtgsearchfree.database.DeckDataSource
 import com.dbottillo.mtgsearchfree.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper
+import com.dbottillo.mtgsearchfree.util.Logger
 import com.google.gson.Gson
 import java.lang.ref.WeakReference
 import java.util.Random
@@ -28,8 +30,9 @@ class CreateDecksAsyncTask(context: Context) : AsyncTask<String, Void, ArrayList
             val db = cardsInfoDbHelper.writableDatabase
             val cardDataSource = CardDataSource(cardsInfoDbHelper.writableDatabase, Gson())
             val mtgCardDataSource = MTGCardDataSource(databaseHelper.readableDatabase, cardDataSource)
+            val deckColorMapper = DeckColorMapper(Gson())
 
-            val deckDataSource = DeckDataSource(db, cardDataSource, mtgCardDataSource)
+            val deckDataSource = DeckDataSource(db, cardDataSource, mtgCardDataSource, deckColorMapper, Logger())
             deckDataSource.deleteAllDecks(db)
 
             val r = Random()

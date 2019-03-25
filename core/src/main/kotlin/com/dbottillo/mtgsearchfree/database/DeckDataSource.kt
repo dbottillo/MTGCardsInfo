@@ -3,31 +3,32 @@ package com.dbottillo.mtgsearchfree.database
 import android.content.ContentValues
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-
 import com.dbottillo.mtgsearchfree.model.CardsBucket
+import com.dbottillo.mtgsearchfree.model.Color
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.util.LOG
-
+import com.dbottillo.mtgsearchfree.util.Logger
 import java.util.ArrayList
 
 class DeckDataSource(
     private val database: SQLiteDatabase,
     private val cardDataSource: CardDataSource,
-    private val mtgCardDataSource: MTGCardDataSource
+    private val mtgCardDataSource: MTGCardDataSource,
+    private val deckColorMapper: DeckColorMapper,
+    private val logger: Logger
 ) {
 
     val decks: List<Deck>
         get() {
             val decks = ArrayList<Deck>()
             val query = "Select * from decks"
-            LOG.query(query)
+            logger.d(query)
             val deckCursor = database.rawQuery(query, null)
             deckCursor.moveToFirst()
             while (!deckCursor.isAfterLast) {
                 val (id, name, archived) = fromCursor(deckCursor)
-                val (numberOfCards, sizeOfSideboard) = getQuantityOfCards(id)
-                decks.add(Deck(id, name, archived, numberOfCards, sizeOfSideboard))
+                val (numberOfCards, sizeOfSideboard, colors) = getInfoFromCards(id)
+                decks.add(Deck(id, name, archived, numberOfCards, sizeOfSideboard, colors))
                 deckCursor.moveToNext()
             }
             deckCursor.close()
@@ -60,22 +61,22 @@ class DeckDataSource(
         val sid = if (card.isSideboard) 1 else 0
         var currentCard = 0
         val query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ? and P.multiVerseId = ? and H.side == ?)"
-        LOG.query(query, deckId.toString() + "", card.multiVerseId.toString() + "", sid.toString() + "")
+        logger.query(query, deckId.toString() + "", card.multiVerseId.toString() + "", sid.toString() + "")
         val cardsCursor = database.rawQuery(query, arrayOf(deckId.toString() + "", card.multiVerseId.toString() + "", sid.toString() + ""))
         if (cardsCursor.count > 0) {
-            LOG.d("card already in the database")
+            logger.d("card already in the database")
             cardsCursor.moveToFirst()
             currentCard = cardsCursor.getInt(cardsCursor.getColumnIndex(COLUMNSJOIN.QUANTITY.noun))
         }
         if (currentCard + quantity <= 0) {
-            LOG.d("the quantity is negative and is bigger than the current quantity so needs to be removed")
+            logger.d("the quantity is negative and is bigger than the current quantity so needs to be removed")
             cardsCursor.close()
             removeCardFromDeck(deckId, card)
             return
         }
         if (currentCard > 0) {
             // there is already some cards there! just need to add the quantity
-            LOG.d("just need to update the quantity")
+            logger.d("just need to update the quantity")
             updateQuantity(deckId, currentCard + quantity, card.multiVerseId, sid)
             cardsCursor.close()
             return
@@ -86,7 +87,7 @@ class DeckDataSource(
 
     fun addCardToDeckWithoutCheck(deckId: Long, card: MTGCard, quantity: Int) {
         val query = "select * from MTGCard where multiVerseId=?"
-        LOG.query(query, card.multiVerseId.toString() + "")
+        logger.query(query, card.multiVerseId.toString() + "")
         val current = database.rawQuery(query, arrayOf(card.multiVerseId.toString() + ""))
         if (current.count > 0) {
             // card already added
@@ -96,7 +97,7 @@ class DeckDataSource(
                 current.moveToNext()
                 while (!current.isAfterLast) {
                     val query2 = "delete from MTGCard where _id=?"
-                    LOG.query(query2, current.getString(0))
+                    logger.query(query2, current.getString(0))
                     val cursor = database.rawQuery(query2, arrayOf(current.getString(0)))
                     cursor.moveToFirst()
                     cursor.close()
@@ -119,60 +120,39 @@ class DeckDataSource(
     fun getDeck(deckId: Long): Deck {
         val query = "select * from $TABLE where rowid =?"
         val cursor = database.rawQuery(query, arrayOf(deckId.toString() + ""))
-        LOG.query(query)
+        logger.query(query)
         cursor.moveToFirst()
         val (id, name, archived) = fromCursor(cursor)
-        val (numberOfCards, sizeOfSideboard) = getQuantityOfCards(id)
-        val deck = Deck(id, name, archived, numberOfCards, sizeOfSideboard)
+        val (numberOfCards, sizeOfSideboard, colors) = getInfoFromCards(id)
+        val deck = Deck(id, name, archived, numberOfCards, sizeOfSideboard, colors)
         cursor.close()
         return deck
     }
 
-    private fun getQuantityOfCards(deckId: Long): Pair<Int, Int> {
-        val query = "select DC.side,DC.quantity from deck_card DC left join decks D on (D._id = DC.deck_id) where deck_id=$deckId"
-        LOG.query(query)
-        val cursor = database.rawQuery(query, null)
+    private fun getInfoFromCards(deckId: Long): Triple<Int, Int, List<Color>> {
+        // val query = "select DC.side,DC.quantity,DC.colorIdentity from deck_card DC left join decks D on (D._id = DC.deck_id) where deck_id=$deckId"
+        val query = "select H.side,H.quantity,P.colorIdentity from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)"
+        logger.query(query)
+        val cursor = database.rawQuery(query, arrayOf(deckId.toString()))
         cursor.moveToFirst()
         var cards = 0
         var side = 0
+        val colors = mutableListOf<String>()
         while (!cursor.isAfterLast) {
             val sideboard = cursor.getInt(0) == 1
             val quantity = cursor.getInt(1)
+            val colorsIdentity = cursor.getString(2)
             if (sideboard) {
                 side += quantity
             } else {
                 cards += quantity
             }
+            colors.add(colorsIdentity)
             cursor.moveToNext()
         }
         cursor.close()
-        return Pair(cards, side)
+        return Triple(cards, side, deckColorMapper.convert(colors))
     }
-
-    /*private fun setQuantityOfCards(decks: ArrayList<Deck>, side: Boolean) {
-        // need to loadSet cards now
-        // select SUM(quantity),* from deck_card DC left join decks D on (D._id = DC.deck_id) where side= 0 group by DC.deck_id
-        // Cursor cursor = database.rawQuery("Select * from decks D left join deck_card DC on (D._id = DC.deck_id) where DC.side=0", null);
-        // Cursor cursor = database.rawQuery("select SUM(quantity),D._id from deck_card DC left join decks D on (D._id = DC.deck_id) where side= 0 group by DC.deck_id", null);
-        val query = "select SUM(quantity),D._id from deck_card DC left join decks D on (D._id = DC.deck_id) where side=" + (if (side) 1 else 0) + " group by DC.deck_id"
-        LOG.query(query)
-        val cursor = database.rawQuery(query, null)
-        cursor.moveToFirst()
-        while (!cursor.isAfterLast) {
-            for (deck in decks) {
-                if (deck.id == cursor.getInt(1).toLong()) {
-                    if (side) {
-                        deck.sizeOfSideboard = cursor.getInt(0)
-                    } else {
-                        deck.numberOfCards = cursor.getInt(0)
-                    }
-                    break
-                }
-            }
-            cursor.moveToNext()
-        }
-        cursor.close()
-    }*/
 
     fun getCards(deck: Deck): List<MTGCard> {
         return getCards(deck.id)
@@ -181,7 +161,7 @@ class DeckDataSource(
     fun getCards(deckId: Long): List<MTGCard> {
         val cards = ArrayList<MTGCard>()
         val query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)"
-        LOG.query(query, deckId.toString() + "")
+        logger.query(query, deckId.toString() + "")
         val cursor = database.rawQuery(query, arrayOf(deckId.toString() + ""))
 
         cursor.moveToFirst()
@@ -202,7 +182,7 @@ class DeckDataSource(
         val sid = if (card.isSideboard) 1 else 0
         val args = arrayOf(deckId.toString() + "", card.multiVerseId.toString() + "", sid.toString() + "")
         val query = "DELETE FROM deck_card where deck_id=? and card_id=? and side =?"
-        LOG.query(query, *args)
+        logger.query(query, *args)
         val cursor = database.rawQuery(query, args)
         cursor.moveToFirst()
         cursor.close()
@@ -211,7 +191,7 @@ class DeckDataSource(
     fun deleteDeck(deck: Deck) {
         val args = arrayOf(deck.id.toString() + "")
         val query = "DELETE FROM deck_card where deck_id=? "
-        LOG.query(query, *args)
+        logger.query(query, *args)
         val cursor = database.rawQuery(query, args)
         cursor.moveToFirst()
         cursor.close()
@@ -223,12 +203,12 @@ class DeckDataSource(
 
     fun deleteAllDecks(db: SQLiteDatabase) {
         val query = "DELETE FROM deck_card"
-        LOG.query(query)
+        logger.query(query)
         val cursor = db.rawQuery(query, null)
         cursor.moveToFirst()
         cursor.close()
         val query2 = "DELETE FROM decks"
-        LOG.query(query2)
+        logger.query(query2)
         val cursor2 = db.rawQuery(query2, null)
         cursor2.moveToFirst()
         cursor2.close()
@@ -244,7 +224,7 @@ class DeckDataSource(
             }
             database.setTransactionSuccessful()
         } catch (e: Exception) {
-            LOG.e(e)
+            logger.e(e)
         } finally {
             database.endTransaction()
         }
@@ -317,7 +297,7 @@ class DeckDataSource(
 
     private fun runQuery(query: String, vararg args: String): Cursor {
         val cursor = database.rawQuery(query, args)
-        LOG.query(query, *args)
+        logger.query(query, *args)
         return cursor
     }
 
@@ -325,13 +305,13 @@ class DeckDataSource(
         runQuery(query, *args).close()
     }
 
-    private enum class COLUMNS(val noun: String, val type: String) {
+    enum class COLUMNS(val noun: String, val type: String) {
         NAME("name", "TEXT not null"),
         COLOR("color", "TEXT"),
         ARCHIVED("archived", "INT")
     }
 
-    private enum class COLUMNSJOIN(val noun: String, val type: String) {
+    enum class COLUMNSJOIN(val noun: String, val type: String) {
         DECK_ID("deck_id", "INT not null"),
         CARD_ID("card_id", "INT not null"),
         QUANTITY("quantity", "INT not null"),

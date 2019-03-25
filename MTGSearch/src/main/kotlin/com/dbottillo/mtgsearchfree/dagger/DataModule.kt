@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.dagger
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import com.dbottillo.mtgsearchfree.database.CardDataSource
+import com.dbottillo.mtgsearchfree.database.DeckColorMapper
 import com.dbottillo.mtgsearchfree.database.DeckDataSource
 import com.dbottillo.mtgsearchfree.database.FavouritesDataSource
 import com.dbottillo.mtgsearchfree.database.MTGCardDataSource
@@ -99,8 +100,14 @@ open class DataModule {
 
     @Provides
     @Singleton
-    fun provideDeckDataSource(@Named("storageDB") database: SQLiteDatabase, cardDataSource: CardDataSource, mtgCardDataSource: MTGCardDataSource): DeckDataSource {
-        return DeckDataSource(database, cardDataSource, mtgCardDataSource)
+    fun provideDeckDataSource(
+        @Named("storageDB") database: SQLiteDatabase,
+        cardDataSource: CardDataSource,
+        mtgCardDataSource: MTGCardDataSource,
+        deckColorMapper: DeckColorMapper,
+        logger: Logger
+    ): DeckDataSource {
+        return DeckDataSource(database, cardDataSource, mtgCardDataSource, deckColorMapper, logger)
     }
 
     @Provides

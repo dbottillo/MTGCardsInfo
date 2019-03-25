@@ -16,7 +16,6 @@ import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.ui.decks.deck.DeckActivity
-import com.dbottillo.mtgsearchfree.ui.lifecounter.DecksAdapter
 import com.dbottillo.mtgsearchfree.util.DialogUtil
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.PermissionAvailable

@@ -41,5 +41,6 @@ ext.versions = [
         'fest'             : '2.0M10',
         'support_runner'   : '1.1.1',
         'dexmaker_mockito' : '1.2',
-        'robolectric'      : '4.0.2'
+        'robolectric'      : '4.0.2',
+        'truth'            : '0.43'
 ]

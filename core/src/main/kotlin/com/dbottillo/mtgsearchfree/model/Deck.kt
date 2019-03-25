@@ -5,5 +5,6 @@ data class Deck constructor(
     val name: String,
     val isArchived: Boolean,
     val numberOfCards: Int,
-    val sizeOfSideboard: Int
+    val sizeOfSideboard: Int,
+    val colors: List<Color>
 )

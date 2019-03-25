@@ -8,6 +8,7 @@ import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.database.CardDataSource
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper
+import com.dbottillo.mtgsearchfree.database.DeckColorMapper
 import com.dbottillo.mtgsearchfree.database.DeckDataSource
 import com.dbottillo.mtgsearchfree.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper
@@ -41,9 +42,11 @@ class DecksStorageIntegrationTest {
         mtgDatabaseHelper = MTGDatabaseHelper(RuntimeEnvironment.application)
         cardsInfoDbHelper = CardsInfoDbHelper(RuntimeEnvironment.application)
         val fileUtil = FileUtil(FileManagerForTest())
-        val cardDataSource = CardDataSource(cardsInfoDbHelper.writableDatabase, Gson())
+        val gson = Gson()
+        val cardDataSource = CardDataSource(cardsInfoDbHelper.writableDatabase, gson)
         val mtgCardDataSource = MTGCardDataSource(mtgDatabaseHelper.readableDatabase, cardDataSource)
-        val deckDataSource = DeckDataSource(cardsInfoDbHelper.writableDatabase, cardDataSource, mtgCardDataSource)
+        val deckColorMapper = DeckColorMapper(gson)
+        val deckDataSource = DeckDataSource(cardsInfoDbHelper.writableDatabase, cardDataSource, mtgCardDataSource, deckColorMapper, Logger())
         val generalData = mock<GeneralData>()
         storage = DecksStorageImpl(fileUtil, deckDataSource, generalData, Logger())
     }

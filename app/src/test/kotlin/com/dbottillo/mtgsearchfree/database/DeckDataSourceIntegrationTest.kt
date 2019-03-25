@@ -1,14 +1,12 @@
 package com.dbottillo.mtgsearchfree.database
 
 import com.dbottillo.mtgsearchfree.model.CardsBucket
+import com.dbottillo.mtgsearchfree.model.Color
 import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.util.Logger
+import com.google.common.truth.Truth.assertThat
 import com.google.gson.Gson
-import org.hamcrest.MatcherAssert.assertThat
-import org.hamcrest.Matchers.`is`
 import org.junit.After
-import org.junit.Assert.assertFalse
-import org.junit.Assert.assertNotNull
-import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -16,7 +14,7 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
 
 @RunWith(RobolectricTestRunner::class)
-class DeckDataSourceTest {
+class DeckDataSourceIntegrationTest {
 
     lateinit var cardsInfoDbHelper: CardsInfoDbHelper
     lateinit var mtgDatabaseHelper: MTGDatabaseHelper
@@ -30,7 +28,7 @@ class DeckDataSourceTest {
         cardsInfoDbHelper = CardsInfoDbHelper(RuntimeEnvironment.application)
         cardDataSource = CardDataSource(cardsInfoDbHelper.writableDatabase, Gson())
         mtgCardDataSource = MTGCardDataSource(mtgDatabaseHelper.readableDatabase, cardDataSource)
-        underTest = DeckDataSource(cardsInfoDbHelper.writableDatabase, cardDataSource, mtgCardDataSource)
+        underTest = DeckDataSource(cardsInfoDbHelper.writableDatabase, cardDataSource, mtgCardDataSource, DeckColorMapper(Gson()), Logger())
     }
 
     @After
@@ -41,145 +39,152 @@ class DeckDataSourceTest {
     }
 
     @Test
-    fun generate_table_is_correct() {
+    fun `generate table is correct`() {
         val query = DeckDataSource.generateCreateTable()
         val queryJoin = DeckDataSource.generateCreateTableJoin()
-        assertNotNull(query)
-        assertThat(query, `is`("CREATE TABLE IF NOT EXISTS decks (_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT not null,color TEXT,archived INT)"))
-        assertThat(queryJoin, `is`("CREATE TABLE IF NOT EXISTS deck_card (deck_id INT not null,card_id INT not null,quantity INT not null,side INT)"))
+        assertThat(query).isNotNull()
+        assertThat(query).isEqualTo("CREATE TABLE IF NOT EXISTS decks (_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT not null,color TEXT,archived INT)")
+        assertThat(queryJoin).isEqualTo("CREATE TABLE IF NOT EXISTS deck_card (deck_id INT not null,card_id INT not null,quantity INT not null,side INT)")
     }
 
     @Test
-    fun test_deck_can_be_saved_in_database() {
+    fun `deck can be saved into database`() {
         val id = underTest.addDeck("deck")
+
         val deckFromDb = underTest.getDeck(id)
-        assertNotNull(deckFromDb)
-        assertThat(deckFromDb.id, `is`(id))
-        assertThat(deckFromDb.name, `is`("deck"))
-        assertThat(deckFromDb.isArchived, `is`(false))
+
+        assertThat(deckFromDb).isNotNull()
+        assertThat(deckFromDb.id).isEqualTo(id)
+        assertThat(deckFromDb.name).isEqualTo("deck")
+        assertThat(deckFromDb.isArchived).isEqualTo(false)
+        assertThat(deckFromDb.numberOfCards).isEqualTo(0)
+        assertThat(deckFromDb.sizeOfSideboard).isEqualTo(0)
+        assertThat(deckFromDb.colors).isEqualTo(emptyList<Color>())
     }
 
     @Test
-    fun test_deck_can_be_removed_from_database() {
+    fun `deck can be removed from database`() {
         val id = underTest.addDeck("deck")
         val card = mtgCardDataSource.getRandomCard(1)[0]
         underTest.addCardToDeck(id, card, 2)
         var decks = underTest.decks
-        assertThat(decks[0].numberOfCards, `is`(2))
+        assertThat(decks[0].numberOfCards).isEqualTo(2)
         underTest.deleteDeck(decks[0])
         decks = underTest.decks
-        assertThat(decks.size, `is`(0))
+        assertThat(decks.size).isEqualTo(0)
         // also need to test that the join table has been cleared
         val cursor = cardsInfoDbHelper.readableDatabase.rawQuery("select * from " + DeckDataSource.TABLE_JOIN, null)
-        assertNotNull(cursor)
-        assertThat(cursor.count, `is`(0))
+        assertThat(cursor).isNotNull()
+        assertThat(cursor.count).isEqualTo(0)
         cursor.close()
     }
 
     @Test
-    fun DeckDataSource_nameDeckCanBeEdited() {
+    fun `name deck can be edited`() {
         val id = underTest.addDeck("deck")
         val updatedId = underTest.renameDeck(id, "New name")
-        assertThat(updatedId > -1, `is`(true))
+        assertThat(updatedId > -1).isEqualTo(true)
         val decks = underTest.decks
-        assertThat(decks[0].name, `is`("New name"))
+        assertThat(decks[0].name).isEqualTo("New name")
     }
 
     @Test
-    fun test_deck_cards_can_be_retrieved_from_database() {
+    fun `test deck cards can be retrieved from database`() {
         generateDeckWithSmallAmountOfCards()
         val deck = underTest.decks[0]
+
         val cards = underTest.getCards(deck)
-        assertNotNull(cards)
-        assertThat(cards.size, `is`(SMALL_NUMBER_OF_CARDS))
+
+        assertThat(cards).isNotNull()
+        assertThat(cards.size).isEqualTo(SMALL_NUMBER_OF_CARDS)
     }
 
     @Test
-    fun test_cards_can_be_added_to_deck() {
+    fun `test cards can be added to deck`() {
         val id = underTest.addDeck("new deck")
         val card = mtgCardDataSource.getRandomCard(1)[0]
         underTest.addCardToDeck(id, card, 2)
         // first check that the card has been saved in the db
         val cursor = cardsInfoDbHelper.readableDatabase.rawQuery("select * from " + CardDataSource.TABLE + " where multiVerseId =?", arrayOf(card.multiVerseId.toString() + ""))
-        assertNotNull(cursor)
-        assertThat(cursor.count, `is`(1))
+        assertThat(cursor).isNotNull()
+        assertThat(cursor.count).isEqualTo(1)
         cursor.moveToFirst()
         val cardFromDb = cardDataSource.fromCursor(cursor, true)
-        assertNotNull(cardFromDb)
-        assertThat(cardFromDb.multiVerseId, `is`(card.multiVerseId))
+        assertThat(cardFromDb).isNotNull()
+        assertThat(cardFromDb.multiVerseId).isEqualTo(card.multiVerseId)
         // then check that the decks contain at least one card
         val decks = underTest.decks
-        assertThat(decks.size, `is`(1))
+        assertThat(decks.size).isEqualTo(1)
         val (id1, _, _, numberOfCards) = decks[0]
-        assertThat(id1, `is`(id))
-        assertThat(numberOfCards, `is`(2))
+        assertThat(id1).isEqualTo(id)
+        assertThat(numberOfCards).isEqualTo(2)
     }
 
     @Test
-    fun test_cards_can_be_removed_from_deck() {
+    fun `test cards can be removed from deck`() {
         val id = underTest.addDeck("new deck")
         val card = mtgCardDataSource.getRandomCard(1)[0]
         underTest.addCardToDeck(id, card, 2)
         var decks = underTest.decks
-        assertThat(decks[0].numberOfCards, `is`(2))
+        assertThat(decks[0].numberOfCards).isEqualTo(2)
         underTest.removeCardFromDeck(id, card)
         decks = underTest.decks
-        assertThat(decks[0].numberOfCards, `is`(0))
+        assertThat(decks[0].numberOfCards).isEqualTo(0)
     }
 
     @Test
-    fun test_multiple_cards_can_be_added_to_deck() {
+    fun `test multiple cards can be added to deck`() {
         val id = generateDeckWithSmallAmountOfCards()
         val decks = underTest.decks
-        assertThat(decks.size, `is`(1))
+        assertThat(decks.size).isEqualTo(1)
         val (id1, _, _, numberOfCards) = decks[0]
-        assertThat(id1, `is`(id))
-        assertThat(numberOfCards, `is`(10))
+        assertThat(id1).isEqualTo(id)
+        assertThat(numberOfCards).isEqualTo(10)
     }
 
     @Test
-    fun test_negative_quantity_will_decrease_cards() {
+    fun `test negative quantity will decrease cards`() {
         val id = underTest.addDeck("new deck")
         val card = mtgCardDataSource.getRandomCard(1)[0]
 
         underTest.addCardToDeck(id, card, 4)
         var deck = underTest.decks[0]
-        assertThat(deck.numberOfCards, `is`(4))
+        assertThat(deck.numberOfCards).isEqualTo(4)
 
         underTest.addCardToDeck(id, card, -2)
         deck = underTest.decks[0]
-        assertThat(deck.numberOfCards, `is`(2))
+        assertThat(deck.numberOfCards).isEqualTo(2)
 
         underTest.addCardToDeck(id, card, -1)
         deck = underTest.decks[0]
-        assertThat(deck.numberOfCards, `is`(1))
+        assertThat(deck.numberOfCards).isEqualTo(1)
 
         underTest.addCardToDeck(id, card, -4)
         deck = underTest.decks[0]
-        assertThat(deck.numberOfCards, `is`(0))
+        assertThat(deck.numberOfCards).isEqualTo(0)
     }
 
     @Test
-    fun test_minus_1_with_1_will_remove_card() {
+    fun `test minus 1 with 1 will remove card`() {
         val id = underTest.addDeck("new deck")
         val card = mtgCardDataSource.getRandomCard(1)[0]
 
         underTest.addCardToDeck(id, card, 1)
         var deck = underTest.decks[0]
         var cards = underTest.getCards(deck)
-        assertFalse(cards.isEmpty())
-        assertThat(deck.numberOfCards, `is`(1))
-        assertThat(cards[0].quantity, `is`(1))
+        assertThat(cards.isEmpty()).isFalse()
+        assertThat(deck.numberOfCards).isEqualTo(1)
+        assertThat(cards[0].quantity).isEqualTo(1)
 
         underTest.addCardToDeck(id, card, -1)
         deck = underTest.decks[0]
         cards = underTest.getCards(deck)
-        assertTrue(cards.isEmpty())
-        assertThat(deck.numberOfCards, `is`(0))
+        assertThat(cards.isEmpty()).isTrue()
+        assertThat(deck.numberOfCards).isEqualTo(0)
     }
 
     @Test
-    fun test_add_sideboard_cards_are_independent() {
+    fun `test add sideboard cards are independent`() {
         val id = underTest.addDeck("new deck")
         val card = mtgCardDataSource.getRandomCard(1)[0]
 
@@ -187,28 +192,28 @@ class DeckDataSourceTest {
         card.isSideboard = true
         underTest.addCardToDeck(id, card, 2)
         var deck = underTest.decks[0]
-        assertThat(deck.numberOfCards, `is`(2))
-        assertThat(deck.sizeOfSideboard, `is`(2))
+        assertThat(deck.numberOfCards).isEqualTo(2)
+        assertThat(deck.sizeOfSideboard).isEqualTo(2)
 
         card.isSideboard = false
         underTest.addCardToDeck(id, card, 2)
         card.isSideboard = true
         underTest.addCardToDeck(id, card, -4)
         deck = underTest.decks[0]
-        assertThat(deck.numberOfCards, `is`(4))
-        assertThat(deck.sizeOfSideboard, `is`(0))
+        assertThat(deck.numberOfCards).isEqualTo(4)
+        assertThat(deck.sizeOfSideboard).isEqualTo(0)
 
         card.isSideboard = false
         underTest.addCardToDeck(id, card, -1)
         card.isSideboard = true
         underTest.addCardToDeck(id, card, 6)
         deck = underTest.decks[0]
-        assertThat(deck.numberOfCards, `is`(3))
-        assertThat(deck.sizeOfSideboard, `is`(6))
+        assertThat(deck.numberOfCards).isEqualTo(3)
+        assertThat(deck.sizeOfSideboard).isEqualTo(6)
     }
 
     @Test
-    fun test_remove_sideboard_cards_are_independent() {
+    fun `test remove sideboard cards are independent`() {
         val id = underTest.addDeck("new deck")
         val card = mtgCardDataSource.getRandomCard(1)[0]
 
@@ -217,34 +222,34 @@ class DeckDataSourceTest {
         card.isSideboard = true
         underTest.addCardToDeck(id, card, 2)
         var deck = underTest.decks[0]
-        assertThat(deck.numberOfCards, `is`(2))
-        assertThat(deck.sizeOfSideboard, `is`(2))
+        assertThat(deck.numberOfCards).isEqualTo(2)
+        assertThat(deck.sizeOfSideboard).isEqualTo(2)
 
         card.isSideboard = false
         underTest.removeCardFromDeck(id, card)
         deck = underTest.decks[0]
-        assertThat(deck.numberOfCards, `is`(0))
-        assertThat(deck.sizeOfSideboard, `is`(2))
+        assertThat(deck.numberOfCards).isEqualTo(0)
+        assertThat(deck.sizeOfSideboard).isEqualTo(2)
 
         card.isSideboard = true
         underTest.removeCardFromDeck(id, card)
         deck = underTest.decks[0]
-        assertThat(deck.numberOfCards, `is`(0))
-        assertThat(deck.sizeOfSideboard, `is`(0))
+        assertThat(deck.numberOfCards).isEqualTo(0)
+        assertThat(deck.sizeOfSideboard).isEqualTo(0)
     }
 
     @Test
-    fun test_add_deck_with_empty_bucket() {
+    fun `test add deck with empty bucket`() {
         val bucket = CardsBucket(key = "deck")
         val deckId = underTest.addDeck(bucket)
-        assertTrue(deckId > 0)
+        assertThat(deckId > 0).isTrue()
         val (_, name, _, numberOfCards) = underTest.getDeck(deckId)
-        assertThat(name, `is`("deck"))
-        assertThat(numberOfCards, `is`(0))
+        assertThat(name).isEqualTo("deck")
+        assertThat(numberOfCards).isEqualTo(0)
     }
 
     @Test
-    fun test_add_deck_with_non_empty_bucket() {
+    fun `add deck with non empty bucket`() {
         val cardNames = arrayOf("Counterspell", "Oath of Jace", "Fireball", "Thunderbolt", "Countersquall")
         val quantities = intArrayOf(2, 3, 4, 1, 3)
         val side = booleanArrayOf(true, true, false, false, true)
@@ -259,11 +264,11 @@ class DeckDataSourceTest {
         }
         bucket.cards = namedCards
         val deckId = underTest.addDeck(bucket)
-        assertTrue(deckId > 0)
+        assertThat(deckId > 0).isTrue()
         val (_, name) = underTest.getDeck(deckId)
-        assertThat(name, `is`("deck"))
+        assertThat(name).isEqualTo("deck")
         val deckCards = underTest.getCards(deckId)
-        assertThat(deckCards.size, `is`(cardNames.size))
+        assertThat(deckCards.size).isEqualTo(cardNames.size)
         for (card in deckCards) {
             var found = false
             var index = 0
@@ -274,14 +279,14 @@ class DeckDataSourceTest {
                     break
                 }
             }
-            assertTrue(found)
-            assertThat(card.quantity, `is`(quantities[index]))
-            assertThat(card.isSideboard, `is`(side[index]))
+            assertThat(found).isTrue()
+            assertThat(card.quantity).isEqualTo(quantities[index])
+            assertThat(card.isSideboard).isEqualTo(side[index])
         }
     }
 
     @Test
-    fun test_add_deck_with_ignore_non_card_name() {
+    fun `add deck with ignore non card name`() {
         val cardNames = arrayOf("Counterspell", "Eistein")
         val quantities = intArrayOf(2, 3)
         val bucket = CardsBucket(key = "deck")
@@ -295,11 +300,11 @@ class DeckDataSourceTest {
         bucket.cards = namedCards
         val deckId = underTest.addDeck(bucket)
         val deckCards = underTest.getCards(deckId)
-        assertThat(deckCards.size, `is`(cardNames.size - 1))
+        assertThat(deckCards.size).isEqualTo(cardNames.size - 1)
     }
 
     @Test
-    fun movesCardFromDeckToSideBoard() {
+    fun `moves card from deck to sideboard`() {
         val deckId = underTest.addDeck("new deck")
         val cards = mtgCardDataSource.getRandomCard(3)
 
@@ -328,11 +333,11 @@ class DeckDataSourceTest {
          */
         underTest.moveCardToSideBoard(deckId, card2, 1)
         var deckCards = underTest.getCards(deckId)
-        assertThat(deckCards.size, `is`(4))
-        assertThat(deckCards[1], `is`(card2))
-        assertThat(deckCards[1].quantity, `is`(1))
-        assertThat(deckCards[2], `is`(card2))
-        assertThat(deckCards[2].quantity, `is`(3))
+        assertThat(deckCards.size).isEqualTo(4)
+        assertThat(deckCards[1]).isEqualTo(card2)
+        assertThat(deckCards[1].quantity).isEqualTo(1)
+        assertThat(deckCards[2]).isEqualTo(card2)
+        assertThat(deckCards[2].quantity).isEqualTo(3)
         assertQuantityAndSideboard(deckId, 5, 7)
 
         /*        normal    side
@@ -342,14 +347,14 @@ class DeckDataSourceTest {
          */
         underTest.moveCardToSideBoard(deckId, card1, 4)
         deckCards = underTest.getCards(deckId)
-        assertThat(deckCards.size, `is`(4))
-        assertThat(deckCards[0], `is`(card2))
-        assertThat(deckCards[1], `is`(card2))
-        assertThat(deckCards[1].quantity, `is`(3))
-        assertThat(deckCards[2], `is`(card3))
-        assertThat(deckCards[2].quantity, `is`(4))
-        assertThat(deckCards[3], `is`(card1))
-        assertThat(deckCards[3].quantity, `is`(4))
+        assertThat(deckCards.size).isEqualTo(4)
+        assertThat(deckCards[0]).isEqualTo(card2)
+        assertThat(deckCards[1]).isEqualTo(card2)
+        assertThat(deckCards[1].quantity).isEqualTo(3)
+        assertThat(deckCards[2]).isEqualTo(card3)
+        assertThat(deckCards[2].quantity).isEqualTo(4)
+        assertThat(deckCards[3]).isEqualTo(card1)
+        assertThat(deckCards[3].quantity).isEqualTo(4)
         assertQuantityAndSideboard(deckId, 1, 11)
 
         /*        normal    side
@@ -359,12 +364,12 @@ class DeckDataSourceTest {
          */
         underTest.moveCardToSideBoard(deckId, card2, 1)
         deckCards = underTest.getCards(deckId)
-        assertThat(deckCards.size, `is`(3))
+        assertThat(deckCards.size).isEqualTo(3)
         assertQuantityAndSideboard(deckId, 0, 12)
     }
 
     @Test
-    fun movesCardFromSideBoardToDeck() {
+    fun `moves card from sideboard to deck`() {
         val deckId = underTest.addDeck("new deck")
         val cards = mtgCardDataSource.getRandomCard(3)
 
@@ -393,11 +398,11 @@ class DeckDataSourceTest {
          */
         underTest.moveCardFromSideBoard(deckId, card2, 1)
         var deckCards = underTest.getCards(deckId)
-        assertThat(deckCards.size, `is`(4))
-        assertThat(deckCards[1], `is`(card2))
-        assertThat(deckCards[1].quantity, `is`(3))
-        assertThat(deckCards[2], `is`(card2))
-        assertThat(deckCards[2].quantity, `is`(1))
+        assertThat(deckCards.size).isEqualTo(4)
+        assertThat(deckCards[1]).isEqualTo(card2)
+        assertThat(deckCards[1].quantity).isEqualTo(3)
+        assertThat(deckCards[2]).isEqualTo(card2)
+        assertThat(deckCards[2].quantity).isEqualTo(1)
         assertQuantityAndSideboard(deckId, 7, 5)
 
         /*        normal    side
@@ -407,14 +412,14 @@ class DeckDataSourceTest {
          */
         underTest.moveCardFromSideBoard(deckId, card3, 4)
         deckCards = underTest.getCards(deckId)
-        assertThat(deckCards.size, `is`(4))
-        assertThat(deckCards[0], `is`(card1))
-        assertThat(deckCards[1], `is`(card2))
-        assertThat(deckCards[1].quantity, `is`(3))
-        assertThat(deckCards[2], `is`(card2))
-        assertThat(deckCards[2].quantity, `is`(1))
-        assertThat(deckCards[3], `is`(card3))
-        assertThat(deckCards[3].quantity, `is`(4))
+        assertThat(deckCards.size).isEqualTo(4)
+        assertThat(deckCards[0]).isEqualTo(card1)
+        assertThat(deckCards[1]).isEqualTo(card2)
+        assertThat(deckCards[1].quantity).isEqualTo(3)
+        assertThat(deckCards[2]).isEqualTo(card2)
+        assertThat(deckCards[2].quantity).isEqualTo(1)
+        assertThat(deckCards[3]).isEqualTo(card3)
+        assertThat(deckCards[3].quantity).isEqualTo(4)
         assertQuantityAndSideboard(deckId, 11, 1)
 
         /*        normal    side
@@ -424,21 +429,21 @@ class DeckDataSourceTest {
          */
         underTest.moveCardFromSideBoard(deckId, card2, 1)
         deckCards = underTest.getCards(deckId)
-        assertThat(deckCards.size, `is`(3))
+        assertThat(deckCards.size).isEqualTo(3)
         assertQuantityAndSideboard(deckId, 12, 0)
     }
 
     @Test
-    fun test_deck_can_be_copied() {
+    fun `deck can be copied`() {
         generateDeckWithSmallAmountOfCards()
         val deck = underTest.decks[0]
         val originalCards = underTest.getCards(deck)
         underTest.copy(deck)
         val decks = underTest.decks
-        assertThat(decks.size, `is`(2))
-        assertThat(decks[1].name, `is`("new deck copy"))
+        assertThat(decks.size).isEqualTo(2)
+        assertThat(decks[1].name).isEqualTo("new deck copy")
         val copiedCards = underTest.getCards(decks[1])
-        assertThat(copiedCards, `is`(originalCards))
+        assertThat(copiedCards).isEqualTo(originalCards)
     }
 
     private fun generateDeckWithSmallAmountOfCards(): Long {
@@ -452,11 +457,11 @@ class DeckDataSourceTest {
 
     private fun assertQuantityAndSideboard(deckId: Long, quantity: Int, sideboard: Int) {
         val decks = underTest.decks
-        assertThat(decks.size, `is`(1))
+        assertThat(decks.size).isEqualTo(1)
         val (id, _, _, numberOfCards, sizeOfSideboard) = decks[0]
-        assertThat(id, `is`(deckId))
-        assertThat(numberOfCards, `is`(quantity))
-        assertThat(sizeOfSideboard, `is`(sideboard))
+        assertThat(id).isEqualTo(deckId)
+        assertThat(numberOfCards).isEqualTo(quantity)
+        assertThat(sizeOfSideboard).isEqualTo(sideboard)
     }
 }
 

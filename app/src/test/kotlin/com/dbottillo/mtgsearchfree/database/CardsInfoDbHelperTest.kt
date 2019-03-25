@@ -4,7 +4,9 @@ import android.database.sqlite.SQLiteDatabase
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.Player
+import com.dbottillo.mtgsearchfree.util.Logger
 import com.google.gson.Gson
+import com.nhaarman.mockito_kotlin.mock
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.`is`
 import org.junit.After
@@ -328,9 +330,11 @@ class CardsInfoDbHelperTest {
     private fun addDummyData(db: SQLiteDatabase) {
         val card = MTGCard()
         card.belongsTo(MTGSet(id = 1, name = "Zendikar", code = "ZDK"))
-        val cardDataSource = CardDataSource(db, Gson())
+        val gson = Gson()
+        val cardDataSource = CardDataSource(db, gson)
         val mtgCardDataSource = MTGCardDataSource(db, cardDataSource)
-        val deckDataSource = DeckDataSource(db, cardDataSource, mtgCardDataSource)
+        val logger = mock<Logger>()
+        val deckDataSource = DeckDataSource(db, cardDataSource, mtgCardDataSource, DeckColorMapper(gson), logger)
         val deck = deckDataSource.addDeck("deck")
         deckDataSource.addCardToDeck(deck, card, 2)
         val playerDataSource = PlayerDataSource(db)
