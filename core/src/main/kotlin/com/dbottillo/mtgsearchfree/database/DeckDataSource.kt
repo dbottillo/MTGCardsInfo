@@ -129,9 +129,10 @@ class DeckDataSource(
         return deck
     }
 
+    @Suppress("MagicNumber")
     private fun getInfoFromCards(deckId: Long): Triple<Int, Int, List<Color>> {
         // val query = "select DC.side,DC.quantity,DC.colorIdentity from deck_card DC left join decks D on (D._id = DC.deck_id) where deck_id=$deckId"
-        val query = "select H.side,H.quantity,P.colorIdentity from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)"
+        val query = "select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)"
         logger.query(query)
         val cursor = database.rawQuery(query, arrayOf(deckId.toString()))
         cursor.moveToFirst()
@@ -141,13 +142,19 @@ class DeckDataSource(
         while (!cursor.isAfterLast) {
             val sideboard = cursor.getInt(0) == 1
             val quantity = cursor.getInt(1)
-            val colorsIdentity = cursor.getString(2)
+            val colorsIdentity: String? = cursor.getString(2)
             if (sideboard) {
                 side += quantity
             } else {
                 cards += quantity
             }
-            colors.add(colorsIdentity)
+            colorsIdentity?.let {
+                colors.add(colorsIdentity)
+            } ?: run {
+                cursor.getString(3)?.let {
+                    colors.add(it)
+                }
+            }
             cursor.moveToNext()
         }
         cursor.close()
