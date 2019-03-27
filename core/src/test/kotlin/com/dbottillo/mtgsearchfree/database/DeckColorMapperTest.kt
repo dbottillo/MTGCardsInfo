@@ -132,4 +132,18 @@ class DeckColorMapperTest {
 
         assertThat(result).isEqualTo(listOf(Color.WHITE, Color.BLUE, Color.BLACK, Color.RED, Color.GREEN))
     }
+
+    @Test
+    fun `should handle display color null`() {
+        val result = underTest.convert(listOf(ColorMapperType.Display("null")))
+
+        assertThat(result).isEmpty()
+    }
+
+    @Test
+    fun `should convert a list with all display colors with old format`() {
+        val result = underTest.convert(listOf(ColorMapperType.Display("White,Blue,Black,Red,Green")))
+
+        assertThat(result).isEqualTo(listOf(Color.WHITE, Color.BLUE, Color.BLACK, Color.RED, Color.GREEN))
+    }
 }

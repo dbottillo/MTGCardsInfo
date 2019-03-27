@@ -36,7 +36,8 @@ class DeckColorMapper @Inject constructor(val gson: Gson) {
     private fun mapIdentity(input: String): List<Color> {
         val colors = gson.fromJson<List<String>>(input, object : TypeToken<List<String>>() {}.type)
         return if (colors?.isNotEmpty() == true) {
-            colors.map { color -> color.mapColor() }
+            colors.map { color -> color.mapColor()
+            }
         } else {
             emptyList()
         }
@@ -44,7 +45,18 @@ class DeckColorMapper @Inject constructor(val gson: Gson) {
 
     private fun mapDisplay(input: String): List<Color> {
         return if (input.isNotEmpty()) {
-            input.split(",").map { color -> color.mapColor() }
+            input.split(",")
+                    .filter { it != "null" }
+                    .map { color ->
+                when (color) {
+                    "W", "White" -> Color.WHITE
+                    "U", "Blue" -> Color.BLUE
+                    "B", "Black" -> Color.BLACK
+                    "R", "Red" -> Color.RED
+                    "G", "Green" -> Color.GREEN
+                    else -> throw UnsupportedOperationException("color not valid")
+                }
+            }
         } else {
             emptyList()
         }
