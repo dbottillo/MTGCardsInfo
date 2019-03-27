@@ -7,4 +7,5 @@ interface SetPickerPresenter {
     fun loadSets()
     fun setSelected(set: MTGSet)
     fun search(text: String)
+    fun onDestroy()
 }

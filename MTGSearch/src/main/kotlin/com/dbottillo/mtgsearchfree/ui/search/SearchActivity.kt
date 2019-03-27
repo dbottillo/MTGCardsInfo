@@ -300,6 +300,11 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
             presenter.saveAsFavourite(card)
         }
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.onDestroy()
+    }
 }
 
 private const val SEARCH_OPEN = "searchOpen"

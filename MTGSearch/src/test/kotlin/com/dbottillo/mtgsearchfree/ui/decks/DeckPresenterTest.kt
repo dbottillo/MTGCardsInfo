@@ -7,6 +7,7 @@ import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.decks.deck.DeckPresenter
 import com.dbottillo.mtgsearchfree.ui.decks.deck.DeckView
+import com.dbottillo.mtgsearchfree.util.Logger
 import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
 import com.nhaarman.mockito_kotlin.whenever
@@ -29,6 +30,7 @@ class DeckPresenterTest {
     @Mock lateinit var bundle: Bundle
     @Mock lateinit var card: MTGCard
     @Mock lateinit var cards: DeckCollection
+    @Mock lateinit var logger: Logger
 
     lateinit var underTest: DeckPresenter
 
@@ -40,7 +42,7 @@ class DeckPresenterTest {
         whenever(cards.numberOfCardsInSideboard()).thenReturn(15)
         whenever(interactor.loadDeckById(2L)).thenReturn(Single.just(deck))
         whenever(interactor.loadDeck(2L)).thenReturn(Observable.just(cards))
-        underTest = DeckPresenter(interactor)
+        underTest = DeckPresenter(interactor, logger)
     }
 
     @Test

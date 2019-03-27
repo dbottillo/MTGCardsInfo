@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.ui.about
 
 import com.dbottillo.mtgsearchfree.interactors.ReleaseNoteInteractor
+import com.dbottillo.mtgsearchfree.util.Logger
 import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
 import com.nhaarman.mockito_kotlin.whenever
@@ -13,19 +14,18 @@ import org.mockito.junit.MockitoJUnit
 
 class ReleaseNotePresenterTest {
 
-    @Rule
-    @JvmField
-    var mockitoRule = MockitoJUnit.rule()
+    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()!!
 
     @Mock lateinit var interactor: ReleaseNoteInteractor
     @Mock lateinit var view: ReleaseNoteView
     @Mock lateinit var list: List<ReleaseNoteItem>
+    @Mock lateinit var logger: Logger
 
     private lateinit var underTest: ReleaseNotePresenter
 
     @Before
     fun setUp() {
-        underTest = ReleaseNotePresenter(interactor)
+        underTest = ReleaseNotePresenter(interactor, logger)
         underTest.init(view)
     }
 

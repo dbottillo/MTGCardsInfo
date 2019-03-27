@@ -10,4 +10,5 @@ interface DecksFragmentPresenter {
     fun deleteDeck(deck: Deck)
     fun importDeck(uri: Uri)
     fun copyDeck(deck: Deck)
+    fun onDestroy()
 }

@@ -5,6 +5,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.TCGPrice
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Single
+import io.reactivex.disposables.CompositeDisposable
 
 import javax.inject.Inject
 
@@ -15,6 +16,8 @@ class CardPresenterImpl @Inject constructor(
 
     private lateinit var cardView: CardView
 
+    private var disposable = CompositeDisposable()
+
     init {
         logger.d("created")
     }
@@ -24,12 +27,18 @@ class CardPresenterImpl @Inject constructor(
     }
 
     override fun loadOtherSideCard(card: MTGCard) {
-        interactor.loadOtherSideCard(card).subscribe {
+        disposable.add(interactor.loadOtherSideCard(card).subscribe({
             cardView.otherSideCardLoaded(it)
-        }
+        }, {
+            logger.logNonFatal(it)
+        }))
     }
 
     override fun fetchPrice(card: MTGCard): Single<TCGPrice> {
         return interactor.fetchPrice(card)
+    }
+
+    override fun onDestroy() {
+        disposable.clear()
     }
 }

@@ -28,7 +28,7 @@ class StartingHandPresenterTest {
     @Rule @JvmField val mockitoRule = MockitoJUnit.rule()!!
 
     @Mock lateinit var interactor: DecksInteractor
-    @Mock internal lateinit var logger: Logger
+    @Mock lateinit var logger: Logger
     @Mock lateinit var view: StartingHandView
     @Mock lateinit var deck: Deck
     @Mock lateinit var card: MTGCard
@@ -46,7 +46,7 @@ class StartingHandPresenterTest {
         deckCollection.other.add(MTGCard(name = "other", quantity = 3, isSideboard = false))
         deckCollection.lands.add(MTGCard(name = "lands", quantity = 4, isSideboard = false))
         deckCollection.side.add(MTGCard(name = "side", quantity = 4, isSideboard = true))
-        underTest = StartingHandPresenter(interactor)
+        underTest = StartingHandPresenter(interactor, logger)
         underTest.init(view, 2L)
     }
 

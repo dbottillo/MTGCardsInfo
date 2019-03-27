@@ -8,4 +8,5 @@ interface CardPresenter {
     fun loadOtherSideCard(card: MTGCard)
     fun init(cardView: CardView)
     fun fetchPrice(card: MTGCard): Single<TCGPrice>
+    fun onDestroy()
 }

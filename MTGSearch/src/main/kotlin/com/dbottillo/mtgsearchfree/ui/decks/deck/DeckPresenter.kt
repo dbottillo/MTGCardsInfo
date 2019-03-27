@@ -4,17 +4,20 @@ import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject
 
 class DeckPresenter @Inject constructor(
-    private val interactor: DecksInteractor
+    private val interactor: DecksInteractor,
+    private val logger: Logger
 ) {
 
     lateinit var view: DeckView
     lateinit var deck: Deck
     private var disposable: CompositeDisposable = CompositeDisposable()
 
+    @Suppress("MoveLambdaOutsideParentheses")
     fun init(view: DeckView, deckId: Long) {
         this.view = view
         disposable.add(interactor.loadDeckById(deckId)
@@ -24,7 +27,9 @@ class DeckPresenter @Inject constructor(
                         Pair(deck, it)
                     }
                 }
-                .subscribe(this::deckLoaded, {}))
+                .subscribe(this::deckLoaded, {
+                    logger.logNonFatal(it)
+                }))
     }
 
     private fun deckLoaded(data: Pair<Deck, DeckCollection>) {
@@ -33,33 +38,43 @@ class DeckPresenter @Inject constructor(
     }
 
     fun addCardToDeck(card: MTGCard, quantity: Int) {
-        disposable.add(interactor.addCard(deck, card, quantity).subscribe {
+        disposable.add(interactor.addCard(deck, card, quantity).subscribe ({
             view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})", it)
-        })
+        }, {
+            logger.logNonFatal(it)
+        }))
     }
 
     fun removeCardFromDeck(card: MTGCard) {
-        disposable.add(interactor.removeCard(deck, card).subscribe {
+        disposable.add(interactor.removeCard(deck, card).subscribe ({
             view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})", it)
-        })
+        }, {
+            logger.logNonFatal(it)
+        }))
     }
 
     fun removeAllCardFromDeck(card: MTGCard) {
-        disposable.add(interactor.removeAllCard(deck, card).subscribe {
+        disposable.add(interactor.removeAllCard(deck, card).subscribe ({
             view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})", it)
-        })
+        }, {
+            logger.logNonFatal(it)
+        }))
     }
 
     fun moveCardFromSideBoard(card: MTGCard, quantity: Int) {
-        disposable.add(interactor.moveCardFromSideboard(deck, card, quantity).subscribe {
+        disposable.add(interactor.moveCardFromSideboard(deck, card, quantity).subscribe ({
             view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})", it)
-        })
+        }, {
+            logger.logNonFatal(it)
+        }))
     }
 
     fun moveCardToSideBoard(card: MTGCard, quantity: Int) {
-        disposable.add(interactor.moveCardToSideboard(deck, card, quantity).subscribe {
+        disposable.add(interactor.moveCardToSideboard(deck, card, quantity).subscribe ({
             view.deckLoaded("${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})", it)
-        })
+        }, {
+            logger.logNonFatal(it)
+        }))
     }
 
     fun onDestroyView() {

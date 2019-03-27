@@ -6,15 +6,18 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.util.Logger
+import io.reactivex.disposables.CompositeDisposable
 
 class SearchPresenterImpl(
-    val setsInteractor: SetsInteractor,
-    val cardsInteractor: CardsInteractor,
-    val generalData: GeneralData,
-    val logger: Logger
+    private val setsInteractor: SetsInteractor,
+    private val cardsInteractor: CardsInteractor,
+    private val generalData: GeneralData,
+    private val logger: Logger
 ) : SearchPresenter {
 
     lateinit var view: SearchActivityView
+
+    private var disposable = CompositeDisposable()
 
     override fun init(view: SearchActivityView) {
         this.view = view
@@ -27,15 +30,19 @@ class SearchPresenterImpl(
     }
 
     override fun loadSet() {
-        setsInteractor.load().subscribe {
+        disposable.add(setsInteractor.load().subscribe ({
             view.setLoaded(it)
-        }
+        }, {
+           logger.logNonFatal(it)
+        }))
     }
 
     override fun doSearch(searchParams: SearchParams) {
-        cardsInteractor.doSearch(searchParams).subscribe {
+        disposable.add(cardsInteractor.doSearch(searchParams).subscribe({
             view.showSearch(it)
-        }
+        }, {
+            logger.logNonFatal(it)
+        }))
     }
 
     override fun toggleCardTypeViewPreference() {
@@ -50,5 +57,9 @@ class SearchPresenterImpl(
 
     override fun saveAsFavourite(card: MTGCard) {
         cardsInteractor.saveAsFavourite(card)
+    }
+
+    override fun onDestroy() {
+        disposable.clear()
     }
 }

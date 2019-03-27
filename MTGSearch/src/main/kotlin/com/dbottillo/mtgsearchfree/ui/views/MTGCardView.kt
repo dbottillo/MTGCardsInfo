@@ -87,6 +87,7 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
     public override fun onDetachedFromWindow() {
         super.onDetachedFromWindow()
         LOG.d()
+        cardPresenter.onDestroy()
         disposable?.dispose()
     }
 

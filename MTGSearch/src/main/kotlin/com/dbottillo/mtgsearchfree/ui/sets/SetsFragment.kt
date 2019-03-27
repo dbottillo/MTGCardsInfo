@@ -133,4 +133,9 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
     override fun showLoading() {
         loader.visibility = View.VISIBLE
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.onDestroy()
+    }
 }

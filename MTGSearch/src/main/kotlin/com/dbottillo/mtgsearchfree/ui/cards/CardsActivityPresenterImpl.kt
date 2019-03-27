@@ -77,6 +77,7 @@ class CardsActivityPresenterImpl(
         }, {
             view.hideLoading()
             showError(it)
+            logger.logNonFatal(it)
         }))
     }
 
@@ -89,6 +90,7 @@ class CardsActivityPresenterImpl(
         }, {
             view.hideLoading()
             showError(it)
+            logger.logNonFatal(it)
         }))
     }
 
@@ -108,6 +110,7 @@ class CardsActivityPresenterImpl(
                 }, {
                     view.hideLoading()
                     showError(it)
+                    logger.logNonFatal(it)
                 }))
     }
 
@@ -167,6 +170,7 @@ class CardsActivityPresenterImpl(
             view.shareUri(it)
         }, {
             showError(it)
+            logger.logNonFatal(it)
         }))
     }
 

@@ -1,9 +1,9 @@
 package com.dbottillo.mtgsearchfree.ui.sets
 
-import android.annotation.SuppressLint
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.storage.CardsPreferences
+import io.reactivex.disposables.CompositeDisposable
 
 class SetPickerPresenterImpl(
     private val setsInteractor: SetsInteractor,
@@ -15,17 +15,20 @@ class SetPickerPresenterImpl(
     private var sets: List<MTGSet>? = null
     private var currentSet: MTGSet? = null
 
+    private var disposable = CompositeDisposable()
+
     override fun init(view: SetPickerView) {
         this.view = view
     }
 
-    @SuppressLint("CheckResult")
     override fun loadSets() {
-        setsInteractor.load().subscribe { list ->
+        disposable.add(setsInteractor.load().subscribe({ list ->
             sets = list
             currentSet = list[cardsPreferences.setPosition]
             view.showSets(list, list.indexOf(currentSet!!))
-        }
+        }, {
+
+        }))
     }
 
     override fun search(text: String) {
@@ -37,5 +40,9 @@ class SetPickerPresenterImpl(
     override fun setSelected(set: MTGSet) {
         cardsPreferences.saveSetPosition(sets?.indexOf(set) ?: 0)
         view.close()
+    }
+
+    override fun onDestroy() {
+        disposable.clear()
     }
 }

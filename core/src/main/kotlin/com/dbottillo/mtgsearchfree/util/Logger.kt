@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.util
 
+import com.crashlytics.android.Crashlytics
 import com.dbottillo.mtgsearchfree.core.BuildConfig
 
 class Logger {
@@ -27,5 +28,13 @@ class Logger {
             }
             LOG.d(message)
         }
+    }
+
+    fun logNonFatal(throwable: Throwable) {
+        if (BuildConfig.DEBUG) {
+            e(throwable)
+            throwable.printStackTrace()
+        }
+        Crashlytics.logException(throwable)
     }
 }

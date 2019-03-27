@@ -9,4 +9,5 @@ interface LifeCounterPresenter {
     fun editPlayer(player: Player)
     fun editPlayers(players: List<Player>)
     fun removePlayer(player: Player)
+    fun onDestroy()
 }

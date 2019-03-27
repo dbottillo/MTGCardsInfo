@@ -9,4 +9,5 @@ interface SearchPresenter {
     fun toggleCardTypeViewPreference()
     fun doSearch(searchParams: SearchParams)
     fun saveAsFavourite(card: MTGCard)
+    fun onDestroy()
 }

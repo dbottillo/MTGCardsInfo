@@ -18,7 +18,8 @@ import org.json.JSONException
 import org.json.JSONObject
 import java.util.ArrayList
 
-class CardDataSource(private val database: SQLiteDatabase, private val gson: Gson) {
+class CardDataSource(private val database: SQLiteDatabase,
+                     private val gson: Gson) {
 
     val cards: List<MTGCard>
         get() {

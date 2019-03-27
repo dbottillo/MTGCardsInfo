@@ -7,19 +7,22 @@ import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.util.Logger
+import io.reactivex.disposables.CompositeDisposable
 
 class SetsFragmentPresenterImpl(
-    val setsInteractor: SetsInteractor,
-    val cardsInteractor: CardsInteractor,
-    val cardsPreferences: CardsPreferences,
-    val generalData: GeneralData,
-    val logger: Logger
+    private val setsInteractor: SetsInteractor,
+    private val cardsInteractor: CardsInteractor,
+    private val cardsPreferences: CardsPreferences,
+    private val generalData: GeneralData,
+    private val logger: Logger
 ) : SetsFragmentPresenter {
 
     var set: MTGSet? = null
     var currentPos: Int = -1
 
     lateinit var view: SetsFragmentView
+
+    private var disposable = CompositeDisposable()
 
     override fun init(view: SetsFragmentView) {
         this.view = view
@@ -33,14 +36,16 @@ class SetsFragmentPresenterImpl(
 
     override fun loadSets() {
         logger.d()
-        setsInteractor.load().subscribe {
+        disposable.add(setsInteractor.load().subscribe({
             val newPos = cardsPreferences.setPosition
             if (newPos != currentPos) {
                 currentPos = newPos
                 set = it[currentPos]
                 loadSet()
             }
-        }
+        }, {
+
+        }))
     }
 
     override fun reloadSet() {
@@ -51,13 +56,15 @@ class SetsFragmentPresenterImpl(
     internal fun loadSet() {
         view.showLoading()
         set?.let {
-            cardsInteractor.loadSet(it).subscribe {
+            disposable.add(cardsInteractor.loadSet(it).subscribe({
                 data ->
                 run {
                     view.showSet(it, data)
                     view.hideLoading()
                 }
-            }
+            }, {
+
+            }))
         }
     }
 
@@ -77,5 +84,9 @@ class SetsFragmentPresenterImpl(
 
     override fun saveAsFavourite(card: MTGCard) {
         cardsInteractor.saveAsFavourite(card)
+    }
+
+    override fun onDestroy() {
+        disposable.clear()
     }
 }

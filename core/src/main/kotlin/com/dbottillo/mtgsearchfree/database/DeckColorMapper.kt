@@ -5,15 +5,13 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import javax.inject.Inject
 
-class DeckColorMapper @Inject constructor(private val gson: Gson) {
+class DeckColorMapper @Inject constructor(val gson: Gson) {
 
-    fun convert(colorsIdentities: List<String>): List<Color> {
-        val allColors = colorsIdentities.flatMap { colorIdentity ->
-            val colors = gson.fromJson<List<String>>(colorIdentity, object : TypeToken<List<String>>() {}.type)
-            if (colors?.isNotEmpty() == true) {
-                colors.map { color -> color.mapColor() }
-            } else {
-                emptyList()
+    fun convert(elements: List<ColorMapperType>): List<Color> {
+        val allColors: List<Color> = elements.flatMap { type ->
+            when (type) {
+                is ColorMapperType.Display -> mapDisplay(type.data)
+                is ColorMapperType.Identity -> mapIdentity(type.data)
             }
         }
         val colors = mutableListOf<Color>()
@@ -34,4 +32,26 @@ class DeckColorMapper @Inject constructor(private val gson: Gson) {
         }
         return colors.toList()
     }
+
+    private fun mapIdentity(input: String): List<Color> {
+        val colors = gson.fromJson<List<String>>(input, object : TypeToken<List<String>>() {}.type)
+        return if (colors?.isNotEmpty() == true) {
+            colors.map { color -> color.mapColor() }
+        } else {
+            emptyList()
+        }
+    }
+
+    private fun mapDisplay(input: String): List<Color> {
+        return if (input.isNotEmpty()) {
+            input.split(",").map { color -> color.mapColor() }
+        } else {
+            emptyList()
+        }
+    }
+}
+
+sealed class ColorMapperType {
+    data class Identity(val data: String) : ColorMapperType()
+    data class Display(val data: String) : ColorMapperType()
 }

@@ -28,6 +28,7 @@ class DeckActivityPresenter @Inject constructor(
                 deck = it
                 load()
             }, {
+                logger.logNonFatal(it)
             })
         )
     }
@@ -46,7 +47,9 @@ class DeckActivityPresenter @Inject constructor(
         disposable.add(interactor.editDeck(deck, name).subscribe({
             this.deck = it
             deckLoaded()
-        }, {}))
+        }, {
+            logger.logNonFatal(it)
+        }))
     }
 
     fun exportDeck() {
@@ -54,13 +57,16 @@ class DeckActivityPresenter @Inject constructor(
             view.deckExported(it)
         }, {
             view.deckNotExported()
+            logger.logNonFatal(it)
         }))
     }
 
     fun copyDeck() {
         disposable.add(interactor.copy(deck).subscribe({
             view.deckCopied()
-        }, {}))
+        }, {
+            logger.logNonFatal(it)
+        }))
     }
 
     fun onDestroy() {

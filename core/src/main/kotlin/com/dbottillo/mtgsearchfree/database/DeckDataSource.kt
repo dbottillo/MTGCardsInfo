@@ -138,7 +138,7 @@ class DeckDataSource(
         cursor.moveToFirst()
         var cards = 0
         var side = 0
-        val colors = mutableListOf<String>()
+        val colors = mutableListOf<ColorMapperType>()
         while (!cursor.isAfterLast) {
             val sideboard = cursor.getInt(0) == 1
             val quantity = cursor.getInt(1)
@@ -149,10 +149,10 @@ class DeckDataSource(
                 cards += quantity
             }
             colorsIdentity?.let {
-                colors.add(colorsIdentity)
+                colors.add(ColorMapperType.Identity(it))
             } ?: run {
                 cursor.getString(3)?.let {
-                    colors.add(it)
+                    colors.add(ColorMapperType.Display(it))
                 }
             }
             cursor.moveToNext()

@@ -1,21 +1,31 @@
 package com.dbottillo.mtgsearchfree.ui.about
 
 import com.dbottillo.mtgsearchfree.interactors.ReleaseNoteInteractor
+import com.dbottillo.mtgsearchfree.util.Logger
+import io.reactivex.disposables.CompositeDisposable
 
-class ReleaseNotePresenter constructor(val interactor: ReleaseNoteInteractor) {
+class ReleaseNotePresenter constructor(val interactor: ReleaseNoteInteractor,
+                                       val logger: Logger) {
 
     lateinit var view: ReleaseNoteView
+
+    private var disposable: CompositeDisposable = CompositeDisposable()
 
     fun init(view: ReleaseNoteView) {
         this.view = view
     }
 
     fun load() {
-        interactor.load().subscribe({
+        disposable.add(interactor.load().subscribe({
             view.showItems(it)
         }, {
+            logger.logNonFatal(it)
             view.showError(it.localizedMessage)
-        })
+        }))
+    }
+
+    fun onDestroy() {
+        disposable.clear()
     }
 }
 

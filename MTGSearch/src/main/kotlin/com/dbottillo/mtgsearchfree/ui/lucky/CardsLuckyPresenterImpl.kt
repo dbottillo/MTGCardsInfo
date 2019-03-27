@@ -28,7 +28,7 @@ class CardsLuckyPresenterImpl(
     override fun init(view: CardsLuckyView, bundle: Bundle?, intent: Intent?) {
         this.view = view
 
-        disposable.add(cardsInteractor.loadIdFav().subscribe {
+        disposable.add(cardsInteractor.loadIdFav().subscribe ({
             favs = it.toMutableList()
 
             var idCard: Int? = null
@@ -51,11 +51,13 @@ class CardsLuckyPresenterImpl(
             }
 
             loadMoreCards()
-        })
+        }, {
+            logger.logNonFatal(it)
+        }))
     }
 
     private fun loadMoreCards() {
-        disposable.add(cardsInteractor.getLuckyCards(LUCKY_BATCH_CARDS).subscribe {
+        disposable.add(cardsInteractor.getLuckyCards(LUCKY_BATCH_CARDS).subscribe ({
             luckyCards.addAll(it.list)
             if (currentCard == null) {
                 showNextCard()
@@ -63,7 +65,9 @@ class CardsLuckyPresenterImpl(
             luckyCards.forEach {
                 view.preFetchCardImage(it)
             }
-        })
+        }, {
+            logger.logNonFatal(it)
+        }))
     }
 
     override fun showNextCard() {
@@ -133,6 +137,7 @@ class CardsLuckyPresenterImpl(
             view.shareUri(it)
         }, {
             view.showError(it.localizedMessage)
+            logger.logNonFatal(it)
         }))
     }
 

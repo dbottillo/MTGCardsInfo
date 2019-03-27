@@ -5,6 +5,7 @@ import com.dbottillo.mtgsearchfree.exceptions.MTGException
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.util.Logger
+import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject
 
 class DecksFragmentPresenterImpl @Inject constructor(
@@ -12,6 +13,8 @@ class DecksFragmentPresenterImpl @Inject constructor(
     private val logger: Logger
 ) : DecksFragmentPresenter {
     lateinit var decksView: DecksFragmentView
+
+    private var disposable: CompositeDisposable = CompositeDisposable()
 
     init {
         logger.d("created")
@@ -24,47 +27,52 @@ class DecksFragmentPresenterImpl @Inject constructor(
 
     override fun loadDecks() {
         logger.d()
-        interactor.load().subscribe({
+        disposable.add(interactor.load().subscribe({
             decksView.decksLoaded(it)
         }, {
             showError(it)
-        })
+            logger.logNonFatal(it)
+        }))
     }
 
     override fun addDeck(name: String) {
-        logger.d("add " + name)
-        interactor.addDeck(name).subscribe({
+        logger.d("add $name")
+        disposable.add(interactor.addDeck(name).subscribe({
             decksView.decksLoaded(it)
         }, {
             showError(it)
-        })
+            logger.logNonFatal(it)
+        }))
     }
 
     override fun deleteDeck(deck: Deck) {
-        logger.d("delete " + deck)
-        interactor.deleteDeck(deck).subscribe({
+        logger.d("delete $deck")
+        disposable.add(interactor.deleteDeck(deck).subscribe({
             decksView.decksLoaded(it)
         }, {
             showError(it)
-        })
+            logger.logNonFatal(it)
+        }))
     }
 
     override fun importDeck(uri: Uri) {
-        logger.d("import " + uri.toString())
-        interactor.importDeck(uri).subscribe({
+        logger.d("import $uri")
+        disposable.add(interactor.importDeck(uri).subscribe({
             decksView.decksLoaded(it)
         }, {
             showError(it)
-        })
+            logger.logNonFatal(it)
+        }))
     }
 
     override fun copyDeck(deck: Deck) {
         logger.d("copy $deck")
-        interactor.copy(deck).subscribe({
+        disposable.add(interactor.copy(deck).subscribe({
             decksView.decksLoaded(it)
         }, {
             showError(it)
-        })
+            logger.logNonFatal(it)
+        }))
     }
 
     internal fun showError(e: Throwable) {
@@ -73,5 +81,9 @@ class DecksFragmentPresenterImpl @Inject constructor(
         } else {
             decksView.showError(e.localizedMessage)
         }
+    }
+
+    override fun onDestroy() {
+        disposable.clear()
     }
 }

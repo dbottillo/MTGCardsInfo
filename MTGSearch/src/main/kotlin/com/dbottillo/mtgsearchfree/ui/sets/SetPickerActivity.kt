@@ -28,8 +28,7 @@ class SetPickerActivity : BasicActivity(), SetPickerView {
 
     var adapter: SetsAdapter? = null
 
-    @Inject
-    lateinit var presenter: SetPickerPresenter
+    @Inject lateinit var presenter: SetPickerPresenter
 
     override fun onCreate(bundle: Bundle?) {
         AndroidInjection.inject(this)
@@ -110,5 +109,10 @@ class SetPickerActivity : BasicActivity(), SetPickerView {
                 }
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.onDestroy()
     }
 }

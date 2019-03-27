@@ -10,4 +10,5 @@ interface SetsFragmentPresenter {
     fun set(): MTGSet?
     fun saveAsFavourite(card: MTGCard)
     fun reloadSet()
+    fun onDestroy()
 }

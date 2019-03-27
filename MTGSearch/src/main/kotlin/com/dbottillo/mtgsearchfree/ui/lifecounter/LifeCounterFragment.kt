@@ -37,7 +37,7 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
     internal lateinit var adapter: LifeCounterAdapter
     internal var players: MutableList<Player> = mutableListOf()
 
-    internal var diceShowed: Boolean = false
+    private var diceShowed: Boolean = false
 
     override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
@@ -146,13 +146,13 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
         TrackingManager.trackAddPlayer()
     }
 
-    internal fun setupMenu() {
+    private fun setupMenu() {
         toolbar.inflateMenu(R.menu.life_counter)
 
         refreshMenu()
     }
 
-    internal fun refreshMenu() {
+    private fun refreshMenu() {
         val poison = toolbar.menu.findItem(R.id.action_poison)
         poison.isChecked = cardsPreferences.showPoison()
         val screenOn = toolbar.menu.findItem(R.id.action_screen_on)
@@ -227,5 +227,10 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
         diceShowed = !diceShowed
         adapter.notifyDataSetChanged()
         TrackingManager.trackLunchDice()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        lifeCounterPresenter.onDestroy()
     }
 }

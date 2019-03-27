@@ -69,6 +69,11 @@ class ReleaseNoteActivity : BasicActivity(), ReleaseNoteView {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.onDestroy()
+    }
 }
 
 class ReleaseNoteAdapter(val items: List<ReleaseNoteItem>) : RecyclerView.Adapter<ReleaseNoteHolder>() {

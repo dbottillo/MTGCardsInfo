@@ -2,20 +2,33 @@ package com.dbottillo.mtgsearchfree.ui.cardsConfigurator
 
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor
 import com.dbottillo.mtgsearchfree.model.CardFilter
+import com.dbottillo.mtgsearchfree.util.Logger
+import io.reactivex.disposables.CompositeDisposable
 
-class CardsConfiguratorPresenterImpl(private val cardFilterInteractor: CardFilterInteractor) : CardsConfiguratorPresenter {
+class CardsConfiguratorPresenterImpl(
+    private val cardFilterInteractor: CardFilterInteractor,
+    private val logger: Logger
+) : CardsConfiguratorPresenter {
 
     lateinit var view: CardsConfiguratorView
 
     var filter: CardFilter? = null
 
+    private var disposable: CompositeDisposable = CompositeDisposable()
+
     override fun init(view: CardsConfiguratorView) {
         this.view = view
 
-        cardFilterInteractor.load().subscribe({
+        disposable.add(cardFilterInteractor.load().subscribe({
             filter = it
             view.loadFilter(filter = it, refresh = false)
-        })
+        }, {
+            logger.logNonFatal(it)
+        }))
+    }
+
+    override fun onDestroy() {
+        disposable.clear()
     }
 
     override fun update(type: CardFilter.TYPE, on: Boolean) {

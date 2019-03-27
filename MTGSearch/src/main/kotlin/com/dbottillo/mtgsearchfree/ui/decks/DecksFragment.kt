@@ -116,10 +116,10 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.Perm
     internal fun deleteDeck(deck: Deck) {
         LOG.d()
         if (deck.numberOfCards > 0) {
-            dialogUtil.deleteDeck(deck, {
+            dialogUtil.deleteDeck(deck) {
                 presenter.deleteDeck(it)
                 TrackingManager.trackDeleteDeck(deck.name)
-            })
+            }
         } else {
             presenter.deleteDeck(deck)
             TrackingManager.trackDeleteDeck(deck.name)
@@ -133,6 +133,11 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.Perm
 
     override fun showError(message: String?) {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.onDestroy()
     }
 
     @TargetApi(Build.VERSION_CODES.KITKAT)

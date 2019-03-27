@@ -45,6 +45,7 @@ class AddToDeckPresenterImpl @Inject constructor(
             } else {
                 view.showError(it.localizedMessage)
             }
+            logger.logNonFatal(it)
         }))
     }
 

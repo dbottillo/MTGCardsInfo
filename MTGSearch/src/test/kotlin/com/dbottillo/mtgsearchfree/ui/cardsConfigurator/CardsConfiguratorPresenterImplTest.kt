@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.ui.cardsConfigurator
 
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor
 import com.dbottillo.mtgsearchfree.model.CardFilter
+import com.dbottillo.mtgsearchfree.util.Logger
 import com.nhaarman.mockito_kotlin.argumentCaptor
 import com.nhaarman.mockito_kotlin.whenever
 import io.reactivex.Observable
@@ -17,11 +18,11 @@ import org.mockito.junit.MockitoJUnit
 
 class CardsConfiguratorPresenterImplTest {
 
-    @Rule @JvmField
-    var mockitoRule = MockitoJUnit.rule()!!
+    @Rule @JvmField var mockitoRule = MockitoJUnit.rule()!!
 
     @Mock lateinit var cardFilterInteractor: CardFilterInteractor
     @Mock lateinit var view: CardsConfiguratorView
+    @Mock lateinit var logger: Logger
 
     private var filter = CardFilter()
     lateinit var underTest: CardsConfiguratorPresenter
@@ -29,7 +30,7 @@ class CardsConfiguratorPresenterImplTest {
     @Before
     fun setUp() {
         whenever(cardFilterInteractor.load()).thenReturn(Observable.just(filter))
-        underTest = CardsConfiguratorPresenterImpl(cardFilterInteractor)
+        underTest = CardsConfiguratorPresenterImpl(cardFilterInteractor, logger)
     }
 
     @Test

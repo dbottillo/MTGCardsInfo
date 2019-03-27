@@ -1,11 +1,15 @@
 package com.dbottillo.mtgsearchfree.ui.decks.startingHand
 
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
+import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject
 import kotlin.math.min
 
-class StartingHandPresenter @Inject constructor(private val interactor: DecksInteractor) {
+class StartingHandPresenter @Inject constructor(
+    private val interactor: DecksInteractor,
+    private val logger: Logger
+) {
 
     lateinit var view: StartingHandView
     private var deckId: Long = 0
@@ -29,7 +33,7 @@ class StartingHandPresenter @Inject constructor(private val interactor: DecksInt
     }
 
     private fun loadDeck() {
-        disposable.add(interactor.loadDeck(deckId).subscribe {
+        disposable.add(interactor.loadDeck(deckId).subscribe({
             cards = mutableListOf()
             it.allCards()
                     .filter { !it.isSideboard }
@@ -40,7 +44,9 @@ class StartingHandPresenter @Inject constructor(private val interactor: DecksInt
                     }
             cards?.shuffle()
             newStartingHand()
-        })
+        }, {
+            logger.logNonFatal(it)
+        }))
     }
 
     fun repeat() {

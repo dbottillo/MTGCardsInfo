@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.ui.lifecounter
 import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor
 import com.dbottillo.mtgsearchfree.model.Player
 import com.dbottillo.mtgsearchfree.util.Logger
+import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject
 
 class LifeCounterPresenterImpl @Inject
@@ -17,6 +18,8 @@ constructor(
         logger.d("created")
     }
 
+    private var disposable: CompositeDisposable = CompositeDisposable()
+
     override fun init(view: LifeCounterView) {
         logger.d()
         playerView = view
@@ -24,27 +27,52 @@ constructor(
 
     override fun loadPlayers() {
         logger.d()
-        interactor.load().subscribe({ playersLoaded(it) }, { showError(it) })
+        disposable.add(interactor.load().subscribe({
+            playersLoaded(it)
+        }, {
+            showError(it)
+            logger.logNonFatal(it)
+        }))
     }
 
     override fun addPlayer() {
         logger.d()
-        interactor.addPlayer().subscribe({ playersLoaded(it) }, { showError(it) })
+        disposable.add(interactor.addPlayer().subscribe({
+            playersLoaded(it)
+        }, {
+            showError(it)
+            logger.logNonFatal(it)
+        }))
     }
 
     override fun editPlayer(player: Player) {
         logger.d()
-        interactor.editPlayer(player).subscribe({ playersLoaded(it) }, { showError(it) })
+        disposable.add(interactor.editPlayer(player).subscribe({
+            playersLoaded(it)
+        }, {
+            showError(it)
+            logger.logNonFatal(it)
+        }))
     }
 
     override fun editPlayers(players: List<Player>) {
         logger.d()
-        interactor.editPlayers(players).subscribe({ playersLoaded(it) }, { showError(it) })
+        disposable.add(interactor.editPlayers(players).subscribe({
+            playersLoaded(it)
+        }, {
+            showError(it)
+            logger.logNonFatal(it)
+        }))
     }
 
     override fun removePlayer(player: Player) {
         logger.d()
-        interactor.removePlayer(player).subscribe({ playersLoaded(it) }, { showError(it) })
+        disposable.add(interactor.removePlayer(player).subscribe({
+            playersLoaded(it)
+        }, {
+            showError(it)
+            logger.logNonFatal(it)
+        }))
     }
 
     fun playersLoaded(newPlayers: List<Player>) {
@@ -55,5 +83,9 @@ constructor(
     fun showError(throwable: Throwable) {
         logger.e(throwable)
         playerView.showError(throwable.localizedMessage)
+    }
+
+    override fun onDestroy() {
+        disposable.clear()
     }
 }
