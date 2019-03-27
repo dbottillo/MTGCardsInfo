@@ -129,8 +129,10 @@ class SearchActivityModule {
 @Module
 class ReleaseNoteActivityModule {
     @Provides
-    fun providesReleaseNotePresenter(interactor: ReleaseNoteInteractor,
-                                     logger: Logger): ReleaseNotePresenter {
+    fun providesReleaseNotePresenter(
+        interactor: ReleaseNoteInteractor,
+        logger: Logger
+    ): ReleaseNotePresenter {
         return ReleaseNotePresenter(interactor, logger)
     }
 }

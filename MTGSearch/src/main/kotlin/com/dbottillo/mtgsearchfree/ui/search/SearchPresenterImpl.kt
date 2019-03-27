@@ -30,10 +30,10 @@ class SearchPresenterImpl(
     }
 
     override fun loadSet() {
-        disposable.add(setsInteractor.load().subscribe ({
+        disposable.add(setsInteractor.load().subscribe({
             view.setLoaded(it)
         }, {
-           logger.logNonFatal(it)
+            logger.logNonFatal(it)
         }))
     }
 

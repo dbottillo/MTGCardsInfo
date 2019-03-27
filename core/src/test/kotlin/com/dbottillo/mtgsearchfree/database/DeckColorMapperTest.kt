@@ -85,7 +85,7 @@ class DeckColorMapperTest {
     @Test
     fun `should convert a list with multiple identity colors across elements`() {
         val result = underTest.convert(listOf(ColorMapperType.Identity("[W]"),
-            ColorMapperType.Identity( "[U]"),
+            ColorMapperType.Identity("[U]"),
             ColorMapperType.Identity("[R]"),
             ColorMapperType.Identity("[G]"),
             ColorMapperType.Identity("[B]")))
@@ -96,7 +96,7 @@ class DeckColorMapperTest {
     @Test
     fun `should convert a list with multiple display colors across elements`() {
         val result = underTest.convert(listOf(ColorMapperType.Display("W"),
-            ColorMapperType.Display( "U"),
+            ColorMapperType.Display("U"),
             ColorMapperType.Display("R"),
             ColorMapperType.Display("G"),
             ColorMapperType.Display("B")))
@@ -125,7 +125,7 @@ class DeckColorMapperTest {
     @Test
     fun `should convert a list with multiple display and identities colors across elements`() {
         val result = underTest.convert(listOf(ColorMapperType.Identity("[W,U]"),
-            ColorMapperType.Display( "U"),
+            ColorMapperType.Display("U"),
             ColorMapperType.Display("R"),
             ColorMapperType.Identity("[G,B]"),
             ColorMapperType.Display("B")))

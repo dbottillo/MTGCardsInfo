@@ -55,7 +55,7 @@ class DeckDataSourceTest {
         whenever(secondCardCursor.getInt(1)).thenReturn(2, 5, 6) // quantity
         whenever(secondCardCursor.getString(2)).thenReturn("[W]", "[W]", "[R,G]") // color identity
         val secondDeckColors = mock<List<Color>>()
-        whenever(deckColorMapper.convert(listOf(ColorMapperType.Identity("[W]"),ColorMapperType.Identity("[W]"), ColorMapperType.Identity("[R,G]")))).thenReturn(secondDeckColors)
+        whenever(deckColorMapper.convert(listOf(ColorMapperType.Identity("[W]"), ColorMapperType.Identity("[W]"), ColorMapperType.Identity("[R,G]")))).thenReturn(secondDeckColors)
         whenever(database.rawQuery("select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)", arrayOf("1"))).thenReturn(firstCardCursor)
         whenever(database.rawQuery("select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)", arrayOf("2"))).thenReturn(secondCardCursor)
         whenever(database.rawQuery("Select * from decks", null)).thenReturn(cursor)
@@ -84,7 +84,7 @@ class DeckDataSourceTest {
         verify(database).rawQuery("select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)", arrayOf("1"))
         verify(database).rawQuery("select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)", arrayOf("2"))
         verify(deckColorMapper).convert(listOf(ColorMapperType.Identity("[W]"), ColorMapperType.Identity("[U,B]")))
-        verify(deckColorMapper).convert(listOf(ColorMapperType.Identity("[W]"),ColorMapperType.Identity("[W]"), ColorMapperType.Identity("[R,G]")))
+        verify(deckColorMapper).convert(listOf(ColorMapperType.Identity("[W]"), ColorMapperType.Identity("[W]"), ColorMapperType.Identity("[R,G]")))
         verifyNoMore()
     }
 
@@ -112,7 +112,7 @@ class DeckDataSourceTest {
         whenever(secondCardCursor.getString(2)).thenReturn(null) // color identity
         whenever(secondCardCursor.getString(3)).thenReturn("W", "W", "R,G") // colors
         val secondDeckColors = mock<List<Color>>()
-        whenever(deckColorMapper.convert(listOf(ColorMapperType.Display("W"),ColorMapperType.Display("W"),ColorMapperType.Display("R,G")))).thenReturn(secondDeckColors)
+        whenever(deckColorMapper.convert(listOf(ColorMapperType.Display("W"), ColorMapperType.Display("W"), ColorMapperType.Display("R,G")))).thenReturn(secondDeckColors)
         whenever(database.rawQuery("select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)", arrayOf("1"))).thenReturn(firstCardCursor)
         whenever(database.rawQuery("select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)", arrayOf("2"))).thenReturn(secondCardCursor)
         whenever(database.rawQuery("Select * from decks", null)).thenReturn(cursor)
@@ -141,7 +141,7 @@ class DeckDataSourceTest {
         verify(database).rawQuery("select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)", arrayOf("1"))
         verify(database).rawQuery("select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)", arrayOf("2"))
         verify(deckColorMapper).convert(listOf(ColorMapperType.Display("W"), ColorMapperType.Display("U,B")))
-        verify(deckColorMapper).convert(listOf(ColorMapperType.Display("W"),ColorMapperType.Display("W"),ColorMapperType.Display("R,G")))
+        verify(deckColorMapper).convert(listOf(ColorMapperType.Display("W"), ColorMapperType.Display("W"), ColorMapperType.Display("R,G")))
         verifyNoMore()
     }
 

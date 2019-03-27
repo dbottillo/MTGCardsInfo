@@ -44,7 +44,6 @@ class SetsFragmentPresenterImpl(
                 loadSet()
             }
         }, {
-
         }))
     }
 
@@ -63,7 +62,6 @@ class SetsFragmentPresenterImpl(
                     view.hideLoading()
                 }
             }, {
-
             }))
         }
     }

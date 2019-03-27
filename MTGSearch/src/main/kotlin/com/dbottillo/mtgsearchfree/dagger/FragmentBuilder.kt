@@ -129,8 +129,10 @@ class AddToDeckFragmentModule {
 @Module
 class CardsConfiguratorFragmentModule {
     @Provides
-    fun providesCardsConfiguratorPresenter(interactor: CardFilterInteractor,
-                                           logger: Logger): CardsConfiguratorPresenter {
+    fun providesCardsConfiguratorPresenter(
+        interactor: CardFilterInteractor,
+        logger: Logger
+    ): CardsConfiguratorPresenter {
         return CardsConfiguratorPresenterImpl(interactor, logger)
     }
 }

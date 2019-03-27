@@ -27,7 +27,6 @@ class SetPickerPresenterImpl(
             currentSet = list[cardsPreferences.setPosition]
             view.showSets(list, list.indexOf(currentSet!!))
         }, {
-
         }))
     }
 
