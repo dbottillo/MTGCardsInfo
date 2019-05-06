@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.res.Resources
 import android.database.sqlite.SQLiteDatabase
 import android.os.AsyncTask
+import android.util.Log
 import android.widget.Toast
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.database.CardDataSource
@@ -87,11 +88,15 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
                     setJ.getString("name"))
             // for (int k=0; k<1; k++){
 
-            (0..(cards.length() - 1)).forEach { index ->
+            (0 until cards.length()).forEach { index ->
                 val cardJ = cards.getJSONObject(index)
                 // Log.e("MTG", "cardJ $cardJ")
 
-                val newRowId2 = db.insert(CardDataSource.TABLE, null, createContentValueFromJSON(cardJ, set))
+                if (!cardJ.has("isAlternative") || !cardJ.getBoolean("isAlternative")) {
+                    val newRowId2 = db.insert(CardDataSource.TABLE, null, createContentValueFromJSON(cardJ, set))
+                } else {
+                    Log.e("MTG", "${cardJ.getString("name")} skipped in ${set.name} because is alternative")
+                }
                 // Log.e("MTG", "row id card $newRowId2")
                 // result.add(MTGCard.createCardFromJson(i, cardJ));
             }

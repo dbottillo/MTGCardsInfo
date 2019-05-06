@@ -42,7 +42,9 @@ fun readSingleSetFile(set: MTGSet): ArrayList<MTGCard> {
 
     for (k in 0 until cardsJ.length()) {
         val cardJ = cardsJ.getJSONObject(k)
-        cards.add(cardFromJSON(cardJ, set))
+        if (!cardJ.has("isAlternative") || !cardJ.getBoolean("isAlternative")) {
+            cards.add(cardFromJSON(cardJ, set))
+        }
     }
 
     return cards

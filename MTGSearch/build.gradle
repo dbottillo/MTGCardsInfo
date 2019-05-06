@@ -1,6 +1,6 @@
 buildscript {
-    ext.number_of_set = 183
-    ext.name_fifth_mtg_card = "Bring to Trial"
+    ext.number_of_set = 184
+    ext.name_fifth_mtg_card = "Angrath's Rampage"
 }
 
 apply plugin: 'com.android.library'

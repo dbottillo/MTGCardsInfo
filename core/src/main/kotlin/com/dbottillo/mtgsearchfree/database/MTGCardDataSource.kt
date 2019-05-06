@@ -16,18 +16,19 @@ class MTGCardDataSource(
 
     @Suppress("MagicNumber")
     enum class STANDARD(var setId: Int, var set: String) {
-        RAVNICA_ALLEGIANCE(1, "Ravnica Allegiance"),
+        WAR_OF_THE_SPARK(1, "War of the Spark"),
+        RAVNICA_ALLEGIANCE(2, "Ravnica Allegiance"),
         GUILDS_OF_RAVNICA(3, "Guilds of Ravnica"),
-        CORE_19(5, "Core Set 2019"),
-        DOMINARIA(10, "Dominaria"),
-        RIVALS_OF_IXALAN(12, "Rivals of Ixalan"),
-        IXALAN(17, "Ixalan");
+        CORE_19(6, "Core Set 2019"),
+        DOMINARIA(11, "Dominaria"),
+        RIVALS_OF_IXALAN(13, "Rivals of Ixalan"),
+        IXALAN(18, "Ixalan");
 
         companion object {
 
             val setIds: Array<String>
                 get() {
-                    return STANDARD.values().map { it.setId.toString() }.toTypedArray()
+                    return values().map { it.setId.toString() }.toTypedArray()
                 }
         }
     }
