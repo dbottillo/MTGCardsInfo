@@ -8,4 +8,4 @@ bot = telegram.Bot(token=key)
 # print(bot.get_me())
 chatId = '-225997243'  # production
 # chatId = '-177269196'
-bot.send_message(chat_id=chatId, text="A new update is available v3.7.0: \n-Ravnica Allegiance")
+bot.send_message(chat_id=chatId, text="A new update is available v3.9.1: \n-War of the Spark")

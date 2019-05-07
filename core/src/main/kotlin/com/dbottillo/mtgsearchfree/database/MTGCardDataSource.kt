@@ -18,7 +18,7 @@ class MTGCardDataSource(
     enum class STANDARD(var setId: Int, var set: String) {
         WAR_OF_THE_SPARK(1, "War of the Spark"),
         RAVNICA_ALLEGIANCE(2, "Ravnica Allegiance"),
-        GUILDS_OF_RAVNICA(3, "Guilds of Ravnica"),
+        GUILDS_OF_RAVNICA(4, "Guilds of Ravnica"),
         CORE_19(6, "Core Set 2019"),
         DOMINARIA(11, "Dominaria"),
         RIVALS_OF_IXALAN(13, "Rivals of Ixalan"),
