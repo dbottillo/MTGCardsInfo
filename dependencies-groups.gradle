@@ -9,14 +9,16 @@ ext {
         implementation deps.google.androidx.core
         implementation deps.kotlin.core
         implementation deps.kotlin.reflect
-        implementation deps.dagger.core
-        implementation deps.dagger.androidSupport
-        kapt deps.dagger.compiler
-        kapt deps.dagger.processor
         implementation deps.rxjava.core
         implementation deps.rxjava.android
         implementation deps.rxjava.android
         implementation deps.gson
+    }
+    di = Group {
+        implementation deps.dagger.core
+        implementation deps.dagger.androidSupport
+        kapt deps.dagger.compiler
+        kapt deps.dagger.processor
     }
     ui = Group {
         implementation deps.google.androidx.cardview

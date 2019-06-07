@@ -22,17 +22,13 @@ android {
             buildConfigField 'String', 'TCG_CLIENT_SECRET', "\"${tcgProperties.get('CLIENT_SECRET')}\""
         }
     }
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-        test.java.srcDirs += 'src/test/kotlin'
-        test.resources.srcDirs += ['src/test/resources']
-    }
 }
 
 dependencies {
-    api project(":core")
+    implementation project(":core")
 
     core()
+    di()
     monitoring()
     network()
 

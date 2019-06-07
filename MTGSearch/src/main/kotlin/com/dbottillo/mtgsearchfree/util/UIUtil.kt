@@ -11,10 +11,8 @@ import androidx.core.app.TaskStackBuilder
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.appcompat.app.AppCompatActivity
-import android.text.Html
 import android.text.Spannable
 import android.text.SpannableStringBuilder
-import android.text.Spanned
 import android.text.style.StyleSpan
 import android.util.TypedValue
 import android.view.MenuItem
@@ -65,12 +63,6 @@ fun TextView.setBoldAndItalic(input: String) {
     text = spannable
 }
 
-fun SpannableStringBuilder.addBold(input: String) {
-    val start = length
-    append(input)
-    setSpan(StyleSpan(Typeface.BOLD), start, start + input.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-}
-
 fun SpannableStringBuilder.newLine(total: Int = 1) {
     (1..total).forEach {
         append("\n")
@@ -98,15 +90,6 @@ fun <T : View> Activity.bind(@IdRes idRes: Int): Lazy<T> {
 }
 
 private fun <T> unsafeLazy(initializer: () -> T) = lazy(LazyThreadSafetyMode.NONE, initializer)
-
-@Suppress("DEPRECATION")
-fun String.toHtml(): Spanned {
-    return if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-        Html.fromHtml(this, Html.FROM_HTML_MODE_LEGACY)
-    } else {
-        Html.fromHtml(this)
-    }
-}
 
 fun View.show() {
     this.visibility = View.VISIBLE

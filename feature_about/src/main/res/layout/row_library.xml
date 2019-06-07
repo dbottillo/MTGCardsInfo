@@ -21,8 +21,8 @@
         android:id="@+id/library_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/base_margin"
-        android:layout_toRightOf="@+id/library_icon"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_toEndOf="@+id/library_icon"
         android:textSize="14sp"
         tools:text="Picasso" />
 
@@ -31,8 +31,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/library_name"
-        android:layout_marginLeft="@dimen/base_margin"
-        android:layout_toRightOf="@+id/library_icon"
+        android:layout_marginStart="@dimen/base_margin"
+        android:layout_toEndOf="@+id/library_icon"
         android:textSize="12sp"
         tools:text="Square" />
 
@@ -40,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="5dp"
         android:background="@color/color_primary_light" />
 

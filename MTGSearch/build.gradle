@@ -17,12 +17,6 @@ android {
             buildConfigField 'String', 'MTG_CARD_FIFTH_NAME', "\"${name_fifth_mtg_card}\""
         }
     }
-
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-        test.java.srcDirs += 'src/test/kotlin'
-        test.resources.srcDirs += ['src/test/resources']
-    }
 }
 
 checkstyle {
@@ -30,9 +24,11 @@ checkstyle {
 }
 
 dependencies {
-    api project(":network")
+    implementation project(":network")
+    implementation project(":core")
 
     core()
+    di()
     ui()
     monitoring()
     image()

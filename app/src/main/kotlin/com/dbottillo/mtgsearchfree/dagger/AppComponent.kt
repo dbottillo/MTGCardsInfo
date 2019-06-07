@@ -12,12 +12,14 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [
     AndroidSupportInjectionModule::class,
+    AppModule::class,
     CoreModule::class,
     NetworkModule::class,
     FragmentBuilder::class,
     InteractorsModule::class,
     DataModule::class,
-    ActivityBuilder::class])
+    ActivityBuilder::class,
+    AboutModule::class])
 interface AppComponent : AndroidInjector<DaggerApplication> {
 
     fun inject(app: MTGApp)

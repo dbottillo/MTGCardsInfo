@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.ui.about
+package com.dbottillo.mtgsearchfree.about
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -13,14 +13,13 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import com.dbottillo.mtgsearchfree.Constants
-import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.dbottillo.mtgsearchfree.util.addBold
-import com.dbottillo.mtgsearchfree.util.bind
 import com.dbottillo.mtgsearchfree.util.toHtml
 import dagger.android.AndroidInjection
+import kotlinx.android.synthetic.main.activity_about.*
 import java.util.Calendar
 
 class AboutActivity : BasicActivity(), View.OnTouchListener {
@@ -31,7 +30,6 @@ class AboutActivity : BasicActivity(), View.OnTouchListener {
             DevLibrary("RxJava", "ReactiveX", "https://github.com/ReactiveX/RxJava"))
 
     private lateinit var versionName: String
-    private val versionText: TextView by bind(R.id.about_version)
     private var firstTap: Long = 0
 
     @SuppressLint("ClickableViewAccessibility")
@@ -43,7 +41,7 @@ class AboutActivity : BasicActivity(), View.OnTouchListener {
 
         try {
             versionName = packageManager.getPackageInfo(packageName, 0).versionName
-            versionText.text = SpannableStringBuilder().apply {
+            about_version.text = SpannableStringBuilder().apply {
                 addBold(getString(R.string.version))
                 append(" ")
                 append(versionName)
@@ -52,7 +50,7 @@ class AboutActivity : BasicActivity(), View.OnTouchListener {
             LOG.e(e)
         }
 
-        versionText.setOnTouchListener(this)
+        about_version.setOnTouchListener(this)
         findViewById<View>(R.id.send_feedback).setOnClickListener {
             sendFeedback()
         }
@@ -113,7 +111,7 @@ class AboutActivity : BasicActivity(), View.OnTouchListener {
                 val diff = Calendar.getInstance().timeInMillis - firstTap
                 val seconds = diff / 1000
                 if (seconds < 5) {
-                    versionText.setOnTouchListener(null)
+                    about_version.setOnTouchListener(null)
                     generalData.setDebug()
                     Toast.makeText(this, R.string.debug_mode_active, Toast.LENGTH_LONG).show()
                 }
@@ -130,4 +128,4 @@ class AboutActivity : BasicActivity(), View.OnTouchListener {
     }
 }
 
-class DevLibrary(val name: String, val author: String, val link: String)
+internal class DevLibrary(val name: String, val author: String, val link: String)

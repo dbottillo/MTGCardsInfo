@@ -32,8 +32,6 @@
                 android:value=".ui.HomeActivity" />
         </activity>
 
-        <activity android:name=".ui.about.AboutActivity"/>
-
         <activity android:name=".ui.about.ReleaseNoteActivity"/>
 
         <activity android:name=".ui.search.SearchActivity"/>
@@ -45,8 +43,6 @@
         <meta-data
             android:name="com.crashlytics.ApiKey"
             android:value="f2c7b2dc347786aa1e01b4ca437f2f8dd05d59d8"/>
-
-        <service android:name=".model.network.NetworkIntentService"/>
 
         <service
             android:name=".util.CardMigratorService" android:exported="false"/>

@@ -41,13 +41,15 @@ android {
             versionNameSuffix "_dev"
             signingConfig signingConfigs.debugConfig
             debuggable true
-            testCoverageEnabled true
+            testCoverageEnabled false
+            ext.alwaysUpdateBuildId = false
         }
         release {
             debuggable false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
+            testCoverageEnabled false
         }
     }
 
@@ -69,9 +71,13 @@ android {
 }
 
 dependencies {
-    api project(':MTGSearch')
+    implementation project(':MTGSearch')
+    implementation project(':feature_about')
+    implementation project(':core')
+    implementation project(':network')
 
     core()
+    di()
     image()
     ui()
     monitoring()
