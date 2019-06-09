@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.interactors
+package com.dbottillo.mtgsearchfree.interactor
 
 import io.reactivex.Scheduler
 

@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.interactors
 
 import android.net.Uri
+import com.dbottillo.mtgsearchfree.interactor.SchedulerProvider
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard

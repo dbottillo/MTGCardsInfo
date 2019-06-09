@@ -1,6 +1,5 @@
-package com.dbottillo.mtgsearchfree.ui.about
+package com.dbottillo.mtgsearchfree.releasenote
 
-import com.dbottillo.mtgsearchfree.interactors.ReleaseNoteInteractor
 import com.dbottillo.mtgsearchfree.util.Logger
 import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions

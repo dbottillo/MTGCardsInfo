@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.interactors
 
 import android.graphics.Bitmap
 import android.net.Uri
+import com.dbottillo.mtgsearchfree.interactor.SchedulerProvider
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet

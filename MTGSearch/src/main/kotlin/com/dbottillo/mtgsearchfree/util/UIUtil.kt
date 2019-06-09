@@ -91,18 +91,6 @@ fun <T : View> Activity.bind(@IdRes idRes: Int): Lazy<T> {
 
 private fun <T> unsafeLazy(initializer: () -> T) = lazy(LazyThreadSafetyMode.NONE, initializer)
 
-fun View.show() {
-    this.visibility = View.VISIBLE
-}
-
-fun View.hide() {
-    this.visibility = View.INVISIBLE
-}
-
-fun View.gone() {
-    this.visibility = View.GONE
-}
-
 fun MenuItem.setTintColor(context: Context, color: Int) {
     val wrapDrawable = DrawableCompat.wrap(icon)
     DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(context, color))

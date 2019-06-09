@@ -1,2 +1,2 @@
 include ':MTGSearch', ':core', ':app', ':network'
-include ":feature_about"
+include ":feature_about", ":feature_release_note"

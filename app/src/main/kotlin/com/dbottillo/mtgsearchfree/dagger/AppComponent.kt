@@ -19,7 +19,8 @@ import javax.inject.Singleton
     InteractorsModule::class,
     DataModule::class,
     ActivityBuilder::class,
-    AboutModule::class])
+    AboutModule::class,
+    ReleaseNoteModule::class])
 interface AppComponent : AndroidInjector<DaggerApplication> {
 
     fun inject(app: MTGApp)

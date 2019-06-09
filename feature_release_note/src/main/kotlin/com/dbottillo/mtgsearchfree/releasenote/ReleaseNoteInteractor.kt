@@ -1,15 +1,14 @@
-package com.dbottillo.mtgsearchfree.interactors
+package com.dbottillo.mtgsearchfree.releasenote
 
-import com.dbottillo.mtgsearchfree.storage.ReleaseNoteStorage
-import com.dbottillo.mtgsearchfree.ui.about.ReleaseNoteItem
+import com.dbottillo.mtgsearchfree.interactor.SchedulerProvider
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Single
 import javax.inject.Inject
 
 class ReleaseNoteInteractor @Inject constructor(
-    val repo: ReleaseNoteStorage,
-    val schedulerProvider: SchedulerProvider,
-    val logger: Logger
+    private val repo: ReleaseNoteStorage,
+    private val schedulerProvider: SchedulerProvider,
+    private val logger: Logger
 ) {
 
     init {

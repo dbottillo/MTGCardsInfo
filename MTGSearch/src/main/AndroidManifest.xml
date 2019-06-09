@@ -32,8 +32,6 @@
                 android:value=".ui.HomeActivity" />
         </activity>
 
-        <activity android:name=".ui.about.ReleaseNoteActivity"/>
-
         <activity android:name=".ui.search.SearchActivity"/>
 
         <activity android:name=".ui.decks.deck.DeckActivity"/>

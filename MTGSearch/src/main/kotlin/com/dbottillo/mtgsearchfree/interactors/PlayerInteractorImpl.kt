@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.interactors
 
+import com.dbottillo.mtgsearchfree.interactor.SchedulerProvider
 import com.dbottillo.mtgsearchfree.model.Player
 import com.dbottillo.mtgsearchfree.storage.PlayersStorage
 import com.dbottillo.mtgsearchfree.util.Logger

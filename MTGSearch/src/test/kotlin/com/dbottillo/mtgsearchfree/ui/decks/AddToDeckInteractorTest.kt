@@ -1,6 +1,6 @@
 package com.dbottillo.mtgsearchfree.ui.decks
 
-import com.dbottillo.mtgsearchfree.interactors.SchedulerProvider
+import com.dbottillo.mtgsearchfree.interactor.SchedulerProvider
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.storage.CardsStorage

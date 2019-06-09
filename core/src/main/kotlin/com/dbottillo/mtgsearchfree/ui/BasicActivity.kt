@@ -12,6 +12,7 @@ import androidx.appcompat.widget.Toolbar
 import android.util.TypedValue
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import com.dbottillo.mtgsearchfree.Navigator
 import com.dbottillo.mtgsearchfree.core.BuildConfig
 import com.dbottillo.mtgsearchfree.core.R
 import com.dbottillo.mtgsearchfree.storage.GeneralData
@@ -28,8 +29,8 @@ abstract class BasicActivity : AppCompatActivity() {
     protected lateinit var toolbar: Toolbar
     protected var isPortrait = false
 
-    @Inject
-    lateinit var generalData: GeneralData
+    @Inject lateinit var generalData: GeneralData
+    @Inject lateinit var navigator: Navigator
 
     val mtgApp: Application
         get() = application

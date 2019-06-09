@@ -2,7 +2,7 @@ package com.dbottillo.mtgsearchfree.ui.decks.addToDeck
 
 import android.os.Bundle
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
-import com.dbottillo.mtgsearchfree.interactors.SchedulerProvider
+import com.dbottillo.mtgsearchfree.interactor.SchedulerProvider
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.storage.CardsStorage

@@ -1,6 +1,5 @@
 package com.dbottillo.mtgsearchfree.ui
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
 import androidx.appcompat.widget.Toolbar
@@ -15,7 +14,6 @@ import com.dbottillo.mtgsearchfree.model.helper.AddFavouritesAsyncTask
 import com.dbottillo.mtgsearchfree.model.helper.CreateDecksAsyncTask
 import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper
-import com.dbottillo.mtgsearchfree.ui.about.ReleaseNoteActivity
 import com.dbottillo.mtgsearchfree.util.copyDbFromSdCard
 import javax.inject.Inject
 
@@ -67,7 +65,7 @@ abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListen
         when (item?.itemId) {
             R.id.more_rate -> dbActivity.openRateTheApp()
             R.id.more_about -> navigator.openAboutScreen(activity!!)
-            R.id.more_release_note -> startActivity(Intent(activity, ReleaseNoteActivity::class.java))
+            R.id.more_release_note -> navigator.openReleaseNoteScreen(activity!!)
             R.id.action_create_db -> (activity as HomeActivity).recreateDb()
             R.id.action_fill_decks -> CreateDecksAsyncTask(app.applicationContext).execute()
             R.id.action_create_fav -> AddFavouritesAsyncTask(app.applicationContext).execute()

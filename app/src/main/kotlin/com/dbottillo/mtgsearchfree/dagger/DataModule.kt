@@ -9,6 +9,7 @@ import com.dbottillo.mtgsearchfree.database.FavouritesDataSource
 import com.dbottillo.mtgsearchfree.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.database.PlayerDataSource
 import com.dbottillo.mtgsearchfree.database.SetDataSource
+import com.dbottillo.mtgsearchfree.releasenote.ReleaseNoteStorage
 import com.dbottillo.mtgsearchfree.storage.CardsHelper
 import com.dbottillo.mtgsearchfree.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.storage.CardsPreferencesImpl
@@ -20,13 +21,11 @@ import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.storage.GeneralPreferences
 import com.dbottillo.mtgsearchfree.storage.PlayersStorage
 import com.dbottillo.mtgsearchfree.storage.PlayersStorageImpl
-import com.dbottillo.mtgsearchfree.storage.ReleaseNoteStorage
 import com.dbottillo.mtgsearchfree.storage.SavedCardsStorage
 import com.dbottillo.mtgsearchfree.storage.SavedCardsStorageImpl
 import com.dbottillo.mtgsearchfree.util.AppInfo
 import com.dbottillo.mtgsearchfree.util.FileManager
 import com.dbottillo.mtgsearchfree.util.FileUtil
-import com.dbottillo.mtgsearchfree.util.GsonUtil
 import com.dbottillo.mtgsearchfree.util.Logger
 import com.google.gson.Gson
 import dagger.Module
@@ -135,19 +134,13 @@ open class DataModule {
 
     @Provides
     @Singleton
-    fun providesGsonUtil(gson: Gson): GsonUtil {
-        return GsonUtil(gson)
-    }
-
-    @Provides
-    @Singleton
     fun provideCardsHelper(): CardsHelper {
         return CardsHelper()
     }
 
     @Provides
     @Singleton
-    fun provideReleaseNoteStorage(fileManager: FileManager, gsonUtil: GsonUtil): ReleaseNoteStorage {
-        return ReleaseNoteStorage(fileManager, gsonUtil)
+    fun provideReleaseNoteStorage(fileManager: FileManager, gson: Gson): ReleaseNoteStorage {
+        return ReleaseNoteStorage(fileManager, gson)
     }
 }

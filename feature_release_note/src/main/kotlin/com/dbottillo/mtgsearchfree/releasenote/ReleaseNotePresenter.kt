@@ -1,12 +1,11 @@
-package com.dbottillo.mtgsearchfree.ui.about
+package com.dbottillo.mtgsearchfree.releasenote
 
-import com.dbottillo.mtgsearchfree.interactors.ReleaseNoteInteractor
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.disposables.CompositeDisposable
 
 class ReleaseNotePresenter constructor(
-    val interactor: ReleaseNoteInteractor,
-    val logger: Logger
+    private val interactor: ReleaseNoteInteractor,
+    private val logger: Logger
 ) {
 
     lateinit var view: ReleaseNoteView

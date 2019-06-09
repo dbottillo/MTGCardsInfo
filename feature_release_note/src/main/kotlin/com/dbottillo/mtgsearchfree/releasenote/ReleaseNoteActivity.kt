@@ -1,16 +1,15 @@
-package com.dbottillo.mtgsearchfree.ui.about
+package com.dbottillo.mtgsearchfree.releasenote
 
 import android.graphics.Rect
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.appcompat.widget.Toolbar
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.dbottillo.mtgsearchfree.R
+import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.util.hide
 import com.dbottillo.mtgsearchfree.util.show
@@ -76,7 +75,7 @@ class ReleaseNoteActivity : BasicActivity(), ReleaseNoteView {
     }
 }
 
-class ReleaseNoteAdapter(val items: List<ReleaseNoteItem>) : RecyclerView.Adapter<ReleaseNoteHolder>() {
+internal class ReleaseNoteAdapter(val items: List<ReleaseNoteItem>) : RecyclerView.Adapter<ReleaseNoteHolder>() {
     override fun onBindViewHolder(holder: ReleaseNoteHolder, position: Int) {
         holder.title.text = items[position].title
         holder.text.text = items[position].lines.joinToString(separator = "\n") { "- $it" }
@@ -89,12 +88,12 @@ class ReleaseNoteAdapter(val items: List<ReleaseNoteItem>) : RecyclerView.Adapte
     override fun getItemCount() = items.size
 }
 
-class ReleaseNoteHolder(view: View) : RecyclerView.ViewHolder(view) {
+internal class ReleaseNoteHolder(view: View) : RecyclerView.ViewHolder(view) {
     var title: TextView = view.findViewById(R.id.release_note_title)
     var text: TextView = view.findViewById(R.id.release_note_text)
 }
 
-class ReleaseNoteFooter(val height: Int) : RecyclerView.ItemDecoration() {
+internal class ReleaseNoteFooter(val height: Int) : RecyclerView.ItemDecoration() {
 
     override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
         if (parent.getChildAdapterPosition(view) == parent.adapter!!.itemCount - 1) {

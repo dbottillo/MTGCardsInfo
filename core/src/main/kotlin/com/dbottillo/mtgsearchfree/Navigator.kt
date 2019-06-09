@@ -4,4 +4,5 @@ import android.app.Activity
 
 interface Navigator {
     fun openAboutScreen(origin: Activity)
+    fun openReleaseNoteScreen(origin: Activity)
 }

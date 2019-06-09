@@ -1,8 +1,7 @@
-package com.dbottillo.mtgsearchfree.interactors
+package com.dbottillo.mtgsearchfree.releasenote
 
+import com.dbottillo.mtgsearchfree.interactor.SchedulerProvider
 import com.dbottillo.mtgsearchfree.model.Deck
-import com.dbottillo.mtgsearchfree.storage.ReleaseNoteStorage
-import com.dbottillo.mtgsearchfree.ui.about.ReleaseNoteItem
 import com.dbottillo.mtgsearchfree.util.Logger
 import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions

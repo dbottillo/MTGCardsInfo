@@ -3,15 +3,12 @@ package com.dbottillo.mtgsearchfree.dagger
 import com.dbottillo.mtgsearchfree.ActivityScope
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
-import com.dbottillo.mtgsearchfree.interactors.ReleaseNoteInteractor
 import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor
 import com.dbottillo.mtgsearchfree.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.ui.BasicActivityModule
-import com.dbottillo.mtgsearchfree.ui.about.ReleaseNoteActivity
-import com.dbottillo.mtgsearchfree.ui.about.ReleaseNotePresenter
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivityPresenter
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivityPresenterImpl
@@ -54,10 +51,6 @@ abstract class ActivityBuilder {
     @ActivityScope
     @ContributesAndroidInjector(modules = [(SearchActivityModule::class)])
     abstract fun contributeSearchActivityInjector(): SearchActivity
-
-    @ActivityScope
-    @ContributesAndroidInjector(modules = [(ReleaseNoteActivityModule::class)])
-    abstract fun contributeReleaseNoteActivityInjector(): ReleaseNoteActivity
 
     @ActivityScope
     @ContributesAndroidInjector(modules = [(SetPickerActivityModule::class)])
@@ -118,17 +111,6 @@ class SearchActivityModule {
         logger: Logger
     ): SearchPresenter {
         return SearchPresenterImpl(setsInteratcor, cardsInteractor, generalData, logger)
-    }
-}
-
-@Module
-class ReleaseNoteActivityModule {
-    @Provides
-    fun providesReleaseNotePresenter(
-        interactor: ReleaseNoteInteractor,
-        logger: Logger
-    ): ReleaseNotePresenter {
-        return ReleaseNotePresenter(interactor, logger)
     }
 }
 

@@ -1,23 +1,22 @@
-package com.dbottillo.mtgsearchfree.storage
+package com.dbottillo.mtgsearchfree.releasenote
 
 import android.content.res.Resources
-import com.dbottillo.mtgsearchfree.R
-import com.dbottillo.mtgsearchfree.ui.about.ReleaseNoteItem
 import com.dbottillo.mtgsearchfree.util.FileManager
-import com.dbottillo.mtgsearchfree.util.GsonUtil
+import com.google.gson.Gson
 import com.google.gson.JsonSyntaxException
+import com.google.gson.reflect.TypeToken
 import io.reactivex.Single
 import javax.inject.Inject
 
 class ReleaseNoteStorage @Inject constructor(
     private val fileManager: FileManager,
-    private val gsonUtil: GsonUtil
+    private val gson: Gson
 ) {
 
     fun load(): Single<List<ReleaseNoteItem>> {
         return try {
             val input = fileManager.loadRaw(R.raw.release_note)
-            Single.just(gsonUtil.toListReleaseNote(input))
+            Single.just(toListReleaseNote(input))
         } catch (e: Exception) {
             val throwable = when (e) {
                 is Resources.NotFoundException -> Throwable("impossible to load release note raw file")
@@ -26,5 +25,9 @@ class ReleaseNoteStorage @Inject constructor(
             }
             Single.error(throwable)
         }
+    }
+
+    private fun toListReleaseNote(input: String): List<ReleaseNoteItem> {
+        return gson.fromJson(input, object : TypeToken<List<ReleaseNoteItem>>() {}.type)
     }
 }
