@@ -25,18 +25,12 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
 
     private lateinit var lifeCounterList: RecyclerView
 
-    @Inject
-    internal lateinit var lifeCounterPresenter: LifeCounterPresenter
+    @Inject lateinit var lifeCounterPresenter: LifeCounterPresenter
+    @Inject lateinit var cardsPreferences: CardsPreferences
+    @Inject lateinit var dialogUtil: DialogUtil
 
-    @Inject
-    internal lateinit var cardsPreferences: CardsPreferences
-
-    @Inject
-    lateinit var dialogUtil: DialogUtil
-
-    internal lateinit var adapter: LifeCounterAdapter
-    internal var players: MutableList<Player> = mutableListOf()
-
+    private lateinit var adapter: LifeCounterAdapter
+    private var players: MutableList<Player> = mutableListOf()
     private var diceShowed: Boolean = false
 
     override fun onAttach(context: Context) {
@@ -85,9 +79,9 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
         return "/life_counter"
     }
 
-    override fun getScrollViewId(): Int {
-        return R.id.life_counter_list
-    }
+    override fun getScrollViewId() = R.id.life_counter_list
+    override fun getToolbarId() = R.id.toolbar
+    override fun getToolbarTitleId() = R.id.toolbar_title
 
     override fun getTitle(): String {
         return resources.getString(R.string.action_life_counter)

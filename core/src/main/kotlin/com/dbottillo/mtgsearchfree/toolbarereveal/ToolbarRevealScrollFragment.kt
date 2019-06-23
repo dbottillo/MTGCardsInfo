@@ -2,8 +2,7 @@ package com.dbottillo.mtgsearchfree.toolbarereveal
 
 import android.os.Bundle
 import android.view.View
-
-import com.dbottillo.mtgsearchfree.R
+import com.dbottillo.mtgsearchfree.core.R
 import com.dbottillo.mtgsearchfree.ui.BasicFragment
 
 /**
@@ -19,10 +18,13 @@ abstract class ToolbarRevealScrollFragment : BasicFragment() {
      * @return id of the scrollview
      */
     abstract val scrollViewId: Int
+    abstract val toolbarId: Int
+    abstract val toolbarTitleId: Int
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         toolbarRevealScrollHelper = ToolbarRevealScrollHelper(this, scrollViewId,
+            toolbarId, toolbarTitleId,
                 R.color.white, heightToolbar, isStatusBarIncludedInReveal())
     }
 

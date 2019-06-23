@@ -34,8 +34,7 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
     lateinit var mtgCardsView: MTGCardsView
     lateinit var emptyContainer: LinearLayout
 
-    @Inject
-    lateinit var savedCardsPresenter: SavedCardsPresenter
+    @Inject lateinit var savedCardsPresenter: SavedCardsPresenter
 
     override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
@@ -69,9 +68,9 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
         savedCardsPresenter.onPause()
     }
 
-    override fun getScrollViewId(): Int {
-        return R.id.card_list
-    }
+    override fun getScrollViewId() = R.id.card_list
+    override fun getToolbarId() = R.id.toolbar
+    override fun getToolbarTitleId() = R.id.toolbar_title
 
     override fun getPageTrack(): String {
         return "/saved"

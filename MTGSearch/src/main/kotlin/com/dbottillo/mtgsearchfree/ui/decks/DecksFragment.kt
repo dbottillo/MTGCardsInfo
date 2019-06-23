@@ -28,11 +28,8 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.Perm
 
     private lateinit var decksList: RecyclerView
 
-    @Inject
-    lateinit var presenter: DecksFragmentPresenter
-
-    @Inject
-    lateinit var dialogUtil: DialogUtil
+    @Inject lateinit var presenter: DecksFragmentPresenter
+    @Inject lateinit var dialogUtil: DialogUtil
 
     internal lateinit var adapter: DecksAdapter
     internal var decks: MutableList<Deck> = mutableListOf()
@@ -90,9 +87,9 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.Perm
         return getString(R.string.action_decks)
     }
 
-    override fun getScrollViewId(): Int {
-        return R.id.decks_list
-    }
+    override fun getScrollViewId() = R.id.decks_list
+    override fun getToolbarId() = R.id.toolbar
+    override fun getToolbarTitleId() = R.id.toolbar_title
 
     override fun getPageTrack(): String {
         return "/decks"

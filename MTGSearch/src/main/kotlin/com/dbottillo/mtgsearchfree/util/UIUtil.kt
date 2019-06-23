@@ -23,18 +23,6 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import com.dbottillo.mtgsearchfree.ui.views.RATIO_CARD
 
-fun Context.dpToPx(value: Int): Int {
-    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value.toFloat(), this.resources.displayMetrics).toInt()
-}
-
-fun View.setHeight(height: Int) {
-    val lp = this.layoutParams
-    if (lp.height != height) {
-        lp.height = height
-        this.layoutParams = lp
-    }
-}
-
 fun View.setMarginTop(value: Int) {
     val lp = this.layoutParams as ViewGroup.MarginLayoutParams
     if (lp.topMargin != value) {
@@ -95,16 +83,6 @@ fun MenuItem.setTintColor(context: Context, color: Int) {
     val wrapDrawable = DrawableCompat.wrap(icon)
     DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(context, color))
     icon = wrapDrawable
-}
-
-fun Activity?.setLightStatusBar() {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-        this?.window?.decorView?.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-    }
-}
-
-fun Activity?.setDarkStatusBar() {
-    this?.window?.decorView?.systemUiVisibility = 0
 }
 
 fun AppCompatActivity.show(tag: String, fragment: DialogFragment) {

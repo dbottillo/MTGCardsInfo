@@ -28,8 +28,7 @@ import javax.inject.Inject
 
 class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
 
-    @Inject
-    lateinit var presenter: SetsFragmentPresenter
+    @Inject lateinit var presenter: SetsFragmentPresenter
 
     private lateinit var mtgCardsView: MTGCardsView
     private lateinit var loader: MTGLoader
@@ -70,9 +69,9 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
         return "/sets"
     }
 
-    override fun getScrollViewId(): Int {
-        return R.id.card_list
-    }
+    override fun getScrollViewId() = R.id.card_list
+    override fun getToolbarId() = R.id.toolbar
+    override fun getToolbarTitleId() = R.id.toolbar_title
 
     override fun getTitle(): String {
         return presenter.set()?.name ?: ""

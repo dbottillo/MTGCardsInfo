@@ -11,7 +11,7 @@ import android.view.ViewTreeObserver
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ScrollView
-import com.dbottillo.mtgsearchfree.R
+import com.dbottillo.mtgsearchfree.core.R
 import com.dbottillo.mtgsearchfree.ui.BasicFragment
 import com.dbottillo.mtgsearchfree.util.AnimationUtil
 import com.dbottillo.mtgsearchfree.util.dpToPx
@@ -27,6 +27,8 @@ import java.lang.ref.WeakReference
 class ToolbarRevealScrollHelper @JvmOverloads constructor(
     baseFragment: BasicFragment,
     private val scrollviewID: Int,
+    private val toolbarId: Int,
+    private val toolbarTitleId: Int,
     private val backgroundColor: Int,
     private val heightToolbar: Int,
     private val statusBarIncluded: Boolean,
@@ -47,7 +49,7 @@ class ToolbarRevealScrollHelper @JvmOverloads constructor(
     private var maximumScroll: Int = 0
 
     private val fragment: WeakReference<BasicFragment> = WeakReference(baseFragment)
-    private val context: WeakReference<Context> = WeakReference<Context>(baseFragment.activity)
+    private val context: WeakReference<Context> = WeakReference(baseFragment.requireContext())
     private var toolbarColor: Int = 0
     private var statusBarColor: Int = 0
 
@@ -71,7 +73,7 @@ class ToolbarRevealScrollHelper @JvmOverloads constructor(
         if (instance != null) {
 
             mViewGroup = view.findViewById(scrollviewID)
-            instance.setupToolbar(view, R.id.toolbar, R.id.toolbar_title)
+            instance.setupToolbar(view, toolbarId, toolbarTitleId)
             maximumScroll = heightToolbar + view.context.dpToPx(OFFSET_MAXIMUM_SCROLL)
             setupTitleAnimation(instance, view.context)
 

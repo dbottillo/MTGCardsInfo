@@ -9,7 +9,7 @@ import android.view.View
 
 object AnimationUtil {
 
-    private val DEFAULT_DURATION = 200
+    private const val DEFAULT_DURATION = 200
 
     fun animateHeight(view: View, target: Int): ValueAnimator? {
         if (view.height == target) {
@@ -17,8 +17,7 @@ object AnimationUtil {
         }
         val anim = ValueAnimator.ofInt(view.height, target)
         anim.addUpdateListener { valueAnimator ->
-            val `val` = valueAnimator.animatedValue as Int
-            view.setHeight(`val`)
+            view.setHeight(valueAnimator.animatedValue as Int)
         }
         anim.duration = DEFAULT_DURATION.toLong()
         anim.start()

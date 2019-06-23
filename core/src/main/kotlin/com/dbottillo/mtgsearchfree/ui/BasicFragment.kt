@@ -8,7 +8,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.appcompat.widget.Toolbar
 import android.view.View
 import android.widget.TextView
-import androidx.appcompat.R
+import com.dbottillo.mtgsearchfree.core.R
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 

@@ -31,11 +31,11 @@ class MTGGAppGlideModule : AppGlideModule() {
                 }
 
                 @Throws(CertificateException::class)
-                override fun checkClientTrusted(chain: Array<java.security.cert.X509Certificate>, authType: String) {
+                override fun checkClientTrusted(chain: Array<X509Certificate>, authType: String) {
                 }
 
                 @Throws(CertificateException::class)
-                override fun checkServerTrusted(chain: Array<java.security.cert.X509Certificate>, authType: String) {
+                override fun checkServerTrusted(chain: Array<X509Certificate>, authType: String) {
                 }
             })
 
