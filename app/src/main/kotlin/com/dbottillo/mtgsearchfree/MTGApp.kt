@@ -20,8 +20,8 @@ import androidx.core.content.ContextCompat
 import com.crashlytics.android.Crashlytics
 import com.dbottillo.mtgsearchfree.dagger.DaggerAppComponent
 import com.dbottillo.mtgsearchfree.dagger.DataModule
+import com.dbottillo.mtgsearchfree.home.HomeActivity
 import com.dbottillo.mtgsearchfree.storage.CardsPreferences
-import com.dbottillo.mtgsearchfree.ui.HomeActivity
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.squareup.leakcanary.LeakCanary

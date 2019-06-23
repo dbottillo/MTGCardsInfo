@@ -7,23 +7,28 @@ import android.content.res.Configuration
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.util.TypedValue
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import com.dbottillo.mtgsearchfree.Navigator
 import com.dbottillo.mtgsearchfree.core.BuildConfig
 import com.dbottillo.mtgsearchfree.core.R
+import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper
+import com.dbottillo.mtgsearchfree.model.helper.CreateDBAsyncTask
 import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.PermissionAvailable
 import com.dbottillo.mtgsearchfree.util.PermissionUtil
 import com.dbottillo.mtgsearchfree.util.TrackingManager
+import com.dbottillo.mtgsearchfree.util.copyDbToSdCard
 import com.dbottillo.mtgsearchfree.util.request
+import com.google.android.material.snackbar.Snackbar
+import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
-abstract class BasicActivity : AppCompatActivity() {
+abstract class BasicActivity : DaggerAppCompatActivity() {
 
     protected var sizeToolbar = 0
     protected lateinit var toolbar: Toolbar
@@ -120,5 +125,45 @@ abstract class BasicActivity : AppCompatActivity() {
         } else {
             permissionListener?.permissionNotGranted()
         }
+    }
+
+    fun recreateDb() {
+        requestPermission(PermissionAvailable.WriteStorage, object : PermissionUtil.PermissionListener {
+            override fun permissionGranted() {
+                CreateDBAsyncTask(applicationContext, application.packageName).execute()
+            }
+
+            override fun permissionNotGranted() {
+                Toast.makeText(applicationContext, getString(R.string.error_export_db), Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
+    fun copyDBToSdCard() {
+        requestPermission(PermissionAvailable.WriteStorage, object : PermissionUtil.PermissionListener {
+            override fun permissionGranted() {
+                val file = applicationContext.copyDbToSdCard(CardsInfoDbHelper.DATABASE_NAME)
+                if (file != null) {
+                    val snackBar = Snackbar
+                            .make(findViewById(android.R.id.content), getString(R.string.db_exported), Snackbar.LENGTH_LONG)
+                            .setAction(getString(R.string.share)) {
+                                val intent = Intent(Intent.ACTION_SEND)
+                                intent.type = "text/plain"
+                                intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("help@mtgcardsinfo.com"))
+                                intent.putExtra(Intent.EXTRA_SUBJECT, "[MTGCardsInfo] Database status")
+                                intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file))
+                                startActivity(Intent.createChooser(intent, "Send mail...."))
+                                TrackingManager.trackDeckExport()
+                            }
+                    snackBar.show()
+                } else {
+                    Toast.makeText(applicationContext, getString(R.string.error_export_db), Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun permissionNotGranted() {
+                Toast.makeText(applicationContext, getString(R.string.error_export_db), Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 }

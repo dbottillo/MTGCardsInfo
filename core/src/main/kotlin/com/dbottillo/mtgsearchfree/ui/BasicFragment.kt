@@ -4,15 +4,15 @@ import android.app.Application
 import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
-import androidx.fragment.app.DialogFragment
 import androidx.appcompat.widget.Toolbar
 import android.view.View
 import android.widget.TextView
 import com.dbottillo.mtgsearchfree.core.R
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
+import dagger.android.support.DaggerDialogFragment
 
-abstract class BasicFragment : DialogFragment() {
+abstract class BasicFragment : DaggerDialogFragment() {
 
     lateinit var dbActivity: BasicActivity
     private var isPortrait = false

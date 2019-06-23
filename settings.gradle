@@ -1,2 +1,3 @@
 include ':MTGSearch', ':core', ':app', ':network'
-include ":feature_about", ":feature_release_note"
+include ':data_cards'
+include ":feature_about", ":feature_release_note", ':feature_life_counter', ':feature_home'

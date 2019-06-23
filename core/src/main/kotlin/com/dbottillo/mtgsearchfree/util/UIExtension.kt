@@ -32,7 +32,6 @@ fun Activity?.setDarkStatusBar() {
     this?.window?.decorView?.systemUiVisibility = 0
 }
 
-
 fun View.setHeight(height: Int) {
     val lp = this.layoutParams
     if (lp.height != height) {

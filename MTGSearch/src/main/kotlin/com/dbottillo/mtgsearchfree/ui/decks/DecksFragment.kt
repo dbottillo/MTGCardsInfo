@@ -13,8 +13,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.dbottillo.mtgsearchfree.R
+import com.dbottillo.mtgsearchfree.home.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.model.Deck
-import com.dbottillo.mtgsearchfree.ui.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.ui.decks.deck.DeckActivity
 import com.dbottillo.mtgsearchfree.util.DialogUtil
 import com.dbottillo.mtgsearchfree.util.LOG

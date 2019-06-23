@@ -74,6 +74,9 @@ dependencies {
     implementation project(':MTGSearch')
     implementation project(':feature_about')
     implementation project(':feature_release_note')
+    implementation project(':feature_life_counter')
+    implementation project(':feature_home')
+    implementation project(':data_cards')
     implementation project(':core')
     implementation project(':network')
 

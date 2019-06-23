@@ -3,7 +3,6 @@ package com.dbottillo.mtgsearchfree.util
 import android.app.Activity
 import android.content.Context
 import android.graphics.Typeface
-import android.os.Build
 import androidx.annotation.IdRes
 import androidx.fragment.app.DialogFragment
 import androidx.core.app.NavUtils
@@ -14,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.StyleSpan
-import android.util.TypedValue
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup

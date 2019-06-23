@@ -4,7 +4,6 @@ import com.dbottillo.mtgsearchfree.ActivityScope
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
-import com.dbottillo.mtgsearchfree.interactors.PlayerInteractor
 import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor
 import com.dbottillo.mtgsearchfree.storage.CardsPreferences
@@ -21,9 +20,6 @@ import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckPresenter
 import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckPresenterImpl
 import com.dbottillo.mtgsearchfree.ui.decks.deck.DeckFragment
 import com.dbottillo.mtgsearchfree.ui.decks.startingHand.DeckStartingHandFragment
-import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterFragment
-import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterPresenter
-import com.dbottillo.mtgsearchfree.ui.lifecounter.LifeCounterPresenterImpl
 import com.dbottillo.mtgsearchfree.ui.saved.SavedCardsPresenter
 import com.dbottillo.mtgsearchfree.ui.saved.SavedCardsPresenterImpl
 import com.dbottillo.mtgsearchfree.ui.saved.SavedFragment
@@ -56,10 +52,6 @@ abstract class FragmentBuilder {
     @ActivityScope
     @ContributesAndroidInjector(modules = [SavedFragmentModule::class])
     abstract fun contributeSavedFragmentInjector(): SavedFragment
-
-    @ActivityScope
-    @ContributesAndroidInjector(modules = [LifeCounterFragmentModule::class])
-    abstract fun contributeLifeCounterFragmentInjector(): LifeCounterFragment
 
     @ActivityScope
     @ContributesAndroidInjector(modules = [AddToDeckFragmentModule::class])
@@ -104,17 +96,6 @@ class SavedFragmentModule {
         logger: Logger
     ): SavedCardsPresenter {
         return SavedCardsPresenterImpl(interactor, generalData, logger)
-    }
-}
-
-@Module
-class LifeCounterFragmentModule {
-    @Provides
-    fun providesLifeCounterFragmentPresenter(
-        interactor: PlayerInteractor,
-        logger: Logger
-    ): LifeCounterPresenter {
-        return LifeCounterPresenterImpl(interactor, logger)
     }
 }
 

@@ -19,8 +19,8 @@ import com.dbottillo.mtgsearchfree.storage.DecksStorage
 import com.dbottillo.mtgsearchfree.storage.DecksStorageImpl
 import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.storage.GeneralPreferences
-import com.dbottillo.mtgsearchfree.storage.PlayersStorage
-import com.dbottillo.mtgsearchfree.storage.PlayersStorageImpl
+import com.dbottillo.mtgsearchfree.lifecounter.PlayersStorage
+import com.dbottillo.mtgsearchfree.lifecounter.PlayersStorageImpl
 import com.dbottillo.mtgsearchfree.storage.SavedCardsStorage
 import com.dbottillo.mtgsearchfree.storage.SavedCardsStorageImpl
 import com.dbottillo.mtgsearchfree.util.AppInfo

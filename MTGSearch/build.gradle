@@ -26,6 +26,8 @@ checkstyle {
 dependencies {
     implementation project(":network")
     implementation project(":core")
+    implementation project(":data_cards")
+    implementation project(":feature_home")
 
     core()
     di()
