@@ -44,11 +44,10 @@ class MTGGAppGlideModule : AppGlideModule() {
             sslContext.init(null, trustAllCerts, java.security.SecureRandom())
 
             // Create an ssl socket factory with our all-trusting manager
-            val sslSocketFactory = sslContext.getSocketFactory()
+            val sslSocketFactory = sslContext.socketFactory
 
             val builder = OkHttpClient.Builder()
             builder.sslSocketFactory(sslSocketFactory, trustAllCerts[0] as X509TrustManager)
-            builder.hostnameVerifier { _, _ -> true }
 
             return builder.build()
         } catch (e: Exception) {

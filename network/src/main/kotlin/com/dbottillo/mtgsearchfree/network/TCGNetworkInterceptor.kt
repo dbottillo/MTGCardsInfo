@@ -15,12 +15,12 @@ class TokenAuthenticator @Inject constructor(private val apiAuthenticatorInterfa
             LOG.d("we've tried too many times")
             return null
         }
-        return if (response.code() == 401) {
+        return if (response.code == 401) {
             val refreshCall = apiAuthenticatorInterface.auth(
                 grantType = "client_credentials",
                 clientId = BuildConfig.TCG_CLIENT_ID,
                 clientSecret = BuildConfig.TCG_CLIENT_SECRET).blockingGet()
-            response.request().newBuilder()
+            response.request.newBuilder()
                     .header("Authorization", "Bearer ${refreshCall.access_token}")
                     .build()
         } else {
@@ -30,10 +30,10 @@ class TokenAuthenticator @Inject constructor(private val apiAuthenticatorInterfa
 
     private fun responseCount(response: Response?): Int {
         var result = 1
-        var currentResponse = response!!.priorResponse()
+        var currentResponse = response!!.priorResponse
         while (currentResponse != null) {
             result++
-            currentResponse = currentResponse.priorResponse()
+            currentResponse = currentResponse.priorResponse
         }
         return result
     }
