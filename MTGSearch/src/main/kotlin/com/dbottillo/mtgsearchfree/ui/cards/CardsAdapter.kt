@@ -12,10 +12,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import com.dbottillo.mtgsearchfree.Constants.RATIO_CARD
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.ui.views.RATIO_CARD
 import com.dbottillo.mtgsearchfree.util.loadInto
 
 class CardsAdapter(

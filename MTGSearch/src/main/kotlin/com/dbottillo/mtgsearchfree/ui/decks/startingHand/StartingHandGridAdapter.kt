@@ -4,10 +4,10 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.dbottillo.mtgsearchfree.Constants.RATIO_CARD
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.ui.cards.GridCardViewHolder
 import com.dbottillo.mtgsearchfree.ui.cards.ITEM_VIEW_TYPE_FOOTER
-import com.dbottillo.mtgsearchfree.ui.views.RATIO_CARD
 import com.dbottillo.mtgsearchfree.util.loadInto
 
 class StartingHandGridAdapter(

@@ -19,7 +19,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
-import com.dbottillo.mtgsearchfree.ui.views.RATIO_CARD
+import com.dbottillo.mtgsearchfree.Constants.RATIO_CARD
 
 fun View.setMarginTop(value: Int) {
     val lp = this.layoutParams as ViewGroup.MarginLayoutParams

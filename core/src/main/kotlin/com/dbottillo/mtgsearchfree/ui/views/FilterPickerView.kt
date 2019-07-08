@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.ToggleButton
 
-import com.dbottillo.mtgsearchfree.R
+import com.dbottillo.mtgsearchfree.core.R
 import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.util.LOG
 

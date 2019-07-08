@@ -187,5 +187,3 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
         load(card)
     }
 }
-
-const val RATIO_CARD = 1.39622641509434f

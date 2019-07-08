@@ -22,6 +22,7 @@ dependencies{
     di()
     monitoring()
     ui()
+    image()
 
     test()
 }

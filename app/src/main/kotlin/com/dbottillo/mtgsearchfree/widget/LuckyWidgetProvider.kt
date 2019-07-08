@@ -8,6 +8,7 @@ import android.content.Context
 import android.content.Intent
 import android.widget.RemoteViews
 import com.bumptech.glide.request.target.AppWidgetTarget
+import com.dbottillo.mtgsearchfree.Constants.RATIO_CARD
 import com.dbottillo.mtgsearchfree.GlideApp
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.database.CardDataSource
@@ -16,7 +17,6 @@ import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.lucky.CARD
 import com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity
-import com.dbottillo.mtgsearchfree.ui.views.RATIO_CARD
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.google.gson.Gson
 

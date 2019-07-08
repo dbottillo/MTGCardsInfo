@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.ui.views
 import android.content.Context
 import androidx.appcompat.widget.AppCompatImageView
 import android.util.AttributeSet
+import com.dbottillo.mtgsearchfree.Constants.RATIO_CARD
 
 class MTGCardImageView : AppCompatImageView {
 
