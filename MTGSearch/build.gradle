@@ -1,6 +1,5 @@
 buildscript {
-    ext.number_of_set = 185
-    ext.name_fifth_mtg_card = "Answered Prayers"
+    ext.number_of_set = 186
 }
 
 apply plugin: 'com.android.library'
@@ -10,11 +9,9 @@ android {
     buildTypes {
         debug {
             buildConfigField 'int', 'NUMBER_OF_SET', "$number_of_set"
-            buildConfigField 'String', 'MTG_CARD_FIFTH_NAME', "\"${name_fifth_mtg_card}\""
         }
         release {
             buildConfigField 'int', 'NUMBER_OF_SET', "$number_of_set"
-            buildConfigField 'String', 'MTG_CARD_FIFTH_NAME', "\"${name_fifth_mtg_card}\""
         }
     }
 }
