@@ -1,19 +1,21 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                                       android:id="@+id/life_counter_card"
-                                       android:layout_width="match_parent"
-                                       android:layout_height="wrap_content"
-                                       android:layout_marginBottom="8dp"
-                                       android:layout_marginLeft="16dp"
-                                       android:layout_marginRight="16dp"
-                                       android:layout_marginTop="8dp"
-                                       card_view:cardCornerRadius="4dp"
-                                       tools:background="#FF9900">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/life_counter_card"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        card_view:cardCornerRadius="4dp"
+        tools:background="#FF9900">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,7 +39,7 @@
                     android:maxLines="1"
                     android:textColor="@color/white"
                     android:textSize="24sp"
-                    tools:text="Ajani" />
+                    tools:text="Ajani"/>
 
                 <ImageButton
                     android:id="@+id/player_edit"
@@ -47,7 +49,7 @@
                     android:contentDescription="@string/cd_edit"
                     android:scaleType="fitXY"
                     android:src="@drawable/sel_edit_grey"
-                    android:tint="@color/white" />
+                    android:tint="@color/white"/>
 
                 <ImageButton
                     android:id="@+id/player_remove"
@@ -58,7 +60,7 @@
                     android:contentDescription="@string/cd_remove"
                     android:scaleType="fitXY"
                     android:src="@drawable/sel_trash_grey"
-                    android:tint="@color/white" />
+                    android:tint="@color/white"/>
             </LinearLayout>
 
             <RelativeLayout
@@ -70,7 +72,7 @@
                     style="@style/BtnLifeCounter.Life"
                     android:layout_alignParentLeft="true"
                     android:layout_toLeftOf="@+id/btn_life_minus_one"
-                    android:text="@string/minus_five" />
+                    android:text="@string/minus_five"/>
 
                 <Button
                     android:id="@+id/btn_life_minus_one"
@@ -78,7 +80,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_toLeftOf="@+id/player_life"
                     android:gravity="center|right"
-                    android:text="@string/minus_one" />
+                    android:text="@string/minus_one"/>
 
                 <TextView
                     android:id="@+id/player_life"
@@ -87,7 +89,7 @@
                     android:layout_centerInParent="true"
                     android:textColor="@color/white"
                     android:textSize="60sp"
-                    tools:text="20" />
+                    tools:text="20"/>
 
                 <Button
                     android:id="@+id/btn_life_plus_one"
@@ -95,14 +97,14 @@
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@+id/player_life"
                     android:gravity="center|left"
-                    android:text="@string/plus_one" />
+                    android:text="@string/plus_one"/>
 
                 <Button
                     android:id="@+id/btn_life_plus_five"
                     style="@style/BtnLifeCounter.Life"
                     android:layout_alignParentRight="true"
                     android:layout_toRightOf="@+id/btn_life_plus_one"
-                    android:text="@string/plus_five" />
+                    android:text="@string/plus_five"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -116,7 +118,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_toLeftOf="@+id/player_poison"
                     android:gravity="center|right"
-                    android:text="@string/minus_one" />
+                    android:text="@string/minus_one"/>
 
                 <TextView
                     android:id="@+id/player_poison"
@@ -125,7 +127,7 @@
                     android:layout_centerInParent="true"
                     android:textColor="@color/white"
                     android:textSize="40sp"
-                    tools:text="10" />
+                    tools:text="10"/>
 
                 <Button
                     android:id="@+id/btn_poison_plus_one"
@@ -133,7 +135,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@+id/player_poison"
                     android:gravity="center|left"
-                    android:text="@string/plus_one" />
+                    android:text="@string/plus_one"/>
             </RelativeLayout>
 
         </LinearLayout>

@@ -1,32 +1,45 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1548519348716">
+  <Whitelist timestamp="1562755916965">
     <ID>ComplexCondition:CardDataSource.kt$CardDataSource.Companion$(column == COLUMNS.NAMES || column == COLUMNS.SUPER_TYPES || column == COLUMNS.FLAVOR || column == COLUMNS.ARTIST || column == COLUMNS.LOYALTY || column == COLUMNS.PRINTINGS || column == COLUMNS.LEGALITIES || column == COLUMNS.ORIGINAL_TEXT) &amp;&amp; version &lt;= 6</ID>
     <ID>ComplexCondition:LOG.kt$LOG$element.className != LOG::class.java.name &amp;&amp; element.className != BasicActivity::class.java.name &amp;&amp; element.className != BasicFragment::class.java.name &amp;&amp; element.className != Logger::class.java.name &amp;&amp; element.className != Instrumentation::class.java.name</ID>
     <ID>ComplexMethod:CardDataSource.kt$CardDataSource$fun createContentValue(card: MTGCard): ContentValues</ID>
     <ID>ComplexMethod:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
     <ID>ComplexMethod:CardDataSource.kt$CardDataSource.Companion$private fun shouldAddColumn(column: COLUMNS, version: Int): Boolean</ID>
-    <ID>ComplexMethod:CardsInfoDbHelper.kt$CardsInfoDbHelper$override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int)</ID>
+    <ID>ComplexMethod:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$@Throws(JSONException::class) private fun createContentValueFromJSON(jsonObject: JSONObject, set: MTGSet): ContentValues</ID>
+    <ID>ComplexMethod:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$fun adjustCode(code: String?): String?</ID>
+    <ID>ComplexMethod:FilterPickerView.kt$FilterPickerView$fun configure(showFilter: Boolean, showOrder: Boolean)</ID>
+    <ID>ComplexMethod:FilterPickerView.kt$FilterPickerView$override fun onClick(view: View)</ID>
     <ID>ComplexMethod:MTGCardDataSource.kt$MTGCardDataSource$fun searchCards(searchParams: SearchParams): List&lt;MTGCard&gt;</ID>
+    <ID>EmptySecondaryConstructor:FilterPickerView.kt$FilterPickerView${}</ID>
+    <ID>ForbiddenComment:CardMigratorService.kt$CardMigratorService$// TODO: before re-using this class it needs to create a channel</ID>
     <ID>LargeClass:CardDataSource.kt$CardDataSource</ID>
     <ID>LargeClass:DeckDataSource.kt$DeckDataSource</ID>
     <ID>LongMethod:CardDataSource.kt$CardDataSource$fun createContentValue(card: MTGCard): ContentValues</ID>
     <ID>LongMethod:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
+    <ID>LongMethod:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$@Throws(JSONException::class) private fun createContentValueFromJSON(jsonObject: JSONObject, set: MTGSet): ContentValues</ID>
     <ID>LongMethod:MTGCard.kt$MTGCard$override fun hashCode(): Int</ID>
     <ID>LongMethod:MTGCardDataSource.kt$MTGCardDataSource$fun searchCards(searchParams: SearchParams): List&lt;MTGCard&gt;</ID>
+    <ID>MagicNumber:AddFavouritesAsyncTask.kt$AddFavouritesAsyncTask$600</ID>
+    <ID>MagicNumber:AnimationUtil.kt$AnimationUtil$250</ID>
     <ID>MagicNumber:CardDataSource.kt$CardDataSource.Companion$6</ID>
+    <ID>MagicNumber:CardMigratorService.kt$CardMigratorService$107</ID>
     <ID>MagicNumber:CardsInfoDbHelper.kt$CardsInfoDbHelper$3</ID>
     <ID>MagicNumber:CardsInfoDbHelper.kt$CardsInfoDbHelper$4</ID>
+    <ID>MagicNumber:CreateDBAsyncTask.kt$CreateDBAsyncTask$1024</ID>
     <ID>MagicNumber:FileManager.kt$FileManager$100</ID>
     <ID>MagicNumber:FileManager.kt$FileManager$1024</ID>
     <ID>MagicNumber:MTGCard.kt$MTGCard$31</ID>
     <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource$2</ID>
+    <ID>MagicNumber:MTGLoader.kt$MTGLoader$3</ID>
+    <ID>MagicNumber:MTGLoader.kt$MTGLoader$4</ID>
+    <ID>MagicNumber:MTGLoader.kt$MTGLoader$6f</ID>
     <ID>MagicNumber:PermissionUtil.kt$PermissionUtil$23</ID>
     <ID>MagicNumber:SQLiteAssetHelper.kt$1024</ID>
     <ID>MagicNumber:TCGPrice.kt$TCGPrice$5</ID>
+    <ID>MagicNumber:UIUtil.kt$0.8</ID>
     <ID>NestedBlockDepth:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
-    <ID>NestedBlockDepth:DeckDataSource.kt$DeckDataSource$private fun setQuantityOfCards(decks: ArrayList&lt;Deck&gt;, side: Boolean)</ID>
     <ID>NestedBlockDepth:QueryComposer.kt$QueryComposer$fun addCMCParam(cmcParam: CMCParam?)</ID>
     <ID>ObjectPropertyNaming:LOG.kt$LOG$private val NOT_FOUND = StackTraceElement("", "", "", 0)</ID>
     <ID>ObjectPropertyNaming:TrackingManager.kt$TrackingManager$private val UA_ACTION_ADD_CARD = "addCard"</ID>
@@ -76,7 +89,8 @@
     <ID>TooGenericExceptionCaught:FileUtil.kt$FileUtil$e: Exception</ID>
     <ID>TooGenericExceptionCaught:FileUtil.kt$e: Exception</ID>
     <ID>TooGenericExceptionCaught:LOG.kt$LOG$e: Exception</ID>
-    <ID>VariableNaming:FileUtil.kt$FileUtil$val `is` = fileManager.loadUri(uri)</ID>
+    <ID>TooGenericExceptionCaught:MTGGAppGlideModule.kt$MTGGAppGlideModule$e: Exception</ID>
+    <ID>TooGenericExceptionThrown:MTGGAppGlideModule.kt$MTGGAppGlideModule$throw RuntimeException(e)</ID>
     <ID>VariableNaming:QueryComposer.kt$QueryComposer$private val LIKE_OPERATOR = "LIKE"</ID>
   </Whitelist>
 </SmellBaseline>

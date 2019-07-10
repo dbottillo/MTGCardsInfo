@@ -1,40 +1,21 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <Blacklist timestamp="1532376381009"></Blacklist>
-  <Whitelist timestamp="1548519352295">
-    <ID>ComplexCondition:NetworkIntentService.kt$NetworkIntentService$res != null &amp;&amp; (res.lowprice == null || res.lowprice!!.equals("0", ignoreCase = true)) &amp;&amp; setName != null &amp;&amp; setName.isNotEmpty()</ID>
-    <ID>ComplexMethod:BaseHomeFragment.kt$BaseHomeFragment$override fun onMenuItemClick(item: MenuItem?): Boolean</ID>
+  <Whitelist timestamp="1562755930566">
     <ID>ComplexMethod:CardsActivityPresenterImpl.kt$CardsActivityPresenterImpl$override fun init(view: CardsActivityView, intent: Intent?)</ID>
     <ID>ComplexMethod:CardsConfiguratorPresenterImpl.kt$CardsConfiguratorPresenterImpl$override fun update(type: CardFilter.TYPE, on: Boolean)</ID>
-    <ID>ComplexMethod:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$@Throws(JSONException::class) private fun createContentValueFromJSON(jsonObject: JSONObject, set: MTGSet): ContentValues</ID>
-    <ID>ComplexMethod:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$fun adjustCode(code: String?): String?</ID>
     <ID>ComplexMethod:DeckFragment.kt$DeckFragment$override fun onViewCreated(view: View, savedInstanceState: Bundle?)</ID>
-    <ID>ComplexMethod:FilterPickerView.kt$FilterPickerView$fun configure(showFilter: Boolean, showOrder: Boolean)</ID>
-    <ID>ComplexMethod:FilterPickerView.kt$FilterPickerView$override fun onClick(view: View)</ID>
     <ID>ComplexMethod:MTGCardView.kt$MTGCardView$private fun load(card: MTGCard)</ID>
-    <ID>ComplexMethod:NetworkIntentService.kt$NetworkIntentService$@Throws(Exception::class) private fun doNetworkRequest(url: String): TCGPrice</ID>
     <ID>ComplexMethod:SearchActivity.kt$SearchActivity$override fun onClick(v: View)</ID>
     <ID>ComplexMethod:SearchActivity.kt$SearchActivity$override fun onCreate(bundle: Bundle?)</ID>
-    <ID>EmptySecondaryConstructor:FilterPickerView.kt$FilterPickerView${}</ID>
     <ID>EmptySecondaryConstructor:MTGCardView.kt$MTGCardView${}</ID>
-    <ID>ForbiddenComment:CardMigratorService.kt$CardMigratorService$// TODO: before re-using this class it needs to create a channel</ID>
     <ID>ForbiddenComment:CardsActivityPresenterImpl.kt$CardsActivityPresenterImpl$// TODO: this need testing</ID>
     <ID>ForbiddenComment:CardsLuckyPresenterImpl.kt$CardsLuckyPresenterImpl$// TODO: this need testing</ID>
     <ID>ForbiddenComment:SearchActivity.kt$SearchActivity$// TODO: pre-lollipop version</ID>
     <ID>LargeClass:SearchActivity.kt$SearchActivity : BasicActivityOnClickListenerSearchActivityViewOnCardListener</ID>
-    <ID>LongMethod:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$@Throws(JSONException::class) private fun createContentValueFromJSON(jsonObject: JSONObject, set: MTGSet): ContentValues</ID>
     <ID>LongMethod:SearchActivity.kt$SearchActivity$override fun onCreate(bundle: Bundle?)</ID>
-    <ID>MagicNumber:AboutActivity.kt$AboutActivity$1000</ID>
-    <ID>MagicNumber:AboutActivity.kt$AboutActivity$5</ID>
-    <ID>MagicNumber:AddFavouritesAsyncTask.kt$AddFavouritesAsyncTask$600</ID>
     <ID>MagicNumber:AddToDeckFragment.kt$AddToDeckFragment$30</ID>
     <ID>MagicNumber:AddToDeckFragment.kt$AddToDeckFragment.&lt;no name provided&gt;$5</ID>
-    <ID>MagicNumber:AnimationUtil.kt$AnimationUtil$200</ID>
-    <ID>MagicNumber:AnimationUtil.kt$AnimationUtil$250</ID>
-    <ID>MagicNumber:BottomTabs.kt$BottomTabs$0.7f</ID>
-    <ID>MagicNumber:BottomTabs.kt$BottomTabs$1.2f</ID>
-    <ID>MagicNumber:BottomTabs.kt$BottomTabs$3</ID>
-    <ID>MagicNumber:CardMigratorService.kt$CardMigratorService$107</ID>
     <ID>MagicNumber:CardViewHolder.kt$ListCardViewHolder$3</ID>
     <ID>MagicNumber:CardViewHolder.kt$ListCardViewHolder$4</ID>
     <ID>MagicNumber:CardsActivity.kt$CardsActivity$0.5</ID>
@@ -50,29 +31,12 @@
     <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$40f</ID>
     <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$8</ID>
     <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$9</ID>
-    <ID>MagicNumber:CreateDBAsyncTask.kt$CreateDBAsyncTask$1024</ID>
-    <ID>MagicNumber:CreateDecksAsyncTask.kt$CreateDecksAsyncTask$30</ID>
-    <ID>MagicNumber:CreateDecksAsyncTask.kt$CreateDecksAsyncTask$4</ID>
-    <ID>MagicNumber:CreateDecksAsyncTask.kt$CreateDecksAsyncTask$98</ID>
     <ID>MagicNumber:DeckAdapter.kt$DeckCardViewHolder$3</ID>
     <ID>MagicNumber:DeckAdapter.kt$DeckCardViewHolder$4</ID>
     <ID>MagicNumber:DeckStartingHandFragment.kt$DeckStartingHandFragment$3</ID>
-    <ID>MagicNumber:HomeActivity.kt$HomeActivity$100</ID>
-    <ID>MagicNumber:HomeActivity.kt$HomeActivity.&lt;no name provided&gt;$3</ID>
-    <ID>MagicNumber:LifeCounterAdapter.kt$LifeCounterAdapter$3</ID>
-    <ID>MagicNumber:LifeCounterAdapter.kt$LifeCounterAdapter$5</ID>
-    <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$10</ID>
-    <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$15</ID>
-    <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$20</ID>
-    <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$30</ID>
     <ID>MagicNumber:MTGCardsView.kt$MTGCardsView$6</ID>
     <ID>MagicNumber:MTGCardsView.kt$MTGCardsView$60</ID>
-    <ID>MagicNumber:MTGLoader.kt$MTGLoader$3</ID>
-    <ID>MagicNumber:MTGLoader.kt$MTGLoader$4</ID>
-    <ID>MagicNumber:MTGLoader.kt$MTGLoader$6f</ID>
     <ID>MagicNumber:MTGSearchView.kt$MTGSearchView$2</ID>
-    <ID>MagicNumber:NetworkIntentService.kt$NetworkIntentService$200</ID>
-    <ID>MagicNumber:NetworkIntentService.kt$NetworkIntentService$500</ID>
     <ID>MagicNumber:SearchActivity.kt$SearchActivity$200</ID>
     <ID>MagicNumber:SearchActivity.kt$SearchActivity$400</ID>
     <ID>MagicNumber:SearchActivity.kt$SearchActivity$6.0f</ID>
@@ -81,13 +45,6 @@
     <ID>MagicNumber:SearchActivity.kt$SearchActivity.&lt;no name provided&gt;$100</ID>
     <ID>MagicNumber:SetPickerActivity.kt$SetPickerActivity.Divider$16</ID>
     <ID>MagicNumber:StartingHandPresenter.kt$StartingHandPresenter$7</ID>
-    <ID>MagicNumber:UIUtil.kt$0.8</ID>
-    <ID>NestedBlockDepth:NetworkIntentService.kt$NetworkIntentService$@Throws(Exception::class) private fun doNetworkRequest(url: String): TCGPrice</ID>
-    <ID>ObjectPropertyNaming:AnimationUtil.kt$AnimationUtil$private val DEFAULT_DURATION = 200</ID>
-    <ID>ObjectPropertyNaming:AnimationUtil.kt$AnimationUtil$val `val` = valueAnimator.animatedValue as Int</ID>
-    <ID>ObjectPropertyNaming:LifeCounterAdapter.kt$LifeCounterAdapter.Companion$private val TYPE_FOOTER: Int = 2</ID>
-    <ID>ObjectPropertyNaming:LifeCounterAdapter.kt$LifeCounterAdapter.Companion$private val TYPE_HEADER: Int = 0</ID>
-    <ID>ObjectPropertyNaming:LifeCounterAdapter.kt$LifeCounterAdapter.Companion$private val TYPE_PLAYER: Int = 1</ID>
     <ID>PackageNaming:AddToDeckFragment.kt$package com.dbottillo.mtgsearchfree.ui.decks.addToDeck</ID>
     <ID>PackageNaming:AddToDeckPresenter.kt$package com.dbottillo.mtgsearchfree.ui.decks.addToDeck</ID>
     <ID>PackageNaming:AddToDeckPresenterImpl.kt$package com.dbottillo.mtgsearchfree.ui.decks.addToDeck</ID>
@@ -104,15 +61,8 @@
     <ID>ReturnCount:CardsAdapter.kt$CardsAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
     <ID>ReturnCount:DeckActivity.kt$DeckActivity$override fun onOptionsItemSelected(item: MenuItem): Boolean</ID>
     <ID>ReturnCount:DecksAdapter.kt$DecksAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
-    <ID>ReturnCount:LifeCounterAdapter.kt$LifeCounterAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
-    <ID>ReturnCount:LifeCounterAdapter.kt$LifeCounterAdapter$private fun getColorOfPosition(context: Context, position: Int): Int</ID>
     <ID>ReturnCount:StartingHandGridAdapter.kt$StartingHandGridAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
     <ID>TooGenericExceptionCaught:DecksInteractorImpl.kt$DecksInteractorImpl$throwable: Throwable</ID>
     <ID>TooGenericExceptionCaught:DecksStorageImpl.kt$DecksStorageImpl$e: Exception</ID>
-    <ID>TooGenericExceptionCaught:MTGGAppGlideModule.kt$MTGGAppGlideModule$e: Exception</ID>
-    <ID>TooGenericExceptionCaught:NetworkIntentService.kt$NetworkIntentService$e: Exception</ID>
-    <ID>TooGenericExceptionCaught:ReleaseNoteStorage.kt$ReleaseNoteStorage$e: Exception</ID>
-    <ID>TooGenericExceptionThrown:BaseHomeFragment.kt$BaseHomeFragment$throw RuntimeException("This is a crash")</ID>
-    <ID>TooGenericExceptionThrown:MTGGAppGlideModule.kt$MTGGAppGlideModule$throw RuntimeException(e)</ID>
   </Whitelist>
 </SmellBaseline>

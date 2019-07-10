@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.database
 
 import android.content.res.Resources
-import com.dbottillo.mtgsearchfree.BuildConfig
 import com.dbottillo.mtgsearchfree.model.CMCParam
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet

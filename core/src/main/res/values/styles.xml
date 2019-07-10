@@ -9,4 +9,21 @@
         <item name="android:textColor">@color/color_primary</item>
     </style>
 
+    <style name="mtg_toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/color_primary</item>
+        <item name="popupTheme">@style/popupNew</item>
+        <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="colorControlNormal">@color/white</item>
+    </style>
+
+    <style name="mtg_toolbar.Transparent" parent="mtg_toolbar">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="colorControlNormal">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+
+    <style name="popupNew" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:colorBackground">@color/white</item>
+    </style>
+
 </resources>
