@@ -8,7 +8,7 @@ import com.dbottillo.mtgsearchfree.database.DeckDataSource
 import com.dbottillo.mtgsearchfree.database.FavouritesDataSource
 import com.dbottillo.mtgsearchfree.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.database.PlayerDataSource
-import com.dbottillo.mtgsearchfree.database.SetDataSource
+import com.dbottillo.mtgsearchfree.storage.SetDataSource
 import com.dbottillo.mtgsearchfree.releasenote.ReleaseNoteStorage
 import com.dbottillo.mtgsearchfree.storage.CardsHelper
 import com.dbottillo.mtgsearchfree.storage.CardsPreferences
@@ -76,7 +76,7 @@ open class DataModule {
         logger: Logger
     ): CardsStorage {
         return CardsStorageImpl(mtgCardDataSource,
-                favouritesDataSource, cardsPreferences, cardsHelper, logger)
+            favouritesDataSource, cardsPreferences, cardsHelper, logger)
     }
 
     @Provides

@@ -77,6 +77,8 @@ dependencies {
     implementation project(':feature_life_counter')
     implementation project(':feature_home')
     implementation project(':data_cards')
+    implementation project(':data_sets')
+    implementation project(':data_decks')
     implementation project(':core')
     implementation project(':network')
 

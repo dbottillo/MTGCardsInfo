@@ -3,7 +3,6 @@ apply from: '../config-android.gradle'
 
 dependencies {
     implementation project(":core")
-    implementation project(":network")
 
     core()
     di()

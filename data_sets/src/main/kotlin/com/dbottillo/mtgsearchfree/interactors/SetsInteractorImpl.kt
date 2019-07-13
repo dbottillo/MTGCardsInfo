@@ -1,7 +1,7 @@
 package com.dbottillo.mtgsearchfree.interactors
 
 import com.dbottillo.mtgsearchfree.model.MTGSet
-import com.dbottillo.mtgsearchfree.database.SetDataSource
+import com.dbottillo.mtgsearchfree.storage.SetDataSource
 import com.dbottillo.mtgsearchfree.interactor.SchedulerProvider
 import com.dbottillo.mtgsearchfree.util.Logger
 

@@ -10,7 +10,6 @@ import android.widget.Toast
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.database.CardDataSource
 import com.dbottillo.mtgsearchfree.database.CreateDatabaseHelper
-import com.dbottillo.mtgsearchfree.database.SetDataSource
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.copyDbToSdCard
 import org.json.JSONArray
@@ -39,10 +38,10 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
 
             val db = mDbHelper.writableDatabase
             db.disableWriteAheadLogging()
-            db.delete(SetDataSource.TABLE, null, null)
+            db.delete(com.dbottillo.mtgsearchfree.storage.SetDataSource.TABLE, null, null)
             db.delete(CardDataSource.TABLE, null, null)
 
-            val setDataSource = SetDataSource(mDbHelper.writableDatabase)
+            val setDataSource = com.dbottillo.mtgsearchfree.storage.SetDataSource(mDbHelper.writableDatabase)
             try {
                 val setList = context.resources?.getIdentifier("set_list", "raw", packageName) ?: -1
                 val jsonString = loadFile(setList)
@@ -72,12 +71,12 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
     }
 
     @Suppress("UNUSED_VARIABLE")
-    private fun loadSet(context: Context, db: SQLiteDatabase, setDataSource: SetDataSource, setJ: JSONObject) {
+    private fun loadSet(context: Context, db: SQLiteDatabase, setDataSource: com.dbottillo.mtgsearchfree.storage.SetDataSource, setJ: JSONObject) {
         try {
             val setToLoad = setToLoad(context, setJ.getString("code"))
             val jsonSetString = loadFile(setToLoad)
 
-            val newRowId = db.insert(SetDataSource.TABLE, null, setDataSource.fromJSON(setJ))
+            val newRowId = db.insert(com.dbottillo.mtgsearchfree.storage.SetDataSource.TABLE, null, setDataSource.fromJSON(setJ))
             LOG.e("row id " + newRowId + " -> " + setJ.getString("code"))
 
             val jsonCards = JSONObject(jsonSetString)

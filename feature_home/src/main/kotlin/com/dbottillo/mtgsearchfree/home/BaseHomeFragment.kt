@@ -10,8 +10,6 @@ import com.dbottillo.mtgsearchfree.Navigator
 import com.dbottillo.mtgsearchfree.core.BuildConfig
 import com.dbottillo.mtgsearchfree.core.R
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper
-import com.dbottillo.mtgsearchfree.model.helper.AddFavouritesAsyncTask
-import com.dbottillo.mtgsearchfree.model.helper.CreateDecksAsyncTask
 import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
@@ -71,8 +69,8 @@ abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListen
             R.id.more_about -> navigator.openAboutScreen(activity!!)
             R.id.more_release_note -> navigator.openReleaseNoteScreen(activity!!)
             R.id.action_create_db -> (activity as BasicActivity).recreateDb()
-            R.id.action_fill_decks -> CreateDecksAsyncTask(app.applicationContext).execute()
-            R.id.action_create_fav -> AddFavouritesAsyncTask(app.applicationContext).execute()
+            R.id.action_fill_decks -> navigator.createDecks(app.applicationContext)
+            R.id.action_create_fav -> navigator.createFavourites(app.applicationContext)
             R.id.action_crash -> throw RuntimeException("This is a crash")
             R.id.action_send_db -> (activity as BasicActivity).copyDBToSdCard()
             R.id.action_copy_db -> {

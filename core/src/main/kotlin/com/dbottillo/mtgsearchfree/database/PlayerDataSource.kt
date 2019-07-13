@@ -5,6 +5,9 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import com.dbottillo.mtgsearchfree.model.Player
 import com.dbottillo.mtgsearchfree.util.LOG
+import com.dbottillo.mtgsearchfree.util.add
+import com.dbottillo.mtgsearchfree.util.getIntFromColumn
+import com.dbottillo.mtgsearchfree.util.getStringFromColumn
 
 class PlayerDataSource(private val database: SQLiteDatabase) {
 
@@ -26,7 +29,7 @@ class PlayerDataSource(private val database: SQLiteDatabase) {
         }
 
     fun savePlayer(player: Player): Long {
-        LOG.d("saving " + player.toString())
+        LOG.d("saving $player")
         val values = ContentValues()
         values.put("_id", player.id)
         values.put("life", player.life)

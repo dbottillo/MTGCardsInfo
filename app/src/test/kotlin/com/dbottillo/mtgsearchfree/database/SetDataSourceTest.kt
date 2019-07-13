@@ -2,6 +2,7 @@ package com.dbottillo.mtgsearchfree.database
 
 import com.dbottillo.mtgsearchfree.BuildConfig
 import com.dbottillo.mtgsearchfree.model.MTGSet
+import com.dbottillo.mtgsearchfree.storage.SetDataSource
 import com.dbottillo.mtgsearchfree.util.readSetListJSON
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.`is`

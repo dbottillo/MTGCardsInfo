@@ -1,18 +1,17 @@
 package com.dbottillo.mtgsearchfree.dagger
 
-import com.dbottillo.mtgsearchfree.interactors.AppSchedulerProvider
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractorImpl
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractorImpl
-import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
-import com.dbottillo.mtgsearchfree.interactors.DecksInteractorImpl
 import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractorImpl
 import com.dbottillo.mtgsearchfree.interactor.SchedulerProvider
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractorImpl
-import com.dbottillo.mtgsearchfree.database.SetDataSource
+import com.dbottillo.mtgsearchfree.storage.SetDataSource
+import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
+import com.dbottillo.mtgsearchfree.interactors.DecksInteractorImpl
 import com.dbottillo.mtgsearchfree.lifecounter.PlayerInteractor
 import com.dbottillo.mtgsearchfree.lifecounter.PlayerInteractorImpl
 import com.dbottillo.mtgsearchfree.lifecounter.PlayersStorage
@@ -25,6 +24,9 @@ import com.dbottillo.mtgsearchfree.util.FileManager
 import com.dbottillo.mtgsearchfree.util.Logger
 import dagger.Module
 import dagger.Provides
+import io.reactivex.Scheduler
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import javax.inject.Singleton
 
 @Module
@@ -88,7 +90,16 @@ class InteractorsModule {
     }
 
     @Provides
+    @Singleton
     fun provideSchedulerProvider(): SchedulerProvider {
-        return AppSchedulerProvider()
+        return object : SchedulerProvider {
+            override fun ui(): Scheduler {
+                return AndroidSchedulers.mainThread()
+            }
+
+            override fun io(): Scheduler {
+                return Schedulers.io()
+            }
+        }
     }
 }

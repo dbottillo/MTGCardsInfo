@@ -13,6 +13,7 @@ import org.junit.Test
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnit
 import io.reactivex.observers.TestObserver
+
 class CardFilterInteractorImplTest {
 
     @Rule @JvmField var mockitoRule = MockitoJUnit.rule()!!

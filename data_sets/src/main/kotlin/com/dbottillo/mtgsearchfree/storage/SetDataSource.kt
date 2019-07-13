@@ -1,10 +1,14 @@
-package com.dbottillo.mtgsearchfree.database
+package com.dbottillo.mtgsearchfree.storage
 
 import android.content.ContentValues
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.util.LOG
+import com.dbottillo.mtgsearchfree.util.add
+import com.dbottillo.mtgsearchfree.util.fromJson
+import com.dbottillo.mtgsearchfree.util.getIntFromColumn
+import com.dbottillo.mtgsearchfree.util.getStringFromColumn
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -72,23 +76,4 @@ class SetDataSource(private val database: SQLiteDatabase) {
             return builder.append(')').toString()
         }
     }
-}
-
-fun ContentValues.fromJson(name: String, jsonObject: JSONObject) {
-    put(name, jsonObject.getString(name))
-}
-
-fun StringBuilder.add(name: String, type: String, last: Boolean = false) {
-    append(name).append(' ').append(type)
-    if (!last) {
-        append(",")
-    }
-}
-
-fun Cursor.getIntFromColumn(column: String): Int {
-    return getInt(getColumnIndex(column))
-}
-
-fun Cursor.getStringFromColumn(column: String): String {
-    return getString(getColumnIndex(column))
 }

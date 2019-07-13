@@ -24,6 +24,8 @@ dependencies {
     implementation project(":network")
     implementation project(":core")
     implementation project(":data_cards")
+    implementation project(":data_decks")
+    implementation project(":data_sets")
     implementation project(":feature_home")
 
     core()

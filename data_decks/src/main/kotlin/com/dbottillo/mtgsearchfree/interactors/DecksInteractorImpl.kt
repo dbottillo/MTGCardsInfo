@@ -14,10 +14,10 @@ import javax.inject.Inject
 
 class DecksInteractorImpl @Inject
 constructor(
-    val storage: DecksStorage,
+    private val storage: DecksStorage,
     private val fileManager: FileManager,
-    val schedulerProvider: SchedulerProvider,
-    val logger: Logger
+    private val schedulerProvider: SchedulerProvider,
+    private val logger: Logger
 ) : DecksInteractor {
 
     init {

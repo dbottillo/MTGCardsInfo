@@ -16,7 +16,6 @@ import com.dbottillo.mtgsearchfree.Navigator
 import com.dbottillo.mtgsearchfree.core.BuildConfig
 import com.dbottillo.mtgsearchfree.core.R
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper
-import com.dbottillo.mtgsearchfree.model.helper.CreateDBAsyncTask
 import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.PermissionAvailable
@@ -130,7 +129,7 @@ abstract class BasicActivity : DaggerAppCompatActivity() {
     fun recreateDb() {
         requestPermission(PermissionAvailable.WriteStorage, object : PermissionUtil.PermissionListener {
             override fun permissionGranted() {
-                CreateDBAsyncTask(applicationContext, application.packageName).execute()
+                navigator.createDatabase(applicationContext, application.packageName)
             }
 
             override fun permissionNotGranted() {
