@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.ui.lucky
+package com.dbottillo.mtgsearchfree.lucky
 
 import android.content.Intent
 import android.graphics.Bitmap
@@ -9,7 +9,6 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
-import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenter

@@ -8,6 +8,7 @@ import com.dbottillo.mtgsearchfree.about.AboutActivity
 import com.dbottillo.mtgsearchfree.decks.DecksFragment
 import com.dbottillo.mtgsearchfree.decks.addToDeck.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.lifecounter.LifeCounterFragment
+import com.dbottillo.mtgsearchfree.lucky.CardLuckyActivity
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
@@ -21,7 +22,6 @@ import com.dbottillo.mtgsearchfree.ui.cards.POSITION
 import com.dbottillo.mtgsearchfree.ui.saved.SavedFragment
 import com.dbottillo.mtgsearchfree.sets.SetsFragment
 import com.dbottillo.mtgsearchfree.ui.cards.KEY_SET
-import com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity
 import com.dbottillo.mtgsearchfree.ui.search.SearchActivity
 
 class AppNavigator : Navigator {

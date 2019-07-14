@@ -14,7 +14,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
-import com.dbottillo.mtgsearchfree.R
+import com.dbottillo.mtgsearchfree.featurebasecards.R
 import com.dbottillo.mtgsearchfree.repository.CardPriceException
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.util.LOG

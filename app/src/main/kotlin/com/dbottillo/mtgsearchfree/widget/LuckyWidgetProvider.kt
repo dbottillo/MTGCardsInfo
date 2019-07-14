@@ -14,9 +14,9 @@ import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.database.CardDataSource
 import com.dbottillo.mtgsearchfree.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.database.MTGDatabaseHelper
+import com.dbottillo.mtgsearchfree.lucky.CARD
+import com.dbottillo.mtgsearchfree.lucky.CardLuckyActivity
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.ui.lucky.CARD
-import com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.google.gson.Gson
 

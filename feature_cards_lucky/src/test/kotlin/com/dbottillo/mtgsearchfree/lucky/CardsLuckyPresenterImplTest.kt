@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.ui.lucky
+package com.dbottillo.mtgsearchfree.lucky
 
 import android.content.Intent
 import android.graphics.Bitmap

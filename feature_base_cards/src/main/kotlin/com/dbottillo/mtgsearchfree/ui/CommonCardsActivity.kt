@@ -6,7 +6,7 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.view.Menu
 import android.view.MenuItem
-import com.dbottillo.mtgsearchfree.R
+import com.dbottillo.mtgsearchfree.featurebasecards.R
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.util.LOG

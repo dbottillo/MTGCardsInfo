@@ -1,9 +1,8 @@
-package com.dbottillo.mtgsearchfree.ui.lucky
+package com.dbottillo.mtgsearchfree.lucky
 
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
-import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.storage.CardsPreferences

@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.ui.lucky
+package com.dbottillo.mtgsearchfree.lucky
 
 import android.net.Uri
 import com.dbottillo.mtgsearchfree.model.MTGCard

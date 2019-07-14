@@ -14,7 +14,7 @@
         android:theme="@style/MTGSearchTheme"
         tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
 
-        <activity android:name="com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity"
+        <activity android:name="com.dbottillo.mtgsearchfree.lucky.CardLuckyActivity"
                   android:launchMode="singleTask"
                   android:parentActivityName="com.dbottillo.mtgsearchfree.home.HomeActivity">
             <meta-data
