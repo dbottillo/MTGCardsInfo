@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1562755923993">
+  <Whitelist timestamp="1563095215745">
     <ID>ComplexMethod:BaseHomeFragment.kt$BaseHomeFragment$override fun onMenuItemClick(item: MenuItem?): Boolean</ID>
     <ID>MagicNumber:BottomTabs.kt$BottomTabs$0.7f</ID>
     <ID>MagicNumber:BottomTabs.kt$BottomTabs$1.2f</ID>

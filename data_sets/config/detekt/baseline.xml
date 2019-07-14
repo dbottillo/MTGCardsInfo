@@ -1,5 +1,7 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1562755919171"></Whitelist>
+  <Whitelist timestamp="1563095206297">
+    <ID>SpreadOperator:SetDataSource.kt$SetDataSource$(query, *args)</ID>
+  </Whitelist>
 </SmellBaseline>

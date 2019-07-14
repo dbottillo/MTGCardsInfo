@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1562755932286">
+  <Whitelist timestamp="1563095225728">
     <ID>MagicNumber:TCGNetworkInterceptor.kt$TokenAuthenticator$401</ID>
     <ID>MagicNumber:TCGNetworkInterceptor.kt$TokenAuthenticator$5</ID>
     <ID>MatchingDeclarationName:CoreModule.kt$com.dbottillo.mtgsearchfree.dagger.CoreModule.kt</ID>

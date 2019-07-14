@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <Blacklist timestamp="1532376381009"></Blacklist>
-  <Whitelist timestamp="1562755930566">
+  <Whitelist timestamp="1563095224081">
     <ID>ComplexMethod:CardsActivityPresenterImpl.kt$CardsActivityPresenterImpl$override fun init(view: CardsActivityView, intent: Intent?)</ID>
     <ID>ComplexMethod:CardsConfiguratorPresenterImpl.kt$CardsConfiguratorPresenterImpl$override fun update(type: CardFilter.TYPE, on: Boolean)</ID>
     <ID>ComplexMethod:DeckFragment.kt$DeckFragment$override fun onViewCreated(view: View, savedInstanceState: Bundle?)</ID>
@@ -62,7 +62,5 @@
     <ID>ReturnCount:DeckActivity.kt$DeckActivity$override fun onOptionsItemSelected(item: MenuItem): Boolean</ID>
     <ID>ReturnCount:DecksAdapter.kt$DecksAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
     <ID>ReturnCount:StartingHandGridAdapter.kt$StartingHandGridAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
-    <ID>TooGenericExceptionCaught:DecksInteractorImpl.kt$DecksInteractorImpl$throwable: Throwable</ID>
-    <ID>TooGenericExceptionCaught:DecksStorageImpl.kt$DecksStorageImpl$e: Exception</ID>
   </Whitelist>
 </SmellBaseline>

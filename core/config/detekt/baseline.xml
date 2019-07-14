@@ -1,14 +1,12 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1562755916965">
+  <Whitelist timestamp="1563095200419">
     <ID>ComplexCondition:CardDataSource.kt$CardDataSource.Companion$(column == COLUMNS.NAMES || column == COLUMNS.SUPER_TYPES || column == COLUMNS.FLAVOR || column == COLUMNS.ARTIST || column == COLUMNS.LOYALTY || column == COLUMNS.PRINTINGS || column == COLUMNS.LEGALITIES || column == COLUMNS.ORIGINAL_TEXT) &amp;&amp; version &lt;= 6</ID>
     <ID>ComplexCondition:LOG.kt$LOG$element.className != LOG::class.java.name &amp;&amp; element.className != BasicActivity::class.java.name &amp;&amp; element.className != BasicFragment::class.java.name &amp;&amp; element.className != Logger::class.java.name &amp;&amp; element.className != Instrumentation::class.java.name</ID>
     <ID>ComplexMethod:CardDataSource.kt$CardDataSource$fun createContentValue(card: MTGCard): ContentValues</ID>
     <ID>ComplexMethod:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
     <ID>ComplexMethod:CardDataSource.kt$CardDataSource.Companion$private fun shouldAddColumn(column: COLUMNS, version: Int): Boolean</ID>
-    <ID>ComplexMethod:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$@Throws(JSONException::class) private fun createContentValueFromJSON(jsonObject: JSONObject, set: MTGSet): ContentValues</ID>
-    <ID>ComplexMethod:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$fun adjustCode(code: String?): String?</ID>
     <ID>ComplexMethod:FilterPickerView.kt$FilterPickerView$fun configure(showFilter: Boolean, showOrder: Boolean)</ID>
     <ID>ComplexMethod:FilterPickerView.kt$FilterPickerView$override fun onClick(view: View)</ID>
     <ID>ComplexMethod:MTGCardDataSource.kt$MTGCardDataSource$fun searchCards(searchParams: SearchParams): List&lt;MTGCard&gt;</ID>
@@ -18,16 +16,13 @@
     <ID>LargeClass:DeckDataSource.kt$DeckDataSource</ID>
     <ID>LongMethod:CardDataSource.kt$CardDataSource$fun createContentValue(card: MTGCard): ContentValues</ID>
     <ID>LongMethod:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
-    <ID>LongMethod:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$@Throws(JSONException::class) private fun createContentValueFromJSON(jsonObject: JSONObject, set: MTGSet): ContentValues</ID>
     <ID>LongMethod:MTGCard.kt$MTGCard$override fun hashCode(): Int</ID>
     <ID>LongMethod:MTGCardDataSource.kt$MTGCardDataSource$fun searchCards(searchParams: SearchParams): List&lt;MTGCard&gt;</ID>
-    <ID>MagicNumber:AddFavouritesAsyncTask.kt$AddFavouritesAsyncTask$600</ID>
     <ID>MagicNumber:AnimationUtil.kt$AnimationUtil$250</ID>
     <ID>MagicNumber:CardDataSource.kt$CardDataSource.Companion$6</ID>
     <ID>MagicNumber:CardMigratorService.kt$CardMigratorService$107</ID>
     <ID>MagicNumber:CardsInfoDbHelper.kt$CardsInfoDbHelper$3</ID>
     <ID>MagicNumber:CardsInfoDbHelper.kt$CardsInfoDbHelper$4</ID>
-    <ID>MagicNumber:CreateDBAsyncTask.kt$CreateDBAsyncTask$1024</ID>
     <ID>MagicNumber:FileManager.kt$FileManager$100</ID>
     <ID>MagicNumber:FileManager.kt$FileManager$1024</ID>
     <ID>MagicNumber:MTGCard.kt$MTGCard$31</ID>
@@ -83,7 +78,6 @@
     <ID>SpreadOperator:MTGCardDataSource.kt$MTGCardDataSource$(CardDataSource.COLUMNS.SET_ID.noun, "==", "OR", *STANDARD.setIds)</ID>
     <ID>SpreadOperator:MTGCardDataSource.kt$MTGCardDataSource$(CardDataSource.COLUMNS.TYPE.noun, "LIKE", "AND", *types)</ID>
     <ID>SpreadOperator:MTGCardDataSource.kt$MTGCardDataSource$(output.query, *sel)</ID>
-    <ID>SpreadOperator:SetDataSource.kt$SetDataSource$(query, *args)</ID>
     <ID>TooGenericExceptionCaught:BasicActivity.kt$BasicActivity$e: Throwable</ID>
     <ID>TooGenericExceptionCaught:DeckDataSource.kt$DeckDataSource$e: Exception</ID>
     <ID>TooGenericExceptionCaught:FileUtil.kt$FileUtil$e: Exception</ID>
