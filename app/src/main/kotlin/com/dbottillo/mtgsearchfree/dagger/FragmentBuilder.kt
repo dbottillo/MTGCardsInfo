@@ -15,6 +15,9 @@ import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
 import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor
+import com.dbottillo.mtgsearchfree.sets.SetsFragment
+import com.dbottillo.mtgsearchfree.sets.SetsFragmentPresenter
+import com.dbottillo.mtgsearchfree.sets.SetsFragmentPresenterImpl
 import com.dbottillo.mtgsearchfree.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
@@ -23,9 +26,6 @@ import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorPresent
 import com.dbottillo.mtgsearchfree.ui.saved.SavedCardsPresenter
 import com.dbottillo.mtgsearchfree.ui.saved.SavedCardsPresenterImpl
 import com.dbottillo.mtgsearchfree.ui.saved.SavedFragment
-import com.dbottillo.mtgsearchfree.ui.sets.SetsFragment
-import com.dbottillo.mtgsearchfree.ui.sets.SetsFragmentPresenter
-import com.dbottillo.mtgsearchfree.ui.sets.SetsFragmentPresenterImpl
 import com.dbottillo.mtgsearchfree.util.Logger
 import dagger.Module
 import dagger.Provides

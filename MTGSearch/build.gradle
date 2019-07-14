@@ -27,6 +27,7 @@ dependencies {
     implementation project(":data_decks")
     implementation project(":data_sets")
     implementation project(":feature_home")
+    implementation project(":feature_base_cards")
 
     core()
     di()

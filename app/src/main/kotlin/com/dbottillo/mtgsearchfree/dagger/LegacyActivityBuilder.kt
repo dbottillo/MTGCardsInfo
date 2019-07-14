@@ -7,6 +7,9 @@ import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
 import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor
+import com.dbottillo.mtgsearchfree.sets.SetPickerActivity
+import com.dbottillo.mtgsearchfree.sets.SetPickerPresenter
+import com.dbottillo.mtgsearchfree.sets.SetPickerPresenterImpl
 import com.dbottillo.mtgsearchfree.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
@@ -20,9 +23,6 @@ import com.dbottillo.mtgsearchfree.ui.lucky.CardsLuckyPresenterImpl
 import com.dbottillo.mtgsearchfree.ui.search.SearchActivity
 import com.dbottillo.mtgsearchfree.ui.search.SearchPresenter
 import com.dbottillo.mtgsearchfree.ui.search.SearchPresenterImpl
-import com.dbottillo.mtgsearchfree.ui.sets.SetPickerActivity
-import com.dbottillo.mtgsearchfree.ui.sets.SetPickerPresenter
-import com.dbottillo.mtgsearchfree.ui.sets.SetPickerPresenterImpl
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenter
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenterImpl
 import com.dbottillo.mtgsearchfree.util.Logger

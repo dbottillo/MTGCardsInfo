@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-    package="com.dbottillo.mtgsearchfree.featuresets"
+    package="com.dbottillo.mtgsearchfree.sets"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <activity android:name=".SetPickerActivity"/>
+    </application>
 </manifest>
