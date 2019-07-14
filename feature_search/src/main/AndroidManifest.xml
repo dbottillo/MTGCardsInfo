@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    package="com.dbottillo.mtgsearchfree.lifecounter"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <activity android:name=".AboutActivity"/>
+    </application>
+</manifest>

@@ -2,3 +2,4 @@ include ':MTGSearch', ':core', ':app', ':network'
 include ':data_cards', ":data_sets", ":data_decks"
 include ":feature_about", ":feature_release_note", ':feature_life_counter', ':feature_home'
 include ":feature_sets", ":feature_cards", ":feature_base_cards", ":feature_decks", ":feature_cards_lucky"
+include ":feature_cards_saved", ":feature_search"
