@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree.ui.saved
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -15,7 +14,6 @@ import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.home.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
-import com.dbottillo.mtgsearchfree.ui.search.SearchActivity
 import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
 import com.dbottillo.mtgsearchfree.ui.cards.startCardsActivity
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
@@ -151,9 +149,9 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
         }
     }
 
-    fun openSearch() {
+    private fun openSearch() {
         LOG.d()
-        startActivity(Intent(activity, SearchActivity::class.java))
+        navigator.openSearchScreen(activity!!)
     }
 
     override fun onTitleHeaderSelected() {

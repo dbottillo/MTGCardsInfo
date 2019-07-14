@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.ui.search
+package com.dbottillo.mtgsearchfree.search
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,8 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
-
-import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGSet
 
 class SearchSetAdapter(context: Context, sets: List<MTGSet>) : ArrayAdapter<MTGSet>(context, -1, sets) {

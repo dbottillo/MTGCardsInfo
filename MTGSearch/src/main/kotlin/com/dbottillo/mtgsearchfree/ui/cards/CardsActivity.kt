@@ -14,7 +14,6 @@ import android.widget.Toast
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenter
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
@@ -190,13 +189,6 @@ class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, Car
     override fun onDestroy() {
         super.onDestroy()
         cardsPresenter.onDestroy()
-    }
-}
-
-fun Context.startCardsActivity(search: SearchParams, position: Int): Intent {
-    return Intent(this, CardsActivity::class.java).also {
-        it.putExtra(POSITION, position)
-        it.putExtra(KEY_SEARCH, search)
     }
 }
 

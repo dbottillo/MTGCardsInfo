@@ -20,9 +20,9 @@ import com.dbottillo.mtgsearchfree.ui.BasicActivityModule
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivityPresenter
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivityPresenterImpl
-import com.dbottillo.mtgsearchfree.ui.search.SearchActivity
-import com.dbottillo.mtgsearchfree.ui.search.SearchPresenter
-import com.dbottillo.mtgsearchfree.ui.search.SearchPresenterImpl
+import com.dbottillo.mtgsearchfree.search.SearchActivity
+import com.dbottillo.mtgsearchfree.search.SearchPresenter
+import com.dbottillo.mtgsearchfree.search.SearchPresenterImpl
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenter
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenterImpl
 import com.dbottillo.mtgsearchfree.util.Logger

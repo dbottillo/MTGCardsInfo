@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.ui.search
+package com.dbottillo.mtgsearchfree.search
 
 import android.animation.ArgbEvaluator
 import android.annotation.TargetApi
@@ -14,14 +14,12 @@ import android.view.animation.Transformation
 import android.widget.ImageButton
 import android.widget.ScrollView
 import android.widget.Toast
-import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
-import com.dbottillo.mtgsearchfree.ui.cards.startCardsActivity
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CARDS_CONFIGURATION_SHOW_FILTER
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CARDS_CONFIGURATION_SHOW_ORDER
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
@@ -289,7 +287,7 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
 
     override fun onCardSelected(card: MTGCard, position: Int) {
         LOG.d()
-        startActivity(this.startCardsActivity(searchView.searchParams, position))
+        navigator.openCardsScreen(this, searchView.searchParams, position)
     }
 
     override fun onOptionSelected(menuItem: MenuItem, card: MTGCard, position: Int) {

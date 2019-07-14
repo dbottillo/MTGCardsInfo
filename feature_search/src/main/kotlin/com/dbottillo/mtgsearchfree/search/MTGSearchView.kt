@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.ui.search
+package com.dbottillo.mtgsearchfree.search
 
 import android.content.Context
 import android.graphics.PorterDuff
@@ -9,7 +9,6 @@ import android.util.AttributeSet
 import android.widget.ArrayAdapter
 import android.widget.RelativeLayout
 import android.widget.Spinner
-import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.model.cmcParamCreator

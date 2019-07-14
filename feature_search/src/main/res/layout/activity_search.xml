@@ -26,7 +26,7 @@
         android:background="@color/color_primary"
         android:layout_below="@+id/toolbar">
 
-        <com.dbottillo.mtgsearchfree.ui.search.MTGSearchView
+        <com.dbottillo.mtgsearchfree.search.MTGSearchView
             android:id="@+id/search_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

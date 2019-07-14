@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.ui.search
+package com.dbottillo.mtgsearchfree.search
 
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.SearchParams

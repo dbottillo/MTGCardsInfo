@@ -12,6 +12,7 @@ import com.dbottillo.mtgsearchfree.lucky.CardLuckyActivity
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
+import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.model.helper.AddFavouritesAsyncTask
 import com.dbottillo.mtgsearchfree.model.helper.CreateDBAsyncTask
 import com.dbottillo.mtgsearchfree.model.helper.CreateDecksAsyncTask
@@ -22,7 +23,8 @@ import com.dbottillo.mtgsearchfree.ui.cards.POSITION
 import com.dbottillo.mtgsearchfree.ui.saved.SavedFragment
 import com.dbottillo.mtgsearchfree.sets.SetsFragment
 import com.dbottillo.mtgsearchfree.ui.cards.KEY_SET
-import com.dbottillo.mtgsearchfree.ui.search.SearchActivity
+import com.dbottillo.mtgsearchfree.search.SearchActivity
+import com.dbottillo.mtgsearchfree.ui.cards.KEY_SEARCH
 
 class AppNavigator : Navigator {
     override fun openAboutScreen(origin: Activity) = origin.startActivity(Intent(origin, AboutActivity::class.java))
@@ -39,6 +41,12 @@ class AppNavigator : Navigator {
         origin.startActivity(Intent(origin, CardsActivity::class.java).also {
             it.putExtra(POSITION, position)
             it.putExtra(KEY_SET, set)
+        })
+    }
+    override fun openCardsScreen(origin: Activity, search: SearchParams, position: Int) {
+        origin.startActivity(Intent(origin, CardsActivity::class.java).also {
+            it.putExtra(POSITION, position)
+            it.putExtra(KEY_SEARCH, search)
         })
     }
     override fun newLifeCounterFragment() = LifeCounterFragment()
