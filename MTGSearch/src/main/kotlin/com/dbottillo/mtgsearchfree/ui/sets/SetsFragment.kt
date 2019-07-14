@@ -15,7 +15,6 @@ import com.dbottillo.mtgsearchfree.home.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
 import com.dbottillo.mtgsearchfree.ui.cards.startCardsActivity
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
-import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity
 import com.dbottillo.mtgsearchfree.ui.search.SearchActivity
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
@@ -104,7 +103,7 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
     override fun onOptionSelected(menuItem: MenuItem, card: MTGCard, position: Int) {
         LOG.d()
         when (menuItem.itemId) {
-            R.id.action_add_to_deck -> dbActivity.show("add_to_deck", AddToDeckFragment.newInstance(card))
+            R.id.action_add_to_deck -> dbActivity.show("add_to_deck", navigator.newAddToDeckFragment(card))
             R.id.action_add_to_favourites -> {
                 presenter.saveAsFavourite(card)
             }

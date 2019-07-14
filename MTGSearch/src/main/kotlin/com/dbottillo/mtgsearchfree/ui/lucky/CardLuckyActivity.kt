@@ -12,7 +12,6 @@ import android.widget.Toast
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity
-import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenter
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardView
 import com.dbottillo.mtgsearchfree.util.LOG
@@ -102,7 +101,7 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_add_to_deck -> {
-                cardView.card?.let { openDialog("add_to_deck", AddToDeckFragment.newInstance(it)) }
+                cardView.card?.let { openDialog("add_to_deck", navigator.newAddToDeckFragment(it)) }
                 true
             }
             android.R.id.home -> {

@@ -13,12 +13,10 @@ import android.widget.RelativeLayout
 import android.widget.Toast
 import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.CardsCollection
-import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity
-import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenter
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
 import com.dbottillo.mtgsearchfree.util.LOG
@@ -53,7 +51,7 @@ class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, Car
 
         fabButton.setOnClickListener {
             LOG.d()
-            currentCard?.let { openDialog("add_to_deck", AddToDeckFragment.newInstance(it)) }
+            currentCard?.let { openDialog("add_to_deck", navigator.newAddToDeckFragment(it)) }
         }
         setupView()
 
@@ -193,13 +191,6 @@ class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, Car
     override fun onDestroy() {
         super.onDestroy()
         cardsPresenter.onDestroy()
-    }
-}
-
-fun Context.startCardsActivity(deck: Deck, position: Int): Intent {
-    return Intent(this, CardsActivity::class.java).also {
-        it.putExtra(POSITION, position)
-        it.putExtra(KEY_DECK, deck.id)
     }
 }
 

@@ -18,7 +18,6 @@ import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragmen
 import com.dbottillo.mtgsearchfree.ui.search.SearchActivity
 import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
 import com.dbottillo.mtgsearchfree.ui.cards.startCardsActivity
-import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
 import com.dbottillo.mtgsearchfree.util.LOG
@@ -129,7 +128,7 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
     override fun onOptionSelected(menuItem: MenuItem, card: MTGCard, position: Int) {
         LOG.d()
         when (menuItem.itemId) {
-            R.id.action_add_to_deck -> dbActivity.show("add_to_deck", AddToDeckFragment.newInstance(card))
+            R.id.action_add_to_deck -> dbActivity.show("add_to_deck", navigator.newAddToDeckFragment(card))
             R.id.action_remove -> {
                 savedCardsPresenter.removeFromFavourite(card)
                 savedCardsPresenter.load()

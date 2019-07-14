@@ -15,8 +15,6 @@
 
         <activity android:name=".ui.search.SearchActivity"/>
 
-        <activity android:name=".ui.decks.deck.DeckActivity"/>
-
         <activity android:name=".ui.sets.SetPickerActivity"/>
 
         <meta-data

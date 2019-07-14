@@ -4,6 +4,8 @@ apply from: '../config-android.gradle'
 dependencies {
     implementation project(":core")
     implementation project(":data_decks")
+    implementation project(":data_cards")
+    implementation project(":feature_home")
 
     core()
     ui()

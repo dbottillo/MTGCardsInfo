@@ -1,6 +1,8 @@
 package com.dbottillo.mtgsearchfree.dagger
 
 import com.dbottillo.mtgsearchfree.ActivityScope
+import com.dbottillo.mtgsearchfree.decks.deck.DeckActivity
+import com.dbottillo.mtgsearchfree.decks.deck.DeckActivityPresenter
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
 import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor
@@ -12,8 +14,6 @@ import com.dbottillo.mtgsearchfree.ui.BasicActivityModule
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivityPresenter
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivityPresenterImpl
-import com.dbottillo.mtgsearchfree.ui.decks.deck.DeckActivity
-import com.dbottillo.mtgsearchfree.ui.decks.deck.DeckActivityPresenter
 import com.dbottillo.mtgsearchfree.ui.lucky.CardLuckyActivity
 import com.dbottillo.mtgsearchfree.ui.lucky.CardsLuckyPresenter
 import com.dbottillo.mtgsearchfree.ui.lucky.CardsLuckyPresenterImpl

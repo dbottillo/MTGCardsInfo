@@ -1,6 +1,15 @@
 package com.dbottillo.mtgsearchfree.dagger
 
 import com.dbottillo.mtgsearchfree.ActivityScope
+import com.dbottillo.mtgsearchfree.decks.DecksFragment
+import com.dbottillo.mtgsearchfree.decks.DecksFragmentPresenter
+import com.dbottillo.mtgsearchfree.decks.DecksFragmentPresenterImpl
+import com.dbottillo.mtgsearchfree.decks.addToDeck.AddToDeckFragment
+import com.dbottillo.mtgsearchfree.decks.addToDeck.AddToDeckInteractor
+import com.dbottillo.mtgsearchfree.decks.addToDeck.AddToDeckPresenter
+import com.dbottillo.mtgsearchfree.decks.addToDeck.AddToDeckPresenterImpl
+import com.dbottillo.mtgsearchfree.decks.deck.DeckFragment
+import com.dbottillo.mtgsearchfree.decks.startingHand.DeckStartingHandFragment
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
@@ -11,15 +20,6 @@ import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorPresenter
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorPresenterImpl
-import com.dbottillo.mtgsearchfree.ui.decks.DecksFragment
-import com.dbottillo.mtgsearchfree.ui.decks.DecksFragmentPresenter
-import com.dbottillo.mtgsearchfree.ui.decks.DecksFragmentPresenterImpl
-import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckFragment
-import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckInteractor
-import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckPresenter
-import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckPresenterImpl
-import com.dbottillo.mtgsearchfree.ui.decks.deck.DeckFragment
-import com.dbottillo.mtgsearchfree.ui.decks.startingHand.DeckStartingHandFragment
 import com.dbottillo.mtgsearchfree.ui.saved.SavedCardsPresenter
 import com.dbottillo.mtgsearchfree.ui.saved.SavedCardsPresenterImpl
 import com.dbottillo.mtgsearchfree.ui.saved.SavedFragment

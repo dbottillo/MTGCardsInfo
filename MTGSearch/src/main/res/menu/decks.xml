@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/action_import"
-        android:icon="@drawable/ic_upload"
+        android:icon="@drawable/ic_file_upload_white_24dp"
         android:title="@string/export"
         android:orderInCategory="101"
         app:showAsAction="ifRoom"/>

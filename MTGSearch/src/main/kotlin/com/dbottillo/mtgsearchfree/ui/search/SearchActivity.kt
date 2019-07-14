@@ -25,7 +25,6 @@ import com.dbottillo.mtgsearchfree.ui.cards.startCardsActivity
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CARDS_CONFIGURATION_SHOW_FILTER
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CARDS_CONFIGURATION_SHOW_ORDER
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
-import com.dbottillo.mtgsearchfree.ui.decks.addToDeck.AddToDeckFragment
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
 import com.dbottillo.mtgsearchfree.util.AnimationUtil
 import com.dbottillo.mtgsearchfree.util.LOG
@@ -295,7 +294,7 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
 
     override fun onOptionSelected(menuItem: MenuItem, card: MTGCard, position: Int) {
         if (menuItem.itemId == R.id.action_add_to_deck) {
-            this.show("add_to_deck", AddToDeckFragment.newInstance(card))
+            this.show("add_to_deck", navigator.newAddToDeckFragment(card))
         } else if (menuItem.itemId == R.id.action_add_to_favourites) {
             presenter.saveAsFavourite(card)
         }
