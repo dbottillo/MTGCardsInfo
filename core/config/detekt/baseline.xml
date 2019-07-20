@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1563095200419">
+  <Whitelist timestamp="1563646194244">
     <ID>ComplexCondition:CardDataSource.kt$CardDataSource.Companion$(column == COLUMNS.NAMES || column == COLUMNS.SUPER_TYPES || column == COLUMNS.FLAVOR || column == COLUMNS.ARTIST || column == COLUMNS.LOYALTY || column == COLUMNS.PRINTINGS || column == COLUMNS.LEGALITIES || column == COLUMNS.ORIGINAL_TEXT) &amp;&amp; version &lt;= 6</ID>
     <ID>ComplexCondition:LOG.kt$LOG$element.className != LOG::class.java.name &amp;&amp; element.className != BasicActivity::class.java.name &amp;&amp; element.className != BasicFragment::class.java.name &amp;&amp; element.className != Logger::class.java.name &amp;&amp; element.className != Instrumentation::class.java.name</ID>
     <ID>ComplexMethod:CardDataSource.kt$CardDataSource$fun createContentValue(card: MTGCard): ContentValues</ID>
@@ -21,6 +21,8 @@
     <ID>MagicNumber:AnimationUtil.kt$AnimationUtil$250</ID>
     <ID>MagicNumber:CardDataSource.kt$CardDataSource.Companion$6</ID>
     <ID>MagicNumber:CardMigratorService.kt$CardMigratorService$107</ID>
+    <ID>MagicNumber:CardViewHolder.kt$ListCardViewHolder$3</ID>
+    <ID>MagicNumber:CardViewHolder.kt$ListCardViewHolder$4</ID>
     <ID>MagicNumber:CardsInfoDbHelper.kt$CardsInfoDbHelper$3</ID>
     <ID>MagicNumber:CardsInfoDbHelper.kt$CardsInfoDbHelper$4</ID>
     <ID>MagicNumber:FileManager.kt$FileManager$100</ID>

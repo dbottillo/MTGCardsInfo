@@ -1,5 +1,25 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1563095213459"></Whitelist>
+  <Whitelist timestamp="1563646202791">
+    <ID>ComplexMethod:DeckFragment.kt$DeckFragment$override fun onViewCreated(view: View, savedInstanceState: Bundle?)</ID>
+    <ID>MagicNumber:AddToDeckFragment.kt$AddToDeckFragment$30</ID>
+    <ID>MagicNumber:AddToDeckFragment.kt$AddToDeckFragment.&lt;no name provided&gt;$5</ID>
+    <ID>MagicNumber:DeckAdapter.kt$DeckCardViewHolder$3</ID>
+    <ID>MagicNumber:DeckAdapter.kt$DeckCardViewHolder$4</ID>
+    <ID>MagicNumber:DeckStartingHandFragment.kt$DeckStartingHandFragment$3</ID>
+    <ID>MagicNumber:StartingHandPresenter.kt$StartingHandPresenter$7</ID>
+    <ID>PackageNaming:AddToDeckFragment.kt$package com.dbottillo.mtgsearchfree.decks.addToDeck</ID>
+    <ID>PackageNaming:AddToDeckPresenter.kt$package com.dbottillo.mtgsearchfree.decks.addToDeck</ID>
+    <ID>PackageNaming:AddToDeckPresenterImpl.kt$package com.dbottillo.mtgsearchfree.decks.addToDeck</ID>
+    <ID>PackageNaming:AddToDeckView.kt$package com.dbottillo.mtgsearchfree.decks.addToDeck</ID>
+    <ID>PackageNaming:DeckStartingHandFragment.kt$package com.dbottillo.mtgsearchfree.decks.startingHand</ID>
+    <ID>PackageNaming:StartingHandGridAdapter.kt$package com.dbottillo.mtgsearchfree.decks.startingHand</ID>
+    <ID>PackageNaming:StartingHandPresenter.kt$package com.dbottillo.mtgsearchfree.decks.startingHand</ID>
+    <ID>PackageNaming:StartingHandView.kt$package com.dbottillo.mtgsearchfree.decks.startingHand</ID>
+    <ID>ReturnCount:AddToDeckFragment.kt$AddToDeckFragment.InputFilterMinMax$override fun filter(source: CharSequence, start: Int, end: Int, dest: Spanned, dstart: Int, dend: Int): CharSequence?</ID>
+    <ID>ReturnCount:DeckActivity.kt$DeckActivity$override fun onOptionsItemSelected(item: MenuItem): Boolean</ID>
+    <ID>ReturnCount:DecksAdapter.kt$DecksAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
+    <ID>ReturnCount:StartingHandGridAdapter.kt$StartingHandGridAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
+  </Whitelist>
 </SmellBaseline>

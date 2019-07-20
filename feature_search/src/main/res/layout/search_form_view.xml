@@ -14,7 +14,7 @@
         android:id="@+id/search_name_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_card_title"
         android:textColor="@color/white"
@@ -23,6 +23,8 @@
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/search_name"
         style="@style/MTG.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:maxLines="1"
         android:layout_below="@id/search_name_title"
         android:hint="@string/search_hint_name"/>
@@ -32,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/search_name"
-        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_card_types"
         android:textColor="@color/white"
@@ -40,7 +42,7 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/search_types"
-        backgroundTint="@color/white"
+        android:backgroundTint="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:maxLines="1"
@@ -54,7 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/search_types"
-        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_card_text"
         android:textColor="@color/white"
@@ -62,7 +64,7 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/search_text"
-        backgroundTint="@color/white"
+        android:backgroundTint="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:maxLines="1"
@@ -76,7 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/search_text"
-        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_set_title"
         android:textColor="@color/white"
@@ -120,6 +122,7 @@
             style="@style/MTG.EditText"
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:hint="@string/search_cmc_numbers"/>
 
     </LinearLayout>
@@ -147,8 +150,9 @@
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/search_power"
             style="@style/MTG.EditText"
+            android:layout_height="wrap_content"
             android:layout_width="0dp"
-            android:layout_marginRight="@dimen/base_margin"
+            android:layout_marginEnd="@dimen/base_margin"
             android:layout_weight="1"
             android:digits="0123456789*"
             android:hint="@string/search_hint_numbers"/>
@@ -156,7 +160,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/base_margin"
+            android:layout_marginStart="@dimen/base_margin"
             android:text="@string/search_toughness_title"
             android:textColor="@color/white"/>
 
@@ -169,6 +173,7 @@
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/search_tough"
             style="@style/MTG.EditText"
+            android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:digits="0123456789*"

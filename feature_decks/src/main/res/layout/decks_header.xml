@@ -10,7 +10,7 @@
     <TextView
         style="@style/BigTitle"
         android:text="@string/action_decks"
-        tools:layout_width="wrap_content"
-        tools:layout_height="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

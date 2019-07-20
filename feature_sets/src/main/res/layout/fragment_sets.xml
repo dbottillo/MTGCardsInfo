@@ -40,7 +40,7 @@
                 android:layout_marginEnd="16dp"
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/action_search"
-                android:src="@drawable/ic_search"
+                android:src="@drawable/ic_search_white_24dp"
                 android:tint="@color/white"
                 android:visibility="visible"/>
 
@@ -48,8 +48,8 @@
                 android:id="@+id/action_lucky"
                 android:layout_width="@dimen/toolbar_icon_size"
                 android:layout_height="@dimen/toolbar_icon_size"
-                android:layout_gravity="right|center_vertical"
-                android:layout_marginRight="16dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginEnd="16dp"
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/action_lucky"
                 android:src="@drawable/ic_action_lucky"
@@ -156,7 +156,7 @@
         android:id="@+id/change_set"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         app:srcCompat="@drawable/ic_swap_horiz"
         android:tint="@color/white"

@@ -3,7 +3,7 @@
     <item android:drawable="@drawable/bg_search_icon" />
     <item
         android:bottom="@dimen/search_icon_padding"
-        android:drawable="@drawable/ic_search"
+        android:drawable="@drawable/ic_search_white_24dp"
         android:left="@dimen/search_icon_padding"
         android:right="@dimen/search_icon_padding"
         android:top="@dimen/search_icon_padding"/>

@@ -11,6 +11,10 @@ if (keystorePropertiesFile.exists()) {
     keystoreProperties['RELEASE_STORE_PASSWORD'] = ""
 }
 
+buildscript {
+    ext.number_of_set = 186
+}
+
 android {
     defaultConfig {
         applicationId 'com.dbottillo.mtgsearchfree'
@@ -43,6 +47,7 @@ android {
             debuggable true
             testCoverageEnabled false
             ext.alwaysUpdateBuildId = false
+            buildConfigField 'int', 'NUMBER_OF_SET', "$number_of_set"
         }
         release {
             debuggable false
@@ -50,6 +55,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
             signingConfig signingConfigs.releaseConfig
             testCoverageEnabled false
+            buildConfigField 'int', 'NUMBER_OF_SET', "$number_of_set"
         }
     }
 

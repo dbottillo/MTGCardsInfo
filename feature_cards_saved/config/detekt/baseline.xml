@@ -1,14 +1,5 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1563095218125">
-    <ID>MagicNumber:LifeCounterAdapter.kt$LifeCounterAdapter$3</ID>
-    <ID>MagicNumber:LifeCounterAdapter.kt$LifeCounterAdapter$5</ID>
-    <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$10</ID>
-    <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$15</ID>
-    <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$20</ID>
-    <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$30</ID>
-    <ID>ReturnCount:LifeCounterAdapter.kt$LifeCounterAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
-    <ID>ReturnCount:LifeCounterAdapter.kt$LifeCounterAdapter$private fun getColorOfPosition(context: Context, position: Int): Int</ID>
-  </Whitelist>
+  <Whitelist timestamp="1563646200882"></Whitelist>
 </SmellBaseline>

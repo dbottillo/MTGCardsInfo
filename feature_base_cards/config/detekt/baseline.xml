@@ -1,5 +1,27 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1563095209326"></Whitelist>
+  <Whitelist timestamp="1563646195963">
+    <ID>ComplexMethod:CardsConfiguratorPresenterImpl.kt$CardsConfiguratorPresenterImpl$override fun update(type: CardFilter.TYPE, on: Boolean)</ID>
+    <ID>ComplexMethod:MTGCardView.kt$MTGCardView$private fun load(card: MTGCard)</ID>
+    <ID>EmptySecondaryConstructor:MTGCardView.kt$MTGCardView${}</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$10</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$14</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$15</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$16</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$17</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$3</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$32f</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$4</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$40f</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$8</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$9</ID>
+    <ID>MagicNumber:MTGCardsView.kt$MTGCardsView$6</ID>
+    <ID>MagicNumber:MTGCardsView.kt$MTGCardsView$60</ID>
+    <ID>PackageNaming:CardsConfiguratorFragment.kt$package com.dbottillo.mtgsearchfree.ui.cardsConfigurator</ID>
+    <ID>PackageNaming:CardsConfiguratorPresenter.kt$package com.dbottillo.mtgsearchfree.ui.cardsConfigurator</ID>
+    <ID>PackageNaming:CardsConfiguratorPresenterImpl.kt$package com.dbottillo.mtgsearchfree.ui.cardsConfigurator</ID>
+    <ID>PackageNaming:CardsConfiguratorView.kt$package com.dbottillo.mtgsearchfree.ui.cardsConfigurator</ID>
+    <ID>ReturnCount:CardsAdapter.kt$CardsAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
+  </Whitelist>
 </SmellBaseline>

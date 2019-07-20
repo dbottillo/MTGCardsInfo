@@ -1,5 +1,7 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1563095212052"></Whitelist>
+  <Whitelist timestamp="1563646199313">
+    <ID>ForbiddenComment:CardsLuckyPresenterImpl.kt$CardsLuckyPresenterImpl$// TODO: this need testing</ID>
+  </Whitelist>
 </SmellBaseline>

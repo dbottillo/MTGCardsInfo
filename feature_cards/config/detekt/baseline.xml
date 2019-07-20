@@ -1,5 +1,10 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1563095210680"></Whitelist>
+  <Whitelist timestamp="1563646197668">
+    <ID>ComplexMethod:CardsActivityPresenterImpl.kt$CardsActivityPresenterImpl$override fun init(view: CardsActivityView, intent: Intent?)</ID>
+    <ID>ForbiddenComment:CardsActivityPresenterImpl.kt$CardsActivityPresenterImpl$// TODO: this need testing</ID>
+    <ID>MagicNumber:CardsActivity.kt$CardsActivity$0.5</ID>
+    <ID>MagicNumber:CardsActivity.kt$CardsActivity$16</ID>
+  </Whitelist>
 </SmellBaseline>
