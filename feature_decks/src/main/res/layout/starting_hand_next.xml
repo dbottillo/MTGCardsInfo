@@ -20,6 +20,6 @@
         android:background="@drawable/btn_cirle_primary_dark"
         android:contentDescription="@string/cd_next"
         android:padding="8dp"
-        android:src="@drawable/plus"
+        android:src="@drawable/ic_add_black_24dp"
         android:tint="@color/white"/>
 </FrameLayout>

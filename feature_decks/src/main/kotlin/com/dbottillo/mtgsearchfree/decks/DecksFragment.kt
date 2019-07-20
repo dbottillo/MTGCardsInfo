@@ -102,14 +102,14 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.Perm
         adapter.notifyDataSetChanged()
     }
 
-    fun onAddDeck() {
+    private fun onAddDeck() {
         dialogUtil.showAddDeck(R.layout.dialog_add_new_deck, R.id.deck_name) {
             presenter.addDeck(it)
             TrackingManager.trackNewDeck(it)
         }
     }
 
-    internal fun deleteDeck(deck: Deck) {
+    private fun deleteDeck(deck: Deck) {
         LOG.d()
         if (deck.numberOfCards > 0) {
             dialogUtil.deleteDeck(deck) {

@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-    package="com.dbottillo.mtgsearchfree.app"
+    package="com.dbottillo.mtgsearchfree"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
-        android:name="com.dbottillo.mtgsearchfree.MTGApp"
+        android:name=".MTGApp"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@drawable/ic_launcher"
@@ -14,12 +19,12 @@
         android:theme="@style/MTGSearchTheme"
         tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
 
-        <activity android:name="com.dbottillo.mtgsearchfree.lucky.CardLuckyActivity"
+        <activity android:name=".lucky.CardLuckyActivity"
                   android:launchMode="singleTask"
-                  android:parentActivityName="com.dbottillo.mtgsearchfree.home.HomeActivity">
+                  android:parentActivityName=".home.HomeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.dbottillo.mtgsearchfree.home.HomeActivity" />
+                android:value=".home.HomeActivity" />
         </activity>
 
         <provider
@@ -33,7 +38,7 @@
         </provider>
 
         <receiver
-            android:name="com.dbottillo.mtgsearchfree.widget.LuckyWidgetProvider"
+            android:name=".widget.LuckyWidgetProvider"
             android:icon="@drawable/ic_launcher"
             android:label="Lucky Widget">
             <intent-filter>
@@ -44,6 +49,10 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/lucky_widget_info"/>
         </receiver>
+
+        <meta-data
+            android:name="com.crashlytics.ApiKey"
+            android:value="f2c7b2dc347786aa1e01b4ca437f2f8dd05d59d8"/>
 
     </application>
 
