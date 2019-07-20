@@ -20,12 +20,12 @@ import com.dbottillo.mtgsearchfree.releasenote.ReleaseNoteActivity
 import com.dbottillo.mtgsearchfree.saved.SavedFragment
 import com.dbottillo.mtgsearchfree.search.SearchActivity
 import com.dbottillo.mtgsearchfree.sets.SetsFragment
-import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
-import com.dbottillo.mtgsearchfree.ui.cards.KEY_DECK
-import com.dbottillo.mtgsearchfree.ui.cards.KEY_FAV
-import com.dbottillo.mtgsearchfree.ui.cards.KEY_SEARCH
-import com.dbottillo.mtgsearchfree.ui.cards.KEY_SET
-import com.dbottillo.mtgsearchfree.ui.cards.POSITION
+import com.dbottillo.mtgsearchfree.cards.CardsActivity
+import com.dbottillo.mtgsearchfree.cards.KEY_DECK
+import com.dbottillo.mtgsearchfree.cards.KEY_FAV
+import com.dbottillo.mtgsearchfree.cards.KEY_SEARCH
+import com.dbottillo.mtgsearchfree.cards.KEY_SET
+import com.dbottillo.mtgsearchfree.cards.POSITION
 
 class AppNavigator : Navigator {
     override fun openAboutScreen(origin: Activity) = origin.startActivity(Intent(origin, AboutActivity::class.java))

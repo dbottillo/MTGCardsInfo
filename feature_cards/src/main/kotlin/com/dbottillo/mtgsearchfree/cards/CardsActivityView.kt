@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.ui.cards
+package com.dbottillo.mtgsearchfree.cards
 
 import android.net.Uri
 import com.dbottillo.mtgsearchfree.model.CardsCollection

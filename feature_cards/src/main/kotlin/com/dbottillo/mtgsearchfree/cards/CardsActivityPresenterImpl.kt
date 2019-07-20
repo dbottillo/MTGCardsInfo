@@ -1,8 +1,7 @@
-package com.dbottillo.mtgsearchfree.ui.cards
+package com.dbottillo.mtgsearchfree.cards
 
 import android.content.Intent
 import android.graphics.Bitmap
-import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
 import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor

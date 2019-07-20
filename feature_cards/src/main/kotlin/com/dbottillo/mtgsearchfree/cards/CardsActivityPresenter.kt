@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.ui.cards
+package com.dbottillo.mtgsearchfree.cards
 
 import android.content.Intent
 import android.graphics.Bitmap

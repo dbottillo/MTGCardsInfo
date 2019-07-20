@@ -17,9 +17,9 @@ import com.dbottillo.mtgsearchfree.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.ui.BasicActivityModule
-import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
-import com.dbottillo.mtgsearchfree.ui.cards.CardsActivityPresenter
-import com.dbottillo.mtgsearchfree.ui.cards.CardsActivityPresenterImpl
+import com.dbottillo.mtgsearchfree.cards.CardsActivity
+import com.dbottillo.mtgsearchfree.cards.CardsActivityPresenter
+import com.dbottillo.mtgsearchfree.cards.CardsActivityPresenterImpl
 import com.dbottillo.mtgsearchfree.search.SearchActivity
 import com.dbottillo.mtgsearchfree.search.SearchPresenter
 import com.dbottillo.mtgsearchfree.search.SearchPresenterImpl

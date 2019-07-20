@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.ui.cards
+package com.dbottillo.mtgsearchfree.cards
 
 import android.graphics.Bitmap
 import android.graphics.Point
@@ -9,7 +9,6 @@ import com.google.android.material.tabs.TabLayout
 import androidx.viewpager.widget.ViewPager
 import android.widget.RelativeLayout
 import android.widget.Toast
-import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity
@@ -163,9 +162,7 @@ class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, Car
     }
 
     override fun setImageMenuItemChecked(checked: Boolean) {
-        if (imageMenuItem != null) {
-            imageMenuItem!!.isChecked = checked
-        }
+        imageMenuItem?.isChecked = checked
     }
 
     override fun showLoading() {
