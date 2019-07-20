@@ -17,14 +17,15 @@ import com.dbottillo.mtgsearchfree.model.helper.AddFavouritesAsyncTask
 import com.dbottillo.mtgsearchfree.model.helper.CreateDBAsyncTask
 import com.dbottillo.mtgsearchfree.model.helper.CreateDecksAsyncTask
 import com.dbottillo.mtgsearchfree.releasenote.ReleaseNoteActivity
+import com.dbottillo.mtgsearchfree.saved.SavedFragment
+import com.dbottillo.mtgsearchfree.search.SearchActivity
+import com.dbottillo.mtgsearchfree.sets.SetsFragment
 import com.dbottillo.mtgsearchfree.ui.cards.CardsActivity
 import com.dbottillo.mtgsearchfree.ui.cards.KEY_DECK
-import com.dbottillo.mtgsearchfree.ui.cards.POSITION
-import com.dbottillo.mtgsearchfree.ui.saved.SavedFragment
-import com.dbottillo.mtgsearchfree.sets.SetsFragment
-import com.dbottillo.mtgsearchfree.ui.cards.KEY_SET
-import com.dbottillo.mtgsearchfree.search.SearchActivity
+import com.dbottillo.mtgsearchfree.ui.cards.KEY_FAV
 import com.dbottillo.mtgsearchfree.ui.cards.KEY_SEARCH
+import com.dbottillo.mtgsearchfree.ui.cards.KEY_SET
+import com.dbottillo.mtgsearchfree.ui.cards.POSITION
 
 class AppNavigator : Navigator {
     override fun openAboutScreen(origin: Activity) = origin.startActivity(Intent(origin, AboutActivity::class.java))
@@ -49,6 +50,12 @@ class AppNavigator : Navigator {
             it.putExtra(KEY_SEARCH, search)
         })
     }
+    override fun openCardsSavedScreen(origin: Activity, position: Int) {
+        origin.startActivity(Intent(origin, CardsActivity::class.java).also {
+            it.putExtra(POSITION, position)
+            it.putExtra(KEY_FAV, true)
+        })
+    }
     override fun newLifeCounterFragment() = LifeCounterFragment()
     override fun newSetsCounterFragment() = SetsFragment()
     override fun newDecksFragment() = DecksFragment()
@@ -58,6 +65,7 @@ class AppNavigator : Navigator {
     override fun createDecks(appContext: Context) {
         CreateDecksAsyncTask(appContext).execute()
     }
+
     override fun createFavourites(appContext: Context) {
         AddFavouritesAsyncTask(appContext).execute()
     }

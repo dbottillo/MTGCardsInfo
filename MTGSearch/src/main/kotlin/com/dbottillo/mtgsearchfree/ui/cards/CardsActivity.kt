@@ -1,7 +1,5 @@
 package com.dbottillo.mtgsearchfree.ui.cards
 
-import android.content.Context
-import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Point
 import android.net.Uri
@@ -189,13 +187,6 @@ class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, Car
     override fun onDestroy() {
         super.onDestroy()
         cardsPresenter.onDestroy()
-    }
-}
-
-fun Context.startCardsActivity(position: Int): Intent {
-    return Intent(this, CardsActivity::class.java).also {
-        it.putExtra(POSITION, position)
-        it.putExtra(KEY_FAV, true)
     }
 }
 

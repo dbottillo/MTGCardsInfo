@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.ui.saved
+package com.dbottillo.mtgsearchfree.saved
 
 import com.dbottillo.mtgsearchfree.model.MTGCard
 

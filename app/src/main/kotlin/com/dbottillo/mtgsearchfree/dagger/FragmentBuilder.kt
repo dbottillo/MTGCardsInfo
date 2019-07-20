@@ -13,7 +13,6 @@ import com.dbottillo.mtgsearchfree.decks.startingHand.DeckStartingHandFragment
 import com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.DecksInteractor
-import com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor
 import com.dbottillo.mtgsearchfree.interactors.SetsInteractor
 import com.dbottillo.mtgsearchfree.sets.SetsFragment
 import com.dbottillo.mtgsearchfree.sets.SetsFragmentPresenter
@@ -23,9 +22,6 @@ import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorPresenter
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorPresenterImpl
-import com.dbottillo.mtgsearchfree.ui.saved.SavedCardsPresenter
-import com.dbottillo.mtgsearchfree.ui.saved.SavedCardsPresenterImpl
-import com.dbottillo.mtgsearchfree.ui.saved.SavedFragment
 import com.dbottillo.mtgsearchfree.util.Logger
 import dagger.Module
 import dagger.Provides
@@ -48,10 +44,6 @@ abstract class FragmentBuilder {
     @ActivityScope
     @ContributesAndroidInjector
     abstract fun contributeDeckStartingHandFragmentInjector(): DeckStartingHandFragment
-
-    @ActivityScope
-    @ContributesAndroidInjector(modules = [SavedFragmentModule::class])
-    abstract fun contributeSavedFragmentInjector(): SavedFragment
 
     @ActivityScope
     @ContributesAndroidInjector(modules = [AddToDeckFragmentModule::class])
@@ -84,18 +76,6 @@ class DecksFragmentModule {
         logger: Logger
     ): DecksFragmentPresenter {
         return DecksFragmentPresenterImpl(interactor, logger)
-    }
-}
-
-@Module
-class SavedFragmentModule {
-    @Provides
-    fun providesSavedFragmentPresenter(
-        interactor: SavedCardsInteractor,
-        generalData: GeneralData,
-        logger: Logger
-    ): SavedCardsPresenter {
-        return SavedCardsPresenterImpl(interactor, generalData, logger)
     }
 }
 

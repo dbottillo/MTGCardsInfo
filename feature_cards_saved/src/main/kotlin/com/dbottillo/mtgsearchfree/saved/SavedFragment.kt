@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.ui.saved
+package com.dbottillo.mtgsearchfree.saved
 
 import android.content.Context
 import android.os.Bundle
@@ -8,14 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.Toast
-import com.dbottillo.mtgsearchfree.R
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.home.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
 import com.dbottillo.mtgsearchfree.ui.cards.OnCardListener
-import com.dbottillo.mtgsearchfree.ui.cards.startCardsActivity
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
 import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
 import com.dbottillo.mtgsearchfree.util.LOG
@@ -120,7 +118,7 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
 
     override fun onCardSelected(card: MTGCard, position: Int) {
         TrackingManager.trackOpenCard(position)
-        startActivity(context?.startCardsActivity(position))
+        navigator.openCardsSavedScreen(requireActivity(), position)
     }
 
     override fun onOptionSelected(menuItem: MenuItem, card: MTGCard, position: Int) {

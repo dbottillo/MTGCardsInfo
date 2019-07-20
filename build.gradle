@@ -82,7 +82,7 @@ allprojects {
                 includeGroup "org.checkerframework"
                 includeGroup "com.google.errorprone"
                 includeGroup "com.google.j2objc"
-                includeGroup "org.codehaus.mojo"
+                includeGroupByRegex "org.codehaus.*"
                 includeGroup "org.codehaus.groovy"
                 includeGroup "it.unimi.dsi"
                 includeGroupByRegex "com.googlecode.*"

@@ -16,6 +16,7 @@ interface Navigator {
     fun openCardsScreen(origin: Activity, deck: Deck, position: Int)
     fun openCardsScreen(origin: Activity, set: MTGSet, position: Int)
     fun openCardsScreen(origin: Activity, search: SearchParams, position: Int)
+    fun openCardsSavedScreen(origin: Activity, position: Int)
     fun openSearchScreen(origin: Activity)
     fun openCardsLuckyScreen(origin: Activity)
     fun newLifeCounterFragment(): BasicFragment
