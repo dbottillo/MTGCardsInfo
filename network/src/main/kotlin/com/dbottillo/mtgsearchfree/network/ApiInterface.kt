@@ -30,5 +30,6 @@ class ApiTCGPriceResult(
     val productId: Int,
     val lowPrice: Double,
     val highPrice: Double,
-    val midPrice: Double
+    val midPrice: Double,
+    val subTypeName: String?
 )
