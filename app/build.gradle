@@ -32,8 +32,8 @@ android {
         }
 
         releaseConfig {
-            keyAlias 'dbottillo'
-            storeFile file('../dbottillo.keystore')
+            keyAlias 'upload'
+            storeFile file('../upload-keystore.jks')
             keyPassword keystoreProperties['RELEASE_KEY_PASSWORD']
             storePassword keystoreProperties['RELEASE_STORE_PASSWORD']
         }
