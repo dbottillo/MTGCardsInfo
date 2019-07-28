@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.model.helper
+package com.dbottillo.mtgsearchfree.debug
 
 import android.content.ContentValues
 import android.content.Context
@@ -9,8 +9,9 @@ import android.util.Log
 import android.widget.Toast
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.database.CardDataSource
-import com.dbottillo.mtgsearchfree.database.CreateDatabaseHelper
+import com.dbottillo.mtgsearchfree.storage.SetDataSource
 import com.dbottillo.mtgsearchfree.util.LOG
+import com.dbottillo.mtgsearchfree.util.adjustCode
 import com.dbottillo.mtgsearchfree.util.copyDbToSdCard
 import org.json.JSONArray
 import org.json.JSONException
@@ -21,9 +22,11 @@ import java.io.InputStreamReader
 import java.io.StringWriter
 import java.lang.ref.WeakReference
 import java.math.BigDecimal
-import java.util.Locale
 
-class CreateDBAsyncTask(inputContext: Context, private val packageName: String) : AsyncTask<String, Void, ArrayList<Any>>() {
+internal class CreateDBAsyncTask(
+    inputContext: Context,
+    private val packageName: String
+) : AsyncTask<String, Void, ArrayList<Any>>() {
 
     private var error = false
     private var errorMessage: String? = null
@@ -38,10 +41,10 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
 
             val db = mDbHelper.writableDatabase
             db.disableWriteAheadLogging()
-            db.delete(com.dbottillo.mtgsearchfree.storage.SetDataSource.TABLE, null, null)
+            db.delete(SetDataSource.TABLE, null, null)
             db.delete(CardDataSource.TABLE, null, null)
 
-            val setDataSource = com.dbottillo.mtgsearchfree.storage.SetDataSource(mDbHelper.writableDatabase)
+            val setDataSource = SetDataSource(mDbHelper.writableDatabase)
             try {
                 val setList = context.resources?.getIdentifier("set_list", "raw", packageName) ?: -1
                 val jsonString = loadFile(setList)
@@ -71,12 +74,12 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
     }
 
     @Suppress("UNUSED_VARIABLE")
-    private fun loadSet(context: Context, db: SQLiteDatabase, setDataSource: com.dbottillo.mtgsearchfree.storage.SetDataSource, setJ: JSONObject) {
+    private fun loadSet(context: Context, db: SQLiteDatabase, setDataSource: SetDataSource, setJ: JSONObject) {
         try {
             val setToLoad = setToLoad(context, setJ.getString("code"))
             val jsonSetString = loadFile(setToLoad)
 
-            val newRowId = db.insert(com.dbottillo.mtgsearchfree.storage.SetDataSource.TABLE, null, setDataSource.fromJSON(setJ))
+            val newRowId = db.insert(SetDataSource.TABLE, null, setDataSource.fromJSON(setJ))
             LOG.e("row id " + newRowId + " -> " + setJ.getString("code"))
 
             val jsonCards = JSONObject(jsonSetString)
@@ -139,25 +142,8 @@ class CreateDBAsyncTask(inputContext: Context, private val packageName: String) 
 
     companion object {
 
-        fun adjustCode(code: String?): String? {
-            val stringToLoad = code?.toLowerCase(Locale.getDefault())
-            return when {
-                stringToLoad.equals("10e", ignoreCase = true) -> "e10"
-                stringToLoad.equals("9ed", ignoreCase = true) -> "ed9"
-                stringToLoad.equals("5dn", ignoreCase = true) -> "dn5"
-                stringToLoad.equals("8ed", ignoreCase = true) -> "ed8"
-                stringToLoad.equals("7ed", ignoreCase = true) -> "ed7"
-                stringToLoad.equals("6ed", ignoreCase = true) -> "ed6"
-                stringToLoad.equals("5ed", ignoreCase = true) -> "ed5"
-                stringToLoad.equals("4ed", ignoreCase = true) -> "ed4"
-                stringToLoad.equals("3ed", ignoreCase = true) -> "ed3"
-                stringToLoad.equals("2ed", ignoreCase = true) -> "ed2"
-                else -> stringToLoad
-            }
-        }
-
         fun setToLoad(context: Context, code: String?): Int {
-            return context.resources.getIdentifier(adjustCode(code) + "_x", "raw", context.packageName)
+            return context.resources.getIdentifier(code.adjustCode() + "_x", "raw", context.packageName)
         }
 
         @Throws(JSONException::class)

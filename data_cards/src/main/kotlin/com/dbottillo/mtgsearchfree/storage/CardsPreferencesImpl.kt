@@ -3,7 +3,6 @@ package com.dbottillo.mtgsearchfree.storage
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.annotation.VisibleForTesting
-import com.dbottillo.mtgsearchfree.datacards.BuildConfig
 import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.model.Rarity
 import com.dbottillo.mtgsearchfree.ui.BasicFragment
@@ -101,13 +100,6 @@ open class CardsPreferencesImpl(context: Context) : CardsPreferences {
         editor.apply()
     }
 
-    override val versionCode: Int
-        get() = sharedPreferences.getInt("VersionCode", -1)
-
-    override fun saveVersionCode() {
-        sharedPreferences.edit().putInt("VersionCode", BuildConfig.VERSION_CODE).apply()
-    }
-
     @VisibleForTesting
     fun clear() {
         sharedPreferences.edit().clear().apply()
@@ -125,7 +117,6 @@ private const val LAND = "Land"
 private const val ELDRAZI = "Eldrazi"
 
 interface CardsPreferences {
-    val versionCode: Int
     fun load(): CardFilter
     fun sync(filter: CardFilter)
     fun saveSetPosition(position: Int)
@@ -138,5 +129,4 @@ interface CardsPreferences {
     fun setTwoHGEnabled(enabled: Boolean)
     fun showImage(): Boolean
     fun setShowImage(show: Boolean)
-    fun saveVersionCode()
 }

@@ -1,0 +1,11 @@
+apply plugin: 'com.android.library'
+apply from: '../config-android.gradle'
+
+dependencies {
+    implementation project(":core")
+    implementation project(":data_sets")
+
+    core()
+    di()
+    ui()
+}

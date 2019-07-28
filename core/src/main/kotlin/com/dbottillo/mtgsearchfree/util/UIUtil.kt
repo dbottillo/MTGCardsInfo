@@ -13,12 +13,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.StyleSpan
+import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.annotation.LayoutRes
 import com.dbottillo.mtgsearchfree.Constants.RATIO_CARD
 
 fun View.setMarginTop(value: Int) {
@@ -50,7 +52,7 @@ fun TextView.setBoldAndItalic(input: String) {
 }
 
 fun SpannableStringBuilder.newLine(total: Int = 1) {
-    (1..total).forEach {
+    repeat((1..total).count()) {
         append("\n")
     }
 }
@@ -93,3 +95,6 @@ fun AppCompatActivity.show(tag: String, fragment: DialogFragment) {
     ft.addToBackStack(null)
     fragment.show(ft, tag)
 }
+
+fun ViewGroup.inflate(@LayoutRes resource: Int, attachToRoot: Boolean = false): View =
+        LayoutInflater.from(this.context).inflate(resource, this, attachToRoot)

@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree
 
 import android.app.Activity
-import android.content.Context
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.dbottillo.mtgsearchfree.model.Deck
@@ -25,7 +24,5 @@ interface Navigator {
     fun newSavedFragment(): BasicFragment
     fun newAddToDeckFragment(card: MTGCard): DialogFragment
     fun isSetsFragment(fragment: Fragment?): Boolean
-    fun createDecks(appContext: Context)
-    fun createFavourites(appContext: Context)
-    fun createDatabase(applicationContext: Context, packageName: String)
+    fun openDebugScreen(origin: Activity)
 }

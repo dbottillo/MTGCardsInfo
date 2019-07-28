@@ -1,7 +1,6 @@
 package com.dbottillo.mtgsearchfree
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import androidx.fragment.app.Fragment
 import com.dbottillo.mtgsearchfree.about.AboutActivity
@@ -13,9 +12,6 @@ import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
-import com.dbottillo.mtgsearchfree.model.helper.AddFavouritesAsyncTask
-import com.dbottillo.mtgsearchfree.model.helper.CreateDBAsyncTask
-import com.dbottillo.mtgsearchfree.model.helper.CreateDecksAsyncTask
 import com.dbottillo.mtgsearchfree.releasenote.ReleaseNoteActivity
 import com.dbottillo.mtgsearchfree.saved.SavedFragment
 import com.dbottillo.mtgsearchfree.search.SearchActivity
@@ -26,6 +22,7 @@ import com.dbottillo.mtgsearchfree.cards.KEY_FAV
 import com.dbottillo.mtgsearchfree.cards.KEY_SEARCH
 import com.dbottillo.mtgsearchfree.cards.KEY_SET
 import com.dbottillo.mtgsearchfree.cards.POSITION
+import com.dbottillo.mtgsearchfree.debug.DebugActivity
 
 class AppNavigator : Navigator {
     override fun openAboutScreen(origin: Activity) = origin.startActivity(Intent(origin, AboutActivity::class.java))
@@ -62,15 +59,5 @@ class AppNavigator : Navigator {
     override fun newSavedFragment() = SavedFragment()
     override fun newAddToDeckFragment(card: MTGCard) = AddToDeckFragment.newInstance(card)
     override fun isSetsFragment(fragment: Fragment?) = fragment is SetsFragment
-    override fun createDecks(appContext: Context) {
-        CreateDecksAsyncTask(appContext).execute()
-    }
-
-    override fun createFavourites(appContext: Context) {
-        AddFavouritesAsyncTask(appContext).execute()
-    }
-
-    override fun createDatabase(applicationContext: Context, packageName: String) {
-        CreateDBAsyncTask(applicationContext, packageName).execute()
-    }
+    override fun openDebugScreen(origin: Activity) = origin.startActivity(Intent(origin, DebugActivity::class.java))
 }

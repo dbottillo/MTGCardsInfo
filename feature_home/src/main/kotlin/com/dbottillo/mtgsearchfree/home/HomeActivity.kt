@@ -2,14 +2,17 @@ package com.dbottillo.mtgsearchfree.home
 
 import android.animation.ValueAnimator
 import android.os.Bundle
-import android.widget.Toast
-import com.dbottillo.mtgsearchfree.Constants.INTENT_RELEASE_NOTE_PUSH
+import androidx.transition.ChangeBounds
+import androidx.transition.TransitionManager
+import com.dbottillo.mtgsearchfree.AppPreferences
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.ui.BasicFragment
-import com.dbottillo.mtgsearchfree.util.PermissionUtil
+import com.dbottillo.mtgsearchfree.util.gone
 import com.dbottillo.mtgsearchfree.util.setHeight
+import com.dbottillo.mtgsearchfree.util.show
 import kotlinx.android.synthetic.main.activity_home.*
 import java.lang.ref.WeakReference
+import javax.inject.Inject
 
 class HomeActivity : BasicActivity() {
 
@@ -18,6 +21,8 @@ class HomeActivity : BasicActivity() {
     private var bottomTabsHeight: Int = 0
     private var currentBottomTabsHeightAnimator: ValueAnimator? = null
     private var isUserScrollingDown: Boolean = false
+
+    @Inject lateinit var appPreferences: AppPreferences
 
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
@@ -40,9 +45,20 @@ class HomeActivity : BasicActivity() {
             checkAndReplace("sets")
         }
 
-        if (intent != null && intent.hasExtra(INTENT_RELEASE_NOTE_PUSH)) {
-            navigator.openReleaseNoteScreen(this)
-            intent.putExtra(INTENT_RELEASE_NOTE_PUSH, false)
+        if (appPreferences.shouldShowNewUpdateBanner()) {
+            update_banner.show()
+            banner_shadow.show()
+            update_banner.closeListener = {
+                TransitionManager.beginDelayedTransition(main_activity_home, ChangeBounds())
+                update_banner.gone()
+                banner_shadow.gone()
+            }
+            update_banner.actionListener = {
+                navigator.openReleaseNoteScreen(this)
+                TransitionManager.beginDelayedTransition(main_activity_home, ChangeBounds())
+                update_banner.gone()
+                banner_shadow.gone()
+            }
         }
     }
 
@@ -102,15 +118,6 @@ class HomeActivity : BasicActivity() {
         }
         currentBottomTabsHeightAnimator?.duration = 100
         currentBottomTabsHeightAnimator?.start()
-    }
-
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (PermissionUtil.isGranted(grantResults)) {
-            copyDBToSdCard()
-        } else {
-            Toast.makeText(this, getString(R.string.error_export_db), Toast.LENGTH_SHORT).show()
-        }
     }
 
     override fun onDestroy() {

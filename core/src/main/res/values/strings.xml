@@ -114,7 +114,7 @@
     <string name="deck_new">New deck</string>
     <string name="deck_specify">Specify</string>
     <string name="release_note_title_push">What\'s new in %s</string>
-    <string name="release_note_text">-New: Fix foil price instead of normal price</string>
+    <string name="release_note_text">- Fix foil price instead of normFix foil price instead of normFix foil price instead of normFix foil price instead of normal price\n- deck improvements\n- open scryfall url</string>
 
     <string name="action_release_note">Release Note</string>
     <string name="empty_cards">No cards available with the current filters.</string>
@@ -261,5 +261,6 @@
     <string name="cd_next">Next</string>
     <string name="menu_search_set">Search</string>
     <string name="privacy_policy">Privacy Policy</string>
+    <string name="open_debug">Debug options</string>
 
 </resources>

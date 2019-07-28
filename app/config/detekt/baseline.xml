@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <Blacklist timestamp="1545156791812"></Blacklist>
-  <Whitelist timestamp="1563646190654">
+  <Whitelist timestamp="1564326377958">
     <ID>ComplexMethod:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$@Throws(JSONException::class) private fun createContentValueFromJSON(jsonObject: JSONObject, set: MTGSet): ContentValues</ID>
     <ID>ComplexMethod:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$fun adjustCode(code: String?): String?</ID>
     <ID>LongMethod:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$@Throws(JSONException::class) private fun createContentValueFromJSON(jsonObject: JSONObject, set: MTGSet): ContentValues</ID>

@@ -1,23 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/action_create_db"
+        android:id="@+id/action_open_debug"
         android:icon="@drawable/left_debug"
         android:orderInCategory="501"
-        android:title="@string/action_create_db" />
-    <item
-        android:id="@+id/action_fill_decks"
-        android:icon="@drawable/left_debug"
-        android:orderInCategory="502"
-        android:title="@string/action_fill_decks" />
-    <item
-        android:id="@+id/action_create_fav"
-        android:icon="@drawable/left_debug"
-        android:orderInCategory="503"
-        android:title="@string/action_create_fav" />
-    <item
-        android:id="@+id/action_crash"
-        android:icon="@drawable/left_debug"
-        android:orderInCategory="504"
-        android:title="@string/action_crash" />
+        android:title="@string/open_debug" />
 </menu>

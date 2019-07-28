@@ -1,4 +1,4 @@
-package com.dbottillo.mtgsearchfree.model.helper
+package com.dbottillo.mtgsearchfree.debug
 
 import android.content.Context
 import android.os.AsyncTask
@@ -14,7 +14,7 @@ import java.lang.ref.WeakReference
 /*
     This class is used only on debug to generate random favourites cards
  */
-class AddFavouritesAsyncTask(context: Context) : AsyncTask<String, Void, ArrayList<Any>>() {
+internal class AddFavouritesAsyncTask(context: Context) : AsyncTask<String, Void, ArrayList<Any>>() {
 
     private val context: WeakReference<Context> = WeakReference(context)
 

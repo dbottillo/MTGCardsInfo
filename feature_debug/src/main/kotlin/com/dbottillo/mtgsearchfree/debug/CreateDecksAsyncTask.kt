@@ -18,7 +18,7 @@ import java.util.Random
     This class is used only on debug to generate random decks
  */
 @Suppress("MagicNumber")
-class CreateDecksAsyncTask(context: Context) : AsyncTask<String, Void, ArrayList<Any>>() {
+internal class CreateDecksAsyncTask(context: Context) : AsyncTask<String, Void, ArrayList<Any>>() {
 
     private val context: WeakReference<Context> = WeakReference(context)
 

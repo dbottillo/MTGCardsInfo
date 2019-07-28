@@ -88,6 +88,7 @@ dependencies {
     implementation project(':feature_cards_saved')
     implementation project(':feature_search')
     implementation project(':feature_cards')
+    implementation project(':feature_debug')
     implementation project(':data_cards')
     implementation project(':data_sets')
     implementation project(':data_decks')

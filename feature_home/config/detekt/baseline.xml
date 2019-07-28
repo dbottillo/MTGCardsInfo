@@ -1,13 +1,11 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
   <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1563095215745">
-    <ID>ComplexMethod:BaseHomeFragment.kt$BaseHomeFragment$override fun onMenuItemClick(item: MenuItem?): Boolean</ID>
+  <Whitelist timestamp="1564326383872">
     <ID>MagicNumber:BottomTabs.kt$BottomTabs$0.7f</ID>
     <ID>MagicNumber:BottomTabs.kt$BottomTabs$1.2f</ID>
     <ID>MagicNumber:BottomTabs.kt$BottomTabs$3</ID>
     <ID>MagicNumber:HomeActivity.kt$HomeActivity$100</ID>
     <ID>MagicNumber:HomeActivity.kt$HomeActivity.&lt;no name provided&gt;$3</ID>
-    <ID>TooGenericExceptionThrown:BaseHomeFragment.kt$BaseHomeFragment$throw RuntimeException("This is a crash")</ID>
   </Whitelist>
 </SmellBaseline>

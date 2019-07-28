@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/debug_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/BigTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/open_debug"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/base_margin"
+                android:background="@color/color_primary_light"/>
+
+            <TextView
+                android:id="@+id/clear_preferences"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/base_margin"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="start|center_vertical"
+                android:text="Clear app preferences"
+                style="@style/DebugOptions"
+                tools:ignore="HardcodedText"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_primary_light"/>
+
+            <TextView
+                android:id="@+id/create_db"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/base_margin"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="start|center_vertical"
+                android:text="@string/action_create_db"
+                style="@style/DebugOptions"
+                tools:ignore="HardcodedText"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_primary_light"/>
+
+            <TextView
+                android:id="@+id/fill_decks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/base_margin"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="start|center_vertical"
+                android:text="@string/action_fill_decks"
+                style="@style/DebugOptions"
+                tools:ignore="HardcodedText"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_primary_light"/>
+
+            <TextView
+                android:id="@+id/create_fav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/base_margin"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="start|center_vertical"
+                android:text="@string/action_create_fav"
+                style="@style/DebugOptions"
+                tools:ignore="HardcodedText"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_primary_light"/>
+
+            <TextView
+                android:id="@+id/crash"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/base_margin"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="start|center_vertical"
+                android:text="@string/action_crash"
+                style="@style/DebugOptions"
+                tools:ignore="HardcodedText"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_primary_light"/>
+
+            <TextView
+                android:id="@+id/send_db"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/base_margin"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="start|center_vertical"
+                android:text="@string/action_send_db"
+                style="@style/DebugOptions"
+                tools:ignore="HardcodedText"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_primary_light"/>
+
+            <TextView
+                android:id="@+id/copy_db"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/base_margin"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="start|center_vertical"
+                android:text="@string/action_copy_db"
+                style="@style/DebugOptions"
+                tools:ignore="HardcodedText"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_primary_light"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

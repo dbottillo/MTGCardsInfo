@@ -2,28 +2,13 @@ package com.dbottillo.mtgsearchfree
 
 import android.app.Activity
 import android.app.Application
-import android.app.Notification
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.PendingIntent
-import android.content.Context
-import android.content.Intent
-import android.graphics.Color
-import android.os.Build
-import android.os.Build.VERSION_CODES
 import android.os.StrictMode
-import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
-import androidx.core.app.NotificationCompat
-import androidx.core.app.TaskStackBuilder
-import androidx.core.content.ContextCompat
 import com.crashlytics.android.Crashlytics
 import com.dbottillo.mtgsearchfree.dagger.DaggerAppComponent
 import com.dbottillo.mtgsearchfree.dagger.DataModule
-import com.dbottillo.mtgsearchfree.home.HomeActivity
 import com.dbottillo.mtgsearchfree.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.util.LOG
-import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.squareup.leakcanary.LeakCanary
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -34,14 +19,9 @@ import javax.inject.Inject
 
 open class MTGApp : Application(), HasActivityInjector, HasSupportFragmentInjector {
 
-    @Inject
-    lateinit var cardsPreferences: CardsPreferences
-
-    @Inject
-    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
-
-    @Inject
-    lateinit var fragmentDispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>
+    @Inject lateinit var cardsPreferences: CardsPreferences
+    @Inject lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
+    @Inject lateinit var fragmentDispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>
 
     override fun onCreate() {
         super.onCreate()
@@ -53,11 +33,7 @@ open class MTGApp : Application(), HasActivityInjector, HasSupportFragmentInject
         initDagger()
 
         if (!isTesting()) {
-            if (Build.VERSION.SDK_INT >= VERSION_CODES.O) {
-                createNotificationChannel()
-            }
             Fabric.with(this, Crashlytics())
-            checkReleaseNote()
 
             if (BuildConfig.DEBUG) {
                 StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build())
@@ -94,53 +70,5 @@ open class MTGApp : Application(), HasActivityInjector, HasSupportFragmentInject
                 .application(this)
                 .build()
                 .inject(this)
-    }
-
-    private fun checkReleaseNote() {
-        LOG.d()
-        val versionCode = cardsPreferences.versionCode
-        if (versionCode < BuildConfig.VERSION_CODE) {
-            TrackingManager.trackReleaseNote()
-            fireReleaseNotePush()
-            cardsPreferences.saveSetPosition(0)
-            cardsPreferences.saveVersionCode()
-        }
-    }
-
-    private fun fireReleaseNotePush() {
-        LOG.d()
-        val intent = Intent(this, HomeActivity::class.java)
-        intent.putExtra(Constants.INTENT_RELEASE_NOTE_PUSH, true)
-        val stackBuilder = TaskStackBuilder.create(this)
-        stackBuilder.addNextIntent(intent)
-        val resultPendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_ONE_SHOT or PendingIntent.FLAG_UPDATE_CURRENT)
-
-        NotificationCompat.Builder(this, Constants.NOTIFICATION_CHANNEL_ID)
-                .setAutoCancel(true)
-                .setSmallIcon(R.drawable.ic_stat_notification_generic)
-                .setPriority(NotificationCompat.PRIORITY_LOW)
-                .setContentTitle(getString(R.string.release_note_title_push, getString(R.string.app_name)))
-                .setContentText(getText(R.string.release_note_text))
-                .setColor(ContextCompat.getColor(this, R.color.color_primary))
-                .setStyle(NotificationCompat.BigTextStyle().bigText(getString(R.string.release_note_text)))
-                .setContentIntent(resultPendingIntent).apply {
-
-                    if (Build.VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
-                        setCategory(Notification.CATEGORY_RECOMMENDATION)
-                    }
-
-                    (getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager).notify(1, build())
-                }
-    }
-
-    @RequiresApi(VERSION_CODES.O)
-    private fun createNotificationChannel() {
-        val channel = NotificationChannel(Constants.NOTIFICATION_CHANNEL_ID, "Notifications", NotificationManager.IMPORTANCE_DEFAULT).apply {
-            description = "MTG Cards Notifications"
-            enableLights(true)
-            lightColor = Color.BLUE
-            enableVibration(true)
-        }
-        (getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager).createNotificationChannel(channel)
     }
 }

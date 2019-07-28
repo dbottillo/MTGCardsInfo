@@ -1,14 +1,15 @@
-package com.dbottillo.mtgsearchfree.database
+package com.dbottillo.mtgsearchfree.debug
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.dbottillo.mtgsearchfree.database.CardDataSource
 import com.dbottillo.mtgsearchfree.storage.SetDataSource
 
 /**
  * Helper for create the database from the json in debug mode
  */
-class CreateDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+internal class CreateDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     override fun onCreate(db: SQLiteDatabase) {
         db.execSQL(SetDataSource.generateCreateTable())

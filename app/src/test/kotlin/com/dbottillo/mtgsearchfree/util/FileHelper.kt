@@ -5,7 +5,6 @@ import com.dbottillo.mtgsearchfree.database.mapColor
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.Rarity
-import com.dbottillo.mtgsearchfree.model.helper.CreateDBAsyncTask
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import org.json.JSONArray
@@ -35,7 +34,7 @@ fun readSetListJSON(): ArrayList<MTGSet> {
 
 @Throws(JSONException::class)
 fun readSingleSetFile(set: MTGSet): ArrayList<MTGCard> {
-    val jsonSetString = loadFile(CreateDBAsyncTask.adjustCode(set.code) + "_x.json")
+    val jsonSetString = loadFile(set.code.adjustCode() + "_x.json")
     val jsonCards = JSONObject(jsonSetString)
     val cardsJ = jsonCards.getJSONArray("cards")
     val cards = ArrayList<MTGCard>()
