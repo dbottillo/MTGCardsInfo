@@ -6,10 +6,8 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.Toast
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
-import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.home.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
@@ -27,7 +25,6 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
 
     lateinit var loader: MTGLoader
     lateinit var mtgCardsView: MTGCardsView
-    lateinit var emptyContainer: LinearLayout
 
     @Inject lateinit var savedCardsPresenter: SavedCardsPresenter
 
@@ -45,11 +42,10 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
 
         mtgCardsView = view.findViewById<MTGCardsView>(R.id.cards)
         loader = view.findViewById<MTGLoader>(R.id.loader)
-        emptyContainer = view.findViewById<LinearLayout>(R.id.empty_saved_cards_container)
-        view.findViewById<View>(R.id.empty_cards_action).setOnClickListener { openSearch() }
 
         setupHomeActivityScroll(viewRecycle = mtgCardsView.listView)
 
+        mtgCardsView.setEmptyString(R.string.empty_saved)
         savedCardsPresenter.init(this)
     }
 
@@ -75,14 +71,6 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
         return resources.getString(R.string.action_saved)
     }
 
-    override fun hideLoading() {
-        loader.visibility = View.GONE
-    }
-
-    override fun showLoading() {
-        loader.visibility = View.VISIBLE
-    }
-
     override fun showError(message: String) {
         LOG.d()
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
@@ -95,15 +83,18 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
         TrackingManager.trackSearchError(exception.message)
     }
 
-    override fun showCards(cardsCollection: CardsCollection) {
-        emptyContainer.gone()
-        mtgCardsView.show()
-        mtgCardsView.loadCards(cardsCollection.list, this, getString(R.string.action_saved), cardsCollection.filter, R.menu.card_saved_option)
-    }
-
-    override fun showEmptyScreen() {
-        mtgCardsView.gone()
-        emptyContainer.show()
+    override fun render(uiModel: SavedCardsUiModel) {
+        when (uiModel) {
+            is SavedCardsUiModel.Loading -> {
+                mtgCardsView.gone()
+                loader.show()
+            }
+            is SavedCardsUiModel.Data -> {
+                mtgCardsView.show()
+                loader.gone()
+                mtgCardsView.loadCards(uiModel.collection.list, this, getString(R.string.action_saved), uiModel.collection.filter, R.menu.card_saved_option)
+            }
+        }
     }
 
     override fun showCardsGrid() {

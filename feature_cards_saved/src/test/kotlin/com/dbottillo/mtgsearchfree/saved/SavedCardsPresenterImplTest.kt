@@ -59,54 +59,25 @@ class SavedCardsPresenterImplTest {
     }
 
     @Test
-    fun `load should load favourites and show cards if are more than 0`() {
+    fun `load should load favourites and render`() {
         whenever(interactor.load()).thenReturn(Observable.just(cards))
-        whenever(cards.isEmpty()).thenReturn(false)
 
         underTest.load()
 
-        verify(view).showLoading()
-        verify(view).hideLoading()
+        verify(view).render(SavedCardsUiModel.Loading)
         verify(interactor).load()
-        verify(view).showCards(cards)
-        verifyNoMoreInteractions(interactor, view, generalData)
-    }
-
-    @Test
-    fun `load should load favourites and show empty screen if there are 0 cards`() {
-        whenever(interactor.load()).thenReturn(Observable.just(cards))
-        whenever(cards.isEmpty()).thenReturn(true)
-
-        underTest.load()
-
-        verify(view).showLoading()
-        verify(view).hideLoading()
-        verify(interactor).load()
-        verify(view).showEmptyScreen()
+        verify(view).render(SavedCardsUiModel.Data(cards))
         verifyNoMoreInteractions(interactor, view, generalData)
     }
 
     @Test
     fun `remove from favourite should call interactor and show cards if any left`() {
         whenever(interactor.remove(card)).thenReturn(Observable.just(cards))
-        whenever(cards.isEmpty()).thenReturn(false)
 
         underTest.removeFromFavourite(card)
 
         verify(interactor).remove(card)
-        verify(view).showCards(cards)
-        verifyNoMoreInteractions(interactor, view, generalData)
-    }
-
-    @Test
-    fun `remove from favourite should call interactor and show empty screen if no more left`() {
-        whenever(interactor.remove(card)).thenReturn(Observable.just(cards))
-        whenever(cards.isEmpty()).thenReturn(true)
-
-        underTest.removeFromFavourite(card)
-
-        verify(interactor).remove(card)
-        verify(view).showEmptyScreen()
+        verify(view).render(SavedCardsUiModel.Data(cards))
         verifyNoMoreInteractions(interactor, view, generalData)
     }
 

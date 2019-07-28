@@ -27,12 +27,9 @@ class SavedCardsPresenterImpl(
 
     override fun load() {
         logger.d()
+        view.render(SavedCardsUiModel.Loading)
         disposable.add(interactor.load()
-                .doOnSubscribe {
-                    view.showLoading()
-                }
                 .subscribe({
-                    view.hideLoading()
                     showCards(it)
                 }, {
                     logger.logNonFatal(it)
@@ -52,11 +49,7 @@ class SavedCardsPresenterImpl(
     }
 
     private fun showCards(collection: CardsCollection) {
-        if (collection.isEmpty()) {
-            view.showEmptyScreen()
-        } else {
-            view.showCards(collection)
-        }
+        view.render(SavedCardsUiModel.Data(collection))
     }
 
     override fun toggleCardTypeViewPreference() {
@@ -68,4 +61,9 @@ class SavedCardsPresenterImpl(
             view.showCardsGrid()
         }
     }
+}
+
+sealed class SavedCardsUiModel {
+    object Loading : SavedCardsUiModel()
+    data class Data(val collection: CardsCollection) : SavedCardsUiModel()
 }

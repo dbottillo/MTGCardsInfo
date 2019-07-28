@@ -16,7 +16,7 @@
             android:id="@+id/toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:background="@android:color/transparent"
             android:textColor="@color/white"
             android:textSize="20sp"
@@ -30,51 +30,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar"/>
-
-    <LinearLayout
-        android:id="@+id/empty_saved_cards_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"
-        android:visibility="gone"
-        android:orientation="vertical">
-
-        <TextView
-            style="@style/BigTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/action_saved"/>
-
-        <TextView
-            android:id="@+id/empty_cards_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:padding="40dp"
-            android:paddingTop="20dp"
-            android:text="@string/empty_saved"
-            android:textColor="@color/color_primary"
-            android:textStyle="italic"
-            android:visibility="visible"/>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
-            android:layout_marginBottom="48dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/bg_list_footer_add">
-
-            <Button
-                android:id="@+id/empty_cards_action"
-                style="@style/FooterBtn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/action_search"/>
-
-        </FrameLayout>
-    </LinearLayout>
 
     <com.dbottillo.mtgsearchfree.ui.views.MTGLoader
         android:id="@+id/loader"

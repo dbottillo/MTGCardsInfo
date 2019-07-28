@@ -14,7 +14,7 @@ class FavouritesDataSource(
 ) {
 
     fun saveFavourites(card: MTGCard): Long {
-        LOG.d("saving " + card.toString() + " as favourite")
+        LOG.d("saving $card as favourite")
         val current = database.rawQuery("select * from MTGCard where multiVerseId=?", arrayOf(card.multiVerseId.toString() + ""))
         if (current.count == 0) {
             // need to add the card
@@ -42,7 +42,7 @@ class FavouritesDataSource(
     }
 
     fun removeFavourites(card: MTGCard) {
-        LOG.d("remove card  " + card.toString() + " from favourites")
+        LOG.d("remove card  $card from favourites")
         val args = arrayOf(card.multiVerseId.toString() + "")
         val query = "DELETE FROM $TABLE where _id=? "
         LOG.query(query)
