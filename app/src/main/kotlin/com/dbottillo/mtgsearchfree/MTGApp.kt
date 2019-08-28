@@ -1,9 +1,7 @@
 package com.dbottillo.mtgsearchfree
 
-import android.app.Activity
 import android.app.Application
 import android.os.StrictMode
-import androidx.fragment.app.Fragment
 import com.crashlytics.android.Crashlytics
 import com.dbottillo.mtgsearchfree.dagger.DaggerAppComponent
 import com.dbottillo.mtgsearchfree.dagger.DataModule
@@ -12,16 +10,14 @@ import com.dbottillo.mtgsearchfree.util.LOG
 import com.squareup.leakcanary.LeakCanary
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasActivityInjector
-import dagger.android.support.HasSupportFragmentInjector
+import dagger.android.HasAndroidInjector
 import io.fabric.sdk.android.Fabric
 import javax.inject.Inject
 
-open class MTGApp : Application(), HasActivityInjector, HasSupportFragmentInjector {
+open class MTGApp : Application(), HasAndroidInjector {
 
     @Inject lateinit var cardsPreferences: CardsPreferences
-    @Inject lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
-    @Inject lateinit var fragmentDispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>
+    @Inject lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
 
     override fun onCreate() {
         super.onCreate()
@@ -49,12 +45,8 @@ open class MTGApp : Application(), HasActivityInjector, HasSupportFragmentInject
         }
     }
 
-    override fun activityInjector(): AndroidInjector<Activity> {
+    override fun androidInjector(): AndroidInjector<Any> {
         return dispatchingAndroidInjector
-    }
-
-    override fun supportFragmentInjector(): AndroidInjector<Fragment> {
-        return fragmentDispatchingAndroidInjector
     }
 
     protected open fun isTesting(): Boolean {
