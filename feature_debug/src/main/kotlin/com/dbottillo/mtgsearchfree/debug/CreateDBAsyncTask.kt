@@ -7,8 +7,8 @@ import android.database.sqlite.SQLiteDatabase
 import android.os.AsyncTask
 import android.util.Log
 import android.widget.Toast
-import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.database.CardDataSource
+import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.storage.SetDataSource
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.adjustCode
@@ -23,6 +23,7 @@ import java.io.StringWriter
 import java.lang.ref.WeakReference
 import java.math.BigDecimal
 
+@Suppress("MagicNumber", "LongMethod", "ComplexMethod")
 internal class CreateDBAsyncTask(
     inputContext: Context,
     private val packageName: String
@@ -86,8 +87,8 @@ internal class CreateDBAsyncTask(
             val cards = jsonCards.getJSONArray("cards")
 
             val set = MTGSet(newRowId.toInt(),
-                    setJ.getString("code"),
-                    setJ.getString("name"))
+                setJ.getString("code"),
+                setJ.getString("name"))
             // for (int k=0; k<1; k++){
 
             (0 until cards.length()).forEach { index ->

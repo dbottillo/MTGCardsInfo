@@ -34,6 +34,7 @@ import com.dbottillo.mtgsearchfree.util.show
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
+@Suppress("EmptyFunctionBlock")
 class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView, OnCardListener {
 
     private val newSearch: ImageButton by bind(R.id.action_search)

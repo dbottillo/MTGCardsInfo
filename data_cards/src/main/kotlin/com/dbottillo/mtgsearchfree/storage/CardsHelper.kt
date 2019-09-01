@@ -18,6 +18,7 @@ class CardsHelper {
     }
 }
 
+@Suppress("LongMethod")
 private fun List<MTGCard>.filterWith(filter: CardFilter): List<MTGCard> {
     val cards = mutableListOf<MTGCard>()
     forEach {

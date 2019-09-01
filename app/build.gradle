@@ -12,7 +12,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 buildscript {
-    ext.number_of_set = 186
+    ext.number_of_set = 187
 }
 
 android {

@@ -14,6 +14,7 @@ import java.lang.ref.WeakReference
 /*
     This class is used only on debug to generate random favourites cards
  */
+@Suppress("MagicNumber")
 internal class AddFavouritesAsyncTask(context: Context) : AsyncTask<String, Void, ArrayList<Any>>() {
 
     private val context: WeakReference<Context> = WeakReference(context)

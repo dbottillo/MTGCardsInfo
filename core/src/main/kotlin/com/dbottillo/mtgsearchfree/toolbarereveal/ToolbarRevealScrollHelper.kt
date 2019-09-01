@@ -24,6 +24,7 @@ import java.lang.ref.WeakReference
  * This class expect the concrete fragment to specify a scrollview with its content and this class will
  * handle the transition to reveal the toolbar during the scroll
  */
+@Suppress("LargeClass")
 class ToolbarRevealScrollHelper @JvmOverloads constructor(
     baseFragment: BasicFragment,
     private val scrollviewID: Int,

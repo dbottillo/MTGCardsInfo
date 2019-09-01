@@ -28,6 +28,7 @@ import com.dbottillo.mtgsearchfree.util.TrackingManager
 import javax.inject.Inject
 import dagger.android.support.AndroidSupportInjection
 
+@Suppress("EmptyFunctionBlock")
 class AddToDeckFragment : BasicFragment(), AddToDeckView {
 
     lateinit var chooseDeck: Spinner

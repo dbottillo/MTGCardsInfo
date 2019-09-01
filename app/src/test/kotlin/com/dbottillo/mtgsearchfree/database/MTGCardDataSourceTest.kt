@@ -566,7 +566,7 @@ class MTGCardDataSourceTest {
     fun searchCardsById() {
         val card = underTest.searchCardById(5)
         assertNotNull(card)
-        assertThat(card?.name, `is`("Aggressive Mammoth"))
+        assertThat(card?.name, `is`("Angel of Sanctions"))
     }
 
     private enum class OPERATOR constructor(private val operator: String) {

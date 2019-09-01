@@ -7,6 +7,7 @@ fun Deck.toDeckName(): String {
     return this.name.replace("\\s+".toRegex(), "").toLowerCase(Locale.getDefault())
 }
 
+@Suppress("ComplexMethod")
 fun String?.adjustCode(): String? {
     val stringToLoad = this?.toLowerCase(Locale.getDefault())
     return when {

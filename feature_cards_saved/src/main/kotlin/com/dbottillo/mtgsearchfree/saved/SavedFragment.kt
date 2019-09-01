@@ -143,6 +143,7 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
         navigator.openSearchScreen(activity!!)
     }
 
+    @Suppress("EmptyFunctionBlock")
     override fun onTitleHeaderSelected() {
     }
 }

@@ -95,6 +95,7 @@ class CardsInfoDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
         }
     }
 
+    @Suppress("EmptyFunctionBlock")
     override fun onDowngrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {}
 
     @Synchronized

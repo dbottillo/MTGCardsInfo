@@ -16,6 +16,7 @@ import javax.net.ssl.TrustManager
 import javax.net.ssl.X509TrustManager
 
 @GlideModule
+@Suppress("EmptyFunctionBlock")
 class MTGGAppGlideModule : AppGlideModule() {
 
     override fun registerComponents(context: Context, glide: Glide, registry: Registry) {
