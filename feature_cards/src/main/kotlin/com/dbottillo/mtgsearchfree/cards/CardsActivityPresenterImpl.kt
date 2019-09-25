@@ -42,7 +42,10 @@ class CardsActivityPresenterImpl(
             when {
                 intent.hasExtra(KEY_SET) -> {
                     set = intent.getParcelableExtra(KEY_SET)
-                    set?.let { view.updateTitle(it.name) }
+                    set?.let {
+                        view.updateTitle(it.name)
+                        view.renderPreview(it.isPreview)
+                    }
                 }
                 intent.hasExtra(KEY_SEARCH) -> {
                     search = intent.getParcelableExtra(KEY_SEARCH)
@@ -119,11 +122,7 @@ class CardsActivityPresenterImpl(
 
     override fun updateMenu(currentCard: MTGCard?) {
         logger.d()
-        if (favs.isEmpty()) {
-            // too early
-            return
-        }
-        if (currentCard != null && currentCard.multiVerseId > 0) {
+        if (currentCard != null && currentCard.multiVerseId > 0 && favs.isNotEmpty()) {
             view.showFavMenuItem()
             if (favs.contains(currentCard.multiVerseId)) {
                 view.updateFavMenuItem(R.string.favourite_remove, R.drawable.ab_star_colored)
@@ -159,7 +158,7 @@ class CardsActivityPresenterImpl(
         updateView()
     }
 
-    fun showError(throwable: Throwable) {
+    private fun showError(throwable: Throwable) {
         logger.e(throwable)
         view.showError(throwable.localizedMessage)
     }

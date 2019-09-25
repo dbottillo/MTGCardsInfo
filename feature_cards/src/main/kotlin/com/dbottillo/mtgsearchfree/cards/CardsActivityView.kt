@@ -13,4 +13,5 @@ interface CardsActivityView : BaseCardsView {
     fun showLoading()
     fun hideLoading()
     fun shareUri(uri: Uri)
+    fun renderPreview(preview: Boolean)
 }

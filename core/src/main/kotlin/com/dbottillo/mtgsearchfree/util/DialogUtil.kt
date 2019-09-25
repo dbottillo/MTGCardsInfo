@@ -12,7 +12,7 @@ import java.lang.ref.WeakReference
 
 class DialogUtil {
 
-    lateinit var refContext: WeakReference<Context>
+    private lateinit var refContext: WeakReference<Context>
 
     fun init(context: Context?) {
         this.refContext = WeakReference<Context>(context)

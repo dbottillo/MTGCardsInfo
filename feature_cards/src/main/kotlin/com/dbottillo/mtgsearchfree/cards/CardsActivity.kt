@@ -4,11 +4,13 @@ import android.graphics.Bitmap
 import android.graphics.Point
 import android.net.Uri
 import android.os.Bundle
+import android.view.View
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
 import androidx.viewpager.widget.ViewPager
 import android.widget.RelativeLayout
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity
@@ -27,6 +29,7 @@ class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, Car
     private val tabLayout by lazy { findViewById<TabLayout>(R.id.cards_tab_layout) }
     private val fabButton by lazy { findViewById<FloatingActionButton>(R.id.card_add_to_deck) }
     private val loader by lazy { findViewById<MTGLoader>(R.id.loader) }
+    private val previewBanner by lazy(LazyThreadSafetyMode.NONE) { findViewById<View>(R.id.preview_banner) }
 
     private var adapter: CardsPagerAdapter? = null
 
@@ -78,6 +81,16 @@ class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, Car
         val display = windowManager.defaultDisplay
         val size = Point()
         display.getSize(size)
+
+        previewBanner.setOnClickListener {
+            val dialogBuilder = AlertDialog.Builder(this, R.style.MTGDialogTheme)
+            dialogBuilder.setMessage(getString(R.string.set_preview_banner_text))
+                    .setCancelable(true)
+                    .setPositiveButton("Ok") { dialog, _ -> dialog.dismiss() }
+            val alert = dialogBuilder.create()
+            alert.setTitle(R.string.set_preview_banner)
+            alert.show()
+        }
     }
 
     override fun getPageTrack(): String? {
@@ -184,6 +197,16 @@ class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, Car
     override fun onDestroy() {
         super.onDestroy()
         cardsPresenter.onDestroy()
+    }
+
+    override fun renderPreview(preview: Boolean) {
+        if (preview) {
+            fabButton.hide()
+            previewBanner.show()
+        } else {
+            fabButton.show()
+            previewBanner.gone()
+        }
     }
 }
 
