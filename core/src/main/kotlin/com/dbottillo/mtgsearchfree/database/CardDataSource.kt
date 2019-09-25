@@ -10,6 +10,7 @@ import com.dbottillo.mtgsearchfree.model.Legality
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.Rarity
+import com.dbottillo.mtgsearchfree.model.Side
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -71,7 +72,11 @@ class CardDataSource(
         UUID("uuid", "TEXT"),
         SCRYFALLID("scryfallId", "TEXT"),
         TCG_PLAYER_PRODUCT_ID("tcgplayerProductId", "INTEGER"),
-        TCG_PLAYER_PURCHASE_URL("tcgplayerPurchaseUrl", "TEXT")
+        TCG_PLAYER_PURCHASE_URL("tcgplayerPurchaseUrl", "TEXT"),
+        FACE_CMC("faceConvertedManaCost", "INTEGER"),
+        IS_ARENA("isArena", "INTEGER"),
+        IS_MTGO("isMtgo", "INTEGER"),
+        SIDE("cardSide", "TEXT")
     }
 
     fun saveCard(card: MTGCard): Long {
@@ -171,6 +176,15 @@ class CardDataSource(
         values.put(COLUMNS.SCRYFALLID.noun, card.scryfallId)
         values.put(COLUMNS.TCG_PLAYER_PRODUCT_ID.noun, card.tcgplayerProductId)
         values.put(COLUMNS.TCG_PLAYER_PURCHASE_URL.noun, card.tcgplayerPurchaseUrl)
+
+        values.put(COLUMNS.FACE_CMC.noun, card.faceConvertedManaCost)
+        card.isArena?.let {
+            values.put(COLUMNS.IS_ARENA.noun, if (it) 1 else 0)
+        }
+        card.isMtgo?.let {
+            values.put(COLUMNS.IS_MTGO.noun, if (it) 1 else 0)
+        }
+        values.put(COLUMNS.SIDE.noun, if (card.side == Side.A) "A" else "B")
         return values
     }
 
@@ -349,7 +363,33 @@ class CardDataSource(
         }
 
         if (cursor.getColumnIndex(COLUMNS.TCG_PLAYER_PURCHASE_URL.noun) != -1) {
-            card.tcgplayerPurchaseUrl = cursor.getString(cursor.getColumnIndex(COLUMNS.TCG_PLAYER_PURCHASE_URL.noun)) ?: ""
+            card.tcgplayerPurchaseUrl = cursor.getString(cursor.getColumnIndex(COLUMNS.TCG_PLAYER_PURCHASE_URL.noun))
+                    ?: ""
+        }
+
+        if (cursor.getColumnIndex(COLUMNS.FACE_CMC.noun) != -1) {
+            card.faceConvertedManaCost = if (cursor.isNull(cursor.getColumnIndex(COLUMNS.FACE_CMC.noun))) {
+                null
+            } else {
+                cursor.getInt(cursor.getColumnIndex(COLUMNS.FACE_CMC.noun))
+            }
+        }
+        if (cursor.getColumnIndex(COLUMNS.IS_ARENA.noun) != -1) {
+            card.isArena = if (cursor.isNull(cursor.getColumnIndex(COLUMNS.IS_ARENA.noun))) {
+                null
+            } else {
+                cursor.getInt(cursor.getColumnIndex(COLUMNS.IS_ARENA.noun)) == 1
+            }
+        }
+        if (cursor.getColumnIndex(COLUMNS.IS_MTGO.noun) != -1) {
+            card.isMtgo = if (cursor.isNull(cursor.getColumnIndex(COLUMNS.IS_MTGO.noun))) {
+                null
+            } else {
+                cursor.getInt(cursor.getColumnIndex(COLUMNS.IS_MTGO.noun)) == 1
+            }
+        }
+        if (cursor.getColumnIndex(COLUMNS.SIDE.noun) != -1) {
+            card.side = if (cursor.getString(cursor.getColumnIndex(COLUMNS.SIDE.noun)) == "b") Side.B else Side.A
         }
 
         return card
@@ -434,12 +474,28 @@ class CardDataSource(
                 TABLE + " ADD COLUMN " +
                 COLUMNS.TCG_PLAYER_PURCHASE_URL.noun + " " + COLUMNS.TCG_PLAYER_PURCHASE_URL.type)
 
+        internal val SQL_ADD_COLUMN_FACE_CMC = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.FACE_CMC.noun + " " + COLUMNS.FACE_CMC.type)
+
+        internal val SQL_ADD_COLUMN_IS_ARENA = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.IS_ARENA.noun + " " + COLUMNS.IS_ARENA.type)
+
+        internal val SQL_ADD_COLUMN_IS_MTGO = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.IS_MTGO.noun + " " + COLUMNS.IS_MTGO.type)
+
+        internal val SQL_ADD_COLUMN_SIDE = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.SIDE.noun + " " + COLUMNS.SIDE.type)
+
         fun generateCreateTable(): String {
             val builder = StringBuilder("CREATE TABLE IF NOT EXISTS ")
             builder.append(TABLE).append(" (_id INTEGER PRIMARY KEY, ")
             for (column in COLUMNS.values()) {
                 builder.append(column.noun).append(' ').append(column.type)
-                if (column != COLUMNS.TCG_PLAYER_PURCHASE_URL) {
+                if (column != COLUMNS.SIDE) {
                     builder.append(',')
                 }
             }
@@ -455,7 +511,8 @@ class CardDataSource(
                 version < NINE -> COLUMNS.COLORS_IDENTITY
                 version < TEN -> COLUMNS.UUID
                 version < ELEVEN -> COLUMNS.TCG_PLAYER_PRODUCT_ID
-                else -> COLUMNS.TCG_PLAYER_PURCHASE_URL
+                version < TWELFTH -> COLUMNS.TCG_PLAYER_PURCHASE_URL
+                else -> COLUMNS.SIDE
             }
         }
 
@@ -495,6 +552,9 @@ class CardDataSource(
                 addColumn = false
             } else if ((column == COLUMNS.TCG_PLAYER_PURCHASE_URL) && version <= TEN) {
                 addColumn = false
+            } else if ((column == COLUMNS.FACE_CMC || column == COLUMNS.IS_ARENA ||
+                            column == COLUMNS.IS_MTGO || column == COLUMNS.SIDE) && version <= ELEVEN) {
+                addColumn = false
             }
             return addColumn
         }
@@ -529,3 +589,4 @@ private const val EIGTH = 8
 private const val NINE = 9
 private const val TEN = 10
 private const val ELEVEN = 11
+private const val TWELFTH = 12

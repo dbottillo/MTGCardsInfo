@@ -7,6 +7,7 @@ import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.PTParam
 import com.dbottillo.mtgsearchfree.model.Rarity
 import com.dbottillo.mtgsearchfree.model.SearchParams
+import com.dbottillo.mtgsearchfree.model.Side
 import com.dbottillo.mtgsearchfree.storage.SetDataSource
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.readSetListJSON
@@ -69,7 +70,7 @@ class MTGCardDataSourceTest {
         // val set = setsJ[0]
         for (set in setsJ) {
             try {
-                val cardsJ = readSingleSetFile(set)
+                val cardsJ = readSingleSetFile(set).filter { it.side == Side.A }
                 val cards = underTest.getSet(set)
                 /*
                 cardsJ.forEach {cardJ ->
@@ -566,7 +567,7 @@ class MTGCardDataSourceTest {
     fun searchCardsById() {
         val card = underTest.searchCardById(5)
         assertNotNull(card)
-        assertThat(card?.name, `is`("Angel of Sanctions"))
+        assertThat(card?.name, `is`("Animating Faerie"))
     }
 
     private enum class OPERATOR constructor(private val operator: String) {

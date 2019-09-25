@@ -1,6 +1,5 @@
 package com.dbottillo.mtgsearchfree.database
 
-import com.dbottillo.mtgsearchfree.BuildConfig
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.storage.SetDataSource
 import com.dbottillo.mtgsearchfree.util.readSetListJSON
@@ -61,7 +60,7 @@ class SetDataSourceTest {
     fun test_sets_can_be_retrieved_from_database() {
         val sets = underTest.sets
         assertNotNull(sets)
-        assertThat(sets.size, `is`(BuildConfig.NUMBER_OF_SET)) // the one added from the previous test
+        assertThat(sets.size, `is`(NUMBER_OF_SET)) // the one added from the previous test
     }
 
     @Test
@@ -72,3 +71,5 @@ class SetDataSourceTest {
         assertTrue(fromJson.containsAll(sets))
     }
 }
+
+private const val NUMBER_OF_SET = 188

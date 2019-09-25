@@ -48,7 +48,7 @@ class DeckDataSource(
             return deckId
         }
         for (card in bucket.cards) {
-            val realCard = mtgCardDataSource.searchCard(card.name)
+            val realCard = mtgCardDataSource.searchCard(name = card.name, requiredMultiverseId = true)
             if (realCard != null) {
                 realCard.isSideboard = card.isSideboard
                 addCardToDeck(deckId, realCard, card.quantity)

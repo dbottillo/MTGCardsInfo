@@ -5,6 +5,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.Rarity
 import com.dbottillo.mtgsearchfree.model.SearchParams
+import com.dbottillo.mtgsearchfree.model.Side
 import com.dbottillo.mtgsearchfree.util.LOG
 import java.util.Arrays
 import java.util.Locale
@@ -16,14 +17,14 @@ class MTGCardDataSource(
 
     @Suppress("MagicNumber")
     enum class STANDARD(var setId: Int, var set: String) {
-        CORE_20(2, "Core Set 2020"),
-        WAR_OF_THE_SPARK(4, "War of the Spark"),
-        RAVNICA_ALLEGIANCE(5, "Ravnica Allegiance"),
-        GUILDS_OF_RAVNICA(7, "Guilds of Ravnica"),
-        CORE_19(9, "Core Set 2019"),
-        DOMINARIA(14, "Dominaria"),
-        RIVALS_OF_IXALAN(16, "Rivals of Ixalan"),
-        IXALAN(21, "Ixalan");
+        CORE_20(3, "Core Set 2020"),
+        WAR_OF_THE_SPARK(5, "War of the Spark"),
+        RAVNICA_ALLEGIANCE(6, "Ravnica Allegiance"),
+        GUILDS_OF_RAVNICA(8, "Guilds of Ravnica"),
+        CORE_19(10, "Core Set 2019"),
+        DOMINARIA(15, "Dominaria"),
+        RIVALS_OF_IXALAN(17, "Rivals of Ixalan"),
+        IXALAN(22, "Ixalan");
 
         companion object {
 
@@ -45,7 +46,9 @@ class MTGCardDataSource(
             while (!cursor.isAfterLast) {
                 val card = cardDataSource.fromCursor(cursor)
                 card.belongsTo(set)
-                cards.add(card)
+                if (card.side == Side.A) {
+                    cards.add(card)
+                }
                 cursor.moveToNext()
             }
         }
@@ -132,7 +135,9 @@ class MTGCardDataSource(
         if (cursor.moveToFirst()) {
             while (!cursor.isAfterLast) {
                 val card = cardDataSource.fromCursor(cursor)
-                cards.add(card)
+                if (card.side == Side.A) {
+                    cards.add(card)
+                }
                 cursor.moveToNext()
             }
         }
@@ -156,9 +161,12 @@ class MTGCardDataSource(
         return cards
     }
 
-    fun searchCard(name: String): MTGCard? {
+    fun searchCard(name: String, requiredMultiverseId: Boolean = false): MTGCard? {
         LOG.d("search card <$name>")
-        val query = ("SELECT * FROM " + CardDataSource.TABLE + " WHERE " + CardDataSource.COLUMNS.NAME.noun + "=?")
+        val query = if (requiredMultiverseId)
+            "SELECT * FROM ${CardDataSource.TABLE} WHERE ${CardDataSource.COLUMNS.NAME.noun}=? AND ${CardDataSource.COLUMNS.MULTIVERSE_ID.noun} IS NOT NULL"
+            else
+            "SELECT * FROM " + CardDataSource.TABLE + " WHERE " + CardDataSource.COLUMNS.NAME.noun + "=?"
         val selection = arrayOf(name)
         LOG.query(query)
         val cursor = database.rawQuery(query, selection)

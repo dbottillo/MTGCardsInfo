@@ -284,6 +284,19 @@ internal class CreateDBAsyncTask(
                 values.put(CardDataSource.COLUMNS.TCG_PLAYER_PURCHASE_URL.noun, jsonObject.getString("tcgplayerPurchaseUrl"))
             }
             values.put(CardDataSource.COLUMNS.MULTICOLOR.noun, multicolor)
+
+            if (jsonObject.has("faceConvertedManaCost")) {
+                values.put(CardDataSource.COLUMNS.FACE_CMC.noun, jsonObject.getInt("faceConvertedManaCost"))
+            }
+            if (jsonObject.has("isArena")) {
+                values.put(CardDataSource.COLUMNS.IS_ARENA.noun, if (jsonObject.getBoolean("isArena")) 1 else 0)
+            }
+            if (jsonObject.has("isMtgo")) {
+                values.put(CardDataSource.COLUMNS.IS_MTGO.noun, if (jsonObject.getBoolean("isMtgo")) 1 else 0)
+            }
+            if (jsonObject.has("side")) {
+                values.put(CardDataSource.COLUMNS.SIDE.noun, jsonObject.getString("side"))
+            }
             return values
         }
     }

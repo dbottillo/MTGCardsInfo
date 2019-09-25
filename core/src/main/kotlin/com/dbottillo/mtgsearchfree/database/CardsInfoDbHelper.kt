@@ -93,6 +93,12 @@ class CardsInfoDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
         if (!columns.contains(CardDataSource.COLUMNS.TCG_PLAYER_PURCHASE_URL.noun)) {
             db.execSQL(CardDataSource.SQL_ADD_COLUMN_TCG_PLAYER_PRODUCT_URL)
         }
+        if (!columns.contains(CardDataSource.COLUMNS.FACE_CMC.noun)) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_FACE_CMC)
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_IS_ARENA)
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_IS_MTGO)
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_SIDE)
+        }
     }
 
     @Suppress("EmptyFunctionBlock")
@@ -126,4 +132,4 @@ class CardsInfoDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
     }
 }
 
-private const val DATABASE_VERSION = 11
+private const val DATABASE_VERSION = 12

@@ -295,6 +295,23 @@ class CardsInfoDbHelperTest {
         assertThat(columns.contains(CardDataSource.COLUMNS.TCG_PLAYER_PURCHASE_URL.noun), `is`(true))
     }
 
+    @Test
+    fun test_db_upgrade_from_version11_to_version12_does_not_generate_error() {
+        val db = cardsInfoDbHelper.writableDatabase
+        downgradeDb(db, 11)
+        var columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
+        assertThat(columns.contains(CardDataSource.COLUMNS.FACE_CMC.noun), `is`(false))
+        assertThat(columns.contains(CardDataSource.COLUMNS.IS_ARENA.noun), `is`(false))
+        assertThat(columns.contains(CardDataSource.COLUMNS.IS_MTGO.noun), `is`(false))
+        assertThat(columns.contains(CardDataSource.COLUMNS.SIDE.noun), `is`(false))
+        cardsInfoDbHelper.onUpgrade(db, 11, 12)
+        columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
+        assertThat(columns.contains(CardDataSource.COLUMNS.FACE_CMC.noun), `is`(true))
+        assertThat(columns.contains(CardDataSource.COLUMNS.IS_ARENA.noun), `is`(true))
+        assertThat(columns.contains(CardDataSource.COLUMNS.IS_MTGO.noun), `is`(true))
+        assertThat(columns.contains(CardDataSource.COLUMNS.SIDE.noun), `is`(true))
+    }
+
     private fun assertTableExist(db: SQLiteDatabase, table: String, exist: Boolean) {
         var isExist = false
         val cursor = db.rawQuery("select DISTINCT tbl_name from sqlite_master where tbl_name = '$table'", null)
@@ -387,6 +404,11 @@ class CardsInfoDbHelperTest {
         }
         if (version == 10) {
             db.execSQL(CardDataSource.generateCreateTable(10))
+            db.execSQL(PlayerDataSource.generateCreateTable())
+            db.execSQL(FavouritesDataSource.generateCreateTable())
+        }
+        if (version == 11) {
+            db.execSQL(CardDataSource.generateCreateTable(11))
             db.execSQL(PlayerDataSource.generateCreateTable())
             db.execSQL(FavouritesDataSource.generateCreateTable())
         }

@@ -1,6 +1,7 @@
 package com.dbottillo.mtgsearchfree.model
 
 import android.os.Parcelable
+import kotlinx.android.parcel.IgnoredOnParcel
 import kotlinx.android.parcel.Parcelize
 import java.util.Locale
 
@@ -21,6 +22,8 @@ data class MTGSet(
             }
             return code?.toLowerCase(Locale.getDefault()) ?: ""
         }
+
+    @IgnoredOnParcel val isPreview = code == "ELD"
 
     /**
      * equals is manually overridden because

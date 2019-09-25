@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.database
 import android.database.Cursor
 import com.dbottillo.mtgsearchfree.model.Color
 import com.dbottillo.mtgsearchfree.model.Rarity
+import com.dbottillo.mtgsearchfree.model.Side
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.google.gson.Gson
 import com.nhaarman.mockito_kotlin.whenever
@@ -56,11 +57,12 @@ class CardDataSourceIntegrationTest {
     fun test_generate_table_is_correct() {
         val query = CardDataSource.generateCreateTable()
         assertNotNull(query)
-        assertThat(query, `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT,colorIdentity TEXT,uuid TEXT,scryfallId TEXT,tcgplayerProductId INTEGER,tcgplayerPurchaseUrl TEXT)"))
+        assertThat(query, `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT,colorIdentity TEXT,uuid TEXT,scryfallId TEXT,tcgplayerProductId INTEGER,tcgplayerPurchaseUrl TEXT,faceConvertedManaCost INTEGER,isArena INTEGER,isMtgo INTEGER,cardSide TEXT)"))
         assertThat(CardDataSource.generateCreateTable(1), `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT)"))
         assertThat(CardDataSource.generateCreateTable(2), `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT)"))
         assertThat(CardDataSource.generateCreateTable(3), `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT)"))
         assertThat(CardDataSource.generateCreateTable(10), `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT,colorIdentity TEXT,uuid TEXT,scryfallId TEXT,tcgplayerProductId INTEGER)"))
+        assertThat(CardDataSource.generateCreateTable(11), `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT,colorIdentity TEXT,uuid TEXT,scryfallId TEXT,tcgplayerProductId INTEGER,tcgplayerPurchaseUrl TEXT)"))
     }
 
     @Test
@@ -80,7 +82,7 @@ class CardDataSourceIntegrationTest {
             assertThat(cardFromDb.subTypes[i], `is`(card.subTypes[i]))
         }
         assertThat(cardFromDb.colorsDisplay.size, `is`(card.colorsDisplay.size))
-        for (i in 0 until cardFromDb.colorsDisplay.size) {
+        for (i in cardFromDb.colorsDisplay.indices) {
             assertThat(cardFromDb.colorsDisplay[i], `is`(card.colorsDisplay[i]))
         }
         assertThat(cardFromDb.cmc, `is`(card.cmc))
@@ -102,12 +104,12 @@ class CardDataSourceIntegrationTest {
         }
 
         assertThat(cardFromDb.names.size, `is`(card.names.size))
-        for (i in 0 until cardFromDb.names.size) {
+        for (i in cardFromDb.names.indices) {
             assertThat(cardFromDb.names[i], `is`(card.names[i]))
         }
 
         assertThat(cardFromDb.superTypes.size, `is`(card.superTypes.size))
-        for (i in 0 until cardFromDb.superTypes.size) {
+        for (i in cardFromDb.superTypes.indices) {
             assertThat(cardFromDb.superTypes[i], `is`(card.superTypes[i]))
         }
         assertThat(cardFromDb.loyalty, `is`(card.loyalty))
@@ -115,7 +117,7 @@ class CardDataSourceIntegrationTest {
         assertThat<String>(cardFromDb.flavor, `is`<String>(card.flavor))
 
         assertThat(cardFromDb.printings, `is`(card.printings))
-        for (i in 0 until cardFromDb.printings.size) {
+        for (i in cardFromDb.printings.indices) {
             assertThat(cardFromDb.printings[i], `is`(card.printings[i]))
         }
         assertThat(cardFromDb.originalText, `is`(card.originalText))
@@ -135,6 +137,12 @@ class CardDataSourceIntegrationTest {
         assertThat(cardFromDb.scryfallId, `is`(card.scryfallId))
         assertThat(cardFromDb.tcgplayerProductId, `is`(card.tcgplayerProductId))
         assertThat(cardFromDb.tcgplayerPurchaseUrl, `is`(card.tcgplayerPurchaseUrl))
+
+        assertThat(cardFromDb.faceConvertedManaCost, `is`(card.faceConvertedManaCost))
+        assertThat(cardFromDb.isArena, `is`(card.isArena))
+        assertThat(cardFromDb.isMtgo, `is`(card.isMtgo))
+        assertThat(cardFromDb.side, `is`(card.side))
+
         cursor.close()
     }
 
@@ -224,6 +232,11 @@ class CardDataSourceIntegrationTest {
         assertThat(card.legalities[1].legality, `is`("Restricted"))
 
         assertThat(card.tcgplayerPurchaseUrl, `is`("tcg_player_url"))
+
+        assertThat(card.faceConvertedManaCost, `is`(4))
+        assertTrue(card.isArena == true)
+        assertTrue(card.isMtgo == true)
+        assertThat(card.side, `is`(Side.B))
     }
 
     @Test
@@ -310,6 +323,21 @@ class CardDataSourceIntegrationTest {
         }
 
         assertThat(contentValues.getAsString(CardDataSource.COLUMNS.TCG_PLAYER_PURCHASE_URL.noun), `is`(card.tcgplayerPurchaseUrl))
+
+        assertThat(contentValues.getAsInteger(CardDataSource.COLUMNS.FACE_CMC.noun), `is`(card.faceConvertedManaCost))
+        val expectedIsArena = when {
+            card.isArena == true -> 1
+            card.isArena == false -> 0
+            else -> null
+        }
+        assertThat(contentValues.getAsInteger(CardDataSource.COLUMNS.IS_ARENA.noun), `is`(expectedIsArena))
+        val expectedIsMtgo = when {
+            card.isArena == true -> 1
+            card.isArena == false -> 0
+            else -> null
+        }
+        assertThat(contentValues.getAsInteger(CardDataSource.COLUMNS.IS_MTGO.noun), `is`(expectedIsMtgo))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.SIDE.noun), `is`(if (card.side == Side.A) "A" else "B"))
     }
 
     private fun setupCursorCard() {
@@ -417,5 +445,16 @@ class CardDataSourceIntegrationTest {
 
         whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.TCG_PLAYER_PURCHASE_URL.noun)).thenReturn(35)
         whenever(cursor.getString(35)).thenReturn("tcg_player_url")
+
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.FACE_CMC.noun)).thenReturn(36)
+        whenever(cursor.getInt(36)).thenReturn(4)
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.IS_ARENA.noun)).thenReturn(37)
+        whenever(cursor.getInt(37)).thenReturn(1)
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.IS_MTGO.noun)).thenReturn(38)
+        whenever(cursor.getInt(38)).thenReturn(1)
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.SIDE.noun)).thenReturn(39)
+        whenever(cursor.getString(39)).thenReturn("b")
+        whenever(cursor.getColumnIndex(CardDataSource.COLUMNS.SCRYFALLID.noun)).thenReturn(40)
+        whenever(cursor.getString(40)).thenReturn("05e2a5e6-3aaa-4096-bdd0-fcc1afe5a36c")
     }
 }

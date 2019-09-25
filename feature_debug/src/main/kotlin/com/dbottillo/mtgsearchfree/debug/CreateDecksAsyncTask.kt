@@ -37,8 +37,8 @@ internal class CreateDecksAsyncTask(context: Context) : AsyncTask<String, Void, 
             deckDataSource.deleteAllDecks(db)
 
             val r = Random()
-            for (i in 0..15) {
-                val deck = deckDataSource.addDeck("Deck " + i)
+            for (i in 0..12) {
+                val deck = deckDataSource.addDeck("Deck $i")
                 val cards = mtgCardDataSource.getRandomCard(30)
                 for (card in cards) {
                     val quantity = r.nextInt(4) + 1

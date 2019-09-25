@@ -5,6 +5,7 @@ import com.dbottillo.mtgsearchfree.database.mapColor
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.Rarity
+import com.dbottillo.mtgsearchfree.model.Side
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import org.json.JSONArray
@@ -218,5 +219,8 @@ private fun cardFromJSON(jsonObject: JSONObject, set: MTGSet): MTGCard {
         }
     }
     card.isMultiColor = multicolor
+    if (jsonObject.has("side")) {
+        card.side = if (jsonObject.getString("side") == "b") Side.B else Side.A
+    }
     return card
 }

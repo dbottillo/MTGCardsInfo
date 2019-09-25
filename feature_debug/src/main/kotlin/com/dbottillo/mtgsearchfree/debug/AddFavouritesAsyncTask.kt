@@ -31,7 +31,7 @@ internal class AddFavouritesAsyncTask(context: Context) : AsyncTask<String, Void
             val favouritesDataSource = FavouritesDataSource(cardsInfoDbHelper.writableDatabase, cardDataSource)
             favouritesDataSource.clear()
 
-            mtgCardDataSource.getRandomCard(600).forEach {
+            mtgCardDataSource.getRandomCard(60).forEach {
                 favouritesDataSource.saveFavourites(it)
             }
 

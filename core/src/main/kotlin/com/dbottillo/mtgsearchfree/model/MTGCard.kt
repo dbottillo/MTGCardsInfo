@@ -39,7 +39,11 @@ data class MTGCard(
     var originalText: String = "",
     var colorsDisplay: List<String> = listOf(),
     var colorsIdentity: List<Color> = mutableListOf(),
-    var legalities: MutableList<Legality> = mutableListOf()
+    var legalities: MutableList<Legality> = mutableListOf(),
+    var faceConvertedManaCost: Int? = null,
+    var isArena: Boolean? = null,
+    var isMtgo: Boolean? = null,
+    var side: Side = Side.A
 ) {
 
     constructor(onlyId: Int) : this(id = onlyId)
@@ -106,22 +110,23 @@ data class MTGCard(
         }
 
     val scryfallImage
-        get() = if (scryfallId.isNotEmpty() && isNormal) {
-            "https://api.scryfall.com/cards/$scryfallId?format=image"
-        } else "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=$multiVerseId&type=card"
+        get() = when {
+            scryfallId.isNotEmpty() && (isNormal || isAdventure) -> "https://api.scryfall.com/cards/$scryfallId?format=image"
+            else -> "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=$multiVerseId&type=card"
+        }
 
     fun getMtgColor(context: Context): Int {
         return ContextCompat.getColor(context,
-                when {
-                    colorsIdentity.size > 1 -> R.color.mtg_multi
-                    colorsIdentity.isEmpty() -> R.color.mtg_other
-                    colorsIdentity[0] == Color.WHITE -> R.color.mtg_white
-                    colorsIdentity[0] == Color.BLUE -> R.color.mtg_blue
-                    colorsIdentity[0] == Color.BLACK -> R.color.mtg_black
-                    colorsIdentity[0] == Color.RED -> R.color.mtg_red
-                    colorsIdentity[0] == Color.GREEN -> R.color.mtg_green
-                    else -> R.color.mtg_other
-                })
+            when {
+                colorsIdentity.size > 1 -> R.color.mtg_multi
+                colorsIdentity.isEmpty() -> R.color.mtg_other
+                colorsIdentity[0] == Color.WHITE -> R.color.mtg_white
+                colorsIdentity[0] == Color.BLUE -> R.color.mtg_blue
+                colorsIdentity[0] == Color.BLACK -> R.color.mtg_black
+                colorsIdentity[0] == Color.RED -> R.color.mtg_red
+                colorsIdentity[0] == Color.GREEN -> R.color.mtg_green
+                else -> R.color.mtg_other
+            })
     }
 
     val isWhite: Boolean
@@ -149,8 +154,11 @@ data class MTGCard(
     val isTransform: Boolean
         get() = layout.equals("transform", ignoreCase = true)
 
-    val isNormal: Boolean
+    private val isNormal: Boolean
         get() = layout.equals("normal", ignoreCase = true)
+
+    private val isAdventure: Boolean
+        get() = layout.equals("adventure", ignoreCase = true)
 
     override fun equals(other: Any?): Boolean {
         return when (other) {
@@ -191,6 +199,10 @@ data class MTGCard(
         result = 31 * result + originalText.hashCode()
         result = 31 * result + colorsIdentity.hashCode()
         result = 31 * result + legalities.hashCode()
+        result = 31 * result + faceConvertedManaCost.hashCode()
+        result = 31 * result + isArena.hashCode()
+        result = 31 * result + isMtgo.hashCode()
+        result = 31 * result + side.hashCode()
         return result
     }
 }
@@ -199,4 +211,8 @@ class Legality(val format: String, val legality: String)
 
 enum class Color {
     WHITE, BLUE, BLACK, RED, GREEN
+}
+
+enum class Side {
+    A, B
 }
