@@ -532,6 +532,7 @@ class CardDataSource(
             return builder.append(')').toString()
         }
 
+        @Suppress("ComplexCondition", "ComplexMethod")
         private fun shouldAddColumn(column: COLUMNS, version: Int): Boolean {
             var addColumn = true
             if ((column == COLUMNS.RULINGS || column == COLUMNS.LAYOUT) && version <= 1) {

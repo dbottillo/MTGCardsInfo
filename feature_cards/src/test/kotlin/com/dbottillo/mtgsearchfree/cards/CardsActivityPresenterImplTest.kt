@@ -86,6 +86,7 @@ class CardsActivityPresenterImplTest {
         whenever(cardsPreferences.showImage()).thenReturn(true)
         whenever(cardsInteractor.loadSet(set)).thenReturn(Observable.just(cards))
         whenever(set.name).thenReturn("Set name")
+        whenever(set.isPreview).thenReturn(true)
 
         underTest.init(view, intent)
 
@@ -93,6 +94,7 @@ class CardsActivityPresenterImplTest {
         verify(cardsInteractor).loadSet(set)
         verify(cardsPreferences).showImage()
         verify(view).updateTitle("Set name")
+        verify(view).renderPreview(true)
         verify(view).showLoading()
         verify(view).hideLoading()
         verify(view).updateAdapter(cards, true, 5)
@@ -117,6 +119,7 @@ class CardsActivityPresenterImplTest {
         verify(view).hideLoading()
         verify(view).updateTitle("Set name")
         verify(view).showError("error message")
+        verify(view).renderPreview(false)
         verifyNoMoreInteractions(view, cardsInteractor, savedCardsInteractor, decksInteractor, cardsPreferences)
     }
 
@@ -258,9 +261,14 @@ class CardsActivityPresenterImplTest {
     }
 
     @Test
-    fun `update menu should do nothing if called before id favs are loaded`() {
+    fun `update menu should hide fav menu if called before id favs are loaded`() {
+        prepareAfterInit()
+
         underTest.updateMenu(card)
 
+        verify(view).hideFavMenuItem()
+        verify(view).setImageMenuItemChecked(false)
+        verify(cardsPreferences).showImage()
         verifyNoMoreInteractions(view, cardsInteractor, savedCardsInteractor, decksInteractor, cardsPreferences)
     }
 
