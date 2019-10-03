@@ -23,7 +23,8 @@ data class MTGSet(
             return code?.toLowerCase(Locale.getDefault()) ?: ""
         }
 
-    @IgnoredOnParcel val isPreview = code == "ELD"
+    // @IgnoredOnParcel val isPreview = code == "ELD"
+    @IgnoredOnParcel val isPreview = false
 
     /**
      * equals is manually overridden because
