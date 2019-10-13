@@ -17,14 +17,11 @@ class MTGCardDataSource(
 
     @Suppress("MagicNumber")
     enum class STANDARD(var setId: Int, var set: String) {
+        THRONE_OF_ELDRAINE(1, "Throne of Eldraine"),
         CORE_20(3, "Core Set 2020"),
         WAR_OF_THE_SPARK(5, "War of the Spark"),
         RAVNICA_ALLEGIANCE(6, "Ravnica Allegiance"),
-        GUILDS_OF_RAVNICA(8, "Guilds of Ravnica"),
-        CORE_19(10, "Core Set 2019"),
-        DOMINARIA(15, "Dominaria"),
-        RIVALS_OF_IXALAN(17, "Rivals of Ixalan"),
-        IXALAN(22, "Ixalan");
+        GUILDS_OF_RAVNICA(8, "Guilds of Ravnica");
 
         companion object {
 
