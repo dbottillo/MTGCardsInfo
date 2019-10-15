@@ -124,7 +124,7 @@ class BottomTabs : LinearLayout {
 
         val selection: Int
 
-        constructor(state: Parcelable, selection: Int) : super(state) {
+        constructor(state: Parcelable?, selection: Int) : super(state) {
             this.selection = selection
         }
 

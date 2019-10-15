@@ -18,11 +18,13 @@ import java.io.OutputStreamWriter
 import java.io.StringWriter
 import javax.inject.Inject
 
-class FileManager @Inject constructor(private val context: Context) : FileManagerI {
+class FileManager @Inject constructor(
+    private val context: Context
+) : FileManagerI {
 
     @Throws(FileNotFoundException::class)
     override fun loadUri(uri: Uri): InputStream {
-        return context.contentResolver.openInputStream(uri)
+        return context.contentResolver.openInputStream(uri) ?: throw FileNotFoundException("input stream is null")
     }
 
     @Throws(Resources.NotFoundException::class)

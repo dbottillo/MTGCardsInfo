@@ -21,7 +21,7 @@ class SearchSetAdapter(context: Context, sets: List<MTGSet>) : ArrayAdapter<MTGS
         } else {
             holder = convertView.tag as SetHolder
         }
-        holder.name.text = getItem(position).name
+        holder.name.text = getItem(position)?.name
         return view
     }
 
@@ -36,7 +36,7 @@ class SearchSetAdapter(context: Context, sets: List<MTGSet>) : ArrayAdapter<MTGS
         } else {
             holder = convertView.tag as SetHolder
         }
-        holder.name.text = getItem(position).name
+        holder.name.text = getItem(position)?.name
         return view
     }
 

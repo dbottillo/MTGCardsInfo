@@ -63,7 +63,7 @@ class DeckStartingHandFragment : BasicFragment(), StartingHandView {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putParcelableArrayList(BUNDLE_KEY_LEFT, ArrayList(presenter.cards))
+        outState.putParcelableArrayList(BUNDLE_KEY_LEFT, presenter.cards?.let { ArrayList(it) })
         outState.putParcelableArrayList(BUNDLE_KEY_SHOWN, adapter?.cards?.let { ArrayList(it) })
     }
 
