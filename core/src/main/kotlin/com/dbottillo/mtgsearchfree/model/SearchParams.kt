@@ -16,10 +16,11 @@ data class SearchParams(
     var isBlack: Boolean = false,
     var isRed: Boolean = false,
     var isGreen: Boolean = false,
-    private var onlyMulti: Boolean = false,
-    private var noMulti: Boolean = false,
     var isLand: Boolean = false,
-    var isOnlyMultiNoOthers: Boolean = false,
+    var exactlyColors: Boolean = true,
+    var includingColors: Boolean = false,
+    var atMostColors: Boolean = false,
+    var atMostOnlyMultiColors: Boolean = false,
     var isCommon: Boolean = false,
     var isUncommon: Boolean = false,
     var isRare: Boolean = false,
@@ -27,37 +28,36 @@ data class SearchParams(
     var setId: Int = -1
 ) : Parcelable {
 
-    var isNoMulti: Boolean
-        get() = noMulti
-        set(noMulti) {
-            this.noMulti = noMulti
-            if (noMulti) {
-                this.onlyMulti = false
-            }
-        }
-
     val isValid: Boolean
         get() = (name.isNotEmpty() || types.isNotEmpty() ||
                 cmc != null || power != null || tough != null ||
                 setId > 0 || text.isNotEmpty() ||
-                isLand || atLeastOneColor() || atLeastOneRarity())
+                isLand || atLeastOneColor || atLeastOneRarity)
 
-    fun onlyMulti(): Boolean {
-        return onlyMulti
-    }
+    val atLeastOneColor: Boolean
+        get() = isWhite || isBlack || isBlue || isRed || isGreen
 
-    fun setOnlyMulti(onlyMulti: Boolean) {
-        this.onlyMulti = onlyMulti
-        if (onlyMulti) {
-            this.noMulti = false
+    val atLeastOneRarity: Boolean
+        get() = isCommon || isUncommon || isRare || isMythic
+
+    val colors: List<String>
+        get() {
+            val colors = mutableListOf<String>()
+            if (isBlack) {
+                colors.add("B")
+            }
+            if (isGreen) {
+                colors.add("G")
+            }
+            if (isRed) {
+                colors.add("R")
+            }
+            if (isBlue) {
+                colors.add("U")
+            }
+            if (isWhite) {
+                colors.add("W")
+            }
+            return colors.toList()
         }
-    }
-
-    fun atLeastOneColor(): Boolean {
-        return isWhite || isBlack || isBlue || isRed || isGreen
-    }
-
-    fun atLeastOneRarity(): Boolean {
-        return isCommon || isUncommon || isRare || isMythic
-    }
 }

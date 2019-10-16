@@ -3,7 +3,6 @@ package com.dbottillo.mtgsearchfree.database
 import android.content.res.Resources
 import com.dbottillo.mtgsearchfree.model.CMCParam
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.PTParam
 import com.dbottillo.mtgsearchfree.model.Rarity
 import com.dbottillo.mtgsearchfree.model.SearchParams
@@ -23,7 +22,6 @@ import org.hamcrest.Matchers.lessThan
 import org.hamcrest.Matchers.lessThanOrEqualTo
 import org.hamcrest.core.Is.`is`
 import org.junit.After
-import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
@@ -40,7 +38,6 @@ class MTGCardDataSourceTest {
     private lateinit var mtgDatabaseHelper: MTGDatabaseHelper
     private lateinit var cardsInfoDbHelper: CardsInfoDbHelper
     private lateinit var underTest: MTGCardDataSource
-    private lateinit var kaladesh: MTGSet
 
     @Before
     fun setup() {
@@ -48,12 +45,6 @@ class MTGCardDataSourceTest {
         cardsInfoDbHelper = CardsInfoDbHelper(RuntimeEnvironment.application)
         val cardDataSource = CardDataSource(cardsInfoDbHelper.writableDatabase, Gson())
         val setDataSource = SetDataSource(mtgDatabaseHelper.readableDatabase)
-        for (set in setDataSource.sets) {
-            if (set.name.equals("kaladesh", ignoreCase = true)) {
-                kaladesh = set
-                break
-            }
-        }
         underTest = MTGCardDataSource(mtgDatabaseHelper.readableDatabase, cardDataSource)
     }
 
@@ -265,135 +256,106 @@ class MTGCardDataSourceTest {
         var cards = underTest.searchCards(searchParams)
         assertTrue(cards.isNotEmpty())
         for (card in cards) {
-            assertThat(card.manaCost, containsString("W"))
+            assertTrue(card.isWhite)
         }
         searchParams = SearchParams()
         searchParams.isBlue = true
         cards = underTest.searchCards(searchParams)
         assertTrue(cards.isNotEmpty())
         for (card in cards) {
-            assertThat(card.manaCost, containsString("U"))
+            assertTrue(card.isBlue)
         }
         searchParams = SearchParams()
         searchParams.isRed = true
         cards = underTest.searchCards(searchParams)
         assertTrue(cards.isNotEmpty())
         for (card in cards) {
-            assertThat(card.manaCost, containsString("R"))
+            assertTrue(card.isRed)
         }
         searchParams = SearchParams()
         searchParams.isBlack = true
         cards = underTest.searchCards(searchParams)
         assertTrue(cards.isNotEmpty())
         for (card in cards) {
-            assertThat(card.manaCost, containsString("B"))
+            assertTrue(card.isBlack)
         }
         searchParams = SearchParams()
         searchParams.isGreen = true
         cards = underTest.searchCards(searchParams)
         assertTrue(cards.isNotEmpty())
         for (card in cards) {
-            assertThat(card.manaCost, containsString("G"))
+            assertTrue(card.isGreen)
         }
     }
 
     @Test
-    fun searchKaladeshCardsWithTwoColors() {
+    fun `should search exactly blu and red colors in standard`() {
         val searchParams = SearchParams()
         searchParams.isRed = true
         searchParams.isBlue = true
-        searchParams.setId = kaladesh.id
-        searchParams.text = "Energy"
+        searchParams.setId = -2
+        searchParams.exactlyColors = true
+        searchParams.includingColors = false
+        searchParams.atMostColors = false
+
         val cards = underTest.searchCards(searchParams)
 
-        assertThat(cards.size, `is`(20))
         for (card in cards) {
-            // assertTrue(containsString("W") || containsString("U"));
-            assertTrue(card.isRed || card.isBlue)
-            assertTrue(card.text.toLowerCase().contains("energy"))
+            assertTrue("checking ${card.name}", card.isRed && card.isBlue && !card.isWhite &&
+                    !card.isBlack && !card.isGreen)
         }
     }
 
     @Test
-    fun searchKaladeshCardsWithTwoColorsOnlyMulticolor() {
+    fun `should search exactly blue, green and red colors in standard`() {
         val searchParams = SearchParams()
         searchParams.isRed = true
         searchParams.isBlue = true
-        searchParams.setOnlyMulti(true)
-        searchParams.setId = kaladesh.id
-        searchParams.text = "Energy"
+        searchParams.isGreen = true
+        searchParams.setId = -2
+        searchParams.exactlyColors = true
+        searchParams.includingColors = false
+        searchParams.atMostColors = false
+
         val cards = underTest.searchCards(searchParams)
 
-        assertThat(cards.size, `is`(3))
         for (card in cards) {
-            assertTrue(card.isMultiColor)
-            assertTrue(card.isRed || card.isBlue)
-            assertTrue(card.text.toLowerCase().contains("energy"))
+            assertTrue("checking ${card.name}", card.isRed && card.isBlue && !card.isWhite &&
+                    !card.isBlack && card.isGreen)
         }
     }
 
     @Test
-    fun searchKaladeshCardsWithTwoColorsOnlyMulticolorAndNoOtherColors() {
+    fun `should search by colors including blu and red in standard`() {
         val searchParams = SearchParams()
         searchParams.isRed = true
         searchParams.isBlue = true
-        searchParams.isOnlyMultiNoOthers = true
-        searchParams.setId = kaladesh.id
-        searchParams.text = "Energy"
+        searchParams.exactlyColors = false
+        searchParams.includingColors = true
+        searchParams.atMostColors = false
+        searchParams.setId = -2
+
         val cards = underTest.searchCards(searchParams)
 
-        assertThat(cards.size, `is`(1))
-        val card = cards[0]
-        assertTrue(card.isMultiColor)
-        assertTrue(card.isRed && card.isBlue)
-        assertTrue(!card.isBlack && !card.isWhite && !card.isGreen)
-        assertThat(card.name, `is`("Whirler Virtuoso"))
-        assertTrue(card.text.toLowerCase().contains("energy"))
+        for (card in cards) {
+            assertTrue("checking ${card.name}", card.isRed && card.isBlue)
+        }
     }
 
     @Test
-    fun searchKaladeshCardsWithTwoColorsNoMulticolor() {
+    fun `should search by colors at most blu and red in standard`() {
         val searchParams = SearchParams()
         searchParams.isRed = true
         searchParams.isBlue = true
-        searchParams.isNoMulti = true
-        searchParams.setId = kaladesh.id
-        searchParams.text = "Energy"
+        searchParams.exactlyColors = false
+        searchParams.includingColors = false
+        searchParams.atMostColors = true
+        searchParams.setId = -2
+
         val cards = underTest.searchCards(searchParams)
 
-        assertThat(cards.size, `is`(17))
         for (card in cards) {
-            assertFalse(card.isMultiColor)
-            assertTrue(card.isRed || card.isBlue)
-            assertTrue(card.text.toLowerCase().contains("energy"))
-        }
-    }
-
-    @Test
-    fun searchCardsWithTwoColorsOnlyMulticolor() {
-        val searchParams = SearchParams()
-        searchParams.isWhite = true
-        searchParams.isBlue = true
-        searchParams.setOnlyMulti(true)
-        val cards = underTest.searchCards(searchParams)
-        assertTrue(cards.isNotEmpty())
-        for (card in cards) {
-            assertTrue(card.isMultiColor)
-            assertTrue(card.isWhite || card.isBlue)
-        }
-    }
-
-    @Test
-    fun searchCardsWithTwoColorsNoMulticolor() {
-        val searchParams = SearchParams()
-        searchParams.isWhite = true
-        searchParams.isBlue = true
-        searchParams.isNoMulti = true
-        val cards = underTest.searchCards(searchParams)
-        assertTrue(cards.isNotEmpty())
-        for (card in cards) {
-            assertFalse(card.isMultiColor)
-            assertTrue(card.manaCost.contains("W") && !card.manaCost.contains("U") || card.manaCost.contains("U") && !card.manaCost.contains("W"))
+            assertTrue("checking ${card.name}", card.isRed || card.isBlue)
         }
     }
 
@@ -513,7 +475,6 @@ class MTGCardDataSourceTest {
         searchParams.name = "angel"
         searchParams.types = "creature"
         searchParams.isWhite = true
-        searchParams.isNoMulti = true
         searchParams.isRare = true
         searchParams.power = PTParam("=", 4)
         searchParams.tough = PTParam("=", 4)
@@ -522,7 +483,7 @@ class MTGCardDataSourceTest {
         for (card in cards) {
             assertTrue(card.name.toLowerCase(Locale.getDefault()).contains("angel"))
             assertTrue(card.type.toLowerCase(Locale.getDefault()).contains("creature"))
-            assertTrue(card.manaCost.contains("W"))
+            assertTrue(card.isWhite)
             assertTrue(Integer.parseInt(card.power) == 4)
             assertTrue(Integer.parseInt(card.toughness) == 4)
             assertTrue(card.rarity == Rarity.RARE)

@@ -142,8 +142,9 @@
     <string name="blue">Blue</string>
     <string name="red">Red</string>
     <string name="green">Green</string>
-    <string name="multicolor">Only multicolor</string>
-    <string name="no_multi">No multicolor</string>
+    <string name="search_colors_exactly">Exactly these colors</string>
+    <string name="search_colors_including">Including these colors</string>
+    <string name="search_colors_at_most">At most these colors</string>
     <string name="search_common">Common</string>
     <string name="search_uncommon">Uncommon</string>
     <string name="search_mythic">Mythic</string>
@@ -192,7 +193,6 @@
 
     <string name="add_new_player">Add new player</string>
     <string name="add_new_deck">Add new deck</string>
-    <string name="multicolor_no_others">Multicolor exclude unselected colors</string>
     <string name="filter_title">Filters</string>
     <string name="order_title">Order</string>
     <string name="set_choose">Choose a set</string>

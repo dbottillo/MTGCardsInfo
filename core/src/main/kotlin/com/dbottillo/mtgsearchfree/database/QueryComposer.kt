@@ -119,7 +119,7 @@ internal class QueryComposer(initial: String) {
     }
 
     private fun checkFirstParam() {
-        if (!selection.isEmpty()) {
+        if (selection.isNotEmpty()) {
             stringBuilder.append(" AND ")
         } else {
             stringBuilder.append(" WHERE ")

@@ -29,7 +29,6 @@ class SearchParamsTest {
         searchParams.isBlue = true
         searchParams.isRed = true
         searchParams.isGreen = false
-        searchParams.setOnlyMulti(true)
         searchParams.isCommon = true
         searchParams.isUncommon = true
         searchParams.isRare = false
@@ -39,18 +38,18 @@ class SearchParamsTest {
 
     @Test
     fun searchParams_willDetectOneColor() {
-        assertTrue(searchParams.atLeastOneColor())
+        assertTrue(searchParams.atLeastOneColor)
         searchParams.isBlue = false
         searchParams.isRed = false
-        assertFalse(searchParams.atLeastOneColor())
+        assertFalse(searchParams.atLeastOneColor)
     }
 
     @Test
     fun searchParams_willDetectOneRarity() {
-        assertTrue(searchParams.atLeastOneRarity())
+        assertTrue(searchParams.atLeastOneRarity)
         searchParams.isCommon = false
         searchParams.isUncommon = false
-        assertFalse(searchParams.atLeastOneRarity())
+        assertFalse(searchParams.atLeastOneRarity)
     }
 
     @Test
@@ -102,19 +101,6 @@ class SearchParamsTest {
 
         searchParams.power = null
         assertThat(searchParams.isValid, `is`(false))
-    }
-
-    @Test
-    fun searchParams_willHandleMulticolorOption() {
-        val searchParams = SearchParams()
-        assertFalse(searchParams.isNoMulti)
-        assertFalse(searchParams.onlyMulti())
-        searchParams.isNoMulti = true
-        assertTrue(searchParams.isNoMulti)
-        assertFalse(searchParams.onlyMulti())
-        searchParams.setOnlyMulti(true)
-        assertFalse(searchParams.isNoMulti)
-        assertTrue(searchParams.onlyMulti())
     }
 
     @Test

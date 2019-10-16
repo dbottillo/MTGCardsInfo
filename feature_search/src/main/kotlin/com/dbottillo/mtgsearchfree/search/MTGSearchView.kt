@@ -19,30 +19,32 @@ class MTGSearchView @JvmOverloads constructor(context: Context, attrs: Attribute
 
     private var operators = arrayOf("=", ">", "<", ">=", "<=")
     private var sets = mutableListOf(MTGSet(-1, "", resources.getString(R.string.search_set_all)), MTGSet(-2, "", resources.getString(R.string.search_set_standard)))
+    private var colorsHow = arrayOf(
+        context.getString(R.string.search_colors_exactly),
+        context.getString(R.string.search_colors_including),
+        context.getString(R.string.search_colors_at_most))
 
-    val name: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatEditText>(R.id.search_name) }
-    val types: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatEditText>(R.id.search_types) }
-    val text: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatEditText>(R.id.search_text) }
-    val cmc: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatEditText>(R.id.search_cmc) }
-    val power: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatEditText>(R.id.search_power) }
-    val tough: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatEditText>(R.id.search_tough) }
-    val powerOp: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById<Spinner>(R.id.search_power_operator) }
-    val toughOp: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById<Spinner>(R.id.search_toughness_operator) }
-    val cmcOp: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById<Spinner>(R.id.search_cmc_operator) }
-    val white: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_w) }
-    val blue: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_u) }
-    val black: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_b) }
-    val red: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_r) }
-    val green: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_g) }
-    val multi: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_m) }
-    val noMulti: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_nm) }
-    val multiNoOthers: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_mno) }
-    val land: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_l) }
-    val common: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_common) }
-    val uncommon: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_uncommon) }
-    val rare: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_rare) }
-    val mythic: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_mythic) }
-    val set: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById<Spinner>(R.id.search_set) }
+    private val name: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatEditText>(R.id.search_name) }
+    private val types: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatEditText>(R.id.search_types) }
+    private val text: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatEditText>(R.id.search_text) }
+    private val cmc: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatEditText>(R.id.search_cmc) }
+    private val power: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatEditText>(R.id.search_power) }
+    private val tough: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatEditText>(R.id.search_tough) }
+    private val powerOp: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById<Spinner>(R.id.search_power_operator) }
+    private val toughOp: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById<Spinner>(R.id.search_toughness_operator) }
+    private val cmcOp: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById<Spinner>(R.id.search_cmc_operator) }
+    private val white: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_w) }
+    private val blue: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_u) }
+    private val black: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_b) }
+    private val red: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_r) }
+    private val green: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_g) }
+    private val colorsSpecification: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById<Spinner>(R.id.search_colors_how) }
+    private val land: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_l) }
+    private val common: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_common) }
+    private val uncommon: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_uncommon) }
+    private val rare: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_rare) }
+    private val mythic: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_mythic) }
+    private val set: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById<Spinner>(R.id.search_set) }
 
     private var searchSetAdapter: SearchSetAdapter? = null
 
@@ -60,9 +62,9 @@ class MTGSearchView @JvmOverloads constructor(context: Context, attrs: Attribute
             searchParams.isBlack = black.isChecked
             searchParams.isRed = red.isChecked
             searchParams.isGreen = green.isChecked
-            searchParams.setOnlyMulti(multi.isChecked)
-            searchParams.isNoMulti = noMulti.isChecked
-            searchParams.isOnlyMultiNoOthers = multiNoOthers.isChecked
+            searchParams.exactlyColors = colorsSpecification.selectedItemPosition == 0
+            searchParams.includingColors = colorsSpecification.selectedItemPosition == 1
+            searchParams.atMostColors = colorsSpecification.selectedItemPosition == 2
             searchParams.isLand = land.isChecked
             searchParams.isCommon = common.isChecked
             searchParams.isUncommon = uncommon.isChecked
@@ -95,24 +97,11 @@ class MTGSearchView @JvmOverloads constructor(context: Context, attrs: Attribute
         toughOp.adapter = toughAdapter
         toughOp.background.setColorFilter(white, PorterDuff.Mode.SRC_ATOP)
 
-        multi.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                noMulti.isChecked = false
-                multiNoOthers.isChecked = false
-            }
-        }
-        noMulti.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                multi.isChecked = false
-                multiNoOthers.isChecked = false
-            }
-        }
-        multiNoOthers.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                noMulti.isChecked = false
-                multi.isChecked = false
-            }
-        }
+        val colorsSpecificationAdapter = ArrayAdapter<CharSequence>(context, R.layout.row_spinner_item, colorsHow)
+        toughAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
+        colorsSpecification.adapter = colorsSpecificationAdapter
+        colorsSpecification.background.setColorFilter(white, PorterDuff.Mode.SRC_ATOP)
+        colorsSpecification.setSelection(0)
     }
 
     fun refreshSets(sets: List<MTGSet>) {

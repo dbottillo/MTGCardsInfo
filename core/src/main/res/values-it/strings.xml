@@ -123,8 +123,9 @@
     <string name="blue">Blu</string>
     <string name="red">Rosse</string>
     <string name="green">Verdi</string>
-    <string name="multicolor">Solo multicolore</string>
-    <string name="no_multi">No multicolore</string>
+    <string name="search_colors_exactly">Esattamente questi colori</string>
+    <string name="search_colors_including">Che include questi colori</string>
+    <string name="search_colors_at_most">Al più con questi colori</string>
     <string name="search_common">Comuni</string>
     <string name="search_uncommon">Non comuni</string>
     <string name="search_mythic">Mitiche</string>
@@ -166,7 +167,6 @@
     <string name="card_migrator_finished">Il database è aggiornato, buon divertimento!</string>
     <string name="add_new_player">Aggiungi giocatore</string>
     <string name="add_new_deck">Aggiung mazzo</string>
-    <string name="multicolor_no_others">Solo multicolore, no colori non selezionati</string>
     <string name="filter_title">Filtri</string>
     <string name="order_title">Ordina</string>
     <string name="set_choose">Scegli un set</string>

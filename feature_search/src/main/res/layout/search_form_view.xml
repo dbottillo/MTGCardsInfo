@@ -273,59 +273,23 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/mtg_type_land"
+            android:visibility="gone"
             android:textColor="@color/white"/>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/search_color4_container"
+    <Spinner
+        android:id="@+id/search_colors_how"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_color3_container"
         android:layout_marginTop="@dimen/base_margin"
-        android:orientation="horizontal">
-
-        <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/search_nm"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/no_multi"
-            android:textColor="@color/white"/>
-
-        <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/search_m"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/multicolor"
-            android:textColor="@color/white"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/search_color5_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/search_color4_container"
-        android:layout_marginTop="@dimen/base_margin"
-        android:orientation="horizontal">
-
-        <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/search_mno"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/multicolor_no_others"
-            android:textColor="@color/white"/>
-
-    </LinearLayout>
+        android:layout_below="@id/search_color3_container" />
 
     <TextView
         android:id="@+id/search_rarity_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_color5_container"
+        android:layout_below="@id/search_colors_how"
         android:layout_marginTop="@dimen/base_margin"
         android:gravity="center_horizontal"
         android:text="@string/search_rarity_title"

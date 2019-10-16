@@ -65,43 +65,27 @@ class MTGCardDataSource(
         queryComposer.addCMCParam(searchParams.cmc)
         queryComposer.addPTParam(CardDataSource.COLUMNS.POWER.noun, searchParams.power)
         queryComposer.addPTParam(CardDataSource.COLUMNS.TOUGHNESS.noun, searchParams.tough)
-        var colorsOperator = "OR"
-        if (searchParams.isNoMulti) {
-            queryComposer.addParam(CardDataSource.COLUMNS.MULTICOLOR.noun, "==", "0")
-            // colorsOperator = "OR";
-        }
-        if (searchParams.onlyMulti() || searchParams.isOnlyMultiNoOthers) {
-            queryComposer.addParam(CardDataSource.COLUMNS.MULTICOLOR.noun, "==", "1")
-        }
-        if (searchParams.isOnlyMultiNoOthers) {
-            colorsOperator = "AND"
-        }
         if (searchParams.setId > 0) {
             queryComposer.addParam(CardDataSource.COLUMNS.SET_ID.noun, "==", searchParams.setId)
         }
         if (searchParams.setId == -2) {
             queryComposer.addMultipleParam(CardDataSource.COLUMNS.SET_ID.noun, "==", "OR", *STANDARD.setIds)
         }
-        if (searchParams.atLeastOneColor()) {
-            val colors = ArrayList<String>()
-            if (searchParams.isWhite) {
-                colors.add("W")
+        if (searchParams.atLeastOneColor) {
+            when {
+                searchParams.exactlyColors -> {
+                    val value = searchParams.colors.joinToString(separator = ",", prefix = "[", postfix = "]") { "\"$it\"" }
+                    queryComposer.addParam(CardDataSource.COLUMNS.COLORS_IDENTITY.noun, "=", value)
+                }
+                searchParams.includingColors -> {
+                    queryComposer.addMultipleParam(CardDataSource.COLUMNS.COLORS_IDENTITY.noun, "LIKE", "AND", *searchParams.colors.toTypedArray())
+                }
+                searchParams.atMostColors -> {
+                    queryComposer.addMultipleParam(CardDataSource.COLUMNS.COLORS_IDENTITY.noun, "LIKE", "OR", *searchParams.colors.toTypedArray())
+                }
             }
-            if (searchParams.isBlue) {
-                colors.add("U")
-            }
-            if (searchParams.isBlack) {
-                colors.add("B")
-            }
-            if (searchParams.isRed) {
-                colors.add("R")
-            }
-            if (searchParams.isGreen) {
-                colors.add("G")
-            }
-            queryComposer.addMultipleParam(CardDataSource.COLUMNS.MANA_COST.noun, "LIKE", colorsOperator, *Arrays.copyOf<String, Any>(colors.toTypedArray(), colors.size, Array<String>::class.java))
         }
-        if (searchParams.atLeastOneRarity()) {
+        if (searchParams.atLeastOneRarity) {
             val rarities = ArrayList<String>()
             if (searchParams.isCommon) {
                 rarities.add(Rarity.COMMON.value)
@@ -115,7 +99,7 @@ class MTGCardDataSource(
             if (searchParams.isMythic) {
                 rarities.add(Rarity.MYTHIC.value)
             }
-            queryComposer.addMultipleParam(CardDataSource.COLUMNS.RARITY.noun, "==", "OR", *Arrays.copyOf<String, Any>(rarities.toTypedArray(), rarities.size, Array<String>::class.java))
+            queryComposer.addMultipleParam(CardDataSource.COLUMNS.RARITY.noun, "==", "OR", *rarities.toTypedArray())
         }
         if (searchParams.isLand) {
             queryComposer.addParam(CardDataSource.COLUMNS.LAND.noun, "==", 1)
