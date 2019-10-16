@@ -43,7 +43,7 @@ class MTGCardDataSource(
             while (!cursor.isAfterLast) {
                 val card = cardDataSource.fromCursor(cursor)
                 card.belongsTo(set)
-                if (card.side == Side.A) {
+                if (card.side == Side.A || card.isMeld) {
                     cards.add(card)
                 }
                 cursor.moveToNext()
@@ -53,6 +53,7 @@ class MTGCardDataSource(
         return cards
     }
 
+    @Suppress("SpreadOperator", "ComplexMethod")
     fun searchCards(searchParams: SearchParams): List<MTGCard> {
         LOG.d("search cards  $searchParams")
         val queryComposer = QueryComposer("SELECT * FROM " + CardDataSource.TABLE)
@@ -116,7 +117,7 @@ class MTGCardDataSource(
         if (cursor.moveToFirst()) {
             while (!cursor.isAfterLast) {
                 val card = cardDataSource.fromCursor(cursor)
-                if (card.side == Side.A) {
+                if (card.side == Side.A || card.isMeld) {
                     cards.add(card)
                 }
                 cursor.moveToNext()

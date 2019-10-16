@@ -160,6 +160,9 @@ data class MTGCard(
     private val isAdventure: Boolean
         get() = layout.equals("adventure", ignoreCase = true)
 
+    val isMeld: Boolean
+        get() = layout.equals("meld", ignoreCase = true)
+
     override fun equals(other: Any?): Boolean {
         return when (other) {
             !is MTGCard -> false
