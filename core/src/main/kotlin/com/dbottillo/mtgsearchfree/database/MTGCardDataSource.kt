@@ -102,9 +102,8 @@ class MTGCardDataSource(
             }
             queryComposer.addMultipleParam(CardDataSource.COLUMNS.RARITY.noun, "==", "OR", *rarities.toTypedArray())
         }
-        if (searchParams.isLand) {
-            queryComposer.addParam(CardDataSource.COLUMNS.LAND.noun, "==", 1)
-        }
+        queryComposer.addParam(CardDataSource.COLUMNS.LAND.noun, "==", if (searchParams.isLand) 1 else 0)
+        queryComposer.addParam(CardDataSource.COLUMNS.MULTICOLOR.noun, "==", if (searchParams.onlyMulti) 1 else 0)
         queryComposer.append("ORDER BY " + CardDataSource.COLUMNS.MULTIVERSE_ID.noun + " DESC LIMIT " + LIMIT)
 
         val output = queryComposer.build()

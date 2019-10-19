@@ -20,7 +20,7 @@ data class SearchParams(
     var exactlyColors: Boolean = true,
     var includingColors: Boolean = false,
     var atMostColors: Boolean = false,
-    var atMostOnlyMultiColors: Boolean = false,
+    var onlyMulti: Boolean = false,
     var isCommon: Boolean = false,
     var isUncommon: Boolean = false,
     var isRare: Boolean = false,

@@ -15,7 +15,11 @@ import com.dbottillo.mtgsearchfree.model.cmcParamCreator
 import com.dbottillo.mtgsearchfree.model.ptParamCreator
 import com.dbottillo.mtgsearchfree.util.LOG
 
-class MTGSearchView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = -1) : RelativeLayout(context, attrs, defStyleAttr) {
+class MTGSearchView @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = -1
+) : RelativeLayout(context, attrs, defStyleAttr) {
 
     private var operators = arrayOf("=", ">", "<", ">=", "<=")
     private var sets = mutableListOf(MTGSet(-1, "", resources.getString(R.string.search_set_all)), MTGSet(-2, "", resources.getString(R.string.search_set_standard)))
@@ -38,6 +42,7 @@ class MTGSearchView @JvmOverloads constructor(context: Context, attrs: Attribute
     private val black: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_b) }
     private val red: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_r) }
     private val green: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_g) }
+    private val multi: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_multi) }
     private val colorsSpecification: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById<Spinner>(R.id.search_colors_how) }
     private val land: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_l) }
     private val common: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_common) }
@@ -65,6 +70,7 @@ class MTGSearchView @JvmOverloads constructor(context: Context, attrs: Attribute
             searchParams.exactlyColors = colorsSpecification.selectedItemPosition == 0
             searchParams.includingColors = colorsSpecification.selectedItemPosition == 1
             searchParams.atMostColors = colorsSpecification.selectedItemPosition == 2
+            searchParams.onlyMulti = multi.isChecked
             searchParams.isLand = land.isChecked
             searchParams.isCommon = common.isChecked
             searchParams.isUncommon = uncommon.isChecked

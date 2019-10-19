@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -18,16 +17,16 @@
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_card_title"
         android:textColor="@color/white"
-        android:textSize="12sp"/>
+        android:textSize="12sp" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/search_name"
         style="@style/MTG.EditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:maxLines="1"
         android:layout_below="@id/search_name_title"
-        android:hint="@string/search_hint_name"/>
+        android:hint="@string/search_hint_name"
+        android:maxLines="1" />
 
     <TextView
         android:id="@+id/search_types_title"
@@ -38,18 +37,18 @@
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_card_types"
         android:textColor="@color/white"
-        android:textSize="12sp"/>
+        android:textSize="12sp" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/search_types"
-        android:backgroundTint="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:maxLines="1"
         android:layout_below="@id/search_types_title"
+        android:backgroundTint="@color/white"
         android:hint="@string/search_hint_type"
+        android:maxLines="1"
         android:textColor="@color/white"
-        android:textColorHint="@color/color_primary_light"/>
+        android:textColorHint="@color/color_primary_light" />
 
     <TextView
         android:id="@+id/search_text_title"
@@ -60,18 +59,18 @@
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_card_text"
         android:textColor="@color/white"
-        android:textSize="12sp"/>
+        android:textSize="12sp" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/search_text"
-        android:backgroundTint="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:maxLines="1"
         android:layout_below="@id/search_text_title"
+        android:backgroundTint="@color/white"
         android:hint="@string/search_hint_text"
+        android:maxLines="1"
         android:textColor="@color/white"
-        android:textColorHint="@color/color_primary_light"/>
+        android:textColorHint="@color/color_primary_light" />
 
     <TextView
         android:id="@+id/search_set_title"
@@ -82,21 +81,21 @@
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_set_title"
         android:textColor="@color/white"
-        android:textSize="12sp"/>
+        android:textSize="12sp" />
 
     <Spinner
         android:id="@+id/search_set"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/search_set_title"
-        android:layout_marginTop="@dimen/base_margin"/>
+        android:layout_marginTop="@dimen/base_margin" />
 
     <View
         android:id="@+id/search_set_divisor"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@id/search_set"
-        android:background="@color/white"/>
+        android:background="@color/white" />
 
     <LinearLayout
         android:id="@+id/search_cmc_container"
@@ -109,21 +108,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/search_cmc_title"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white" />
 
         <Spinner
             android:id="@+id/search_cmc_operator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:visibility="visible"/>
+            tools:visibility="visible" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/search_cmc"
             style="@style/MTG.EditText"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:hint="@string/search_cmc_numbers"/>
+            android:layout_weight="1"
+            android:hint="@string/search_cmc_numbers" />
 
     </LinearLayout>
 
@@ -139,45 +138,45 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/search_power_title"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white" />
 
         <Spinner
             android:id="@+id/search_power_operator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:visibility="gone"/>
+            tools:visibility="gone" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/search_power"
             style="@style/MTG.EditText"
-            android:layout_height="wrap_content"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/base_margin"
             android:layout_weight="1"
             android:digits="0123456789*"
-            android:hint="@string/search_hint_numbers"/>
+            android:hint="@string/search_hint_numbers" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/base_margin"
             android:text="@string/search_toughness_title"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white" />
 
         <Spinner
             android:id="@+id/search_toughness_operator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:visibility="gone"/>
+            tools:visibility="gone" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/search_tough"
             style="@style/MTG.EditText"
-            android:layout_height="wrap_content"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:digits="0123456789*"
-            android:hint="@string/search_hint_numbers"/>
+            android:hint="@string/search_hint_numbers" />
 
     </LinearLayout>
 
@@ -189,7 +188,7 @@
         android:layout_marginTop="@dimen/base_margin"
         android:gravity="center_horizontal"
         android:text="@string/search_color_title"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white" />
 
     <View
         android:id="@+id/search_color_divisor"
@@ -197,7 +196,8 @@
         android:layout_height="1dp"
         android:layout_below="@id/search_color_title"
         android:layout_marginTop="4dp"
-        android:background="@color/white"/>
+        android:background="@color/white"
+        tools:visibility="gone" />
 
     <LinearLayout
         android:id="@+id/search_color1_container"
@@ -213,7 +213,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/white"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white" />
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/search_u"
@@ -221,7 +221,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/blue"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
@@ -231,7 +231,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/search_color1_container"
         android:layout_marginTop="@dimen/base_margin"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:visibility="gone">
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/search_b"
@@ -239,7 +240,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/black"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white" />
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/search_r"
@@ -247,7 +248,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/red"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
@@ -257,7 +258,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/search_color2_container"
         android:layout_marginTop="@dimen/base_margin"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:visibility="gone">
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/search_g"
@@ -265,16 +267,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/green"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white" />
 
         <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/search_l"
+            android:id="@+id/search_multi"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/mtg_type_land"
-            android:visibility="gone"
-            android:textColor="@color/white"/>
+            android:text="@string/search_multicolor"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
@@ -282,8 +283,8 @@
         android:id="@+id/search_colors_how"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/base_margin"
-        android:layout_below="@id/search_color3_container" />
+        android:layout_below="@id/search_color3_container"
+        android:layout_marginTop="@dimen/base_margin" />
 
     <TextView
         android:id="@+id/search_rarity_title"
@@ -293,7 +294,7 @@
         android:layout_marginTop="@dimen/base_margin"
         android:gravity="center_horizontal"
         android:text="@string/search_rarity_title"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white" />
 
     <View
         android:id="@+id/search_rarity_divisor"
@@ -301,7 +302,7 @@
         android:layout_height="1dp"
         android:layout_below="@id/search_rarity_title"
         android:layout_marginTop="4dp"
-        android:background="@color/white"/>
+        android:background="@color/white" />
 
     <LinearLayout
         android:id="@+id/search_rarity1_container"
@@ -309,7 +310,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/search_rarity_divisor"
         android:layout_marginTop="6dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:visibility="visible">
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/search_common"
@@ -317,7 +319,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/search_common"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white" />
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/search_uncommon"
@@ -325,17 +327,18 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/search_uncommon"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/search_rarity2_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/search_rarity1_container"
-        android:layout_marginBottom="100dp"
         android:layout_marginTop="@dimen/base_margin"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:visibility="gone">
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/search_rare"
@@ -343,7 +346,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/search_rare"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white" />
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/search_mythic"
@@ -351,9 +354,45 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/search_mythic"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/other_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_rarity2_container"
+        android:layout_marginTop="@dimen/base_margin"
+        android:gravity="center_horizontal"
+        android:text="@string/search_other_title"
+        android:textColor="@color/white" />
+
+    <View
+        android:id="@+id/other_divisor"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/other_title"
+        android:layout_marginTop="4dp"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/other_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/other_divisor"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="100dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/search_l"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/search_land"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
 
 </RelativeLayout>

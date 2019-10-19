@@ -145,6 +145,7 @@
     <string name="search_colors_exactly">Exactly these colors</string>
     <string name="search_colors_including">Including these colors</string>
     <string name="search_colors_at_most">At most these colors</string>
+    <string name="search_multicolor">Multicolor</string>
     <string name="search_common">Common</string>
     <string name="search_uncommon">Uncommon</string>
     <string name="search_mythic">Mythic</string>
@@ -158,6 +159,8 @@
     <string name="search_set_title">Set</string>
     <string name="search_hint_numbers" translatable="false">X,0,1…</string>
     <string name="search_cmc_numbers" translatable="false">X,0,1,W…</string>
+    <string name="search_other_title">Other</string>
+    <string name="search_land">Land</string>
 
     <string name="mtg_type_eldrazi" translatable="false">Eldrazi</string>
     <string name="search_card_text">Card text</string>

@@ -44,7 +44,6 @@ class MTGCardDataSourceTest {
         mtgDatabaseHelper = MTGDatabaseHelper(RuntimeEnvironment.application)
         cardsInfoDbHelper = CardsInfoDbHelper(RuntimeEnvironment.application)
         val cardDataSource = CardDataSource(cardsInfoDbHelper.writableDatabase, Gson())
-        val setDataSource = SetDataSource(mtgDatabaseHelper.readableDatabase)
         underTest = MTGCardDataSource(mtgDatabaseHelper.readableDatabase, cardDataSource)
     }
 
@@ -356,6 +355,81 @@ class MTGCardDataSourceTest {
 
         for (card in cards) {
             assertTrue("checking ${card.name}", card.isRed || card.isBlue)
+        }
+    }
+
+    @Test
+    fun `should search exactly blu and red colors in standard with multi color option on`() {
+        val searchParams = SearchParams()
+        searchParams.isRed = true
+        searchParams.isBlue = true
+        searchParams.setId = -2
+        searchParams.exactlyColors = true
+        searchParams.includingColors = false
+        searchParams.atMostColors = false
+        searchParams.onlyMulti = true
+
+        val cards = underTest.searchCards(searchParams)
+
+        for (card in cards) {
+            assertTrue("checking ${card.name}", card.isRed && card.isBlue && !card.isWhite &&
+                    !card.isBlack && !card.isGreen && card.isMultiColor)
+        }
+    }
+
+    @Test
+    fun `should search exactly blue, green and red colors in standard with multi color option on`() {
+        val searchParams = SearchParams()
+        searchParams.isRed = true
+        searchParams.isBlue = true
+        searchParams.isGreen = true
+        searchParams.setId = -2
+        searchParams.exactlyColors = true
+        searchParams.includingColors = false
+        searchParams.atMostColors = false
+        searchParams.onlyMulti = true
+
+        val cards = underTest.searchCards(searchParams)
+
+        for (card in cards) {
+            assertTrue("checking ${card.name}", card.isRed && card.isBlue && !card.isWhite &&
+                    !card.isBlack && card.isGreen && card.isMultiColor)
+        }
+    }
+
+    @Test
+    fun `should search by colors including blu and red in standard with multi color option on`() {
+        val searchParams = SearchParams()
+        searchParams.isRed = true
+        searchParams.isBlue = true
+        searchParams.exactlyColors = false
+        searchParams.includingColors = true
+        searchParams.atMostColors = false
+        searchParams.setId = -2
+        searchParams.onlyMulti = true
+
+        val cards = underTest.searchCards(searchParams)
+
+        for (card in cards) {
+            assertTrue("checking ${card.name}", card.isRed && card.isBlue && card.isMultiColor)
+        }
+    }
+
+    @Test
+    fun `should search by colors at most blu and red in standard with multi color option on`() {
+        val searchParams = SearchParams()
+        searchParams.isRed = true
+        searchParams.isBlue = true
+        searchParams.exactlyColors = false
+        searchParams.includingColors = false
+        searchParams.atMostColors = true
+        searchParams.setId = -2
+        searchParams.onlyMulti = true
+
+        val cards = underTest.searchCards(searchParams)
+
+        for (card in cards) {
+            assertTrue("checking ${card.name}", (card.isRed || card.isBlue) && card.isMultiColor)
         }
     }
 
