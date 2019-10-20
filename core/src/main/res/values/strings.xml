@@ -75,7 +75,7 @@
     <string name="error_load_image">Impossible to load the image at the moment</string>
     <string name="image_retry">Try again</string>
     <string name="price_error">Error retrieving price</string>
-    <string name="add_to_deck_title">Add to deck</string>
+    <string name="add_to_deck_title">Add %s to:</string>
     <string name="add_one_to_deck">Add 1 to deck</string>
     <string name="menu_image">Show image</string>
     <string name="action_crash">Force crash</string>
@@ -114,7 +114,7 @@
     <string name="deck_new">New deck</string>
     <string name="deck_specify">Specify</string>
     <string name="release_note_title_push">What\'s new in %s</string>
-    <string name="release_note_text">-NEW: improved search by color</string>
+    <string name="release_note_text">-NEW: new add to deck dialog, restore search by land and multicolor</string>
 
     <string name="action_release_note">Release Note</string>
     <string name="empty_cards">No cards available with the current filters.</string>

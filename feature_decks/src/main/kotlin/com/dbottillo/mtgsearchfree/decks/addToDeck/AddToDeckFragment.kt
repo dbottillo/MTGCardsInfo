@@ -22,14 +22,14 @@ import android.widget.Toast
 import com.dbottillo.mtgsearchfree.decks.R
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.ui.BasicFragment
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import javax.inject.Inject
 import dagger.android.support.AndroidSupportInjection
 
 @Suppress("EmptyFunctionBlock")
-class AddToDeckFragment : BasicFragment(), AddToDeckView {
+class AddToDeckFragment : BottomSheetDialogFragment(), AddToDeckView {
 
     lateinit var chooseDeck: Spinner
     lateinit var chooseQuantity: Spinner
@@ -77,6 +77,11 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
         presenter.init(this, arguments)
     }
 
+    override fun onResume() {
+        super.onResume()
+        TrackingManager.trackPage("/add_to_deck")
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         presenter.onDestroyView()
@@ -109,10 +114,6 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
         // request a window without the title
         dialog.window?.requestFeature(Window.FEATURE_NO_TITLE)
         return dialog
-    }
-
-    override fun getPageTrack(): String {
-        return "/add_to_deck"
     }
 
     private fun setupDecksSpinner(decks: List<Deck>, selectedDeck: Long) {
@@ -167,14 +168,14 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
     private fun saveCard(quantity: Int, deck: Deck, side: Boolean) {
         LOG.d()
         presenter.addCardToDeck(deck, quantity, side)
-        TrackingManager.trackAddCardToDeck(quantity.toString() + " - existing")
+        TrackingManager.trackAddCardToDeck("$quantity - existing")
     }
 
     private fun saveCard(quantity: Int, deck: String, side: Boolean) {
         LOG.d()
         presenter.addCardToDeck(deck, quantity, side)
         TrackingManager.trackNewDeck(deck)
-        TrackingManager.trackAddCardToDeck(quantity.toString() + " - existing")
+        TrackingManager.trackAddCardToDeck("$quantity - existing")
     }
 
     override fun showError(message: String) {
@@ -182,7 +183,7 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
     }
 
     override fun setCardTitle(cardName: String) {
-        title.text = getString(R.string.add_to_deck_title)
+        title.text = getString(R.string.add_to_deck_title, cardName)
     }
 
     override fun decksLoaded(decks: List<Deck>, selectedDeck: Long) {
@@ -219,9 +220,5 @@ class AddToDeckFragment : BasicFragment(), AddToDeckView {
             instance.arguments = args
             return instance
         }
-    }
-
-    override fun getTitle(): String {
-        return "/add_to_deck"
     }
 }

@@ -1,33 +1,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              style="@style/MTGSearchTheme"
-              tools:background="@color/white"
-              android:padding="16dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/MTGSearchTheme"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:background="@color/white">
 
     <TextView
         android:id="@+id/add_card_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        tools:text="Add Counterspell to deck"
-        android:textColor="@color/color_primary"
-        android:gravity="center"
-        android:textSize="16sp" />
+        android:layout_gravity="start"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="Add Counterspell to:" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="5dp"
-        android:background="@color/color_primary" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/new_deck_name_input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/base_margin"
         android:theme="@style/EditTextPrimary"
         android:visibility="gone">
 
@@ -45,13 +39,13 @@
         android:id="@+id/choose_deck"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp" />
+        android:layout_marginTop="@dimen/base_margin" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/new_deck_quantity_input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/base_margin"
         android:theme="@style/EditTextPrimary"
         android:visibility="gone">
 
@@ -68,25 +62,27 @@
     <Spinner
         android:id="@+id/choose_quantity"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/base_margin" />
 
     <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/add_to_deck_sideboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="@dimen/base_margin"
         android:buttonTint="@color/color_primary"
-        android:layout_gravity="center"
         android:text="@string/sideboard"
+        android:textColor="@color/color_primary"
         tools:ignore="UnusedAttribute" />
 
     <Button
         android:id="@+id/add_to_deck_save"
         style="@style/BtnGeneric"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:minWidth="300dp"
-        android:text="@string/Save" />
+        android:layout_marginTop="@dimen/base_margin"
+        android:text="@string/add" />
 
 </LinearLayout>
