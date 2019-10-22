@@ -288,6 +288,16 @@ class MTGCardDataSourceTest {
     }
 
     @Test
+    fun `should search multi color cards without color filters`() {
+        val searchParams = SearchParams()
+        searchParams.name = "Render Silent"
+
+        val cards = underTest.searchCards(searchParams)
+
+        assertThat(cards[0].name, `is`("Render Silent"))
+    }
+
+    @Test
     fun `should search exactly blu and red colors in standard`() {
         val searchParams = SearchParams()
         searchParams.isRed = true
