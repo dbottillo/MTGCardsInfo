@@ -615,6 +615,19 @@ class MTGCardDataSourceTest {
         assertThat(card?.name, `is`("Bring to Life"))
     }
 
+    @Test
+    fun `should search lands without land flag on`() {
+        val searchParams = SearchParams()
+        searchParams.name = "Blood Crypt"
+
+        val cards = underTest.searchCards(searchParams)
+
+        assertThat(cards.size, `is`(4))
+        cards.forEach { card ->
+            assertThat(card.name, `is`("Blood Crypt"))
+        }
+    }
+
     private enum class OPERATOR constructor(private val operator: String) {
         EQUAL("=") {
             override fun assertOperator(value: Int) {
