@@ -22,13 +22,13 @@ class CardsActivityPresenterImpl(
     private val logger: Logger
 ) : CardsActivityPresenter {
 
-    var set: MTGSet? = null
-    var search: SearchParams? = null
-    var deckId: Long? = null
-    var startPosition: Int = 0
-    var isFavs: Boolean = false/**/
-    var currentData: CardsCollection? = null
-    var favs: MutableList<Int> = mutableListOf()
+    private var set: MTGSet? = null
+    private var search: SearchParams? = null
+    private var deckId: Long? = null
+    private var startPosition: Int = 0
+    private var isFavs: Boolean = false/**/
+    private var currentData: CardsCollection? = null
+    private var favs: MutableList<Int>? = null
 
     lateinit var view: CardsActivityView
 
@@ -69,7 +69,7 @@ class CardsActivityPresenterImpl(
 
         view.showLoading()
         disposable.add(cardsInteractor.loadIdFav().subscribe({
-            favs.addAll(it.toList())
+            favs = it.toMutableList()
             when {
                 set != null -> set?.let { loadData(cardsInteractor.loadSet(it)) }
                 deckId != null -> deckId?.let { loadDeck(deckId!!) }
@@ -122,9 +122,9 @@ class CardsActivityPresenterImpl(
 
     override fun updateMenu(currentCard: MTGCard?) {
         logger.d()
-        if (currentCard != null && currentCard.multiVerseId > 0 && favs.isNotEmpty()) {
+        if (currentCard != null && currentCard.multiVerseId > 0 && favs != null) {
             view.showFavMenuItem()
-            if (favs.contains(currentCard.multiVerseId)) {
+            if (favs?.contains(currentCard.multiVerseId) == true) {
                 view.updateFavMenuItem(R.string.favourite_remove, R.drawable.ab_star_colored)
             } else {
                 view.updateFavMenuItem(R.string.favourite_add, R.drawable.ab_star)
@@ -138,12 +138,12 @@ class CardsActivityPresenterImpl(
     // TODO: this need testing
     override fun favClicked(currentCard: MTGCard?) {
         currentCard?.let {
-            if (favs.contains(it.multiVerseId)) {
+            if (favs?.contains(it.multiVerseId) == true) {
                 cardsInteractor.removeFromFavourite(it)
-                favs.remove(it.multiVerseId)
+                favs?.remove(it.multiVerseId)
             } else {
                 cardsInteractor.saveAsFavourite(it)
-                favs.add(it.multiVerseId)
+                favs?.add(it.multiVerseId)
             }
             updateMenu(it)
         }

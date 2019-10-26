@@ -75,7 +75,7 @@ open class CardsStorageImpl(
     }
 
     override fun loadOtherSide(card: MTGCard): MTGCard {
-        logger.d("do search other side card " + card.toString())
+        logger.d("do search other side card $card")
         if (card.names.size < 2) {
             return card
         }

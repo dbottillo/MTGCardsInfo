@@ -3,9 +3,10 @@ package com.dbottillo.mtgsearchfree.view.views
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.util.Logger
-import com.dbottillo.mtgsearchfree.ui.views.CardView
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenter
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenterImpl
+import com.google.common.truth.Truth.assertThat
+import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
 import com.nhaarman.mockito_kotlin.whenever
@@ -15,7 +16,7 @@ import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnit
-import io.reactivex.Observable
+import io.reactivex.Single
 
 class CardPresenterImplTest {
 
@@ -25,24 +26,22 @@ class CardPresenterImplTest {
 
     @Mock lateinit var cardsInteractor: CardsInteractor
     @Mock lateinit var logger: Logger
-    @Mock lateinit var view: CardView
     @Mock lateinit var card: MTGCard
-    @Mock lateinit var otherCard: MTGCard
 
     @Before
     fun setUp() {
         underTest = CardPresenterImpl(cardsInteractor, logger)
-        underTest.init(view)
     }
 
     @Test
     fun `load other side card should call interactor and update view`() {
-        whenever(cardsInteractor.loadOtherSideCard(card)).thenReturn(Observable.just(otherCard))
+        val single = mock<Single<MTGCard>>()
+        whenever(cardsInteractor.loadOtherSideCard(card)).thenReturn(single)
 
-        underTest.loadOtherSideCard(card)
+        val result = underTest.loadOtherSideCard(card)
 
         verify(cardsInteractor).loadOtherSideCard(card)
-        verify(view).otherSideCardLoaded(otherCard)
-        verifyNoMoreInteractions(cardsInteractor, view)
+        assertThat(result).isEqualTo(single)
+        verifyNoMoreInteractions(cardsInteractor)
     }
 }

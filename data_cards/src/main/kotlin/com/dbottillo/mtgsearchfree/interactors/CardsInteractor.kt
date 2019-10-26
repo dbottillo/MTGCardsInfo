@@ -20,7 +20,7 @@ interface CardsInteractor {
     fun doSearch(searchParams: SearchParams): Observable<CardsCollection>
     fun loadCard(multiverseId: Int): Observable<MTGCard>
     fun loadCardById(id: Int): Single<MTGCard>
-    fun loadOtherSideCard(card: MTGCard): Observable<MTGCard>
+    fun loadOtherSideCard(card: MTGCard): Single<MTGCard>
     fun getArtworkUri(bitmap: Bitmap): Single<Uri>
     fun fetchPrice(card: MTGCard): Single<TCGPrice>
 }

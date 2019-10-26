@@ -14,9 +14,10 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
+import android.widget.Toast
 import com.dbottillo.mtgsearchfree.featurebasecards.R
-import com.dbottillo.mtgsearchfree.repository.CardPriceException
 import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.repository.CardPriceException
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.dbottillo.mtgsearchfree.util.addBold
@@ -27,7 +28,7 @@ import com.dbottillo.mtgsearchfree.util.newLine
 import com.dbottillo.mtgsearchfree.util.setBoldAndItalic
 import io.reactivex.disposables.Disposable
 
-class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : RelativeLayout(context, attrs, defStyle), CardView {
+class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : RelativeLayout(context, attrs, defStyle) {
 
     private var detailCard: TextView
     private var priceOnTcg: TextView
@@ -44,8 +45,10 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
     private lateinit var cardPresenter: CardPresenter
 
     private var disposable: Disposable? = null
+    private var otherCardDisposable: Disposable? = null
 
-    @JvmOverloads constructor(ctx: Context, attrs: AttributeSet? = null) : this(ctx, attrs, -1) {}
+    @JvmOverloads
+    constructor(ctx: Context, attrs: AttributeSet? = null) : this(ctx, attrs, -1)
 
     init {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -81,14 +84,13 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
 
     fun init(cardPresenter: CardPresenter) {
         this.cardPresenter = cardPresenter
-        cardPresenter.init(this)
     }
 
     public override fun onDetachedFromWindow() {
         super.onDetachedFromWindow()
         LOG.d()
-        cardPresenter.onDestroy()
         disposable?.dispose()
+        otherCardDisposable?.dispose()
     }
 
     internal var showImage: Boolean = false
@@ -148,7 +150,7 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
             cardImageContainer.visibility = View.GONE
         }
 
-        flipCardButton.visibility = if (card.isDoubleFaced) View.VISIBLE else View.GONE
+        flipCardButton.visibility = if (card.isDoubleFaced || card.isTransform) View.VISIBLE else View.GONE
     }
 
     private fun loadImage() {
@@ -180,10 +182,12 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
     }
 
     private fun flipCard() {
-        card?.let { cardPresenter.loadOtherSideCard(it) }
-    }
-
-    override fun otherSideCardLoaded(card: MTGCard) {
-        load(card)
+        card?.let {
+            otherCardDisposable = cardPresenter.loadOtherSideCard(it).subscribe({ otherCard ->
+                load(otherCard)
+            }, { throwable ->
+                Toast.makeText(context, throwable.localizedMessage, Toast.LENGTH_SHORT).show()
+            })
+        }
     }
 }

@@ -40,8 +40,8 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        mtgCardsView = view.findViewById<MTGCardsView>(R.id.cards)
-        loader = view.findViewById<MTGLoader>(R.id.loader)
+        mtgCardsView = view.findViewById(R.id.cards)
+        loader = view.findViewById(R.id.loader)
 
         setupHomeActivityScroll(viewRecycle = mtgCardsView.listView)
 

@@ -5,8 +5,6 @@ import com.dbottillo.mtgsearchfree.model.TCGPrice
 import io.reactivex.Single
 
 interface CardPresenter {
-    fun loadOtherSideCard(card: MTGCard)
-    fun init(cardView: CardView)
+    fun loadOtherSideCard(card: MTGCard): Single<MTGCard>
     fun fetchPrice(card: MTGCard): Single<TCGPrice>
-    fun onDestroy()
 }

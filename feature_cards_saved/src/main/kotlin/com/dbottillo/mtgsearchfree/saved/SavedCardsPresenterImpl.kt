@@ -37,7 +37,7 @@ class SavedCardsPresenterImpl(
     }
 
     override fun onPause() {
-        disposable.dispose()
+        disposable.clear()
     }
 
     override fun removeFromFavourite(card: MTGCard) {

@@ -92,9 +92,9 @@ class CardsInteractorImpl(
                 .observeOn(schedulerProvider.ui())
     }
 
-    override fun loadOtherSideCard(card: MTGCard): Observable<MTGCard> {
-        logger.d("loading other side of card: " + card.toString())
-        return Observable.fromCallable { storage.loadOtherSide(card) }
+    override fun loadOtherSideCard(card: MTGCard): Single<MTGCard> {
+        logger.d("loading other side of card: $card")
+        return Single.fromCallable { storage.loadOtherSide(card) }
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }
