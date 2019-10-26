@@ -279,11 +279,30 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/search_color4_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_color3_container"
+        android:layout_marginTop="@dimen/base_margin"
+        android:orientation="horizontal"
+        tools:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/search_colorless"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/search_colorless"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
     <Spinner
         android:id="@+id/search_colors_how"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_color3_container"
+        android:layout_below="@id/search_color4_container"
         android:layout_marginTop="@dimen/base_margin" />
 
     <TextView

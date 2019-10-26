@@ -25,14 +25,15 @@ data class SearchParams(
     var isUncommon: Boolean = false,
     var isRare: Boolean = false,
     var isMythic: Boolean = false,
-    var setId: Int = -1
+    var setId: Int = -1,
+    var colorless: Boolean = false
 ) : Parcelable {
 
     val isValid: Boolean
         get() = (name.isNotEmpty() || types.isNotEmpty() ||
                 cmc != null || power != null || tough != null ||
                 setId > 0 || text.isNotEmpty() ||
-                isLand || atLeastOneColor || atLeastOneRarity)
+                isLand || atLeastOneColor || atLeastOneRarity || colorless)
 
     val atLeastOneColor: Boolean
         get() = isWhite || isBlack || isBlue || isRed || isGreen

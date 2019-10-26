@@ -2,10 +2,7 @@ package com.dbottillo.mtgsearchfree.database
 
 import com.dbottillo.mtgsearchfree.model.CMCParam
 import com.dbottillo.mtgsearchfree.model.PTParam
-import org.hamcrest.CoreMatchers.`is`
-import org.hamcrest.MatcherAssert.assertThat
-import org.junit.Assert.assertNotNull
-import org.junit.Assert.assertTrue
+import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 
 class QueryComposerTest {
@@ -14,9 +11,9 @@ class QueryComposerTest {
     fun generateQueryFromConstructor() {
         val queryComposer = QueryComposer("SELECT * from TABLE")
         val output = queryComposer.build()
-        assertNotNull(output.query)
-        assertThat(output.query, `is`("SELECT * from TABLE"))
-        assertTrue(output.selection.isEmpty())
+        assertThat(output.query).isNotNull()
+        assertThat(output.query).isEqualTo("SELECT * from TABLE")
+        assertThat(output.selection).isEmpty()
     }
 
     @Test
@@ -25,10 +22,10 @@ class QueryComposerTest {
         queryComposer.append("ORDER BY NAME LIMIT 400")
 
         val output = queryComposer.build()
-        assertNotNull(output.query)
+        assertThat(output.query).isNotNull()
 
-        assertThat(output.query, `is`("SELECT * from TABLE ORDER BY NAME LIMIT 400"))
-        assertTrue(output.selection.isEmpty())
+        assertThat(output.query).isEqualTo("SELECT * from TABLE ORDER BY NAME LIMIT 400")
+        assertThat(output.selection).isEmpty()
     }
 
     @Test
@@ -38,9 +35,9 @@ class QueryComposerTest {
 
         val output = queryComposer.build()
 
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE NAME = ?"))
-        assertThat(output.selection.size, `is`(1))
-        assertThat(output.selection[0], `is`("island"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE NAME = ?")
+        assertThat(output.selection.size).isEqualTo(1)
+        assertThat(output.selection[0]).isEqualTo("island")
     }
 
     @Test
@@ -50,9 +47,9 @@ class QueryComposerTest {
 
         val output = queryComposer.build()
 
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE NAME LIKE ?"))
-        assertThat(output.selection.size, `is`(1))
-        assertThat(output.selection[0], `is`("%island%"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE NAME LIKE ?")
+        assertThat(output.selection.size).isEqualTo(1)
+        assertThat(output.selection[0]).isEqualTo("%island%")
     }
 
     @Test
@@ -63,10 +60,10 @@ class QueryComposerTest {
 
         val output = queryComposer.build()
 
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE NAME = ? AND (CAST(CMC as integer) <= ? AND CMC != '')"))
-        assertThat(output.selection.size, `is`(2))
-        assertThat(output.selection[0], `is`("island"))
-        assertThat(output.selection[1], `is`("0"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE NAME = ? AND (CAST(CMC as integer) <= ? AND CMC != '')")
+        assertThat(output.selection.size).isEqualTo(2)
+        assertThat(output.selection[0]).isEqualTo("island")
+        assertThat(output.selection[1]).isEqualTo("0")
     }
 
     @Test
@@ -77,10 +74,10 @@ class QueryComposerTest {
 
         val output = queryComposer.build()
 
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE (CAST(CMC as integer) > ? AND CMC != '') AND NAME = ?"))
-        assertThat(output.selection.size, `is`(2))
-        assertThat(output.selection[0], `is`("0"))
-        assertThat(output.selection[1], `is`("island"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(CMC as integer) > ? AND CMC != '') AND NAME = ?")
+        assertThat(output.selection.size).isEqualTo(2)
+        assertThat(output.selection[0]).isEqualTo("0")
+        assertThat(output.selection[1]).isEqualTo("island")
     }
 
     @Test
@@ -90,10 +87,10 @@ class QueryComposerTest {
 
         val output = queryComposer.build()
 
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE (rarity = ? OR rarity = ?)"))
-        assertThat(output.selection.size, `is`(2))
-        assertThat(output.selection[0], `is`("uncommon"))
-        assertThat(output.selection[1], `is`("rare"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (rarity = ? OR rarity = ?)")
+        assertThat(output.selection.size).isEqualTo(2)
+        assertThat(output.selection[0]).isEqualTo("uncommon")
+        assertThat(output.selection[1]).isEqualTo("rare")
     }
 
     @Test
@@ -103,10 +100,10 @@ class QueryComposerTest {
 
         val output = queryComposer.build()
 
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE (types LIKE ? OR types LIKE ?)"))
-        assertThat(output.selection.size, `is`(2))
-        assertThat(output.selection[0], `is`("%Creature%"))
-        assertThat(output.selection[1], `is`("%Dragon%"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (types LIKE ? OR types LIKE ?)")
+        assertThat(output.selection.size).isEqualTo(2)
+        assertThat(output.selection[0]).isEqualTo("%Creature%")
+        assertThat(output.selection[1]).isEqualTo("%Dragon%")
     }
 
     @Test
@@ -117,8 +114,8 @@ class QueryComposerTest {
 
         val output = queryComposer.build()
 
-        assertThat(output.query, `is`("SELECT * from TABLE"))
-        assertThat(output.selection.size, `is`(0))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE")
+        assertThat(output.selection.size).isEqualTo(0)
     }
 
     @Test
@@ -128,8 +125,8 @@ class QueryComposerTest {
 
         val output = queryComposer.build()
 
-        assertThat(output.query, `is`("SELECT * from TABLE"))
-        assertThat(output.selection.size, `is`(0))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE")
+        assertThat(output.selection.size).isEqualTo(0)
     }
 
     @Test
@@ -139,8 +136,8 @@ class QueryComposerTest {
 
         val output = queryComposer.build()
 
-        assertThat(output.query, `is`("SELECT * from TABLE"))
-        assertThat(output.selection.size, `is`(0))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE")
+        assertThat(output.selection.size).isEqualTo(0)
     }
 
     @Test
@@ -150,8 +147,8 @@ class QueryComposerTest {
 
         val output = queryComposer.build()
 
-        assertThat(output.query, `is`("SELECT * from TABLE"))
-        assertThat(output.selection.size, `is`(0))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE")
+        assertThat(output.selection.size).isEqualTo(0)
     }
 
     @Test
@@ -162,11 +159,11 @@ class QueryComposerTest {
 
         val output = queryComposer.build()
 
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE NAME LIKE ? AND (rarity = ? OR rarity = ?)"))
-        assertThat(output.selection.size, `is`(3))
-        assertThat(output.selection[0], `is`("%island%"))
-        assertThat(output.selection[1], `is`("uncommon"))
-        assertThat(output.selection[2], `is`("rare"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE NAME LIKE ? AND (rarity = ? OR rarity = ?)")
+        assertThat(output.selection.size).isEqualTo(3)
+        assertThat(output.selection[0]).isEqualTo("%island%")
+        assertThat(output.selection[1]).isEqualTo("uncommon")
+        assertThat(output.selection[2]).isEqualTo("rare")
     }
 
     @Test
@@ -175,9 +172,9 @@ class QueryComposerTest {
         queryComposer.addPTParam(name = "power", ptParam = PTParam(operator = "=", value = 0))
 
         val output = queryComposer.build()
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE (CAST(power as integer) = ? AND power GLOB '[0-9]')"))
-        assertThat(output.selection.size, `is`(1))
-        assertThat(output.selection[0], `is`("0"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(power as integer) = ? AND power GLOB '[0-9]')")
+        assertThat(output.selection.size).isEqualTo(1)
+        assertThat(output.selection[0]).isEqualTo("0")
     }
 
     @Test
@@ -186,9 +183,9 @@ class QueryComposerTest {
         queryComposer.addPTParam(name = "toughness", ptParam = PTParam(operator = "IS", value = 2))
 
         val output = queryComposer.build()
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE (CAST(toughness as integer) = ? AND toughness GLOB '[0-9]')"))
-        assertThat(output.selection.size, `is`(1))
-        assertThat(output.selection[0], `is`("2"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(toughness as integer) = ? AND toughness GLOB '[0-9]')")
+        assertThat(output.selection.size).isEqualTo(1)
+        assertThat(output.selection[0]).isEqualTo("2")
     }
 
     @Test
@@ -197,9 +194,9 @@ class QueryComposerTest {
         queryComposer.addPTParam(name = "power", ptParam = PTParam(operator = "<", value = 2))
 
         val output = queryComposer.build()
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE (CAST(power as integer) < ? AND power GLOB '[0-9]')"))
-        assertThat(output.selection.size, `is`(1))
-        assertThat(output.selection[0], `is`("2"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(power as integer) < ? AND power GLOB '[0-9]')")
+        assertThat(output.selection.size).isEqualTo(1)
+        assertThat(output.selection[0]).isEqualTo("2")
     }
 
     @Test
@@ -208,9 +205,9 @@ class QueryComposerTest {
         queryComposer.addPTParam(name = "toughness", ptParam = PTParam(operator = ">=", value = 3))
 
         val output = queryComposer.build()
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE (CAST(toughness as integer) >= ? AND toughness GLOB '[0-9]')"))
-        assertThat(output.selection.size, `is`(1))
-        assertThat(output.selection[0], `is`("3"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(toughness as integer) >= ? AND toughness GLOB '[0-9]')")
+        assertThat(output.selection.size).isEqualTo(1)
+        assertThat(output.selection[0]).isEqualTo("3")
     }
 
     @Test
@@ -219,9 +216,9 @@ class QueryComposerTest {
         queryComposer.addPTParam(name = "power", ptParam = PTParam(operator = "IS", value = -1))
 
         val output = queryComposer.build()
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE power LIKE ?"))
-        assertThat(output.selection.size, `is`(1))
-        assertThat(output.selection[0], `is`("%*%"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE power LIKE ?")
+        assertThat(output.selection.size).isEqualTo(1)
+        assertThat(output.selection[0]).isEqualTo("%*%")
     }
 
     @Test
@@ -230,9 +227,9 @@ class QueryComposerTest {
         queryComposer.addPTParam(name = "toughness", ptParam = PTParam(operator = "IS", value = -1))
 
         val output = queryComposer.build()
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE toughness LIKE ?"))
-        assertThat(output.selection.size, `is`(1))
-        assertThat(output.selection[0], `is`("%*%"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE toughness LIKE ?")
+        assertThat(output.selection.size).isEqualTo(1)
+        assertThat(output.selection[0]).isEqualTo("%*%")
     }
 
     @Test
@@ -242,10 +239,10 @@ class QueryComposerTest {
         queryComposer.addPTParam(name = "toughness", ptParam = PTParam(operator = "IS", value = -1))
 
         val output = queryComposer.build()
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE power LIKE ? AND toughness LIKE ?"))
-        assertThat(output.selection.size, `is`(2))
-        assertThat(output.selection[0], `is`("%*%"))
-        assertThat(output.selection[1], `is`("%*%"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE power LIKE ? AND toughness LIKE ?")
+        assertThat(output.selection.size).isEqualTo(2)
+        assertThat(output.selection[0]).isEqualTo("%*%")
+        assertThat(output.selection[1]).isEqualTo("%*%")
     }
 
     @Test
@@ -256,9 +253,9 @@ class QueryComposerTest {
 
         val output = queryComposer.build()
 
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE cmc=?"))
-        assertThat(output.selection.size, `is`(1))
-        assertThat(output.selection[0], `is`("5"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE cmc=?")
+        assertThat(output.selection.size).isEqualTo(1)
+        assertThat(output.selection[0]).isEqualTo("5")
     }
 
     @Test
@@ -269,9 +266,9 @@ class QueryComposerTest {
 
         val output = queryComposer.build()
 
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE cmc<=?"))
-        assertThat(output.selection.size, `is`(1))
-        assertThat(output.selection[0], `is`("5"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE cmc<=?")
+        assertThat(output.selection.size).isEqualTo(1)
+        assertThat(output.selection[0]).isEqualTo("5")
     }
 
     @Test
@@ -282,9 +279,9 @@ class QueryComposerTest {
 
         val output = queryComposer.build()
 
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE manaCost = ?"))
-        assertThat(output.selection.size, `is`(1))
-        assertThat(output.selection[0], `is`("{2}{W}{U}"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE manaCost = ?")
+        assertThat(output.selection.size).isEqualTo(1)
+        assertThat(output.selection[0]).isEqualTo("{2}{W}{U}")
     }
 
     @Test
@@ -295,11 +292,11 @@ class QueryComposerTest {
 
         val output = queryComposer.build()
 
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE cmc>? AND manaCost LIKE ? AND manaCost LIKE ?"))
-        assertThat(output.selection.size, `is`(3))
-        assertThat(output.selection[0], `is`("4"))
-        assertThat(output.selection[1], `is`("%{W}%"))
-        assertThat(output.selection[2], `is`("%{U}%"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE cmc>? AND manaCost LIKE ? AND manaCost LIKE ?")
+        assertThat(output.selection.size).isEqualTo(3)
+        assertThat(output.selection[0]).isEqualTo("4")
+        assertThat(output.selection[1]).isEqualTo("%{W}%")
+        assertThat(output.selection[2]).isEqualTo("%{U}%")
     }
 
     @Test
@@ -310,11 +307,11 @@ class QueryComposerTest {
 
         val output = queryComposer.build()
 
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE cmc<=? AND manaCost LIKE ? AND manaCost LIKE ?"))
-        assertThat(output.selection.size, `is`(3))
-        assertThat(output.selection[0], `is`("5"))
-        assertThat(output.selection[1], `is`("%{W}{W}%"))
-        assertThat(output.selection[2], `is`("%{U}%"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE cmc<=? AND manaCost LIKE ? AND manaCost LIKE ?")
+        assertThat(output.selection.size).isEqualTo(3)
+        assertThat(output.selection[0]).isEqualTo("5")
+        assertThat(output.selection[1]).isEqualTo("%{W}{W}%")
+        assertThat(output.selection[2]).isEqualTo("%{U}%")
     }
 
     @Test
@@ -325,9 +322,9 @@ class QueryComposerTest {
 
         val output = queryComposer.build()
 
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE manaCost = ?"))
-        assertThat(output.selection.size, `is`(1))
-        assertThat(output.selection[0], `is`("{X}{2}{U}"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE manaCost = ?")
+        assertThat(output.selection.size).isEqualTo(1)
+        assertThat(output.selection[0]).isEqualTo("{X}{2}{U}")
     }
 
     @Test
@@ -338,12 +335,12 @@ class QueryComposerTest {
 
         val output = queryComposer.build()
 
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE cmc>=? AND manaCost LIKE ? AND manaCost LIKE ? AND manaCost LIKE ?"))
-        assertThat(output.selection.size, `is`(4))
-        assertThat(output.selection[0], `is`("3"))
-        assertThat(output.selection[1], `is`("%{X}%"))
-        assertThat(output.selection[2], `is`("%{2}%"))
-        assertThat(output.selection[3], `is`("%{U}%"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE cmc>=? AND manaCost LIKE ? AND manaCost LIKE ? AND manaCost LIKE ?")
+        assertThat(output.selection.size).isEqualTo(4)
+        assertThat(output.selection[0]).isEqualTo("3")
+        assertThat(output.selection[1]).isEqualTo("%{X}%")
+        assertThat(output.selection[2]).isEqualTo("%{2}%")
+        assertThat(output.selection[3]).isEqualTo("%{U}%")
     }
 
     @Test
@@ -354,9 +351,9 @@ class QueryComposerTest {
 
         val output = queryComposer.build()
 
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE manaCost = ?"))
-        assertThat(output.selection.size, `is`(1))
-        assertThat(output.selection[0], `is`("{2}{B}{B}{G}"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE manaCost = ?")
+        assertThat(output.selection.size).isEqualTo(1)
+        assertThat(output.selection[0]).isEqualTo("{2}{B}{B}{G}")
     }
 
     @Test
@@ -367,9 +364,9 @@ class QueryComposerTest {
 
         val output = queryComposer.build()
 
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE manaCost = ?"))
-        assertThat(output.selection.size, `is`(1))
-        assertThat(output.selection[0], `is`("{W}{W}"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE manaCost = ?")
+        assertThat(output.selection.size).isEqualTo(1)
+        assertThat(output.selection[0]).isEqualTo("{W}{W}")
     }
 
     @Test
@@ -380,8 +377,19 @@ class QueryComposerTest {
 
         val output = queryComposer.build()
 
-        assertThat(output.query, `is`("SELECT * from TABLE WHERE cmc=?"))
-        assertThat(output.selection.size, `is`(1))
-        assertThat(output.selection[0], `is`("0"))
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE cmc=?")
+        assertThat(output.selection.size).isEqualTo(1)
+        assertThat(output.selection[0]).isEqualTo("0")
+    }
+
+    @Test
+    fun `should allow is null`() {
+        val queryComposer = QueryComposer("SELECT * from TABLE")
+        queryComposer.addIsNullParam("COLORS")
+
+        val output = queryComposer.build()
+
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE COLORS IS ''")
+        assertThat(output.selection).isEmpty()
     }
 }

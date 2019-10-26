@@ -11,7 +11,6 @@ fun StringBuilder.appendCast(name: String) {
 
 internal class QueryComposer(initial: String) {
 
-    private val LIKE_OPERATOR = "LIKE"
     private val stringBuilder: StringBuilder = StringBuilder(initial) // NOPMD
     private val selection = mutableListOf<String>()
 
@@ -64,6 +63,12 @@ internal class QueryComposer(initial: String) {
 
     fun addLikeParam(name: String, value: String) {
         addParam(name, LIKE_OPERATOR, value)
+    }
+
+    fun addIsNullParam(name: String) {
+        checkFirstParam()
+        stringBuilder.append(name)
+        stringBuilder.append(" IS ''")
     }
 
     fun addParam(name: String, operator: String, value: Int) {
@@ -140,3 +145,6 @@ internal class QueryComposer(initial: String) {
         return Output(stringBuilder.toString(), selection)
     }
 }
+
+private const val LIKE_OPERATOR = "LIKE"
+private const val IS_OPERATOR = "IS"

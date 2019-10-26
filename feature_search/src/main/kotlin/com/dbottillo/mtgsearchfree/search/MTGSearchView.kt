@@ -7,6 +7,7 @@ import androidx.appcompat.widget.AppCompatCheckBox
 import androidx.appcompat.widget.AppCompatEditText
 import android.util.AttributeSet
 import android.widget.ArrayAdapter
+import android.widget.CompoundButton
 import android.widget.RelativeLayout
 import android.widget.Spinner
 import com.dbottillo.mtgsearchfree.model.MTGSet
@@ -14,6 +15,7 @@ import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.model.cmcParamCreator
 import com.dbottillo.mtgsearchfree.model.ptParamCreator
 import com.dbottillo.mtgsearchfree.util.LOG
+import kotlinx.android.synthetic.main.search_form_view.view.*
 
 class MTGSearchView @JvmOverloads constructor(
     context: Context,
@@ -77,8 +79,33 @@ class MTGSearchView @JvmOverloads constructor(
             searchParams.isRare = rare.isChecked
             searchParams.isMythic = mythic.isChecked
             searchParams.setId = sets[set.selectedItemPosition].id
+            searchParams.colorless = search_colorless.isChecked
             return searchParams
         }
+
+    private val disableColorlessCheckedChangeListener: CompoundButton.OnCheckedChangeListener = CompoundButton.OnCheckedChangeListener { p0, p1 ->
+        search_colorless.setOnCheckedChangeListener(null)
+        search_colorless.isChecked = false
+        search_colorless.setOnCheckedChangeListener(colorlessCheckedChangeListener)
+    }
+
+    private val colorlessCheckedChangeListener: CompoundButton.OnCheckedChangeListener = CompoundButton.OnCheckedChangeListener { p0, p1 ->
+        white.setOnCheckedChangeListener(null)
+        red.setOnCheckedChangeListener(null)
+        blue.setOnCheckedChangeListener(null)
+        green.setOnCheckedChangeListener(null)
+        black.setOnCheckedChangeListener(null)
+        white.isChecked = false
+        red.isChecked = false
+        blue.isChecked = false
+        green.isChecked = false
+        black.isChecked = false
+        white.setOnCheckedChangeListener(disableColorlessCheckedChangeListener)
+        red.setOnCheckedChangeListener(disableColorlessCheckedChangeListener)
+        blue.setOnCheckedChangeListener(disableColorlessCheckedChangeListener)
+        green.setOnCheckedChangeListener(disableColorlessCheckedChangeListener)
+        black.setOnCheckedChangeListener(disableColorlessCheckedChangeListener)
+    }
 
     init {
         inflate(context, R.layout.search_form_view, this)
@@ -86,28 +113,35 @@ class MTGSearchView @JvmOverloads constructor(
         searchSetAdapter = SearchSetAdapter(context, sets)
         set.adapter = searchSetAdapter
 
-        val white = ContextCompat.getColor(context, R.color.white)
+        val whiteColor = ContextCompat.getColor(context, R.color.white)
 
         val cmcAdapter = ArrayAdapter<CharSequence>(context, R.layout.row_spinner_item, operators)
         cmcAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         cmcOp.adapter = cmcAdapter
-        cmcOp.background.setColorFilter(white, PorterDuff.Mode.SRC_ATOP)
+        cmcOp.background.setColorFilter(whiteColor, PorterDuff.Mode.SRC_ATOP)
 
         val adapter = ArrayAdapter<CharSequence>(context, R.layout.row_spinner_item, operators)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         powerOp.adapter = adapter
-        powerOp.background.setColorFilter(white, PorterDuff.Mode.SRC_ATOP)
+        powerOp.background.setColorFilter(whiteColor, PorterDuff.Mode.SRC_ATOP)
 
         val toughAdapter = ArrayAdapter<CharSequence>(context, R.layout.row_spinner_item, operators)
         toughAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         toughOp.adapter = toughAdapter
-        toughOp.background.setColorFilter(white, PorterDuff.Mode.SRC_ATOP)
+        toughOp.background.setColorFilter(whiteColor, PorterDuff.Mode.SRC_ATOP)
 
         val colorsSpecificationAdapter = ArrayAdapter<CharSequence>(context, R.layout.row_spinner_item, colorsHow)
         toughAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
         colorsSpecification.adapter = colorsSpecificationAdapter
-        colorsSpecification.background.setColorFilter(white, PorterDuff.Mode.SRC_ATOP)
+        colorsSpecification.background.setColorFilter(whiteColor, PorterDuff.Mode.SRC_ATOP)
         colorsSpecification.setSelection(0)
+
+        white.setOnCheckedChangeListener(disableColorlessCheckedChangeListener)
+        red.setOnCheckedChangeListener(disableColorlessCheckedChangeListener)
+        blue.setOnCheckedChangeListener(disableColorlessCheckedChangeListener)
+        green.setOnCheckedChangeListener(disableColorlessCheckedChangeListener)
+        black.setOnCheckedChangeListener(disableColorlessCheckedChangeListener)
+        search_colorless.setOnCheckedChangeListener(colorlessCheckedChangeListener)
     }
 
     fun refreshSets(sets: List<MTGSet>) {
