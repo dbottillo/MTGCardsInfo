@@ -214,10 +214,25 @@ class MTGCardDataSourceTest {
     }
 
     @Test
+    fun `should search with power and toughness greater than 10`() {
+        val searchParams = SearchParams()
+        searchParams.power = PTParam(">=", 10)
+        searchParams.tough = PTParam(">=", 10)
+
+        val cards = underTest.searchCards(searchParams)
+
+        assertThat(cards).isNotEmpty()
+        for (card in cards) {
+            assertThat(card.power.toInt()).isAtLeast(10)
+            assertThat(card.toughness.toInt()).isAtLeast(10)
+        }
+    }
+
+    @Test
     fun searchCardsByToughness() {
         val searchParams = SearchParams()
-        for (i in 0 until OPERATOR.values().size) {
-            val operator = OPERATOR.values()[i]
+        for (element in OPERATOR.values()) {
+            val operator = element
             searchParams.tough = operator.generatePTParam()
             val cards = underTest.searchCards(searchParams)
             assertThat(cards).isNotEmpty()

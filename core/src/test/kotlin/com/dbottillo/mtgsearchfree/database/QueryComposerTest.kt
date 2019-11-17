@@ -172,7 +172,7 @@ class QueryComposerTest {
         queryComposer.addPTParam(name = "power", ptParam = PTParam(operator = "=", value = 0))
 
         val output = queryComposer.build()
-        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(power as integer) = ? AND power GLOB '[0-9]')")
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(power as integer) = ? AND power GLOB '*[0-9]*')")
         assertThat(output.selection.size).isEqualTo(1)
         assertThat(output.selection[0]).isEqualTo("0")
     }
@@ -183,7 +183,7 @@ class QueryComposerTest {
         queryComposer.addPTParam(name = "toughness", ptParam = PTParam(operator = "IS", value = 2))
 
         val output = queryComposer.build()
-        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(toughness as integer) = ? AND toughness GLOB '[0-9]')")
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(toughness as integer) = ? AND toughness GLOB '*[0-9]*')")
         assertThat(output.selection.size).isEqualTo(1)
         assertThat(output.selection[0]).isEqualTo("2")
     }
@@ -194,7 +194,7 @@ class QueryComposerTest {
         queryComposer.addPTParam(name = "power", ptParam = PTParam(operator = "<", value = 2))
 
         val output = queryComposer.build()
-        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(power as integer) < ? AND power GLOB '[0-9]')")
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(power as integer) < ? AND power GLOB '*[0-9]*')")
         assertThat(output.selection.size).isEqualTo(1)
         assertThat(output.selection[0]).isEqualTo("2")
     }
@@ -205,7 +205,7 @@ class QueryComposerTest {
         queryComposer.addPTParam(name = "toughness", ptParam = PTParam(operator = ">=", value = 3))
 
         val output = queryComposer.build()
-        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(toughness as integer) >= ? AND toughness GLOB '[0-9]')")
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(toughness as integer) >= ? AND toughness GLOB '*[0-9]*')")
         assertThat(output.selection.size).isEqualTo(1)
         assertThat(output.selection[0]).isEqualTo("3")
     }
