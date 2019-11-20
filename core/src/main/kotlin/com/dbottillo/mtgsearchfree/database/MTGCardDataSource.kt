@@ -128,7 +128,11 @@ class MTGCardDataSource(
             }
         }
         cursor.close()
-        return cards
+        return if (!searchParams.duplicates) {
+            cards.distinctBy { it.name }
+        } else {
+            cards
+        }
     }
 
     fun getRandomCard(number: Int): List<MTGCard> {

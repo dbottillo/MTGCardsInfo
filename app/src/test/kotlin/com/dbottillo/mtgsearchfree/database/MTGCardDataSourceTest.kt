@@ -633,6 +633,17 @@ class MTGCardDataSourceTest {
     }
 
     @Test
+    fun `should search with no duplicates flag on`() {
+        val searchParams = SearchParams()
+        searchParams.name = "serra angel"
+        searchParams.duplicates = false
+
+        val cards = underTest.searchCards(searchParams)
+
+        assertThat(cards.size).isEqualTo(1)
+    }
+
+    @Test
     fun `should search colorless cards`() {
         val searchParams = SearchParams()
         searchParams.colorless = true

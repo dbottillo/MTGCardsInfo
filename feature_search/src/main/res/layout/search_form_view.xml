@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -11,407 +12,435 @@
 
     <TextView
         android:id="@+id/search_name_title"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_card_title"
         android:textColor="@color/white"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/search_name"
         style="@style/MTG.EditText"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_name_title"
         android:hint="@string/search_hint_name"
-        android:maxLines="1" />
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_name_title" />
 
     <TextView
         android:id="@+id/search_types_title"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_name"
         android:layout_marginStart="4dp"
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_card_types"
         android:textColor="@color/white"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_name" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/search_types"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_types_title"
         android:backgroundTint="@color/white"
         android:hint="@string/search_hint_type"
         android:maxLines="1"
         android:textColor="@color/white"
-        android:textColorHint="@color/color_primary_light" />
+        android:textColorHint="@color/color_primary_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_types_title" />
 
     <TextView
         android:id="@+id/search_text_title"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_types"
         android:layout_marginStart="4dp"
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_card_text"
         android:textColor="@color/white"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_types" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/search_text"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_text_title"
         android:backgroundTint="@color/white"
         android:hint="@string/search_hint_text"
         android:maxLines="1"
         android:textColor="@color/white"
-        android:textColorHint="@color/color_primary_light" />
+        android:textColorHint="@color/color_primary_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_text_title" />
 
     <TextView
         android:id="@+id/search_set_title"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_text"
         android:layout_marginStart="4dp"
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_set_title"
         android:textColor="@color/white"
-        android:textSize="12sp" />
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_text" />
 
     <Spinner
         android:id="@+id/search_set"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_set_title"
-        android:layout_marginTop="@dimen/base_margin" />
+        android:layout_marginTop="@dimen/base_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_set_title" />
 
     <View
         android:id="@+id/search_set_divisor"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="1dp"
-        android:layout_below="@id/search_set"
-        android:background="@color/white" />
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_set" />
 
-    <LinearLayout
-        android:id="@+id/search_cmc_container"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/search_cmc_title"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_set_divisor"
-        android:layout_marginTop="@dimen/base_margin">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/search_cmc_title"
-            android:textColor="@color/white" />
-
-        <Spinner
-            android:id="@+id/search_cmc_operator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:visibility="visible" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/search_cmc"
-            style="@style/MTG.EditText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="@string/search_cmc_numbers" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/search_pt_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/search_cmc_container"
         android:layout_marginTop="@dimen/base_margin"
-        android:orientation="horizontal">
+        android:text="@string/search_cmc_title"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/search_cmc_operator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_set_divisor" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/search_power_title"
-            android:textColor="@color/white" />
+    <Spinner
+        android:id="@+id/search_cmc_operator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/search_cmc"
+        app:layout_constraintEnd_toStartOf="@+id/search_cmc"
+        app:layout_constraintStart_toEndOf="@+id/search_cmc_title"
+        app:layout_constraintTop_toTopOf="@+id/search_cmc"
+        tools:visibility="visible" />
 
-        <Spinner
-            android:id="@+id/search_power_operator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:visibility="gone" />
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/search_cmc"
+        style="@style/MTG.EditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/search_cmc_numbers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/search_cmc_operator"
+        app:layout_constraintTop_toBottomOf="@id/search_set_divisor" />
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/search_power"
-            style="@style/MTG.EditText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/base_margin"
-            android:layout_weight="1"
-            android:digits="0123456789*"
-            android:hint="@string/search_hint_numbers" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/base_margin"
-            android:text="@string/search_toughness_title"
-            android:textColor="@color/white" />
+    <TextView
+        android:id="@+id/search_power_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/search_power_title"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/search_power"
+        app:layout_constraintEnd_toStartOf="@+id/search_power_operator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/search_power" />
 
-        <Spinner
-            android:id="@+id/search_toughness_operator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:visibility="gone" />
+    <Spinner
+        android:id="@+id/search_power_operator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/search_power"
+        app:layout_constraintEnd_toStartOf="@+id/search_power"
+        app:layout_constraintStart_toEndOf="@+id/search_power_title"
+        app:layout_constraintTop_toTopOf="@id/search_power"
+        tools:visibility="visible" />
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/search_tough"
-            style="@style/MTG.EditText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:digits="0123456789*"
-            android:hint="@string/search_hint_numbers" />
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/search_power"
+        style="@style/MTG.EditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/base_margin"
+        android:layout_marginEnd="@dimen/base_margin"
+        android:digits="0123456789*"
+        android:hint="@string/search_hint_numbers"
+        app:layout_constraintEnd_toEndOf="@+id/guideline_middle"
+        app:layout_constraintStart_toEndOf="@+id/search_power_operator"
+        app:layout_constraintTop_toBottomOf="@+id/search_cmc_title" />
 
-    </LinearLayout>
+    <TextView
+        android:id="@+id/search_tough_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/search_toughness_title"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/search_power"
+        app:layout_constraintEnd_toStartOf="@+id/search_toughness_operator"
+        app:layout_constraintStart_toStartOf="@+id/guideline_middle"
+        app:layout_constraintTop_toTopOf="@id/search_power" />
+
+    <Spinner
+        android:id="@+id/search_toughness_operator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/search_power"
+        app:layout_constraintEnd_toStartOf="@+id/search_tough"
+        app:layout_constraintStart_toEndOf="@id/search_tough_title"
+        app:layout_constraintTop_toTopOf="@id/search_power"
+        tools:visibility="visible" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/search_tough"
+        style="@style/MTG.EditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/base_margin"
+        android:digits="0123456789*"
+        android:hint="@string/search_hint_numbers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/search_toughness_operator"
+        app:layout_constraintTop_toBottomOf="@+id/search_cmc_title" />
 
     <TextView
         android:id="@+id/search_color_title"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_pt_container"
         android:layout_marginTop="@dimen/base_margin"
-        android:gravity="center_horizontal"
         android:text="@string/search_color_title"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_power" />
 
     <View
         android:id="@+id/search_color_divisor"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_below="@id/search_color_title"
         android:layout_marginTop="4dp"
         android:background="@color/white"
-        tools:visibility="gone" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_color_title"
+        tools:visibility="visible" />
 
-    <LinearLayout
-        android:id="@+id/search_color1_container"
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/search_w"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_color_divisor"
         android:layout_marginTop="8dp"
-        android:orientation="horizontal">
+        android:text="@string/white"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_middle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_color_divisor" />
 
-        <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/search_w"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/white"
-            android:textColor="@color/white" />
-
-        <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/search_u"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/blue"
-            android:textColor="@color/white" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/search_color2_container"
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/search_u"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_color1_container"
-        android:layout_marginTop="@dimen/base_margin"
-        android:orientation="horizontal"
-        tools:visibility="gone">
+        android:text="@string/blue"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline_middle"
+        app:layout_constraintTop_toTopOf="@id/search_w" />
 
-        <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/search_b"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/black"
-            android:textColor="@color/white" />
-
-        <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/search_r"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/red"
-            android:textColor="@color/white" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/search_color3_container"
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/search_b"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_color2_container"
-        android:layout_marginTop="@dimen/base_margin"
-        android:orientation="horizontal"
-        tools:visibility="gone">
+        android:layout_marginTop="8dp"
+        android:text="@string/blue"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_middle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_w" />
 
-        <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/search_g"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/green"
-            android:textColor="@color/white" />
-
-        <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/search_multi"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/search_multicolor"
-            android:textColor="@color/white" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/search_color4_container"
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/search_r"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_color3_container"
-        android:layout_marginTop="@dimen/base_margin"
-        android:orientation="horizontal"
-        tools:visibility="gone">
+        android:text="@string/red"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline_middle"
+        app:layout_constraintTop_toTopOf="@id/search_b" />
 
-        <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/search_colorless"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/search_colorless"
-            android:textColor="@color/white" />
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/search_g"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/green"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_middle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_b" />
 
-    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/search_multi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/search_multicolor"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline_middle"
+        app:layout_constraintTop_toTopOf="@id/search_g" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/search_colorless"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/search_colorless"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_middle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_g" />
+
+    <androidx.constraintlayout.widget.Group
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="search_b,search_w,search_g,search_r,search_u,search_multi,search_colorless"
+        tools:visibility="gone" />
 
     <Spinner
         android:id="@+id/search_colors_how"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_color4_container"
-        android:layout_marginTop="@dimen/base_margin" />
+        android:layout_marginTop="@dimen/base_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_colorless" />
 
     <TextView
         android:id="@+id/search_rarity_title"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_colors_how"
         android:layout_marginTop="@dimen/base_margin"
-        android:gravity="center_horizontal"
         android:text="@string/search_rarity_title"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_colors_how" />
 
     <View
         android:id="@+id/search_rarity_divisor"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_below="@id/search_rarity_title"
         android:layout_marginTop="4dp"
-        android:background="@color/white" />
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/search_rarity_title" />
 
-    <LinearLayout
-        android:id="@+id/search_rarity1_container"
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/search_common"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_rarity_divisor"
-        android:layout_marginTop="6dp"
-        android:orientation="horizontal"
-        tools:visibility="visible">
+        android:layout_marginTop="8dp"
+        android:text="@string/search_common"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_middle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_rarity_divisor" />
 
-        <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/search_common"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/search_common"
-            android:textColor="@color/white" />
-
-        <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/search_uncommon"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/search_uncommon"
-            android:textColor="@color/white" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/search_rarity2_container"
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/search_uncommon"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_rarity1_container"
-        android:layout_marginTop="@dimen/base_margin"
-        android:orientation="horizontal"
-        tools:visibility="gone">
+        android:text="@string/search_uncommon"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline_middle"
+        app:layout_constraintTop_toTopOf="@id/search_common" />
 
-        <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/search_rare"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/search_rare"
-            android:textColor="@color/white" />
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/search_rare"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/search_rare"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_middle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_common" />
 
-        <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/search_mythic"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/search_mythic"
-            android:textColor="@color/white" />
-
-    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/search_mythic"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/search_mythic"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline_middle"
+        app:layout_constraintTop_toTopOf="@id/search_rare" />
 
     <TextView
         android:id="@+id/other_title"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/search_rarity2_container"
         android:layout_marginTop="@dimen/base_margin"
-        android:gravity="center_horizontal"
         android:text="@string/search_other_title"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_rare" />
 
     <View
         android:id="@+id/other_divisor"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="1dp"
-        android:layout_below="@id/other_title"
         android:layout_marginTop="4dp"
-        android:background="@color/white" />
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/other_title" />
 
-    <LinearLayout
-        android:id="@+id/other_container"
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/search_l"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/other_divisor"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="100dp"
-        android:orientation="horizontal">
+        android:text="@string/search_land"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_middle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/other_divisor" />
 
-        <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/search_l"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/search_land"
-            android:textColor="@color/white" />
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/search_no_duplicates"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/search_remove_duplicates"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline_middle"
+        app:layout_constraintTop_toTopOf="@id/search_l" />
 
-    </LinearLayout>
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="@dimen/base_margin"
+        app:layout_constraintTop_toBottomOf="@id/search_l"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,7 +26,8 @@ data class SearchParams(
     var isRare: Boolean = false,
     var isMythic: Boolean = false,
     var setId: Int = -1,
-    var colorless: Boolean = false
+    var colorless: Boolean = false,
+    var duplicates: Boolean = true
 ) : Parcelable {
 
     val isValid: Boolean

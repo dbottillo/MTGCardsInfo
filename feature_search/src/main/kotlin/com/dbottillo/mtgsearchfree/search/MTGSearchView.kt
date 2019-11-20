@@ -8,8 +8,8 @@ import androidx.appcompat.widget.AppCompatEditText
 import android.util.AttributeSet
 import android.widget.ArrayAdapter
 import android.widget.CompoundButton
-import android.widget.RelativeLayout
 import android.widget.Spinner
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.model.cmcParamCreator
@@ -21,7 +21,7 @@ class MTGSearchView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = -1
-) : RelativeLayout(context, attrs, defStyleAttr) {
+) : ConstraintLayout(context, attrs, defStyleAttr) {
 
     private var operators = arrayOf("=", ">", "<", ">=", "<=")
     private var sets = mutableListOf(MTGSet(-1, "", resources.getString(R.string.search_set_all)), MTGSet(-2, "", resources.getString(R.string.search_set_standard)))
@@ -52,6 +52,7 @@ class MTGSearchView @JvmOverloads constructor(
     private val rare: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_rare) }
     private val mythic: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_mythic) }
     private val set: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById<Spinner>(R.id.search_set) }
+    private val noDuplicates: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_no_duplicates) }
 
     private var searchSetAdapter: SearchSetAdapter? = null
 
@@ -80,6 +81,7 @@ class MTGSearchView @JvmOverloads constructor(
             searchParams.isMythic = mythic.isChecked
             searchParams.setId = sets[set.selectedItemPosition].id
             searchParams.colorless = search_colorless.isChecked
+            searchParams.duplicates = !noDuplicates.isChecked
             return searchParams
         }
 
