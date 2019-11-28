@@ -85,7 +85,6 @@ class MTGCardDataSource(
                     queryComposer.addMultipleParam(CardDataSource.COLUMNS.COLORS_IDENTITY.noun, "LIKE", "OR", *searchParams.colors.toTypedArray())
                 }
             }
-            queryComposer.addParam(CardDataSource.COLUMNS.MULTICOLOR.noun, "==", if (searchParams.onlyMulti) 1 else 0)
         }
         if (searchParams.atLeastOneRarity) {
             val rarities = ArrayList<String>()

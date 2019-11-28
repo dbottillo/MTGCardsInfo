@@ -373,77 +373,18 @@ class MTGCardDataSourceTest {
     }
 
     @Test
-    fun `should search exactly blu and red colors in standard with multi color option on`() {
+    fun `should search by white, green and elf`() {
         val searchParams = SearchParams()
-        searchParams.isRed = true
-        searchParams.isBlue = true
-        searchParams.setId = -2
-        searchParams.exactlyColors = true
-        searchParams.includingColors = false
-        searchParams.atMostColors = false
-        searchParams.onlyMulti = true
-
-        val cards = underTest.searchCards(searchParams)
-
-        for (card in cards) {
-            assertThat(card.isRed && card.isBlue && !card.isWhite &&
-                    !card.isBlack && !card.isGreen && card.isMultiColor).isTrue()
-        }
-    }
-
-    @Test
-    fun `should search exactly blue, green and red colors in standard with multi color option on`() {
-        val searchParams = SearchParams()
-        searchParams.isRed = true
-        searchParams.isBlue = true
+        searchParams.isWhite = true
         searchParams.isGreen = true
-        searchParams.setId = -2
         searchParams.exactlyColors = true
-        searchParams.includingColors = false
-        searchParams.atMostColors = false
-        searchParams.onlyMulti = true
+        searchParams.types = "elf"
 
         val cards = underTest.searchCards(searchParams)
 
+        assertThat(cards).isNotEmpty()
         for (card in cards) {
-            assertThat(card.isRed && card.isBlue && !card.isWhite &&
-                    !card.isBlack && card.isGreen && card.isMultiColor).isTrue()
-        }
-    }
-
-    @Test
-    fun `should search by colors including blu and red in standard with multi color option on`() {
-        val searchParams = SearchParams()
-        searchParams.isRed = true
-        searchParams.isBlue = true
-        searchParams.exactlyColors = false
-        searchParams.includingColors = true
-        searchParams.atMostColors = false
-        searchParams.setId = -2
-        searchParams.onlyMulti = true
-
-        val cards = underTest.searchCards(searchParams)
-
-        for (card in cards) {
-            assertThat(card.isRed && card.isBlue && card.isMultiColor).isTrue()
-        }
-    }
-
-    @Test
-    fun `should search by colors at most blu and red in standard with multi color option on`() {
-        val searchParams = SearchParams()
-        searchParams.isRed = true
-        searchParams.isBlue = true
-        searchParams.exactlyColors = false
-        searchParams.includingColors = false
-        searchParams.atMostColors = true
-        searchParams.setId = -2
-        searchParams.onlyMulti = true
-
-        val cards = underTest.searchCards(searchParams)
-
-        for (card in cards) {
-            assertThat((card.isRed || card.isBlue) && card.isMultiColor).isTrue()
+            assertWithMessage(card.toString()).that((card.isWhite || card.isGreen) && card.type.contains("elf", ignoreCase = true)).isTrue()
         }
     }
 
@@ -558,7 +499,7 @@ class MTGCardDataSourceTest {
     }
 
     @Test
-    fun search_cards_with_multiple_params() {
+    fun `search cards with multiple params`() {
         val searchParams = SearchParams()
         searchParams.name = "angel"
         searchParams.types = "creature"
@@ -566,14 +507,16 @@ class MTGCardDataSourceTest {
         searchParams.isRare = true
         searchParams.power = PTParam("=", 4)
         searchParams.tough = PTParam("=", 4)
+
         val cards = underTest.searchCards(searchParams)
+
         assertThat(cards).isNotEmpty()
         for (card in cards) {
             assertThat(card.name.toLowerCase(Locale.getDefault()).contains("angel")).isTrue()
             assertThat(card.type.toLowerCase(Locale.getDefault()).contains("creature")).isTrue()
             assertThat(card.isWhite).isTrue()
-            assertThat(Integer.parseInt(card.power) == 4).isTrue()
-            assertThat(Integer.parseInt(card.toughness) == 4).isTrue()
+            assertThat(card.power.toInt()).isEqualTo(4)
+            assertThat(card.toughness.toInt()).isEqualTo(4)
             assertThat(card.rarity == Rarity.RARE).isTrue()
         }
     }
