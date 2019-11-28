@@ -1,125 +1,133 @@
 [
   {
-    "title": "Version 3.17.0",
+    "title": "Versione 3.18.0",
+    "lines": [
+      "Risolto bug carte multicolore non ritornate in ricerca",
+      "Sistemato bug per ricercare carte con forza/costituzione maggiore di 10",
+      "Aggiunta opzione per rimuovere duplicati in ricerca"
+    ]
+  },
+  {
+    "title": "Versione 3.17.0",
     "lines": [
       "Opzione di ricerca di carte senza colore",
       "Supporto per le carte che si trasformano"
     ]
   },
   {
-    "title": "Version 3.16.3",
+    "title": "Versione 3.16.3",
     "lines": [
       "Sistemata ricerca di terre per nome"
     ]
   },
   {
-    "title": "Version 3.16.1",
+    "title": "Versione 3.16.1",
     "lines": [
       "Sistemata ricerca di carte multicolore per nome"
     ]
   },
   {
-    "title": "Version 3.16.0",
+    "title": "Versione 3.16.0",
     "lines": [
       "Nuovo dialog di aggiunta mazzo",
       "Ripristinata ricerca per terra e multicolore"
     ]
   },
   {
-    "title": "Version 3.15.0",
+    "title": "Versione 3.15.0",
     "lines": [
       "Migliorata ricerca per colore"
     ]
   },
   {
-    "title": "Version 3.14.1",
+    "title": "Versione 3.14.1",
     "lines": [
       "Sistemata ricerca per standard con Throne of Eldraine"
     ]
   },
   {
-    "title": "Version 3.14.0",
+    "title": "Versione 3.14.0",
     "lines": [
       "Throne of Eldraine"
     ]
   },
   {
-    "title": "Version 3.13.0",
+    "title": "Versione 3.13.0",
     "lines": [
       "Throne of Eldraine preview"
     ]
   },
   {
-    "title": "Version 3.12.0",
+    "title": "Versione 3.12.0",
     "lines": [
       "Commander 2019"
     ]
   },
   {
-    "title": "Version 3.11.1",
+    "title": "Versione 3.11.1",
     "lines": [
       "Sistemata visualizzazione sbagliata dei prezzi"
     ]
   },
   {
-    "title": "Version 3.11.0",
+    "title": "Versione 3.11.0",
     "lines": [
       "Core set 2020"
     ]
   },
   {
-    "title": "Version 3.10.0",
+    "title": "Versione 3.10.0",
     "lines": [
       "Modern Horizons"
     ]
   },
   {
-    "title": "Version 3.9.1",
+    "title": "Versione 3.9.1",
     "lines": [
       "War of the Spark",
       "Sistemata la ricerca per standard"
     ]
   },
   {
-    "title": "Version 3.9.0",
+    "title": "Versione 3.9.0",
     "lines": [
       "War of the Spark"
     ]
   },
   {
-    "title": "Version 3.8.0",
+    "title": "Versione 3.8.0",
     "lines": [
       "Indicatore colore mazzo",
       "Bug fixes"
     ]
   },
   {
-    "title": "Version 3.7.2",
+    "title": "Versione 3.7.2",
     "lines": [
       "Sistemata condivisione mazzo"
     ]
   },
   {
-    "title": "Version 3.7.1",
+    "title": "Versione 3.7.1",
     "lines": [
       "Bug fixes",
       "Migliorata integrazione dei prezzi con TCG Player"
     ]
   },
   {
-    "title": "Version 3.7.0",
+    "title": "Versione 3.7.0",
     "lines": [
       "NUOVO: Ravnica Allegiance"
     ]
   },
   {
-    "title": "Version 3.6.2",
+    "title": "Versione 3.6.2",
     "lines": [
       "Bug fixes"
     ]
   },
   {
-    "title": "Version 3.6.1",
+    "title": "Versione 3.6.1",
     "lines": [
       "Bug fixes",
       "Migliorata qualità delle immagini"
@@ -180,20 +188,20 @@
     ]
   },
   {
-    "title": "Version 3.2.9",
+    "title": "Versione 3.2.9",
     "lines": [
       "NUOVO: Condividi immagine carta"
     ]
   },
   {
-    "title": "Version 3.2.7",
+    "title": "Versione 3.2.7",
     "lines": [
       "NUOVO: Rivals of Ixalan",
       "NUOVO: Duel Decks: Nissa vs. Ob Nixilis"
     ]
   },
   {
-    "title": "Version 3.2.4",
+    "title": "Versione 3.2.4",
     "lines": [
       "NUOVO: copia mazzo",
       "NUOVO: prova mano di apertura mazzo",
@@ -201,7 +209,7 @@
     ]
   },
   {
-    "title": "Version 3.2.3",
+    "title": "Versione 3.2.3",
     "lines": [
       "NUOVO: Unstable",
       "NUOVO: Explorers of Ixalan",
@@ -210,19 +218,19 @@
     ]
   },
   {
-    "title": "Version 3.2.2",
+    "title": "Versione 3.2.2",
     "lines": [
       "bug fixes"
     ]
   },
   {
-    "title": "Version 3.2.1",
+    "title": "Versione 3.2.1",
     "lines": [
       "bug fixes"
     ]
   },
   {
-    "title": "Version 3.2.0",
+    "title": "Versione 3.2.0",
     "lines": [
       "NUOVO: Duel Decks: Merfolk vs. Goblins",
       "NUOVO: Iconic Masters",
@@ -230,20 +238,20 @@
     ]
   },
   {
-    "title": "Version 3.1.4",
+    "title": "Versione 3.1.4",
     "lines": [
       "ricerca per Standard sistemata",
       "legalità delle carte include"
     ]
   },
   {
-    "title": "Version 3.1.2",
+    "title": "Versione 3.1.2",
     "lines": [
       "NUOVO: Ixalan"
     ]
   },
   {
-    "title": "Version 3.0.0",
+    "title": "Versione 3.0.0",
     "lines": [
       "Nuova interfaccia"
     ]

@@ -1,5 +1,13 @@
 [
   {
+    "title": "Version 3.18.0",
+    "lines": [
+      "Fix cards not returned when searching with more than one color",
+      "Fix search by power/toughness greater than 10",
+      "Add option to remove duplicates in search"
+    ]
+  },
+  {
     "title": "Version 3.17.0",
     "lines": [
       "Colorless option in search",
