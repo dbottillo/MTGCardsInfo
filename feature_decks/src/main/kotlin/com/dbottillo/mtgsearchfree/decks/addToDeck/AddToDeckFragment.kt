@@ -1,19 +1,16 @@
 package com.dbottillo.mtgsearchfree.decks.addToDeck
 
-import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import com.google.android.material.textfield.TextInputLayout
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentActivity
-import android.text.InputFilter
-import android.text.Spanned
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.Spinner
@@ -31,19 +28,19 @@ import dagger.android.support.AndroidSupportInjection
 @Suppress("EmptyFunctionBlock")
 class AddToDeckFragment : BottomSheetDialogFragment(), AddToDeckView {
 
-    lateinit var chooseDeck: Spinner
-    lateinit var chooseQuantity: Spinner
-    lateinit var sideboard: CheckBox
-    lateinit var cardNameInputLayout: TextInputLayout
-    lateinit var deckName: EditText
-    lateinit var cardQuantityInputLayout: TextInputLayout
-    lateinit var cardQuantity: EditText
-    lateinit var title: TextView
+    private lateinit var chooseDeck: Spinner
+    private lateinit var sideboard: CheckBox
+    private lateinit var cardNameInputLayout: TextInputLayout
+    private lateinit var deckName: EditText
+    private lateinit var title: TextView
+    private lateinit var quantityIndicator: TextView
+    private lateinit var quantityPlus: Button
+    private lateinit var quantityMinus: Button
 
     private var decksChoose: MutableList<String> = mutableListOf()
-    private var quantityChoose: Array<String> = arrayOf()
 
-    internal var decks: List<Deck> = mutableListOf()
+    private var decks: List<Deck> = mutableListOf()
+    private var quantity = 1
 
     @Inject
     lateinit var presenter: AddToDeckPresenter
@@ -62,17 +59,15 @@ class AddToDeckFragment : BottomSheetDialogFragment(), AddToDeckView {
 
         title = view.findViewById(R.id.add_card_title)
         chooseDeck = view.findViewById(R.id.choose_deck)
-        chooseQuantity = view.findViewById(R.id.choose_quantity)
         sideboard = view.findViewById(R.id.add_to_deck_sideboard)
         cardNameInputLayout = view.findViewById(R.id.new_deck_name_input_layout)
-        cardQuantityInputLayout = view.findViewById(R.id.new_deck_quantity_input_layout)
         deckName = view.findViewById(R.id.new_deck_name)
-        cardQuantity = view.findViewById(R.id.new_deck_quantity)
+        quantityIndicator = view.findViewById(R.id.quantity_indicator)
+        quantityPlus = view.findViewById(R.id.quantity_plus)
+        quantityMinus = view.findViewById(R.id.quantity_minus)
         view.findViewById<View>(R.id.add_to_deck_save).setOnClickListener { addToDeck() }
 
-        cardQuantity.filters = arrayOf<InputFilter>(InputFilterMinMax(1, 30))
-
-        setupQuantitySpinner()
+        setupQuantity()
 
         presenter.init(this, arguments)
     }
@@ -87,33 +82,24 @@ class AddToDeckFragment : BottomSheetDialogFragment(), AddToDeckView {
         presenter.onDestroyView()
     }
 
-    private fun setupQuantitySpinner() {
+    private fun setupQuantity() {
         LOG.d()
-        quantityChoose = arrayOf(getString(R.string.deck_choose_quantity), "1", "2", "3", "4", getString(R.string.deck_specify))
-        val adapter = ArrayAdapter<CharSequence>(activity as FragmentActivity, R.layout.add_to_deck_spinner_item, quantityChoose)
-        adapter.setDropDownViewResource(R.layout.add_to_deck_dropdown_item)
-        chooseQuantity.adapter = adapter
-        chooseQuantity.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                LOG.d()
-                if (position == 5) {
-                    chooseQuantity.visibility = View.GONE
-                    cardQuantityInputLayout.visibility = View.VISIBLE
-                    cardQuantity.requestFocus()
-                }
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>) {
-            }
+        quantityPlus.setOnClickListener {
+            quantity++
+            updateQuantityIndicator()
         }
+        quantityMinus.setOnClickListener {
+            quantity--
+            if (quantity < 1) {
+                quantity = 1
+            }
+            updateQuantityIndicator()
+        }
+        updateQuantityIndicator()
     }
 
-    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        LOG.d()
-        val dialog = super.onCreateDialog(savedInstanceState)
-        // request a window without the title
-        dialog.window?.requestFeature(Window.FEATURE_NO_TITLE)
-        return dialog
+    private fun updateQuantityIndicator() {
+        quantityIndicator.text = quantity.toString()
     }
 
     private fun setupDecksSpinner(decks: List<Deck>, selectedDeck: Long) {
@@ -141,27 +127,18 @@ class AddToDeckFragment : BottomSheetDialogFragment(), AddToDeckView {
         }
     }
 
-    internal fun addToDeck() {
+    private fun addToDeck() {
         LOG.d()
-        var quantity = -1
-        if (chooseQuantity.visibility == View.VISIBLE && chooseQuantity.selectedItemPosition > 0) {
-            quantity = Integer.parseInt(quantityChoose[chooseQuantity.selectedItemPosition])
+        if (chooseDeck.visibility == View.VISIBLE && chooseDeck.selectedItemPosition > 0) {
+            val deck = decks[chooseDeck.selectedItemPosition - 1]
+            val side = sideboard.isChecked
+            saveCard(quantity, deck, side)
+            dismiss()
         }
-        if (chooseQuantity.visibility == View.GONE && cardQuantity.text.isNotEmpty()) {
-            quantity = Integer.parseInt(cardQuantity.text.toString())
-        }
-        if (quantity > -1) {
-            if (chooseDeck.visibility == View.VISIBLE && chooseDeck.selectedItemPosition > 0) {
-                val deck = decks[chooseDeck.selectedItemPosition - 1]
-                val side = sideboard.isChecked
-                saveCard(quantity, deck, side)
-                dismiss()
-            }
-            if (chooseDeck.visibility == View.GONE && deckName.text.isNotEmpty()) {
-                val side = sideboard.isChecked
-                saveCard(quantity, deckName.text.toString(), side)
-                dismiss()
-            }
+        if (chooseDeck.visibility == View.GONE && deckName.text.isNotEmpty()) {
+            val side = sideboard.isChecked
+            saveCard(quantity, deckName.text.toString(), side)
+            dismiss()
         }
     }
 
@@ -189,26 +166,6 @@ class AddToDeckFragment : BottomSheetDialogFragment(), AddToDeckView {
     override fun decksLoaded(decks: List<Deck>, selectedDeck: Long) {
         LOG.d()
         setupDecksSpinner(decks, selectedDeck)
-    }
-
-    class InputFilterMinMax(private val min: Int, private val max: Int) : InputFilter {
-
-        override fun filter(source: CharSequence, start: Int, end: Int, dest: Spanned, dstart: Int, dend: Int): CharSequence? {
-            try {
-                val input = Integer.parseInt(dest.toString() + source.toString())
-                if (isInRange(min, max, input)) {
-                    return null
-                }
-            } catch (ignored: NumberFormatException) {
-                return ""
-            }
-
-            return ""
-        }
-
-        private fun isInRange(a: Int, b: Int, c: Int): Boolean {
-            return if (b > a) c in a..b else c in b..a
-        }
     }
 
     companion object {

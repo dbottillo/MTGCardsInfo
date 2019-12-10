@@ -1,29 +1,43 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/MTGSearchTheme"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp"
     tools:background="@color/white">
+
+    <Space
+        android:id="@+id/top_space"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        app:layout_constraintBottom_toTopOf="@id/add_card_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/add_card_title"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
+        android:layout_marginBottom="@dimen/base_margin"
         android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/new_deck_name_input_layout"
+        app:layout_constraintEnd_toEndOf="@+id/right_guideline"
+        app:layout_constraintStart_toStartOf="@+id/left_guideline"
         tools:text="Add Counterspell to:" />
-
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/new_deck_name_input_layout"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/base_margin"
+        android:layout_marginBottom="@dimen/base_margin"
         android:theme="@style/EditTextPrimary"
-        android:visibility="gone">
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/choose_deck"
+        app:layout_constraintEnd_toEndOf="@+id/right_guideline"
+        app:layout_constraintStart_toStartOf="@+id/left_guideline"
+        tools:visibility="visible">
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/new_deck_name"
@@ -37,52 +51,113 @@
 
     <Spinner
         android:id="@+id/choose_deck"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/base_margin" />
+        android:layout_marginBottom="@dimen/base_margin"
+        app:layout_constraintBottom_toTopOf="@+id/quantity_container"
+        app:layout_constraintEnd_toEndOf="@+id/right_guideline"
+        app:layout_constraintStart_toStartOf="@+id/left_guideline" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/new_deck_quantity_input_layout"
-        android:layout_width="match_parent"
+    <View
+        android:id="@+id/quantity_container"
+        android:layout_width="0dp"
+        android:layout_height="92dp"
+        android:layout_marginBottom="@dimen/base_margin"
+        app:layout_constraintBottom_toTopOf="@+id/add_to_deck_sideboard"
+        app:layout_constraintEnd_toEndOf="@+id/right_guideline"
+        app:layout_constraintStart_toStartOf="@+id/left_guideline" />
+
+    <TextView
+        android:id="@+id/quantity_indicator"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/base_margin"
-        android:theme="@style/EditTextPrimary"
-        android:visibility="gone">
+        android:textColor="@color/color_accent_dark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/quantity_container"
+        app:layout_constraintEnd_toStartOf="@+id/quantity_plus"
+        app:layout_constraintStart_toEndOf="@+id/quantity_minus"
+        app:layout_constraintTop_toTopOf="@+id/quantity_container"
+        tools:ignore="HardcodedText"
+        tools:text="1" />
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/new_deck_quantity"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/new_deck_quantity_hint"
-            android:inputType="number"
-            android:textColor="@color/color_primary"
-            android:theme="@style/EditTextPrimary" />
-    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/quantity_minus"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_button_counter"
+        android:foreground="@drawable/button_ripple"
+        android:padding="0dp"
+        android:text="-"
+        android:textColor="@color/color_primary"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@id/quantity_container"
+        app:layout_constraintEnd_toStartOf="@+id/quantity_indicator"
+        app:layout_constraintStart_toStartOf="@id/left_guideline"
+        app:layout_constraintTop_toTopOf="@id/quantity_container"
+        tools:ignore="HardcodedText" />
 
-    <Spinner
-        android:id="@+id/choose_quantity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/base_margin" />
+    <Button
+        android:id="@+id/quantity_plus"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_button_counter"
+        android:foreground="@drawable/button_ripple"
+        android:padding="0dp"
+        android:text="+"
+        android:textColor="@color/color_primary"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@id/quantity_container"
+        app:layout_constraintEnd_toEndOf="@id/right_guideline"
+        app:layout_constraintStart_toEndOf="@id/quantity_indicator"
+        app:layout_constraintTop_toTopOf="@id/quantity_container"
+        tools:ignore="HardcodedText" />
 
     <androidx.appcompat.widget.AppCompatCheckBox
         android:id="@+id/add_to_deck_sideboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:layout_marginTop="@dimen/base_margin"
+        android:layout_marginBottom="@dimen/base_margin"
         android:buttonTint="@color/color_primary"
         android:text="@string/sideboard"
         android:textColor="@color/color_primary"
+        app:layout_constraintBottom_toTopOf="@+id/add_to_deck_save"
+        app:layout_constraintStart_toStartOf="@+id/left_guideline"
         tools:ignore="UnusedAttribute" />
 
     <Button
         android:id="@+id/add_to_deck_save"
         style="@style/BtnGeneric"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/base_margin"
-        android:text="@string/add" />
+        android:text="@string/add"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_space"
+        app:layout_constraintEnd_toEndOf="@+id/right_guideline"
+        app:layout_constraintStart_toStartOf="@+id/left_guideline" />
 
-</LinearLayout>
+    <Space
+        android:id="@+id/bottom_space"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/left_guideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/right_guideline"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
