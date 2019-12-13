@@ -1,6 +1,8 @@
 package com.dbottillo.mtgsearchfree.model
 
 import android.os.Parcelable
+import com.dbottillo.mtgsearchfree.model.SetType.EXPANSION
+import com.dbottillo.mtgsearchfree.model.SetType.PREVIEW
 import kotlinx.android.parcel.IgnoredOnParcel
 import kotlinx.android.parcel.Parcelize
 import java.util.Locale
@@ -10,7 +12,8 @@ import java.util.Locale
 data class MTGSet(
     var id: Int,
     var code: String? = null,
-    var name: String
+    var name: String,
+    var type: SetType = EXPANSION
 ) : Parcelable {
 
     val magicCardsInfoCode: String
@@ -23,8 +26,7 @@ data class MTGSet(
             return code?.toLowerCase(Locale.getDefault()) ?: ""
         }
 
-    // @IgnoredOnParcel val isPreview = code == "ELD"
-    @IgnoredOnParcel val isPreview = false
+    @IgnoredOnParcel val isPreview = type == PREVIEW
 
     /**
      * equals is manually overridden because
@@ -33,7 +35,7 @@ data class MTGSet(
     override fun equals(other: Any?): Boolean {
         if (this !== other) {
             if (other is MTGSet) {
-                if (this.code == other.code && this.name == other.name) {
+                if (this.code == other.code && this.name == other.name && this.type == other.type) {
                     return true
                 }
             }
@@ -42,6 +44,10 @@ data class MTGSet(
             return true
         }
     }
+}
+
+enum class SetType {
+    EXPANSION, PROMO, PREVIEW, FUNNY, COMMANDER
 }
 
 private enum class CARDSINFOMAP(val set: String, val mapped: String) {

@@ -4,6 +4,12 @@ import android.content.ContentValues
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import com.dbottillo.mtgsearchfree.model.MTGSet
+import com.dbottillo.mtgsearchfree.model.SetType
+import com.dbottillo.mtgsearchfree.model.SetType.COMMANDER
+import com.dbottillo.mtgsearchfree.model.SetType.EXPANSION
+import com.dbottillo.mtgsearchfree.model.SetType.FUNNY
+import com.dbottillo.mtgsearchfree.model.SetType.PREVIEW
+import com.dbottillo.mtgsearchfree.model.SetType.PROMO
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.add
 import com.dbottillo.mtgsearchfree.util.fromJson
@@ -37,6 +43,7 @@ class SetDataSource(private val database: SQLiteDatabase) {
             }
             put("name", set.name)
             put("code", set.code)
+            put("type", wrap(set.type))
         }
         return database.insertWithOnConflict(TABLE, null, values, SQLiteDatabase.CONFLICT_REPLACE)
     }
@@ -51,9 +58,29 @@ class SetDataSource(private val database: SQLiteDatabase) {
     }
 
     fun fromCursor(cursor: Cursor): MTGSet {
+        val type = cursor.getString(cursor.getColumnIndex("type")) ?: null
         return MTGSet(id = cursor.getIntFromColumn("_id"),
                 name = cursor.getStringFromColumn("name"),
-                code = cursor.getStringFromColumn("code"))
+                code = cursor.getStringFromColumn("code"),
+                type = unwrap(type))
+    }
+
+    fun unwrap(input: String?): SetType {
+        return when (input) {
+            "preview" -> PREVIEW
+            "funny" -> FUNNY
+            "commander" -> COMMANDER
+            "promo" -> PROMO
+            else -> EXPANSION
+        }
+    }
+
+    private fun wrap(input: SetType): String {
+        return when (input) {
+            PREVIEW -> "preview"
+            FUNNY -> "funny"
+            else -> "normal"
+        }
     }
 
     @Throws(JSONException::class)
@@ -61,6 +88,7 @@ class SetDataSource(private val database: SQLiteDatabase) {
         return ContentValues().apply {
             fromJson("name", jsonObject)
             fromJson("code", jsonObject)
+            fromJson("type", jsonObject)
         }
     }
 
@@ -72,7 +100,8 @@ class SetDataSource(private val database: SQLiteDatabase) {
             val builder = StringBuilder("CREATE TABLE IF NOT EXISTS ")
             builder.append(TABLE).append(" (_id INTEGER PRIMARY KEY, ")
             builder.add(name = "name", type = "TEXT")
-            builder.add(name = "code", type = "TEXT", last = true)
+            builder.add(name = "code", type = "TEXT")
+            builder.add(name = "type", type = "TEXT", last = true)
             return builder.append(')').toString()
         }
     }

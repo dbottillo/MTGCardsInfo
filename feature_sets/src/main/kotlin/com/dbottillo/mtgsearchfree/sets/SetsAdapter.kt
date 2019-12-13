@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import com.dbottillo.mtgsearchfree.model.MTGSet
 
 class SetsAdapter(
-    val sets: List<MTGSet>,
-    val currentPos: Int,
-    val selected: (set: MTGSet) -> Unit
+    private val sets: List<MTGSet>,
+    private val currentPos: Int,
+    private val selected: (set: MTGSet) -> Unit
 ) : RecyclerView.Adapter<SetViewHolder>() {
 
     override fun getItemCount(): Int {

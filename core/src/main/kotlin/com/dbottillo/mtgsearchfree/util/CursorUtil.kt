@@ -5,7 +5,7 @@ import android.database.Cursor
 import org.json.JSONObject
 
 fun ContentValues.fromJson(name: String, jsonObject: JSONObject) {
-    put(name, jsonObject.getString(name))
+    put(name, if (jsonObject.has(name)) jsonObject.getString(name) else null)
 }
 
 fun StringBuilder.add(name: String, type: String, last: Boolean = false) {

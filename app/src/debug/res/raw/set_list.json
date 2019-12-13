@@ -955,7 +955,45 @@
     "name": "Throne of Eldraine",
     "releaseDate": "2019-10-04",
     "totalSetSize": 235,
-    "type": "expansion",
-    "preview": true
+    "type": "expansion"
+  },
+  {
+    "baseSetSize": 0,
+    "code": "PTG",
+    "meta": {
+      "date": "2019-12-09",
+      "pricesDate": "2019-12-09",
+      "version": "4.6.1+20191209"
+    },
+    "name": "Ponies: The Galloping",
+    "releaseDate": "2019-10-22",
+    "totalSetSize": 3,
+    "type": "funny"
+  },
+  {
+    "baseSetSize": 0,
+    "code": "MB1",
+    "meta": {
+      "date": "2019-12-09",
+      "pricesDate": "2019-12-09",
+      "version": "4.6.1+20191209"
+    },
+    "name": "Mystery Booster",
+    "releaseDate": "2019-11-07",
+    "totalSetSize": 1694,
+    "type": "funny"
+  },
+  {
+    "baseSetSize": 0,
+    "code": "SLD",
+    "meta": {
+      "date": "2019-12-09",
+      "pricesDate": "2019-12-09",
+      "version": "4.6.1+20191209"
+    },
+    "name": "Secret Lair Drop Series",
+    "releaseDate": "2019-12-02",
+    "totalSetSize": 32,
+    "type": "promo"
   }
 ]

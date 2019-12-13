@@ -108,15 +108,15 @@ data class MTGCard(
             Rarity.RARE -> R.color.rare
             Rarity.MYTHIC -> R.color.mythic
         }
-
     val scryfallImage
         get() = when {
-            scryfallId.isNotEmpty() && (isNormal || isAdventure) -> "https://api.scryfall.com/cards/$scryfallId?format=image"
+            scryfallId.isNotEmpty() && (isNormal || isAdventure || isTransform) -> "https://api.scryfall.com/cards/$scryfallId?format=image${if (side == Side.B) "&face=back" else ""}"
             else -> "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=$multiVerseId&type=card"
         }
 
     fun getMtgColor(context: Context): Int {
-        return ContextCompat.getColor(context,
+        return ContextCompat.getColor(
+            context,
             when {
                 colorsIdentity.size > 1 -> R.color.mtg_multi
                 colorsIdentity.isEmpty() -> R.color.mtg_other
@@ -126,7 +126,8 @@ data class MTGCard(
                 colorsIdentity[0] == Color.RED -> R.color.mtg_red
                 colorsIdentity[0] == Color.GREEN -> R.color.mtg_green
                 else -> R.color.mtg_other
-            })
+            }
+        )
     }
 
     val isWhite: Boolean

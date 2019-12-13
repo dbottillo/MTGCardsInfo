@@ -74,7 +74,7 @@ class FileUtil(private val fileManager: FileManagerI) {
     }
 }
 
-private val mtgSearchDirectory: File?
+private val Context.mtgSearchDirectory: File?
     get() {
         val root = File(Environment.getExternalStorageDirectory(), if (BuildConfig.DEBUG) "MTGSearchDebug" else "MTGSearch")
         if (!root.exists()) {
@@ -89,8 +89,11 @@ private val mtgSearchDirectory: File?
 fun Context.copyDbToSdCard(name: String): File? {
     LOG.e("copy db to sd card")
     try {
-        val root = mtgSearchDirectory ?: return null
-        if (root.canWrite()) {
+        val root = mtgSearchDirectory
+        if (root == null) {
+            LOG.e("mtg search director null")
+        }
+        if (root?.canWrite() == true) {
             val currentDB = this.getDatabasePath(name)
             val backupDB = File(root, name)
 

@@ -5,10 +5,9 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.Player
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.google.common.truth.Truth.assertThat
 import com.google.gson.Gson
 import com.nhaarman.mockito_kotlin.mock
-import org.hamcrest.MatcherAssert.assertThat
-import org.hamcrest.Matchers.`is`
 import org.junit.After
 import org.junit.Assert.assertTrue
 import org.junit.Before
@@ -35,12 +34,12 @@ class CardsInfoDbHelperTest {
     @Test
     fun test_tables_are_created() {
         val tables = readTables(cardsInfoDbHelper)
-        assertThat(tables.size, `is`(7)) // android_metadata + sqlite_sequence + number of tables required
-        assertThat(tables.contains(CardDataSource.TABLE), `is`(true))
-        assertThat(tables.contains(DeckDataSource.TABLE), `is`(true))
-        assertThat(tables.contains(DeckDataSource.TABLE_JOIN), `is`(true))
-        assertThat(tables.contains(PlayerDataSource.TABLE), `is`(true))
-        assertThat(tables.contains(FavouritesDataSource.TABLE), `is`(true))
+        assertThat(tables.size).isEqualTo(7) // android_metadata + sqlite_sequence + number of tables required
+        assertThat(tables.contains(CardDataSource.TABLE)).isEqualTo(true)
+        assertThat(tables.contains(DeckDataSource.TABLE)).isEqualTo(true)
+        assertThat(tables.contains(DeckDataSource.TABLE_JOIN)).isEqualTo(true)
+        assertThat(tables.contains(PlayerDataSource.TABLE)).isEqualTo(true)
+        assertThat(tables.contains(FavouritesDataSource.TABLE)).isEqualTo(true)
     }
 
     @Test
@@ -65,22 +64,22 @@ class CardsInfoDbHelperTest {
         val db = cardsInfoDbHelper.writableDatabase
         downgradeDb(db, 1)
         val tables = readTables(cardsInfoDbHelper)
-        assertThat(tables.contains(CardDataSource.TABLE), `is`(true))
-        assertThat(tables.contains(DeckDataSource.TABLE), `is`(false))
-        assertThat(tables.contains(DeckDataSource.TABLE_JOIN), `is`(false))
-        assertThat(tables.contains(PlayerDataSource.TABLE), `is`(false))
-        assertThat(tables.contains(FavouritesDataSource.TABLE), `is`(false))
+        assertThat(tables.contains(CardDataSource.TABLE)).isEqualTo(true)
+        assertThat(tables.contains(DeckDataSource.TABLE)).isEqualTo(false)
+        assertThat(tables.contains(DeckDataSource.TABLE_JOIN)).isEqualTo(false)
+        assertThat(tables.contains(PlayerDataSource.TABLE)).isEqualTo(false)
+        assertThat(tables.contains(FavouritesDataSource.TABLE)).isEqualTo(false)
         var columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun), `is`(false))
+        assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun)).isEqualTo(false)
         cardsInfoDbHelper.onUpgrade(db, 1, 2)
         columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun), `is`(true))
+        assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun)).isEqualTo(true)
     }
 
     @Test
@@ -88,25 +87,25 @@ class CardsInfoDbHelperTest {
         val db = cardsInfoDbHelper.writableDatabase
         downgradeDb(db, 1)
         var tables = readTables(cardsInfoDbHelper)
-        assertThat(tables.contains(CardDataSource.TABLE), `is`(true))
-        assertThat(tables.contains(DeckDataSource.TABLE), `is`(false))
-        assertThat(tables.contains(DeckDataSource.TABLE_JOIN), `is`(false))
-        assertThat(tables.contains(PlayerDataSource.TABLE), `is`(false))
-        assertThat(tables.contains(FavouritesDataSource.TABLE), `is`(false))
+        assertThat(tables.contains(CardDataSource.TABLE)).isEqualTo(true)
+        assertThat(tables.contains(DeckDataSource.TABLE)).isEqualTo(false)
+        assertThat(tables.contains(DeckDataSource.TABLE_JOIN)).isEqualTo(false)
+        assertThat(tables.contains(PlayerDataSource.TABLE)).isEqualTo(false)
+        assertThat(tables.contains(FavouritesDataSource.TABLE)).isEqualTo(false)
         var columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun), `is`(false))
+        assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun)).isEqualTo(false)
         cardsInfoDbHelper.onUpgrade(db, 1, 3)
         tables = readTables(cardsInfoDbHelper)
-        assertThat(tables.contains(PlayerDataSource.TABLE), `is`(true))
-        assertThat(tables.contains(FavouritesDataSource.TABLE), `is`(true))
+        assertThat(tables.contains(PlayerDataSource.TABLE)).isEqualTo(true)
+        assertThat(tables.contains(FavouritesDataSource.TABLE)).isEqualTo(true)
         columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun), `is`(true))
+        assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun)).isEqualTo(true)
     }
 
     @Test
@@ -114,25 +113,25 @@ class CardsInfoDbHelperTest {
         val db = cardsInfoDbHelper.writableDatabase
         downgradeDb(db, 1)
         var tables = readTables(cardsInfoDbHelper)
-        assertThat(tables.contains(CardDataSource.TABLE), `is`(true))
-        assertThat(tables.contains(DeckDataSource.TABLE), `is`(false))
-        assertThat(tables.contains(DeckDataSource.TABLE_JOIN), `is`(false))
-        assertThat(tables.contains(PlayerDataSource.TABLE), `is`(false))
-        assertThat(tables.contains(FavouritesDataSource.TABLE), `is`(false))
+        assertThat(tables.contains(CardDataSource.TABLE)).isEqualTo(true)
+        assertThat(tables.contains(DeckDataSource.TABLE)).isEqualTo(false)
+        assertThat(tables.contains(DeckDataSource.TABLE_JOIN)).isEqualTo(false)
+        assertThat(tables.contains(PlayerDataSource.TABLE)).isEqualTo(false)
+        assertThat(tables.contains(FavouritesDataSource.TABLE)).isEqualTo(false)
         var columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun), `is`(false))
+        assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun)).isEqualTo(false)
         cardsInfoDbHelper.onUpgrade(db, 1, 4)
         tables = readTables(cardsInfoDbHelper)
-        assertThat(tables.contains(PlayerDataSource.TABLE), `is`(true))
-        assertThat(tables.contains(FavouritesDataSource.TABLE), `is`(true))
+        assertThat(tables.contains(PlayerDataSource.TABLE)).isEqualTo(true)
+        assertThat(tables.contains(FavouritesDataSource.TABLE)).isEqualTo(true)
         columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun), `is`(true))
+        assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun)).isEqualTo(true)
     }
 
     @Test
@@ -140,27 +139,27 @@ class CardsInfoDbHelperTest {
         val db = cardsInfoDbHelper.writableDatabase
         downgradeDb(db, 2)
         var tables = readTables(cardsInfoDbHelper)
-        assertThat(tables.contains(CardDataSource.TABLE), `is`(true))
-        assertThat(tables.contains(DeckDataSource.TABLE), `is`(false))
-        assertThat(tables.contains(DeckDataSource.TABLE_JOIN), `is`(false))
-        assertThat(tables.contains(PlayerDataSource.TABLE), `is`(false))
-        assertThat(tables.contains(FavouritesDataSource.TABLE), `is`(false))
+        assertThat(tables.contains(CardDataSource.TABLE)).isEqualTo(true)
+        assertThat(tables.contains(DeckDataSource.TABLE)).isEqualTo(false)
+        assertThat(tables.contains(DeckDataSource.TABLE_JOIN)).isEqualTo(false)
+        assertThat(tables.contains(PlayerDataSource.TABLE)).isEqualTo(false)
+        assertThat(tables.contains(FavouritesDataSource.TABLE)).isEqualTo(false)
         var columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun), `is`(false))
+        assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun)).isEqualTo(false)
         cardsInfoDbHelper.onUpgrade(db, 2, 3)
         tables = readTables(cardsInfoDbHelper)
-        assertThat(tables.contains(PlayerDataSource.TABLE), `is`(true))
-        assertThat(tables.contains(FavouritesDataSource.TABLE), `is`(true))
-        assertThat(tables.contains(DeckDataSource.TABLE), `is`(false))
-        assertThat(tables.contains(DeckDataSource.TABLE_JOIN), `is`(false))
+        assertThat(tables.contains(PlayerDataSource.TABLE)).isEqualTo(true)
+        assertThat(tables.contains(FavouritesDataSource.TABLE)).isEqualTo(true)
+        assertThat(tables.contains(DeckDataSource.TABLE)).isEqualTo(false)
+        assertThat(tables.contains(DeckDataSource.TABLE_JOIN)).isEqualTo(false)
         columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun), `is`(true))
+        assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun)).isEqualTo(true)
     }
 
     @Test
@@ -168,27 +167,27 @@ class CardsInfoDbHelperTest {
         val db = cardsInfoDbHelper.writableDatabase
         downgradeDb(db, 2)
         var tables = readTables(cardsInfoDbHelper)
-        assertThat(tables.contains(CardDataSource.TABLE), `is`(true))
-        assertThat(tables.contains(DeckDataSource.TABLE), `is`(false))
-        assertThat(tables.contains(DeckDataSource.TABLE_JOIN), `is`(false))
-        assertThat(tables.contains(PlayerDataSource.TABLE), `is`(false))
-        assertThat(tables.contains(FavouritesDataSource.TABLE), `is`(false))
+        assertThat(tables.contains(CardDataSource.TABLE)).isEqualTo(true)
+        assertThat(tables.contains(DeckDataSource.TABLE)).isEqualTo(false)
+        assertThat(tables.contains(DeckDataSource.TABLE_JOIN)).isEqualTo(false)
+        assertThat(tables.contains(PlayerDataSource.TABLE)).isEqualTo(false)
+        assertThat(tables.contains(FavouritesDataSource.TABLE)).isEqualTo(false)
         var columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun), `is`(false))
+        assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun)).isEqualTo(false)
         cardsInfoDbHelper.onUpgrade(db, 2, 4)
         tables = readTables(cardsInfoDbHelper)
-        assertThat(tables.contains(PlayerDataSource.TABLE), `is`(true))
-        assertThat(tables.contains(FavouritesDataSource.TABLE), `is`(true))
-        assertThat(tables.contains(DeckDataSource.TABLE), `is`(true))
-        assertThat(tables.contains(DeckDataSource.TABLE_JOIN), `is`(true))
+        assertThat(tables.contains(PlayerDataSource.TABLE)).isEqualTo(true)
+        assertThat(tables.contains(FavouritesDataSource.TABLE)).isEqualTo(true)
+        assertThat(tables.contains(DeckDataSource.TABLE)).isEqualTo(true)
+        assertThat(tables.contains(DeckDataSource.TABLE_JOIN)).isEqualTo(true)
         columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun), `is`(true))
+        assertThat(columns.contains(CardDataSource.COLUMNS.RULINGS.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun)).isEqualTo(true)
     }
 
     @Test
@@ -196,21 +195,21 @@ class CardsInfoDbHelperTest {
         val db = cardsInfoDbHelper.writableDatabase
         downgradeDb(db, 3)
         var tables = readTables(cardsInfoDbHelper)
-        assertThat(tables.contains(CardDataSource.TABLE), `is`(true))
-        assertThat(tables.contains(DeckDataSource.TABLE), `is`(false))
-        assertThat(tables.contains(DeckDataSource.TABLE_JOIN), `is`(false))
-        assertThat(tables.contains(PlayerDataSource.TABLE), `is`(true))
-        assertThat(tables.contains(FavouritesDataSource.TABLE), `is`(true))
+        assertThat(tables.contains(CardDataSource.TABLE)).isEqualTo(true)
+        assertThat(tables.contains(DeckDataSource.TABLE)).isEqualTo(false)
+        assertThat(tables.contains(DeckDataSource.TABLE_JOIN)).isEqualTo(false)
+        assertThat(tables.contains(PlayerDataSource.TABLE)).isEqualTo(true)
+        assertThat(tables.contains(FavouritesDataSource.TABLE)).isEqualTo(true)
         var columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun), `is`(false))
+        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun)).isEqualTo(false)
         cardsInfoDbHelper.onUpgrade(db, 3, 4)
         tables = readTables(cardsInfoDbHelper)
-        assertThat(tables.contains(DeckDataSource.TABLE), `is`(true))
-        assertThat(tables.contains(DeckDataSource.TABLE_JOIN), `is`(true))
+        assertThat(tables.contains(DeckDataSource.TABLE)).isEqualTo(true)
+        assertThat(tables.contains(DeckDataSource.TABLE_JOIN)).isEqualTo(true)
         columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun), `is`(true))
+        assertThat(columns.contains(CardDataSource.COLUMNS.NUMBER.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.SET_CODE.noun)).isEqualTo(true)
     }
 
     @Test
@@ -218,10 +217,10 @@ class CardsInfoDbHelperTest {
         val db = cardsInfoDbHelper.writableDatabase
         downgradeDb(db, 4)
         var columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun), `is`(true))
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun)).isEqualTo(true)
         cardsInfoDbHelper.onUpgrade(db, 4, 5)
         columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun), `is`(true))
+        assertThat(columns.contains(CardDataSource.COLUMNS.LAYOUT.noun)).isEqualTo(true)
     }
 
     @Test
@@ -229,24 +228,24 @@ class CardsInfoDbHelperTest {
         val db = cardsInfoDbHelper.writableDatabase
         downgradeDb(db, 6)
         var columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.NAMES.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.SUPER_TYPES.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.FLAVOR.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.ARTIST.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.LOYALTY.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.PRINTINGS.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.LEGALITIES.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.ORIGINAL_TEXT.noun), `is`(false))
+        assertThat(columns.contains(CardDataSource.COLUMNS.NAMES.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.SUPER_TYPES.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.FLAVOR.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.ARTIST.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.LOYALTY.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.PRINTINGS.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.LEGALITIES.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.ORIGINAL_TEXT.noun)).isEqualTo(false)
         cardsInfoDbHelper.onUpgrade(db, 6, 7)
         columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.NAMES.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.SUPER_TYPES.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.FLAVOR.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.ARTIST.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.LOYALTY.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.PRINTINGS.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.LEGALITIES.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.ORIGINAL_TEXT.noun), `is`(true))
+        assertThat(columns.contains(CardDataSource.COLUMNS.NAMES.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.SUPER_TYPES.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.FLAVOR.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.ARTIST.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.LOYALTY.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.PRINTINGS.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.LEGALITIES.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.ORIGINAL_TEXT.noun)).isEqualTo(true)
     }
 
     @Test
@@ -254,10 +253,10 @@ class CardsInfoDbHelperTest {
         val db = cardsInfoDbHelper.writableDatabase
         downgradeDb(db, 7)
         var columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.COLORS_IDENTITY.noun), `is`(false))
+        assertThat(columns.contains(CardDataSource.COLUMNS.COLORS_IDENTITY.noun)).isEqualTo(false)
         cardsInfoDbHelper.onUpgrade(db, 7, 8)
         columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.COLORS_IDENTITY.noun), `is`(true))
+        assertThat(columns.contains(CardDataSource.COLUMNS.COLORS_IDENTITY.noun)).isEqualTo(true)
     }
 
     @Test
@@ -265,10 +264,10 @@ class CardsInfoDbHelperTest {
         val db = cardsInfoDbHelper.writableDatabase
         downgradeDb(db, 8)
         var columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.UUID.noun), `is`(false))
+        assertThat(columns.contains(CardDataSource.COLUMNS.UUID.noun)).isEqualTo(false)
         cardsInfoDbHelper.onUpgrade(db, 8, 9)
         columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.UUID.noun), `is`(true))
+        assertThat(columns.contains(CardDataSource.COLUMNS.UUID.noun)).isEqualTo(true)
     }
 
     @Test
@@ -276,12 +275,12 @@ class CardsInfoDbHelperTest {
         val db = cardsInfoDbHelper.writableDatabase
         downgradeDb(db, 9)
         var columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.SCRYFALLID.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.TCG_PLAYER_PRODUCT_ID.noun), `is`(false))
+        assertThat(columns.contains(CardDataSource.COLUMNS.SCRYFALLID.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.TCG_PLAYER_PRODUCT_ID.noun)).isEqualTo(false)
         cardsInfoDbHelper.onUpgrade(db, 9, 10)
         columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.SCRYFALLID.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.TCG_PLAYER_PRODUCT_ID.noun), `is`(true))
+        assertThat(columns.contains(CardDataSource.COLUMNS.SCRYFALLID.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.TCG_PLAYER_PRODUCT_ID.noun)).isEqualTo(true)
     }
 
     @Test
@@ -289,10 +288,10 @@ class CardsInfoDbHelperTest {
         val db = cardsInfoDbHelper.writableDatabase
         downgradeDb(db, 10)
         var columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.TCG_PLAYER_PURCHASE_URL.noun), `is`(false))
+        assertThat(columns.contains(CardDataSource.COLUMNS.TCG_PLAYER_PURCHASE_URL.noun)).isEqualTo(false)
         cardsInfoDbHelper.onUpgrade(db, 10, 11)
         columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.TCG_PLAYER_PURCHASE_URL.noun), `is`(true))
+        assertThat(columns.contains(CardDataSource.COLUMNS.TCG_PLAYER_PURCHASE_URL.noun)).isEqualTo(true)
     }
 
     @Test
@@ -300,16 +299,16 @@ class CardsInfoDbHelperTest {
         val db = cardsInfoDbHelper.writableDatabase
         downgradeDb(db, 11)
         var columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.FACE_CMC.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.IS_ARENA.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.IS_MTGO.noun), `is`(false))
-        assertThat(columns.contains(CardDataSource.COLUMNS.SIDE.noun), `is`(false))
+        assertThat(columns.contains(CardDataSource.COLUMNS.FACE_CMC.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.IS_ARENA.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.IS_MTGO.noun)).isEqualTo(false)
+        assertThat(columns.contains(CardDataSource.COLUMNS.SIDE.noun)).isEqualTo(false)
         cardsInfoDbHelper.onUpgrade(db, 11, 12)
         columns = cardsInfoDbHelper.readColumnTable(db, CardDataSource.TABLE)
-        assertThat(columns.contains(CardDataSource.COLUMNS.FACE_CMC.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.IS_ARENA.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.IS_MTGO.noun), `is`(true))
-        assertThat(columns.contains(CardDataSource.COLUMNS.SIDE.noun), `is`(true))
+        assertThat(columns.contains(CardDataSource.COLUMNS.FACE_CMC.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.IS_ARENA.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.IS_MTGO.noun)).isEqualTo(true)
+        assertThat(columns.contains(CardDataSource.COLUMNS.SIDE.noun)).isEqualTo(true)
     }
 
     private fun assertTableExist(db: SQLiteDatabase, table: String, exist: Boolean) {
