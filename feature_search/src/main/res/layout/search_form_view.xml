@@ -438,11 +438,22 @@
         app:layout_constraintStart_toStartOf="@+id/guideline_middle"
         app:layout_constraintTop_toTopOf="@id/search_l" />
 
-    <Space
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/search_az"
         android:layout_width="0dp"
-        android:layout_height="@dimen/base_margin"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content"
+        android:text="@string/search_order_az"
+        android:textColor="@color/white"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_middle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search_l" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_az" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

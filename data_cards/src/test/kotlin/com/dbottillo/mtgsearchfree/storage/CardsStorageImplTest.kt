@@ -7,6 +7,8 @@ import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.database.FavouritesDataSource
 import com.dbottillo.mtgsearchfree.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.nhaarman.mockito_kotlin.argumentCaptor
+import com.nhaarman.mockito_kotlin.eq
 import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
 import com.nhaarman.mockito_kotlin.whenever
@@ -130,6 +132,25 @@ class CardsStorageImplTest {
         assertNull(cards.filter)
         assertFalse(cards.isDeck)
         verify(cardsHelper).sortMultipleSets(filter, searchCards)
+        verify(mtgCardDataSource).searchCards(searchParams)
+        verify(cardsPreferences).load()
+        verifyNoMoreInteractions(mtgCardDataSource, favouritesDataSource, cardsPreferences, cardsHelper)
+    }
+
+    @Test
+    fun `should search cards and return them sorted by a-z`() {
+        whenever(searchParams.sortAZ).thenReturn(true)
+        whenever(cardsHelper.sortMultipleSets(filter, searchCards)).thenReturn(searchCardsFiltered)
+
+        val cards = underTest.doSearch(searchParams)
+
+        assertThat(cards.list, `is`(searchCardsFiltered))
+        assertNull(cards.filter)
+        assertFalse(cards.isDeck)
+        argumentCaptor<CardFilter>().apply {
+            verify(cardsHelper).sortMultipleSets(this.capture(), eq(searchCards))
+            assertThat(firstValue.sortSetNumber, `is`(false))
+        }
         verify(mtgCardDataSource).searchCards(searchParams)
         verify(cardsPreferences).load()
         verifyNoMoreInteractions(mtgCardDataSource, favouritesDataSource, cardsPreferences, cardsHelper)

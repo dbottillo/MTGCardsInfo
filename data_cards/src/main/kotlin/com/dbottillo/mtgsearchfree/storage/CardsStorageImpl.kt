@@ -48,7 +48,7 @@ open class CardsStorageImpl(
     }
 
     override fun getLuckyCards(howMany: Int): CardsCollection {
-        logger.d(howMany.toString() + " lucky cards requested")
+        logger.d("$howMany lucky cards requested")
         return CardsCollection(mtgCardDataSource.getRandomCard(howMany))
     }
 
@@ -61,6 +61,7 @@ open class CardsStorageImpl(
         logger.d("do search $searchParams")
         val cards = mtgCardDataSource.searchCards(searchParams)
         val filter = cardsPreferences.load()
+        filter.sortSetNumber = !searchParams.sortAZ
         return CardsCollection(cardsHelper.sortMultipleSets(filter, cards), null)
     }
 

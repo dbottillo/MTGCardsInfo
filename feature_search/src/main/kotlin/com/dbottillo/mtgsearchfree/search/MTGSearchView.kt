@@ -52,6 +52,7 @@ class MTGSearchView @JvmOverloads constructor(
     private val mythic: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_mythic) }
     private val set: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById<Spinner>(R.id.search_set) }
     private val noDuplicates: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_no_duplicates) }
+    private val sortAZ: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_az) }
 
     private var searchSetAdapter: SearchSetAdapter? = null
 
@@ -80,6 +81,7 @@ class MTGSearchView @JvmOverloads constructor(
             searchParams.setId = sets[set.selectedItemPosition].id
             searchParams.colorless = search_colorless.isChecked
             searchParams.duplicates = !noDuplicates.isChecked
+            searchParams.sortAZ = sortAZ.isChecked
             return searchParams
         }
 

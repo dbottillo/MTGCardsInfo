@@ -44,8 +44,6 @@ ext {
     }
     debug = Group {
         debugImplementation deps.leakCanary
-        releaseImplementation deps.leakCanaryNoOp
-        testImplementation deps.leakCanaryNoOp
     }
     test = Group {
         testImplementation deps.junit
