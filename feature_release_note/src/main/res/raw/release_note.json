@@ -1,5 +1,13 @@
 [
   {
+    "title": "Version 3.19.0",
+    "lines": [
+      "New sets: Secret Lair Drop, Mystery Booster, Ponies",
+      "Set default number of cards when adding to a deck",
+      "Add option to sort A-Z in search"
+    ]
+  },
+  {
     "title": "Version 3.18.0",
     "lines": [
       "Fix cards not returned when searching with more than one color",
@@ -7,6 +15,7 @@
       "Add option to remove duplicates in search"
     ]
   },
+
   {
     "title": "Version 3.17.0",
     "lines": [
