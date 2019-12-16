@@ -462,7 +462,7 @@ class MTGCardDataSourceTest {
     }
 
     @Test
-    fun search_cards_by_set_id() {
+    fun `should search cards by set id`() {
         val setDataSource = SetDataSource(mtgDatabaseHelper.readableDatabase)
         val set = setDataSource.sets[0]
         val searchParams = SearchParams()
@@ -470,7 +470,8 @@ class MTGCardDataSourceTest {
         val cards = underTest.searchCards(searchParams)
         assertThat(cards).isNotEmpty()
         for (card in cards) {
-            assertThat(card.set).isEqualTo(set)
+            assertThat(card.set?.id).isEqualTo(set.id)
+            assertThat(card.set?.code).isEqualTo(set.code)
         }
     }
 
@@ -556,10 +557,10 @@ class MTGCardDataSourceTest {
     }
 
     @Test
-    fun searchCardsById() {
+    fun `should search cards by id`() {
         val card = underTest.searchCardById(5)
         assertThat(card).isNotNull()
-        assertThat(card?.name).isEqualTo("Bring to Life")
+        assertThat(card?.name).isEqualTo("Goblin King")
     }
 
     @Test

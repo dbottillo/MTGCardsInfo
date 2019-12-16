@@ -10,6 +10,7 @@ import android.widget.Toast
 import com.dbottillo.mtgsearchfree.database.CardDataSource
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.storage.SetDataSource
+import com.dbottillo.mtgsearchfree.storage.toSetType
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.adjustCode
 import com.dbottillo.mtgsearchfree.util.copyDbToSdCard
@@ -90,7 +91,7 @@ internal class CreateDBAsyncTask(
             val set = MTGSet(newRowId.toInt(),
                 setJ.getString("code"),
                 setJ.getString("name"),
-                    setDataSource.unwrap(type))
+                type.toSetType())
             // for (int k=0; k<1; k++){
 
             (0 until cards.length()).forEach { index ->

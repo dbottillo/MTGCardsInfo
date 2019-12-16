@@ -6,6 +6,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.Rarity
 import com.dbottillo.mtgsearchfree.model.Side
+import com.dbottillo.mtgsearchfree.storage.toSetType
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import org.json.JSONArray
@@ -25,7 +26,8 @@ fun readSetListJSON(): ArrayList<MTGSet> {
     for (i in 0 until jsonArray.length()) {
         val setJ = jsonArray.getJSONObject(i)
         try {
-            sets.add(MTGSet(id = i, name = setJ.getString("name"), code = setJ.getString("code")))
+            val type: String? = if (setJ.has("type")) setJ.getString("type") else null
+            sets.add(MTGSet(id = i, name = setJ.getString("name"), code = setJ.getString("code"), type = type.toSetType()))
         } catch (e: Resources.NotFoundException) {
             LOG.e("e: " + e.localizedMessage)
         }

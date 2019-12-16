@@ -62,21 +62,12 @@ class SetDataSource(private val database: SQLiteDatabase) {
         return MTGSet(id = cursor.getIntFromColumn("_id"),
                 name = cursor.getStringFromColumn("name"),
                 code = cursor.getStringFromColumn("code"),
-                type = unwrap(type))
-    }
-
-    fun unwrap(input: String?): SetType {
-        return when (input) {
-            "preview" -> PREVIEW
-            "funny" -> FUNNY
-            "commander" -> COMMANDER
-            "promo" -> PROMO
-            else -> EXPANSION
-        }
+                type = type.toSetType())
     }
 
     private fun wrap(input: SetType): String {
         return when (input) {
+            PROMO -> "promo"
             PREVIEW -> "preview"
             FUNNY -> "funny"
             else -> "normal"
@@ -104,5 +95,15 @@ class SetDataSource(private val database: SQLiteDatabase) {
             builder.add(name = "type", type = "TEXT", last = true)
             return builder.append(')').toString()
         }
+    }
+}
+
+fun String?.toSetType(): SetType {
+    return when (this) {
+        "preview" -> PREVIEW
+        "funny" -> FUNNY
+        "commander" -> COMMANDER
+        "promo" -> PROMO
+        else -> EXPANSION
     }
 }
