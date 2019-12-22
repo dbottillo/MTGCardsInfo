@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+apply from: '../config-android.gradle'
+
+android {
+    defaultConfig {
+        applicationId 'com.dbottillo.mtgplayground'
+    }
+
+    signingConfigs {
+        debugConfig {
+            keyAlias 'androiddebugkey'
+            storeFile file('../debug.keystore')
+            keyPassword 'android'
+            storePassword 'android'
+        }
+    }
+
+    dexOptions {
+        preDexLibraries = false
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        test.resources.srcDirs += ['src/test/resources', 'src/debug/res/raw']
+    }
+}
+
+dependencies {
+    implementation project(':core')
+    implementation project(':network')
+
+    core()
+    di()
+    image()
+    ui()
+    debug()
+    test()
+}
