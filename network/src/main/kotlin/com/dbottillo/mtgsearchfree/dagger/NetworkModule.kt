@@ -2,7 +2,9 @@ package com.dbottillo.mtgsearchfree.dagger
 
 import com.dbottillo.mtgsearchfree.core.BuildConfig
 import com.dbottillo.mtgsearchfree.network.ApiAuthenticatorInterface
-import com.dbottillo.mtgsearchfree.network.ApiInterface
+import com.dbottillo.mtgsearchfree.network.MKMApiInterface
+import com.dbottillo.mtgsearchfree.network.MKMNetworkInterceptor
+import com.dbottillo.mtgsearchfree.network.TCGApiInterface
 import com.dbottillo.mtgsearchfree.network.TCGTokenInterceptor
 import com.dbottillo.mtgsearchfree.network.TokenAuthenticator
 import dagger.Module
@@ -12,13 +14,15 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
 class NetworkModule {
 
     @Provides
-    fun provideOkHttpClient(
+    @Named("TCG")
+    fun provideTCGClient(
         tokenAuthenticator: TokenAuthenticator,
         tokenInterceptor: TCGTokenInterceptor
     ): OkHttpClient {
@@ -36,17 +40,48 @@ class NetworkModule {
     }
 
     @Provides
+    @Named("MKM")
+    fun provideMKMClient(
+        mkmNetworkInterceptor: MKMNetworkInterceptor
+    ): OkHttpClient {
+        val okHttpClientBuilder = OkHttpClient.Builder()
+                .addInterceptor(mkmNetworkInterceptor)
+
+        if (BuildConfig.DEBUG) {
+            val interceptor = HttpLoggingInterceptor()
+            interceptor.level = HttpLoggingInterceptor.Level.BODY
+            okHttpClientBuilder.addInterceptor(interceptor)
+        }
+
+        return okHttpClientBuilder.build()
+    }
+
+    @Provides
     @Singleton
-    fun provideRetrofit(
-        okHttpClient: OkHttpClient
-    ): ApiInterface {
+    fun provideTCGApiInterface(
+        @Named("TCG") okHttpClient: OkHttpClient
+    ): TCGApiInterface {
         return Retrofit.Builder()
                 .client(okHttpClient)
                 .baseUrl("https://api.tcgplayer.com/v1.19.0/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
-                .create(ApiInterface::class.java)
+                .create(TCGApiInterface::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideMKMApiInterface(
+        @Named("MKM") okHttpClient: OkHttpClient
+    ): MKMApiInterface {
+        return Retrofit.Builder()
+                .client(okHttpClient)
+                .baseUrl("https://api.cardmarket.com/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .build()
+                .create(MKMApiInterface::class.java)
     }
 
     @Provides

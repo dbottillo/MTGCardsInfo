@@ -7,7 +7,7 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
 
-interface ApiInterface {
+interface TCGApiInterface {
     @GET("/pricing/product/{product_id}")
     fun fetchPrice(@Path("product_id") productId: Int): Single<ApiTCGPrice>
 }

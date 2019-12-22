@@ -2,13 +2,13 @@ package com.dbottillo.mtgsearchfree.repository
 
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.TCGPrice
-import com.dbottillo.mtgsearchfree.network.ApiInterface
+import com.dbottillo.mtgsearchfree.network.TCGApiInterface
 import com.dbottillo.mtgsearchfree.network.ApiTCGPrice
 import io.reactivex.Single
 import javax.inject.Inject
 
 class CardRepository @Inject constructor(
-    private val api: ApiInterface,
+    private val api: TCGApiInterface,
     private val mapper: CardPriceMapper
 ) {
 

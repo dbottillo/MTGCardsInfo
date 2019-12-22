@@ -2,7 +2,7 @@ package com.dbottillo.mtgsearchfree.repository
 
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.TCGPrice
-import com.dbottillo.mtgsearchfree.network.ApiInterface
+import com.dbottillo.mtgsearchfree.network.TCGApiInterface
 import com.dbottillo.mtgsearchfree.network.ApiTCGPrice
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.verify
@@ -19,7 +19,7 @@ class CardRepositoryTest {
 
     @JvmField @Rule val mockitoRule = MockitoJUnit.rule()!!
 
-    @Mock lateinit var api: ApiInterface
+    @Mock lateinit var api: TCGApiInterface
     @Mock lateinit var card: MTGCard
     @Mock lateinit var cardPriceMapper: CardPriceMapper
 

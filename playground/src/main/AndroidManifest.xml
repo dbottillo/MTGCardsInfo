@@ -19,7 +19,7 @@
         tools:ignore="GoogleAppIndexingWarning,UnusedAttribute"
         android:theme="@style/Theme.AppCompat"
         >
-        <activity android:name="com.dbottillo.mtgsearchfree.PlaygroundHomeActivity">
+        <activity android:name=".PlaygroundHomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

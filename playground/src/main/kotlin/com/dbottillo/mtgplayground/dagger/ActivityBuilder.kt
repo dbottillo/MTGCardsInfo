@@ -1,7 +1,7 @@
 package com.dbottillo.mtgplayground.dagger
 
 import com.dbottillo.mtgsearchfree.ActivityScope
-import com.dbottillo.mtgsearchfree.PlaygroundHomeActivity
+import com.dbottillo.mtgplayground.PlaygroundHomeActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
