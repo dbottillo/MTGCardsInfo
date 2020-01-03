@@ -5,7 +5,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface MKMApiInterface {
-    @GET("ws/v2.0/products/find")
+    @GET("ws/v2.0/output.json/products/find")
     fun fetchProduct(@Query("search") productName: String): Single<ApiMKMProductApi>
 }
 

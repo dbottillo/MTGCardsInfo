@@ -18,7 +18,7 @@ class MKMNetworkInterceptor @Inject constructor() : Interceptor {
         val appSecret = "6DwnH4vn6fdhJEo3rTARQTvvTiQtEFya"
         val nonce = getOAuthNonce()
         val timestamp = TimeUnit.MILLISECONDS.toSeconds(System.currentTimeMillis())
-        val signatureMethod = "HmacSHA1"
+        val signatureMethod = "HMAC-SHA1"
         val version = "1.0"
         val baseUrl = chain.call().request().url.scheme + "://" + chain.call().request().url.host + chain.call().request().url.encodedPath
 
@@ -56,7 +56,7 @@ class MKMNetworkInterceptor @Inject constructor() : Interceptor {
                 "oauth_timestamp=\"" + timestamp + "\", " +
                 "oauth_nonce=\"" + nonce + "\", " +
                 "oauth_consumer_key=\"" + appToken + "\", " +
-                "oauth_token=, " +
+                "oauth_token=\"\", " +
                 "oauth_signature_method=\"" + signatureMethod + "\", " +
                 "oauth_signature=\"" + signature + "\""
 
