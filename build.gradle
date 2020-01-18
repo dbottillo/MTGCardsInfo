@@ -16,12 +16,12 @@ buildscript {
         classpath 'io.fabric.tools:gradle:1.31.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
         classpath "com.github.ben-manes:gradle-versions-plugin:0.27.0"
-        classpath "com.diffplug.spotless:spotless-plugin-gradle:3.26.1"
+        classpath "com.diffplug.spotless:spotless-plugin-gradle:3.27.1"
     }
 }
 
 plugins {
-    id "io.gitlab.arturbosch.detekt" version "1.2.2"
+    id "io.gitlab.arturbosch.detekt" version "1.4.0"
 }
 
 allprojects {
@@ -120,10 +120,6 @@ allprojects {
     }
 
     dependencies { apply from: "$rootProject.rootDir/dependencies-groups.gradle" }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
 }
 
 subprojects {
