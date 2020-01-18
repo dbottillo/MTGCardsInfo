@@ -2,11 +2,11 @@ package com.dbottillo.mtgsearchfree.interactors
 
 import android.graphics.Bitmap
 import android.net.Uri
+import com.dbottillo.mtgsearchfree.model.CardPrice
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
-import com.dbottillo.mtgsearchfree.model.TCGPrice
 import io.reactivex.Observable
 import io.reactivex.Single
 
@@ -22,5 +22,5 @@ interface CardsInteractor {
     fun loadCardById(id: Int): Single<MTGCard>
     fun loadOtherSideCard(card: MTGCard): Single<MTGCard>
     fun getArtworkUri(bitmap: Bitmap): Single<Uri>
-    fun fetchPrice(card: MTGCard): Single<TCGPrice>
+    fun fetchPrice(card: MTGCard): Single<CardPrice>
 }

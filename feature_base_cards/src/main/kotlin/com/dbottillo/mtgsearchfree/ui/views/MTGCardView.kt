@@ -16,6 +16,7 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
 import com.dbottillo.mtgsearchfree.featurebasecards.R
+import com.dbottillo.mtgsearchfree.model.MKMCardPrice
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.repository.CardPriceException
 import com.dbottillo.mtgsearchfree.util.LOG
@@ -31,7 +32,7 @@ import io.reactivex.disposables.Disposable
 class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : RelativeLayout(context, attrs, defStyle) {
 
     private var detailCard: TextView
-    private var priceOnTcg: TextView
+    private var priceLink: TextView
     private var cardPrice: TextView
     private var retry: View
     private var cardImage: ImageView
@@ -55,7 +56,7 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
         val view = inflater.inflate(R.layout.view_mtg_card, this, true)
 
         detailCard = view.findViewById(R.id.detail_card)
-        priceOnTcg = view.findViewById(R.id.price_on_tcg)
+        priceLink = view.findViewById(R.id.price_link)
         cardPrice = view.findViewById(R.id.price_card)
         retry = view.findViewById(R.id.image_card_retry)
         cardImage = view.findViewById(R.id.image_card)
@@ -64,7 +65,6 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
         flipCardButton = view.findViewById(R.id.card_flip)
 
         view.findViewById<View>(R.id.image_card_retry_btn).setOnClickListener { retryImage() }
-        view.findViewById<View>(R.id.price_container).setOnClickListener { openPrice() }
         flipCardButton.setOnClickListener { flipCard() }
 
         isLandscape = resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
@@ -79,7 +79,13 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
             widthAvailable = size.x / 2 - paddingCard * 2
         }
         cardImage.calculateSizeCardImage(widthAvailable, resources.getBoolean(R.bool.isTablet))
-        priceOnTcg.setBoldAndItalic("TCG")
+
+        if (false) {
+            priceLink.setBoldAndItalic("MKM")
+        } else {
+            view.findViewById<View>(R.id.price_container).setOnClickListener { openPrice() }
+            priceLink.setBoldAndItalic("TCG")
+        }
     }
 
     fun init(cardPresenter: CardPresenter) {
@@ -132,8 +138,16 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
             }
         }
 
-        disposable = cardPresenter.fetchPrice(card).subscribe({
-            cardPrice.text = it.toDisplay(isLandscape)
+        disposable = cardPresenter.fetchPrice(card).subscribe({ apiPrice ->
+            if (apiPrice is MKMCardPrice) {
+                cardPrice.text = context.getString(R.string.mkm_price, apiPrice.low, apiPrice.trend)
+                findViewById<View>(R.id.price_container).setOnClickListener {
+                    context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.cardmarket.com/${apiPrice.url}")))
+                }
+                findViewById<View>(R.id.price_not_exact).visibility = if (apiPrice.exact) View.GONE else View.VISIBLE
+            } else {
+                cardPrice.text = apiPrice.toDisplay(isLandscape)
+            }
         }, {
             cardPrice.text = context.getText(R.string.price_error)
             if (it is CardPriceException) {

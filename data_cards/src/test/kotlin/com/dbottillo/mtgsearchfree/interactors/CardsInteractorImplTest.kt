@@ -3,11 +3,12 @@ package com.dbottillo.mtgsearchfree.interactors
 import android.graphics.Bitmap
 import android.net.Uri
 import com.dbottillo.mtgsearchfree.interactor.SchedulerProvider
+import com.dbottillo.mtgsearchfree.model.CardPrice
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
-import com.dbottillo.mtgsearchfree.model.TCGPrice
+import com.dbottillo.mtgsearchfree.model.TCGCardPrice
 import com.dbottillo.mtgsearchfree.repository.CardRepository
 import com.dbottillo.mtgsearchfree.storage.CardsStorage
 import com.dbottillo.mtgsearchfree.util.FileManager
@@ -213,15 +214,15 @@ class CardsInteractorImplTest {
 
     @Test
     fun `should fetch price from repository`() {
-        val price = mock<TCGPrice>()
-        whenever(cardRepository.fetchPrice(card)).thenReturn(Single.just(price))
-        val testSubscriber = TestObserver<TCGPrice>()
+        val price = mock<TCGCardPrice>()
+        whenever(cardRepository.fetchPriceTCG(card)).thenReturn(Single.just(price))
+        val testSubscriber = TestObserver<CardPrice>()
 
         underTest.fetchPrice(card).subscribe(testSubscriber)
 
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(price)
-        verify(cardRepository).fetchPrice(card)
+        verify(cardRepository).fetchPriceTCG(card)
         verify(schedulerProvider).io()
         verify(schedulerProvider).ui()
         verifyNoMoreInteractions(cardsStorage, schedulerProvider, cardRepository)

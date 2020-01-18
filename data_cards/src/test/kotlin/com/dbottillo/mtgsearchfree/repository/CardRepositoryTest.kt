@@ -1,9 +1,10 @@
 package com.dbottillo.mtgsearchfree.repository
 
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.model.TCGPrice
+import com.dbottillo.mtgsearchfree.model.TCGCardPrice
 import com.dbottillo.mtgsearchfree.network.TCGApiInterface
 import com.dbottillo.mtgsearchfree.network.ApiTCGPrice
+import com.dbottillo.mtgsearchfree.network.MKMApiInterface
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
@@ -19,7 +20,8 @@ class CardRepositoryTest {
 
     @JvmField @Rule val mockitoRule = MockitoJUnit.rule()!!
 
-    @Mock lateinit var api: TCGApiInterface
+    @Mock lateinit var tcgApiInterface: TCGApiInterface
+    @Mock lateinit var mkmApiInterface: MKMApiInterface
     @Mock lateinit var card: MTGCard
     @Mock lateinit var cardPriceMapper: CardPriceMapper
 
@@ -28,34 +30,34 @@ class CardRepositoryTest {
     @Before
     fun setup() {
         whenever(card.tcgplayerProductId).thenReturn(2)
-        underTest = CardRepository(api, cardPriceMapper)
+        underTest = CardRepository(tcgApiInterface, mkmApiInterface, cardPriceMapper)
     }
 
     @Test
-    fun `should fetch price and map it`() {
+    fun `should fetch TCG price and map it`() {
         val apiPrice = mock<ApiTCGPrice>()
-        val price = mock<TCGPrice>()
-        whenever(cardPriceMapper.map(apiPrice)).thenReturn(TCGPriceResult.Price(price))
-        whenever(api.fetchPrice(2)).thenReturn(Single.just(apiPrice))
+        val price = mock<TCGCardPrice>()
+        whenever(cardPriceMapper.mapTCG(apiPrice)).thenReturn(CardPriceResult.Data(price))
+        whenever(tcgApiInterface.fetchPrice(2)).thenReturn(Single.just(apiPrice))
 
-        val result = underTest.fetchPrice(card).test()
+        val result = underTest.fetchPriceTCG(card).test()
 
         result.assertValue(price)
         result.assertComplete()
-        verify(api).fetchPrice(2)
-        verifyNoMoreInteractions(api)
+        verify(tcgApiInterface).fetchPrice(2)
+        verifyNoMoreInteractions(tcgApiInterface)
     }
 
     @Test
-    fun `should fetch price and throw an exception if call is not successful`() {
+    fun `should fetch TCG price and throw an exception if call is not successful`() {
         val apiPrice = mock<ApiTCGPrice>()
-        whenever(cardPriceMapper.map(apiPrice)).thenReturn(TCGPriceResult.Error)
-        whenever(api.fetchPrice(2)).thenReturn(Single.just(apiPrice))
+        whenever(cardPriceMapper.mapTCG(apiPrice)).thenReturn(CardPriceResult.Error)
+        whenever(tcgApiInterface.fetchPrice(2)).thenReturn(Single.just(apiPrice))
 
-        val result = underTest.fetchPrice(card).test()
+        val result = underTest.fetchPriceTCG(card).test()
 
         result.assertError(CardPriceException::class.java)
-        verify(api).fetchPrice(2)
-        verifyNoMoreInteractions(api)
+        verify(tcgApiInterface).fetchPrice(2)
+        verifyNoMoreInteractions(tcgApiInterface)
     }
 }

@@ -24,7 +24,9 @@ class PlaygroundHomeActivity : DaggerAppCompatActivity() {
 
     @SuppressLint("CheckResult")
     private fun doRequest() {
-        api.fetchProduct("Counterspell")
+        /*api.findProduct("Petty+Theft").
+                flatMap { api.findProduct(it.product!!.first().idProduct!!) }*/
+            api.findProduct(403014)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({

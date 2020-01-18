@@ -1,45 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/price_container"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/price_container"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/price_height_container"
+    android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"
     android:background="@drawable/btn_primary_dark"
     android:clickable="true"
     android:focusable="true"
     android:orientation="horizontal"
+    android:padding="4dp"
     tools:showIn="@layout/view_mtg_card">
 
     <TextView
         android:id="@+id/price_card"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_weight="1"
+        android:layout_marginEnd="@dimen/base_margin"
         android:textColor="@color/white"
         android:textSize="16sp"
-        tools:text="HI: Avg: Low:"/>
+        app:layout_constraintBottom_toTopOf="@+id/price_not_exact"
+        app:layout_constraintEnd_toStartOf="@+id/price_link"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="HI: Avg: Low:" />
 
     <TextView
-        android:id="@+id/price_on_tcg"
+        android:id="@+id/price_not_exact"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/base_margin"
+        android:text="@string/price_not_exact"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        tools:visibility="visible"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/price_link"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/price_link"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:layout_marginRight="2dp"
         android:textColor="@color/white"
         android:textSize="16sp"
-        tools:text="TCG"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/arrow"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="TCG" />
 
     <ImageView
+        android:id="@+id/arrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_marginRight="10dp"
         android:contentDescription="@string/cd_price_go"
         android:rotation="90"
-        android:src="@drawable/arrow_up"/>
-</LinearLayout>
+        android:src="@drawable/arrow_up"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

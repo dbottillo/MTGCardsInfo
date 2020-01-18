@@ -3,11 +3,11 @@ package com.dbottillo.mtgsearchfree.interactors
 import android.graphics.Bitmap
 import android.net.Uri
 import com.dbottillo.mtgsearchfree.interactor.SchedulerProvider
+import com.dbottillo.mtgsearchfree.model.CardPrice
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
-import com.dbottillo.mtgsearchfree.model.TCGPrice
 import com.dbottillo.mtgsearchfree.repository.CardRepository
 import com.dbottillo.mtgsearchfree.storage.CardsStorage
 import com.dbottillo.mtgsearchfree.util.FileManager
@@ -58,7 +58,7 @@ class CardsInteractorImpl(
     }
 
     override fun loadSet(set: MTGSet): Observable<CardsCollection> {
-        logger.d("loadSet " + set.toString())
+        logger.d("loadSet $set")
         return Observable.fromCallable { storage.load(set) }
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
@@ -72,7 +72,7 @@ class CardsInteractorImpl(
     }
 
     override fun doSearch(searchParams: SearchParams): Observable<CardsCollection> {
-        logger.d("do search " + searchParams.toString())
+        logger.d("do search $searchParams")
         return Observable.fromCallable { storage.doSearch(searchParams) }
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
@@ -107,8 +107,8 @@ class CardsInteractorImpl(
                 .observeOn(schedulerProvider.ui())
     }
 
-    override fun fetchPrice(card: MTGCard): Single<TCGPrice> {
-        return cardRepository.fetchPrice(card)
+    override fun fetchPrice(card: MTGCard): Single<CardPrice> {
+        return cardRepository.fetchPriceTCG(card)
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }

@@ -12,6 +12,8 @@ import javax.inject.Inject
 
 class MKMNetworkInterceptor @Inject constructor() : Interceptor {
 
+    // inspiration: https://github.com/giventofly/cardmarket-api/blob/master/get-card-price.php
+
     override fun intercept(chain: Interceptor.Chain): Response {
         val method = "GET"
         val appToken = "pbuqKRF1WTFh7eGU"
@@ -29,9 +31,13 @@ class MKMNetworkInterceptor @Inject constructor() : Interceptor {
                 "oauth_nonce" to nonce,
                 "oauth_timestamp" to timestamp.toString(),
                 "oauth_signature_method" to signatureMethod,
-                "oauth_version" to version,
-                "search" to "Counterspell" // to generalise
+                "oauth_version" to version
         )
+        chain.call().request().url.queryParameterNames.forEach { paramName ->
+            chain.call().request().url.queryParameter(paramName)?.let { paramValue ->
+                params.add(Pair(paramName, paramValue))
+            }
+        }
 
         val baseString = method + "&" + baseUrl.encode() + "&"
         val encodedParams: MutableList<Pair<String, String>> = params.filter { it.first != "realm" }.map {
@@ -47,8 +53,6 @@ class MKMNetworkInterceptor @Inject constructor() : Interceptor {
         val signature = getSignature(baseString = combinedString, signingKey = signatureKey)
         params.add("oauth_signature" to signature)
         params.sortBy { it.first }
-
-        // val authorization = params.map { it.first + "=\"" + it.second + "\"" }.joinToString(",")
 
         val authorization = "OAuth " +
                 "realm=\"" + baseUrl + "\", " +
