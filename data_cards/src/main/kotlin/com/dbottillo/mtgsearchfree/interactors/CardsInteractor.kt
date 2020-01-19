@@ -18,7 +18,6 @@ interface CardsInteractor {
     fun getLuckyCards(howMany: Int): Observable<CardsCollection>
     fun getFavourites(): Observable<List<MTGCard>>
     fun doSearch(searchParams: SearchParams): Observable<CardsCollection>
-    fun loadCard(multiverseId: Int): Observable<MTGCard>
     fun loadCardById(id: Int): Single<MTGCard>
     fun loadOtherSideCard(card: MTGCard): Single<MTGCard>
     fun getArtworkUri(bitmap: Bitmap): Single<Uri>

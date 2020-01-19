@@ -36,10 +36,11 @@ class AddToDeckPresenterImplTest {
     @Before
     fun setUp() {
         whenever(bundle.getInt("card", -1)).thenReturn(4)
+        whenever(bundle.getString("cardName", "")).thenReturn("counterspell")
         whenever(addToDeckData.card).thenReturn(card)
         whenever(addToDeckData.decks).thenReturn(decks)
         whenever(card.name).thenReturn("Counterspell")
-        whenever(interactor.init(4)).thenReturn(Single.just(addToDeckData))
+        whenever(interactor.init(4, "counterspell")).thenReturn(Single.just(addToDeckData))
         underTest = AddToDeckPresenterImpl(interactor, logger)
     }
 
@@ -49,7 +50,7 @@ class AddToDeckPresenterImplTest {
 
         underTest.init(view, bundle)
 
-        verify(interactor).init(4)
+        verify(interactor).init(4, "counterspell")
         verify(view).decksLoaded(decks, 2)
         verify(view).setCardTitle("Counterspell")
         verifyNoMoreInteractions(view, interactor)
@@ -58,11 +59,11 @@ class AddToDeckPresenterImplTest {
     @Test
     fun `load decks should call interactor and show error it if fails`() {
         whenever(throwable.localizedMessage).thenReturn("error message")
-        whenever(interactor.init(4)).thenReturn(Single.error(throwable))
+        whenever(interactor.init(4, "counterspell")).thenReturn(Single.error(throwable))
 
         underTest.init(view, bundle)
 
-        verify(interactor).init(4)
+        verify(interactor).init(4, "counterspell")
         verify(view).showError("error message")
         verifyNoMoreInteractions(view, interactor)
     }
@@ -70,11 +71,11 @@ class AddToDeckPresenterImplTest {
     @Test
     fun `load decks should call interactor and show error it if fails with a mtg exception`() {
         whenever(mtgException.message).thenReturn("error message")
-        whenever(interactor.init(4)).thenReturn(Single.error(mtgException))
+        whenever(interactor.init(4, "counterspell")).thenReturn(Single.error(mtgException))
 
         underTest.init(view, bundle)
 
-        verify(interactor).init(4)
+        verify(interactor).init(4, "counterspell")
         verify(view).showError("error message")
         verifyNoMoreInteractions(view, interactor)
     }

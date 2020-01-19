@@ -2,17 +2,10 @@ package com.dbottillo.mtgsearchfree.decks.addToDeck
 
 import android.os.Bundle
 import com.dbottillo.mtgsearchfree.exceptions.MTGException
-import com.dbottillo.mtgsearchfree.interactor.SchedulerProvider
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
-import com.dbottillo.mtgsearchfree.storage.CardsStorage
-import com.dbottillo.mtgsearchfree.storage.DecksStorage
-import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.util.Logger
-import io.reactivex.Completable
-import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.functions.BiFunction
 import javax.inject.Inject
 
 class AddToDeckPresenterImpl @Inject constructor(
@@ -33,8 +26,9 @@ class AddToDeckPresenterImpl @Inject constructor(
         this.view = view
 
         val cardId = bundle?.getInt("card", -1) ?: -1
+        val cardName = bundle?.getString("cardName", "") ?: ""
 
-        disposable.add(interactor.init(cardId).subscribe({
+        disposable.add(interactor.init(cardId, cardName).subscribe({
             logger.d()
             this.card = it.card
             view.setCardTitle(card.name)
@@ -63,33 +57,6 @@ class AddToDeckPresenterImpl @Inject constructor(
 
     override fun onDestroyView() {
         disposable.clear()
-    }
-}
-
-class AddToDeckInteractor @Inject constructor(
-    private val decksStorage: DecksStorage,
-    private val cardsStorage: CardsStorage,
-    private val generalData: GeneralData,
-    private val schedulerProvider: SchedulerProvider
-) {
-    fun init(cardId: Int): Single<AddToDeckData> {
-        val decksSingle = Single.fromCallable { decksStorage.load() }
-        val cardSingle = Single.fromCallable { cardsStorage.loadCard(cardId) }
-        return Single.zip(decksSingle, cardSingle, BiFunction { decks: List<Deck>, card: MTGCard ->
-            AddToDeckData(decks, generalData.lastDeckSelected, card)
-        }).subscribeOn(schedulerProvider.io()).observeOn(schedulerProvider.ui())
-    }
-
-    fun addCard(name: String, card: MTGCard, quantity: Int) {
-        Completable.fromCallable { decksStorage.addCard(name, card, quantity) }
-                .subscribeOn(schedulerProvider.io())
-                .observeOn(schedulerProvider.ui()).subscribe()
-    }
-
-    fun addCard(deck: Deck, card: MTGCard, quantity: Int) {
-        Completable.fromCallable { decksStorage.addCard(deck, card, quantity) }
-                .subscribeOn(schedulerProvider.io())
-                .observeOn(schedulerProvider.ui()).subscribe()
     }
 }
 

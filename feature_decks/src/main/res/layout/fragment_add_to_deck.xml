@@ -10,7 +10,7 @@
         android:id="@+id/top_space"
         android:layout_width="0dp"
         android:layout_height="16dp"
-        app:layout_constraintBottom_toTopOf="@id/add_card_title"
+        app:layout_constraintBottom_toTopOf="@id/barrier"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -138,14 +138,6 @@
         app:layout_constraintEnd_toEndOf="@+id/right_guideline"
         app:layout_constraintStart_toStartOf="@+id/left_guideline" />
 
-    <Space
-        android:id="@+id/bottom_space"
-        android:layout_width="0dp"
-        android:layout_height="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/left_guideline"
         android:layout_width="0dp"
@@ -159,5 +151,36 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintGuide_end="16dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="error_text,add_card_title" />
+
+    <TextView
+        android:id="@+id/error_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/base_margin"
+        android:padding="8dp"
+        android:text="@string/add_to_deck_error"
+        android:textColor="@color/color_primary_dark"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/add_to_deck_save"
+        app:layout_constraintEnd_toEndOf="@id/right_guideline"
+        app:layout_constraintStart_toStartOf="@id/left_guideline"
+        android:visibility="gone"
+        tools:ignore="HardcodedText"
+        tools:visibility="gone" />
+
+    <Space
+        android:id="@+id/bottom_space"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

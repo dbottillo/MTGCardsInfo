@@ -78,13 +78,6 @@ class CardsInteractorImpl(
                 .observeOn(schedulerProvider.ui())
     }
 
-    override fun loadCard(multiverseId: Int): Observable<MTGCard> {
-        logger.d("loading card with multiverse id: $multiverseId")
-        return Observable.fromCallable { storage.loadCard(multiverseId) }
-                .subscribeOn(schedulerProvider.io())
-                .observeOn(schedulerProvider.ui())
-    }
-
     override fun loadCardById(id: Int): Single<MTGCard> {
         logger.d("loading card with id: $id")
         return Single.fromCallable { storage.loadCardById(id) }

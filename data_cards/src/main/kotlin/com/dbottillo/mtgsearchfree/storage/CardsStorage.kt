@@ -13,7 +13,7 @@ interface CardsStorage {
     fun getLuckyCards(howMany: Int): CardsCollection
     fun getFavourites(): List<MTGCard>
     fun doSearch(searchParams: SearchParams): CardsCollection
-    fun loadCard(multiverseId: Int): MTGCard
+    fun loadCard(multiverseId: Int, fallbackName: String): MTGCard
     fun loadOtherSide(card: MTGCard): MTGCard
     fun loadCardById(id: Int): MTGCard
 }

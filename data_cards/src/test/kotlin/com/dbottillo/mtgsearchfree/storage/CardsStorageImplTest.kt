@@ -157,13 +157,26 @@ class CardsStorageImplTest {
     }
 
     @Test
-    fun testShouldRetrieveCardsByMultiverseId() {
+    fun `should search cards by multiverse id`() {
         whenever(mtgCardDataSource.searchCard(MULTIVERSE_ID)).thenReturn(card)
 
-        val result = underTest.loadCard(MULTIVERSE_ID)
+        val result = underTest.loadCard(multiverseId = MULTIVERSE_ID, fallbackName = "card")
 
         assertThat(result, `is`(card))
         verify(mtgCardDataSource).searchCard(MULTIVERSE_ID)
+        verifyNoMoreInteractions(mtgCardDataSource)
+    }
+
+    @Test
+    fun `should search cards by multiverse id using fallback when invalid MULTIVERSE_ID`() {
+        whenever(mtgCardDataSource.searchCard(MULTIVERSE_ID)).thenReturn(null)
+        whenever(mtgCardDataSource.searchCard(name = "card", requiredMultiverseId = true)).thenReturn(card)
+
+        val result = underTest.loadCard(multiverseId = MULTIVERSE_ID, fallbackName = "card")
+
+        assertThat(result, `is`(card))
+        verify(mtgCardDataSource).searchCard(MULTIVERSE_ID)
+        verify(mtgCardDataSource).searchCard(name = "card", requiredMultiverseId = true)
         verifyNoMoreInteractions(mtgCardDataSource)
     }
 

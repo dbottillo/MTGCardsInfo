@@ -65,9 +65,10 @@ open class CardsStorageImpl(
         return CardsCollection(cardsHelper.sortMultipleSets(filter, cards), null)
     }
 
-    override fun loadCard(multiverseId: Int): MTGCard {
+    override fun loadCard(multiverseId: Int, fallbackName: String): MTGCard {
         logger.d("do search with multiverse: $multiverseId")
-        return mtgCardDataSource.searchCard(multiverseId) ?: throw UnsupportedOperationException("can't find card with multi-verse id $multiverseId")
+        return mtgCardDataSource.searchCard(multiverseId) // try with name
+            ?: return mtgCardDataSource.searchCard(name = fallbackName, requiredMultiverseId = true) ?: throw UnsupportedOperationException("can't find card with multi-verse id $multiverseId")
     }
 
     override fun loadCardById(id: Int): MTGCard {

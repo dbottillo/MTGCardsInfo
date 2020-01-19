@@ -151,21 +151,6 @@ class CardsInteractorImplTest {
     }
 
     @Test
-    fun `load card with multiverse id should call storage and return observable`() {
-        whenever(cardsStorage.loadCard(MULTIVERSE_ID)).thenReturn(card)
-        val testSubscriber = TestObserver<MTGCard>()
-
-        underTest.loadCard(MULTIVERSE_ID).subscribe(testSubscriber)
-
-        testSubscriber.assertNoErrors()
-        testSubscriber.assertValue(card)
-        verify(cardsStorage).loadCard(MULTIVERSE_ID)
-        verify(schedulerProvider).io()
-        verify(schedulerProvider).ui()
-        verifyNoMoreInteractions(cardsStorage, schedulerProvider, cardRepository)
-    }
-
-    @Test
     fun `load card with id should call storage and return observable`() {
         whenever(cardsStorage.loadCardById(5)).thenReturn(card)
         val testSubscriber = TestObserver<MTGCard>()
