@@ -945,6 +945,20 @@
     "type": "commander"
   },
   {
+    "baseSetSize": 0,
+    "code": "PELD",
+    "meta": {
+      "date": "2020-01-12",
+      "pricesDate": "2020-01-12",
+      "version": "4.6.1+20200112"
+    },
+    "name": "Throne of Eldraine Promos",
+    "parentCode": "ELD",
+    "releaseDate": "2019-10-04",
+    "totalSetSize": 136,
+    "type": "promo"
+  },
+  {
     "baseSetSize": 204,
     "code": "ELD",
     "meta": {
@@ -995,5 +1009,18 @@
     "releaseDate": "2019-12-02",
     "totalSetSize": 32,
     "type": "promo"
+  },
+  {
+    "baseSetSize": 254,
+    "code": "THB",
+    "meta": {
+      "date": "2020-01-12",
+      "pricesDate": "2020-01-12",
+      "version": "4.6.1+20200112"
+    },
+    "name": "Theros Beyond Death",
+    "releaseDate": "2020-01-24",
+    "totalSetSize": 357,
+    "type": "expansion"
   }
 ]

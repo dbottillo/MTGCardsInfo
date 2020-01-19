@@ -110,7 +110,7 @@ data class MTGCard(
         }
     val scryfallImage
         get() = when {
-            scryfallId.isNotEmpty() && (isNormal || isAdventure || isTransform) -> "https://api.scryfall.com/cards/$scryfallId?format=image${if (side == Side.B) "&face=back" else ""}"
+            scryfallId.isNotEmpty() && (isNormal || isAdventure || isTransform || isSaga) -> "https://api.scryfall.com/cards/$scryfallId?format=image${if (side == Side.B) "&face=back" else ""}"
             else -> "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=$multiVerseId&type=card"
         }
 
@@ -154,6 +154,9 @@ data class MTGCard(
 
     val isTransform: Boolean
         get() = layout.equals("transform", ignoreCase = true)
+
+    private val isSaga: Boolean
+        get() = layout.equals("saga", ignoreCase = true)
 
     private val isNormal: Boolean
         get() = layout.equals("normal", ignoreCase = true)
