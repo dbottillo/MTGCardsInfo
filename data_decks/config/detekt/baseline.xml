@@ -1,8 +1,13 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1563095204466">
+  <Blacklist></Blacklist>
+  <Whitelist>
+    <ID>NewLineAtEndOfFile:DecksInteractor.kt$com.dbottillo.mtgsearchfree.interactors.DecksInteractor.kt</ID>
     <ID>TooGenericExceptionCaught:DecksInteractorImpl.kt$DecksInteractorImpl$throwable: Throwable</ID>
     <ID>TooGenericExceptionCaught:DecksStorageImpl.kt$DecksStorageImpl$e: Exception</ID>
+    <ID>TooManyFunctions:DecksInteractor.kt$DecksInteractor$DecksInteractor</ID>
+    <ID>TooManyFunctions:DecksInteractorImpl.kt$DecksInteractorImpl$DecksInteractorImpl</ID>
+    <ID>TooManyFunctions:DecksStorage.kt$DecksStorage$DecksStorage</ID>
+    <ID>TooManyFunctions:DecksStorageImpl.kt$DecksStorageImpl$DecksStorageImpl</ID>
   </Whitelist>
 </SmellBaseline>

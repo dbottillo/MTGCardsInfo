@@ -1,12 +1,8 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1563646204689">
-    <ID>ComplexMethod:SearchActivity.kt$SearchActivity$override fun onClick(v: View)</ID>
-    <ID>ComplexMethod:SearchActivity.kt$SearchActivity$override fun onCreate(bundle: Bundle?)</ID>
+  <Blacklist></Blacklist>
+  <Whitelist>
     <ID>ForbiddenComment:SearchActivity.kt$SearchActivity$// TODO: pre-lollipop version</ID>
-    <ID>LargeClass:SearchActivity.kt$SearchActivity : BasicActivityOnClickListenerSearchActivityViewOnCardListener</ID>
-    <ID>LongMethod:SearchActivity.kt$SearchActivity$override fun onCreate(bundle: Bundle?)</ID>
     <ID>MagicNumber:MTGSearchView.kt$MTGSearchView$2</ID>
     <ID>MagicNumber:SearchActivity.kt$SearchActivity$200</ID>
     <ID>MagicNumber:SearchActivity.kt$SearchActivity$400</ID>
@@ -14,5 +10,36 @@
     <ID>MagicNumber:SearchActivity.kt$SearchActivity$9</ID>
     <ID>MagicNumber:SearchActivity.kt$SearchActivity$9f</ID>
     <ID>MagicNumber:SearchActivity.kt$SearchActivity.&lt;no name provided&gt;$100</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val black: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_b) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val blue: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_u) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val cmc: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatEditText&gt;(R.id.search_cmc) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val colorsSpecification: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;Spinner&gt;(R.id.search_colors_how) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val common: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_common) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val green: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_g) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val land: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_l) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val mythic: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_mythic) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val name: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatEditText&gt;(R.id.search_name) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val noDuplicates: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_no_duplicates) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val power: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatEditText&gt;(R.id.search_power) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val powerOp: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;Spinner&gt;(R.id.search_power_operator) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val rare: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_rare) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val red: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_r) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val sortAZ: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_az) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val text: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatEditText&gt;(R.id.search_text) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val tough: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatEditText&gt;(R.id.search_tough) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val toughOp: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;Spinner&gt;(R.id.search_toughness_operator) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val types: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatEditText&gt;(R.id.search_types) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val uncommon: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_uncommon) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val white: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_w) }</ID>
+    <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private var sets = mutableListOf(MTGSet(-1, "", resources.getString(R.string.search_set_all)), MTGSet(-2, "", resources.getString(R.string.search_set_standard)))</ID>
+    <ID>MaxLineLength:SearchActivity.kt$SearchActivity$val color = argbEvaluator.evaluate(if (amount &lt; 400) amount.toFloat() / 400.toFloat() else 1f, ContextCompat.getColor(this, R.color.color_primary), ContextCompat.getColor(this, R.color.color_primary_slightly_dark)) as Int</ID>
+    <ID>MaxLineLength:SearchActivity.kt$SearchActivity$val color = argbEvaluator.evaluate(if (scrollView.scrollY &lt; 400) scrollView.scrollY.toFloat() / 400.toFloat() else 1f, ContextCompat.getColor(this, R.color.color_primary), ContextCompat.getColor(this, R.color.color_primary_slightly_dark)) as Int</ID>
+    <ID>MaxLineLength:SearchActivity.kt$SearchActivity$window.statusBarColor = ContextCompat.getColor(this, if (searchOpen) R.color.color_accent_dark else R.color.status_bar)</ID>
+    <ID>NewLineAtEndOfFile:SearchActivity.kt$com.dbottillo.mtgsearchfree.search.SearchActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:SearchActivityView.kt$com.dbottillo.mtgsearchfree.search.SearchActivityView.kt</ID>
+    <ID>NewLineAtEndOfFile:SearchPresenter.kt$com.dbottillo.mtgsearchfree.search.SearchPresenter.kt</ID>
+    <ID>NewLineAtEndOfFile:SearchPresenterImpl.kt$com.dbottillo.mtgsearchfree.search.SearchPresenterImpl.kt</ID>
+    <ID>TooManyFunctions:SearchActivity.kt$SearchActivity$SearchActivity</ID>
   </Whitelist>
 </SmellBaseline>

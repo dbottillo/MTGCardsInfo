@@ -1,5 +1,22 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1564326377249"></Whitelist>
+  <Blacklist></Blacklist>
+  <Whitelist>
+    <ID>ComplexMethod:CardsHelper.kt$filterWith</ID>
+    <ID>MaxLineLength:CardsPreferencesImpl.kt$CardsPreferencesImpl$private val sharedPreferences: SharedPreferences by lazy(LazyThreadSafetyMode.NONE) { context.getSharedPreferences(PREFS_NAME, 0) }</ID>
+    <ID>MaxLineLength:CardsStorageImpl.kt$CardsStorageImpl$?:</ID>
+    <ID>MaxLineLength:CardsStorageImpl.kt$CardsStorageImpl$return mtgCardDataSource.searchCard(name) ?: throw UnsupportedOperationException("can't find other side of $card")</ID>
+    <ID>MaxLineLength:CardsStorageImpl.kt$CardsStorageImpl$return mtgCardDataSource.searchCardById(id) ?: throw UnsupportedOperationException("can't find card with id $id")</ID>
+    <ID>NewLineAtEndOfFile:CardFilterInteractor.kt$com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor.kt</ID>
+    <ID>NewLineAtEndOfFile:CardPriceException.kt$com.dbottillo.mtgsearchfree.repository.CardPriceException.kt</ID>
+    <ID>NewLineAtEndOfFile:CardPriceMapper.kt$com.dbottillo.mtgsearchfree.repository.CardPriceMapper.kt</ID>
+    <ID>NewLineAtEndOfFile:CardRepository.kt$com.dbottillo.mtgsearchfree.repository.CardRepository.kt</ID>
+    <ID>NewLineAtEndOfFile:CardsHelper.kt$com.dbottillo.mtgsearchfree.storage.CardsHelper.kt</ID>
+    <ID>NewLineAtEndOfFile:CardsInteractor.kt$com.dbottillo.mtgsearchfree.interactors.CardsInteractor.kt</ID>
+    <ID>NewLineAtEndOfFile:SavedCardsInteractor.kt$com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor.kt</ID>
+    <ID>TooManyFunctions:CardsInteractor.kt$CardsInteractor$CardsInteractor</ID>
+    <ID>TooManyFunctions:CardsInteractorImpl.kt$CardsInteractorImpl$CardsInteractorImpl</ID>
+    <ID>TooManyFunctions:CardsPreferencesImpl.kt$CardsPreferences$CardsPreferences</ID>
+    <ID>TooManyFunctions:CardsPreferencesImpl.kt$CardsPreferencesImpl$CardsPreferencesImpl</ID>
+  </Whitelist>
 </SmellBaseline>

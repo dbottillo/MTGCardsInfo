@@ -1,10 +1,9 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1563646195963">
-    <ID>ComplexMethod:CardsConfiguratorPresenterImpl.kt$CardsConfiguratorPresenterImpl$override fun update(type: CardFilter.TYPE, on: Boolean)</ID>
-    <ID>ComplexMethod:MTGCardView.kt$MTGCardView$private fun load(card: MTGCard)</ID>
-    <ID>EmptySecondaryConstructor:MTGCardView.kt$MTGCardView${}</ID>
+  <Blacklist></Blacklist>
+  <Whitelist>
+    <ID>ComplexMethod:CardsConfiguratorPresenterImpl.kt$CardsConfiguratorPresenterImpl$update</ID>
+    <ID>ComplexMethod:MTGCardView.kt$MTGCardView$load</ID>
     <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$10</ID>
     <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$14</ID>
     <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$15</ID>
@@ -18,10 +17,20 @@
     <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$9</ID>
     <ID>MagicNumber:MTGCardsView.kt$MTGCardsView$6</ID>
     <ID>MagicNumber:MTGCardsView.kt$MTGCardsView$60</ID>
-    <ID>PackageNaming:CardsConfiguratorFragment.kt$package com.dbottillo.mtgsearchfree.ui.cardsConfigurator</ID>
-    <ID>PackageNaming:CardsConfiguratorPresenter.kt$package com.dbottillo.mtgsearchfree.ui.cardsConfigurator</ID>
-    <ID>PackageNaming:CardsConfiguratorPresenterImpl.kt$package com.dbottillo.mtgsearchfree.ui.cardsConfigurator</ID>
-    <ID>PackageNaming:CardsConfiguratorView.kt$package com.dbottillo.mtgsearchfree.ui.cardsConfigurator</ID>
+    <ID>MaxLineLength:CardsAdapter.kt$CardsAdapter$spannableString.setSpan(ForegroundColorSpan(colorFilterActive), start, start + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)</ID>
+    <ID>MaxLineLength:CardsAdapter.kt$CardsAdapter$val v = inflater.inflate(if (configuration.isGrid) R.layout.grid_item_card else R.layout.row_card, parent, false)</ID>
+    <ID>MaxLineLength:CardsConfiguratorFragment.kt$CardsConfiguratorFragment : BottomSheetDialogFragmentCardsConfiguratorViewOnFilterPickerListener</ID>
+    <ID>MaxLineLength:MTGCardView.kt$MTGCardView$boldTitledEntry(resources.getString(R.string.card_detail_mana), if (card.manaCost.isNotEmpty()) "${card.manaCost} (${card.cmc})" else " - ")</ID>
+    <ID>MaxLineLength:MTGCardView.kt$MTGCardView$context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.cardmarket.com/${apiPrice.url}")))</ID>
+    <ID>MaxLineLength:MTGCardsView.kt$MTGCardsView$fun loadCards(cards: List&lt;MTGCard&gt;, listener: OnCardListener, title: String, cardFilter: CardFilter?, menuOption: Int)</ID>
+    <ID>MaxLineLength:MTGCardsView.kt$MTGCardsView$moreResult.text = resources.getQuantityString(R.plurals.search_limit, CardDataSource.LIMIT, CardDataSource.LIMIT)</ID>
+    <ID>NewLineAtEndOfFile:BaseCardsView.kt$com.dbottillo.mtgsearchfree.ui.BaseCardsView.kt</ID>
+    <ID>NewLineAtEndOfFile:CardAdapterConfiguration.kt$com.dbottillo.mtgsearchfree.ui.cards.CardAdapterConfiguration.kt</ID>
+    <ID>NewLineAtEndOfFile:CardPresenterImpl.kt$com.dbottillo.mtgsearchfree.ui.views.CardPresenterImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:CardsAdapter.kt$com.dbottillo.mtgsearchfree.ui.cards.CardsAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:CardsConfiguratorFragment.kt$com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:CommonCardsActivity.kt$com.dbottillo.mtgsearchfree.ui.CommonCardsActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:MTGCardView.kt$com.dbottillo.mtgsearchfree.ui.views.MTGCardView.kt</ID>
     <ID>ReturnCount:CardsAdapter.kt$CardsAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
   </Whitelist>
 </SmellBaseline>

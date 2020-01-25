@@ -1,5 +1,12 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1563646200882"></Whitelist>
+  <Blacklist></Blacklist>
+  <Whitelist>
+    <ID>MaxLineLength:SavedFragment.kt$SavedFragment$mtgCardsView.loadCards(uiModel.collection.list, this, getString(R.string.action_saved), uiModel.collection.filter, R.menu.card_saved_option)</ID>
+    <ID>NewLineAtEndOfFile:SavedCardsPresenter.kt$com.dbottillo.mtgsearchfree.saved.SavedCardsPresenter.kt</ID>
+    <ID>NewLineAtEndOfFile:SavedCardsPresenterImpl.kt$com.dbottillo.mtgsearchfree.saved.SavedCardsPresenterImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:SavedCardsView.kt$com.dbottillo.mtgsearchfree.saved.SavedCardsView.kt</ID>
+    <ID>NewLineAtEndOfFile:SavedFragmentBuilder.kt$com.dbottillo.mtgsearchfree.dagger.SavedFragmentBuilder.kt</ID>
+    <ID>TooManyFunctions:SavedFragment.kt$SavedFragment$SavedFragment</ID>
+  </Whitelist>
 </SmellBaseline>

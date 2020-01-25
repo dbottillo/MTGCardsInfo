@@ -1,9 +1,20 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1564326384654">
+  <Blacklist></Blacklist>
+  <Whitelist>
+    <ID>ConstructorParameterNaming:MKMApiInterface.kt$MKMPriceGuideApi$val LOW: Double?</ID>
+    <ID>ConstructorParameterNaming:MKMApiInterface.kt$MKMPriceGuideApi$val SELL: Double?</ID>
+    <ID>ConstructorParameterNaming:MKMApiInterface.kt$MKMPriceGuideApi$val TREND: Double?</ID>
+    <ID>ConstructorParameterNaming:TCGApiInterface.kt$TCGAuthentication$val access_token: String</ID>
     <ID>MagicNumber:TCGNetworkInterceptor.kt$TokenAuthenticator$401</ID>
     <ID>MagicNumber:TCGNetworkInterceptor.kt$TokenAuthenticator$5</ID>
-    <ID>MatchingDeclarationName:CoreModule.kt$com.dbottillo.mtgsearchfree.dagger.CoreModule.kt</ID>
+    <ID>MaxLineLength:MKMNetworkInterceptor.kt$MKMNetworkInterceptor$val baseUrl = chain.call().request().url.scheme + "://" + chain.call().request().url.host + chain.call().request().url.encodedPath</ID>
+    <ID>MaxLineLength:TCGNetworkInterceptor.kt$TokenAuthenticator : Authenticator</ID>
+    <ID>MaxLineLength:TokenRepository.kt$TokenRepository$private val sharedPreferences: SharedPreferences by lazy(LazyThreadSafetyMode.NONE) { context.getSharedPreferences("Token", Context.MODE_PRIVATE) }</ID>
+    <ID>NewLineAtEndOfFile:MKMNetworkInterceptor.kt$com.dbottillo.mtgsearchfree.network.MKMNetworkInterceptor.kt</ID>
+    <ID>NewLineAtEndOfFile:NetworkModule.kt$com.dbottillo.mtgsearchfree.dagger.NetworkModule.kt</ID>
+    <ID>NewLineAtEndOfFile:TCGApiInterface.kt$com.dbottillo.mtgsearchfree.network.TCGApiInterface.kt</ID>
+    <ID>NewLineAtEndOfFile:TCGNetworkInterceptor.kt$com.dbottillo.mtgsearchfree.network.TCGNetworkInterceptor.kt</ID>
+    <ID>NewLineAtEndOfFile:TokenRepository.kt$com.dbottillo.mtgsearchfree.network.TokenRepository.kt</ID>
   </Whitelist>
 </SmellBaseline>

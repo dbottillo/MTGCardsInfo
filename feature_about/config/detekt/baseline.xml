@@ -1,8 +1,10 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1563095208019">
+  <Blacklist></Blacklist>
+  <Whitelist>
     <ID>MagicNumber:AboutActivity.kt$AboutActivity$1000</ID>
     <ID>MagicNumber:AboutActivity.kt$AboutActivity$5</ID>
+    <ID>NewLineAtEndOfFile:AboutActivity.kt$com.dbottillo.mtgsearchfree.about.AboutActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:AboutModule.kt$com.dbottillo.mtgsearchfree.dagger.AboutModule.kt</ID>
   </Whitelist>
 </SmellBaseline>

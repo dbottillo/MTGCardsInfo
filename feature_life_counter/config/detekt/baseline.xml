@@ -1,14 +1,23 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1563095218125">
+  <Blacklist></Blacklist>
+  <Whitelist>
     <ID>MagicNumber:LifeCounterAdapter.kt$LifeCounterAdapter$3</ID>
     <ID>MagicNumber:LifeCounterAdapter.kt$LifeCounterAdapter$5</ID>
     <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$10</ID>
     <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$15</ID>
     <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$20</ID>
     <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$30</ID>
+    <ID>MaxLineLength:LifeCounterAdapter.kt$LifeCounterAdapter$holder.name.text = holder.itemView.context.getString(R.string.row_life_counter_name, player.name, player.diceResult)</ID>
+    <ID>MaxLineLength:LifeCounterAdapter.kt$LifeCounterAdapter$return FooterViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.life_counter_footer, parent, false))</ID>
+    <ID>MaxLineLength:LifeCounterAdapter.kt$LifeCounterAdapter$return HeaderViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.life_counter_header, parent, false))</ID>
+    <ID>MaxLineLength:PlayersStorageImpl.kt$PlayersStorageImpl$private val names = arrayOf("Teferi", "Nicol Bolas", "Gerrard", "Ajani", "Jace", "Liliana", "Elspeth", "Tezzeret", "Garruck", "Chandra", "Venser", "Doran", "Sorin")</ID>
+    <ID>NewLineAtEndOfFile:LifeCounterModule.kt$com.dbottillo.mtgsearchfree.dagger.LifeCounterModule.kt</ID>
+    <ID>NewLineAtEndOfFile:LifeCounterPresenter.kt$com.dbottillo.mtgsearchfree.lifecounter.LifeCounterPresenter.kt</ID>
+    <ID>NewLineAtEndOfFile:LifeCounterView.kt$com.dbottillo.mtgsearchfree.lifecounter.LifeCounterView.kt</ID>
+    <ID>NewLineAtEndOfFile:PlayerInteractor.kt$com.dbottillo.mtgsearchfree.lifecounter.PlayerInteractor.kt</ID>
     <ID>ReturnCount:LifeCounterAdapter.kt$LifeCounterAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
     <ID>ReturnCount:LifeCounterAdapter.kt$LifeCounterAdapter$private fun getColorOfPosition(context: Context, position: Int): Int</ID>
+    <ID>TooManyFunctions:LifeCounterFragment.kt$LifeCounterFragment$LifeCounterFragment</ID>
   </Whitelist>
 </SmellBaseline>

@@ -1,7 +1,11 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1563095220221">
+  <Blacklist></Blacklist>
+  <Whitelist>
+    <ID>MaxLineLength:ReleaseNoteActivity.kt$ReleaseNoteActivity$private val releaseNoteList: RecyclerView by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;RecyclerView&gt;(R.id.release_note_list) }</ID>
+    <ID>NewLineAtEndOfFile:ReleaseNoteModule.kt$com.dbottillo.mtgsearchfree.dagger.ReleaseNoteModule.kt</ID>
+    <ID>NewLineAtEndOfFile:ReleaseNotePresenter.kt$com.dbottillo.mtgsearchfree.releasenote.ReleaseNotePresenter.kt</ID>
+    <ID>NewLineAtEndOfFile:ReleaseNoteStorage.kt$com.dbottillo.mtgsearchfree.releasenote.ReleaseNoteStorage.kt</ID>
     <ID>TooGenericExceptionCaught:ReleaseNoteStorage.kt$ReleaseNoteStorage$e: Exception</ID>
   </Whitelist>
 </SmellBaseline>

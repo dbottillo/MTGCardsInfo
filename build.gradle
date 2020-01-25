@@ -111,9 +111,10 @@ allprojects {
             }
         }
         jcenter {
-            url "http://jcenter.bintray.com"
+            url "https://jcenter.bintray.com"
             content {
                 includeGroup "org.jetbrains.trove4j"
+                includeGroup "org.jetbrains.kotlinx"
                 includeGroup "com.beust"
             }
         }

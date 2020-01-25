@@ -1,7 +1,15 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1564326375509">
+  <Blacklist></Blacklist>
+  <Whitelist>
+    <ID>MaxLineLength:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$values.put(CardDataSource.COLUMNS.TCG_PLAYER_PURCHASE_URL.noun, jsonObject.getString("tcgplayerPurchaseUrl"))</ID>
+    <ID>MaxLineLength:CreateDatabaseHelper.kt$CreateDatabaseHelper$internal</ID>
+    <ID>MaxLineLength:DebugActivity.kt$DebugActivity$Toast.makeText(applicationContext, if (copied) "database copied" else "database not copied", Toast.LENGTH_LONG).show()</ID>
+    <ID>MaxLineLength:DebugActivity.kt$DebugActivity.&lt;no name provided&gt;$Snackbar .make(findViewById(android.R.id.content), getString(R.string.db_exported), Snackbar.LENGTH_LONG)</ID>
+    <ID>MaxLineLength:DebugInteractor.kt$DebugInteractor$val cursor = cardsInfoDbHelper.writableDatabase.rawQuery("delete from ${FavouritesDataSource.TABLE}", null)</ID>
+    <ID>MaxLineLength:DebugInteractor.kt$DebugInteractor$val cursor2 = cardsInfoDbHelper.writableDatabase.rawQuery("delete from ${DeckDataSource.TABLE_JOIN}", null)</ID>
+    <ID>NewLineAtEndOfFile:DebugActivity.kt$com.dbottillo.mtgsearchfree.debug.DebugActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:DebugInteractor.kt$com.dbottillo.mtgsearchfree.debug.DebugInteractor.kt</ID>
     <ID>TooGenericExceptionThrown:DebugActivity.kt$DebugActivity$throw RuntimeException("This is a crash")</ID>
   </Whitelist>
 </SmellBaseline>

@@ -1,11 +1,27 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist timestamp="1545156791812"></Blacklist>
-  <Whitelist timestamp="1564326377958">
-    <ID>ComplexMethod:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$@Throws(JSONException::class) private fun createContentValueFromJSON(jsonObject: JSONObject, set: MTGSet): ContentValues</ID>
-    <ID>ComplexMethod:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$fun adjustCode(code: String?): String?</ID>
-    <ID>LongMethod:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$@Throws(JSONException::class) private fun createContentValueFromJSON(jsonObject: JSONObject, set: MTGSet): ContentValues</ID>
-    <ID>MagicNumber:AddFavouritesAsyncTask.kt$AddFavouritesAsyncTask$600</ID>
-    <ID>MagicNumber:CreateDBAsyncTask.kt$CreateDBAsyncTask$1024</ID>
+  <Blacklist></Blacklist>
+  <Whitelist>
+    <ID>MaxLineLength:AppNavigator.kt$AppNavigator$override fun openCardsLuckyScreen(origin: Activity)</ID>
+    <ID>MaxLineLength:AppNavigator.kt$AppNavigator$override fun openReleaseNoteScreen(origin: Activity)</ID>
+    <ID>MaxLineLength:AppPreferencesImpl.kt$AppPreferencesImpl$private val sharedPreferences: SharedPreferences by lazy(LazyThreadSafetyMode.NONE) { context.getSharedPreferences(PREFS_NAME, 0) }</ID>
+    <ID>MaxLineLength:DataModule.kt$DataModule$@Provides @Singleton fun provideDecksStorage(fileUtil: FileUtil, deckDataSource: DeckDataSource, generalData: GeneralData, logger: Logger): DecksStorage</ID>
+    <ID>MaxLineLength:DataModule.kt$DataModule$@Provides @Singleton fun provideFavouritesDataSource(@Named("storageDB") database: SQLiteDatabase, cardDataSource: CardDataSource): FavouritesDataSource</ID>
+    <ID>MaxLineLength:LegacyActivityBuilder.kt$CardsActivityModule$return CardsActivityPresenterImpl(cardsInteractor, savedCardsInteractor, decksInteractor, cardsPreferences, logger)</ID>
+    <ID>MaxLineLength:LuckyWidgetProvider.kt$LuckyWidgetProvider$val appWidgetIds = intent?.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID)?.let { intArrayOf(it) } ?: manager.getAppWidgetIds(cn)</ID>
+    <ID>MaxLineLength:LuckyWidgetProvider.kt$LuckyWidgetProvider$val pendingIntent = PendingIntent.getActivity(context, appWidgetId, openIntent, PendingIntent.FLAG_UPDATE_CURRENT)</ID>
+    <ID>MaxLineLength:LuckyWidgetProvider.kt$LuckyWidgetProvider$val refreshPendingIntent = PendingIntent.getBroadcast(context, appWidgetId, refreshIntent, PendingIntent.FLAG_UPDATE_CURRENT)</ID>
+    <ID>MaxLineLength:MTGApp.kt$MTGApp$StrictMode.setVmPolicy(StrictMode.VmPolicy.Builder().detectLeakedSqlLiteObjects().detectLeakedClosableObjects().penaltyLog().build())</ID>
+    <ID>NewLineAtEndOfFile:ActivityBuilder.kt$com.dbottillo.mtgsearchfree.dagger.ActivityBuilder.kt</ID>
+    <ID>NewLineAtEndOfFile:AppComponent.kt$com.dbottillo.mtgsearchfree.dagger.AppComponent.kt</ID>
+    <ID>NewLineAtEndOfFile:AppModule.kt$com.dbottillo.mtgsearchfree.dagger.AppModule.kt</ID>
+    <ID>NewLineAtEndOfFile:AppNavigator.kt$com.dbottillo.mtgsearchfree.AppNavigator.kt</ID>
+    <ID>NewLineAtEndOfFile:AppPreferencesImpl.kt$com.dbottillo.mtgsearchfree.AppPreferencesImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:DataModule.kt$com.dbottillo.mtgsearchfree.dagger.DataModule.kt</ID>
+    <ID>NewLineAtEndOfFile:FragmentBuilder.kt$com.dbottillo.mtgsearchfree.dagger.FragmentBuilder.kt</ID>
+    <ID>NewLineAtEndOfFile:LuckyWidgetProvider.kt$com.dbottillo.mtgsearchfree.widget.LuckyWidgetProvider.kt</ID>
+    <ID>NewLineAtEndOfFile:MTGApp.kt$com.dbottillo.mtgsearchfree.MTGApp.kt</ID>
+    <ID>TooManyFunctions:AppNavigator.kt$AppNavigator$AppNavigator</ID>
+    <ID>TooManyFunctions:DataModule.kt$DataModule$DataModule</ID>
   </Whitelist>
 </SmellBaseline>

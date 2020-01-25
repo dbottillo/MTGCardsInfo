@@ -1,25 +1,48 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1563646202791">
-    <ID>ComplexMethod:DeckFragment.kt$DeckFragment$override fun onViewCreated(view: View, savedInstanceState: Bundle?)</ID>
-    <ID>MagicNumber:AddToDeckFragment.kt$AddToDeckFragment$30</ID>
-    <ID>MagicNumber:AddToDeckFragment.kt$AddToDeckFragment.&lt;no name provided&gt;$5</ID>
+  <Blacklist></Blacklist>
+  <Whitelist>
     <ID>MagicNumber:DeckAdapter.kt$DeckCardViewHolder$3</ID>
     <ID>MagicNumber:DeckAdapter.kt$DeckCardViewHolder$4</ID>
     <ID>MagicNumber:DeckStartingHandFragment.kt$DeckStartingHandFragment$3</ID>
     <ID>MagicNumber:StartingHandPresenter.kt$StartingHandPresenter$7</ID>
-    <ID>PackageNaming:AddToDeckFragment.kt$package com.dbottillo.mtgsearchfree.decks.addToDeck</ID>
-    <ID>PackageNaming:AddToDeckPresenter.kt$package com.dbottillo.mtgsearchfree.decks.addToDeck</ID>
-    <ID>PackageNaming:AddToDeckPresenterImpl.kt$package com.dbottillo.mtgsearchfree.decks.addToDeck</ID>
-    <ID>PackageNaming:AddToDeckView.kt$package com.dbottillo.mtgsearchfree.decks.addToDeck</ID>
-    <ID>PackageNaming:DeckStartingHandFragment.kt$package com.dbottillo.mtgsearchfree.decks.startingHand</ID>
-    <ID>PackageNaming:StartingHandGridAdapter.kt$package com.dbottillo.mtgsearchfree.decks.startingHand</ID>
-    <ID>PackageNaming:StartingHandPresenter.kt$package com.dbottillo.mtgsearchfree.decks.startingHand</ID>
-    <ID>PackageNaming:StartingHandView.kt$package com.dbottillo.mtgsearchfree.decks.startingHand</ID>
-    <ID>ReturnCount:AddToDeckFragment.kt$AddToDeckFragment.InputFilterMinMax$override fun filter(source: CharSequence, start: Int, end: Int, dest: Spanned, dstart: Int, dend: Int): CharSequence?</ID>
+    <ID>MaxLineLength:AddToDeckFragment.kt$AddToDeckFragment$val adapter = ArrayAdapter&lt;CharSequence&gt;(activity as FragmentActivity, R.layout.add_to_deck_spinner_item, decksChoose.toTypedArray())</ID>
+    <ID>MaxLineLength:DeckActivity.kt$DeckActivity$private val tabLayout: TabLayout by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;TabLayout&gt;(R.id.deck_cards_tab_layout) }</ID>
+    <ID>MaxLineLength:DeckActivity.kt$DeckActivity$private val viewPager: ViewPager by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;ViewPager&gt;(R.id.deck_view_pager) }</ID>
+    <ID>MaxLineLength:DeckAdapter.kt$DeckCardViewHolder$moveAll.setTitle(if (card.isSideboard) R.string.move_all_card_to_deck else R.string.move_all_card_to_sideboard)</ID>
+    <ID>MaxLineLength:DeckFragment.kt$DeckFragment$sections.add(DeckSection(getString(R.string.deck_header_creatures) + " (" + collection.getNumberOfCreatures() + ")", collection.creatures))</ID>
+    <ID>MaxLineLength:DeckFragment.kt$DeckFragment$sections.add(DeckSection(getString(R.string.deck_header_instant_sorceries) + " (" + collection.getNumberOfInstantAndSorceries() + ")", collection.instantAndSorceries))</ID>
+    <ID>MaxLineLength:DeckFragment.kt$DeckFragment$sections.add(DeckSection(getString(R.string.deck_header_lands) + " (" + collection.getNumberOfLands() + ")", collection.lands))</ID>
+    <ID>MaxLineLength:DeckFragment.kt$DeckFragment$sections.add(DeckSection(getString(R.string.deck_header_other) + " (" + collection.getNumberOfOther() + ")", collection.other))</ID>
+    <ID>MaxLineLength:DeckFragment.kt$DeckFragment$sections.add(DeckSection(getString(R.string.deck_header_sideboard) + " (" + collection.numberOfCardsInSideboard() + ")", collection.side))</ID>
+    <ID>MaxLineLength:DeckPresenter.kt$DeckPresenter$view.deckLoaded("${deck.name} (${data.second.numberOfCardsWithoutSideboard()}/${data.second.numberOfCardsInSideboard()})", data.second)</ID>
+    <ID>NewLineAtEndOfFile:AddToDeckInteractor.kt$com.dbottillo.mtgsearchfree.decks.addToDeck.AddToDeckInteractor.kt</ID>
+    <ID>NewLineAtEndOfFile:AddToDeckPresenter.kt$com.dbottillo.mtgsearchfree.decks.addToDeck.AddToDeckPresenter.kt</ID>
+    <ID>NewLineAtEndOfFile:AddToDeckPresenterImpl.kt$com.dbottillo.mtgsearchfree.decks.addToDeck.AddToDeckPresenterImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:AddToDeckView.kt$com.dbottillo.mtgsearchfree.decks.addToDeck.AddToDeckView.kt</ID>
+    <ID>NewLineAtEndOfFile:DeckActivity.kt$com.dbottillo.mtgsearchfree.decks.deck.DeckActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:DeckActivityPresenter.kt$com.dbottillo.mtgsearchfree.decks.deck.DeckActivityPresenter.kt</ID>
+    <ID>NewLineAtEndOfFile:DeckActivityView.kt$com.dbottillo.mtgsearchfree.decks.deck.DeckActivityView.kt</ID>
+    <ID>NewLineAtEndOfFile:DeckAdapter.kt$com.dbottillo.mtgsearchfree.decks.deck.DeckAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:DeckFragment.kt$com.dbottillo.mtgsearchfree.decks.deck.DeckFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:DeckIndicatorView.kt$com.dbottillo.mtgsearchfree.decks.DeckIndicatorView.kt</ID>
+    <ID>NewLineAtEndOfFile:DeckPresenter.kt$com.dbottillo.mtgsearchfree.decks.deck.DeckPresenter.kt</ID>
+    <ID>NewLineAtEndOfFile:DeckStartingHandFragment.kt$com.dbottillo.mtgsearchfree.decks.startingHand.DeckStartingHandFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:DeckView.kt$com.dbottillo.mtgsearchfree.decks.deck.DeckView.kt</ID>
+    <ID>NewLineAtEndOfFile:DecksAdapter.kt$com.dbottillo.mtgsearchfree.decks.DecksAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:DecksFragment.kt$com.dbottillo.mtgsearchfree.decks.DecksFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:DecksFragmentPresenter.kt$com.dbottillo.mtgsearchfree.decks.DecksFragmentPresenter.kt</ID>
+    <ID>NewLineAtEndOfFile:DecksFragmentPresenterImpl.kt$com.dbottillo.mtgsearchfree.decks.DecksFragmentPresenterImpl.kt</ID>
+    <ID>NewLineAtEndOfFile:DecksFragmentView.kt$com.dbottillo.mtgsearchfree.decks.DecksFragmentView.kt</ID>
+    <ID>NewLineAtEndOfFile:StartingHandGridAdapter.kt$com.dbottillo.mtgsearchfree.decks.startingHand.StartingHandGridAdapter.kt</ID>
+    <ID>NewLineAtEndOfFile:StartingHandPresenter.kt$com.dbottillo.mtgsearchfree.decks.startingHand.StartingHandPresenter.kt</ID>
+    <ID>NewLineAtEndOfFile:StartingHandView.kt$com.dbottillo.mtgsearchfree.decks.startingHand.StartingHandView.kt</ID>
     <ID>ReturnCount:DeckActivity.kt$DeckActivity$override fun onOptionsItemSelected(item: MenuItem): Boolean</ID>
     <ID>ReturnCount:DecksAdapter.kt$DecksAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
     <ID>ReturnCount:StartingHandGridAdapter.kt$StartingHandGridAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
+    <ID>TooManyFunctions:AddToDeckFragment.kt$AddToDeckFragment$AddToDeckFragment</ID>
+    <ID>TooManyFunctions:DeckActivity.kt$DeckActivity$DeckActivity</ID>
+    <ID>TooManyFunctions:DeckStartingHandFragment.kt$DeckStartingHandFragment$DeckStartingHandFragment</ID>
+    <ID>TooManyFunctions:DecksFragment.kt$DecksFragment$DecksFragment</ID>
   </Whitelist>
 </SmellBaseline>

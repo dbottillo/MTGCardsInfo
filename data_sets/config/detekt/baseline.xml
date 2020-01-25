@@ -1,7 +1,9 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist timestamp="1545156794726"></Blacklist>
-  <Whitelist timestamp="1563095206297">
+  <Blacklist></Blacklist>
+  <Whitelist>
+    <ID>NewLineAtEndOfFile:SetDataSource.kt$com.dbottillo.mtgsearchfree.storage.SetDataSource.kt</ID>
+    <ID>NewLineAtEndOfFile:SetsInteractor.kt$com.dbottillo.mtgsearchfree.interactors.SetsInteractor.kt</ID>
     <ID>SpreadOperator:SetDataSource.kt$SetDataSource$(query, *args)</ID>
   </Whitelist>
 </SmellBaseline>
