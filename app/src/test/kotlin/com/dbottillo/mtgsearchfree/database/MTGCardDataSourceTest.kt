@@ -560,7 +560,7 @@ class MTGCardDataSourceTest {
     fun `should search cards by id`() {
         val card = underTest.searchCardById(5)
         assertThat(card).isNotNull()
-        assertThat(card?.name).isEqualTo("Allure of the Unknown")
+        assertThat(card?.name).isEqualTo("Alexander Clamilton")
     }
 
     @Test

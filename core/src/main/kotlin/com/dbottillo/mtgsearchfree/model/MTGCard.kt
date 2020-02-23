@@ -110,9 +110,11 @@ data class MTGCard(
         }
     val scryfallImage
         get() = when {
-            scryfallId.isNotEmpty() && (isNormal || isAdventure || isTransform || isSaga) -> "https://api.scryfall.com/cards/$scryfallId?format=image${if (side == Side.B) "&face=back" else ""}"
+            scryfallId.isNotEmpty() && scryfallSupported -> "https://api.scryfall.com/cards/$scryfallId?format=image${if (side == Side.B) "&face=back" else ""}"
             else -> "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=$multiVerseId&type=card"
         }
+
+    private val scryfallSupported = isNormal || isAdventure || isTransform || isSaga || isHost
 
     fun getMtgColor(context: Context): Int {
         return ContextCompat.getColor(
@@ -166,6 +168,9 @@ data class MTGCard(
 
     val isMeld: Boolean
         get() = layout.equals("meld", ignoreCase = true)
+
+    val isHost: Boolean
+        get() = layout.equals("host", ignoreCase = true)
 
     override fun equals(other: Any?): Boolean {
         return when (other) {
