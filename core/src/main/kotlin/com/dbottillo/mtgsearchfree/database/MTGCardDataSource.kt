@@ -110,6 +110,20 @@ class MTGCardDataSource(
                         *searchParams.colors.toTypedArray()
                     )
                 }
+                searchParams.excludingOtherColors -> {
+                    queryComposer.addMultipleParam(
+                        CardDataSource.COLUMNS.COLORS_IDENTITY.noun,
+                        "LIKE",
+                        "OR",
+                        *searchParams.colors.toTypedArray()
+                    )
+                    queryComposer.addMultipleParam(
+                        CardDataSource.COLUMNS.COLORS_IDENTITY.noun,
+                        "NOT LIKE",
+                        "AND",
+                        *searchParams.notColors.toTypedArray()
+                    )
+                }
             }
         }
         if (searchParams.atLeastOneRarity) {

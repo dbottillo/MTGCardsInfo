@@ -389,6 +389,25 @@ class MTGCardDataSourceTest {
     }
 
     @Test
+    fun `should search by colors excluding others with blu and red in standard`() {
+        val searchParams = SearchParams()
+        searchParams.isRed = true
+        searchParams.isBlue = true
+        searchParams.exactlyColors = false
+        searchParams.includingColors = false
+        searchParams.atMostColors = false
+        searchParams.excludingOtherColors = true
+        searchParams.setId = -2
+
+        val cards = underTest.searchCards(searchParams)
+
+        for (card in cards) {
+            assertThat(card.isRed || card.isBlue).isTrue()
+            assertThat(!card.isGreen && !card.isWhite && !card.isBlack).isTrue()
+        }
+    }
+
+    @Test
     fun searchCommonCards() {
         val searchParams = SearchParams()
         searchParams.isCommon = true

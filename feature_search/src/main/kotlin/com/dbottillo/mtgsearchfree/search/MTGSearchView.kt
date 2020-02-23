@@ -28,7 +28,8 @@ class MTGSearchView @JvmOverloads constructor(
     private var colorsHow = arrayOf(
         context.getString(R.string.search_colors_exactly),
         context.getString(R.string.search_colors_including),
-        context.getString(R.string.search_colors_at_most))
+        context.getString(R.string.search_colors_at_most),
+        context.getString(R.string.search_colors_excluding_others))
 
     private val name: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatEditText>(R.id.search_name) }
     private val types: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatEditText>(R.id.search_types) }
@@ -73,6 +74,7 @@ class MTGSearchView @JvmOverloads constructor(
             searchParams.exactlyColors = colorsSpecification.selectedItemPosition == 0
             searchParams.includingColors = colorsSpecification.selectedItemPosition == 1
             searchParams.atMostColors = colorsSpecification.selectedItemPosition == 2
+            searchParams.excludingOtherColors = colorsSpecification.selectedItemPosition == 3
             searchParams.isLand = land.isChecked
             searchParams.isCommon = common.isChecked
             searchParams.isUncommon = uncommon.isChecked

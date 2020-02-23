@@ -20,6 +20,7 @@ data class SearchParams(
     var exactlyColors: Boolean = true,
     var includingColors: Boolean = false,
     var atMostColors: Boolean = false,
+    var excludingOtherColors: Boolean = false,
     var isCommon: Boolean = false,
     var isUncommon: Boolean = false,
     var isRare: Boolean = false,
@@ -58,6 +59,27 @@ data class SearchParams(
                 colors.add("U")
             }
             if (isWhite) {
+                colors.add("W")
+            }
+            return colors.toList()
+        }
+
+    val notColors: List<String>
+        get() {
+            val colors = mutableListOf<String>()
+            if (!isBlack) {
+                colors.add("B")
+            }
+            if (!isGreen) {
+                colors.add("G")
+            }
+            if (!isRed) {
+                colors.add("R")
+            }
+            if (!isBlue) {
+                colors.add("U")
+            }
+            if (!isWhite) {
                 colors.add("W")
             }
             return colors.toList()

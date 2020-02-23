@@ -116,7 +116,8 @@ internal class QueryComposer(initial: String) {
     }
 
     private fun addSelection(operator: String, value: String) {
-        if (operator.equals(LIKE_OPERATOR, ignoreCase = true)) {
+        if (operator.equals(LIKE_OPERATOR, ignoreCase = true) ||
+            operator.equals(NOT_LIKE_OPERATOR, ignoreCase = true)) {
             selection.add("%$value%")
         } else {
             selection.add(value)
@@ -147,4 +148,5 @@ internal class QueryComposer(initial: String) {
 }
 
 private const val LIKE_OPERATOR = "LIKE"
+private const val NOT_LIKE_OPERATOR = "NOT LIKE"
 private const val IS_OPERATOR = "IS"

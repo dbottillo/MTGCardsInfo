@@ -53,6 +53,24 @@ class QueryComposerTest {
     }
 
     @Test
+    fun `should generate query with not like parameter`() {
+        val queryComposer = QueryComposer("SELECT * from TABLE")
+        queryComposer.addMultipleParam(
+            "NAME",
+            "NOT LIKE",
+            "AND",
+            "B", "C"
+        )
+
+        val output = queryComposer.build()
+
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (NAME NOT LIKE ? AND NAME NOT LIKE ?)")
+        assertThat(output.selection.size).isEqualTo(2)
+        assertThat(output.selection[0]).isEqualTo("%B%")
+        assertThat(output.selection[1]).isEqualTo("%C%")
+    }
+
+    @Test
     fun generateQueryWithTwoParameters() {
         val queryComposer = QueryComposer("SELECT * from TABLE")
         queryComposer.addParam("NAME", "=", "island")
