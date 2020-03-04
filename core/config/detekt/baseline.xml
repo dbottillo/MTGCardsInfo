@@ -44,7 +44,7 @@
     <ID>MaxLineLength:FilterPickerView.kt$FilterPickerView : LinearLayoutOnClickListener</ID>
     <ID>MaxLineLength:FilterPickerView.kt$FilterPickerView$private val filterPanelContainer by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;View&gt;(R.id.filter_panel_container) }</ID>
     <ID>MaxLineLength:GeneralPreferences.kt$GeneralPreferences$private val sharedPreferences: SharedPreferences by lazy(LazyThreadSafetyMode.NONE) { context.getSharedPreferences("General", Context.MODE_PRIVATE) }</ID>
-    <ID>MaxLineLength:MTGCard.kt$MTGCard$scryfallId.isNotEmpty() &amp;&amp; (isNormal || isAdventure || isTransform || isSaga) -&gt; "https://api.scryfall.com/cards/$scryfallId?format=image${if (side == Side.B) "&amp;face=back" else ""}"</ID>
+    <ID>MaxLineLength:MTGCard.kt$MTGCard$scryfallId.isNotEmpty() &amp;&amp; scryfallSupported -&gt; "https://api.scryfall.com/cards/$scryfallId?format=image${if (side == Side.B) "&amp;face=back" else ""}"</ID>
     <ID>MaxLineLength:MTGCardDataSource.kt$MTGCardDataSource$"SELECT * FROM " + CardDataSource.TABLE + " WHERE " + CardDataSource.COLUMNS.SET_CODE.noun + " = '" + set.code + "';"</ID>
     <ID>MaxLineLength:MTGCardDataSource.kt$MTGCardDataSource$"SELECT * FROM ${CardDataSource.TABLE} WHERE ${CardDataSource.COLUMNS.NAME.noun}=? AND ${CardDataSource.COLUMNS.MULTIVERSE_ID.noun} IS NOT NULL"</ID>
     <ID>MaxLineLength:QueryComposer.kt$QueryComposer$addSelection(it.operator, it.stringValues.flatMap { it.toList() }.fold("") { total, next -&gt; "$total{$next}" })</ID>

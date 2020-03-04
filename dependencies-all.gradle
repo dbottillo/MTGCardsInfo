@@ -10,7 +10,8 @@ ext.deps = [
                         'cardview': "androidx.cardview:cardview:$versions.androidx.cardview",
                         'recyclerview': "androidx.recyclerview:recyclerview:$versions.androidx.recyclerview",
                         'design': "com.google.android.material:material:$versions.material",
-                        'constraintLayout': "androidx.constraintlayout:constraintlayout:$versions.constraint_layout"
+                        'constraintLayout': "androidx.constraintlayout:constraintlayout:$versions.constraint_layout",
+                        'preference': "androidx.preference:preference:$versions.androidx.preference"
                 ],
                 'firebase': [
                         'core': "com.google.firebase:firebase-core:$versions.firebase",

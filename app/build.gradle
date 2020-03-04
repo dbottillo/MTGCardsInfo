@@ -72,6 +72,7 @@ android {
 
 dependencies {
     implementation project(':feature_about')
+    implementation project(':feature_settings')
     implementation project(':feature_release_note')
     implementation project(':feature_life_counter')
     implementation project(':feature_cards_lucky')

@@ -25,6 +25,7 @@ ext {
         implementation deps.google.androidx.recyclerview
         implementation deps.google.androidx.design
         implementation deps.google.androidx.constraintLayout
+        implementation deps.google.androidx.preference
     }
     monitoring = Group {
         implementation deps.google.firebase.core

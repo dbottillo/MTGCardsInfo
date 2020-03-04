@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory
+        android:key="card"
+        android:title="@string/card_preferences_title">
+        <DropDownPreference
+            android:entries="@array/price_provider_entries"
+            android:entryValues="@array/price_provider_entries"
+            android:key="dropdown"
+            android:title="@string/price_provider_preference"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -12,6 +12,7 @@ import com.dbottillo.mtgsearchfree.ui.BasicFragment
 interface Navigator {
     fun openAboutScreen(origin: Activity)
     fun openReleaseNoteScreen(origin: Activity)
+    fun openSettingsScreen(origin: Activity)
     fun openCardsScreen(origin: Activity, deck: Deck, position: Int)
     fun openCardsScreen(origin: Activity, set: MTGSet, position: Int)
     fun openCardsScreen(origin: Activity, search: SearchParams, position: Int)

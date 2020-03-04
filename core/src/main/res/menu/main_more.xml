@@ -10,9 +10,13 @@
         android:icon="@drawable/left_release_note"
         android:orderInCategory="403"
         android:title="@string/action_release_note" />
+    <!--<item
+        android:id="@+id/more_settings"
+        android:orderInCategory="404"
+        android:title="@string/action_settings" />-->
     <item
         android:id="@+id/more_about"
         android:icon="@drawable/left_info"
-        android:orderInCategory="404"
+        android:orderInCategory="405"
         android:title="@string/action_about" />
 </menu>

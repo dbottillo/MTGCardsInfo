@@ -61,6 +61,7 @@ abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListen
             R.id.more_rate -> dbActivity.openRateTheApp()
             R.id.more_about -> navigator.openAboutScreen(activity!!)
             R.id.more_release_note -> navigator.openReleaseNoteScreen(activity!!)
+            R.id.more_settings -> navigator.openSettingsScreen(activity!!)
             R.id.action_open_debug -> navigator.openDebugScreen(requireActivity())
         }
         return true

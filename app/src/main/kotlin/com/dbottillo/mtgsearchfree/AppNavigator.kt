@@ -23,10 +23,12 @@ import com.dbottillo.mtgsearchfree.cards.KEY_SEARCH
 import com.dbottillo.mtgsearchfree.cards.KEY_SET
 import com.dbottillo.mtgsearchfree.cards.POSITION
 import com.dbottillo.mtgsearchfree.debug.DebugActivity
+import com.dbottillo.mtgsearchfree.settings.SettingsActivity
 
 class AppNavigator : Navigator {
     override fun openAboutScreen(origin: Activity) = origin.startActivity(Intent(origin, AboutActivity::class.java))
     override fun openReleaseNoteScreen(origin: Activity) = origin.startActivity(Intent(origin, ReleaseNoteActivity::class.java))
+    override fun openSettingsScreen(origin: Activity) = origin.startActivity(Intent(origin, SettingsActivity::class.java))
     override fun openSearchScreen(origin: Activity) = origin.startActivity(Intent(origin, SearchActivity::class.java))
     override fun openCardsLuckyScreen(origin: Activity) = origin.startActivity(Intent(origin, CardLuckyActivity::class.java))
     override fun openCardsScreen(origin: Activity, deck: Deck, position: Int) {

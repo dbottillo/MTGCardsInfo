@@ -4,6 +4,7 @@
   <Whitelist>
     <ID>MaxLineLength:AppNavigator.kt$AppNavigator$override fun openCardsLuckyScreen(origin: Activity)</ID>
     <ID>MaxLineLength:AppNavigator.kt$AppNavigator$override fun openReleaseNoteScreen(origin: Activity)</ID>
+    <ID>MaxLineLength:AppNavigator.kt$AppNavigator$override fun openSettingsScreen(origin: Activity)</ID>
     <ID>MaxLineLength:AppPreferencesImpl.kt$AppPreferencesImpl$private val sharedPreferences: SharedPreferences by lazy(LazyThreadSafetyMode.NONE) { context.getSharedPreferences(PREFS_NAME, 0) }</ID>
     <ID>MaxLineLength:DataModule.kt$DataModule$@Provides @Singleton fun provideDecksStorage(fileUtil: FileUtil, deckDataSource: DeckDataSource, generalData: GeneralData, logger: Logger): DecksStorage</ID>
     <ID>MaxLineLength:DataModule.kt$DataModule$@Provides @Singleton fun provideFavouritesDataSource(@Named("storageDB") database: SQLiteDatabase, cardDataSource: CardDataSource): FavouritesDataSource</ID>
