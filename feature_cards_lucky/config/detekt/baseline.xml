@@ -1,6 +1,6 @@
-<?xml version="1.0" ?>
+<?xml version='1.0' encoding='UTF-8'?>
 <SmellBaseline>
-  <Blacklist></Blacklist>
+  <Blacklist/>
   <Whitelist>
     <ID>ForbiddenComment:CardsLuckyPresenterImpl.kt$CardsLuckyPresenterImpl$// TODO: this need testing</ID>
     <ID>NewLineAtEndOfFile:CardLuckyActivity.kt$com.dbottillo.mtgsearchfree.lucky.CardLuckyActivity.kt</ID>

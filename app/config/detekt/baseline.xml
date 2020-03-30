@@ -1,7 +1,16 @@
-<?xml version="1.0" ?>
+<?xml version='1.0' encoding='UTF-8'?>
 <SmellBaseline>
-  <Blacklist></Blacklist>
+  <Blacklist/>
   <Whitelist>
+    <ID>LongParameterList:DataModule.kt$DataModule$( @Named("storageDB") database: SQLiteDatabase, cardDataSource: CardDataSource, mtgCardDataSource: MTGCardDataSource, deckColorMapper: DeckColorMapper, logger: Logger )</ID>
+    <ID>LongParameterList:DataModule.kt$DataModule$( favouritesDataSource: FavouritesDataSource, cardsHelper: CardsHelper, cardsPreferences: CardsPreferences, logger: Logger )</ID>
+    <ID>LongParameterList:DataModule.kt$DataModule$( mtgCardDataSource: MTGCardDataSource, favouritesDataSource: FavouritesDataSource, cardsPreferences: CardsPreferences, cardsHelper: CardsHelper, logger: Logger )</ID>
+    <ID>LongParameterList:DataModule.kt$DataModule$(fileUtil: FileUtil, deckDataSource: DeckDataSource, generalData: GeneralData, logger: Logger)</ID>
+    <ID>LongParameterList:FragmentBuilder.kt$SetsFragmentModule$( setsInteractor: SetsInteractor, cardsInteractor: CardsInteractor, cardsPreferences: CardsPreferences, generalData: GeneralData, logger: Logger )</ID>
+    <ID>LongParameterList:InteractorsModule.kt$InteractorsModule$( cardsStorage: CardsStorage, fileManager: FileManager, schedulerProvider: SchedulerProvider, logger: Logger, cardRepository: CardRepository )</ID>
+    <ID>LongParameterList:InteractorsModule.kt$InteractorsModule$( decksStorage: DecksStorage, fileManager: FileManager, schedulerProvider: SchedulerProvider, logger: Logger )</ID>
+    <ID>LongParameterList:LegacyActivityBuilder.kt$CardsActivityModule$( cardsInteractor: CardsInteractor, savedCardsInteractor: SavedCardsInteractor, decksInteractor: DecksInteractor, cardsPreferences: CardsPreferences, logger: Logger )</ID>
+    <ID>LongParameterList:LegacyActivityBuilder.kt$SearchActivityModule$( setsInteratcor: SetsInteractor, cardsInteractor: CardsInteractor, generalData: GeneralData, logger: Logger )</ID>
     <ID>MaxLineLength:AppNavigator.kt$AppNavigator$override fun openCardsLuckyScreen(origin: Activity)</ID>
     <ID>MaxLineLength:AppNavigator.kt$AppNavigator$override fun openReleaseNoteScreen(origin: Activity)</ID>
     <ID>MaxLineLength:AppNavigator.kt$AppNavigator$override fun openSettingsScreen(origin: Activity)</ID>

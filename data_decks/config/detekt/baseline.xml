@@ -1,6 +1,6 @@
-<?xml version="1.0" ?>
+<?xml version='1.0' encoding='UTF-8'?>
 <SmellBaseline>
-  <Blacklist></Blacklist>
+  <Blacklist/>
   <Whitelist>
     <ID>NewLineAtEndOfFile:DecksInteractor.kt$com.dbottillo.mtgsearchfree.interactors.DecksInteractor.kt</ID>
     <ID>TooGenericExceptionCaught:DecksInteractorImpl.kt$DecksInteractorImpl$throwable: Throwable</ID>

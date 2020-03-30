@@ -16,12 +16,12 @@ buildscript {
         classpath 'io.fabric.tools:gradle:1.31.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
         classpath "com.github.ben-manes:gradle-versions-plugin:0.28.0"
-        classpath "com.diffplug.spotless:spotless-plugin-gradle:3.27.1"
+        classpath "com.diffplug.spotless:spotless-plugin-gradle:3.28.0"
     }
 }
 
 plugins {
-    id "io.gitlab.arturbosch.detekt" version "1.6.0"
+    id "io.gitlab.arturbosch.detekt" version "1.7.2"
 }
 
 allprojects {
@@ -123,15 +123,14 @@ allprojects {
     dependencies { apply from: "$rootProject.rootDir/dependencies-groups.gradle" }
 }
 
-subprojects {
-    apply plugin: 'com.diffplug.gradle.spotless'
-    spotless {
-        kotlin {
-            target 'src/**/*.kt'
-            ktlint('0.28.0')
-        }
+apply plugin: 'com.diffplug.gradle.spotless'
+spotless {
+    kotlin {
+        target 'src/**/*.kt'
     }
+}
 
+subprojects {
     apply plugin: 'io.gitlab.arturbosch.detekt'
     detekt {
         config = files("$rootDir/config/detekt/config.yml")
