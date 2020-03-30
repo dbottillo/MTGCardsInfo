@@ -1,7 +1,10 @@
 package com.dbottillo.mtgsearchfree
 
 import android.app.Application
+import android.content.Context
 import android.os.StrictMode
+import android.telephony.TelephonyManager
+import androidx.preference.PreferenceManager
 import com.crashlytics.android.Crashlytics
 import com.dbottillo.mtgsearchfree.dagger.DaggerAppComponent
 import com.dbottillo.mtgsearchfree.dagger.DataModule
@@ -11,6 +14,7 @@ import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
 import io.fabric.sdk.android.Fabric
+import java.util.Locale
 import javax.inject.Inject
 
 open class MTGApp : Application(), HasAndroidInjector {
@@ -31,9 +35,24 @@ open class MTGApp : Application(), HasAndroidInjector {
             Fabric.with(this, Crashlytics())
 
             if (BuildConfig.DEBUG) {
-                StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build())
-                StrictMode.setVmPolicy(StrictMode.VmPolicy.Builder().detectLeakedSqlLiteObjects().detectLeakedClosableObjects().penaltyLog().build())
+                StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.Builder()
+                        .detectAll()
+                        .penaltyLog()
+                        .build())
+                StrictMode.setVmPolicy(StrictMode.VmPolicy.Builder()
+                        .detectLeakedSqlLiteObjects()
+                        .detectLeakedClosableObjects()
+                        .penaltyLog()
+                        .build())
             }
+        }
+        checkDefaultPriceProviderPreference()
+    }
+
+    private fun checkDefaultPriceProviderPreference() {
+        val defaultPrefs = PreferenceManager.getDefaultSharedPreferences(this)
+        if (defaultPrefs.getString(PRICE_PROVIDER_PREFERENCE_KEY, null) == null) {
+            defaultPrefs.edit().putString(PRICE_PROVIDER_PREFERENCE_KEY, if (isEuUser()) "MKM" else "TCG").apply()
         }
     }
 
@@ -56,3 +75,14 @@ open class MTGApp : Application(), HasAndroidInjector {
                 .inject(this)
     }
 }
+
+private fun Context.isEuUser(): Boolean {
+    val tm = this.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+    return listOf(
+            "BE", "EL", "LT", "PT", "BG", "ES", "LU", "RO", "CZ", "FR", "HU", "SI", "DK", "HR",
+            "MT", "SK", "DE", "IT", "NL", "FI", "EE", "CY", "AT", "SE", "IE", "LV", "PL", "UK",
+            "CH", "NO", "IS", "LI", "GB"
+    ).contains((tm.simCountryIso ?: Locale.getDefault().country).toUpperCase(Locale.getDefault()))
+}
+
+private const val PRICE_PROVIDER_PREFERENCE_KEY = "price_provider"

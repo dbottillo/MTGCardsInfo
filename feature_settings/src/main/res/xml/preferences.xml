@@ -6,8 +6,8 @@
         android:title="@string/card_preferences_title">
         <DropDownPreference
             android:entries="@array/price_provider_entries"
-            android:entryValues="@array/price_provider_entries"
-            android:key="dropdown"
+            android:entryValues="@array/price_provider_entry_values"
+            android:key="price_provider"
             android:title="@string/price_provider_preference"
             app:useSimpleSummaryProvider="true" />
 

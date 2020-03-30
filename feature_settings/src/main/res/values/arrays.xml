@@ -4,4 +4,8 @@
         <item>TCG Price (TCG)</item>
         <item>Card Market (MKM)</item>
     </string-array>
+    <string-array name="price_provider_entry_values">
+        <item>TCG</item>
+        <item>Card</item>
+    </string-array>
 </resources>
