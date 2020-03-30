@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.ui.views
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
 import com.dbottillo.mtgsearchfree.model.CardPrice
 import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.model.PriceProvider
 import com.dbottillo.mtgsearchfree.util.Logger
 import io.reactivex.Single
 
@@ -21,7 +22,7 @@ class CardPresenterImpl @Inject constructor(
         return interactor.loadOtherSideCard(card)
     }
 
-    override fun fetchPrice(card: MTGCard): Single<CardPrice> {
-        return interactor.fetchPrice(card)
+    override fun fetchPrice(card: MTGCard, priceProvider: PriceProvider): Single<CardPrice> {
+        return interactor.fetchPrice(card, priceProvider)
     }
 }

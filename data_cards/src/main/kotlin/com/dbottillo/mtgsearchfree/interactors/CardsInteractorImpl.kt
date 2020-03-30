@@ -7,6 +7,7 @@ import com.dbottillo.mtgsearchfree.model.CardPrice
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
+import com.dbottillo.mtgsearchfree.model.PriceProvider
 import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.repository.CardRepository
 import com.dbottillo.mtgsearchfree.storage.CardsStorage
@@ -100,8 +101,11 @@ class CardsInteractorImpl(
                 .observeOn(schedulerProvider.ui())
     }
 
-    override fun fetchPrice(card: MTGCard): Single<CardPrice> {
-        return cardRepository.fetchPriceTCG(card)
+    override fun fetchPrice(card: MTGCard, priceProvider: PriceProvider): Single<CardPrice> {
+        val call =
+                if (priceProvider == PriceProvider.MKM) cardRepository.fetchPriceMKM(card)
+                else cardRepository.fetchPriceTCG(card)
+        return call
                 .subscribeOn(schedulerProvider.io())
                 .observeOn(schedulerProvider.ui())
     }

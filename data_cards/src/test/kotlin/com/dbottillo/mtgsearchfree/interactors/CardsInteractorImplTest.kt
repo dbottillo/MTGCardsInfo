@@ -5,8 +5,10 @@ import android.net.Uri
 import com.dbottillo.mtgsearchfree.interactor.SchedulerProvider
 import com.dbottillo.mtgsearchfree.model.CardPrice
 import com.dbottillo.mtgsearchfree.model.CardsCollection
+import com.dbottillo.mtgsearchfree.model.MKMCardPrice
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
+import com.dbottillo.mtgsearchfree.model.PriceProvider
 import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.model.TCGCardPrice
 import com.dbottillo.mtgsearchfree.repository.CardRepository
@@ -198,12 +200,12 @@ class CardsInteractorImplTest {
     }
 
     @Test
-    fun `should fetch price from repository`() {
+    fun `should fetch TCG price from repository`() {
         val price = mock<TCGCardPrice>()
         whenever(cardRepository.fetchPriceTCG(card)).thenReturn(Single.just(price))
         val testSubscriber = TestObserver<CardPrice>()
 
-        underTest.fetchPrice(card).subscribe(testSubscriber)
+        underTest.fetchPrice(card, PriceProvider.TCG).subscribe(testSubscriber)
 
         testSubscriber.assertNoErrors()
         testSubscriber.assertValue(price)
@@ -212,6 +214,20 @@ class CardsInteractorImplTest {
         verify(schedulerProvider).ui()
         verifyNoMoreInteractions(cardsStorage, schedulerProvider, cardRepository)
     }
-}
 
-private const val MULTIVERSE_ID = 180607
+    @Test
+    fun `should fetch MKM price from repository`() {
+        val price = mock<MKMCardPrice>()
+        whenever(cardRepository.fetchPriceMKM(card)).thenReturn(Single.just(price))
+        val testSubscriber = TestObserver<CardPrice>()
+
+        underTest.fetchPrice(card, PriceProvider.MKM).subscribe(testSubscriber)
+
+        testSubscriber.assertNoErrors()
+        testSubscriber.assertValue(price)
+        verify(cardRepository).fetchPriceMKM(card)
+        verify(schedulerProvider).io()
+        verify(schedulerProvider).ui()
+        verifyNoMoreInteractions(cardsStorage, schedulerProvider, cardRepository)
+    }
+}

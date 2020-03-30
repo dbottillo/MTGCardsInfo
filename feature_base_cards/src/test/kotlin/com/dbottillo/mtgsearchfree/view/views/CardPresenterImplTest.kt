@@ -1,7 +1,10 @@
 package com.dbottillo.mtgsearchfree.view.views
 
 import com.dbottillo.mtgsearchfree.interactors.CardsInteractor
+import com.dbottillo.mtgsearchfree.model.CardPrice
 import com.dbottillo.mtgsearchfree.model.MTGCard
+import com.dbottillo.mtgsearchfree.model.PriceProvider
+import com.dbottillo.mtgsearchfree.model.PriceProvider.MKM
 import com.dbottillo.mtgsearchfree.util.Logger
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenter
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenterImpl
@@ -41,6 +44,18 @@ class CardPresenterImplTest {
         val result = underTest.loadOtherSideCard(card)
 
         verify(cardsInteractor).loadOtherSideCard(card)
+        assertThat(result).isEqualTo(single)
+        verifyNoMoreInteractions(cardsInteractor)
+    }
+
+    @Test
+    fun `fetch price should call interactor`() {
+        val single = mock<Single<CardPrice>>()
+        whenever(cardsInteractor.fetchPrice(card, PriceProvider.MKM)).thenReturn(single)
+
+        val result = underTest.fetchPrice(card, MKM)
+
+        verify(cardsInteractor).fetchPrice(card, PriceProvider.MKM)
         assertThat(result).isEqualTo(single)
         verifyNoMoreInteractions(cardsInteractor)
     }

@@ -228,3 +228,7 @@ enum class Color {
 enum class Side {
     A, B
 }
+
+enum class PriceProvider{
+    TCG, MKM
+}
