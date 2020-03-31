@@ -999,6 +999,21 @@
   },
   {
     "baseSetSize": 0,
+    "code": "HA1",
+    "isOnlineOnly": true,
+    "isPaperOnly": false,
+    "meta": {
+      "date": "2020-03-30",
+      "pricesDate": "2020-03-30",
+      "version": "4.6.2+20200330"
+    },
+    "name": "Historic Anthology 1",
+    "releaseDate": "2019-11-21",
+    "totalSetSize": 20,
+    "type": "box"
+  },
+  {
+    "baseSetSize": 0,
     "code": "SLD",
     "meta": {
       "date": "2019-12-09",
@@ -1008,6 +1023,22 @@
     "name": "Secret Lair Drop Series",
     "releaseDate": "2019-12-02",
     "totalSetSize": 32,
+    "type": "promo"
+  },
+  {
+    "baseSetSize": 0,
+    "code": "PSLD",
+    "isOnlineOnly": false,
+    "isPaperOnly": false,
+    "meta": {
+      "date": "2020-03-30",
+      "pricesDate": "2020-03-30",
+      "version": "4.6.2+20200330"
+    },
+    "name": "Secret Lair Drop Promos",
+    "parentCode": "SLD",
+    "releaseDate": "2019-12-02",
+    "totalSetSize": 34,
     "type": "promo"
   },
   {
@@ -1037,5 +1068,50 @@
     "releaseDate": "2020-02-29",
     "totalSetSize": 96,
     "type": "funny"
+  },
+  {
+    "baseSetSize": 0,
+    "code": "HA2",
+    "isOnlineOnly": true,
+    "isPaperOnly": false,
+    "meta": {
+      "date": "2020-03-30",
+      "pricesDate": "2020-03-30",
+      "version": "4.6.2+20200330"
+    },
+    "name": "Historic Anthology 2",
+    "releaseDate": "2020-03-12",
+    "totalSetSize": 25,
+    "type": "box"
+  },
+  {
+    "baseSetSize": 0,
+    "code": "SLU",
+    "isOnlineOnly": false,
+    "isPaperOnly": false,
+    "meta": {
+      "date": "2020-03-30",
+      "pricesDate": "2020-03-30",
+      "version": "4.6.2+20200330"
+    },
+    "name": "Secret Lair: Ultimate Edition",
+    "releaseDate": "2020-05-29",
+    "totalSetSize": 5,
+    "type": "box"
+  },
+  {
+    "baseSetSize": 0,
+    "code": "SS3",
+    "isOnlineOnly": false,
+    "isPaperOnly": false,
+    "meta": {
+      "date": "2020-03-30",
+      "pricesDate": "2020-03-30",
+      "version": "4.6.2+20200330"
+    },
+    "name": "Signature Spellbook: Chandra",
+    "releaseDate": "2020-06-26",
+    "totalSetSize": 2,
+    "type": "preview"
   }
 ]

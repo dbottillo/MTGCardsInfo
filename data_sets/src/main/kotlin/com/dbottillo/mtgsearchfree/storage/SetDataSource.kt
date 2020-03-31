@@ -5,6 +5,7 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SetType
+import com.dbottillo.mtgsearchfree.model.SetType.BOX
 import com.dbottillo.mtgsearchfree.model.SetType.COMMANDER
 import com.dbottillo.mtgsearchfree.model.SetType.EXPANSION
 import com.dbottillo.mtgsearchfree.model.SetType.FUNNY
@@ -69,6 +70,7 @@ class SetDataSource(private val database: SQLiteDatabase) {
         return when (input) {
             PROMO -> "promo"
             PREVIEW -> "preview"
+            BOX -> "box"
             FUNNY -> "funny"
             else -> "normal"
         }

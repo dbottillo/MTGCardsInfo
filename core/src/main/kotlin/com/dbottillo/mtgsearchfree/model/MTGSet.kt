@@ -47,7 +47,7 @@ data class MTGSet(
 }
 
 enum class SetType {
-    EXPANSION, PROMO, PREVIEW, FUNNY, COMMANDER
+    EXPANSION, PROMO, PREVIEW, FUNNY, COMMANDER, BOX
 }
 
 private enum class CARDSINFOMAP(val set: String, val mapped: String) {

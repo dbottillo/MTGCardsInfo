@@ -62,7 +62,7 @@ internal class CreateDBAsyncTask(
                         .forEach { setJ ->
                             loadSet(context, db, setDataSource, setJ)
                         }*/
-                // loadSet(it, db, setDataSource, json.getJSONObject(json.length() - 1))
+                // loadSet(context, db, setDataSource, json.getJSONObject(json.length() - 1))
             } catch (e: JSONException) {
                 LOG.e("error create db async task: " + e.localizedMessage)
                 error = true

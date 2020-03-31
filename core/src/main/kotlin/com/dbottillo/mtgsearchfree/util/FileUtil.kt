@@ -76,7 +76,7 @@ class FileUtil(private val fileManager: FileManagerI) {
 
 private val Context.mtgSearchDirectory: File?
     get() {
-        val root = File(Environment.getExternalStorageDirectory(), if (BuildConfig.DEBUG) "MTGSearchDebug" else "MTGSearch")
+        val root = File(this.getExternalFilesDir(null)!!.path)
         if (!root.exists()) {
             val created = root.mkdirs()
             if (!created) {
