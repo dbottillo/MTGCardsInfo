@@ -43,5 +43,6 @@ ext.versions = [
         'support_runner'   : '1.2.0',
         'dexmaker_mockito' : '1.2',
         'robolectric'      : '4.3.1',
-        'truth'            : '1.0.1'
+        'truth'            : '1.0.1',
+        'lint'             : '26.6.1'
 ]

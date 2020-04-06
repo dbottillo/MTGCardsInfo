@@ -21,7 +21,6 @@
     <ID>MaxLineLength:LuckyWidgetProvider.kt$LuckyWidgetProvider$val appWidgetIds = intent?.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID)?.let { intArrayOf(it) } ?: manager.getAppWidgetIds(cn)</ID>
     <ID>MaxLineLength:LuckyWidgetProvider.kt$LuckyWidgetProvider$val pendingIntent = PendingIntent.getActivity(context, appWidgetId, openIntent, PendingIntent.FLAG_UPDATE_CURRENT)</ID>
     <ID>MaxLineLength:LuckyWidgetProvider.kt$LuckyWidgetProvider$val refreshPendingIntent = PendingIntent.getBroadcast(context, appWidgetId, refreshIntent, PendingIntent.FLAG_UPDATE_CURRENT)</ID>
-    <ID>MaxLineLength:MTGApp.kt$MTGApp$StrictMode.setVmPolicy(StrictMode.VmPolicy.Builder().detectLeakedSqlLiteObjects().detectLeakedClosableObjects().penaltyLog().build())</ID>
     <ID>NewLineAtEndOfFile:ActivityBuilder.kt$com.dbottillo.mtgsearchfree.dagger.ActivityBuilder.kt</ID>
     <ID>NewLineAtEndOfFile:AppComponent.kt$com.dbottillo.mtgsearchfree.dagger.AppComponent.kt</ID>
     <ID>NewLineAtEndOfFile:AppModule.kt$com.dbottillo.mtgsearchfree.dagger.AppModule.kt</ID>

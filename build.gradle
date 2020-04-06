@@ -47,7 +47,7 @@ allprojects {
                 includeGroup "com.google"
                 includeGroup "com.google.code.gson"
                 includeGroup "com.google.guava"
-                includeGroup "com.google.truth"
+                includeGroupByRegex "com.google.truth.*"
                 includeGroupByRegex "com.google.auto.*"
                 includeGroupByRegex "com.squareup.*"
                 includeGroup "org.hamcrest"
@@ -95,6 +95,9 @@ allprojects {
                 includeGroup "org.yaml"
                 includeGroupByRegex "net.ltgt.*"
                 includeGroupByRegex "net.java.*"
+                includeGroup "org.easymock"
+                includeGroup "org.smali"
+                includeGroup "cglib"
             }
         }
         maven {

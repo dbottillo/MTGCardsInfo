@@ -3,7 +3,6 @@
   <Blacklist/>
   <Whitelist>
     <ID>ComplexMethod:CardsConfiguratorPresenterImpl.kt$CardsConfiguratorPresenterImpl$update</ID>
-    <ID>ComplexMethod:MTGCardView.kt$MTGCardView$load</ID>
     <ID>LongParameterList:MTGCardsView.kt$MTGCardsView$( cards: List&lt;MTGCard>, listener: OnCardListener, cardFilter: CardFilter?, configuration: CardAdapterConfiguration )</ID>
     <ID>LongParameterList:MTGCardsView.kt$MTGCardsView$(cards: List&lt;MTGCard>, listener: OnCardListener, title: String, cardFilter: CardFilter?, menuOption: Int)</ID>
     <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$10</ID>
