@@ -1,45 +1,46 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
-        style="@style/mtg_toolbar.Transparent"
+        style="@style/AppToolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:focusable="true"
-        android:focusableInTouchMode="true"/>
+        android:focusableInTouchMode="true" />
 
     <com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
         android:id="@+id/cards_list_view"
-        android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/base_margin"
+        android:layout_below="@+id/toolbar" />
 
     <ScrollView
         android:id="@+id/search_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
         android:layout_below="@+id/toolbar">
 
         <com.dbottillo.mtgsearchfree.search.MTGSearchView
             android:id="@+id/search_view"
+            android:background="@color/white"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
     </ScrollView>
 
     <ImageButton
         android:id="@+id/action_search"
         android:layout_width="56dp"
         android:layout_height="56dp"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:layout_marginRight="16dp"
-        android:contentDescription="@string/cd_action_search"
-        android:background="@drawable/anim_search_icon"/>
+        android:background="@drawable/anim_search_icon"
+        android:contentDescription="@string/cd_action_search" />
 
     <ImageButton
         android:id="@+id/close_button"
@@ -47,9 +48,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
         android:contentDescription="@string/cd_close"
-        android:visibility="gone"
         android:src="@drawable/ic_close"
-        android:background="@android:color/transparent"/>
+        android:visibility="gone" />
 
 </RelativeLayout>

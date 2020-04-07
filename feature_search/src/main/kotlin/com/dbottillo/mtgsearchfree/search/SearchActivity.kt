@@ -1,11 +1,7 @@
 package com.dbottillo.mtgsearchfree.search
 
-import android.animation.ArgbEvaluator
-import android.annotation.TargetApi
 import android.graphics.drawable.AnimationDrawable
-import android.os.Build
 import android.os.Bundle
-import androidx.core.content.ContextCompat
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewTreeObserver
@@ -44,7 +40,6 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
     private val closeButton: ImageButton by bind(R.id.close_button)
 
     private var newSearchAnimation: AnimationDrawable? = null
-    private var argbEvaluator = ArgbEvaluator()
     private var sizeBig = 0
     private var searchOpen = false
 
@@ -69,41 +64,12 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
 
         if (bundle != null) {
             searchOpen = bundle.getBoolean(SEARCH_OPEN)
-            scrollView.setBackgroundColor(bundle.getInt(BG_COLOR_SCROLLVIEW))
-            toolbar.elevation = bundle.getFloat(TOOLBAR_ELEVATION)
-            window.statusBarColor = ContextCompat.getColor(this, if (searchOpen) R.color.app_secondary_variant_color else R.color.status_bar)
             closeButton.imageAlpha = if (searchOpen) 1 else 0
-        } else {
-            toolbar.elevation = 0f
         }
-
-        scrollView.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
-            override fun onGlobalLayout() {
-                sizeBig = scrollView.height
-                mtgCardsView.setMarginTop(sizeBig)
-                if (searchOpen) {
-                    scrollView.setHeight(0)
-                    mtgCardsView.setMarginTop(0)
-                    mtgCardsView.visibility = View.VISIBLE
-                }
-                scrollView.viewTreeObserver.removeOnGlobalLayoutListener(this)
-            }
-        })
-        toolbar.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
-            override fun onGlobalLayout() {
-                sizeToolbar = toolbar.height
-                toolbar.viewTreeObserver.removeOnGlobalLayoutListener(this)
-            }
-        })
-        setupScrollviewListener()
-
-        argbEvaluator = ArgbEvaluator()
 
         newSearch.setOnClickListener(this)
         newSearch.setBackgroundResource(R.drawable.anim_search_icon)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            newSearch.elevation = 6.0f // TODO: pre-lollipop version
-        }
+        newSearch.elevation = 6.0f
 
         if (bundle != null) {
             val searchParams = bundle.getParcelable<SearchParams>(SEARCH_PARAMS)
@@ -112,31 +78,25 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
             }
         }
 
+        scrollView.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
+            override fun onGlobalLayout() {
+                sizeBig = scrollView.height
+                if (searchOpen) {
+                    scrollView.setHeight(0)
+                    mtgCardsView.setMarginTop(0)
+                    mtgCardsView.visibility = View.VISIBLE
+                }
+                scrollView.viewTreeObserver.removeOnGlobalLayoutListener(this)
+            }
+        })
+
         presenter.init(this)
         presenter.loadSet()
-    }
-
-    private fun setupScrollviewListener() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            setupScrollViewListenerM()
-        } else {
-            scrollView.viewTreeObserver.addOnScrollChangedListener { computeScrollChanged(scrollView.scrollY) }
-        }
-    }
-
-    @TargetApi(Build.VERSION_CODES.M)
-    private fun setupScrollViewListenerM() {
-        scrollView.setOnScrollChangeListener { _, _, scrollY, _, _ -> computeScrollChanged(scrollY) }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putBoolean(SEARCH_OPEN, searchOpen)
-        val color = argbEvaluator.evaluate(if (scrollView.scrollY < 400) scrollView.scrollY.toFloat() / 400.toFloat() else 1f, ContextCompat.getColor(this, R.color.app_color_on_primary), ContextCompat.getColor(this, R.color.app_primary_variant_color)) as Int
-        outState.putInt(BG_COLOR_SCROLLVIEW, color)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            outState.putFloat(TOOLBAR_ELEVATION, toolbar.elevation)
-        }
         outState.putParcelable(SEARCH_PARAMS, searchView.searchParams)
     }
 
@@ -171,18 +131,12 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
             }
         }
         val backgroundInterpolator = AnimationUtil.createLinearInterpolator()
-        val startColor: Int
-        val endColor: Int
         if (!searchOpen) {
             newSearch.setBackgroundResource(R.drawable.anim_search_icon)
             backgroundInterpolator.fromValue(sizeBig.toFloat()).toValue(0f)
-            startColor = ContextCompat.getColor(this, R.color.status_bar)
-            endColor = ContextCompat.getColor(this, R.color.app_secondary_variant_color)
         } else {
             newSearch.setBackgroundResource(R.drawable.anim_search_icon_reverse)
             backgroundInterpolator.fromValue(0f).toValue(sizeBig.toFloat())
-            startColor = ContextCompat.getColor(this, R.color.app_secondary_variant_color)
-            endColor = ContextCompat.getColor(this, R.color.status_bar)
         }
         newSearchAnimation = newSearch.background as AnimationDrawable
         newSearchAnimation?.start()
@@ -191,11 +145,6 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
                 super.applyTransformation(interpolatedTime, t)
                 val `val` = backgroundInterpolator.getInterpolation(interpolatedTime).toInt()
                 scrollView.setHeight(`val`)
-                mtgCardsView.setMarginTop(`val`)
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    val color = argbEvaluator.evaluate(interpolatedTime, startColor, endColor) as Int
-                    this@SearchActivity.window.statusBarColor = color
-                }
             }
         }
         val finalSearchParams = searchParams
@@ -205,10 +154,8 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
                 if (!searchOpen) {
                     mtgCardsView.visibility = View.VISIBLE
                     closeButton.animate().setDuration(100).alpha(1f).start()
-                    toolbar.animate().setDuration(100).translationY((-sizeToolbar).toFloat()).start()
                 } else {
                     closeButton.animate().setDuration(100).alpha(0f).start()
-                    toolbar.animate().setDuration(100).translationY(0f).start()
                 }
             }
 
@@ -230,14 +177,6 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
         })
         anim.duration = 200
         scrollView.startAnimation(anim)
-    }
-
-    private fun computeScrollChanged(amount: Int) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            toolbar.elevation = if (amount < 200) 9 * (amount.toFloat() / 200.toFloat()) else 9f
-        }
-        val color = argbEvaluator.evaluate(if (amount < 400) amount.toFloat() / 400.toFloat() else 1f, ContextCompat.getColor(this, R.color.app_primary_color), ContextCompat.getColor(this, R.color.app_primary_variant_color)) as Int
-        scrollView.setBackgroundColor(color)
     }
 
     override fun onBackPressed() {
@@ -306,6 +245,4 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
 }
 
 private const val SEARCH_OPEN = "searchOpen"
-private const val BG_COLOR_SCROLLVIEW = "bgColorScrollview"
-private const val TOOLBAR_ELEVATION = "toolbarElevation"
 private const val SEARCH_PARAMS = "searchParams"
