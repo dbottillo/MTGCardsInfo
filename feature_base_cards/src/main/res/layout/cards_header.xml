@@ -9,27 +9,27 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title"
+        style="@style/App.TextAppearance.Heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="@dimen/base_margin"
         android:layout_marginEnd="0dp"
         android:layout_toStartOf="@+id/cards_settings"
-        android:textSize="32sp"
         tools:layout_height="wrap_content"
         tools:layout_width="wrap_content"
-        tools:text="Duel Decks: Ravinca vs Guild"/>
+        tools:text="Unsactioned" />
 
     <TextView
         android:id="@+id/sub_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/title"
-        android:layout_toStartOf="@+id/cards_settings"
         android:layout_marginStart="8dp"
+        android:layout_toStartOf="@+id/cards_settings"
         android:paddingStart="8dp"
         android:paddingBottom="8dp"
-        tools:text="WUBRG - AL - CUMR"/>
+        tools:text="WUBRG - AL - CUMR" />
 
     <ImageButton
         android:id="@+id/cards_view_type"
@@ -41,7 +41,7 @@
         android:background="@android:color/transparent"
         android:contentDescription="@string/cd_cards_view_type"
         android:src="@drawable/cards_list_type"
-        android:tint="?attr/colorPrimary"/>
+        android:tint="?attr/colorPrimary" />
 
     <ImageButton
         android:id="@+id/cards_settings"
@@ -53,7 +53,7 @@
         android:background="@android:color/transparent"
         android:contentDescription="@string/cd_filter"
         android:padding="8dp"
-        app:srcCompat="@drawable/filter"
-        android:tint="?attr/colorPrimary"/>
+        android:tint="?attr/colorPrimary"
+        app:srcCompat="@drawable/filter" />
 
 </RelativeLayout>

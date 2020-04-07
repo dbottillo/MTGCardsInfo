@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- General -->
+    <style name="App.TextAppearance">
+        <item name="android:textColor">?attr/textColorPrimary</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <!-- ==================== Text Styles =======================
+
+    Text style definitions are defined using the following pattern:
+
+    Text Type > Font Size > (Text Style) > (Text Color)
+
+     - Text type: Heading/Body
+     - Font Size: XLarge/Large/Medium/Small/XSmall
+     - Text Style (optional): Bold/Normal - Default value is normal
+     - Text Color (optional): Teal/Green/Orange/Red/LightGrey/Grey/Black/White - Default value is Black
+
+     When using optional values, style name might skip the optional value.
+     For instance, UIKit.TextAppearance.Body.Small.Tertiary does not include Normal (Text Style) in its name.
+     -->
+
+    <!-- region Text HEADING -->
+    <style name="App.TextAppearance.Heading">
+        <item name="android:textSize">@dimen/text_size_heading</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+    </style>
+
+    <style name="App.TextAppearance.Row"></style>
+
+    <style name="App.TextAppearance.Row.Text"></style>
+
+    <style name="App.TextAppearance.Row.Title">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+</resources>

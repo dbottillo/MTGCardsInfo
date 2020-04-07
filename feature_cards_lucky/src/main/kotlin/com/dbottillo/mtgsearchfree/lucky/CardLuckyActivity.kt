@@ -32,8 +32,6 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
         super.onCreate(bundle)
         setContentView(R.layout.activity_lucky_card)
 
-        setTitle(R.string.lucky_title)
-
         findViewById<View>(R.id.lucky_again).setOnClickListener { presenter.showNextCard() }
 
         setupToolbar(R.id.toolbar)

@@ -1,6 +1,15 @@
 <resources>
     <style name="BtnLifeCounter">
-        <item name="android:background">@android:color/transparent</item>
+        <!--<item name="android:background">@android:color/transparent</item>
+        <item name="backgroundTint">@android:color/transparent</item>
+
+        <item name="elevation">0dp</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="strokeColor">@android:color/transparent</item>
+        <item name="shapeAppearance">@null</item>
+        <item name="rippleColor">@null</item>
+        <item name="shapeAppearanceOverlay">@null</item>-->
+        <item name="android:gravity">center</item>
         <item name="android:textColor">@color/btn_life_counter_poison</item>
         <item name="android:layout_centerVertical">true</item>
     </style>

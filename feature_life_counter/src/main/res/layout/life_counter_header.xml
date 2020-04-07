@@ -9,6 +9,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/App.TextAppearance.Heading"
+        android:layout_marginStart="@dimen/base_margin"
         android:text="@string/action_life_counter"/>
 
 </LinearLayout>

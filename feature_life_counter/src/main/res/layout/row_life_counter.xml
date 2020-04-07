@@ -6,16 +6,16 @@
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/life_counter_card"
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/life_counter_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
         android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
         card_view:cardCornerRadius="4dp"
-        tools:background="#FF9900">
+        tools:cardBackgroundColor="#FF9900">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,8 +37,9 @@
                     android:layout_marginRight="8dp"
                     android:layout_weight="1"
                     android:maxLines="1"
+                    android:textColor="@color/white"
                     android:textSize="24sp"
-                    tools:text="Ajani"/>
+                    tools:text="Ajani" />
 
                 <ImageButton
                     android:id="@+id/player_edit"
@@ -47,60 +48,63 @@
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/cd_edit"
                     android:scaleType="fitXY"
-                    android:src="@drawable/sel_edit_grey"/>
+                    android:src="@drawable/sel_edit_grey"
+                    android:tint="@color/white" />
 
                 <ImageButton
                     android:id="@+id/player_remove"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginRight="4dp"
+                    android:layout_marginEnd="4dp"
                     android:background="@android:color/transparent"
                     android:contentDescription="@string/cd_remove"
                     android:scaleType="fitXY"
-                    android:src="@drawable/sel_trash_grey"/>
+                    android:src="@drawable/sel_trash_grey"
+                    android:tint="@color/white" />
             </LinearLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <Button
+                <TextView
                     android:id="@+id/btn_life_minus_five"
                     style="@style/BtnLifeCounter.Life"
-                    android:layout_alignParentLeft="true"
-                    android:layout_toLeftOf="@+id/btn_life_minus_one"
-                    android:text="@string/minus_five"/>
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/btn_life_minus_one"
+                    android:text="@string/minus_five" />
 
-                <Button
+                <TextView
                     android:id="@+id/btn_life_minus_one"
                     style="@style/BtnLifeCounter.Life"
-                    android:layout_marginRight="10dp"
-                    android:layout_toLeftOf="@+id/player_life"
-                    android:gravity="center|right"
-                    android:text="@string/minus_one"/>
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/player_life"
+                    android:gravity="center|end"
+                    android:text="@string/minus_one" />
 
                 <TextView
                     android:id="@+id/player_life"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
+                    android:textColor="@color/white"
                     android:textSize="60sp"
-                    tools:text="20"/>
+                    tools:text="20" />
 
-                <Button
+                <TextView
                     android:id="@+id/btn_life_plus_one"
                     style="@style/BtnLifeCounter.Life"
-                    android:layout_marginLeft="10dp"
-                    android:layout_toRightOf="@+id/player_life"
-                    android:gravity="center|left"
-                    android:text="@string/plus_one"/>
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/player_life"
+                    android:gravity="center|start"
+                    android:text="@string/plus_one" />
 
-                <Button
+                <TextView
                     android:id="@+id/btn_life_plus_five"
                     style="@style/BtnLifeCounter.Life"
-                    android:layout_alignParentRight="true"
-                    android:layout_toRightOf="@+id/btn_life_plus_one"
-                    android:text="@string/plus_five"/>
+                    android:layout_alignParentEnd="true"
+                    android:layout_toEndOf="@+id/btn_life_plus_one"
+                    android:text="@string/plus_five" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -108,13 +112,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <Button
+                <TextView
                     android:id="@+id/btn_poison_minus_one"
                     style="@style/BtnLifeCounter.Poison"
-                    android:layout_marginRight="10dp"
-                    android:layout_toLeftOf="@+id/player_poison"
-                    android:gravity="center|right"
-                    android:text="@string/minus_one"/>
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/player_poison"
+                    android:gravity="center|end"
+                    android:text="@string/minus_one" />
 
                 <TextView
                     android:id="@+id/player_poison"
@@ -122,19 +126,19 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:textSize="40sp"
-                    tools:text="10"/>
+                    android:textColor="@color/white"
+                    tools:text="10" />
 
-                <Button
+                <TextView
                     android:id="@+id/btn_poison_plus_one"
                     style="@style/BtnLifeCounter.Poison"
-                    android:layout_marginLeft="10dp"
-                    android:layout_toRightOf="@+id/player_poison"
-                    android:gravity="center|left"
-                    android:text="@string/plus_one"/>
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/player_poison"
+                    android:gravity="center|start"
+                    android:text="@string/plus_one" />
             </RelativeLayout>
 
         </LinearLayout>
 
-        <!--</FrameLayout>-->
     </androidx.cardview.widget.CardView>
 </LinearLayout>

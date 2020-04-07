@@ -88,12 +88,12 @@ class LifeCounterAdapter(
         val poisonContainer: View = row.findViewById(R.id.life_counter_poison_container)
         val edit: ImageButton = row.findViewById(R.id.player_edit)
         val remove: ImageButton = row.findViewById(R.id.player_remove)
-        val lifePlusOne: Button = row.findViewById(R.id.btn_life_plus_one)
-        val lifeMinusOne: Button = row.findViewById(R.id.btn_life_minus_one)
-        val lifePlusFive: Button = row.findViewById(R.id.btn_life_plus_five)
-        val lifeMinusFive: Button = row.findViewById(R.id.btn_life_minus_five)
-        val poisonPlusOne: Button = row.findViewById(R.id.btn_poison_plus_one)
-        val poisonMinusOne: Button = row.findViewById(R.id.btn_poison_minus_one)
+        val lifePlusOne: TextView = row.findViewById(R.id.btn_life_plus_one)
+        val lifeMinusOne: TextView = row.findViewById(R.id.btn_life_minus_one)
+        val lifePlusFive: TextView = row.findViewById(R.id.btn_life_plus_five)
+        val lifeMinusFive: TextView = row.findViewById(R.id.btn_life_minus_five)
+        val poisonPlusOne: TextView = row.findViewById(R.id.btn_poison_plus_one)
+        val poisonMinusOne: TextView = row.findViewById(R.id.btn_poison_minus_one)
     }
 
     private fun getColorOfPosition(context: Context, position: Int): Int {

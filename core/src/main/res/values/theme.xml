@@ -40,6 +40,8 @@
         <item name="popupMenuStyle">@style/PopupMenu</item>
         <item name="textAppearanceLargePopupMenu">@style/myPopupMenuTextAppearanceLarge</item>
         <item name="textAppearanceSmallPopupMenu">@style/myPopupMenuTextAppearanceSmall</item>-->
+
+        <item name="textColorPrimary">@color/text_color_primary</item>
     </style>
 
     <style name="AppToolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
@@ -49,14 +51,32 @@
     </style>
 
     <style name="AppToolbarTheme" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
-        <item name="toolbarNavigationButtonStyle">@style/DayNightToolbarNavigationButton</item>
-        <!--<item name="colorControlNormal">?attr/iconColorAction</item>
-        <item name="actionMenuTextColor">?attr/iconColorAction</item>
-        <item name="colorControlHighlight">?attr/iconColorAction</item>-->
+        <item name="toolbarNavigationButtonStyle">@style/AppToolbarNavigationButton</item>
+        <item name="colorControlNormal">@color/white</item>
+        <item name="actionMenuTextColor">@color/white</item>
+        <item name="colorControlHighlight">@color/white</item>
     </style>
 
-    <style name="DayNightToolbarNavigationButton" parent="Widget.AppCompat.Toolbar.Button.Navigation">
-        <item name="android:tint">?attr/colorPrimary</item>
+    <style name="AppToolbarNavigationButton" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:tint">@color/white</item>
+    </style>
+
+    <style name="AppToolbar.Transparent">
+        <item name="android:elevation">0dp</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:theme">@style/AppToolbarTheme.Transparent</item>
+        <item name="titleTextColor">@color/white</item>
+    </style>
+
+    <style name="AppToolbarTheme.Transparent">
+        <item name="toolbarNavigationButtonStyle">@style/AppToolbarNavigationButton.Transparent</item>
+        <!--<item name="colorControlNormal">@color/white</item>
+        <item name="actionMenuTextColor">@color/white</item>
+        <item name="colorControlHighlight">@color/white</item>-->
+    </style>
+
+    <style name="AppToolbarNavigationButton.Transparent">
+        <!--<item name="android:tint">@color/white</item>-->
     </style>
 
     <!--<style name="MTGSearchTheme" parent="@style/MTGBasicTheme">

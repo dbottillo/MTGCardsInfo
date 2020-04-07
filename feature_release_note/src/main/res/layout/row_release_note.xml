@@ -6,24 +6,25 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingLeft="@dimen/base_margin"
-    android:paddingRight="@dimen/base_margin"
-    android:paddingTop="@dimen/base_margin">
+    android:paddingTop="@dimen/base_margin"
+    android:paddingRight="@dimen/base_margin">
 
     <TextView
         android:id="@+id/release_note_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
+        style="@style/App.TextAppearance.Row.Title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Title"/>
+        tools:text="Title" />
 
     <TextView
         android:id="@+id/release_note_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        style="@style/App.TextAppearance.Row.Text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/release_note_title"
-        tools:text="text"/>
+        tools:text="text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

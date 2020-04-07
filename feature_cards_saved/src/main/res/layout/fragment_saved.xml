@@ -5,34 +5,32 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
-        style="@style/mtg_toolbar.Transparent"
+        style="@style/AppToolbar.Transparent"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
 
         <TextView
             android:id="@+id/toolbar_title"
+            style="@style/App.ToolbarTitleTransparent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:background="@android:color/transparent"
-            android:textSize="20sp"
-            tools:text="Toolbar Title"
-            tools:textColor="?attr/colorPrimary"/>
+            android:layout_marginStart="@dimen/base_margin"
+            tools:text="Toolbar Title" />
 
-    </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.MaterialToolbar>
 
     <com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
         android:id="@+id/cards"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"/>
+        android:layout_below="@+id/toolbar" />
 
     <com.dbottillo.mtgsearchfree.ui.views.MTGLoader
         android:id="@+id/loader"
-        android:layout_centerInParent="true"
         android:layout_width="100dp"
-        android:layout_height="100dp"/>
+        android:layout_height="100dp"
+        android:layout_centerInParent="true" />
 
 </RelativeLayout>

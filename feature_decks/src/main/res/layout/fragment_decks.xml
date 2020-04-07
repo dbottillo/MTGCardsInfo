@@ -6,21 +6,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
-        style="@style/mtg_toolbar.Transparent"
+        style="@style/AppToolbar.Transparent"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
 
         <TextView
             android:id="@+id/toolbar_title"
+            style="@style/App.ToolbarTitleTransparent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:background="@android:color/transparent"
-            android:textSize="20sp"
-            tools:text="Toolbar Title"
-            tools:textColor="?attr/colorPrimary"/>
+            android:layout_marginStart="@dimen/base_margin"
+            tools:text="Toolbar Title" />
 
         <ImageView
             android:id="@+id/action_import"
@@ -32,24 +30,24 @@
             android:contentDescription="@string/export"
             android:src="@drawable/ic_file_upload_white_24dp"
             android:visibility="visible"
-            tools:tint="?attr/colorPrimary"/>
+            tools:tint="?attr/colorPrimary" />
 
-    </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.MaterialToolbar>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/decks_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar"
-        tools:listitem="@layout/row_deck"/>
+        tools:listitem="@layout/row_deck" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_new_deck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_margin="16dp"
-        app:srcCompat="@drawable/ic_add_black_24dp"/>
+        app:srcCompat="@drawable/ic_add_black_24dp" />
 
 </RelativeLayout>

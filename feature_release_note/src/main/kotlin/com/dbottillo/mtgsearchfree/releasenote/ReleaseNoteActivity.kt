@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.util.hide
 import com.dbottillo.mtgsearchfree.util.show
+import com.google.android.material.appbar.MaterialToolbar
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
@@ -29,10 +30,12 @@ class ReleaseNoteActivity : BasicActivity(), ReleaseNoteView {
 
         setContentView(R.layout.activity_release_note)
 
-        findViewById<Toolbar>(R.id.toolbar).also {
+        findViewById<MaterialToolbar>(R.id.toolbar).also {
             setSupportActionBar(it)
-            supportActionBar?.setTitle(R.string.action_release_note)
-            it.setNavigationIcon(R.drawable.ic_close)
+        }
+        supportActionBar?.let {
+            it.setHomeButtonEnabled(true)
+            it.setDisplayHomeAsUpEnabled(true)
         }
 
         presenter.init(this)

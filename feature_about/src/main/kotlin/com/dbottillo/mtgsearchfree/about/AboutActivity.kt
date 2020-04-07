@@ -7,6 +7,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.text.SpannableStringBuilder
+import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.View
 import android.widget.LinearLayout
@@ -18,6 +19,7 @@ import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.dbottillo.mtgsearchfree.util.addBold
 import com.dbottillo.mtgsearchfree.util.toHtml
+import com.google.android.material.appbar.MaterialToolbar
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_about.*
 import java.util.Calendar
@@ -38,6 +40,14 @@ class AboutActivity : BasicActivity(), View.OnTouchListener {
         super.onCreate(bundle)
 
         setContentView(R.layout.activity_about)
+
+        findViewById<MaterialToolbar>(R.id.toolbar).also {
+            setSupportActionBar(it)
+        }
+        supportActionBar?.let {
+            it.setHomeButtonEnabled(true)
+            it.setDisplayHomeAsUpEnabled(true)
+        }
 
         try {
             versionName = packageManager.getPackageInfo(packageName, 0).versionName
@@ -125,6 +135,16 @@ class AboutActivity : BasicActivity(), View.OnTouchListener {
 
     override fun getPageTrack(): String? {
         return "/about"
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
 

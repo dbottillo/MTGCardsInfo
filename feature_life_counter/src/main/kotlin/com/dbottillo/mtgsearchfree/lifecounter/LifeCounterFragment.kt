@@ -49,7 +49,7 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
         lifeCounterList = view.findViewById(R.id.life_counter_list)
         view.findViewById<View>(R.id.action_reset).setOnClickListener { reset() }
         view.findViewById<View>(R.id.action_dice).setOnClickListener { launchDice() }
-        view.findViewById<View>(R.id.add_new_deck).setOnClickListener { addPlayer() }
+        view.findViewById<View>(R.id.add_new_player).setOnClickListener { addPlayer() }
 
         lifeCounterList.setHasFixedSize(true)
         lifeCounterList.layoutManager = LinearLayoutManager(view.context)

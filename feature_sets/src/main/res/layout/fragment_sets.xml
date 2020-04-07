@@ -6,9 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
-        style="@style/mtg_toolbar.Transparent"
+        style="@style/AppToolbar.Transparent"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
 
@@ -21,13 +21,10 @@
             <TextView
                 android:id="@+id/toolbar_title"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:textSize="20sp"
-                android:ellipsize="end"
-                android:maxLines="1"
-                tools:text="Toolbar Title"/>
+                android:layout_weight="1"
+                style="@style/App.ToolbarTitleTransparent"
+                tools:text="Toolbar Title" />
 
             <ImageView
                 android:id="@+id/action_search"
@@ -38,7 +35,7 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/action_search"
                 android:src="@drawable/ic_search_white_24dp"
-                android:visibility="visible"/>
+                android:visibility="visible" />
 
             <ImageView
                 android:id="@+id/action_lucky"
@@ -49,11 +46,11 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/action_lucky"
                 android:src="@drawable/ic_action_lucky"
-                android:visibility="visible"/>
+                android:visibility="visible" />
 
         </LinearLayout>
 
-    </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.MaterialToolbar>
 
     <!--<RelativeLayout
         android:id="@+id/main_tooltip"
@@ -134,7 +131,7 @@
         android:id="@+id/cards"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"/>
+        android:layout_below="@+id/toolbar" />
 
     <com.dbottillo.mtgsearchfree.ui.views.MTGLoader
         android:id="@+id/loader"
@@ -149,6 +146,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        app:srcCompat="@drawable/ic_swap_horiz"
-        android:layout_margin="16dp" />
+        android:layout_margin="16dp"
+        app:srcCompat="@drawable/ic_swap_horiz" />
 </RelativeLayout>
