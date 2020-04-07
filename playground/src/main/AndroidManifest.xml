@@ -17,7 +17,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/playground_app_name"
         tools:ignore="GoogleAppIndexingWarning,UnusedAttribute"
-        android:theme="@style/Theme.AppCompat"
+        android:theme="@style/AppTheme"
         >
         <activity android:name=".PlaygroundHomeActivity">
             <intent-filter>

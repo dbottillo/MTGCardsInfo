@@ -31,10 +31,6 @@
         <item name="textAppearanceButton">@style/TextAppearance.MaterialComponents.Button</item>
         <item name="textAppearanceOverline">@style/TextAppearance.MaterialComponents.Overline</item>
 
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:colorBackgroundCacheHint">@null</item>
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="windowNoTitle">true</item>
         <item name="android:statusBarColor">@color/status_bar</item>
         <!--
         <item name="android:actionMenuTextColor">@color/white</item>
@@ -44,6 +40,23 @@
         <item name="popupMenuStyle">@style/PopupMenu</item>
         <item name="textAppearanceLargePopupMenu">@style/myPopupMenuTextAppearanceLarge</item>
         <item name="textAppearanceSmallPopupMenu">@style/myPopupMenuTextAppearanceSmall</item>-->
+    </style>
+
+    <style name="AppToolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="titleTextColor">?attr/colorOnPrimary</item>
+        <item name="android:theme">@style/AppToolbarTheme</item>
+    </style>
+
+    <style name="AppToolbarTheme" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
+        <item name="toolbarNavigationButtonStyle">@style/DayNightToolbarNavigationButton</item>
+        <!--<item name="colorControlNormal">?attr/iconColorAction</item>
+        <item name="actionMenuTextColor">?attr/iconColorAction</item>
+        <item name="colorControlHighlight">?attr/iconColorAction</item>-->
+    </style>
+
+    <style name="DayNightToolbarNavigationButton" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:tint">?attr/colorPrimary</item>
     </style>
 
     <!--<style name="MTGSearchTheme" parent="@style/MTGBasicTheme">
