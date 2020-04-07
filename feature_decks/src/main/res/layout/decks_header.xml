@@ -4,11 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="60dp"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:background="@color/white"
     android:orientation="vertical">
 
     <TextView
-        style="@style/BigTitle"
         android:text="@string/action_decks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

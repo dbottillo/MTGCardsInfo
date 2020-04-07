@@ -5,7 +5,6 @@
     >
 
     <application>
-        <activity android:name=".SettingsActivity"
-            android:theme="@style/SettingsTheme"/>
+        <activity android:name=".SettingsActivity"/>
     </application>
 </manifest>

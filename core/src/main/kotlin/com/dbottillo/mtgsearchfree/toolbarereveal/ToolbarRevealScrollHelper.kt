@@ -33,8 +33,8 @@ class ToolbarRevealScrollHelper @JvmOverloads constructor(
     private val backgroundColor: Int,
     private val heightToolbar: Int,
     private val statusBarIncluded: Boolean,
-    toolbarColor: Int = R.color.color_primary,
-    statusBarColor: Int = R.color.color_primary
+    toolbarColor: Int = R.color.app_primary_color,
+    statusBarColor: Int = R.color.app_primary_color
 ) : ViewTreeObserver.OnScrollChangedListener {
 
     private var mViewGroup: ViewGroup? = null
@@ -117,7 +117,7 @@ class ToolbarRevealScrollHelper @JvmOverloads constructor(
         if (instance != null && context != null) {
             instance.activity.setDarkStatusBar()
             if (statusBarIncluded) {
-                instance.activity?.window?.statusBarColor = ContextCompat.getColor(context, R.color.color_primary_dark)
+                instance.activity?.window?.statusBarColor = ContextCompat.getColor(context, R.color.app_secondary_color)
             }
         }
         mViewGroup?.viewTreeObserver?.removeOnScrollChangedListener(this)
@@ -130,12 +130,12 @@ class ToolbarRevealScrollHelper @JvmOverloads constructor(
         baseFragment.toolbarTitle?.alpha = 0f
         baseFragment.toolbarTitle?.translationY = translationStart.toFloat()
         if (baseFragment.toolbar.navigationIcon != null) {
-            baseFragment.toolbar.navigationIcon?.setTint(ContextCompat.getColor(context, R.color.color_primary))
+            baseFragment.toolbar.navigationIcon?.setTint(ContextCompat.getColor(context, R.color.app_primary_color))
         }
-        setChildrenToolbarColor(baseFragment.toolbar, ContextCompat.getColor(context, R.color.color_primary))
-        baseFragment.toolbar.overflowIcon?.setColorFilter(ContextCompat.getColor(context, R.color.color_primary), PorterDuff.Mode.SRC_IN)
+        setChildrenToolbarColor(baseFragment.toolbar, ContextCompat.getColor(context, R.color.app_primary_color))
+        baseFragment.toolbar.overflowIcon?.setColorFilter(ContextCompat.getColor(context, R.color.app_primary_color), PorterDuff.Mode.SRC_IN)
         if (statusBarIncluded) {
-            baseFragment.activity?.window?.statusBarColor = ContextCompat.getColor(context, R.color.main_bg)
+            baseFragment.activity?.window?.statusBarColor = ContextCompat.getColor(context, R.color.app_background_color)
             baseFragment.activity.setLightStatusBar()
         }
 
@@ -143,8 +143,8 @@ class ToolbarRevealScrollHelper @JvmOverloads constructor(
         elevationInterpolator = AnimationUtil.createLinearInterpolator().fromValue(0.0f).toValue(context.resources.getDimension(R.dimen.default_elevation_toolbar))
         translationTitle = AnimationUtil.createLinearInterpolator().fromValue(translationStart.toFloat()).toValue(translationEnd.toFloat())
         toolbarBackgroundEvaluator = AnimationUtil.createArgbInterpolator().fromValue(ContextCompat.getColor(context, backgroundColor)).toValue(toolbarColor)
-        statusBarColorEvaluator = AnimationUtil.createArgbInterpolator().fromValue(ContextCompat.getColor(context, R.color.white)).toValue(statusBarColor)
-        arrowToolbarEvaluator = AnimationUtil.createArgbInterpolator().fromValue(ContextCompat.getColor(context, R.color.color_primary)).toValue(ContextCompat.getColor(context, R.color.white))
+        statusBarColorEvaluator = AnimationUtil.createArgbInterpolator().fromValue(ContextCompat.getColor(context, android.R.color.white)).toValue(statusBarColor)
+        arrowToolbarEvaluator = AnimationUtil.createArgbInterpolator().fromValue(ContextCompat.getColor(context, R.color.app_primary_color)).toValue(ContextCompat.getColor(context, android.R.color.white))
 
         mViewGroup?.let {
             if (mViewGroup is ScrollView) {

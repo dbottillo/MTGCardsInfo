@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/bottom_tabs_height"
-    android:background="@color/color_primary"
     android:orientation="vertical"
     tools:orientation="horizontal"
     tools:parentTag="android.widget.LinearLayout">
@@ -31,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/action_home"
-            android:textColor="@color/white"
+            android:textColor="#FFFFFF"
             android:textSize="@dimen/bottom_tabs_text_size"/>
     </LinearLayout>
 
@@ -51,14 +50,14 @@
             android:layout_gravity="center"
             android:contentDescription="@string/action_decks"
             android:src="@drawable/deck"
-            android:tint="@color/white"/>
+            android:tint="#FFFFFF"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/action_decks"
-            android:textColor="@color/white"
+            android:textColor="#FFFFFF"
             android:textSize="@dimen/bottom_tabs_text_size"/>
     </LinearLayout>
 
@@ -78,14 +77,14 @@
             android:layout_gravity="center"
             android:contentDescription="@string/action_saved"
             android:src="@drawable/left_saved"
-            android:tint="@color/white"/>
+            android:tint="#FFFFFF"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/action_saved"
-            android:textColor="@color/white"
+            android:textColor="#FFFFFF"
             android:textSize="@dimen/bottom_tabs_text_size"/>
     </LinearLayout>
 
@@ -105,14 +104,14 @@
             android:layout_gravity="center"
             android:contentDescription="@string/action_life_counter"
             android:src="@drawable/left_life_counter"
-            android:tint="@color/white"/>
+            android:tint="#FFFFFF"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/action_life_counter"
-            android:textColor="@color/white"
+            android:textColor="#FFFFFF"
             android:textSize="@dimen/bottom_tabs_text_size"/>
     </LinearLayout>
 

@@ -3,7 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_bg"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <include
@@ -13,7 +12,7 @@
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/deck_cards_tab_layout"
         style="@style/CardsTabLayout"
-        android:background="@color/color_primary"
+        android:background="?attr/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"

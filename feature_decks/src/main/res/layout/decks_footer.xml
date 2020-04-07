@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    tools:background="@color/white">
+    android:orientation="vertical">
 
     <TextView
         android:gravity="center_horizontal"
@@ -15,7 +14,7 @@
         android:padding="40dp"
         android:paddingTop="20dp"
         android:text="@string/empty_decks"
-        android:textColor="@color/color_primary"
+        android:textColor="?attr/colorPrimary"
         android:textStyle="italic"
         android:visibility="visible"/>
 

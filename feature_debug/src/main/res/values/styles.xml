@@ -2,7 +2,7 @@
 <resources>
 
     <style name="DebugOptions">
-        <item name="android:textColor">@color/color_primary_dark</item>
+        <item name="android:textColor">?attr/colorPrimaryDark</item>
         <item name="android:textSize">16sp</item>
     </style>
 </resources>

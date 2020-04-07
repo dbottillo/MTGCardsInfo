@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
@@ -29,7 +28,6 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/action_search"
                 android:src="@drawable/ic_close"
-                android:tint="@color/white"
                 android:visibility="visible"/>
 
             <TextView
@@ -41,7 +39,6 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="@string/set_choose"
-                android:textColor="@color/white"
                 android:textSize="20sp"/>
 
         </LinearLayout>

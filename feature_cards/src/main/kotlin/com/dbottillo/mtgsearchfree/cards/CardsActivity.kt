@@ -83,7 +83,7 @@ class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, Car
         display.getSize(size)
 
         previewBanner.setOnClickListener {
-            val dialogBuilder = AlertDialog.Builder(this, R.style.MTGDialogTheme)
+            val dialogBuilder = AlertDialog.Builder(this, R.style.AppTheme)
             dialogBuilder.setMessage(getString(R.string.set_preview_banner_text))
                     .setCancelable(true)
                     .setPositiveButton("Ok") { dialog, _ -> dialog.dismiss() }

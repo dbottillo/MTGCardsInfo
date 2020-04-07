@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
-        android:background="@color/color_primary">
+        android:background="?attr/colorPrimary">
 
         <TextView
             android:id="@+id/title_card"
@@ -26,7 +26,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textColor="@color/white"
             android:textSize="16sp"
             tools:text="CounterSpell"/>
 
@@ -49,7 +48,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp"
         android:src="@drawable/ic_action_lucky"
-        android:tint="@android:color/white"
         myapp:borderWidth="0dp"
         myapp:elevation="8dp"
         myapp:pressedTranslationZ="8dp"/>

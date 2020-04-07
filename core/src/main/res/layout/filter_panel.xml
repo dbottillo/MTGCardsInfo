@@ -5,14 +5,13 @@
     android:id="@+id/filter_panel_container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:background="@color/white">
+    tools:background="?attr/colorSurface">
 
     <ToggleButton
         android:id="@+id/toggle_white"
         android:layout_width="@dimen/filter_toggle_size"
         android:layout_height="@dimen/filter_toggle_size"
-        android:layout_toLeftOf="@+id/toggle_blue"
-        android:textColor="@drawable/toggle_text_color"
+        android:layout_toStartOf="@+id/toggle_blue"
         tools:checked="true"
         android:textOff="@string/mtg_color_white"
         android:textOn="@string/mtg_color_white"/>
@@ -21,8 +20,7 @@
         android:id="@id/toggle_blue"
         android:layout_width="@dimen/filter_toggle_size"
         android:layout_height="@dimen/filter_toggle_size"
-        android:layout_toLeftOf="@+id/toggle_black"
-        android:textColor="@drawable/toggle_text_color"
+        android:layout_toStartOf="@+id/toggle_black"
         android:textOff="@string/mtg_color_blue"
         android:textOn="@string/mtg_color_blue"/>
 
@@ -32,7 +30,6 @@
         android:layout_height="@dimen/filter_toggle_size"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textColor="@drawable/toggle_text_color"
         android:textOff="@string/mtg_color_black"
         android:textOn="@string/mtg_color_black"/>
 
@@ -40,8 +37,7 @@
         android:id="@+id/toggle_red"
         android:layout_width="@dimen/filter_toggle_size"
         android:layout_height="@dimen/filter_toggle_size"
-        android:layout_toRightOf="@+id/toggle_black"
-        android:textColor="@drawable/toggle_text_color"
+        android:layout_toEndOf="@+id/toggle_black"
         android:textOff="@string/mtg_color_red"
         android:textOn="@string/mtg_color_red"/>
 
@@ -49,8 +45,7 @@
         android:id="@+id/toggle_green"
         android:layout_width="@dimen/filter_toggle_size"
         android:layout_height="@dimen/filter_toggle_size"
-        android:layout_toRightOf="@id/toggle_red"
-        android:textColor="@drawable/toggle_text_color"
+        android:layout_toEndOf="@id/toggle_red"
         android:textOff="@string/mtg_color_green"
         android:textOn="@string/mtg_color_green"/>
 
@@ -58,8 +53,8 @@
         android:id="@+id/filter_artifact_land"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/toggle_white"
-        android:layout_alignRight="@+id/toggle_green"
+        android:layout_alignStart="@+id/toggle_white"
+        android:layout_alignEnd="@+id/toggle_green"
         android:layout_below="@+id/toggle_black"
         tools:ignore="UnusedIds">
 
@@ -68,7 +63,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@drawable/toggle_text_color"
             android:textOff="@string/mtg_type_artifact"
             android:textOn="@string/mtg_type_artifact"/>
 
@@ -77,7 +71,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@drawable/toggle_text_color"
             android:textOff="@string/mtg_type_land"
             android:textOn="@string/mtg_type_land"/>
 
@@ -86,7 +79,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@drawable/toggle_text_color"
             android:textOff="@string/mtg_type_eldrazi"
             android:textOn="@string/mtg_type_eldrazi"/>
     </LinearLayout>
@@ -94,8 +86,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/toggle_white"
-        android:layout_alignRight="@+id/toggle_green"
+        android:layout_alignStart="@+id/toggle_white"
+        android:layout_alignEnd="@+id/toggle_green"
         android:layout_below="@+id/filter_artifact_land"
         android:weightSum="4">
 
@@ -104,7 +96,6 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/filter_toggle_size"
             android:layout_weight="1"
-            android:textColor="@drawable/toggle_text_color"
             android:textOff="@string/mtg_common"
             android:textOn="@string/mtg_common"/>
 
@@ -113,7 +104,6 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/filter_toggle_size"
             android:layout_weight="1"
-            android:textColor="@drawable/toggle_text_color"
             android:textOff="@string/mtg_uncommon"
             android:textOn="@string/mtg_uncommon"/>
 
@@ -122,7 +112,6 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/filter_toggle_size"
             android:layout_weight="1"
-            android:textColor="@drawable/toggle_text_color"
             android:textOff="@string/mtg_rare"
             android:textOn="@string/mtg_rare"/>
 
@@ -131,7 +120,6 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/filter_toggle_size"
             android:layout_weight="1"
-            android:textColor="@drawable/toggle_text_color"
             android:textOff="@string/mtg_mythic_rare"
             android:textOn="@string/mtg_mythic_rare"/>
 

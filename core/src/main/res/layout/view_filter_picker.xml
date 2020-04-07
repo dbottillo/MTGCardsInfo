@@ -2,7 +2,7 @@
        xmlns:tools="http://schemas.android.com/tools"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
-       android:background="@color/white"
+       android:background="?attr/colorSurface"
        android:orientation="vertical"
        tools:orientation="vertical"
        tools:parentTag="android.widget.LinearLayout">
@@ -14,18 +14,14 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/filter_title"
-        android:textColor="@color/color_primary"
-        android:textSize="16sp"/>
+        style="@style/TextAppearance.MaterialComponents.Body1"/>
 
-    <View
+    <Space
         android:id="@+id/filter_divisor"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginBottom="10dp"
+        android:layout_height="16dp"
         android:layout_marginLeft="@dimen/base_margin"
-        android:layout_marginRight="@dimen/base_margin"
-        android:layout_marginTop="5dp"
-        android:background="@color/color_primary"/>
+        android:layout_marginRight="@dimen/base_margin" />
 
     <include
         layout="@layout/filter_panel"/>
@@ -37,18 +33,14 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/order_title"
-        android:textColor="@color/color_primary"
-        android:textSize="16sp"/>
+        style="@style/TextAppearance.MaterialComponents.Body1"/>
 
-    <View
+    <Space
         android:id="@+id/order_divisor"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginBottom="10dp"
+        android:layout_height="16dp"
         android:layout_marginLeft="@dimen/base_margin"
-        android:layout_marginRight="@dimen/base_margin"
-        android:layout_marginTop="5dp"
-        android:background="@color/color_primary"/>
+        android:layout_marginRight="@dimen/base_margin" />
 
     <ToggleButton
         android:id="@+id/toggle_order"
@@ -57,8 +49,6 @@
         android:layout_marginBottom="@dimen/base_margin"
         android:layout_marginLeft="@dimen/base_margin"
         android:layout_marginRight="@dimen/base_margin"
-        android:textColor="@drawable/toggle_text_color"
         android:textOff="@string/sort_az"
         android:textOn="@string/sort_set_number"/>
-
 </merge>

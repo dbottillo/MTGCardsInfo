@@ -1,9 +1,8 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/white">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,20 +10,18 @@
         android:orientation="vertical">
 
         <TextView
-            style="@style/BigTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="@string/action_about"/>
+            android:text="@string/action_about" />
 
         <TextView
             android:id="@+id/about_version"
+            style="@style/TextAppearance.MaterialComponents.Body1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/base_margin"
             android:layout_marginRight="@dimen/base_margin"
-            android:textColor="@color/color_primary_dark"
-            android:textSize="14sp"
             tools:text="Version 2.2.0" />
 
         <TextView
@@ -33,68 +30,60 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/base_margin"
             android:text="@string/copyright"
-            android:textColor="@color/color_primary_dark"/>
+             />
 
         <Button
             android:id="@+id/send_feedback"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="@dimen/base_margin"
             android:layout_marginLeft="@dimen/base_margin"
             android:layout_marginRight="@dimen/base_margin"
-            android:background="@drawable/btn_common"
+            android:layout_marginBottom="@dimen/base_margin"
             android:text="@string/send_feedback"
-            android:textColor="@color/white"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/share_app"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="@dimen/base_margin"
             android:layout_marginLeft="@dimen/base_margin"
             android:layout_marginRight="@dimen/base_margin"
-            android:background="@drawable/btn_common"
+            android:layout_marginBottom="@dimen/base_margin"
             android:text="@string/share_app"
-            android:textColor="@color/white"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/join_telegram"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="@dimen/base_margin"
             android:layout_marginLeft="@dimen/base_margin"
             android:layout_marginRight="@dimen/base_margin"
-            android:background="@drawable/btn_common"
+            android:layout_marginBottom="@dimen/base_margin"
             android:text="@string/join_telegram"
-            android:textColor="@color/white"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/privacy_policy"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="@dimen/base_margin"
             android:layout_marginLeft="@dimen/base_margin"
             android:layout_marginRight="@dimen/base_margin"
-            android:background="@drawable/btn_common"
+            android:layout_marginBottom="@dimen/base_margin"
             android:text="@string/privacy_policy"
-            android:textColor="@color/white"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
         <androidx.cardview.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="@dimen/base_margin"
             android:layout_marginLeft="@dimen/base_margin"
             android:layout_marginRight="@dimen/base_margin"
+            android:layout_marginBottom="@dimen/base_margin"
             card_view:cardCornerRadius="4dp"
             card_view:cardElevation="3dp">
 
@@ -108,8 +97,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/libraries"
-                    android:textColor="@color/color_primary_dark"/>
+                    android:text="@string/libraries" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

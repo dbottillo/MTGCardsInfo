@@ -65,8 +65,8 @@ class DeckActivity : BasicActivity(), DeckActivityView {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.deck, menu)
-        menu.findItem(R.id.action_copy).setTintColor(this, R.color.white)
-        menu.findItem(R.id.action_export).setTintColor(this, R.color.white)
+        menu.findItem(R.id.action_copy).setTintColor(this, android.R.color.white)
+        menu.findItem(R.id.action_export).setTintColor(this, android.R.color.white)
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -141,7 +141,7 @@ class DeckActivity : BasicActivity(), DeckActivityView {
 
     private fun editDeckName() {
         LOG.d()
-        val alert = AlertDialog.Builder(this, R.style.MTGDialogTheme)
+        val alert = AlertDialog.Builder(this, R.style.AppTheme)
 
         alert.setTitle(getString(R.string.edit_deck))
 

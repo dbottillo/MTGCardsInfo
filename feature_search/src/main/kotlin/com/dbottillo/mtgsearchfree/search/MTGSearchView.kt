@@ -117,7 +117,7 @@ class MTGSearchView @JvmOverloads constructor(
         searchSetAdapter = SearchSetAdapter(context, sets)
         set.adapter = searchSetAdapter
 
-        val whiteColor = ContextCompat.getColor(context, R.color.white)
+        val whiteColor = ContextCompat.getColor(context, android.R.color.white)
 
         val cmcAdapter = ArrayAdapter<CharSequence>(context, R.layout.row_spinner_item, operators)
         cmcAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)

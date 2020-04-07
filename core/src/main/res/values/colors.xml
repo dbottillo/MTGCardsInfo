@@ -23,7 +23,23 @@
         5% — 0D
         0% — 00-->
 
-    <color name="color_primary">#00a7f7</color>
+    <!-- material components colors -->
+    <color name="app_primary_color">#1976d2</color>
+    <color name="app_secondary_color">#ab47bc</color>
+    <color name="app_background_color">#FFFFFF</color>
+    <color name="app_error_color">#B00020</color>
+    <color name="app_primary_variant_color">#63a4ff</color>
+    <color name="app_secondary_variant_color">#df78ef</color>
+    <color name="app_surface_color">#FFFFFF</color>
+    <color name="app_color_on_primary">#FFFFFF</color>
+    <color name="app_color_on_secondary">#FFFFFF</color>
+    <color name="app_color_on_background">#000000</color>
+    <color name="app_color_on_error">#FFFFFF</color>
+    <color name="app_color_on_surface">#000000</color>
+    <color name="status_bar">#0076c0</color>
+
+    <!-- legacy colors -->
+    <!--<color name="color_primary">#00a7f7</color>
     <color name="color_primary_slightly_dark">#0193e8</color>
     <color name="color_primary_middle_dark">#0086d4</color>
     <color name="color_primary_almost_dark">#0075bf</color>
@@ -31,6 +47,7 @@
     <color name="color_accent">#FF41B4</color>
     <color name="color_accent_dark">#C1147D</color>
     <color name="color_primary_light">#b2e5fe</color>
+
 
     <color name="main_bg">#FAFAFA</color>
     <color name="main">#2C4E6B</color>
@@ -40,11 +57,12 @@
     <color name="light_grey">#F2F2F2</color>
     <color name="grey">#aab4ba</color>
     <color name="dark_grey">#555</color>
-    <color name="black_a5">#26000000</color>
 
-    <color name="black_30">#4d000000</color>
+
+    <color name="black_30">#4d000000</color>-->
     <!--<color NAME="black_50">#b3000000</color>-->
 
+    <color name="black_a5">#26000000</color>
     <color name="player_1">#716BBE</color>
     <color name="player_2">#1CACFF</color>
     <color name="player_3">#46B446</color>
@@ -63,6 +81,5 @@
     <color name="mtg_green">#319c1f</color>
     <color name="mtg_multi">#b727af</color>
     <color name="mtg_other">#aab4ba</color>
-
 
 </resources>

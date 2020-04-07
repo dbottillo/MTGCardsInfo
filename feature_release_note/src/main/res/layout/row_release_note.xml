@@ -7,8 +7,7 @@
     android:layout_height="wrap_content"
     android:paddingLeft="@dimen/base_margin"
     android:paddingRight="@dimen/base_margin"
-    android:paddingTop="@dimen/base_margin"
-    tools:background="@color/white">
+    android:paddingTop="@dimen/base_margin">
 
     <TextView
         android:id="@+id/release_note_title"

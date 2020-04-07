@@ -71,7 +71,7 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
             searchOpen = bundle.getBoolean(SEARCH_OPEN)
             scrollView.setBackgroundColor(bundle.getInt(BG_COLOR_SCROLLVIEW))
             toolbar.elevation = bundle.getFloat(TOOLBAR_ELEVATION)
-            window.statusBarColor = ContextCompat.getColor(this, if (searchOpen) R.color.color_accent_dark else R.color.status_bar)
+            window.statusBarColor = ContextCompat.getColor(this, if (searchOpen) R.color.app_secondary_variant_color else R.color.status_bar)
             closeButton.imageAlpha = if (searchOpen) 1 else 0
         } else {
             toolbar.elevation = 0f
@@ -132,7 +132,7 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putBoolean(SEARCH_OPEN, searchOpen)
-        val color = argbEvaluator.evaluate(if (scrollView.scrollY < 400) scrollView.scrollY.toFloat() / 400.toFloat() else 1f, ContextCompat.getColor(this, R.color.color_primary), ContextCompat.getColor(this, R.color.color_primary_slightly_dark)) as Int
+        val color = argbEvaluator.evaluate(if (scrollView.scrollY < 400) scrollView.scrollY.toFloat() / 400.toFloat() else 1f, ContextCompat.getColor(this, R.color.app_color_on_primary), ContextCompat.getColor(this, R.color.app_primary_variant_color)) as Int
         outState.putInt(BG_COLOR_SCROLLVIEW, color)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             outState.putFloat(TOOLBAR_ELEVATION, toolbar.elevation)
@@ -177,11 +177,11 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
             newSearch.setBackgroundResource(R.drawable.anim_search_icon)
             backgroundInterpolator.fromValue(sizeBig.toFloat()).toValue(0f)
             startColor = ContextCompat.getColor(this, R.color.status_bar)
-            endColor = ContextCompat.getColor(this, R.color.color_accent_dark)
+            endColor = ContextCompat.getColor(this, R.color.app_secondary_variant_color)
         } else {
             newSearch.setBackgroundResource(R.drawable.anim_search_icon_reverse)
             backgroundInterpolator.fromValue(0f).toValue(sizeBig.toFloat())
-            startColor = ContextCompat.getColor(this, R.color.color_accent_dark)
+            startColor = ContextCompat.getColor(this, R.color.app_secondary_variant_color)
             endColor = ContextCompat.getColor(this, R.color.status_bar)
         }
         newSearchAnimation = newSearch.background as AnimationDrawable
@@ -236,7 +236,7 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             toolbar.elevation = if (amount < 200) 9 * (amount.toFloat() / 200.toFloat()) else 9f
         }
-        val color = argbEvaluator.evaluate(if (amount < 400) amount.toFloat() / 400.toFloat() else 1f, ContextCompat.getColor(this, R.color.color_primary), ContextCompat.getColor(this, R.color.color_primary_slightly_dark)) as Int
+        val color = argbEvaluator.evaluate(if (amount < 400) amount.toFloat() / 400.toFloat() else 1f, ContextCompat.getColor(this, R.color.app_primary_color), ContextCompat.getColor(this, R.color.app_primary_variant_color)) as Int
         scrollView.setBackgroundColor(color)
     }
 

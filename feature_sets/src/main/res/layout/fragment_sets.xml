@@ -4,15 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:background="@color/white">
+    android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         style="@style/mtg_toolbar.Transparent"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        tools:background="@color/color_primary_dark">
+        android:layout_height="?attr/actionBarSize">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,7 +24,6 @@
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
-                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:ellipsize="end"
                 android:maxLines="1"
@@ -41,7 +38,6 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/action_search"
                 android:src="@drawable/ic_search_white_24dp"
-                android:tint="@color/white"
                 android:visibility="visible"/>
 
             <ImageView
@@ -53,7 +49,6 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/action_lucky"
                 android:src="@drawable/ic_action_lucky"
-                android:tint="@color/white"
                 android:visibility="visible"/>
 
         </LinearLayout>
@@ -77,7 +72,6 @@
             android:layout_marginRight="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/tooltip_line_1"
-            android:textColor="@color/white"
             android:textSize="16sp"/>
 
         <ImageView
@@ -99,7 +93,6 @@
             android:layout_alignBaseline="@+id/tooltip_edit"
             android:layout_marginTop="12dp"
             android:text="@string/tooltip_line_2"
-            android:textColor="@color/white"
             android:textSize="16sp"/>
 
         <ImageView
@@ -110,7 +103,6 @@
             android:layout_marginTop="8dp"
             android:layout_marginLeft="16dp"
             android:layout_below="@+id/tooltip_line2"
-            android:tint="@color/white"
             app:srcCompat="@drawable/ic_settings"/>
 
         <TextView
@@ -124,7 +116,6 @@
             android:layout_marginTop="12dp"
             android:layout_marginBottom="16dp"
             android:text="@string/tooltip_line_3"
-            android:textColor="@color/white"
             android:textSize="16sp"/>
 
         <Button
@@ -159,6 +150,5 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         app:srcCompat="@drawable/ic_swap_horiz"
-        android:tint="@color/white"
         android:layout_margin="16dp" />
 </RelativeLayout>

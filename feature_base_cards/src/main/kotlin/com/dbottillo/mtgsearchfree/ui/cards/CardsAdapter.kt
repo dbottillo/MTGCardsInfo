@@ -66,7 +66,7 @@ class CardsAdapter(
                 holder.title.setTextSize(TypedValue.COMPLEX_UNIT_SP, 32f)
                 val spannableString = SpannableString("WUBRG - ALE - CURM")
                 if (colorFilterActive == -1) {
-                    colorFilterActive = ContextCompat.getColor(holder.itemView.context, R.color.color_accent)
+                    colorFilterActive = ContextCompat.getColor(holder.itemView.context, R.color.app_secondary_color)
                 }
                 checkSpannable(spannableString, cardFilter.white, 0)
                 checkSpannable(spannableString, cardFilter.blue, 1)

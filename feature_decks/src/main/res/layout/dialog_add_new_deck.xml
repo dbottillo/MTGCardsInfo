@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:background="@color/white"
     android:padding="@dimen/base_margin">
 
     <EditText

@@ -14,12 +14,12 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
-        android:textColor="@color/color_primary"
+        android:textColor="?attr/colorPrimary"
         tools:text="Creatures"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/color_primary"/>
+        android:background="?attr/colorPrimary"/>
 
 </LinearLayout>

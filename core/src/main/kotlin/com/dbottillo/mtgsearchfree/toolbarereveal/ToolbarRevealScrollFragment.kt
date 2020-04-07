@@ -25,7 +25,7 @@ abstract class ToolbarRevealScrollFragment : BasicFragment() {
         super.onCreate(savedInstanceState)
         toolbarRevealScrollHelper = ToolbarRevealScrollHelper(this, scrollViewId,
             toolbarId, toolbarTitleId,
-                R.color.white, heightToolbar, isStatusBarIncludedInReveal())
+                R.color.app_background_color, heightToolbar, isStatusBarIncludedInReveal())
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

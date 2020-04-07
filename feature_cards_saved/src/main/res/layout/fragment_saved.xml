@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
@@ -18,10 +17,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:background="@android:color/transparent"
-            android:textColor="@color/white"
             android:textSize="20sp"
             tools:text="Toolbar Title"
-            tools:textColor="@color/color_primary"/>
+            tools:textColor="?attr/colorPrimary"/>
 
     </androidx.appcompat.widget.Toolbar>
 

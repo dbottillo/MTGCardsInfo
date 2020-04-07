@@ -20,7 +20,7 @@ class SetsAdapter(
     override fun onBindViewHolder(holder: SetViewHolder, position: Int) {
         holder.name.text = sets[position].name
 
-        holder.name.setTextColor(ContextCompat.getColor(holder.itemView.context, if (position == currentPos) R.color.color_accent else R.color.color_primary))
+        holder.name.setTextColor(ContextCompat.getColor(holder.itemView.context, if (position == currentPos) R.color.app_color_on_secondary else R.color.app_color_on_primary))
         holder.name.setTypeface(null, if (position == currentPos) Typeface.BOLD else Typeface.NORMAL)
         holder.itemView.setOnClickListener {
             if (position != currentPos) {

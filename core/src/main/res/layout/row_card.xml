@@ -37,7 +37,6 @@
                 android:textSize="12sp"
                 android:textStyle="bold"
                 tools:text="3ggg"
-                tools:textColor="@color/color_primary_dark"
                 android:textAllCaps="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -78,7 +77,6 @@
         android:id="@+id/card_more_option"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:tint="@color/color_primary"
         android:background="@android:color/transparent"
         android:paddingRight="8dp"
         android:paddingLeft="8dp"

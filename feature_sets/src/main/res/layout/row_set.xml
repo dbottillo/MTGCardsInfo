@@ -3,16 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:foreground="@drawable/main_ripple"
-    tools:background="@color/white">
+    android:orientation="horizontal">
 
     <TextView
         android:id="@+id/set_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:textColor="@color/dark_grey"
         android:textSize="@dimen/row_set_title"
         tools:text="set name"/>
 

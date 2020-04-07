@@ -3,7 +3,6 @@
                                    xmlns:tools="http://schemas.android.com/tools"
                                    android:id="@+id/toolbar"
                                    style="@style/mtg_toolbar"
-                                   tools:background="@color/color_primary_dark"
                                    android:layout_width="match_parent"
                                    android:layout_height="?attr/actionBarSize"
                                    tools:showIn="@layout/activity_cards" />

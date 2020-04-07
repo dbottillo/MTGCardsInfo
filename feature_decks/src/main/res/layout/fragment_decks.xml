@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
@@ -19,10 +18,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:background="@android:color/transparent"
-            android:textColor="@color/white"
             android:textSize="20sp"
             tools:text="Toolbar Title"
-            tools:textColor="@color/color_primary"/>
+            tools:textColor="?attr/colorPrimary"/>
 
         <ImageView
             android:id="@+id/action_import"
@@ -33,9 +31,8 @@
             android:background="@android:color/transparent"
             android:contentDescription="@string/export"
             android:src="@drawable/ic_file_upload_white_24dp"
-            android:tint="@color/white"
             android:visibility="visible"
-            tools:tint="@color/color_primary"/>
+            tools:tint="?attr/colorPrimary"/>
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -53,7 +50,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="16dp"
-        android:tint="@color/white"
         app:srcCompat="@drawable/ic_add_black_24dp"/>
 
 </RelativeLayout>

@@ -40,7 +40,7 @@ class BottomTabs : LinearLayout {
         val view = inflate(context, R.layout.bottom_tabs, this)
 
         orientation = HORIZONTAL
-        setBackgroundColor(ContextCompat.getColor(context, R.color.color_primary))
+        setBackgroundColor(ContextCompat.getColor(context, R.color.app_primary_color))
 
         homeTab = view.findViewById(R.id.home_tab)
         decksTab = view.findViewById(R.id.decks_tab)

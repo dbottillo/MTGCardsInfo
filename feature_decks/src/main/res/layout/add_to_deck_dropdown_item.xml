@@ -6,4 +6,4 @@
     android:ellipsize="marquee"
     android:padding="5dp"
     android:singleLine="true"
-    android:textColor="@color/color_primary" />
+    android:textColor="?attr/colorPrimary" />

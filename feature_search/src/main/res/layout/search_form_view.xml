@@ -7,8 +7,7 @@
     android:orientation="vertical"
     android:paddingLeft="@dimen/base_margin"
     android:paddingRight="@dimen/base_margin"
-    android:theme="@style/MTG.Search"
-    tools:background="@color/color_primary">
+    tools:background="?attr/colorPrimary">
 
     <TextView
         android:id="@+id/search_name_title"
@@ -17,7 +16,6 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_card_title"
-        android:textColor="@color/white"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +23,6 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/search_name"
-        style="@style/MTG.EditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/search_hint_name"
@@ -41,7 +38,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_card_types"
-        android:textColor="@color/white"
+        
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,11 +48,8 @@
         android:id="@+id/search_types"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
         android:hint="@string/search_hint_type"
         android:maxLines="1"
-        android:textColor="@color/white"
-        android:textColorHint="@color/color_primary_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search_types_title" />
@@ -67,7 +61,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_card_text"
-        android:textColor="@color/white"
+        
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,11 +71,9 @@
         android:id="@+id/search_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
         android:hint="@string/search_hint_text"
         android:maxLines="1"
-        android:textColor="@color/white"
-        android:textColorHint="@color/color_primary_light"
+        
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search_text_title" />
@@ -93,7 +85,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_set_title"
-        android:textColor="@color/white"
+        
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -112,7 +104,6 @@
         android:id="@+id/search_set_divisor"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search_set" />
@@ -123,7 +114,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_cmc_title"
-        android:textColor="@color/white"
+        
         app:layout_constraintEnd_toStartOf="@+id/search_cmc_operator"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search_set_divisor" />
@@ -140,7 +131,7 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/search_cmc"
-        style="@style/MTG.EditText"
+        style="@"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/search_cmc_numbers"
@@ -160,7 +151,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/search_power_title"
-        android:textColor="@color/white"
+        
         app:layout_constraintBottom_toBottomOf="@id/search_power"
         app:layout_constraintEnd_toStartOf="@+id/search_power_operator"
         app:layout_constraintStart_toStartOf="parent"
@@ -178,7 +169,7 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/search_power"
-        style="@style/MTG.EditText"
+        style="@"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/base_margin"
@@ -194,7 +185,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/search_toughness_title"
-        android:textColor="@color/white"
+        
         app:layout_constraintBottom_toBottomOf="@id/search_power"
         app:layout_constraintEnd_toStartOf="@+id/search_toughness_operator"
         app:layout_constraintStart_toStartOf="@+id/guideline_middle"
@@ -212,7 +203,7 @@
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/search_tough"
-        style="@style/MTG.EditText"
+        style="@"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/base_margin"
@@ -228,7 +219,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_color_title"
-        android:textColor="@color/white"
+        
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search_power" />
@@ -238,7 +229,6 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="4dp"
-        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search_color_title"
@@ -250,7 +240,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/white"
-        android:textColor="@color/white"
+        
         app:layout_constraintEnd_toStartOf="@+id/guideline_middle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search_color_divisor" />
@@ -260,7 +250,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/blue"
-        android:textColor="@color/white"
+        
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline_middle"
         app:layout_constraintTop_toTopOf="@id/search_w" />
@@ -271,7 +261,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/black"
-        android:textColor="@color/white"
+        
         app:layout_constraintEnd_toStartOf="@+id/guideline_middle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search_w" />
@@ -281,7 +271,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/red"
-        android:textColor="@color/white"
+        
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline_middle"
         app:layout_constraintTop_toTopOf="@id/search_b" />
@@ -292,7 +282,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/green"
-        android:textColor="@color/white"
+        
         app:layout_constraintEnd_toStartOf="@+id/guideline_middle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search_b" />
@@ -302,7 +292,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/search_colorless"
-        android:textColor="@color/white"
+        
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline_middle"
         app:layout_constraintTop_toTopOf="@id/search_g" />
@@ -328,7 +318,7 @@
         android:layout_marginTop="8dp"
         android:layout_height="wrap_content"
         android:text="@string/search_color_explanation"
-        android:textColor="@color/white"
+        
         android:textSize="12sp"
         android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
@@ -341,7 +331,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_rarity_title"
-        android:textColor="@color/white"
+        
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_color_explanation" />
@@ -351,7 +341,6 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="4dp"
-        android:background="@color/white"
         app:layout_constraintTop_toBottomOf="@id/search_rarity_title" />
 
     <androidx.appcompat.widget.AppCompatCheckBox
@@ -360,7 +349,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/search_common"
-        android:textColor="@color/white"
+        
         app:layout_constraintEnd_toStartOf="@+id/guideline_middle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_rarity_divisor" />
@@ -370,7 +359,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/search_uncommon"
-        android:textColor="@color/white"
+        
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline_middle"
         app:layout_constraintTop_toTopOf="@id/search_common" />
@@ -381,7 +370,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/search_rare"
-        android:textColor="@color/white"
+        
         app:layout_constraintEnd_toStartOf="@+id/guideline_middle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_common" />
@@ -391,7 +380,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/search_mythic"
-        android:textColor="@color/white"
+        
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline_middle"
         app:layout_constraintTop_toTopOf="@id/search_rare" />
@@ -402,7 +391,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/base_margin"
         android:text="@string/search_other_title"
-        android:textColor="@color/white"
+        
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_rare" />
@@ -412,7 +401,6 @@
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="4dp"
-        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/other_title" />
@@ -423,7 +411,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/search_land"
-        android:textColor="@color/white"
+        
         app:layout_constraintEnd_toStartOf="@+id/guideline_middle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/other_divisor" />
@@ -433,7 +421,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/search_remove_duplicates"
-        android:textColor="@color/white"
+        
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline_middle"
         app:layout_constraintTop_toTopOf="@id/search_l" />
@@ -443,7 +431,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/search_order_az"
-        android:textColor="@color/white"
+        
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline_middle"
         app:layout_constraintStart_toStartOf="parent"

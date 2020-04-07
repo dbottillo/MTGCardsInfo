@@ -23,7 +23,7 @@ abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListen
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         toolbarRevealScrollHelper = ToolbarRevealScrollHelper(this, getScrollViewId(),
-            getToolbarId(), getToolbarTitleId(), R.color.white, heightToolbar, true)
+            getToolbarId(), getToolbarTitleId(), android.R.color.white, heightToolbar, true)
     }
 
     abstract fun getScrollViewId(): Int

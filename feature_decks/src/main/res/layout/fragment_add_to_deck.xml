@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    tools:background="@color/white">
+    android:orientation="vertical">
 
     <Space
         android:id="@+id/top_space"
@@ -32,7 +31,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/base_margin"
-        android:theme="@style/EditTextPrimary"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/choose_deck"
         app:layout_constraintEnd_toEndOf="@+id/right_guideline"
@@ -45,8 +43,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/new_deck_hint"
             android:inputType="textPersonName|textCapWords"
-            android:textColor="@color/color_primary"
-            android:theme="@style/EditTextPrimary" />
+            android:textColor="?attr/colorPrimary" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Spinner
@@ -71,7 +68,7 @@
         android:id="@+id/quantity_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/color_accent_dark"
+        android:textColor="?attr/colorSecondaryVariant"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/quantity_container"
@@ -86,10 +83,9 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:background="@drawable/bg_button_counter"
-        android:foreground="@drawable/main_ripple"
         android:padding="0dp"
         android:text="-"
-        android:textColor="@color/color_primary"
+        android:textColor="?attr/colorPrimary"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@id/quantity_container"
         app:layout_constraintEnd_toStartOf="@+id/quantity_indicator"
@@ -102,10 +98,9 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:background="@drawable/bg_button_counter"
-        android:foreground="@drawable/main_ripple"
         android:padding="0dp"
         android:text="+"
-        android:textColor="@color/color_primary"
+        android:textColor="?attr/colorPrimary"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@id/quantity_container"
         app:layout_constraintEnd_toEndOf="@id/right_guideline"
@@ -119,16 +114,15 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginBottom="@dimen/base_margin"
-        android:buttonTint="@color/color_primary"
+        android:buttonTint="?attr/colorPrimary"
         android:text="@string/sideboard"
-        android:textColor="@color/color_primary"
+        android:textColor="?attr/colorPrimary"
         app:layout_constraintBottom_toTopOf="@+id/add_to_deck_save"
         app:layout_constraintStart_toStartOf="@+id/left_guideline"
         tools:ignore="UnusedAttribute" />
 
     <Button
         android:id="@+id/add_to_deck_save"
-        style="@style/BtnGeneric"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -166,7 +160,6 @@
         android:layout_marginTop="@dimen/base_margin"
         android:padding="8dp"
         android:text="@string/add_to_deck_error"
-        android:textColor="@color/color_primary_dark"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@id/add_to_deck_save"
         app:layout_constraintEnd_toEndOf="@id/right_guideline"

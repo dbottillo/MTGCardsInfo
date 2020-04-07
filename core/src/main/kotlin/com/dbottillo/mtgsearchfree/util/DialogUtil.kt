@@ -15,7 +15,7 @@ class DialogUtil {
     private lateinit var refContext: WeakReference<Context>
 
     fun init(context: Context?) {
-        this.refContext = WeakReference<Context>(context)
+        this.refContext = WeakReference<Context>(context!!)
     }
 
     fun showEditPlayer(layoutId: Int, editTextId: Int, player: Player, listener: (newName: String) -> Unit) {
@@ -23,7 +23,7 @@ class DialogUtil {
             return
         }
         val context = refContext.get()!!
-        val alert = AlertDialog.Builder(context, R.style.MTGDialogTheme)
+        val alert = AlertDialog.Builder(context, R.style.AppTheme)
 
         alert.setTitle(context.getString(R.string.edit_player))
 
@@ -49,7 +49,7 @@ class DialogUtil {
             return
         }
         val context = refContext.get()!!
-        val alert = AlertDialog.Builder(context, R.style.MTGDialogTheme)
+        val alert = AlertDialog.Builder(context, R.style.AppTheme)
 
         alert.setTitle(context.getString(R.string.new_deck_hint))
 
@@ -71,7 +71,7 @@ class DialogUtil {
             return
         }
         val context = refContext.get()!!
-        AlertDialog.Builder(context, R.style.MTGDialogTheme)
+        AlertDialog.Builder(context, R.style.AppTheme)
                 .setTitle(R.string.deck_delete_title)
                 .setMessage(R.string.deck_delete_text)
                 .setPositiveButton(R.string.deck_delete_confirmation) { _, _ ->

@@ -5,12 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    tools:background="@color/white">
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title"
-        style="@style/BigTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -43,7 +41,7 @@
         android:background="@android:color/transparent"
         android:contentDescription="@string/cd_cards_view_type"
         android:src="@drawable/cards_list_type"
-        android:tint="@color/color_primary"/>
+        android:tint="?attr/colorPrimary"/>
 
     <ImageButton
         android:id="@+id/cards_settings"
@@ -56,6 +54,6 @@
         android:contentDescription="@string/cd_filter"
         android:padding="8dp"
         app:srcCompat="@drawable/filter"
-        android:tint="@color/color_primary"/>
+        android:tint="?attr/colorPrimary"/>
 
 </RelativeLayout>
