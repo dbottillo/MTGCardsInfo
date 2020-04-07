@@ -29,6 +29,7 @@ import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.dbottillo.mtgsearchfree.util.gone
 import com.dbottillo.mtgsearchfree.util.setTintColor
 import com.dbottillo.mtgsearchfree.util.show
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
@@ -141,7 +142,7 @@ class DeckActivity : BasicActivity(), DeckActivityView {
 
     private fun editDeckName() {
         LOG.d()
-        val alert = AlertDialog.Builder(this, R.style.AppTheme)
+        val alert = MaterialAlertDialogBuilder(this)
 
         alert.setTitle(getString(R.string.edit_deck))
 

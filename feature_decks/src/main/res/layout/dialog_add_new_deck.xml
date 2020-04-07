@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="New deck"
-        tools:ignore="LabelFor"/>
+        tools:ignore="LabelFor"
+        android:importantForAutofill="no" />
 
 </LinearLayout>

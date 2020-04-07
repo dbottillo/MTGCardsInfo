@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
-    android:id="@+id/card_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_parent"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/bg_list_footer_add">
@@ -11,13 +11,15 @@
         android:id="@+id/grid_item_card_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:src="@drawable/ic_file_download_black_24dp"/>
+        tools:src="@drawable/ic_file_download_black_24dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/new_card_button"
+        android:duplicateParentState="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:contentDescription="@string/cd_next"
         android:padding="8dp"
-        android:src="@drawable/ic_add_black_24dp"/>
+        android:src="@drawable/ic_add_black_24dp" />
 </FrameLayout>

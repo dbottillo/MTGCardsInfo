@@ -23,15 +23,20 @@
      For instance, UIKit.TextAppearance.Body.Small.Tertiary does not include Normal (Text Style) in its name.
      -->
 
-    <!-- region Text HEADING -->
     <style name="App.TextAppearance.Heading">
         <item name="android:textSize">@dimen/text_size_heading</item>
         <item name="android:textColor">?attr/colorPrimary</item>
     </style>
 
-    <style name="App.TextAppearance.Row"></style>
+    <style name="App.TextAppearance.Heading.Dialog">
+        <item name="android:textSize">@dimen/text_size_heading_dialog</item>
+        <item name="android:textColor">?attr/textColorPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
-    <style name="App.TextAppearance.Row.Text"></style>
+    <style name="App.TextAppearance.Row" />
+
+    <style name="App.TextAppearance.Row.Text" />
 
     <style name="App.TextAppearance.Row.Title">
         <item name="android:textStyle">bold</item>

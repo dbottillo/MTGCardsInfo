@@ -1,4 +1,5 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -15,12 +16,11 @@
 
     <TextView
         android:id="@+id/add_card_title"
+        style="@style/App.TextAppearance.Heading.Dialog"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginBottom="@dimen/base_margin"
-        android:textSize="16sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/new_deck_name_input_layout"
         app:layout_constraintEnd_toEndOf="@+id/right_guideline"
         app:layout_constraintStart_toStartOf="@+id/left_guideline"
@@ -28,6 +28,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/new_deck_name_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/base_margin"
@@ -42,8 +43,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:hint="@string/new_deck_hint"
-            android:inputType="textPersonName|textCapWords"
-            android:textColor="?attr/colorPrimary" />
+            android:inputType="textPersonName|textCapWords" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Spinner
@@ -80,12 +80,10 @@
 
     <Button
         android:id="@+id/quantity_minus"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@drawable/bg_button_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:padding="0dp"
         android:text="-"
-        android:textColor="?attr/colorPrimary"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@id/quantity_container"
         app:layout_constraintEnd_toStartOf="@+id/quantity_indicator"
@@ -95,12 +93,10 @@
 
     <Button
         android:id="@+id/quantity_plus"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@drawable/bg_button_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:padding="0dp"
         android:text="+"
-        android:textColor="?attr/colorPrimary"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@id/quantity_container"
         app:layout_constraintEnd_toEndOf="@id/right_guideline"
@@ -161,10 +157,10 @@
         android:padding="8dp"
         android:text="@string/add_to_deck_error"
         android:textSize="16sp"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@id/add_to_deck_save"
         app:layout_constraintEnd_toEndOf="@id/right_guideline"
         app:layout_constraintStart_toStartOf="@id/left_guideline"
-        android:visibility="gone"
         tools:ignore="HardcodedText"
         tools:visibility="gone" />
 

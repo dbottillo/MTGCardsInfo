@@ -1,13 +1,13 @@
 package com.dbottillo.mtgsearchfree.util
 
 import android.annotation.SuppressLint
-import android.app.AlertDialog
 import android.content.Context
 import android.view.LayoutInflater
 import android.widget.EditText
 import com.dbottillo.mtgsearchfree.core.R
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.Player
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.lang.ref.WeakReference
 
 class DialogUtil {
@@ -23,13 +23,9 @@ class DialogUtil {
             return
         }
         val context = refContext.get()!!
-        val alert = AlertDialog.Builder(context, R.style.AppTheme)
-
+        val alert = MaterialAlertDialogBuilder(context)
         alert.setTitle(context.getString(R.string.edit_player))
-
         val layoutInflater = LayoutInflater.from(context)
-        /*@SuppressLint("InflateParams") val view = layoutInflater.inflate(R.layout.dialog_edit_deck, null)
-        val editText = view.findViewById(R.id.edit_text)*/
         @SuppressLint("InflateParams") val view = layoutInflater.inflate(layoutId, null)
         val editText = view.findViewById<EditText>(editTextId)
         editText.setText(player.name)
@@ -49,7 +45,7 @@ class DialogUtil {
             return
         }
         val context = refContext.get()!!
-        val alert = AlertDialog.Builder(context, R.style.AppTheme)
+        val alert = MaterialAlertDialogBuilder(context)
 
         alert.setTitle(context.getString(R.string.new_deck_hint))
 
@@ -71,7 +67,7 @@ class DialogUtil {
             return
         }
         val context = refContext.get()!!
-        AlertDialog.Builder(context, R.style.AppTheme)
+        val alert = MaterialAlertDialogBuilder(context)
                 .setTitle(R.string.deck_delete_title)
                 .setMessage(R.string.deck_delete_text)
                 .setPositiveButton(R.string.deck_delete_confirmation) { _, _ ->

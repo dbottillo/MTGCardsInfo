@@ -1,25 +1,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/action_copy"
         android:icon="@drawable/ic_content_copy_24dp"
         android:orderInCategory="101"
         android:title="@string/copy"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/action_export"
         android:icon="@drawable/ic_share_24px"
         android:orderInCategory="102"
         android:title="@string/export"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/action_edit"
         android:icon="@drawable/ic_edit_white_24dp"
         android:orderInCategory="103"
         android:title="@string/edit_deck"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom" />
 
 </menu>

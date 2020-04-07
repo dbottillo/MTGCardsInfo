@@ -1,22 +1,25 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include
+    <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
-        layout="@layout/mtg_toolbar"/>
+        style="@style/AppToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        tools:title="Throne of Eldraine" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/cards_tab_layout"
-        style="@style/CardsTabLayout"
-        android:background="?attr/colorPrimary"
+        style="@style/App.TabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
-        app:tabMode="scrollable"/>
+        app:tabMode="scrollable" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/cards_view_pager"
@@ -34,7 +37,7 @@
         android:src="@drawable/ic_add_black_24dp"
         app:borderWidth="0dp"
         app:elevation="8dp"
-        app:pressedTranslationZ="8dp"/>
+        app:pressedTranslationZ="8dp" />
 
     <com.dbottillo.mtgsearchfree.ui.views.MTGLoader
         android:id="@+id/loader"
@@ -45,19 +48,19 @@
 
     <TextView
         android:id="@+id/preview_banner"
-        android:drawableEnd="@drawable/ic_info_outline_black_24dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:textStyle="italic"
+        android:layout_alignParentBottom="true"
+        android:background="?attr/colorSecondary"
+        android:drawableEnd="@drawable/ic_info_outline_black_24dp"
         android:gravity="center_vertical"
         android:paddingStart="@dimen/base_margin"
-        android:paddingEnd="@dimen/base_margin"
         android:paddingTop="8dp"
+        android:paddingEnd="@dimen/base_margin"
         android:paddingBottom="8dp"
-        android:visibility="gone"
-        android:layout_alignParentBottom="true"
         android:text="@string/set_preview_banner"
-        android:background="?attr/colorSecondary"/>
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:visibility="gone" />
 
 </RelativeLayout>

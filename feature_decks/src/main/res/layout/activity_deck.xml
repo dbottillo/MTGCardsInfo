@@ -3,16 +3,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <include
+    <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
-        layout="@layout/mtg_toolbar"/>
+        style="@style/AppToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        tools:title="Temur Reclamation" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/deck_cards_tab_layout"
-        style="@style/CardsTabLayout"
-        android:background="?attr/colorPrimary"
+        style="@style/App.TabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"

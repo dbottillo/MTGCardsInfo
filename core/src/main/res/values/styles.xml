@@ -9,6 +9,21 @@
         <item name="android:ellipsize">end</item>
     </style>
 
+    <style name="App.TabLayout" parent="Widget.MaterialComponents.TabLayout.Colored">
+        <item name="tabIndicatorHeight">2dp</item>
+        <item name="tabPaddingStart">12dp</item>
+        <item name="tabPaddingEnd">12dp</item>
+        <item name="tabTextAppearance">@style/App.TabLayoutTextAppearance</item>
+        <item name="tabSelectedTextColor">@android:color/white</item>
+    </style>
+
+    <style name="App.TabLayoutTextAppearance">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <!--<style name="BigTitle">
         <item name="android:layout_marginLeft">16dp</item>
         <item name="android:layout_marginRight">16dp</item>
@@ -33,21 +48,6 @@
         <item name="android:colorBackground">?attr/backgroundColor</item>
     </style>
 
-    <style name="CardsTabLayout" parent="Widget.Design.TabLayout">
-        <item name="tabIndicatorColor">?attr/colorOnPrimary</item>
-        <item name="tabIndicatorHeight">2dp</item>
-        <item name="tabPaddingStart">12dp</item>
-        <item name="tabPaddingEnd">12dp</item>
-        <item name="tabBackground">?attr/colorPrimary</item>
-        <item name="tabTextAppearance">@style/CardsTabTextAppearance</item>
-        <item name="tabSelectedTextColor">@android:color/white</item>
-    </style>
-
-    <style name="CardsTabTextAppearance" parent="TextAppearance.Design.Tab">
-        <item name="android:textSize">14sp</item>
-        <item name="android:textColor">?attr/titleTextColor</item>
-        <item name="textAllCaps">false</item>
-    </style>
 
     <!-- <style name="EditTextPrimary" parent="Theme.AppCompat.Light.NoActionBar">
          <item name="colorPrimary">@color/color_primary</item>

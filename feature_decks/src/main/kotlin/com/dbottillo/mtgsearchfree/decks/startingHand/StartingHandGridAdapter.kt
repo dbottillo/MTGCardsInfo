@@ -29,6 +29,7 @@ class StartingHandGridAdapter(
             }
             is NextCardViewHolder -> {
                 holder.itemView.setOnClickListener { next() }
+                holder.button.setOnClickListener { next() }
             }
         }
     }
@@ -74,6 +75,8 @@ private const val ITEM_VIEW_TYPE_CARD = 0
 private const val ITEM_VIEW_TYPE_NEXT_CARD = 1
 private const val ITEM_VIEW_TYPE_FOOTER = 2
 
-class NextCardViewHolder(view: View) : RecyclerView.ViewHolder(view)
+class NextCardViewHolder(view: View) : RecyclerView.ViewHolder(view){
+    var button: View = view.findViewById(R.id.new_card_button)
+}
 
 class GridFooterViewHolder(view: View) : RecyclerView.ViewHolder(view)
