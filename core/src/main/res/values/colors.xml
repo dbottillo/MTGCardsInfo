@@ -25,20 +25,19 @@
 
     <!-- material components colors -->
     <color name="app_primary_color">#1976d2</color>
-    <color name="app_secondary_color">#ab47bc</color>
+    <color name="app_secondary_color">#7b1fa2</color>
     <color name="app_background_color">#FFFFFF</color>
-    <color name="app_error_color">#B00020</color>
     <color name="app_primary_variant_color">#63a4ff</color>
-    <color name="app_secondary_variant_color">#df78ef</color>
+    <color name="app_secondary_variant_color">#9c27b0</color>
     <color name="app_surface_color">#FFFFFF</color>
     <color name="app_color_on_primary">#FFFFFF</color>
     <color name="app_color_on_secondary">#FFFFFF</color>
     <color name="app_color_on_background">#000000</color>
-    <color name="app_color_on_error">#FFFFFF</color>
     <color name="app_color_on_surface">#000000</color>
-    <color name="status_bar">#1976d2</color>
+    <color name="status_bar">#ffffff</color>
 
     <color name="text_color_primary">@color/black_100</color>
+    <color name="toolbarSurfaceColor">#FFFFFF</color>
 
     <!-- legacy colors -->
     <!--<color name="color_primary">#00a7f7</color>

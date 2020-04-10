@@ -50,8 +50,6 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
         mtgCardsView = view.findViewById(R.id.cards)
         mtgCardsView.setEmptyString(R.string.empty_cards)
 
-        setupHomeActivityScroll(viewRecycle = mtgCardsView.listView)
-
         presenter.init(this)
     }
 

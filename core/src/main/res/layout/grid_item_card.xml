@@ -1,20 +1,20 @@
 <RelativeLayout
-    android:id="@+id/card_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_parent"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="wrap_content">
 
     <com.dbottillo.mtgsearchfree.ui.views.MTGLoader
         android:id="@+id/grid_item_card_loader"
-        android:layout_centerInParent="true"
         android:layout_width="100dp"
-        android:layout_height="100dp"/>
+        android:layout_height="100dp"
+        android:layout_centerInParent="true" />
 
     <com.dbottillo.mtgsearchfree.ui.views.MTGCardImageView
         android:id="@+id/grid_item_card_image"
-        tools:src="@drawable/left_debug"
-        android:scaleType="center"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:scaleType="center"
+        tools:src="@drawable/left_debug" />
 </RelativeLayout>

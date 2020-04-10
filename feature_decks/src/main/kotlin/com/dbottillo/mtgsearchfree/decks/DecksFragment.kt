@@ -57,7 +57,6 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.Perm
 
         decksList.setHasFixedSize(true)
         decksList.layoutManager = LinearLayoutManager(view.context)
-        setupHomeActivityScroll(viewRecycle = decksList)
 
         adapter = DecksAdapter(decks,
                 copy = {

@@ -8,29 +8,25 @@
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
-        style="@style/AppToolbar.Transparent"
+        style="@style/AppToolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
 
         <TextView
             android:id="@+id/toolbar_title"
-            style="@style/App.ToolbarTitleTransparent"
+            style="@style/App.ToolbarTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/base_margin"
             tools:text="Toolbar Title" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/action_import"
+            style="@style/AppToolbarIcon"
             android:layout_width="@dimen/toolbar_icon_size"
             android:layout_height="@dimen/toolbar_icon_size"
-            android:layout_gravity="end|center_vertical"
-            android:layout_marginEnd="16dp"
-            android:background="@android:color/transparent"
             android:contentDescription="@string/export"
-            android:src="@drawable/ic_file_upload_white_24dp"
-            android:visibility="visible"
-            tools:tint="?attr/colorPrimary" />
+            android:src="@drawable/ic_file_upload_white_24dp" />
 
     </com.google.android.material.appbar.MaterialToolbar>
 

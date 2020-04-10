@@ -17,13 +17,12 @@
         app:title="Playground App"
         tools:ignore="HardcodedText">
 
-        <ImageView
+        <ImageButton
             android:id="@+id/button_flush"
+            style="@style/AppToolbarIcon"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="end"
-            android:clickable="true"
-            android:focusable="true"
             android:padding="16dp"
             android:src="@drawable/ic_action_lucky"
             android:visibility="visible"

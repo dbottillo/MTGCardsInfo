@@ -23,7 +23,7 @@ abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListen
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         toolbarRevealScrollHelper = ToolbarRevealScrollHelper(this, getScrollViewId(),
-            getToolbarId(), getToolbarTitleId(), android.R.color.white, heightToolbar, true)
+            getToolbarId(), getToolbarTitleId(), heightToolbar)
     }
 
     abstract fun getScrollViewId(): Int
@@ -65,20 +65,5 @@ abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListen
             R.id.action_open_debug -> navigator.openDebugScreen(requireActivity())
         }
         return true
-    }
-
-    protected fun setupHomeActivityScroll(viewRecycle: RecyclerView) {
-        if (activity is HomeActivity) {
-            viewRecycle.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                    super.onScrolled(recyclerView, dx, dy)
-                    if (dy > 0) {
-                        (activity as HomeActivity).scrollingUp()
-                    } else {
-                        (activity as HomeActivity).scrollingDown()
-                    }
-                }
-            })
-        }
     }
 }

@@ -11,10 +11,10 @@
         android:id="@+id/fragment_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/update_banner"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_tabs"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/banner_shadow"
@@ -25,7 +25,7 @@
         app:layout_constraintBottom_toTopOf="@+id/update_banner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:visibility="visible"/>
+        tools:visibility="gone" />
 
     <com.dbottillo.mtgsearchfree.home.view.NewUpdateBannerView
         android:id="@+id/update_banner"
@@ -35,7 +35,15 @@
         app:layout_constraintBottom_toTopOf="@+id/bottom_tabs"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:visibility="visible"/>
+        tools:visibility="gone" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_tabs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="?attr/backgroundSeparatorColor" />
 
     <com.dbottillo.mtgsearchfree.home.BottomTabs
         android:id="@+id/bottom_tabs"
@@ -43,6 +51,6 @@
         android:layout_height="@dimen/bottom_tabs_height"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

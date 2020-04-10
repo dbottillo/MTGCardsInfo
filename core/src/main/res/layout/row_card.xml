@@ -4,7 +4,8 @@
     android:id="@+id/card_parent"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg_card"
+    android:background="?attr/backgroundSurfaceColor"
+    android:foreground="?android:attr/selectableItemBackground"
     android:gravity="center_vertical"
     android:orientation="horizontal"
     android:paddingTop="10dp"
@@ -37,10 +38,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:textAllCaps="true"
-                tools:textColor="?attr/textColorPrimary"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                tools:text="3ggg" />
+                tools:text="3ggg"
+                tools:textColor="?attr/textColorPrimary" />
 
             <TextView
                 android:id="@+id/card_rarity"
@@ -48,10 +49,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="10dp"
-                tools:textColor="?attr/textColorPrimary"
                 android:textSize="12sp"
                 android:textStyle="italic"
-                tools:text="Mythic Rare" />
+                tools:text="Mythic Rare"
+                tools:textColor="?attr/textColorPrimary" />
 
             <TextView
                 android:id="@+id/card_set_name"
@@ -61,9 +62,9 @@
                 android:layout_marginRight="10dp"
                 android:ellipsize="end"
                 android:maxLines="1"
-                tools:textColor="?attr/textColorPrimary"
                 android:textSize="12sp"
-                tools:text="Theros Theros Theros Theros Theros Theros Theros Theros Theros " />
+                tools:text="Theros Theros Theros Theros Theros Theros Theros Theros Theros "
+                tools:textColor="?attr/textColorPrimary" />
 
         </LinearLayout>
     </LinearLayout>

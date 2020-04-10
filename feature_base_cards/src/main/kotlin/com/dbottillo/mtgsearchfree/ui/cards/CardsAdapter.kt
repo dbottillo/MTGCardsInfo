@@ -1,8 +1,5 @@
 package com.dbottillo.mtgsearchfree.ui.cards
 
-import androidx.core.content.ContextCompat
-import androidx.appcompat.widget.AppCompatTextView
-import androidx.recyclerview.widget.RecyclerView
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
@@ -12,11 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatTextView
+import androidx.recyclerview.widget.RecyclerView
 import com.dbottillo.mtgsearchfree.Constants.RATIO_CARD
 import com.dbottillo.mtgsearchfree.featurebasecards.R
 import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.util.loadInto
+import com.dbottillo.mtgsearchfree.util.themeColor
 
 class CardsAdapter(
     var cards: List<MTGCard>,
@@ -66,7 +66,7 @@ class CardsAdapter(
                 holder.title.setTextSize(TypedValue.COMPLEX_UNIT_SP, 32f)
                 val spannableString = SpannableString("WUBRG - ALE - CURM")
                 if (colorFilterActive == -1) {
-                    colorFilterActive = ContextCompat.getColor(holder.itemView.context, R.color.app_secondary_color)
+                    colorFilterActive = holder.itemView.context.themeColor(R.attr.colorSecondary)
                 }
                 checkSpannable(spannableString, cardFilter.white, 0)
                 checkSpannable(spannableString, cardFilter.blue, 1)

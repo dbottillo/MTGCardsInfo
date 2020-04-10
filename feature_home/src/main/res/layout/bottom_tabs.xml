@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/bottom_tabs_height"
     android:orientation="vertical"
+    tools:background="?attr/colorSurface"
     tools:orientation="horizontal"
     tools:parentTag="android.widget.LinearLayout">
 
@@ -23,15 +24,16 @@
             android:layout_height="@dimen/bottom_tabs_icon_size"
             android:layout_gravity="center"
             android:contentDescription="@string/action_home"
-            android:src="@drawable/left_home"/>
+            android:src="@drawable/left_home"
+            android:tint="?attr/colorPrimary" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/action_home"
-            android:textColor="#FFFFFF"
-            android:textSize="@dimen/bottom_tabs_text_size"/>
+            android:textSize="@dimen/bottom_tabs_text_size"
+            android:textColor="?attr/colorPrimary" />
     </LinearLayout>
 
     <LinearLayout
@@ -50,15 +52,15 @@
             android:layout_gravity="center"
             android:contentDescription="@string/action_decks"
             android:src="@drawable/deck"
-            android:tint="#FFFFFF"/>
+            android:tint="?attr/colorPrimary" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/action_decks"
-            android:textColor="#FFFFFF"
-            android:textSize="@dimen/bottom_tabs_text_size"/>
+            android:textSize="@dimen/bottom_tabs_text_size"
+            android:textColor="?attr/colorPrimary" />
     </LinearLayout>
 
     <LinearLayout
@@ -77,15 +79,15 @@
             android:layout_gravity="center"
             android:contentDescription="@string/action_saved"
             android:src="@drawable/left_saved"
-            android:tint="#FFFFFF"/>
+            android:tint="?attr/colorPrimary" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/action_saved"
-            android:textColor="#FFFFFF"
-            android:textSize="@dimen/bottom_tabs_text_size"/>
+            android:textSize="@dimen/bottom_tabs_text_size"
+            android:textColor="?attr/colorPrimary" />
     </LinearLayout>
 
     <LinearLayout
@@ -104,15 +106,15 @@
             android:layout_gravity="center"
             android:contentDescription="@string/action_life_counter"
             android:src="@drawable/left_life_counter"
-            android:tint="#FFFFFF"/>
+            android:tint="?attr/colorPrimary" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/action_life_counter"
-            android:textColor="#FFFFFF"
-            android:textSize="@dimen/bottom_tabs_text_size"/>
+            android:textSize="@dimen/bottom_tabs_text_size"
+            android:textColor="?attr/colorPrimary" />
     </LinearLayout>
 
 </merge>

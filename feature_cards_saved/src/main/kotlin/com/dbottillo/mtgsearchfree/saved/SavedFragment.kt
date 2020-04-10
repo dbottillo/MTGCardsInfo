@@ -43,8 +43,6 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
         mtgCardsView = view.findViewById(R.id.cards)
         loader = view.findViewById(R.id.loader)
 
-        setupHomeActivityScroll(viewRecycle = mtgCardsView.listView)
-
         mtgCardsView.setEmptyString(R.string.empty_saved)
         savedCardsPresenter.init(this)
     }

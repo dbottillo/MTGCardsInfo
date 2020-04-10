@@ -5,6 +5,8 @@ import android.content.Context
 import android.os.Build
 import android.util.TypedValue
 import android.view.View
+import androidx.annotation.AttrRes
+import androidx.annotation.ColorInt
 
 fun View.show() {
     this.visibility = View.VISIBLE
@@ -39,3 +41,6 @@ fun View.setHeight(height: Int) {
         this.layoutParams = lp
     }
 }
+
+@ColorInt
+fun Context.themeColor(@AttrRes attribute: Int) = TypedValue().let { theme.resolveAttribute(attribute, it, true); it.data }

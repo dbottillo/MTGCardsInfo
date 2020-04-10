@@ -11,12 +11,14 @@ import android.view.ViewTreeObserver
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ScrollView
+import androidx.annotation.AttrRes
 import com.dbottillo.mtgsearchfree.core.R
 import com.dbottillo.mtgsearchfree.ui.BasicFragment
 import com.dbottillo.mtgsearchfree.util.AnimationUtil
 import com.dbottillo.mtgsearchfree.util.dpToPx
 import com.dbottillo.mtgsearchfree.util.setDarkStatusBar
 import com.dbottillo.mtgsearchfree.util.setLightStatusBar
+import com.dbottillo.mtgsearchfree.util.themeColor
 import java.lang.ref.WeakReference
 
 /**
@@ -30,44 +32,19 @@ class ToolbarRevealScrollHelper @JvmOverloads constructor(
     private val scrollviewID: Int,
     private val toolbarId: Int,
     private val toolbarTitleId: Int,
-    private val backgroundColor: Int,
-    private val heightToolbar: Int,
-    private val statusBarIncluded: Boolean,
-    toolbarColor: Int = R.color.app_primary_color,
-    statusBarColor: Int = R.color.app_primary_color
+    private val heightToolbar: Int
 ) : ViewTreeObserver.OnScrollChangedListener {
 
     private var mViewGroup: ViewGroup? = null
     private lateinit var alphaInterpolator: AnimationUtil.LinearInterpolator
     private lateinit var elevationInterpolator: AnimationUtil.LinearInterpolator
     private lateinit var translationTitle: AnimationUtil.LinearInterpolator
-    private lateinit var toolbarBackgroundEvaluator: AnimationUtil.ArgbInterpolator
-    private lateinit var statusBarColorEvaluator: AnimationUtil.ArgbInterpolator
-    private lateinit var arrowToolbarEvaluator: AnimationUtil.ArgbInterpolator
 
     private var scrollingEnabled = false
     private var currentScroll = 0
     private var maximumScroll: Int = 0
 
     private val fragment: WeakReference<BasicFragment> = WeakReference(baseFragment)
-    private val context: WeakReference<Context> = WeakReference(baseFragment.requireContext())
-    private var toolbarColor: Int = 0
-    private var statusBarColor: Int = 0
-
-    init {
-        baseFragment.context?.let {
-            this.toolbarColor = ContextCompat.getColor(it, toolbarColor)
-            this.statusBarColor = ContextCompat.getColor(it, statusBarColor)
-        }
-    }
-
-    fun setToolbarColor(color: Int) {
-        this.toolbarColor = color
-    }
-
-    fun setStatusBarColor(color: Int) {
-        this.statusBarColor = color
-    }
 
     fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val instance = fragment.get()
@@ -112,14 +89,6 @@ class ToolbarRevealScrollHelper @JvmOverloads constructor(
     }
 
     fun onPause() {
-        val instance = fragment.get()
-        val context = context.get()
-        if (instance != null && context != null) {
-            instance.activity.setDarkStatusBar()
-            if (statusBarIncluded) {
-                instance.activity?.window?.statusBarColor = ContextCompat.getColor(context, R.color.app_secondary_color)
-            }
-        }
         mViewGroup?.viewTreeObserver?.removeOnScrollChangedListener(this)
     }
 
@@ -129,22 +98,9 @@ class ToolbarRevealScrollHelper @JvmOverloads constructor(
         baseFragment.toolbar.elevation = 0f
         baseFragment.toolbarTitle?.alpha = 0f
         baseFragment.toolbarTitle?.translationY = translationStart.toFloat()
-        if (baseFragment.toolbar.navigationIcon != null) {
-            baseFragment.toolbar.navigationIcon?.setTint(ContextCompat.getColor(context, R.color.app_primary_color))
-        }
-        setChildrenToolbarColor(baseFragment.toolbar, ContextCompat.getColor(context, R.color.app_primary_color))
-        baseFragment.toolbar.overflowIcon?.setColorFilter(ContextCompat.getColor(context, R.color.app_primary_color), PorterDuff.Mode.SRC_IN)
-        if (statusBarIncluded) {
-            baseFragment.activity?.window?.statusBarColor = ContextCompat.getColor(context, R.color.app_background_color)
-            baseFragment.activity.setLightStatusBar()
-        }
-
         alphaInterpolator = AnimationUtil.createLinearInterpolator().fromValue(0.0f).toValue(1.0f)
         elevationInterpolator = AnimationUtil.createLinearInterpolator().fromValue(0.0f).toValue(context.resources.getDimension(R.dimen.default_elevation_toolbar))
         translationTitle = AnimationUtil.createLinearInterpolator().fromValue(translationStart.toFloat()).toValue(translationEnd.toFloat())
-        toolbarBackgroundEvaluator = AnimationUtil.createArgbInterpolator().fromValue(ContextCompat.getColor(context, backgroundColor)).toValue(toolbarColor)
-        statusBarColorEvaluator = AnimationUtil.createArgbInterpolator().fromValue(ContextCompat.getColor(context, android.R.color.white)).toValue(statusBarColor)
-        arrowToolbarEvaluator = AnimationUtil.createArgbInterpolator().fromValue(ContextCompat.getColor(context, R.color.app_primary_color)).toValue(ContextCompat.getColor(context, android.R.color.white))
 
         mViewGroup?.let {
             if (mViewGroup is ScrollView) {
@@ -155,36 +111,12 @@ class ToolbarRevealScrollHelper @JvmOverloads constructor(
             }
         }
     }
-
-    private fun setChildrenToolbarColor(viewGroup: ViewGroup, color: Int) {
-        for (i in 0 until viewGroup.childCount) {
-            val view = viewGroup.getChildAt(i)
-            if (view is ImageView) {
-                view.setColorFilter(color)
-            } else if (view is LinearLayout) {
-                setChildrenToolbarColor(view, color)
-            }
-        }
-    }
-
     private fun refreshUI() {
         fragment.get()?.let {
             val interval = calculateInterval()
             it.toolbarTitle?.alpha = alphaInterpolator.getInterpolation(interval)
             it.toolbar.elevation = elevationInterpolator.getInterpolation(interval)
             it.toolbarTitle?.translationY = translationTitle.getInterpolation(interval)
-            it.toolbar.setBackgroundColor(toolbarBackgroundEvaluator.getInterpolation(interval))
-            setChildrenToolbarColor(it.toolbar, arrowToolbarEvaluator.getInterpolation(interval))
-            it.toolbar.navigationIcon?.setTint(arrowToolbarEvaluator.getInterpolation(interval))
-            it.toolbar.overflowIcon?.setColorFilter(arrowToolbarEvaluator.getInterpolation(interval), PorterDuff.Mode.SRC_IN)
-            if (statusBarIncluded) {
-                it.activity?.window?.statusBarColor = statusBarColorEvaluator.getInterpolation(interval)
-                if (interval <= THRESHOLD_STATUS_BAR_COLOR) {
-                    it.activity.setLightStatusBar()
-                } else {
-                    it.activity.setDarkStatusBar()
-                }
-            }
         }
     }
 
@@ -236,6 +168,5 @@ class ToolbarRevealScrollHelper @JvmOverloads constructor(
 
 private const val CURRENT_SCROLL = "currentScroll"
 private const val MAXIMUM_SCROLL = "maximumScroll"
-private const val THRESHOLD_STATUS_BAR_COLOR = 0.3f
 private const val OFFSET_MAXIMUM_SCROLL = 100
 private const val TITLE_TRANSLATION_START_Y = 30

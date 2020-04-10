@@ -5,7 +5,11 @@
         <item name="colorPrimary">@color/app_primary_color</item>
         <item name="colorSecondary">@color/app_secondary_color</item>
         <item name="android:colorBackground">@color/app_background_color</item>
-        <item name="colorError">@color/app_error_color</item>
+        <item name="android:windowLightStatusBar">@bool/light_status_bar</item>
+
+        <item name="backgroundMainColor">@color/app_background_color</item>
+        <item name="backgroundSurfaceColor">@color/app_surface_color</item>
+        <item name="backgroundSeparatorColor">@color/black_alpha_8</item>
 
         <!-- New MaterialComponents attributes. -->
         <item name="colorPrimaryVariant">@color/app_primary_variant_color</item>
@@ -14,24 +18,9 @@
         <item name="colorOnPrimary">@color/app_color_on_primary</item>
         <item name="colorOnSecondary">@color/app_color_on_secondary</item>
         <item name="colorOnBackground">@color/app_color_on_background</item>
-        <item name="colorOnError">@color/app_color_on_error</item>
         <item name="colorOnSurface">@color/app_color_on_surface</item>
-        <item name="scrimBackground">@color/mtrl_scrim_color</item>
-        <item name="textAppearanceHeadline1">@style/TextAppearance.MaterialComponents.Headline1</item>
-        <item name="textAppearanceHeadline2">@style/TextAppearance.MaterialComponents.Headline2</item>
-        <item name="textAppearanceHeadline3">@style/TextAppearance.MaterialComponents.Headline3</item>
-        <item name="textAppearanceHeadline4">@style/TextAppearance.MaterialComponents.Headline4</item>
-        <item name="textAppearanceHeadline5">@style/TextAppearance.MaterialComponents.Headline5</item>
-        <item name="textAppearanceHeadline6">@style/TextAppearance.MaterialComponents.Headline6</item>
-        <item name="textAppearanceSubtitle1">@style/TextAppearance.MaterialComponents.Subtitle1</item>
-        <item name="textAppearanceSubtitle2">@style/TextAppearance.MaterialComponents.Subtitle2</item>
-        <item name="textAppearanceBody1">@style/TextAppearance.MaterialComponents.Body1</item>
-        <item name="textAppearanceBody2">@style/TextAppearance.MaterialComponents.Body2</item>
-        <item name="textAppearanceCaption">@style/TextAppearance.MaterialComponents.Caption</item>
-        <item name="textAppearanceButton">@style/TextAppearance.MaterialComponents.Button</item>
-        <item name="textAppearanceOverline">@style/TextAppearance.MaterialComponents.Overline</item>
 
-        <item name="android:statusBarColor">@color/status_bar</item>
+        <item name="android:statusBarColor">?attr/toolbarSurfaceColor</item>
         <!--
         <item name="android:actionMenuTextColor">@color/white</item>
         <item name="android:textColorPrimary">@android:color/white</item>
@@ -42,41 +31,32 @@
         <item name="textAppearanceSmallPopupMenu">@style/myPopupMenuTextAppearanceSmall</item>-->
 
         <item name="textColorPrimary">@color/text_color_primary</item>
+        <item name="toolbarSurfaceColor">@color/toolbarSurfaceColor</item>
     </style>
 
     <style name="AppToolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
-        <item name="android:background">?attr/colorPrimary</item>
-        <item name="titleTextColor">?attr/colorOnPrimary</item>
+        <item name="android:background">?attr/toolbarSurfaceColor</item>
+        <item name="titleTextColor">?attr/colorPrimary</item>
         <item name="android:theme">@style/AppToolbarTheme</item>
     </style>
 
     <style name="AppToolbarTheme" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
         <item name="toolbarNavigationButtonStyle">@style/AppToolbarNavigationButton</item>
-        <item name="colorControlNormal">@color/white</item>
-        <item name="actionMenuTextColor">@color/white</item>
-        <item name="colorControlHighlight">@color/white</item>
+        <item name="colorControlNormal">?attr/colorPrimary</item>
+        <item name="actionMenuTextColor">?attr/colorPrimary</item>
+        <item name="colorControlHighlight">?attr/colorPrimary</item>
     </style>
 
     <style name="AppToolbarNavigationButton" parent="Widget.AppCompat.Toolbar.Button.Navigation">
-        <item name="android:tint">@color/white</item>
+        <item name="android:tint">?attr/colorPrimary</item>
     </style>
 
-    <style name="AppToolbar.Transparent">
-        <item name="android:elevation">0dp</item>
-        <item name="android:background">@android:color/transparent</item>
-        <item name="android:theme">@style/AppToolbarTheme.Transparent</item>
-        <item name="titleTextColor">@color/white</item>
-    </style>
-
-    <style name="AppToolbarTheme.Transparent">
-        <item name="toolbarNavigationButtonStyle">@style/AppToolbarNavigationButton.Transparent</item>
-        <!--<item name="colorControlNormal">@color/white</item>
-        <item name="actionMenuTextColor">@color/white</item>
-        <item name="colorControlHighlight">@color/white</item>-->
-    </style>
-
-    <style name="AppToolbarNavigationButton.Transparent">
-        <!--<item name="android:tint">@color/white</item>-->
+    <style name="AppToolbarIcon">
+        <item name="android:tint">?attr/colorPrimary</item>
+        <item name="android:background">?android:selectableItemBackgroundBorderless</item>
+        <item name="android:paddingStart">@dimen/base_margin</item>
+        <item name="android:paddingEnd">@dimen/base_margin</item>
+        <item name="android:layout_gravity">end</item>
     </style>
 
     <!--<style name="MTGSearchTheme" parent="@style/MTGBasicTheme">
@@ -102,4 +82,5 @@
         <item name="android:windowMinWidthMajor">97%</item>
         <item name="android:windowMinWidthMinor">97%</item>
     </style>-->
+
 </resources>

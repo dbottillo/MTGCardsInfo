@@ -3,10 +3,10 @@ package com.dbottillo.mtgsearchfree.home
 import android.content.Context
 import android.os.Parcel
 import android.os.Parcelable
-import androidx.core.content.ContextCompat
 import android.util.AttributeSet
 import android.widget.ImageView
 import android.widget.LinearLayout
+import com.dbottillo.mtgsearchfree.util.themeColor
 
 class BottomTabs : LinearLayout {
 
@@ -14,23 +14,23 @@ class BottomTabs : LinearLayout {
         fun tabSelected(selection: Int)
     }
 
-    val scaleDefault: Float = 1.0f
-    val scaleSelected: Float = 1.2f
-    val alphaDefault: Float = 0.7f
-    val alphaSelected: Float = 1.0f
+    private val scaleDefault: Float = 1.0f
+    private val scaleSelected: Float = 1.2f
+    private val alphaDefault: Float = 0.7f
+    private val alphaSelected: Float = 1.0f
 
-    var homeTab: LinearLayout
-    var decksTab: LinearLayout
-    var savedTab: LinearLayout
-    var lifeCounterTab: LinearLayout
+    private var homeTab: LinearLayout
+    private var decksTab: LinearLayout
+    private var savedTab: LinearLayout
+    private var lifeCounterTab: LinearLayout
 
-    var homeTabImage: ImageView
-    var decksTabImage: ImageView
-    var savedTabImage: ImageView
-    var lifeCounterTabImage: ImageView
+    private var homeTabImage: ImageView
+    private var decksTabImage: ImageView
+    private var savedTabImage: ImageView
+    private var lifeCounterTabImage: ImageView
 
-    var currentSelection = 0
-    var listener: BottomTabsListener? = null
+    private var currentSelection = 0
+    private var listener: BottomTabsListener? = null
 
     constructor(context: Context) : this(context, null)
 
@@ -40,7 +40,7 @@ class BottomTabs : LinearLayout {
         val view = inflate(context, R.layout.bottom_tabs, this)
 
         orientation = HORIZONTAL
-        setBackgroundColor(ContextCompat.getColor(context, R.color.app_primary_color))
+        setBackgroundColor(context.themeColor(R.attr.toolbarSurfaceColor))
 
         homeTab = view.findViewById(R.id.home_tab)
         decksTab = view.findViewById(R.id.decks_tab)

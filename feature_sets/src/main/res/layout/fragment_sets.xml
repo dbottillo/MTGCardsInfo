@@ -8,7 +8,7 @@
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
-        style="@style/AppToolbar.Transparent"
+        style="@style/AppToolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
 
@@ -20,112 +20,31 @@
 
             <TextView
                 android:id="@+id/toolbar_title"
+                style="@style/App.ToolbarTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                style="@style/App.ToolbarTitleTransparent"
                 tools:text="Toolbar Title" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/action_search"
+                style="@style/AppToolbarIcon"
                 android:layout_width="@dimen/toolbar_icon_size"
                 android:layout_height="@dimen/toolbar_icon_size"
-                android:layout_gravity="end|center_vertical"
-                android:layout_marginEnd="16dp"
-                android:background="@android:color/transparent"
                 android:contentDescription="@string/action_search"
-                android:src="@drawable/ic_search_white_24dp"
-                android:visibility="visible" />
+                android:src="@drawable/ic_search_white_24dp" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/action_lucky"
                 android:layout_width="@dimen/toolbar_icon_size"
                 android:layout_height="@dimen/toolbar_icon_size"
-                android:layout_gravity="end|center_vertical"
-                android:layout_marginEnd="16dp"
-                android:background="@android:color/transparent"
+                style="@style/AppToolbarIcon"
                 android:contentDescription="@string/action_lucky"
-                android:src="@drawable/ic_action_lucky"
-                android:visibility="visible" />
+                android:src="@drawable/ic_action_lucky" />
 
         </LinearLayout>
 
     </com.google.android.material.appbar.MaterialToolbar>
-
-    <!--<RelativeLayout
-        android:id="@+id/main_tooltip"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar"
-        android:background="@color/color_accent_dark"
-        android:gravity="center_vertical">
-
-
-        <TextView
-            android:id="@+id/tooltip_line1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/tooltip_line_1"
-            android:textSize="16sp"/>
-
-        <ImageView
-            android:id="@+id/tooltip_edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="16dp"
-            android:layout_below="@+id/tooltip_line1"
-            android:src="@drawable/ic_edit_white"/>
-
-        <TextView
-            android:id="@+id/tooltip_line2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
-            android:layout_toRightOf="@+id/tooltip_edit"
-            android:layout_below="@+id/tooltip_line1"
-            android:layout_alignBaseline="@+id/tooltip_edit"
-            android:layout_marginTop="12dp"
-            android:text="@string/tooltip_line_2"
-            android:textSize="16sp"/>
-
-        <ImageView
-            android:id="@+id/tooltip_settings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="4dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="16dp"
-            android:layout_below="@+id/tooltip_line2"
-            app:srcCompat="@drawable/ic_settings"/>
-
-        <TextView
-            android:id="@+id/tooltip_line3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
-            android:layout_toRightOf="@+id/tooltip_settings"
-            android:layout_below="@+id/tooltip_line2"
-            android:layout_alignBaseline="@+id/tooltip_settings"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="16dp"
-            android:text="@string/tooltip_line_3"
-            android:textSize="16sp"/>
-
-        <Button
-            android:id="@+id/main_tooltip_close"
-            android:layout_below="@id/tooltip_line3"
-            android:layout_centerHorizontal="true"
-            android:text="@string/ok_got_it"
-            style="@style/BtnGeneric"
-            android:layout_marginBottom="16dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-    </RelativeLayout>-->
 
     <com.dbottillo.mtgsearchfree.ui.views.MTGCardsView
         android:id="@+id/cards"

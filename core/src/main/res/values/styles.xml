@@ -2,8 +2,8 @@
 
     <style name="App" />
 
-    <style name="App.ToolbarTitleTransparent">
-        <item name="android:textColor">@color/white</item>
+    <style name="App.ToolbarTitle">
+        <item name="android:textColor">?attr/colorPrimary</item>
         <item name="android:maxLines">1</item>
         <item name="android:textSize">20sp</item>
         <item name="android:ellipsize">end</item>
@@ -36,12 +36,6 @@
         <item name="popupTheme">@style/popupNew</item>
         <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
         <!--<item name="colorControlNormal">@color/white</item>-->
-    </style>
-
-    <style name="mtg_toolbar.Transparent" parent="mtg_toolbar">
-        <item name="android:background">@android:color/transparent</item>
-        <item name="colorControlNormal">?attr/colorOnSecondary</item>
-        <item name="android:textColorSecondary">?attr/colorOnSecondary</item>
     </style>
 
     <style name="popupNew" parent="ThemeOverlay.AppCompat.Light">

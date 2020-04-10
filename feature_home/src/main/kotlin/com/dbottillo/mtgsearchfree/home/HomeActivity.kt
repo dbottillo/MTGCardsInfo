@@ -1,6 +1,5 @@
 package com.dbottillo.mtgsearchfree.home
 
-import android.animation.ValueAnimator
 import android.os.Bundle
 import androidx.transition.ChangeBounds
 import androidx.transition.TransitionManager
@@ -8,7 +7,6 @@ import com.dbottillo.mtgsearchfree.AppPreferences
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.ui.BasicFragment
 import com.dbottillo.mtgsearchfree.util.gone
-import com.dbottillo.mtgsearchfree.util.setHeight
 import com.dbottillo.mtgsearchfree.util.show
 import kotlinx.android.synthetic.main.activity_home.*
 import java.lang.ref.WeakReference
@@ -19,8 +17,6 @@ class HomeActivity : BasicActivity() {
     private var fragments = mutableMapOf<String, WeakReference<BasicFragment>>()
 
     private var bottomTabsHeight: Int = 0
-    private var currentBottomTabsHeightAnimator: ValueAnimator? = null
-    private var isUserScrollingDown: Boolean = false
 
     @Inject lateinit var appPreferences: AppPreferences
 
@@ -91,33 +87,6 @@ class HomeActivity : BasicActivity() {
         } else {
             super.onBackPressed()
         }
-    }
-
-    fun scrollingUp() {
-        if (!isUserScrollingDown) {
-            return
-        }
-
-        animateBottomTabs(0)
-        isUserScrollingDown = false
-    }
-
-    fun scrollingDown() {
-        if (isUserScrollingDown) {
-            return
-        }
-        animateBottomTabs(bottomTabsHeight)
-        isUserScrollingDown = true
-    }
-
-    private fun animateBottomTabs(targetHeight: Int) {
-        currentBottomTabsHeightAnimator?.cancel()
-        currentBottomTabsHeightAnimator = ValueAnimator.ofInt(bottom_tabs.height, targetHeight)
-        currentBottomTabsHeightAnimator?.addUpdateListener { valueAnimator ->
-            bottom_tabs.setHeight(valueAnimator.animatedValue as Int)
-        }
-        currentBottomTabsHeightAnimator?.duration = 100
-        currentBottomTabsHeightAnimator?.start()
     }
 
     override fun onDestroy() {
