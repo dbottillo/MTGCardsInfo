@@ -109,6 +109,7 @@ data class MTGCard(
             Rarity.MYTHIC -> R.color.mythic
         }
 
+    @Suppress("MaxLineLength")
     val scryfallImage
         get() = when {
             scryfallId.isNotEmpty() && scryfallSupported -> "https://api.scryfall.com/cards/$scryfallId?format=image&version=border_crop${if (side == Side.B) "&face=back" else ""}"

@@ -43,4 +43,6 @@ fun View.setHeight(height: Int) {
 }
 
 @ColorInt
-fun Context.themeColor(@AttrRes attribute: Int) = TypedValue().let { theme.resolveAttribute(attribute, it, true); it.data }
+fun Context.themeColor(@AttrRes attribute: Int) = TypedValue().let {
+    theme.resolveAttribute(attribute, it, true); it.data
+}
