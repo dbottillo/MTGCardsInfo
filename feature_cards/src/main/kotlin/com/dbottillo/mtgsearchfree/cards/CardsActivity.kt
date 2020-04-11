@@ -65,9 +65,6 @@ class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, Car
         }
         toolbar.elevation = 0f
 
-        /*pagerTabStrip.setTabIndicatorColor(getResources().getColor(R.color.white));
-        pagerTabStrip.setBackgroundColor(getResources().getColor(R.color.color_primary));
-        pagerTabStrip.setTextColor(getResources().getColor(R.color.white));*/
         tabLayout.setupWithViewPager(viewPager)
         val par = fabButton.layoutParams as RelativeLayout.LayoutParams
         if (isPortrait) {

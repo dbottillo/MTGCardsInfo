@@ -1,7 +1,10 @@
 package com.dbottillo.mtgsearchfree.search
 
 import android.content.Context
+import android.graphics.BlendMode
+import android.graphics.BlendModeColorFilter
 import android.graphics.PorterDuff
+import android.graphics.PorterDuff.Mode.SRC_ATOP
 import androidx.core.content.ContextCompat
 import androidx.appcompat.widget.AppCompatCheckBox
 import androidx.appcompat.widget.AppCompatEditText
@@ -15,6 +18,7 @@ import com.dbottillo.mtgsearchfree.model.SearchParams
 import com.dbottillo.mtgsearchfree.model.cmcParamCreator
 import com.dbottillo.mtgsearchfree.model.ptParamCreator
 import com.dbottillo.mtgsearchfree.util.LOG
+import com.dbottillo.mtgsearchfree.util.themeColor
 import kotlinx.android.synthetic.main.search_form_view.view.*
 
 class MTGSearchView @JvmOverloads constructor(
@@ -117,27 +121,27 @@ class MTGSearchView @JvmOverloads constructor(
         searchSetAdapter = SearchSetAdapter(context, sets)
         set.adapter = searchSetAdapter
 
-        val whiteColor = ContextCompat.getColor(context, android.R.color.white)
+        val colorFilter = BlendModeColorFilter(context.themeColor(R.attr.colorOnBackground), BlendMode.SRC_ATOP)
 
         val cmcAdapter = ArrayAdapter<CharSequence>(context, R.layout.row_spinner_item, operators)
         cmcAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         cmcOp.adapter = cmcAdapter
-        cmcOp.background.setColorFilter(whiteColor, PorterDuff.Mode.SRC_ATOP)
+        cmcOp.background.colorFilter = colorFilter
 
         val adapter = ArrayAdapter<CharSequence>(context, R.layout.row_spinner_item, operators)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         powerOp.adapter = adapter
-        powerOp.background.setColorFilter(whiteColor, PorterDuff.Mode.SRC_ATOP)
+        powerOp.background.colorFilter = colorFilter
 
         val toughAdapter = ArrayAdapter<CharSequence>(context, R.layout.row_spinner_item, operators)
         toughAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         toughOp.adapter = toughAdapter
-        toughOp.background.setColorFilter(whiteColor, PorterDuff.Mode.SRC_ATOP)
+        toughOp.background.colorFilter = colorFilter
 
         val colorsSpecificationAdapter = ArrayAdapter<CharSequence>(context, R.layout.row_spinner_item, colorsHow)
         toughAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
         colorsSpecification.adapter = colorsSpecificationAdapter
-        colorsSpecification.background.setColorFilter(whiteColor, PorterDuff.Mode.SRC_ATOP)
+        colorsSpecification.background.colorFilter = colorFilter
         colorsSpecification.setSelection(0)
 
         white.setOnCheckedChangeListener(disableColorlessCheckedChangeListener)

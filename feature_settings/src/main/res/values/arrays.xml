@@ -8,4 +8,14 @@
         <item>TCG</item>
         <item>MKM</item>
     </string-array>
+    <string-array name="night_mode_entry_values">
+        <item>Off</item>
+        <item>On</item>
+        <item>Auto</item>
+    </string-array>
+    <string-array name="night_mode_entries">
+        <item>Off</item>
+        <item>On</item>
+        <item>Follow System</item>
+    </string-array>
 </resources>

@@ -17,6 +17,7 @@ import com.dbottillo.mtgsearchfree.interactors.SetsInteractor
 import com.dbottillo.mtgsearchfree.sets.SetsFragment
 import com.dbottillo.mtgsearchfree.sets.SetsFragmentPresenter
 import com.dbottillo.mtgsearchfree.sets.SetsFragmentPresenterImpl
+import com.dbottillo.mtgsearchfree.settings.SettingsFragment
 import com.dbottillo.mtgsearchfree.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.storage.GeneralData
 import com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment
@@ -52,6 +53,10 @@ abstract class FragmentBuilder {
     @ActivityScope
     @ContributesAndroidInjector(modules = [CardsConfiguratorFragmentModule::class])
     abstract fun contributeCardsConfiguratorFragmentInjector(): CardsConfiguratorFragment
+
+    @ActivityScope
+    @ContributesAndroidInjector(modules = [])
+    abstract fun contributeSettingsFragment(): SettingsFragment
 }
 
 @Module

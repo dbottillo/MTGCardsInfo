@@ -335,7 +335,7 @@ class CardsActivityPresenterImplTest {
         underTest.updateMenu(card)
 
         verify(view).showFavMenuItem()
-        verify(view).updateFavMenuItem(R.string.favourite_add, R.drawable.ab_star)
+        verify(view).updateFavMenuItem(R.string.favourite_add, R.drawable.ic_star_border)
         verify(view).setImageMenuItemChecked(true)
         verify(cardsPreferences).showImage()
         verifyNoMoreInteractions(view, cardsInteractor, savedCardsInteractor, decksInteractor, cardsPreferences)
@@ -350,7 +350,7 @@ class CardsActivityPresenterImplTest {
         underTest.updateMenu(card)
 
         verify(view).showFavMenuItem()
-        verify(view).updateFavMenuItem(R.string.favourite_add, R.drawable.ab_star)
+        verify(view).updateFavMenuItem(R.string.favourite_add, R.drawable.ic_star_border)
         verify(view).setImageMenuItemChecked(false)
         verify(cardsPreferences).showImage()
         verifyNoMoreInteractions(view, cardsInteractor, savedCardsInteractor, decksInteractor, cardsPreferences)
@@ -365,7 +365,7 @@ class CardsActivityPresenterImplTest {
         underTest.updateMenu(card)
 
         verify(view).showFavMenuItem()
-        verify(view).updateFavMenuItem(R.string.favourite_remove, R.drawable.ab_star_colored)
+        verify(view).updateFavMenuItem(R.string.favourite_remove, R.drawable.ic_star)
         verify(view).setImageMenuItemChecked(true)
         verify(cardsPreferences).showImage()
         verifyNoMoreInteractions(view, cardsInteractor, savedCardsInteractor, decksInteractor, cardsPreferences)
@@ -380,7 +380,7 @@ class CardsActivityPresenterImplTest {
         underTest.updateMenu(card)
 
         verify(view).showFavMenuItem()
-        verify(view).updateFavMenuItem(R.string.favourite_remove, R.drawable.ab_star_colored)
+        verify(view).updateFavMenuItem(R.string.favourite_remove, R.drawable.ic_star)
         verify(view).setImageMenuItemChecked(false)
         verify(cardsPreferences).showImage()
         verifyNoMoreInteractions(view, cardsInteractor, savedCardsInteractor, decksInteractor, cardsPreferences)

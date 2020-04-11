@@ -9,6 +9,7 @@ import com.crashlytics.android.Crashlytics
 import com.dbottillo.mtgsearchfree.dagger.DaggerAppComponent
 import com.dbottillo.mtgsearchfree.dagger.DataModule
 import com.dbottillo.mtgsearchfree.storage.CardsPreferences
+import com.dbottillo.mtgsearchfree.util.AndroidHelper
 import com.dbottillo.mtgsearchfree.util.LOG
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -20,6 +21,7 @@ import javax.inject.Inject
 open class MTGApp : Application(), HasAndroidInjector {
 
     @Inject lateinit var cardsPreferences: CardsPreferences
+    @Inject lateinit var androidHelper: AndroidHelper
     @Inject lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
 
     override fun onCreate() {
@@ -54,6 +56,11 @@ open class MTGApp : Application(), HasAndroidInjector {
         if (defaultPrefs.getString(PRICE_PROVIDER_PREFERENCE_KEY, null) == null) {
             defaultPrefs.edit().putString(PRICE_PROVIDER_PREFERENCE_KEY, if (isEuUser()) "MKM" else "TCG").apply()
         }
+
+        if (defaultPrefs.getString(NIGHT_MODE_PREFERENCE_KEY, null) == null) {
+            defaultPrefs.edit().putString(NIGHT_MODE_PREFERENCE_KEY, "Auto").apply()
+        }
+        androidHelper.setNightMode(defaultPrefs.getString(NIGHT_MODE_PREFERENCE_KEY, null))
     }
 
     override fun androidInjector(): AndroidInjector<Any> {
@@ -86,3 +93,4 @@ private fun Context.isEuUser(): Boolean {
 }
 
 private const val PRICE_PROVIDER_PREFERENCE_KEY = "price_provider"
+private const val NIGHT_MODE_PREFERENCE_KEY = "night_mode"
