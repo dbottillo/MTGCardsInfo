@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_parent"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -10,8 +9,7 @@
     <com.dbottillo.mtgsearchfree.ui.views.MTGCardImageView
         android:id="@+id/grid_item_card_image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:src="@drawable/ic_file_download_black_24dp" />
+        android:layout_height="match_parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/new_card_button"
@@ -21,5 +19,5 @@
         android:layout_gravity="center"
         android:contentDescription="@string/cd_next"
         android:padding="8dp"
-        android:src="@drawable/ic_add_black_24dp" />
+        android:src="@drawable/ic_add" />
 </FrameLayout>

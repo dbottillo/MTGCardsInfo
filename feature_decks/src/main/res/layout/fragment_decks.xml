@@ -26,7 +26,7 @@
             android:layout_width="@dimen/toolbar_icon_size"
             android:layout_height="@dimen/toolbar_icon_size"
             android:contentDescription="@string/export"
-            android:src="@drawable/ic_file_upload_white_24dp" />
+            android:src="@drawable/ic_file_upload" />
 
     </com.google.android.material.appbar.MaterialToolbar>
 
@@ -44,6 +44,6 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="16dp"
-        app:srcCompat="@drawable/ic_add_black_24dp" />
+        app:srcCompat="@drawable/ic_add" />
 
 </RelativeLayout>

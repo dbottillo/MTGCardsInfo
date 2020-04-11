@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/action_copy"
-        android:icon="@drawable/ic_content_copy_24dp"
+        android:icon="@drawable/ic_content_copy"
         android:orderInCategory="101"
         android:title="@string/copy"
         app:showAsAction="ifRoom" />
@@ -17,7 +17,7 @@
 
     <item
         android:id="@+id/action_edit"
-        android:icon="@drawable/ic_edit_white_24dp"
+        android:icon="@drawable/ic_edit"
         android:orderInCategory="103"
         android:title="@string/edit_deck"
         app:showAsAction="ifRoom" />

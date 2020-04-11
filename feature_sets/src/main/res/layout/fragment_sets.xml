@@ -32,7 +32,7 @@
                 android:layout_width="@dimen/toolbar_icon_size"
                 android:layout_height="@dimen/toolbar_icon_size"
                 android:contentDescription="@string/action_search"
-                android:src="@drawable/ic_search_white_24dp" />
+                android:src="@drawable/ic_search" />
 
             <ImageButton
                 android:id="@+id/action_lucky"

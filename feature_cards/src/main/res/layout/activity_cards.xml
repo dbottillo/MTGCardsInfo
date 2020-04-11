@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="30dp"
-        android:src="@drawable/ic_add_black_24dp"
+        android:src="@drawable/ic_add"
         app:borderWidth="0dp"
         app:elevation="8dp"
         app:pressedTranslationZ="8dp" />
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="?attr/colorSecondary"
-        android:drawableEnd="@drawable/ic_info_outline_black_24dp"
+        android:drawableEnd="@drawable/ic_info_outline"
         android:gravity="center_vertical"
         android:paddingStart="@dimen/base_margin"
         android:paddingTop="8dp"
