@@ -21,6 +21,7 @@ import com.dbottillo.mtgsearchfree.util.dpToPx
 import com.dbottillo.mtgsearchfree.util.gone
 import com.dbottillo.mtgsearchfree.util.setIcon
 import com.dbottillo.mtgsearchfree.util.show
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
@@ -81,7 +82,7 @@ class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, Car
         display.getSize(size)
 
         previewBanner.setOnClickListener {
-            val dialogBuilder = AlertDialog.Builder(this, R.style.AppTheme)
+            val dialogBuilder = MaterialAlertDialogBuilder(this)
             dialogBuilder.setMessage(getString(R.string.set_preview_banner_text))
                     .setCancelable(true)
                     .setPositiveButton("Ok") { dialog, _ -> dialog.dismiss() }

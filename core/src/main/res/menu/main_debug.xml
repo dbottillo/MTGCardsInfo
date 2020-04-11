@@ -5,8 +5,4 @@
         android:icon="@drawable/left_debug"
         android:orderInCategory="501"
         android:title="@string/open_debug" />
-    <item
-        android:id="@+id/more_settings"
-        android:orderInCategory="404"
-        android:title="@string/action_settings" />
 </menu>
