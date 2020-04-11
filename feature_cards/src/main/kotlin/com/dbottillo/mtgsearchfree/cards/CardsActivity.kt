@@ -19,6 +19,7 @@ import com.dbottillo.mtgsearchfree.ui.views.MTGLoader
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.dpToPx
 import com.dbottillo.mtgsearchfree.util.gone
+import com.dbottillo.mtgsearchfree.util.setIcon
 import com.dbottillo.mtgsearchfree.util.show
 import dagger.android.AndroidInjection
 import javax.inject.Inject
@@ -166,7 +167,7 @@ class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, Car
     override fun updateFavMenuItem(text: Int, icon: Int) {
         favMenuItem?.let { fav ->
             fav.title = getString(text)
-            fav.setIcon(icon)
+            fav.setIcon(this, icon, R.attr.colorPrimary)
         }
     }
 

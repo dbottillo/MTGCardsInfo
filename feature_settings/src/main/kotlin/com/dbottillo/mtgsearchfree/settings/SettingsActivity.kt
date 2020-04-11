@@ -12,12 +12,11 @@ class SettingsActivity : BasicActivity() {
         super.onCreate(bundle)
         setContentView(R.layout.activity_settings)
 
-        setupToolbar(R.id.toolbar)
+        setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.let {
             it.setDisplayHomeAsUpEnabled(true)
             it.setDisplayHomeAsUpEnabled(true)
         }
-        title = getString(R.string.action_settings)
 
         supportFragmentManager
                 .beginTransaction()

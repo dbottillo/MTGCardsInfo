@@ -69,7 +69,7 @@ abstract class BasicActivity : DaggerAppCompatActivity() {
     protected fun setupToolbar(toolbarId: Int) {
         toolbar = findViewById(toolbarId)
         setSupportActionBar(toolbar)
-        toolbar.elevation = resources.getDimensionPixelSize(R.dimen.toolbar_elevation).toFloat()
+        //toolbar.elevation = resources.getDimensionPixelSize(R.dimen.toolbar_elevation).toFloat()
     }
 
     fun openRateTheApp() {

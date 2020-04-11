@@ -12,6 +12,8 @@ import com.dbottillo.mtgsearchfree.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.dbottillo.mtgsearchfree.util.getBitmap
+import com.dbottillo.mtgsearchfree.util.setIcon
+import com.dbottillo.mtgsearchfree.util.setTintColor
 import javax.inject.Inject
 
 abstract class CommonCardsActivity : BasicActivity() {
@@ -37,7 +39,7 @@ abstract class CommonCardsActivity : BasicActivity() {
         menuInflater.inflate(R.menu.cards, menu)
         favMenuItem = menu.findItem(R.id.action_fav)
         imageMenuItem = menu.findItem(R.id.action_image)
-        menu.findItem(R.id.action_fullscreen_image).isVisible = false
+        favMenuItem?.setIcon(this, R.drawable.ic_star_border, R.attr.colorPrimary)
         syncMenu()
         return super.onCreateOptionsMenu(menu)
     }

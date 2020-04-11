@@ -5,15 +5,9 @@
 
     <item
         android:id="@+id/action_fav"
-        android:icon="@drawable/ab_star"
+        android:icon="@drawable/ic_star"
         android:orderInCategory="101"
         android:title="@string/favourite_add"
-        app:showAsAction="ifRoom"/>
-    <item
-        android:id="@+id/action_fullscreen_image"
-        android:icon="@drawable/ic_fullscreen_white_24dp"
-        android:orderInCategory="102"
-        android:title="@string/menu_fullscreen_image"
         app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/action_share"

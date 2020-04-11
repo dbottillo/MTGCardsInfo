@@ -15,4 +15,24 @@
 
     <color name="text_color_primary">@color/white</color>
     <color name="toolbarSurfaceColor">#252525</color>
+    <color name="disabled_color">@color/anchovy_40</color>
+
+    <color name="player_1">#918FAB</color>
+    <color name="player_2">#99D2F3</color>
+    <color name="player_3">#A8D0A8</color>
+    <color name="player_4">#F4A8A8</color>
+    <color name="player_5">#F6D8AA</color>
+
+    <color name="common">#EDEDED</color>
+    <color name="uncommon">#B3B3B3</color>
+    <color name="rare">#BCA86B</color>
+    <color name="mythic">#BE8C5E</color>
+
+    <color name="mtg_white">#999953</color>
+    <color name="mtg_blue">#85CCF1</color>
+    <color name="mtg_black">#8E8E8E</color>
+    <color name="mtg_red">#F48A8A</color>
+    <color name="mtg_green">#769770</color>
+    <color name="mtg_multi">#B074AD</color>
+    <color name="mtg_other">#E9F6FD</color>
 </resources>

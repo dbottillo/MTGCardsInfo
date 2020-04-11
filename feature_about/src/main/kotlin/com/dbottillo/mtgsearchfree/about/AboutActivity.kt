@@ -41,9 +41,7 @@ class AboutActivity : BasicActivity(), View.OnTouchListener {
 
         setContentView(R.layout.activity_about)
 
-        findViewById<MaterialToolbar>(R.id.toolbar).also {
-            setSupportActionBar(it)
-        }
+        setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.let {
             it.setHomeButtonEnabled(true)
             it.setDisplayHomeAsUpEnabled(true)

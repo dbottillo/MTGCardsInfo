@@ -15,18 +15,18 @@
         android:id="@+id/cards_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/base_margin"
-        android:layout_below="@+id/toolbar" />
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="@dimen/base_margin" />
 
     <ScrollView
         android:id="@+id/search_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar">
+        android:layout_below="@+id/toolbar"
+        android:background="?attr/backgroundMainColor">
 
         <com.dbottillo.mtgsearchfree.search.MTGSearchView
             android:id="@+id/search_view"
-            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </ScrollView>

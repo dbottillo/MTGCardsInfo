@@ -9,12 +9,13 @@
         <item name="android:ellipsize">end</item>
     </style>
 
-    <style name="App.TabLayout" parent="Widget.MaterialComponents.TabLayout.Colored">
+    <style name="App.TabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="tabBackground">?attr/toolbarSurfaceColor</item>
         <item name="tabIndicatorHeight">2dp</item>
         <item name="tabPaddingStart">12dp</item>
         <item name="tabPaddingEnd">12dp</item>
         <item name="tabTextAppearance">@style/App.TabLayoutTextAppearance</item>
-        <item name="tabSelectedTextColor">@android:color/white</item>
+        <item name="tabSelectedTextColor">?attr/colorPrimary</item>
     </style>
 
     <style name="App.TabLayoutTextAppearance">
@@ -24,48 +25,9 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <!--<style name="BigTitle">
-        <item name="android:layout_marginLeft">16dp</item>
-        <item name="android:layout_marginRight">16dp</item>
-        <item name="android:textSize">40sp</item>
-        <item name="android:textColor">@color/color_primary</item>
-    </style>-->
-
-    <style name="mtg_toolbar" parent="Widget.AppCompat.Toolbar">
-        <item name="android:background">?attr/colorPrimary</item>
-        <item name="popupTheme">@style/popupNew</item>
-        <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
-        <!--<item name="colorControlNormal">@color/white</item>-->
-    </style>
-
     <style name="popupNew" parent="ThemeOverlay.AppCompat.Light">
         <item name="android:colorBackground">?attr/backgroundColor</item>
     </style>
-
-
-    <!-- <style name="EditTextPrimary" parent="Theme.AppCompat.Light.NoActionBar">
-         <item name="colorPrimary">@color/color_primary</item>
-         <item name="colorPrimaryDark">@color/color_primary</item>
-         <item name="colorAccent">@color/color_primary</item>
-         &lt;!&ndash; bottom line color &ndash;&gt;
-         <item name="colorControlNormal">@color/color_primary</item>
-         &lt;!&ndash; text color &ndash;&gt;
-         <item name="android:textColor">@color/color_primary</item>
-         &lt;!&ndash; hint text color &ndash;&gt;
-         <item name="android:textColorHint">@color/color_primary</item>
-     </style>
-
-     <style name="MTG.EditText">
-         <item name="android:textColorHint">@color/color_primary_light</item>
-         <item name="android:textColor">@color/white</item>
-     </style>-->
-
-    <!--<style name="MTG.Search" parent="Theme.AppCompat.Light">
-        <item name="colorControlNormal">@color/color_primary_light</item>
-        <item name="colorControlActivated">@color/white</item>
-        <item name="colorControlHighlight">@color/white</item>
-    </style>-->
-
 
     <style name="Text" />
 

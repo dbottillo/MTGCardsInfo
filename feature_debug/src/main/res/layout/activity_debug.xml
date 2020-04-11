@@ -1,50 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
-        style="@style/mtg_toolbar"
-        android:elevation="8dp"
+        style="@style/AppToolbar"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:id="@+id/action_close"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end|center_vertical"
-                android:layout_marginEnd="16dp"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/action_search"
-                android:src="@drawable/ic_close"
-                android:visibility="visible"/>
-
-            <TextView
-                android:id="@+id/toolbar_title"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text="@string/open_debug"
-                android:textSize="20sp"/>
-
-        </LinearLayout>
-
-    </androidx.appcompat.widget.Toolbar>
+        android:layout_height="?android:attr/actionBarSize"
+        android:elevation="8dp"
+        app:title="@string/open_debug" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -58,103 +27,112 @@
 
             <TextView
                 android:id="@+id/clear_preferences"
+                style="@style/TextAppearance.MaterialComponents.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/base_margin"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="?attr/colorSurface"
+                android:foreground="?android:attr/selectableItemBackground"
                 android:gravity="start|center_vertical"
+                android:padding="@dimen/base_margin"
                 android:text="Clear app preferences"
-                style="@style/DebugOptions"
-                tools:ignore="HardcodedText"/>
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/create_db"
+                style="@style/TextAppearance.MaterialComponents.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/base_margin"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="?attr/colorSurface"
+                android:foreground="?android:attr/selectableItemBackground"
                 android:gravity="start|center_vertical"
+                android:padding="@dimen/base_margin"
                 android:text="@string/action_create_db"
-                style="@style/DebugOptions"
-                tools:ignore="HardcodedText"/>
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/fill_decks"
+                style="@style/TextAppearance.MaterialComponents.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/base_margin"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="?attr/colorSurface"
+                android:foreground="?android:attr/selectableItemBackground"
                 android:gravity="start|center_vertical"
+                android:padding="@dimen/base_margin"
                 android:text="@string/action_fill_decks"
-                style="@style/DebugOptions"
-                tools:ignore="HardcodedText"/>
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/create_fav"
+                style="@style/TextAppearance.MaterialComponents.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/base_margin"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="?attr/colorSurface"
+                android:foreground="?android:attr/selectableItemBackground"
                 android:gravity="start|center_vertical"
+                android:padding="@dimen/base_margin"
                 android:text="@string/action_create_fav"
-                style="@style/DebugOptions"
-                tools:ignore="HardcodedText"/>
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/crash"
+                style="@style/TextAppearance.MaterialComponents.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/base_margin"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="?attr/colorSurface"
+                android:foreground="?android:attr/selectableItemBackground"
                 android:gravity="start|center_vertical"
+                android:padding="@dimen/base_margin"
                 android:text="@string/action_crash"
-                style="@style/DebugOptions"
-                tools:ignore="HardcodedText"/>
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/send_db"
+                style="@style/TextAppearance.MaterialComponents.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/base_margin"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="?attr/colorSurface"
+                android:foreground="?android:attr/selectableItemBackground"
                 android:gravity="start|center_vertical"
+                android:padding="@dimen/base_margin"
                 android:text="@string/action_send_db"
-                style="@style/DebugOptions"
-                tools:ignore="HardcodedText"/>
+                tools:ignore="HardcodedText" />
 
 
             <TextView
                 android:id="@+id/copy_db"
+                style="@style/TextAppearance.MaterialComponents.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/base_margin"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="?attr/colorSurface"
+                android:foreground="?android:attr/selectableItemBackground"
                 android:gravity="start|center_vertical"
+                android:padding="@dimen/base_margin"
                 android:text="@string/action_copy_db"
-                style="@style/DebugOptions"
-                tools:ignore="HardcodedText"/>
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/delete_favs"
+                style="@style/TextAppearance.MaterialComponents.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/base_margin"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="?attr/colorSurface"
+                android:foreground="?android:attr/selectableItemBackground"
                 android:gravity="start|center_vertical"
+                android:padding="@dimen/base_margin"
                 android:text="Delete favs"
-                style="@style/DebugOptions"
-                tools:ignore="HardcodedText"/>
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/delete_decks"
+                style="@style/TextAppearance.MaterialComponents.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/base_margin"
-                android:background="?android:attr/selectableItemBackground"
+                android:background="?attr/colorSurface"
+                android:foreground="?android:attr/selectableItemBackground"
                 android:gravity="start|center_vertical"
+                android:padding="@dimen/base_margin"
                 android:text="Delete decks"
-                style="@style/DebugOptions"
-                tools:ignore="HardcodedText"/>
+                tools:ignore="HardcodedText" />
 
         </LinearLayout>
     </ScrollView>

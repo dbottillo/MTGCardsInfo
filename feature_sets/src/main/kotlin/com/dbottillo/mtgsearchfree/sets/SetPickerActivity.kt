@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
+import com.dbottillo.mtgsearchfree.util.setTintColor
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
@@ -59,6 +60,8 @@ class SetPickerActivity : BasicActivity(), SetPickerView {
         menuInflater.inflate(R.menu.menu_search_set, menu)
 
         val mSearch = menu.findItem(R.id.action_search)
+
+        mSearch.setTintColor(this, R.attr.colorPrimary)
 
         val mSearchView = mSearch.actionView as SearchView
         mSearchView.queryHint = getString(R.string.menu_search_set)

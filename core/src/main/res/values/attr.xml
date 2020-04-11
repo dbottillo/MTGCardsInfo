@@ -3,6 +3,7 @@
     <declare-styleable name="UiKitTheme">
         <attr name="toolbarSurfaceColor" format="reference" />
         <attr name="textColorPrimary" format="reference" />
+        <attr name="colorDisabled" format="reference" />
 
         <attr name="backgroundMainColor" format="reference" />
         <attr name="backgroundSurfaceColor" format="reference" />

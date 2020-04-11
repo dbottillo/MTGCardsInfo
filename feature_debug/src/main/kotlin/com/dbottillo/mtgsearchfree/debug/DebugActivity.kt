@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.debug
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Toast
 import com.dbottillo.mtgsearchfree.AppPreferences
 import com.dbottillo.mtgsearchfree.Navigator
@@ -33,9 +34,12 @@ class DebugActivity : DaggerAppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_debug)
 
-        action_close.setOnClickListener {
-            finish()
+        setSupportActionBar(toolbar)
+        supportActionBar?.let {
+            it.setDisplayHomeAsUpEnabled(true)
+            it.setDisplayHomeAsUpEnabled(true)
         }
+
         clear_preferences.setOnClickListener {
             appPreferences.clear()
         }
@@ -138,5 +142,14 @@ class DebugActivity : DaggerAppCompatActivity() {
             return
         }
         this.request(permission)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return if (item.itemId == android.R.id.home) {
+            finish()
+            true
+        } else{
+            false
+        }
     }
 }

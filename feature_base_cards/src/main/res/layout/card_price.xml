@@ -60,6 +60,7 @@
         android:contentDescription="@string/cd_price_go"
         android:rotation="90"
         android:src="@drawable/arrow_up"
+        android:tint="?attr/colorOnPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

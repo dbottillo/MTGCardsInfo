@@ -20,7 +20,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.annotation.AttrRes
+import androidx.annotation.DrawableRes
 import androidx.annotation.LayoutRes
+import androidx.appcompat.content.res.AppCompatResources
 import com.dbottillo.mtgsearchfree.Constants.RATIO_CARD
 
 fun View.setMarginTop(value: Int) {
@@ -79,10 +82,16 @@ fun <T : View> Activity.bind(@IdRes idRes: Int): Lazy<T> {
 
 private fun <T> unsafeLazy(initializer: () -> T) = lazy(LazyThreadSafetyMode.NONE, initializer)
 
-fun MenuItem.setTintColor(context: Context, color: Int) {
+fun MenuItem.setTintColor(context: Context, @AttrRes color: Int) {
     val wrapDrawable = DrawableCompat.wrap(icon)
-    DrawableCompat.setTint(wrapDrawable, ContextCompat.getColor(context, color))
+    DrawableCompat.setTint(wrapDrawable, context.themeColor(color))
     icon = wrapDrawable
+}
+
+fun MenuItem.setIcon(context: Context, @DrawableRes iconRes: Int, @AttrRes color: Int) {
+    val drawable = AppCompatResources.getDrawable(context, iconRes)!!
+    DrawableCompat.setTint(drawable, context.themeColor(color))
+    icon = drawable
 }
 
 fun AppCompatActivity.show(tag: String, fragment: DialogFragment) {

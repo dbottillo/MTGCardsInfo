@@ -32,6 +32,7 @@
 
         <item name="textColorPrimary">@color/text_color_primary</item>
         <item name="toolbarSurfaceColor">@color/toolbarSurfaceColor</item>
+        <item name="colorDisabled">@color/disabled_color</item>
     </style>
 
     <style name="AppToolbar" parent="Widget.MaterialComponents.Toolbar.Primary">

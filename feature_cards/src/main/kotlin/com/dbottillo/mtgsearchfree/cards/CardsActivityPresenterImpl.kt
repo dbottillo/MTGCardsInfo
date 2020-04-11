@@ -125,9 +125,9 @@ class CardsActivityPresenterImpl(
         if (currentCard != null && currentCard.multiVerseId > 0 && favs != null) {
             view.showFavMenuItem()
             if (favs?.contains(currentCard.multiVerseId) == true) {
-                view.updateFavMenuItem(R.string.favourite_remove, R.drawable.ab_star_colored)
+                view.updateFavMenuItem(R.string.favourite_remove, R.drawable.ic_star)
             } else {
-                view.updateFavMenuItem(R.string.favourite_add, R.drawable.ab_star)
+                view.updateFavMenuItem(R.string.favourite_add, R.drawable.ic_star_border)
             }
         } else {
             view.hideFavMenuItem()

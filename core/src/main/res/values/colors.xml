@@ -38,32 +38,8 @@
 
     <color name="text_color_primary">@color/black_100</color>
     <color name="toolbarSurfaceColor">#FFFFFF</color>
+    <color name="disabled_color">@color/anchovy_20</color>
 
-    <!-- legacy colors -->
-    <!--<color name="color_primary">#00a7f7</color>
-    <color name="color_primary_slightly_dark">#0193e8</color>
-    <color name="color_primary_middle_dark">#0086d4</color>
-    <color name="color_primary_almost_dark">#0075bf</color>
-    <color name="color_primary_dark">#00559d</color>
-    <color name="color_accent">#FF41B4</color>
-    <color name="color_accent_dark">#C1147D</color>
-    <color name="color_primary_light">#b2e5fe</color>
-
-
-    <color name="main_bg">#FAFAFA</color>
-    <color name="main">#2C4E6B</color>
-    <color name="sub_main">#294259</color>
-
-    <color name="white">#FFF</color>
-    <color name="light_grey">#F2F2F2</color>
-    <color name="grey">#aab4ba</color>
-    <color name="dark_grey">#555</color>
-
-
-    <color name="black_30">#4d000000</color>-->
-    <!--<color NAME="black_50">#b3000000</color>-->
-
-    <color name="black_a5">#26000000</color>
     <color name="player_1">#716BBE</color>
     <color name="player_2">#1CACFF</color>
     <color name="player_3">#46B446</color>

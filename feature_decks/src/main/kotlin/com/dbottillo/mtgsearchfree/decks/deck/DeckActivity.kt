@@ -66,8 +66,9 @@ class DeckActivity : BasicActivity(), DeckActivityView {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.deck, menu)
-        menu.findItem(R.id.action_copy).setTintColor(this, android.R.color.white)
-        menu.findItem(R.id.action_export).setTintColor(this, android.R.color.white)
+        menu.findItem(R.id.action_copy).setTintColor(this, R.attr.colorPrimary)
+        menu.findItem(R.id.action_export).setTintColor(this, R.attr.colorPrimary)
+        menu.findItem(R.id.action_edit).setTintColor(this, R.attr.colorPrimary)
         return super.onCreateOptionsMenu(menu)
     }
 

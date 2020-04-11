@@ -16,6 +16,8 @@ import com.dbottillo.mtgsearchfree.ui.views.MTGCardView
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.goToParentActivity
 import com.dbottillo.mtgsearchfree.util.prefetchImage
+import com.dbottillo.mtgsearchfree.util.setIcon
+import com.dbottillo.mtgsearchfree.util.setTintColor
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
@@ -119,7 +121,7 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
 
     override fun updateFavMenuItem(text: Int, icon: Int) {
         favMenuItem?.title = getString(text)
-        favMenuItem?.setIcon(icon)
+        favMenuItem?.setIcon(this, icon, R.attr.colorPrimary)
     }
 
     override fun hideFavMenuItem() {

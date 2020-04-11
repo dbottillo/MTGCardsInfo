@@ -10,7 +10,7 @@
         <item name="rippleColor">@null</item>
         <item name="shapeAppearanceOverlay">@null</item>-->
         <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/btn_life_counter_poison</item>
+        <item name="android:textColor">@color/app_color_on_primary</item>
         <item name="android:layout_centerVertical">true</item>
     </style>
 

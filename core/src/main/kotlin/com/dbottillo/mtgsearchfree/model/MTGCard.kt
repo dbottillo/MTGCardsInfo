@@ -108,9 +108,10 @@ data class MTGCard(
             Rarity.RARE -> R.color.rare
             Rarity.MYTHIC -> R.color.mythic
         }
+
     val scryfallImage
         get() = when {
-            scryfallId.isNotEmpty() && scryfallSupported -> "https://api.scryfall.com/cards/$scryfallId?format=image${if (side == Side.B) "&face=back" else ""}"
+            scryfallId.isNotEmpty() && scryfallSupported -> "https://api.scryfall.com/cards/$scryfallId?format=image&version=border_crop${if (side == Side.B) "&face=back" else ""}"
             else -> "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=$multiVerseId&type=card"
         }
 
