@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/action_add_to_deck"
-        android:title="@string/add_to_deck_title" />
+        android:title="@string/add_to_deck" />
 
     <item
         android:id="@+id/action_remove"

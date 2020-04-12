@@ -10,7 +10,6 @@ import com.google.android.material.tabs.TabLayout
 import androidx.viewpager.widget.ViewPager
 import android.widget.RelativeLayout
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity

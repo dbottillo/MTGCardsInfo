@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.dbottillo.mtgsearchfree.decks.R
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.util.gone
@@ -91,7 +92,7 @@ class DeckCardViewHolder(val row: View) : RecyclerView.ViewHolder(row) {
     fun bind(card: MTGCard, listener: OnDeckCardListener?) {
         val resources = row.context.resources
         name.text = resources.getString(R.string.row_card_name, card.quantity.toString() + " ", card.name)
-        rarity.setTextColor(card.rarityColor)
+        rarity.setTextColor(ContextCompat.getColor(row.context, card.rarityColor))
         rarity.text = card.rarity.value
         if (card.manaCost.isNotEmpty()) {
             cost.text = card.manaCost.replace("{", "").replace("}", "")
