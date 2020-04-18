@@ -62,6 +62,6 @@
         android:textColor="?attr/colorOnSecondary"
         android:textSize="16sp"
         android:textStyle="italic"
-        android:visibility="visible" />
+        android:visibility="gone" />
 
 </RelativeLayout>

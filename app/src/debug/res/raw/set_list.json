@@ -1115,6 +1115,21 @@
     "type": "promo"
   },
   {
+    "baseSetSize": 0,
+    "code": "C20",
+    "isOnlineOnly": false,
+    "isPaperOnly": false,
+    "meta": {
+      "date": "2020-04-16",
+      "pricesDate": "2020-04-16",
+      "version": "4.6.2+20200416"
+    },
+    "name": "Commander 2020",
+    "releaseDate": "2020-04-17",
+    "totalSetSize": 322,
+    "type": "commander"
+  },
+  {
     "baseSetSize": 274,
     "code": "IKO",
     "isOnlineOnly": false,
@@ -1127,6 +1142,6 @@
     "name": "Ikoria: Lair of Behemoths",
     "releaseDate": "2020-04-16",
     "totalSetSize": 388,
-    "type": "preview"
+    "type": "expansion"
   }
 ]
