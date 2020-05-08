@@ -190,9 +190,7 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
 
     private fun setScreenOn(screenOn: Boolean) {
         LOG.d()
-        if (view != null) {
-            view!!.keepScreenOn = screenOn
-        }
+        view?.keepScreenOn = screenOn
     }
 
     private fun resetLifeCounter() {

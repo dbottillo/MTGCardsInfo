@@ -32,7 +32,8 @@ import com.dbottillo.mtgsearchfree.util.newLine
 import com.dbottillo.mtgsearchfree.util.setBoldAndItalic
 import io.reactivex.disposables.Disposable
 
-class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : RelativeLayout(context, attrs, defStyle) {
+class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) :
+    RelativeLayout(context, attrs, defStyle) {
 
     private var detailCard: TextView
     private var priceLink: TextView
@@ -111,13 +112,30 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
 
         detailCard.text = SpannableStringBuilder().apply {
             boldTitledEntry(resources.getString(R.string.card_detail_type), card.type)
-            boldTitledEntry(resources.getString(R.string.card_detail_pt), "${card.power} / ${card.toughness}")
-            boldTitledEntry(resources.getString(R.string.card_detail_mana), if (card.manaCost.isNotEmpty()) "${card.manaCost} (${card.cmc})" else " - ")
-            boldTitledEntry(resources.getString(R.string.card_detail_rarity), resources.getString(card.displayRarity))
+            boldTitledEntry(
+                resources.getString(R.string.card_detail_pt),
+                "${card.power} / ${card.toughness}"
+            )
+            boldTitledEntry(
+                resources.getString(R.string.card_detail_mana),
+                if (card.manaCost.isNotEmpty()) "${card.manaCost} (${card.cmc})" else " - "
+            )
+            boldTitledEntry(
+                resources.getString(R.string.card_detail_rarity),
+                resources.getString(card.displayRarity)
+            )
             append(card.text).newLine(2)
-            card.set?.let { boldTitledEntry(resources.getString(R.string.card_detail_set), it.name) }
+            card.set?.let {
+                boldTitledEntry(
+                    resources.getString(R.string.card_detail_set),
+                    it.name
+                )
+            }
             if (card.originalText != card.text) {
-                boldTitledEntry(resources.getString(R.string.card_detail_original_text), card.originalText)
+                boldTitledEntry(
+                    resources.getString(R.string.card_detail_original_text),
+                    card.originalText
+                )
             }
             if (card.rulings.isNotEmpty()) {
                 addBold(resources.getString(R.string.card_detail_rulings))
@@ -131,7 +149,8 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
                 addBold(resources.getString(R.string.card_detail_legalities))
                 append(":").newLine()
                 card.legalities.forEach {
-                    append("-").append(" ").append(it.format).append(": ").append(it.legality).newLine()
+                    append("-").append(" ").append(it.format).append(": ").append(it.legality)
+                        .newLine()
                 }
             }
         }
@@ -147,15 +166,16 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
             cardImageContainer.visibility = View.GONE
         }
 
-        flipCardButton.visibility = if (card.isDoubleFaced || card.isTransform) View.VISIBLE else View.GONE
+        flipCardButton.visibility =
+            if (card.isDoubleFaced || card.isTransform) View.VISIBLE else View.GONE
     }
 
     private fun loadPrice(card: MTGCard) {
-        val priceProviderPref = PreferenceManager.getDefaultSharedPreferences(context).getString("price_provider", null)
+        val priceProviderPref =
+            PreferenceManager.getDefaultSharedPreferences(context).getString("price_provider", null)
         if (priceProviderPref == "MKM") {
             priceLink.setBoldAndItalic("MKM")
         } else {
-            priceContainer.setOnClickListener { openPrice() }
             priceLink.setBoldAndItalic("TCG")
         }
         val priceProvider = if (priceProviderPref == "MKM") PriceProvider.MKM else TCG
@@ -163,11 +183,18 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
         disposable = cardPresenter.fetchPrice(card, priceProvider).subscribe({ apiPrice ->
             if (apiPrice is MKMCardPrice) {
                 cardPrice.text = context.getString(R.string.mkm_price, apiPrice.low, apiPrice.trend)
-                findViewById<View>(R.id.price_container).setOnClickListener {
-                    context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.cardmarket.com/${apiPrice.url}")))
+                priceContainer.setOnClickListener {
+                    context.startActivity(
+                        Intent(
+                            Intent.ACTION_VIEW,
+                            Uri.parse("https://www.cardmarket.com/${apiPrice.url}")
+                        )
+                    )
                 }
-                findViewById<View>(R.id.price_not_exact).visibility = if (apiPrice.exact) View.GONE else View.VISIBLE
+                findViewById<View>(R.id.price_not_exact).visibility =
+                    if (apiPrice.exact) View.GONE else View.VISIBLE
             } else {
+                priceContainer.setOnClickListener { openPrice() }
                 cardPrice.text = apiPrice.toDisplay(isLandscape)
             }
         }, {
@@ -189,9 +216,11 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) : Relat
 
     private fun openPrice() {
         LOG.d()
-        card?.tcgplayerPurchaseUrl?.takeIf { it.isNotEmpty() }?.let {
-            context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(it)))
+        var url = card?.tcgplayerPurchaseUrl
+        if (url == null || url.isEmpty()) {
+            url = "https://shop.tcgplayer.com/product/productsearch?id=${card?.tcgplayerProductId}"
         }
+        context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
     }
 
     fun toggleImage(showImage: Boolean) {

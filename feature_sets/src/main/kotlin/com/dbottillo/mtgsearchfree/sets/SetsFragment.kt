@@ -41,8 +41,12 @@ class SetsFragment : BaseHomeFragment(), SetsFragmentView, OnCardListener {
         super.onViewCreated(view, savedInstanceState)
 
         loader = view.findViewById(R.id.loader)
-        view.findViewById<View>(R.id.action_search).setOnClickListener { navigator.openSearchScreen(activity!!) }
-        view.findViewById<View>(R.id.action_lucky).setOnClickListener { navigator.openCardsLuckyScreen(activity!!) }
+        view.findViewById<View>(R.id.action_search).setOnClickListener {
+            navigator.openSearchScreen(requireActivity())
+        }
+        view.findViewById<View>(R.id.action_lucky).setOnClickListener {
+            navigator.openCardsLuckyScreen(requireActivity())
+        }
         view.findViewById<View>(R.id.change_set).setOnClickListener {
             onTitleHeaderSelected()
         }

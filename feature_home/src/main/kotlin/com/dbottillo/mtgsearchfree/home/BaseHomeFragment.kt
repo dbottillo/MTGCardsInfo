@@ -59,9 +59,9 @@ abstract class BaseHomeFragment : BasicFragment(), Toolbar.OnMenuItemClickListen
     override fun onMenuItemClick(item: MenuItem?): Boolean {
         when (item?.itemId) {
             R.id.more_rate -> dbActivity.openRateTheApp()
-            R.id.more_about -> navigator.openAboutScreen(activity!!)
-            R.id.more_release_note -> navigator.openReleaseNoteScreen(activity!!)
-            R.id.more_settings -> navigator.openSettingsScreen(activity!!)
+            R.id.more_about -> navigator.openAboutScreen(requireActivity())
+            R.id.more_release_note -> navigator.openReleaseNoteScreen(requireActivity())
+            R.id.more_settings -> navigator.openSettingsScreen(requireActivity())
             R.id.action_open_debug -> navigator.openDebugScreen(requireActivity())
         }
         return true

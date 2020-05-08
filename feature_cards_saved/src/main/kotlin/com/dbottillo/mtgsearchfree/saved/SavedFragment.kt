@@ -138,7 +138,7 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
 
     private fun openSearch() {
         LOG.d()
-        navigator.openSearchScreen(activity!!)
+        navigator.openSearchScreen(requireActivity())
     }
 
     @Suppress("EmptyFunctionBlock")
