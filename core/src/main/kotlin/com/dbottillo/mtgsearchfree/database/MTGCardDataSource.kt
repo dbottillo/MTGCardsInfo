@@ -17,13 +17,13 @@ class MTGCardDataSource(
 
     @Suppress("MagicNumber")
     enum class STANDARD(var setId: Int, var set: String) {
-        IKORIA(1, "Ikoria: Lair of Behemoths"),
-        THEROS_BEYOND_DEATH(7, "Theros Beyond Death"),
-        THRONE_OF_ELDRAINE(13, "Throne of Eldraine"),
-        CORE_20(16, "Core Set 2020"),
-        WAR_OF_THE_SPARK(18, "War of the Spark"),
-        RAVNICA_ALLEGIANCE(19, "Ravnica Allegiance"),
-        GUILDS_OF_RAVNICA(21, "Guilds of Ravnica");
+        IKORIA(2, "Ikoria: Lair of Behemoths"),
+        THEROS_BEYOND_DEATH(8, "Theros Beyond Death"),
+        THRONE_OF_ELDRAINE(14, "Throne of Eldraine"),
+        CORE_20(17, "Core Set 2020"),
+        WAR_OF_THE_SPARK(19, "War of the Spark"),
+        RAVNICA_ALLEGIANCE(20, "Ravnica Allegiance"),
+        GUILDS_OF_RAVNICA(22, "Guilds of Ravnica");
 
         companion object {
 
