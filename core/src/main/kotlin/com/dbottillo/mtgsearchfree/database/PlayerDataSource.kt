@@ -39,7 +39,7 @@ class PlayerDataSource(private val database: SQLiteDatabase) {
     }
 
     fun removePlayer(player: Player) {
-        LOG.d("remove " + player.toString())
+        LOG.d("remove $player")
         val args = arrayOf(player.id.toString() + "")
         val query = "DELETE FROM $TABLE where _id=? "
         LOG.query(query, player.id.toString() + "")

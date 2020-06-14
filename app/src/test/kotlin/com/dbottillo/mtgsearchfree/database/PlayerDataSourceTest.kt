@@ -86,7 +86,7 @@ class PlayerDataSourceTest {
         underTest.savePlayer(player1)
         val player2 = generatePlayer(20, "Liliana", 10, 10)
         underTest.savePlayer(player2)
-        val player3 = generatePlayer(30, "Garruck", 12, 3)
+        val player3 = generatePlayer(30, "Garruk", 12, 3)
         underTest.savePlayer(player3)
         val player = underTest.players
         assertNotNull(player)

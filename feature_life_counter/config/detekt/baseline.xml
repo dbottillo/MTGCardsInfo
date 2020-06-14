@@ -11,7 +11,6 @@
     <ID>MaxLineLength:LifeCounterAdapter.kt$LifeCounterAdapter$holder.name.text = holder.itemView.context.getString(R.string.row_life_counter_name, player.name, player.diceResult)</ID>
     <ID>MaxLineLength:LifeCounterAdapter.kt$LifeCounterAdapter$return FooterViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.life_counter_footer, parent, false))</ID>
     <ID>MaxLineLength:LifeCounterAdapter.kt$LifeCounterAdapter$return HeaderViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.life_counter_header, parent, false))</ID>
-    <ID>MaxLineLength:PlayersStorageImpl.kt$PlayersStorageImpl$private val names = arrayOf("Teferi", "Nicol Bolas", "Gerrard", "Ajani", "Jace", "Liliana", "Elspeth", "Tezzeret", "Garruck", "Chandra", "Venser", "Doran", "Sorin")</ID>
     <ID>NewLineAtEndOfFile:LifeCounterModule.kt$com.dbottillo.mtgsearchfree.dagger.LifeCounterModule.kt</ID>
     <ID>NewLineAtEndOfFile:LifeCounterPresenter.kt$com.dbottillo.mtgsearchfree.lifecounter.LifeCounterPresenter.kt</ID>
     <ID>NewLineAtEndOfFile:LifeCounterView.kt$com.dbottillo.mtgsearchfree.lifecounter.LifeCounterView.kt</ID>

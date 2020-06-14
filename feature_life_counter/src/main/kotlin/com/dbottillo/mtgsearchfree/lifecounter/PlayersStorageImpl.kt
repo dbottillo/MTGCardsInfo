@@ -10,7 +10,8 @@ open class PlayersStorageImpl(
     private val logger: Logger
 ) : PlayersStorage {
 
-    private val names = arrayOf("Teferi", "Nicol Bolas", "Gerrard", "Ajani", "Jace", "Liliana", "Elspeth", "Tezzeret", "Garruck", "Chandra", "Venser", "Doran", "Sorin")
+    private val names = arrayOf("Teferi", "Nicol Bolas", "Sarkhan", "Ajani", "Jace", "Liliana",
+            "Elspeth", "Tezzeret", "Garruk", "Chandra", "Oko", "Ugin", "Sorin")
 
     init {
         logger.d("created")
