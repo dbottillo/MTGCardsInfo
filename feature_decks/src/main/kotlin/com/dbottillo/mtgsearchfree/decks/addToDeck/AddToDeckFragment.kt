@@ -26,8 +26,8 @@ class AddToDeckFragment : BottomSheetDialogFragment(), AddToDeckView {
     private var decks: List<Deck> = mutableListOf()
     private var quantity = 1
 
-    @Inject
-    lateinit var presenter: AddToDeckPresenter
+    @Inject lateinit var presenter: AddToDeckPresenter
+    @Inject lateinit var trackingManager: TrackingManager
 
     override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
@@ -49,7 +49,7 @@ class AddToDeckFragment : BottomSheetDialogFragment(), AddToDeckView {
 
     override fun onResume() {
         super.onResume()
-        TrackingManager.trackPage("/add_to_deck")
+        trackingManager.trackPage("/add_to_deck")
     }
 
     override fun onDestroyView() {
@@ -120,14 +120,14 @@ class AddToDeckFragment : BottomSheetDialogFragment(), AddToDeckView {
     private fun saveCard(quantity: Int, deck: Deck, side: Boolean) {
         LOG.d()
         presenter.addCardToDeck(deck, quantity, side)
-        TrackingManager.trackAddCardToDeck("$quantity - existing")
+        trackingManager.trackAddCardToDeck("$quantity - existing")
     }
 
     private fun saveCard(quantity: Int, deck: String, side: Boolean) {
         LOG.d()
         presenter.addCardToDeck(deck, quantity, side)
-        TrackingManager.trackNewDeck(deck)
-        TrackingManager.trackAddCardToDeck("$quantity - existing")
+        trackingManager.trackNewDeck(deck)
+        trackingManager.trackAddCardToDeck("$quantity - existing")
     }
 
     override fun showError(message: String) {

@@ -30,7 +30,7 @@ ext {
     }
     monitoring = Group {
         implementation deps.google.firebase.core
-        implementation (deps.google.firebase.crashlytics) { transitive = true }
+        implementation deps.google.firebase.crashlytics
     }
     image = Group {
         implementation deps.glide.core

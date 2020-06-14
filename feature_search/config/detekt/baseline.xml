@@ -2,14 +2,10 @@
 <SmellBaseline>
   <Blacklist></Blacklist>
   <Whitelist>
-    <ID>ForbiddenComment:SearchActivity.kt$SearchActivity$// TODO: pre-lollipop version</ID>
     <ID>MagicNumber:MTGSearchView.kt$MTGSearchView$2</ID>
     <ID>MagicNumber:MTGSearchView.kt$MTGSearchView$3</ID>
     <ID>MagicNumber:SearchActivity.kt$SearchActivity$200</ID>
-    <ID>MagicNumber:SearchActivity.kt$SearchActivity$400</ID>
     <ID>MagicNumber:SearchActivity.kt$SearchActivity$6.0f</ID>
-    <ID>MagicNumber:SearchActivity.kt$SearchActivity$9</ID>
-    <ID>MagicNumber:SearchActivity.kt$SearchActivity$9f</ID>
     <ID>MagicNumber:SearchActivity.kt$SearchActivity.&lt;no name provided&gt;$100</ID>
     <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private</ID>
     <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val black: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_b) }</ID>
@@ -34,9 +30,6 @@
     <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val uncommon: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_uncommon) }</ID>
     <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private val white: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;AppCompatCheckBox&gt;(R.id.search_w) }</ID>
     <ID>MaxLineLength:MTGSearchView.kt$MTGSearchView$private var sets = mutableListOf(MTGSet(-1, "", resources.getString(R.string.search_set_all)), MTGSet(-2, "", resources.getString(R.string.search_set_standard)))</ID>
-    <ID>MaxLineLength:SearchActivity.kt$SearchActivity$val color = argbEvaluator.evaluate(if (amount &lt; 400) amount.toFloat() / 400.toFloat() else 1f, ContextCompat.getColor(this, R.color.color_primary), ContextCompat.getColor(this, R.color.color_primary_slightly_dark)) as Int</ID>
-    <ID>MaxLineLength:SearchActivity.kt$SearchActivity$val color = argbEvaluator.evaluate(if (scrollView.scrollY &lt; 400) scrollView.scrollY.toFloat() / 400.toFloat() else 1f, ContextCompat.getColor(this, R.color.color_primary), ContextCompat.getColor(this, R.color.color_primary_slightly_dark)) as Int</ID>
-    <ID>MaxLineLength:SearchActivity.kt$SearchActivity$window.statusBarColor = ContextCompat.getColor(this, if (searchOpen) R.color.color_accent_dark else R.color.status_bar)</ID>
     <ID>NewLineAtEndOfFile:SearchActivity.kt$com.dbottillo.mtgsearchfree.search.SearchActivity.kt</ID>
     <ID>NewLineAtEndOfFile:SearchActivityView.kt$com.dbottillo.mtgsearchfree.search.SearchActivityView.kt</ID>
     <ID>NewLineAtEndOfFile:SearchPresenter.kt$com.dbottillo.mtgsearchfree.search.SearchPresenter.kt</ID>

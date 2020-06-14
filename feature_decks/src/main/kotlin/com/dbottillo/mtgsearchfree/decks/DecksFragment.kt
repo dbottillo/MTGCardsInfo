@@ -19,7 +19,6 @@ import com.dbottillo.mtgsearchfree.util.DialogUtil
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.PermissionAvailable
 import com.dbottillo.mtgsearchfree.util.PermissionUtil
-import com.dbottillo.mtgsearchfree.util.TrackingManager
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
@@ -104,7 +103,7 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.Perm
     private fun onAddDeck() {
         dialogUtil.showAddDeck(R.layout.dialog_add_new_deck, R.id.deck_name) {
             presenter.addDeck(it)
-            TrackingManager.trackNewDeck(it)
+            trackingManager.trackNewDeck(it)
         }
     }
 
@@ -113,11 +112,11 @@ class DecksFragment : BaseHomeFragment(), DecksFragmentView, PermissionUtil.Perm
         if (deck.numberOfCards > 0) {
             dialogUtil.deleteDeck(deck) {
                 presenter.deleteDeck(it)
-                TrackingManager.trackDeleteDeck(deck.name)
+                trackingManager.trackDeleteDeck(deck.name)
             }
         } else {
             presenter.deleteDeck(deck)
-            TrackingManager.trackDeleteDeck(deck.name)
+            trackingManager.trackDeleteDeck(deck.name)
         }
     }
 

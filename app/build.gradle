@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'io.fabric'
+apply plugin: 'com.google.firebase.crashlytics'
 apply from: '../config-android.gradle'
 
 def keystorePropertiesFile = rootProject.file("keystore.properties")

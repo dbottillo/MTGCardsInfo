@@ -2,8 +2,6 @@
 <SmellBaseline>
   <Blacklist></Blacklist>
   <Whitelist>
-    <ID>MagicNumber:SetPickerActivity.kt$SetPickerActivity.Divider$16</ID>
-    <ID>MaxLineLength:SetsAdapter.kt$SetsAdapter$holder.name.setTextColor(ContextCompat.getColor(holder.itemView.context, if (position == currentPos) R.color.color_accent else R.color.color_primary))</ID>
     <ID>NewLineAtEndOfFile:SetsFragment.kt$com.dbottillo.mtgsearchfree.sets.SetsFragment.kt</ID>
     <ID>NewLineAtEndOfFile:SetsFragmentView.kt$com.dbottillo.mtgsearchfree.sets.SetsFragmentView.kt</ID>
     <ID>TooManyFunctions:SetsFragment.kt$SetsFragment$SetsFragment</ID>

@@ -71,7 +71,6 @@ fun withListener(
 }
 
 fun MTGCard.prefetchImage(context: Context) {
-    TrackingManager.trackImage(scryfallImage)
     GlideApp.with(context)
             .load(scryfallImage)
             .preload()

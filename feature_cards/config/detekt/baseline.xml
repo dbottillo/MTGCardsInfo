@@ -1,6 +1,6 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist/>
+  <Blacklist></Blacklist>
   <Whitelist>
     <ID>ComplexMethod:CardsActivityPresenterImpl.kt$CardsActivityPresenterImpl$init</ID>
     <ID>ForbiddenComment:CardsActivityPresenterImpl.kt$CardsActivityPresenterImpl$// TODO: this need testing</ID>

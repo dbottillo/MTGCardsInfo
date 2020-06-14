@@ -99,7 +99,8 @@ class CardsActivity : CommonCardsActivity(), ViewPager.OnPageChangeListener, Car
 
     override fun updateAdapter(cards: CardsCollection, showImage: Boolean, startPosition: Int) {
         LOG.d()
-        adapter = CardsPagerAdapter(context = this, showImage = showImage, cards = cards, cardPresenter = cardPresenter)
+        adapter = CardsPagerAdapter(context = this, showImage = showImage,
+                cards = cards, cardPresenter = cardPresenter, trackingManager = trackingManager)
         viewPager.adapter = adapter
         viewPager.currentItem = startPosition
         syncMenu()

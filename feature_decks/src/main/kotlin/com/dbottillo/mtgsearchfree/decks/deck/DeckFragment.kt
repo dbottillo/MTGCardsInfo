@@ -14,7 +14,6 @@ import com.dbottillo.mtgsearchfree.model.DeckCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.BasicFragment
 import com.dbottillo.mtgsearchfree.util.LOG
-import com.dbottillo.mtgsearchfree.util.TrackingManager
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
@@ -53,23 +52,23 @@ class DeckFragment : BasicFragment(), DeckView {
 
             override fun onOptionSelected(menuItem: MenuItem, card: MTGCard) {
                 if (menuItem.itemId == R.id.action_add_one_more) {
-                    TrackingManager.trackAddCardToDeck()
+                    trackingManager.trackAddCardToDeck()
                     presenter.addCardToDeck(card, 1)
                 } else if (menuItem.itemId == R.id.action_remove_one) {
-                    TrackingManager.trackRemoveCardFromDeck()
+                    trackingManager.trackRemoveCardFromDeck()
                     presenter.removeCardFromDeck(card)
                 } else if (menuItem.itemId == R.id.action_remove_all) {
-                    TrackingManager.trackRemoveAllCardsFromDeck()
+                    trackingManager.trackRemoveAllCardsFromDeck()
                     presenter.removeAllCardFromDeck(card)
                 } else if (menuItem.itemId == R.id.action_move_one) {
-                    TrackingManager.trackMoveOneCardFromDeck()
+                    trackingManager.trackMoveOneCardFromDeck()
                     if (card.isSideboard) {
                         presenter.moveCardFromSideBoard(card, 1)
                     } else {
                         presenter.moveCardToSideBoard(card, 1)
                     }
                 } else if (menuItem.itemId == R.id.action_move_all) {
-                    TrackingManager.trackMoveAllCardFromDeck()
+                    trackingManager.trackMoveAllCardFromDeck()
                     if (card.isSideboard) {
                         presenter.moveCardFromSideBoard(card, card.quantity)
                     } else {

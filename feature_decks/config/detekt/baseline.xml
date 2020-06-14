@@ -1,14 +1,14 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist/>
+  <Blacklist></Blacklist>
   <Whitelist>
     <ID>MagicNumber:DeckAdapter.kt$DeckCardViewHolder$3</ID>
     <ID>MagicNumber:DeckAdapter.kt$DeckCardViewHolder$4</ID>
     <ID>MagicNumber:DeckStartingHandFragment.kt$DeckStartingHandFragment$3</ID>
     <ID>MagicNumber:StartingHandPresenter.kt$StartingHandPresenter$7</ID>
-    <ID>MaxLineLength:AddToDeckFragment.kt$AddToDeckFragment$val adapter = ArrayAdapter&lt;CharSequence>(activity as FragmentActivity, R.layout.add_to_deck_spinner_item, decksChoose.toTypedArray())</ID>
-    <ID>MaxLineLength:DeckActivity.kt$DeckActivity$private val tabLayout: TabLayout by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;TabLayout>(R.id.deck_cards_tab_layout) }</ID>
-    <ID>MaxLineLength:DeckActivity.kt$DeckActivity$private val viewPager: ViewPager by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;ViewPager>(R.id.deck_view_pager) }</ID>
+    <ID>MaxLineLength:AddToDeckFragment.kt$AddToDeckFragment$val adapter = ArrayAdapter&lt;CharSequence&gt;(activity as FragmentActivity, R.layout.add_to_deck_spinner_item, decksChoose.toTypedArray())</ID>
+    <ID>MaxLineLength:DeckActivity.kt$DeckActivity$private val tabLayout: TabLayout by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;TabLayout&gt;(R.id.deck_cards_tab_layout) }</ID>
+    <ID>MaxLineLength:DeckActivity.kt$DeckActivity$private val viewPager: ViewPager by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;ViewPager&gt;(R.id.deck_view_pager) }</ID>
     <ID>MaxLineLength:DeckAdapter.kt$DeckCardViewHolder$moveAll.setTitle(if (card.isSideboard) R.string.move_all_card_to_deck else R.string.move_all_card_to_sideboard)</ID>
     <ID>MaxLineLength:DeckFragment.kt$DeckFragment$sections.add(DeckSection(getString(R.string.deck_header_creatures) + " (" + collection.getNumberOfCreatures() + ")", collection.creatures))</ID>
     <ID>MaxLineLength:DeckFragment.kt$DeckFragment$sections.add(DeckSection(getString(R.string.deck_header_instant_sorceries) + " (" + collection.getNumberOfInstantAndSorceries() + ")", collection.instantAndSorceries))</ID>

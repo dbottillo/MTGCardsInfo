@@ -3,7 +3,6 @@ buildscript {
         google()
         mavenCentral()
         maven { url "https://maven.google.com" }
-        maven { url 'https://maven.fabric.io/public' }
         jcenter()
     }
 
@@ -11,12 +10,12 @@ buildscript {
         apply from: 'dependencies-versions.gradle'
         apply from: 'dependencies-all.gradle'
 
-        classpath 'com.android.tools.build:gradle:3.6.3'
+        classpath 'com.android.tools.build:gradle:4.0.0'
         classpath 'com.google.gms:google-services:4.3.3'
-        classpath 'io.fabric.tools:gradle:1.31.2'
+        classpath "com.google.firebase:firebase-crashlytics-gradle:$versions.crashlyticsPlugin"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
         classpath "com.github.ben-manes:gradle-versions-plugin:0.28.0"
-        classpath "com.diffplug.spotless:spotless-plugin-gradle:4.0.1"
+        classpath "com.diffplug.spotless:spotless-plugin-gradle:4.3.0"
     }
 }
 
@@ -36,6 +35,7 @@ allprojects {
                 includeGroup "com.google.firebase"
                 includeGroup "com.google.android.material"
                 includeGroup "com.google.android.gms"
+                includeGroup "com.google.android.datatransport"
             }
         }
         maven {
@@ -98,13 +98,6 @@ allprojects {
                 includeGroup "org.easymock"
                 includeGroup "org.smali"
                 includeGroup "cglib"
-            }
-        }
-        maven {
-            url 'https://maven.fabric.io/public'
-            content {
-                includeGroupByRegex "com.crashlytics.*"
-                includeGroupByRegex "io.fabric.*"
             }
         }
         maven {

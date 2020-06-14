@@ -50,10 +50,6 @@
                 android:resource="@xml/lucky_widget_info"/>
         </receiver>
 
-        <meta-data
-            android:name="com.crashlytics.ApiKey"
-            android:value="f2c7b2dc347786aa1e01b4ca437f2f8dd05d59d8"/>
-
     </application>
 
 </manifest>

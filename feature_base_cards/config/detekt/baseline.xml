@@ -1,10 +1,10 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist/>
+  <Blacklist></Blacklist>
   <Whitelist>
     <ID>ComplexMethod:CardsConfiguratorPresenterImpl.kt$CardsConfiguratorPresenterImpl$update</ID>
-    <ID>LongParameterList:MTGCardsView.kt$MTGCardsView$( cards: List&lt;MTGCard>, listener: OnCardListener, cardFilter: CardFilter?, configuration: CardAdapterConfiguration )</ID>
-    <ID>LongParameterList:MTGCardsView.kt$MTGCardsView$(cards: List&lt;MTGCard>, listener: OnCardListener, title: String, cardFilter: CardFilter?, menuOption: Int)</ID>
+    <ID>LongParameterList:MTGCardsView.kt$MTGCardsView$( cards: List&lt;MTGCard&gt;, listener: OnCardListener, cardFilter: CardFilter?, configuration: CardAdapterConfiguration )</ID>
+    <ID>LongParameterList:MTGCardsView.kt$MTGCardsView$(cards: List&lt;MTGCard&gt;, listener: OnCardListener, title: String, cardFilter: CardFilter?, menuOption: Int)</ID>
     <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$10</ID>
     <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$14</ID>
     <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$15</ID>
@@ -21,9 +21,7 @@
     <ID>MaxLineLength:CardsAdapter.kt$CardsAdapter$spannableString.setSpan(ForegroundColorSpan(colorFilterActive), start, start + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)</ID>
     <ID>MaxLineLength:CardsAdapter.kt$CardsAdapter$val v = inflater.inflate(if (configuration.isGrid) R.layout.grid_item_card else R.layout.row_card, parent, false)</ID>
     <ID>MaxLineLength:CardsConfiguratorFragment.kt$CardsConfiguratorFragment : BottomSheetDialogFragmentCardsConfiguratorViewOnFilterPickerListener</ID>
-    <ID>MaxLineLength:MTGCardView.kt$MTGCardView$boldTitledEntry(resources.getString(R.string.card_detail_mana), if (card.manaCost.isNotEmpty()) "${card.manaCost} (${card.cmc})" else " - ")</ID>
-    <ID>MaxLineLength:MTGCardView.kt$MTGCardView$context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.cardmarket.com/${apiPrice.url}")))</ID>
-    <ID>MaxLineLength:MTGCardsView.kt$MTGCardsView$fun loadCards(cards: List&lt;MTGCard>, listener: OnCardListener, title: String, cardFilter: CardFilter?, menuOption: Int)</ID>
+    <ID>MaxLineLength:MTGCardsView.kt$MTGCardsView$fun loadCards(cards: List&lt;MTGCard&gt;, listener: OnCardListener, title: String, cardFilter: CardFilter?, menuOption: Int)</ID>
     <ID>MaxLineLength:MTGCardsView.kt$MTGCardsView$moreResult.text = resources.getQuantityString(R.plurals.search_limit, CardDataSource.LIMIT, CardDataSource.LIMIT)</ID>
     <ID>NewLineAtEndOfFile:BaseCardsView.kt$com.dbottillo.mtgsearchfree.ui.BaseCardsView.kt</ID>
     <ID>NewLineAtEndOfFile:CardAdapterConfiguration.kt$com.dbottillo.mtgsearchfree.ui.cards.CardAdapterConfiguration.kt</ID>

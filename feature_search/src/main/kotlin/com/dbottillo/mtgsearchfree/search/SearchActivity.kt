@@ -115,7 +115,7 @@ class SearchActivity : BasicActivity(), View.OnClickListener, SearchActivityView
 
     private fun doSearch(searchParams: SearchParams) {
         LOG.d()
-        TrackingManager.trackSearch(searchParams.toString())
+        trackingManager.trackSearch(searchParams.toString())
         presenter.doSearch(searchParams)
         hideIme()
     }

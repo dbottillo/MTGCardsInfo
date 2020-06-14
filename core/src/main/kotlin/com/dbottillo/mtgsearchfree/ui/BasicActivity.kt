@@ -31,6 +31,7 @@ abstract class BasicActivity : DaggerAppCompatActivity() {
 
     @Inject lateinit var generalData: GeneralData
     @Inject lateinit var navigator: Navigator
+    @Inject lateinit var trackingManager: TrackingManager
 
     val mtgApp: Application
         get() = application
@@ -46,14 +47,14 @@ abstract class BasicActivity : DaggerAppCompatActivity() {
             sizeToolbar = TypedValue.complexToDimensionPixelSize(tv.data, resources.displayMetrics)
         }
 
-        TrackingManager.logOnCreate("${javaClass.name} ${hashCode()}")
+        trackingManager.logOnCreate("${javaClass.name} ${hashCode()}")
     }
 
     public override fun onResume() {
         super.onResume()
         LOG.d()
         getPageTrack()?.let {
-            TrackingManager.trackPage(it)
+            trackingManager.trackPage(it)
         }
     }
 
@@ -89,7 +90,7 @@ abstract class BasicActivity : DaggerAppCompatActivity() {
             startActivity(goToPlay)
         }
 
-        TrackingManager.trackOpenRateApp()
+        trackingManager.trackOpenRateApp()
     }
 
     protected fun openDialog(tag: String, fragment: DialogFragment) {

@@ -4,18 +4,21 @@ ext.versions = [
 
         // google
         'androidx'         : [
-                'core': '1.2.0',
+                'core': '1.3.0',
                 'cardview': '1.0.0',
                 'recyclerview': '1.1.0',
                 'compat': '1.1.0',
                 'preference': '1.1.1'
         ],
         'material'         : '1.1.0',
-        'dagger'           : '2.27',
+        'dagger'           : '2.28',
         'glide'            : '4.11.0',
-        'crashlytics'      : '2.10.1',
         'constraint_layout': '1.1.3',
-        'firebase'         : '17.4.2',
+        'firebase': [
+                'core': '17.4.3',
+                'crashlytics': '17.0.1'
+        ],
+        'crashlyticsPlugin': '2.1.1',
         'retrofit'         : [
                 'core'         : '2.9.0',
                 'gsonConverter': '2.9.0',
@@ -27,7 +30,7 @@ ext.versions = [
         ],
 
         // 3rd-party
-        'leak_canary'      : '2.3',
+        'leak_canary'      : '2.4',
         'gson'             : '2.8.6',
         'rx_java'          : '2.2.19',
         'rx_android'       : '2.1.1',
@@ -44,5 +47,5 @@ ext.versions = [
         'dexmaker_mockito' : '1.2',
         'robolectric'      : '4.3.1',
         'truth'            : '1.0.1',
-        'lint'             : '26.6.3'
+        'lint'             : '27.0.0'
 ]

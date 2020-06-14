@@ -5,7 +5,7 @@ import android.content.Context
 import android.os.StrictMode
 import android.telephony.TelephonyManager
 import androidx.preference.PreferenceManager
-import com.crashlytics.android.Crashlytics
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.dbottillo.mtgsearchfree.dagger.DaggerAppComponent
 import com.dbottillo.mtgsearchfree.dagger.DataModule
 import com.dbottillo.mtgsearchfree.storage.CardsPreferences
@@ -14,7 +14,6 @@ import com.dbottillo.mtgsearchfree.util.LOG
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
-import io.fabric.sdk.android.Fabric
 import java.util.Locale
 import javax.inject.Inject
 
@@ -34,8 +33,6 @@ open class MTGApp : Application(), HasAndroidInjector {
         initDagger()
 
         if (!isTesting()) {
-            Fabric.with(this, Crashlytics())
-
             if (BuildConfig.DEBUG) {
                 StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.Builder()
                         .detectAll()

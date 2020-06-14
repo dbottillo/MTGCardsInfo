@@ -15,7 +15,6 @@ import com.dbottillo.mtgsearchfree.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.home.BaseHomeFragment
 import com.dbottillo.mtgsearchfree.util.DialogUtil
 import com.dbottillo.mtgsearchfree.util.LOG
-import com.dbottillo.mtgsearchfree.util.TrackingManager
 import dagger.android.support.AndroidSupportInjection
 import java.util.Random
 import javax.inject.Inject
@@ -101,14 +100,14 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
     }
 
     override fun onLifeCountChange(player: Player, value: Int) {
-        TrackingManager.trackLifeCountChanged()
+        trackingManager.trackLifeCountChanged()
         player.changeLife(value)
         lifeCounterPresenter.editPlayer(player)
     }
 
     override fun onPoisonCountChange(player: Player, value: Int) {
         LOG.d()
-        TrackingManager.trackPoisonCountChanged()
+        trackingManager.trackPoisonCountChanged()
         player.changePoisonCount(value)
         lifeCounterPresenter.editPlayer(player)
     }
@@ -118,14 +117,14 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
         dialogUtil.showEditPlayer(R.layout.dialog_edit_deck, R.id.edit_text, player) {
             player.name = it
             lifeCounterPresenter.editPlayer(player)
-            TrackingManager.trackEditPlayer()
+            trackingManager.trackEditPlayer()
         }
     }
 
     override fun onRemovePlayer(player: Player) {
         LOG.d()
         lifeCounterPresenter.removePlayer(player)
-        TrackingManager.trackRemovePlayer()
+        trackingManager.trackRemovePlayer()
     }
 
     private fun addPlayer() {
@@ -135,7 +134,7 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
             return
         }
         lifeCounterPresenter.addPlayer()
-        TrackingManager.trackAddPlayer()
+        trackingManager.trackAddPlayer()
     }
 
     private fun setupMenu() {
@@ -168,11 +167,11 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
         cardsPreferences.setTwoHGEnabled(twoHGEnabled)
         refreshMenu()
         resetLifeCounter()
-        TrackingManager.trackHGLifeCounter()
+        trackingManager.trackHGLifeCounter()
     }
 
     private fun poisonChanged() {
-        TrackingManager.trackChangePoisonSetting()
+        trackingManager.trackChangePoisonSetting()
         val showPoison = !cardsPreferences.showPoison()
         cardsPreferences.showPoison(showPoison)
         refreshMenu()
@@ -185,7 +184,7 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
         cardsPreferences.setScreenOn(!screenOn)
         refreshMenu()
         setScreenOn(!screenOn)
-        TrackingManager.trackScreenOn()
+        trackingManager.trackScreenOn()
     }
 
     private fun setScreenOn(screenOn: Boolean) {
@@ -205,7 +204,7 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
 
     fun reset() {
         resetLifeCounter()
-        TrackingManager.trackResetLifeCounter()
+        trackingManager.trackResetLifeCounter()
     }
 
     private fun launchDice() {
@@ -216,7 +215,7 @@ class LifeCounterFragment : BaseHomeFragment(), LifeCounterView, OnLifeCounterLi
         }
         diceShowed = !diceShowed
         adapter.notifyDataSetChanged()
-        TrackingManager.trackLunchDice()
+        trackingManager.trackLunchDice()
     }
 
     override fun onDestroy() {

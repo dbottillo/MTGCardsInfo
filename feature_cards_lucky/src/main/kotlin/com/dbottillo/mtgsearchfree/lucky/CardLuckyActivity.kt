@@ -14,6 +14,7 @@ import com.dbottillo.mtgsearchfree.ui.CommonCardsActivity
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenter
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardView
 import com.dbottillo.mtgsearchfree.util.LOG
+import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.dbottillo.mtgsearchfree.util.goToParentActivity
 import com.dbottillo.mtgsearchfree.util.prefetchImage
 import com.dbottillo.mtgsearchfree.util.setIcon
@@ -44,7 +45,7 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
         }
 
         presenter.init(this, bundle, intent)
-        cardView.init(cardsPresenter)
+        cardView.init(cardsPresenter, trackingManager)
         cardView.setOnClickListener { presenter.showNextCard() }
     }
 
@@ -68,6 +69,7 @@ class CardLuckyActivity : CommonCardsActivity(), CardsLuckyView {
     }
 
     override fun preFetchCardImage(card: MTGCard) {
+        trackingManager.trackImage(card.scryfallImage)
         card.prefetchImage(this)
     }
 

@@ -1,7 +1,7 @@
 package com.dbottillo.mtgsearchfree.util
 
-import com.crashlytics.android.Crashlytics
 import com.dbottillo.mtgsearchfree.core.BuildConfig
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 
 class Logger {
 
@@ -35,6 +35,6 @@ class Logger {
             e(throwable)
             throwable.printStackTrace()
         }
-        Crashlytics.logException(throwable)
+        FirebaseCrashlytics.getInstance().recordException(throwable)
     }
 }

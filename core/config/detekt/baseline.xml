@@ -1,6 +1,6 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist/>
+  <Blacklist></Blacklist>
   <Whitelist>
     <ID>ComplexCondition:LOG.kt$LOG$element.className != LOG::class.java.name &amp;&amp; element.className != BasicActivity::class.java.name &amp;&amp; element.className != BasicFragment::class.java.name &amp;&amp; element.className != Logger::class.java.name &amp;&amp; element.className != Instrumentation::class.java.name</ID>
     <ID>ComplexMethod:CardDataSource.kt$CardDataSource$createContentValue</ID>
@@ -15,9 +15,8 @@
     <ID>LongParameterList:CardViewHolder.kt$ListCardViewHolder$( context: Context, card: MTGCard, position: Int, menuRes: Int, onCardListener: OnCardListener? )</ID>
     <ID>LongParameterList:DeckDataSource.kt$DeckDataSource$(deckId: Long, card: MTGCard, quantity: Int, fromDeckToSide: Boolean)</ID>
     <ID>LongParameterList:DeckDataSource.kt$DeckDataSource$(deckId: Long, quantity: Int, multiverseId: Int, sid: Int)</ID>
-    <ID>LongParameterList:DialogUtil.kt$DialogUtil$(layoutId: Int, editTextId: Int, player: Player, listener: (newName: String) -> Unit)</ID>
+    <ID>LongParameterList:DialogUtil.kt$DialogUtil$(layoutId: Int, editTextId: Int, player: Player, listener: (newName: String) -&gt; Unit)</ID>
     <ID>LongParameterList:QueryComposer.kt$QueryComposer$(name: String?, operator: String, paramOperator: String, vararg values: String)</ID>
-    <ID>LongParameterList:ToolbarRevealScrollHelper.kt$ToolbarRevealScrollHelper$( baseFragment: BasicFragment, private val scrollviewID: Int, private val toolbarId: Int, private val toolbarTitleId: Int, private val backgroundColor: Int, private val heightToolbar: Int, private val statusBarIncluded: Boolean, toolbarColor: Int = R.color.color_primary, statusBarColor: Int = R.color.color_primary )</ID>
     <ID>MagicNumber:AnimationUtil.kt$AnimationUtil$250</ID>
     <ID>MagicNumber:CardDataSource.kt$CardDataSource.Companion$6</ID>
     <ID>MagicNumber:CardMigratorService.kt$CardMigratorService$107</ID>
@@ -44,56 +43,20 @@
     <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ? and P.multiVerseId = ? and H.side == ?)"</ID>
     <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)"</ID>
     <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)"</ID>
-    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource${ // val query = "select DC.side,DC.quantity,DC.colorIdentity from deck_card DC left join decks D on (D._id = DC.deck_id) where deck_id=$deckId" val query = "select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)" logger.query(query) val cursor = database.rawQuery(query, arrayOf(deckId.toString())) cursor.moveToFirst() var cards = 0 var side = 0 val colors = mutableListOf&lt;ColorMapperType>() while (!cursor.isAfterLast) { val sideboard = cursor.getInt(0) == 1 val quantity = cursor.getInt(1) val colorsIdentity: String? = cursor.getString(2) if (sideboard) { side += quantity } else { cards += quantity } colorsIdentity?.let { colors.add(ColorMapperType.Identity(it)) } ?: run { cursor.getString(3)?.let { colors.add(ColorMapperType.Display(it)) } } cursor.moveToNext() } cursor.close() return Triple(cards, side, deckColorMapper.convert(colors)) }</ID>
+    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource${ // val query = "select DC.side,DC.quantity,DC.colorIdentity from deck_card DC left join decks D on (D._id = DC.deck_id) where deck_id=$deckId" val query = "select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)" logger.query(query) val cursor = database.rawQuery(query, arrayOf(deckId.toString())) cursor.moveToFirst() var cards = 0 var side = 0 val colors = mutableListOf&lt;ColorMapperType&gt;() while (!cursor.isAfterLast) { val sideboard = cursor.getInt(0) == 1 val quantity = cursor.getInt(1) val colorsIdentity: String? = cursor.getString(2) if (sideboard) { side += quantity } else { cards += quantity } colorsIdentity?.let { colors.add(ColorMapperType.Identity(it)) } ?: run { cursor.getString(3)?.let { colors.add(ColorMapperType.Display(it)) } } cursor.moveToNext() } cursor.close() return Triple(cards, side, deckColorMapper.convert(colors)) }</ID>
     <ID>MaxLineLength:FavouritesDataSource.kt$FavouritesDataSource$val current = database.rawQuery("select * from MTGCard where multiVerseId=?", arrayOf(card.multiVerseId.toString() + ""))</ID>
     <ID>MaxLineLength:FilterPickerView.kt$FilterPickerView : LinearLayoutOnClickListener</ID>
-    <ID>MaxLineLength:FilterPickerView.kt$FilterPickerView$private val filterPanelContainer by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;View>(R.id.filter_panel_container) }</ID>
+    <ID>MaxLineLength:FilterPickerView.kt$FilterPickerView$private val filterPanelContainer by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;View&gt;(R.id.filter_panel_container) }</ID>
     <ID>MaxLineLength:GeneralPreferences.kt$GeneralPreferences$private val sharedPreferences: SharedPreferences by lazy(LazyThreadSafetyMode.NONE) { context.getSharedPreferences("General", Context.MODE_PRIVATE) }</ID>
-    <ID>MaxLineLength:MTGCard.kt$MTGCard$scryfallId.isNotEmpty() &amp;&amp; scryfallSupported -> "https://api.scryfall.com/cards/$scryfallId?format=image${if (side == Side.B) "&amp;face=back" else ""}"</ID>
     <ID>MaxLineLength:MTGCardDataSource.kt$MTGCardDataSource$"SELECT * FROM " + CardDataSource.TABLE + " WHERE " + CardDataSource.COLUMNS.SET_CODE.noun + " = '" + set.code + "';"</ID>
     <ID>MaxLineLength:MTGCardDataSource.kt$MTGCardDataSource$"SELECT * FROM ${CardDataSource.TABLE} WHERE ${CardDataSource.COLUMNS.NAME.noun}=? AND ${CardDataSource.COLUMNS.MULTIVERSE_ID.noun} IS NOT NULL"</ID>
-    <ID>MaxLineLength:QueryComposer.kt$QueryComposer$addSelection(it.operator, it.stringValues.flatMap { it.toList() }.fold("") { total, next -> "$total{$next}" })</ID>
-    <ID>MaxLineLength:QueryComposer.kt$QueryComposer$if ((it.stringValues.size == 1 &amp;&amp; it.stringValues[0].toIntOrNull() == it.numericValue) || it.stringValues.isEmpty()) { stringBuilder.append("cmc").append(it.operator).append("?") addSelection(it.operator, it.numericValue.toString()) } else { stringBuilder.append("manaCost").append(" ").append(it.operator).append(" ?") addSelection(it.operator, it.stringValues.flatMap { it.toList() }.fold("") { total, next -> "$total{$next}" }) }</ID>
+    <ID>MaxLineLength:QueryComposer.kt$QueryComposer$addSelection(it.operator, it.stringValues.flatMap { it.toList() }.fold("") { total, next -&gt; "$total{$next}" })</ID>
+    <ID>MaxLineLength:QueryComposer.kt$QueryComposer$if ((it.stringValues.size == 1 &amp;&amp; it.stringValues[0].toIntOrNull() == it.numericValue) || it.stringValues.isEmpty()) { stringBuilder.append("cmc").append(it.operator).append("?") addSelection(it.operator, it.numericValue.toString()) } else { stringBuilder.append("manaCost").append(" ").append(it.operator).append(" ?") addSelection(it.operator, it.stringValues.flatMap { it.toList() }.fold("") { total, next -&gt; "$total{$next}" }) }</ID>
     <ID>MaxLineLength:SQLiteAssetHelper.kt$SQLiteAssetHelper$throw SQLiteAssetException("Missing $mAssetPath file (or .zip, .gz archive) in assets, or target folder not writable")</ID>
-    <ID>MaxLineLength:ToolbarRevealScrollHelper.kt$ToolbarRevealScrollHelper$arrowToolbarEvaluator = AnimationUtil.createArgbInterpolator().fromValue(ContextCompat.getColor(context, R.color.color_primary)).toValue(ContextCompat.getColor(context, R.color.white))</ID>
-    <ID>MaxLineLength:ToolbarRevealScrollHelper.kt$ToolbarRevealScrollHelper$baseFragment.toolbar.overflowIcon?.setColorFilter(ContextCompat.getColor(context, R.color.color_primary), PorterDuff.Mode.SRC_IN)</ID>
     <ID>MaxLineLength:ToolbarRevealScrollHelper.kt$ToolbarRevealScrollHelper$elevationInterpolator = AnimationUtil.createLinearInterpolator().fromValue(0.0f).toValue(context.resources.getDimension(R.dimen.default_elevation_toolbar))</ID>
-    <ID>MaxLineLength:ToolbarRevealScrollHelper.kt$ToolbarRevealScrollHelper$it.toolbar.overflowIcon?.setColorFilter(arrowToolbarEvaluator.getInterpolation(interval), PorterDuff.Mode.SRC_IN)</ID>
-    <ID>MaxLineLength:ToolbarRevealScrollHelper.kt$ToolbarRevealScrollHelper$statusBarColorEvaluator = AnimationUtil.createArgbInterpolator().fromValue(ContextCompat.getColor(context, R.color.white)).toValue(statusBarColor)</ID>
-    <ID>MaxLineLength:ToolbarRevealScrollHelper.kt$ToolbarRevealScrollHelper$toolbarBackgroundEvaluator = AnimationUtil.createArgbInterpolator().fromValue(ContextCompat.getColor(context, backgroundColor)).toValue(toolbarColor)</ID>
     <ID>MaxLineLength:ToolbarRevealScrollHelper.kt$ToolbarRevealScrollHelper$translationTitle = AnimationUtil.createLinearInterpolator().fromValue(translationStart.toFloat()).toValue(translationEnd.toFloat())</ID>
     <ID>MaxLineLength:ToolbarRevealScrollHelper.kt$ToolbarRevealScrollHelper${ // after a rotation change the offset it's different because the maximum scroll is different (depends on the app bar height) val interval = oldCurrentScroll.toFloat() / oldMaximumScroll.toFloat() (maximumScroll * interval).toInt() }</ID>
     <ID>MaxLineLength:UIExtension.kt$return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value.toFloat(), this.resources.displayMetrics).toInt()</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_ACTION_ADD_CARD = "addCard"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_ACTION_CLOSE = "close"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_ACTION_DELETE = "delete"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_ACTION_EXPORT = "export"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_ACTION_EXTERNAL_LINK = "externalLink"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_ACTION_LUCKY = "lucky"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_ACTION_MOVE_ALL = "moveAll"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_ACTION_MOVE_ONE = "moveOne"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_ACTION_ONE_MORE = "oneMore"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_ACTION_OPEN = "open"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_ACTION_RATE = "rate"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_ACTION_REMOVE_ALL = "removeALL"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_ACTION_REMOVE_ONE = "removeOne"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_ACTION_SAVE = "saved"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_ACTION_SELECT = "select"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_ACTION_SHARE = "share"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_ACTION_TOGGLE = "toggle"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_ACTION_UNSAVED = "unsaved"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_APP_WIDGET = "appWidget"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_CARD = "card"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_DECK = "deck"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_ERROR = "error"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_FAVOURITE = "favourite"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_FILTER = "filter"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_LIFE_COUNTER = "lifeCounter"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_POPUP = "popup"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_RELEASE_NOTE = "releaseNote"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_SEARCH = "search"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_SET = "set"</ID>
-    <ID>MayBeConst:TrackingManager.kt$TrackingManager$private val UA_CATEGORY_UI = "ui"</ID>
     <ID>NestedBlockDepth:CardDataSource.kt$CardDataSource$fromCursor</ID>
     <ID>NestedBlockDepth:QueryComposer.kt$QueryComposer$addCMCParam</ID>
     <ID>NewLineAtEndOfFile:ActivityScope.kt$com.dbottillo.mtgsearchfree.ActivityScope.kt</ID>
@@ -141,7 +104,6 @@
     <ID>TooManyFunctions:MTGCard.kt$MTGCard$MTGCard</ID>
     <ID>TooManyFunctions:Navigator.kt$Navigator$Navigator</ID>
     <ID>TooManyFunctions:QueryComposer.kt$QueryComposer$QueryComposer</ID>
-    <ID>TooManyFunctions:ToolbarRevealScrollHelper.kt$ToolbarRevealScrollHelper$ToolbarRevealScrollHelper</ID>
     <ID>TooManyFunctions:TrackingManager.kt$TrackingManager$TrackingManager</ID>
     <ID>TooManyFunctions:UIUtil.kt$com.dbottillo.mtgsearchfree.util.UIUtil.kt</ID>
   </Whitelist>

@@ -1,6 +1,6 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist/>
+  <Blacklist></Blacklist>
   <Whitelist>
     <ID>MaxLineLength:SavedFragment.kt$SavedFragment$mtgCardsView.loadCards(uiModel.collection.list, this, getString(R.string.action_saved), uiModel.collection.filter, R.menu.card_saved_option)</ID>
     <ID>NewLineAtEndOfFile:SavedCardsPresenter.kt$com.dbottillo.mtgsearchfree.saved.SavedCardsPresenter.kt</ID>

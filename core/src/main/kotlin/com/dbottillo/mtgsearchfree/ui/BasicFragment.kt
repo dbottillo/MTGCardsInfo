@@ -11,6 +11,7 @@ import com.dbottillo.mtgsearchfree.core.R
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.TrackingManager
 import dagger.android.support.DaggerDialogFragment
+import javax.inject.Inject
 
 abstract class BasicFragment : DaggerDialogFragment() {
 
@@ -19,6 +20,8 @@ abstract class BasicFragment : DaggerDialogFragment() {
     lateinit var toolbar: Toolbar
     var toolbarTitle: TextView? = null
     protected var heightToolbar: Int = 0
+
+    @Inject lateinit var trackingManager: TrackingManager
 
     protected val app: Application
         get() = dbActivity.mtgApp
@@ -42,7 +45,7 @@ abstract class BasicFragment : DaggerDialogFragment() {
 
         setHasOptionsMenu(true)
 
-        TrackingManager.logOnCreate("${javaClass.name} ${hashCode()}")
+        trackingManager.logOnCreate("${javaClass.name} ${hashCode()}")
     }
 
     protected fun setActionBarTitle(title: String) {
@@ -52,7 +55,7 @@ abstract class BasicFragment : DaggerDialogFragment() {
     override fun onResume() {
         super.onResume()
         LOG.d()
-        TrackingManager.trackPage(getPageTrack())
+        trackingManager.trackPage(getPageTrack())
     }
 
     abstract fun getPageTrack(): String

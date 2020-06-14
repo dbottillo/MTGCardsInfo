@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.RelativeLayout
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatImageView
 import com.dbottillo.mtgsearchfree.featurebasecards.R
 import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.model.MTGCard
@@ -21,7 +22,11 @@ import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.dpToPx
 import com.dbottillo.mtgsearchfree.util.setHeight
 
-class MTGCardsView : RelativeLayout {
+class MTGCardsView @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
+) : RelativeLayout(context, attrs, defStyleAttr) {
 
     internal var grid = true
     private var adapter: CardsAdapter? = null
@@ -30,18 +35,6 @@ class MTGCardsView : RelativeLayout {
     lateinit var listView: RecyclerView
     private lateinit var emptyView: TextView
     private lateinit var footer: View
-
-    constructor(ctx: Context) : super(ctx) {
-        init(ctx)
-    }
-
-    constructor(ctx: Context, attrs: AttributeSet) : super(ctx, attrs) {
-        init(ctx)
-    }
-
-    constructor(ctx: Context, attrs: AttributeSet, defStyle: Int) : super(ctx, attrs, defStyle) {
-        init(ctx)
-    }
 
     private fun init(context: Context) {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater

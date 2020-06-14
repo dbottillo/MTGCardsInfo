@@ -4,18 +4,20 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.dbottillo.mtgsearchfree.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.util.TrackingManager
+import com.dbottillo.mtgsearchfree.util.TrackingManagerImpl
 import javax.inject.Inject
 
 class AppPreferencesImpl @Inject constructor(
     private val context: Context,
-    private val cardsPreferences: CardsPreferences
+    private val cardsPreferences: CardsPreferences,
+    private val trackingManager: TrackingManager
 ) : AppPreferences {
 
     private val sharedPreferences: SharedPreferences by lazy(LazyThreadSafetyMode.NONE) { context.getSharedPreferences(PREFS_NAME, 0) }
 
     override fun shouldShowNewUpdateBanner(): Boolean {
         return if (versionCode < BuildConfig.VERSION_CODE) {
-            TrackingManager.trackReleaseNote()
+            trackingManager.trackReleaseNote()
             cardsPreferences.saveSetPosition(0)
             sharedPreferences.edit().putInt("VersionCode", BuildConfig.VERSION_CODE).apply()
             true

@@ -1,6 +1,6 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist/>
+  <Blacklist></Blacklist>
   <Whitelist>
     <ID>MaxLineLength:IssueRegistry.kt$"Avoid non semantic use of colors in XML files. This will cause issues with different theme (eg. dark) support. "</ID>
   </Whitelist>

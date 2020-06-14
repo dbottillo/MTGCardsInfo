@@ -72,13 +72,13 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
     override fun showError(message: String) {
         LOG.d()
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
-        TrackingManager.trackSearchError(message)
+        trackingManager.trackSearchError(message)
     }
 
     override fun showError(exception: MTGException) {
         LOG.d()
         Toast.makeText(activity, exception.message, Toast.LENGTH_SHORT).show()
-        TrackingManager.trackSearchError(exception.message)
+        trackingManager.trackSearchError(exception.message)
     }
 
     override fun render(uiModel: SavedCardsUiModel) {
@@ -106,7 +106,7 @@ class SavedFragment : BaseHomeFragment(), SavedCardsView, OnCardListener {
     }
 
     override fun onCardSelected(card: MTGCard, position: Int) {
-        TrackingManager.trackOpenCard(position)
+        trackingManager.trackOpenCard(position)
         navigator.openCardsSavedScreen(requireActivity(), position)
     }
 

@@ -133,7 +133,7 @@ class DeckActivity : BasicActivity(), DeckActivityView {
 
     override fun deckNotExported() {
         Toast.makeText(this, getString(R.string.error_export_deck), Toast.LENGTH_SHORT).show()
-        TrackingManager.trackDeckExportError()
+        trackingManager.trackDeckExportError()
     }
 
     private fun exportDeck() {
@@ -157,7 +157,7 @@ class DeckActivity : BasicActivity(), DeckActivityView {
         alert.setPositiveButton(getString(R.string.save)) { dialog, _ ->
             val value = editText.text.toString()
             presenter.editDeck(value)
-            TrackingManager.trackEditDeck()
+            trackingManager.trackEditDeck()
             dialog.dismiss()
         }
 

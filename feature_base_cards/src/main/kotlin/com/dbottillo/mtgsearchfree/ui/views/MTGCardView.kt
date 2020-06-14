@@ -49,6 +49,7 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) :
     var card: MTGCard? = null
 
     private lateinit var cardPresenter: CardPresenter
+    private var trackingManager: TrackingManager? = null
 
     private var disposable: Disposable? = null
     private var otherCardDisposable: Disposable? = null
@@ -87,8 +88,9 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) :
         cardImage.calculateSizeCardImage(widthAvailable, resources.getBoolean(R.bool.isTablet))
     }
 
-    fun init(cardPresenter: CardPresenter) {
+    fun init(cardPresenter: CardPresenter, trackingManager: TrackingManager) {
         this.cardPresenter = cardPresenter
+        this.trackingManager = trackingManager
     }
 
     public override fun onDetachedFromWindow() {
@@ -200,7 +202,7 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) :
         }, {
             cardPrice.text = context.getText(R.string.price_error)
             if (it is CardPriceException) {
-                TrackingManager.trackPriceError(it.toString())
+                trackingManager?.trackPriceError(it.toString())
             }
         })
     }

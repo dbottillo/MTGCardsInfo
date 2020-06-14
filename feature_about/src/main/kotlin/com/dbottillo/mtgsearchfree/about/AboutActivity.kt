@@ -72,7 +72,7 @@ class AboutActivity : BasicActivity(), View.OnTouchListener {
         }
 
         findViewById<View>(R.id.share_app).setOnClickListener {
-            TrackingManager.trackShareApp()
+            trackingManager.trackShareApp()
             val intent = Intent(Intent.ACTION_SEND).apply {
                 type = "text/plain"
                 putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name))
@@ -95,14 +95,14 @@ class AboutActivity : BasicActivity(), View.OnTouchListener {
                 val intent = Intent(Intent.ACTION_VIEW, uri)
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY or Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
                 startActivity(intent)
-                TrackingManager.trackAboutLibrary(library.link)
+                trackingManager.trackAboutLibrary(library.link)
             }
         }
     }
 
     private fun sendFeedback() {
         LOG.d()
-        TrackingManager.trackOpenFeedback()
+        trackingManager.trackOpenFeedback()
         val emailIntent = Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", getString(R.string.email), null))
         val text = String.format(getString(R.string.feedback_text), versionName,
                 Build.VERSION.SDK_INT.toString(), Build.DEVICE, Build.MODEL, Build.PRODUCT)

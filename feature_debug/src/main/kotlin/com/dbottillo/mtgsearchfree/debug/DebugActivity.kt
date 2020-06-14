@@ -27,6 +27,7 @@ class DebugActivity : DaggerAppCompatActivity() {
     @Inject lateinit var navigator: Navigator
     @Inject lateinit var schedulerProvider: SchedulerProvider
     @Inject lateinit var cardsInfoDbHelper: CardsInfoDbHelper
+    @Inject lateinit var trackingManager: TrackingManager
 
     private val debugInteractor by lazy(LazyThreadSafetyMode.NONE) { DebugInteractor(cardsInfoDbHelper) }
 
@@ -110,7 +111,7 @@ class DebugActivity : DaggerAppCompatActivity() {
                                 intent.putExtra(Intent.EXTRA_SUBJECT, "[MTGCardsInfo] Database status")
                                 intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file))
                                 startActivity(Intent.createChooser(intent, "Send mail...."))
-                                TrackingManager.trackDeckExport()
+                                trackingManager.trackDeckExport()
                             }
                     snackBar.show()
                 } else {

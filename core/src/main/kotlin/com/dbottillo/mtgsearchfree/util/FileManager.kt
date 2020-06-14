@@ -96,7 +96,6 @@ interface FileManagerI {
 }
 
 private fun Deck.toFile(fileOutputStream: FileOutputStream?, cards: List<MTGCard>) {
-    TrackingManager.trackDatabaseExport()
     val writer = OutputStreamWriter(fileOutputStream, "UTF-8")
     writer.append("//")
     writer.append(name)

@@ -9,12 +9,14 @@ import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.ui.views.CardPresenter
 import com.dbottillo.mtgsearchfree.ui.views.MTGCardView
+import com.dbottillo.mtgsearchfree.util.TrackingManager
 
 class CardsPagerAdapter(
     private val context: Context,
     private val showImage: Boolean,
     private val cards: CardsCollection,
-    private val cardPresenter: CardPresenter
+    private val cardPresenter: CardPresenter,
+    private val trackingManager: TrackingManager
 ) : PagerAdapter() {
 
     override fun getCount(): Int {
@@ -27,7 +29,7 @@ class CardsPagerAdapter(
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val view = MTGCardView(context)
-        view.init(cardPresenter)
+        view.init(cardPresenter, trackingManager)
         view.load(cards.list[position], showImage)
         container.addView(view)
         return view

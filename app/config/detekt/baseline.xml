@@ -1,6 +1,6 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist/>
+  <Blacklist></Blacklist>
   <Whitelist>
     <ID>LongParameterList:DataModule.kt$DataModule$( @Named("storageDB") database: SQLiteDatabase, cardDataSource: CardDataSource, mtgCardDataSource: MTGCardDataSource, deckColorMapper: DeckColorMapper, logger: Logger )</ID>
     <ID>LongParameterList:DataModule.kt$DataModule$( favouritesDataSource: FavouritesDataSource, cardsHelper: CardsHelper, cardsPreferences: CardsPreferences, logger: Logger )</ID>
@@ -32,5 +32,36 @@
     <ID>NewLineAtEndOfFile:MTGApp.kt$com.dbottillo.mtgsearchfree.MTGApp.kt</ID>
     <ID>TooManyFunctions:AppNavigator.kt$AppNavigator$AppNavigator</ID>
     <ID>TooManyFunctions:DataModule.kt$DataModule$DataModule</ID>
+    <ID>TooManyFunctions:TrackingManagerImpl.kt$TrackingManagerImpl$TrackingManagerImpl</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_ADD_CARD = "addCard"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_CLOSE = "close"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_DELETE = "delete"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_EXPORT = "export"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_EXTERNAL_LINK = "externalLink"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_LUCKY = "lucky"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_MOVE_ALL = "moveAll"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_MOVE_ONE = "moveOne"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_ONE_MORE = "oneMore"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_OPEN = "open"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_RATE = "rate"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_REMOVE_ALL = "removeALL"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_REMOVE_ONE = "removeOne"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_SAVE = "saved"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_SELECT = "select"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_SHARE = "share"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_TOGGLE = "toggle"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_UNSAVED = "unsaved"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_APP_WIDGET = "appWidget"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_CARD = "card"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_DECK = "deck"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_ERROR = "error"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_FAVOURITE = "favourite"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_FILTER = "filter"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_LIFE_COUNTER = "lifeCounter"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_POPUP = "popup"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_RELEASE_NOTE = "releaseNote"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_SEARCH = "search"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_SET = "set"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_UI = "ui"</ID>
   </Whitelist>
 </SmellBaseline>

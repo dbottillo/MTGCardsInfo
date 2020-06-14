@@ -4,7 +4,6 @@ import android.content.ContentValues
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import androidx.annotation.VisibleForTesting
-import com.crashlytics.android.Crashlytics
 import com.dbottillo.mtgsearchfree.model.Color
 import com.dbottillo.mtgsearchfree.model.Legality
 import com.dbottillo.mtgsearchfree.model.MTGCard
@@ -12,6 +11,7 @@ import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.Rarity
 import com.dbottillo.mtgsearchfree.model.Side
 import com.dbottillo.mtgsearchfree.util.LOG
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import org.json.JSONArray
@@ -139,7 +139,7 @@ class CardDataSource(
                     rulJ.put("text", rule)
                     rules.put(rulJ)
                 } catch (e: JSONException) {
-                    Crashlytics.logException(e)
+                    FirebaseCrashlytics.getInstance().recordException(e)
                     LOG.e(e)
                 }
             }
@@ -166,7 +166,7 @@ class CardDataSource(
                     legJ.put("legality", legality.legality)
                     legalitiesJ.put(legJ)
                 } catch (e: JSONException) {
-                    Crashlytics.logException(e)
+                    FirebaseCrashlytics.getInstance().recordException(e)
                     LOG.e(e)
                 }
             }
@@ -264,7 +264,7 @@ class CardDataSource(
                     card.addRuling(rule.getString("text"))
                 }
             } catch (e: JSONException) {
-                Crashlytics.logException(e)
+                FirebaseCrashlytics.getInstance().recordException(e)
                 LOG.e(e)
             }
         }
@@ -344,7 +344,7 @@ class CardDataSource(
                         card.addLegality(Legality(format, legality))
                     }
                 } catch (e2: JSONException) {
-                    Crashlytics.logException(e2)
+                    FirebaseCrashlytics.getInstance().recordException(e2)
                     LOG.e(e2)
                 }
             }
