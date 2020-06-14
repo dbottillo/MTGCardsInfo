@@ -43,15 +43,22 @@ class CardsLuckyPresenterImpl(
             }
 
             idCard?.let { id ->
-                cardsInteractor.loadCardById(id).subscribe { card ->
-                    currentCard = card
-                    loadCurrentCard()
-                }
+                loadCardById(id)
             }
 
             loadMoreCards()
         }, {
             logger.logNonFatal(it)
+        }))
+    }
+
+    private fun loadCardById(id: Int) {
+        disposable.add(cardsInteractor.loadCardById(id).subscribe({ card ->
+            currentCard = card
+            loadCurrentCard()
+        }, {
+            logger.logNonFatal(it)
+            view.showError(it.localizedMessage ?: "")
         }))
     }
 

@@ -9,6 +9,7 @@ import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.storage.CardsPreferences
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
 import com.nhaarman.mockito_kotlin.whenever
@@ -144,6 +145,35 @@ class CardsLuckyPresenterImplTest {
         verify(cardsPreferences).showImage()
         verify(view).showCard(cardInBundle, false)
         verify(view).preFetchCardImage(card1)
+        verify(view).preFetchCardImage(card2)
+        verify(view).preFetchCardImage(card3)
+        verify(view).preFetchCardImage(card4)
+        verify(view).preFetchCardImage(card5)
+        verifyNoMoreInteractions(interactor, cardsPreferences, view)
+    }
+
+    @Test
+    fun `init with bundle not null and intent not null, should handle error from interactor`() {
+        whenever(interactor.loadIdFav()).thenReturn(Observable.just(idFavs))
+        whenever(cardsPreferences.showImage()).thenReturn(true)
+        whenever(interactor.getLuckyCards(10)).thenReturn(Observable.just(cardsCollection))
+        whenever(cardsCollection.list).thenReturn(cards)
+        whenever(cardsPreferences.showImage()).thenReturn(false)
+        whenever(intent.getIntExtra(CARD, 0)).thenReturn(6)
+        whenever(intent.hasExtra(CARD)).thenReturn(true)
+        val throwable = mock<Throwable>()
+        whenever(throwable.localizedMessage).thenReturn("error")
+        whenever(interactor.loadCardById(5)).thenReturn(Single.error(throwable))
+        whenever(bundle.getInt(CARD)).thenReturn(5)
+
+        underTest.init(view, bundle, intent)
+
+        verify(interactor).loadIdFav()
+        verify(interactor).loadCardById(5)
+        verify(interactor).getLuckyCards(10)
+        verify(cardsPreferences).showImage()
+        verify(view).showError("error")
+        verify(view).showCard(card1, false)
         verify(view).preFetchCardImage(card2)
         verify(view).preFetchCardImage(card3)
         verify(view).preFetchCardImage(card4)
