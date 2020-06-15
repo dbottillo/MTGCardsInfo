@@ -30,13 +30,12 @@ class MTGCardsView @JvmOverloads constructor(
 
     internal var grid = true
     private var adapter: CardsAdapter? = null
-    private lateinit var itemDecorator: GridItemDecorator
+    private var itemDecorator: GridItemDecorator
+    private var listView: RecyclerView
+    private var emptyView: TextView
+    private var footer: View
 
-    lateinit var listView: RecyclerView
-    private lateinit var emptyView: TextView
-    private lateinit var footer: View
-
-    private fun init(context: Context) {
+    init {
         val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val view = inflater.inflate(R.layout.mtg_cards_view, this, true)
         listView = view.findViewById(R.id.card_list)
