@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist></Blacklist>
-  <Whitelist>
-    <ID>ComplexMethod:CardsActivityPresenterImpl.kt$CardsActivityPresenterImpl$init</ID>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>ComplexMethod:CardsActivityPresenterImpl.kt$CardsActivityPresenterImpl$override fun init(view: CardsActivityView, intent: Intent?)</ID>
     <ID>ForbiddenComment:CardsActivityPresenterImpl.kt$CardsActivityPresenterImpl$// TODO: this need testing</ID>
     <ID>MagicNumber:CardsActivity.kt$CardsActivity$0.5</ID>
     <ID>MagicNumber:CardsActivity.kt$CardsActivity$16</ID>
     <ID>NewLineAtEndOfFile:CardsActivityView.kt$com.dbottillo.mtgsearchfree.cards.CardsActivityView.kt</ID>
     <ID>TooManyFunctions:CardsActivity.kt$CardsActivity$CardsActivity</ID>
     <ID>TooManyFunctions:CardsActivityPresenterImpl.kt$CardsActivityPresenterImpl$CardsActivityPresenterImpl</ID>
-  </Whitelist>
+  </CurrentIssues>
 </SmellBaseline>

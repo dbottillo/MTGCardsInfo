@@ -14,7 +14,7 @@ class Logger {
     }
 
     fun e(throwable: Throwable) {
-        LOG.e(throwable.localizedMessage)
+        LOG.e(throwable.localizedMessage ?: "")
     }
 
     fun query(query: String, vararg params: String) {

@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist></Blacklist>
-  <Whitelist>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
     <ID>MagicNumber:MTGSearchView.kt$MTGSearchView$2</ID>
     <ID>MagicNumber:MTGSearchView.kt$MTGSearchView$3</ID>
     <ID>MagicNumber:SearchActivity.kt$SearchActivity$200</ID>
@@ -35,5 +35,5 @@
     <ID>NewLineAtEndOfFile:SearchPresenter.kt$com.dbottillo.mtgsearchfree.search.SearchPresenter.kt</ID>
     <ID>NewLineAtEndOfFile:SearchPresenterImpl.kt$com.dbottillo.mtgsearchfree.search.SearchPresenterImpl.kt</ID>
     <ID>TooManyFunctions:SearchActivity.kt$SearchActivity$SearchActivity</ID>
-  </Whitelist>
+  </CurrentIssues>
 </SmellBaseline>

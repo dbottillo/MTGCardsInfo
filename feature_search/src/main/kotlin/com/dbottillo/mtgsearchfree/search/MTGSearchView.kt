@@ -89,13 +89,13 @@ class MTGSearchView @JvmOverloads constructor(
             return searchParams
         }
 
-    private val disableColorlessCheckedChangeListener: CompoundButton.OnCheckedChangeListener = CompoundButton.OnCheckedChangeListener { p0, p1 ->
+    private val disableColorlessCheckedChangeListener: CompoundButton.OnCheckedChangeListener = CompoundButton.OnCheckedChangeListener { _, _ ->
         search_colorless.setOnCheckedChangeListener(null)
         search_colorless.isChecked = false
         search_colorless.setOnCheckedChangeListener(colorlessCheckedChangeListener)
     }
 
-    private val colorlessCheckedChangeListener: CompoundButton.OnCheckedChangeListener = CompoundButton.OnCheckedChangeListener { p0, p1 ->
+    private val colorlessCheckedChangeListener: CompoundButton.OnCheckedChangeListener = CompoundButton.OnCheckedChangeListener { _, _ ->
         white.setOnCheckedChangeListener(null)
         red.setOnCheckedChangeListener(null)
         blue.setOnCheckedChangeListener(null)

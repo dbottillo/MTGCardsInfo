@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist></Blacklist>
-  <Whitelist>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
     <ID>LongParameterList:DataModule.kt$DataModule$( @Named("storageDB") database: SQLiteDatabase, cardDataSource: CardDataSource, mtgCardDataSource: MTGCardDataSource, deckColorMapper: DeckColorMapper, logger: Logger )</ID>
     <ID>LongParameterList:DataModule.kt$DataModule$( favouritesDataSource: FavouritesDataSource, cardsHelper: CardsHelper, cardsPreferences: CardsPreferences, logger: Logger )</ID>
     <ID>LongParameterList:DataModule.kt$DataModule$( mtgCardDataSource: MTGCardDataSource, favouritesDataSource: FavouritesDataSource, cardsPreferences: CardsPreferences, cardsHelper: CardsHelper, logger: Logger )</ID>
@@ -63,5 +63,5 @@
     <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_SEARCH = "search"</ID>
     <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_SET = "set"</ID>
     <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_UI = "ui"</ID>
-  </Whitelist>
+  </CurrentIssues>
 </SmellBaseline>

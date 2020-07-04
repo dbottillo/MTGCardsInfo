@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist></Blacklist>
-  <Whitelist>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
     <ID>NewLineAtEndOfFile:DecksInteractor.kt$com.dbottillo.mtgsearchfree.interactors.DecksInteractor.kt</ID>
     <ID>TooGenericExceptionCaught:DecksInteractorImpl.kt$DecksInteractorImpl$throwable: Throwable</ID>
     <ID>TooGenericExceptionCaught:DecksStorageImpl.kt$DecksStorageImpl$e: Exception</ID>
@@ -9,5 +9,5 @@
     <ID>TooManyFunctions:DecksInteractorImpl.kt$DecksInteractorImpl$DecksInteractorImpl</ID>
     <ID>TooManyFunctions:DecksStorage.kt$DecksStorage$DecksStorage</ID>
     <ID>TooManyFunctions:DecksStorageImpl.kt$DecksStorageImpl$DecksStorageImpl</ID>
-  </Whitelist>
+  </CurrentIssues>
 </SmellBaseline>

@@ -1,10 +1,10 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist></Blacklist>
-  <Whitelist>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
     <ID>MagicNumber:AboutActivity.kt$AboutActivity$1000</ID>
     <ID>MagicNumber:AboutActivity.kt$AboutActivity$5</ID>
     <ID>NewLineAtEndOfFile:AboutActivity.kt$com.dbottillo.mtgsearchfree.about.AboutActivity.kt</ID>
     <ID>NewLineAtEndOfFile:AboutModule.kt$com.dbottillo.mtgsearchfree.dagger.AboutModule.kt</ID>
-  </Whitelist>
+  </CurrentIssues>
 </SmellBaseline>

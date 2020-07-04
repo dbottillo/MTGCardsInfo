@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist></Blacklist>
-  <Whitelist>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
     <ID>LongParameterList:CreateDBAsyncTask.kt$CreateDBAsyncTask$(context: Context, db: SQLiteDatabase, setDataSource: SetDataSource, setJ: JSONObject)</ID>
     <ID>MaxLineLength:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$values.put(CardDataSource.COLUMNS.TCG_PLAYER_PURCHASE_URL.noun, jsonObject.getString("tcgplayerPurchaseUrl"))</ID>
     <ID>MaxLineLength:CreateDatabaseHelper.kt$CreateDatabaseHelper$internal</ID>
@@ -12,5 +12,5 @@
     <ID>NewLineAtEndOfFile:DebugActivity.kt$com.dbottillo.mtgsearchfree.debug.DebugActivity.kt</ID>
     <ID>NewLineAtEndOfFile:DebugInteractor.kt$com.dbottillo.mtgsearchfree.debug.DebugInteractor.kt</ID>
     <ID>TooGenericExceptionThrown:DebugActivity.kt$DebugActivity$throw RuntimeException("This is a crash")</ID>
-  </Whitelist>
+  </CurrentIssues>
 </SmellBaseline>

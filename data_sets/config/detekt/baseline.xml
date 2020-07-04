@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist></Blacklist>
-  <Whitelist>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
     <ID>NewLineAtEndOfFile:SetDataSource.kt$com.dbottillo.mtgsearchfree.storage.SetDataSource.kt</ID>
     <ID>NewLineAtEndOfFile:SetsInteractor.kt$com.dbottillo.mtgsearchfree.interactors.SetsInteractor.kt</ID>
     <ID>SpreadOperator:SetDataSource.kt$SetDataSource$(query, *args)</ID>
-  </Whitelist>
+  </CurrentIssues>
 </SmellBaseline>

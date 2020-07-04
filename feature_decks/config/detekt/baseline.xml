@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist></Blacklist>
-  <Whitelist>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
     <ID>MagicNumber:DeckAdapter.kt$DeckCardViewHolder$3</ID>
     <ID>MagicNumber:DeckAdapter.kt$DeckCardViewHolder$4</ID>
     <ID>MagicNumber:DeckStartingHandFragment.kt$DeckStartingHandFragment$3</ID>
@@ -44,5 +44,5 @@
     <ID>TooManyFunctions:DeckActivity.kt$DeckActivity$DeckActivity</ID>
     <ID>TooManyFunctions:DeckStartingHandFragment.kt$DeckStartingHandFragment$DeckStartingHandFragment</ID>
     <ID>TooManyFunctions:DecksFragment.kt$DecksFragment$DecksFragment</ID>
-  </Whitelist>
+  </CurrentIssues>
 </SmellBaseline>

@@ -1,17 +1,17 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist></Blacklist>
-  <Whitelist>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
     <ID>ComplexCondition:LOG.kt$LOG$element.className != LOG::class.java.name &amp;&amp; element.className != BasicActivity::class.java.name &amp;&amp; element.className != BasicFragment::class.java.name &amp;&amp; element.className != Logger::class.java.name &amp;&amp; element.className != Instrumentation::class.java.name</ID>
-    <ID>ComplexMethod:CardDataSource.kt$CardDataSource$createContentValue</ID>
-    <ID>ComplexMethod:CardDataSource.kt$CardDataSource$fromCursor</ID>
-    <ID>ComplexMethod:FilterPickerView.kt$FilterPickerView$onClick</ID>
+    <ID>ComplexMethod:CardDataSource.kt$CardDataSource$fun createContentValue(card: MTGCard): ContentValues</ID>
+    <ID>ComplexMethod:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
+    <ID>ComplexMethod:FilterPickerView.kt$FilterPickerView$override fun onClick(view: View)</ID>
     <ID>EmptySecondaryConstructor:FilterPickerView.kt$FilterPickerView${}</ID>
     <ID>ForbiddenComment:CardMigratorService.kt$CardMigratorService$// TODO: before re-using this class it needs to create a channel</ID>
     <ID>FunctionOnlyReturningConstant:BasicFragment.kt$BasicFragment$fun onBackPressed(): Boolean</ID>
-    <ID>LongMethod:CardDataSource.kt$CardDataSource$createContentValue</ID>
-    <ID>LongMethod:CardDataSource.kt$CardDataSource$fromCursor</ID>
-    <ID>LongMethod:MTGCardDataSource.kt$MTGCardDataSource$searchCards</ID>
+    <ID>LongMethod:CardDataSource.kt$CardDataSource$fun createContentValue(card: MTGCard): ContentValues</ID>
+    <ID>LongMethod:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
+    <ID>LongMethod:MTGCardDataSource.kt$MTGCardDataSource$@Suppress("SpreadOperator", "ComplexMethod") fun searchCards(searchParams: SearchParams): List&lt;MTGCard&gt;</ID>
     <ID>LongParameterList:CardViewHolder.kt$ListCardViewHolder$( context: Context, card: MTGCard, position: Int, menuRes: Int, onCardListener: OnCardListener? )</ID>
     <ID>LongParameterList:DeckDataSource.kt$DeckDataSource$(deckId: Long, card: MTGCard, quantity: Int, fromDeckToSide: Boolean)</ID>
     <ID>LongParameterList:DeckDataSource.kt$DeckDataSource$(deckId: Long, quantity: Int, multiverseId: Int, sid: Int)</ID>
@@ -57,8 +57,8 @@
     <ID>MaxLineLength:ToolbarRevealScrollHelper.kt$ToolbarRevealScrollHelper$translationTitle = AnimationUtil.createLinearInterpolator().fromValue(translationStart.toFloat()).toValue(translationEnd.toFloat())</ID>
     <ID>MaxLineLength:ToolbarRevealScrollHelper.kt$ToolbarRevealScrollHelper${ // after a rotation change the offset it's different because the maximum scroll is different (depends on the app bar height) val interval = oldCurrentScroll.toFloat() / oldMaximumScroll.toFloat() (maximumScroll * interval).toInt() }</ID>
     <ID>MaxLineLength:UIExtension.kt$return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value.toFloat(), this.resources.displayMetrics).toInt()</ID>
-    <ID>NestedBlockDepth:CardDataSource.kt$CardDataSource$fromCursor</ID>
-    <ID>NestedBlockDepth:QueryComposer.kt$QueryComposer$addCMCParam</ID>
+    <ID>NestedBlockDepth:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
+    <ID>NestedBlockDepth:QueryComposer.kt$QueryComposer$fun addCMCParam(cmcParam: CMCParam?)</ID>
     <ID>NewLineAtEndOfFile:ActivityScope.kt$com.dbottillo.mtgsearchfree.ActivityScope.kt</ID>
     <ID>NewLineAtEndOfFile:AppPreferences.kt$com.dbottillo.mtgsearchfree.AppPreferences.kt</ID>
     <ID>NewLineAtEndOfFile:BasicActivityModule.kt$com.dbottillo.mtgsearchfree.ui.BasicActivityModule.kt</ID>
@@ -92,7 +92,7 @@
     <ID>NewLineAtEndOfFile:UITextExtension.kt$com.dbottillo.mtgsearchfree.util.UITextExtension.kt</ID>
     <ID>ReturnCount:FileUtil.kt$fun Context.copyDbFromSdCard(name: String): Boolean</ID>
     <ID>ReturnCount:IntParam.kt$fun ptParamCreator(operator: String, value: String?): PTParam?</ID>
-    <ID>ReturnCount:LOG.kt$LOG$private fun enhanced(message: String?): String?</ID>
+    <ID>ReturnCount:LOG.kt$LOG$private fun enhanced(message: String?): String</ID>
     <ID>SpreadOperator:DeckDataSource.kt$DeckDataSource$(query, *args)</ID>
     <ID>SpreadOperator:FileUtil.kt$FileUtil$(*line.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray())</ID>
     <ID>TooGenericExceptionCaught:BasicActivity.kt$BasicActivity$e: Throwable</ID>
@@ -107,5 +107,5 @@
     <ID>TooManyFunctions:QueryComposer.kt$QueryComposer$QueryComposer</ID>
     <ID>TooManyFunctions:TrackingManager.kt$TrackingManager$TrackingManager</ID>
     <ID>TooManyFunctions:UIUtil.kt$com.dbottillo.mtgsearchfree.util.UIUtil.kt</ID>
-  </Whitelist>
+  </CurrentIssues>
 </SmellBaseline>

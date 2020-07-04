@@ -67,7 +67,7 @@ class DialogUtil {
             return
         }
         val context = refContext.get()!!
-        val alert = MaterialAlertDialogBuilder(context)
+        MaterialAlertDialogBuilder(context)
                 .setTitle(R.string.deck_delete_title)
                 .setMessage(R.string.deck_delete_text)
                 .setPositiveButton(R.string.deck_delete_confirmation) { _, _ ->

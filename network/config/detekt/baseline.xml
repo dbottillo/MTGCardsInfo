@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist></Blacklist>
-  <Whitelist>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
     <ID>ConstructorParameterNaming:MKMApiInterface.kt$MKMPriceGuideApi$val LOW: Double?</ID>
     <ID>ConstructorParameterNaming:MKMApiInterface.kt$MKMPriceGuideApi$val SELL: Double?</ID>
     <ID>ConstructorParameterNaming:MKMApiInterface.kt$MKMPriceGuideApi$val TREND: Double?</ID>
@@ -16,5 +16,5 @@
     <ID>NewLineAtEndOfFile:TCGApiInterface.kt$com.dbottillo.mtgsearchfree.network.TCGApiInterface.kt</ID>
     <ID>NewLineAtEndOfFile:TCGNetworkInterceptor.kt$com.dbottillo.mtgsearchfree.network.TCGNetworkInterceptor.kt</ID>
     <ID>NewLineAtEndOfFile:TokenRepository.kt$com.dbottillo.mtgsearchfree.network.TokenRepository.kt</ID>
-  </Whitelist>
+  </CurrentIssues>
 </SmellBaseline>

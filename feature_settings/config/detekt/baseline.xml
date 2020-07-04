@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist></Blacklist>
-  <Whitelist>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
     <ID>NewLineAtEndOfFile:SettingsActivity.kt$com.dbottillo.mtgsearchfree.settings.SettingsActivity.kt</ID>
     <ID>NewLineAtEndOfFile:SettingsFragment.kt$com.dbottillo.mtgsearchfree.settings.SettingsFragment.kt</ID>
-  </Whitelist>
+  </CurrentIssues>
 </SmellBaseline>

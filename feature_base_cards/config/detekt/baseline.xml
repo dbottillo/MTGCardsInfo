@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist></Blacklist>
-  <Whitelist>
-    <ID>ComplexMethod:CardsConfiguratorPresenterImpl.kt$CardsConfiguratorPresenterImpl$update</ID>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>ComplexMethod:CardsConfiguratorPresenterImpl.kt$CardsConfiguratorPresenterImpl$override fun update(type: CardFilter.TYPE, on: Boolean)</ID>
     <ID>LongParameterList:MTGCardsView.kt$MTGCardsView$( cards: List&lt;MTGCard&gt;, listener: OnCardListener, cardFilter: CardFilter?, configuration: CardAdapterConfiguration )</ID>
     <ID>LongParameterList:MTGCardsView.kt$MTGCardsView$(cards: List&lt;MTGCard&gt;, listener: OnCardListener, title: String, cardFilter: CardFilter?, menuOption: Int)</ID>
     <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$10</ID>
@@ -31,5 +31,5 @@
     <ID>NewLineAtEndOfFile:CommonCardsActivity.kt$com.dbottillo.mtgsearchfree.ui.CommonCardsActivity.kt</ID>
     <ID>NewLineAtEndOfFile:MTGCardView.kt$com.dbottillo.mtgsearchfree.ui.views.MTGCardView.kt</ID>
     <ID>ReturnCount:CardsAdapter.kt$CardsAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
-  </Whitelist>
+  </CurrentIssues>
 </SmellBaseline>

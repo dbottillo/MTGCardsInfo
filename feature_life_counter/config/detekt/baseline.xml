@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist></Blacklist>
-  <Whitelist>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
     <ID>MagicNumber:LifeCounterAdapter.kt$LifeCounterAdapter$3</ID>
     <ID>MagicNumber:LifeCounterAdapter.kt$LifeCounterAdapter$5</ID>
     <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$10</ID>
@@ -18,5 +18,5 @@
     <ID>ReturnCount:LifeCounterAdapter.kt$LifeCounterAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
     <ID>ReturnCount:LifeCounterAdapter.kt$LifeCounterAdapter$private fun getColorOfPosition(context: Context, position: Int): Int</ID>
     <ID>TooManyFunctions:LifeCounterFragment.kt$LifeCounterFragment$LifeCounterFragment</ID>
-  </Whitelist>
+  </CurrentIssues>
 </SmellBaseline>

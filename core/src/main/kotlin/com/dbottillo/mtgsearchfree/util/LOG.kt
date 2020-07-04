@@ -36,9 +36,9 @@ object LOG {
         } else classNameWithPackage.substring(lastDotPos + 1)
     }
 
-    private fun enhanced(message: String?): String? {
+    private fun enhanced(message: String?): String {
         if (!BuildConfig.DEBUG) {
-            return message
+            return message ?: ""
         }
         val caller = determineCaller()
         val classNameOnly = getClassNameOnly(caller.className)

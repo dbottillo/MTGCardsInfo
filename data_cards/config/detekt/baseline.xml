@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 <SmellBaseline>
-  <Blacklist></Blacklist>
-  <Whitelist>
-    <ID>ComplexMethod:CardsHelper.kt$filterWith</ID>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>ComplexMethod:CardsHelper.kt$@Suppress("LongMethod") private fun List&lt;MTGCard&gt;.filterWith(filter: CardFilter): List&lt;MTGCard&gt;</ID>
     <ID>MaxLineLength:CardsPreferencesImpl.kt$CardsPreferencesImpl$private val sharedPreferences: SharedPreferences by lazy(LazyThreadSafetyMode.NONE) { context.getSharedPreferences(PREFS_NAME, 0) }</ID>
     <ID>MaxLineLength:CardsStorageImpl.kt$CardsStorageImpl$?:</ID>
     <ID>MaxLineLength:CardsStorageImpl.kt$CardsStorageImpl$return mtgCardDataSource.searchCard(name) ?: throw UnsupportedOperationException("can't find other side of $card")</ID>
@@ -18,5 +18,5 @@
     <ID>TooManyFunctions:CardsInteractorImpl.kt$CardsInteractorImpl$CardsInteractorImpl</ID>
     <ID>TooManyFunctions:CardsPreferencesImpl.kt$CardsPreferences$CardsPreferences</ID>
     <ID>TooManyFunctions:CardsPreferencesImpl.kt$CardsPreferencesImpl$CardsPreferencesImpl</ID>
-  </Whitelist>
+  </CurrentIssues>
 </SmellBaseline>
