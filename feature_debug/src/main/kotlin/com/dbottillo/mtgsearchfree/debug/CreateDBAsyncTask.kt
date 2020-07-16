@@ -53,15 +53,10 @@ internal class CreateDBAsyncTask(
                 val json = JSONArray(jsonString)
                 (json.length() - 1 downTo 0)
                         .map { json.getJSONObject(it) }
+                        //.filter {  it.getString("code") == "JMP" }
                         .forEach { setJ ->
                             loadSet(context, db, setDataSource, setJ)
                         }
-                /*(json.length() - 1 downTo 0)
-                        .map { json.getJSONObject(it) }
-                        .filter {  it.getString("code") == "10E" }
-                        .forEach { setJ ->
-                            loadSet(context, db, setDataSource, setJ)
-                        }*/
                 // loadSet(context, db, setDataSource, json.getJSONObject(json.length() - 1))
             } catch (e: JSONException) {
                 LOG.e("error create db async task: " + e.localizedMessage)
@@ -77,6 +72,10 @@ internal class CreateDBAsyncTask(
 
     @Suppress("UNUSED_VARIABLE")
     private fun loadSet(context: Context, db: SQLiteDatabase, setDataSource: SetDataSource, setJ: JSONObject) {
+        if (setJ.has("v5") && setJ.getBoolean("v5")){
+            loadSetV5(context, db, setDataSource, setJ)
+            return
+        }
         try {
             val setToLoad = setToLoad(context, setJ.getString("code"))
             val jsonSetString = loadFile(setToLoad)
@@ -85,6 +84,42 @@ internal class CreateDBAsyncTask(
             LOG.e("row id " + newRowId + " -> " + setJ.getString("code"))
 
             val jsonCards = JSONObject(jsonSetString)
+            val cards = jsonCards.getJSONArray("cards")
+
+            val type = if (setJ.has("type")) setJ.getString("type") else null
+            val set = MTGSet(newRowId.toInt(),
+                setJ.getString("code"),
+                setJ.getString("name"),
+                type.toSetType())
+            // for (int k=0; k<1; k++){
+
+            (0 until cards.length()).forEach { index ->
+                val cardJ = cards.getJSONObject(index)
+                // Log.e("MTG", "cardJ $cardJ")
+
+                if (!cardJ.has("isAlternative") || !cardJ.getBoolean("isAlternative")) {
+                    val newRowId2 = db.insert(CardDataSource.TABLE, null, createContentValueFromJSON(cardJ, set))
+                } else {
+                    Log.e("MTG", "${cardJ.getString("name")} skipped in ${set.name} because is alternative")
+                }
+                // Log.e("MTG", "row id card $newRowId2")
+                // result.add(MTGCard.createCardFromJson(i, cardJ));
+            }
+        } catch (e: Resources.NotFoundException) {
+            LOG.e(setJ.getString("code") + " file not found")
+        }
+    }
+
+    @Suppress("UNUSED_VARIABLE")
+    private fun loadSetV5(context: Context, db: SQLiteDatabase, setDataSource: SetDataSource, setJ: JSONObject) {
+        try {
+            val setToLoad = setToLoad(context, setJ.getString("code"))
+            val jsonSetString = loadFile(setToLoad)
+
+            val newRowId = db.insert(SetDataSource.TABLE, null, setDataSource.fromJSON(setJ))
+            LOG.e("row id " + newRowId + " -> " + setJ.getString("code"))
+
+            val jsonCards = JSONObject(jsonSetString).getJSONObject("data")
             val cards = jsonCards.getJSONArray("cards")
 
             val type = if (setJ.has("type")) setJ.getString("type") else null
@@ -202,8 +237,9 @@ internal class CreateDBAsyncTask(
             }
             values.put(CardDataSource.COLUMNS.RARITY.noun, jsonObject.getString("rarity"))
 
-            if (jsonObject.has("multiverseId")) {
-                values.put(CardDataSource.COLUMNS.MULTIVERSE_ID.noun, jsonObject.getInt("multiverseId"))
+            val identifiers: JSONObject = if (jsonObject.has("identifiers")) jsonObject.getJSONObject("identifiers") else jsonObject
+            if (identifiers.has("multiverseId")) {
+                values.put(CardDataSource.COLUMNS.MULTIVERSE_ID.noun, identifiers.getInt("multiverseId"))
             }
 
             var power = ""
@@ -277,26 +313,51 @@ internal class CreateDBAsyncTask(
             if (jsonObject.has("uuid")) {
                 values.put(CardDataSource.COLUMNS.UUID.noun, jsonObject.getString("uuid"))
             }
-            if (jsonObject.has("scryfallId")) {
-                values.put(CardDataSource.COLUMNS.SCRYFALLID.noun, jsonObject.getString("scryfallId"))
+            if (identifiers.has("scryfallId")) {
+                values.put(CardDataSource.COLUMNS.SCRYFALLID.noun, identifiers.getString("scryfallId"))
             }
-            if (jsonObject.has("tcgplayerProductId")) {
-                values.put(CardDataSource.COLUMNS.TCG_PLAYER_PRODUCT_ID.noun, jsonObject.getInt("tcgplayerProductId"))
+            if (identifiers.has("tcgplayerProductId")) {
+                values.put(CardDataSource.COLUMNS.TCG_PLAYER_PRODUCT_ID.noun, identifiers.getInt("tcgplayerProductId"))
             }
-            if (jsonObject.has("tcgplayerPurchaseUrl")) {
-                values.put(CardDataSource.COLUMNS.TCG_PLAYER_PURCHASE_URL.noun, jsonObject.getString("tcgplayerPurchaseUrl"))
+            if (identifiers.has("tcgplayerPurchaseUrl")) {
+                values.put(CardDataSource.COLUMNS.TCG_PLAYER_PURCHASE_URL.noun, identifiers.getString("tcgplayerPurchaseUrl"))
             }
             values.put(CardDataSource.COLUMNS.MULTICOLOR.noun, multicolor)
 
             if (jsonObject.has("faceConvertedManaCost")) {
                 values.put(CardDataSource.COLUMNS.FACE_CMC.noun, jsonObject.getInt("faceConvertedManaCost"))
             }
-            if (jsonObject.has("isArena")) {
-                values.put(CardDataSource.COLUMNS.IS_ARENA.noun, if (jsonObject.getBoolean("isArena")) 1 else 0)
+
+            if (jsonObject.has("availability")){
+                val availabilityJ = jsonObject.getJSONArray("availability")
+                val availabilities = mutableListOf<String>()
+                for (k in 0 until availabilityJ.length()) {
+                    availabilities.add(availabilityJ.getString(k))
+                }
+                values.put(
+                    CardDataSource.COLUMNS.IS_ARENA.noun,
+                    if (availabilities.contains("arena")) 1 else 0
+                )
+                values.put(
+                    CardDataSource.COLUMNS.IS_ARENA.noun,
+                    if (availabilities.contains("mtgo")) 1 else 0
+                )
+            } else {
+                if (jsonObject.has("isArena")) {
+                    values.put(
+                        CardDataSource.COLUMNS.IS_ARENA.noun,
+                        if (jsonObject.getBoolean("isArena")) 1 else 0
+                    )
+                }
+                if (jsonObject.has("isMtgo")) {
+                    values.put(
+                        CardDataSource.COLUMNS.IS_MTGO.noun,
+                        if (jsonObject.getBoolean("isMtgo")) 1 else 0
+                    )
+                }
             }
-            if (jsonObject.has("isMtgo")) {
-                values.put(CardDataSource.COLUMNS.IS_MTGO.noun, if (jsonObject.getBoolean("isMtgo")) 1 else 0)
-            }
+
+
             if (jsonObject.has("side")) {
                 values.put(CardDataSource.COLUMNS.SIDE.noun, jsonObject.getString("side"))
             }
