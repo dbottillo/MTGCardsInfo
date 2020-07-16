@@ -24,7 +24,7 @@ import java.io.StringWriter
 import java.lang.ref.WeakReference
 import java.math.BigDecimal
 
-@Suppress("MagicNumber", "LongMethod", "ComplexMethod")
+@Suppress("MagicNumber", "LongMethod", "ComplexMethod", "MaxLineLength")
 internal class CreateDBAsyncTask(
     inputContext: Context,
     private val packageName: String

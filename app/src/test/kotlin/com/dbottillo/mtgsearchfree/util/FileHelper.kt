@@ -39,7 +39,12 @@ fun readSetListJSON(): ArrayList<MTGSet> {
 fun readSingleSetFile(set: MTGSet): ArrayList<MTGCard> {
     val jsonSetString = loadFile(set.code.adjustCode() + "_x.json")
     val jsonCards = JSONObject(jsonSetString)
-    val cardsJ = jsonCards.getJSONArray("cards")
+    val cardsObject = if (jsonCards.has("data")){ // v5 version
+        jsonCards.getJSONObject("data")
+    } else {
+        jsonCards
+    }
+    val cardsJ = cardsObject.getJSONArray("cards")
     val cards = ArrayList<MTGCard>()
 
     for (k in 0 until cardsJ.length()) {
@@ -79,9 +84,10 @@ private fun cardFromJSON(jsonObject: JSONObject, set: MTGSet): MTGCard {
     val card = MTGCard()
 
     card.uuid = jsonObject.getString("uuid")
-    card.scryfallId = jsonObject.getString("scryfallId")
-    if (jsonObject.has("tcgplayerProductId")) {
-        card.tcgplayerProductId = jsonObject.getInt("tcgplayerProductId")
+    val identifiers: JSONObject = if (jsonObject.has("identifiers")) jsonObject.getJSONObject("identifiers") else jsonObject
+    card.scryfallId = identifiers.getString("scryfallId")
+    if (identifiers.has("tcgplayerProductId")) {
+        card.tcgplayerProductId = identifiers.getInt("tcgplayerProductId")
     }
     card.setCardName(jsonObject.getString("name"))
     card.type = jsonObject.getString("type")
@@ -128,8 +134,8 @@ private fun cardFromJSON(jsonObject: JSONObject, set: MTGSet): MTGCard {
         else -> Rarity.COMMON
     }
 
-    if (jsonObject.has("multiverseid")) {
-        card.multiVerseId = jsonObject.getInt("multiverseid")
+    if (identifiers.has("multiverseid")) {
+        card.multiVerseId = identifiers.getInt("multiverseid")
     }
 
     var power = ""
@@ -178,17 +184,13 @@ private fun cardFromJSON(jsonObject: JSONObject, set: MTGSet): MTGCard {
 
     if (jsonObject.has("names")) {
         val names = jsonObject.getString("names")
-        if (names != null) {
-            val strings = gson.fromJson<List<String>>(names, type)
-            card.names = strings
-        }
+        val strings = gson.fromJson<List<String>>(names, type)
+        card.names = strings
     }
     if (jsonObject.has("supertypes")) {
         val supertypes = jsonObject.getString("supertypes")
-        if (supertypes != null) {
-            val strings = gson.fromJson<List<String>>(supertypes, type)
-            card.superTypes = strings
-        }
+        val strings = gson.fromJson<List<String>>(supertypes, type)
+        card.superTypes = strings
     }
     if (jsonObject.has("flavor")) {
         card.flavor = jsonObject.getString("flavor")
@@ -201,10 +203,8 @@ private fun cardFromJSON(jsonObject: JSONObject, set: MTGSet): MTGCard {
     }
     if (jsonObject.has("printings")) {
         val printings = jsonObject.getString("printings")
-        if (printings != null) {
-            val strings = gson.fromJson<List<String>>(printings, type)
-            card.printings = strings
-        }
+        val strings = gson.fromJson<List<String>>(printings, type)
+        card.printings = strings
     }
     if (jsonObject.has("originalText")) {
         card.originalText = jsonObject.getString("originalText")
@@ -212,12 +212,10 @@ private fun cardFromJSON(jsonObject: JSONObject, set: MTGSet): MTGCard {
     if (jsonObject.has("colorIdentity")) {
         val colorIdentity = jsonObject.getString("colorIdentity")
         val colorsIdentityJ = jsonObject.getJSONArray("colorIdentity")
-        if (colorIdentity != null) {
-            val strings = gson.fromJson<List<String>>(colorIdentity, type)
-            card.colorsIdentity = strings.map { it.mapColor() }
-            if (colorsIdentityJ.length() > 1) {
-                multicolor = true
-            }
+        val strings = gson.fromJson<List<String>>(colorIdentity, type)
+        card.colorsIdentity = strings.map { it.mapColor() }
+        if (colorsIdentityJ.length() > 1) {
+            multicolor = true
         }
     }
     card.isMultiColor = multicolor

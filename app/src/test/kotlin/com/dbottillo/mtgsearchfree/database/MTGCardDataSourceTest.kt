@@ -65,8 +65,8 @@ class MTGCardDataSourceTest {
                         LOG.e("not found $cardJ")
                     }
                 }*/
-                assertThat(cardsJ.size).isEqualTo(cards.size)
-                assertThat(cards).containsExactlyElementsIn(cardsJ)
+                assertWithMessage("Checking size of $set").that(cardsJ.size).isEqualTo(cards.size)
+                assertWithMessage("Checking content of $set").that(cards).containsExactlyElementsIn(cardsJ)
             } catch (e: Resources.NotFoundException) {
                 LOG.e(set.code + " file not found")
             }
