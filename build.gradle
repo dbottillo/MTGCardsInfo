@@ -10,12 +10,12 @@ buildscript {
         apply from: 'dependencies-versions.gradle'
         apply from: 'dependencies-all.gradle'
 
-        classpath 'com.android.tools.build:gradle:4.0.0'
+        classpath 'com.android.tools.build:gradle:4.0.1'
         classpath 'com.google.gms:google-services:4.3.3'
         classpath "com.google.firebase:firebase-crashlytics-gradle:$versions.crashlyticsPlugin"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
         classpath "com.github.ben-manes:gradle-versions-plugin:0.28.0"
-        classpath "com.diffplug.spotless:spotless-plugin-gradle:4.5.0"
+        classpath "com.diffplug.spotless:spotless-plugin-gradle:5.1.0"
     }
 }
 
@@ -119,10 +119,11 @@ allprojects {
     dependencies { apply from: "$rootProject.rootDir/dependencies-groups.gradle" }
 }
 
-apply plugin: 'com.diffplug.gradle.spotless'
+apply plugin: 'com.diffplug.spotless'
 spotless {
     kotlin {
         target 'src/**/*.kt'
+        ktlint('0.37.2')
     }
 }
 
