@@ -3,10 +3,6 @@ package com.dbottillo.mtgsearchfree.util
 import com.dbottillo.mtgsearchfree.model.Deck
 import java.util.Locale
 
-fun Deck.toDeckName(): String {
-    return this.name.replace("\\s+".toRegex(), "").toLowerCase(Locale.getDefault())
-}
-
 @Suppress("ComplexMethod")
 fun String?.adjustCode(): String? {
     val stringToLoad = this?.toLowerCase(Locale.getDefault())
@@ -21,6 +17,7 @@ fun String?.adjustCode(): String? {
         stringToLoad.equals("4ed", ignoreCase = true) -> "ed4"
         stringToLoad.equals("3ed", ignoreCase = true) -> "ed3"
         stringToLoad.equals("2ed", ignoreCase = true) -> "ed2"
+        stringToLoad.equals("2xm", ignoreCase = true) -> "dbm"
         else -> stringToLoad
     }
 }

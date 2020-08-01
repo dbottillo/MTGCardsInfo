@@ -542,7 +542,7 @@ class MTGCardDataSourceTest {
     }
 
     @Test
-    fun MTGCardDataSource_searchCardByName() {
+    fun searchCardByName() {
         val toTest = arrayOf("Wasteland", "Ulamog, the Ceaseless Hunger", "Urborg, Tomb of Yawgmoth", "Engineered Explosives")
         var card: MTGCard?
         for (name in toTest) {
@@ -579,7 +579,7 @@ class MTGCardDataSourceTest {
     fun `should search cards by id`() {
         val card = underTest.searchCardById(5)
         assertThat(card).isNotNull()
-        assertThat(card?.name).isEqualTo("Aether Spellbomb")
+        assertThat(card?.name).isEqualTo("Ad Nauseam")
     }
 
     @Test
