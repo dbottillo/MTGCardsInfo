@@ -1194,5 +1194,45 @@
     "totalSetSize": 381,
     "type": "masters",
     "v5": true
+  },
+  {
+    "baseSetSize": 339,
+    "code": "AKR",
+    "name": "Amonkhet Remastered",
+    "releaseDate": "2020-08-13",
+    "totalSetSize": 339,
+    "type": "masters",
+    "v5": true
+  },
+  {
+    "baseSetSize": 300,
+    "code": "PLIST",
+    "isPartialPreview": true,
+    "name": "The List",
+    "releaseDate": "2020-09-26",
+    "totalSetSize": 300,
+    "type": "masters",
+    "v5": true
+  },
+  {
+    "baseSetSize": 30,
+    "code": "ZNE",
+    "isPartialPreview": true,
+    "name": "Zendikar Rising Expeditions",
+    "parentCode": "ZNR",
+    "releaseDate": "2020-09-25",
+    "totalSetSize": 30,
+    "type": "masterpiece",
+    "v5": true
+  },
+  {
+    "baseSetSize": 285,
+    "code": "ZNR",
+    "isPartialPreview": true,
+    "name": "Zendikar Rising",
+    "releaseDate": "2020-09-25",
+    "totalSetSize": 392,
+    "type": "expansion",
+    "v5": true
   }
 ]

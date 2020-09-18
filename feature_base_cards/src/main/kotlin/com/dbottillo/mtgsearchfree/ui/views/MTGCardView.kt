@@ -169,7 +169,7 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) :
         }
 
         flipCardButton.visibility =
-            if (card.isDoubleFaced || card.isTransform) View.VISIBLE else View.GONE
+            if (card.isDoubleFaced || card.isTransform || card.isModalDfc) View.VISIBLE else View.GONE
     }
 
     private fun loadPrice(card: MTGCard) {

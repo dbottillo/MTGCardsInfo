@@ -159,6 +159,9 @@ data class MTGCard(
     val isTransform: Boolean
         get() = layout.equals("transform", ignoreCase = true)
 
+    val isModalDfc: Boolean
+        get() = layout.equals("modal_dfc", ignoreCase = true)
+
     private val isSaga: Boolean
         get() = layout.equals("saga", ignoreCase = true)
 
