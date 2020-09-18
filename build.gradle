@@ -14,13 +14,13 @@ buildscript {
         classpath 'com.google.gms:google-services:4.3.3'
         classpath "com.google.firebase:firebase-crashlytics-gradle:$versions.crashlyticsPlugin"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
-        classpath "com.github.ben-manes:gradle-versions-plugin:0.29.0"
-        classpath "com.diffplug.spotless:spotless-plugin-gradle:5.1.0"
+        classpath "com.github.ben-manes:gradle-versions-plugin:0.33.0"
+        classpath "com.diffplug.spotless:spotless-plugin-gradle:5.5.2"
     }
 }
 
 plugins {
-    id "io.gitlab.arturbosch.detekt" version "1.10.0"
+    id "io.gitlab.arturbosch.detekt" version "1.13.1"
 }
 
 allprojects {
