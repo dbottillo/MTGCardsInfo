@@ -37,7 +37,7 @@ class AddToDeckPresenterImpl @Inject constructor(
             if (it is MTGException) {
                 view.showError(it.message ?: it.localizedMessage)
             } else {
-                view.showError(it.localizedMessage)
+                view.showError(it.localizedMessage ?: "")
             }
             logger.logNonFatal(it)
         }))

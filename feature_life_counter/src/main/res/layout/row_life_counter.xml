@@ -1,8 +1,8 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
@@ -49,7 +49,7 @@
                     android:contentDescription="@string/cd_edit"
                     android:scaleType="fitXY"
                     android:src="@drawable/sel_edit_grey"
-                    android:tint="?attr/colorOnPrimary" />
+                    app:tint="?attr/colorOnPrimary" />
 
                 <ImageButton
                     android:id="@+id/player_remove"
@@ -60,7 +60,7 @@
                     android:contentDescription="@string/cd_remove"
                     android:scaleType="fitXY"
                     android:src="@drawable/sel_trash_grey"
-                    android:tint="?attr/colorOnPrimary" />
+                    app:tint="?attr/colorOnPrimary" />
             </LinearLayout>
 
             <RelativeLayout

@@ -42,7 +42,7 @@
         android:background="@android:color/transparent"
         android:contentDescription="@string/cd_cards_view_type"
         android:src="@drawable/cards_list_type"
-        android:tint="?attr/colorPrimary" />
+        app:tint="?attr/colorPrimary" />
 
     <ImageButton
         android:id="@+id/cards_settings"
@@ -54,7 +54,7 @@
         android:background="@android:color/transparent"
         android:contentDescription="@string/cd_filter"
         android:padding="8dp"
-        android:tint="?attr/colorPrimary"
+        app:tint="?attr/colorPrimary"
         app:srcCompat="@drawable/filter" />
 
 </RelativeLayout>

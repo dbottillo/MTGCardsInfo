@@ -49,7 +49,7 @@ class DirectColorDetectorTest {
 
     @Test
     fun `should ignore vector when detecting a direct color`() {
-        val contentFile = """<vector android:height="24dp" android:tint="#FFFFFF"
+        val contentFile = """<vector android:height="24dp" app:tint="#FFFFFF"
                 android:viewportHeight="24.0" android:viewportWidth="24.0"
                 android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
             <path android:fillColor="#FF000000" android:pathData="M15.5,14h-0.79l-0.2"/>

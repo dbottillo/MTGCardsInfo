@@ -81,7 +81,7 @@ constructor(
 
     fun showError(throwable: Throwable) {
         logger.e(throwable)
-        playerView.showError(throwable.localizedMessage)
+        playerView.showError(throwable.localizedMessage ?: "")
     }
 
     override fun onDestroy() {

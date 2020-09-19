@@ -52,7 +52,7 @@
         android:background="@android:color/transparent"
         android:contentDescription="@string/cd_copy_deck"
         android:src="@drawable/ic_content_copy"
-        android:tint="?attr/colorPrimary"
+        app:tint="?attr/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/delete_deck"
         app:layout_constraintTop_toTopOf="parent" />
@@ -64,7 +64,7 @@
         android:background="@android:color/transparent"
         android:contentDescription="@string/cd_delete_deck"
         android:src="@drawable/ic_delete"
-        android:tint="?attr/colorPrimary"
+        app:tint="?attr/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
