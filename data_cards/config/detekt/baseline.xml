@@ -14,9 +14,10 @@
     <ID>NewLineAtEndOfFile:CardsHelper.kt$com.dbottillo.mtgsearchfree.storage.CardsHelper.kt</ID>
     <ID>NewLineAtEndOfFile:CardsInteractor.kt$com.dbottillo.mtgsearchfree.interactors.CardsInteractor.kt</ID>
     <ID>NewLineAtEndOfFile:SavedCardsInteractor.kt$com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor.kt</ID>
-    <ID>TooManyFunctions:CardsInteractor.kt$CardsInteractor$CardsInteractor</ID>
-    <ID>TooManyFunctions:CardsInteractorImpl.kt$CardsInteractorImpl$CardsInteractorImpl</ID>
-    <ID>TooManyFunctions:CardsPreferencesImpl.kt$CardsPreferences$CardsPreferences</ID>
-    <ID>TooManyFunctions:CardsPreferencesImpl.kt$CardsPreferencesImpl$CardsPreferencesImpl</ID>
+    <ID>ReturnCount:CardsStorageImpl.kt$CardsStorageImpl$override fun loadOtherSide(card: MTGCard): MTGCard</ID>
+    <ID>TooManyFunctions:CardsInteractor.kt$CardsInteractor</ID>
+    <ID>TooManyFunctions:CardsInteractorImpl.kt$CardsInteractorImpl : CardsInteractor</ID>
+    <ID>TooManyFunctions:CardsPreferencesImpl.kt$CardsPreferences</ID>
+    <ID>TooManyFunctions:CardsPreferencesImpl.kt$CardsPreferencesImpl : CardsPreferences</ID>
   </CurrentIssues>
 </SmellBaseline>

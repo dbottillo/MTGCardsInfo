@@ -356,10 +356,16 @@ internal class CreateDBAsyncTask(
                     )
                 }
             }
-
-
             if (jsonObject.has("side")) {
                 values.put(CardDataSource.COLUMNS.SIDE.noun, jsonObject.getString("side"))
+            }
+            if (jsonObject.has("otherFaceIds")) {
+                val otherFaceIdsJ = jsonObject.getJSONArray("otherFaceIds")
+                val types = mutableListOf<String>()
+                for (i in 0 until otherFaceIdsJ.length()){
+                    types.add(otherFaceIdsJ.getString(i))
+                }
+                values.put(CardDataSource.COLUMNS.OTHER_FACE_IDS.noun, types.joinToString(","))
             }
             return values
         }

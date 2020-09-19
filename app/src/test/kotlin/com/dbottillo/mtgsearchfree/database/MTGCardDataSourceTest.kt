@@ -579,7 +579,14 @@ class MTGCardDataSourceTest {
     fun `should search cards by id`() {
         val card = underTest.searchCardById(5)
         assertThat(card).isNotNull()
-        assertThat(card?.name).isEqualTo("Ad Nauseam")
+        assertThat(card?.name).isEqualTo("Agadeem's Awakening // Agadeem, the Undercrypt")
+    }
+
+    @Test
+    fun `should search cards by uuid`() {
+        val card = underTest.searchCardByUUID("688d303d-a159-567e-9a5e-d7e43401d9c6")
+        assertThat(card).isNotNull()
+        assertThat(card?.name).isEqualTo("Jwari Disruption // Jwari Ruins")
     }
 
     @Test

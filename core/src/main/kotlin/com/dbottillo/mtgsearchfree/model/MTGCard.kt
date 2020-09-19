@@ -43,7 +43,8 @@ data class MTGCard(
     var faceConvertedManaCost: Int? = null,
     var isArena: Boolean? = null,
     var isMtgo: Boolean? = null,
-    var side: Side = Side.A
+    var side: Side = Side.A,
+    val otherFaceIds: MutableList<String> = mutableListOf()
 ) {
 
     constructor(onlyId: Int) : this(id = onlyId)

@@ -30,9 +30,9 @@
     <ID>NewLineAtEndOfFile:FragmentBuilder.kt$com.dbottillo.mtgsearchfree.dagger.FragmentBuilder.kt</ID>
     <ID>NewLineAtEndOfFile:LuckyWidgetProvider.kt$com.dbottillo.mtgsearchfree.widget.LuckyWidgetProvider.kt</ID>
     <ID>NewLineAtEndOfFile:MTGApp.kt$com.dbottillo.mtgsearchfree.MTGApp.kt</ID>
-    <ID>TooManyFunctions:AppNavigator.kt$AppNavigator$AppNavigator</ID>
-    <ID>TooManyFunctions:DataModule.kt$DataModule$DataModule</ID>
-    <ID>TooManyFunctions:TrackingManagerImpl.kt$TrackingManagerImpl$TrackingManagerImpl</ID>
+    <ID>TooManyFunctions:AppNavigator.kt$AppNavigator : Navigator</ID>
+    <ID>TooManyFunctions:DataModule.kt$DataModule</ID>
+    <ID>TooManyFunctions:TrackingManagerImpl.kt$TrackingManagerImpl : TrackingManager</ID>
     <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_ADD_CARD = "addCard"</ID>
     <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_CLOSE = "close"</ID>
     <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_DELETE = "delete"</ID>

@@ -40,9 +40,9 @@
     <ID>ReturnCount:DeckActivity.kt$DeckActivity$override fun onOptionsItemSelected(item: MenuItem): Boolean</ID>
     <ID>ReturnCount:DecksAdapter.kt$DecksAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
     <ID>ReturnCount:StartingHandGridAdapter.kt$StartingHandGridAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
-    <ID>TooManyFunctions:AddToDeckFragment.kt$AddToDeckFragment$AddToDeckFragment</ID>
-    <ID>TooManyFunctions:DeckActivity.kt$DeckActivity$DeckActivity</ID>
-    <ID>TooManyFunctions:DeckStartingHandFragment.kt$DeckStartingHandFragment$DeckStartingHandFragment</ID>
-    <ID>TooManyFunctions:DecksFragment.kt$DecksFragment$DecksFragment</ID>
+    <ID>TooManyFunctions:AddToDeckFragment.kt$AddToDeckFragment : BottomSheetDialogFragmentAddToDeckView</ID>
+    <ID>TooManyFunctions:DeckActivity.kt$DeckActivity : BasicActivityDeckActivityView</ID>
+    <ID>TooManyFunctions:DeckStartingHandFragment.kt$DeckStartingHandFragment : BasicFragmentStartingHandView</ID>
+    <ID>TooManyFunctions:DecksFragment.kt$DecksFragment : BaseHomeFragmentDecksFragmentViewPermissionListener</ID>
   </CurrentIssues>
 </SmellBaseline>

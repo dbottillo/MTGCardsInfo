@@ -76,7 +76,8 @@ class CardDataSource(
         FACE_CMC("faceConvertedManaCost", "INTEGER"),
         IS_ARENA("isArena", "INTEGER"),
         IS_MTGO("isMtgo", "INTEGER"),
-        SIDE("cardSide", "TEXT")
+        SIDE("cardSide", "TEXT"),
+        OTHER_FACE_IDS("otherFaceIds", "TEXT")
     }
 
     fun saveCard(card: MTGCard): Long {
@@ -185,6 +186,10 @@ class CardDataSource(
             values.put(COLUMNS.IS_MTGO.noun, if (it) 1 else 0)
         }
         values.put(COLUMNS.SIDE.noun, if (card.side == Side.A) "A" else "B")
+
+        if (card.otherFaceIds.size > 0) {
+            values.put(COLUMNS.SUB_TYPES.noun, card.otherFaceIds.joinToString(","))
+        }
         return values
     }
 
@@ -391,6 +396,12 @@ class CardDataSource(
         if (cursor.getColumnIndex(COLUMNS.SIDE.noun) != -1) {
             card.side = if (cursor.getString(cursor.getColumnIndex(COLUMNS.SIDE.noun)) == "b") Side.B else Side.A
         }
+        if (cursor.getColumnIndex(COLUMNS.OTHER_FACE_IDS.noun) != -1) {
+            val otherFaceIds = cursor.getString(cursor.getColumnIndex(COLUMNS.OTHER_FACE_IDS.noun))
+            otherFaceIds?.split(",")?.forEach {
+                card.otherFaceIds.add(it)
+            }
+        }
 
         return card
     }
@@ -490,12 +501,16 @@ class CardDataSource(
                 TABLE + " ADD COLUMN " +
                 COLUMNS.SIDE.noun + " " + COLUMNS.SIDE.type)
 
+        internal val SQL_ADD_COLUMN_OTHER_FACE_IDS = ("ALTER TABLE " +
+                TABLE + " ADD COLUMN " +
+                COLUMNS.OTHER_FACE_IDS.noun + " " + COLUMNS.OTHER_FACE_IDS.type)
+
         fun generateCreateTable(): String {
             val builder = StringBuilder("CREATE TABLE IF NOT EXISTS ")
             builder.append(TABLE).append(" (_id INTEGER PRIMARY KEY, ")
             for (column in COLUMNS.values()) {
                 builder.append(column.noun).append(' ').append(column.type)
-                if (column != COLUMNS.SIDE) {
+                if (column != COLUMNS.OTHER_FACE_IDS) {
                     builder.append(',')
                 }
             }
@@ -512,7 +527,8 @@ class CardDataSource(
                 version < TEN -> COLUMNS.UUID
                 version < ELEVEN -> COLUMNS.TCG_PLAYER_PRODUCT_ID
                 version < TWELFTH -> COLUMNS.TCG_PLAYER_PURCHASE_URL
-                else -> COLUMNS.SIDE
+                version < THIRTEEN -> COLUMNS.SIDE
+                else -> COLUMNS.OTHER_FACE_IDS
             }
         }
 
@@ -556,6 +572,8 @@ class CardDataSource(
             } else if ((column == COLUMNS.FACE_CMC || column == COLUMNS.IS_ARENA ||
                             column == COLUMNS.IS_MTGO || column == COLUMNS.SIDE) && version <= ELEVEN) {
                 addColumn = false
+            } else if ((column == COLUMNS.OTHER_FACE_IDS) && version <= TWELFTH) {
+                addColumn = false
             }
             return addColumn
         }
@@ -591,3 +609,4 @@ private const val NINE = 9
 private const val TEN = 10
 private const val ELEVEN = 11
 private const val TWELFTH = 12
+private const val THIRTEEN = 13

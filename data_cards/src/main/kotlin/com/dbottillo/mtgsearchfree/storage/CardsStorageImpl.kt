@@ -78,6 +78,12 @@ open class CardsStorageImpl(
 
     override fun loadOtherSide(card: MTGCard): MTGCard {
         logger.d("do search other side card $card")
+        if (card.otherFaceIds.size > 0){
+            val otherCard = mtgCardDataSource.searchCardByUUID(card.otherFaceIds[0])
+            if (otherCard != null){
+                return otherCard
+            }
+        }
         if (card.names.size < 2) {
             return card
         }

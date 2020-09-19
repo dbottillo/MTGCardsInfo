@@ -4,6 +4,6 @@
   <CurrentIssues>
     <ID>NewLineAtEndOfFile:SetsFragment.kt$com.dbottillo.mtgsearchfree.sets.SetsFragment.kt</ID>
     <ID>NewLineAtEndOfFile:SetsFragmentView.kt$com.dbottillo.mtgsearchfree.sets.SetsFragmentView.kt</ID>
-    <ID>TooManyFunctions:SetsFragment.kt$SetsFragment$SetsFragment</ID>
+    <ID>TooManyFunctions:SetsFragment.kt$SetsFragment : BaseHomeFragmentSetsFragmentViewOnCardListener</ID>
   </CurrentIssues>
 </SmellBaseline>

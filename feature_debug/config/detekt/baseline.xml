@@ -3,7 +3,6 @@
   <ManuallySuppressedIssues></ManuallySuppressedIssues>
   <CurrentIssues>
     <ID>LongParameterList:CreateDBAsyncTask.kt$CreateDBAsyncTask$(context: Context, db: SQLiteDatabase, setDataSource: SetDataSource, setJ: JSONObject)</ID>
-    <ID>MaxLineLength:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$values.put(CardDataSource.COLUMNS.TCG_PLAYER_PURCHASE_URL.noun, jsonObject.getString("tcgplayerPurchaseUrl"))</ID>
     <ID>MaxLineLength:CreateDatabaseHelper.kt$CreateDatabaseHelper$internal</ID>
     <ID>MaxLineLength:DebugActivity.kt$DebugActivity$Toast.makeText(applicationContext, if (copied) "database copied" else "database not copied", Toast.LENGTH_LONG).show()</ID>
     <ID>MaxLineLength:DebugActivity.kt$DebugActivity.&lt;no name provided&gt;$Snackbar .make(findViewById(android.R.id.content), getString(R.string.db_exported), Snackbar.LENGTH_LONG)</ID>

@@ -222,5 +222,11 @@ private fun cardFromJSON(jsonObject: JSONObject, set: MTGSet): MTGCard {
     if (jsonObject.has("side")) {
         card.side = if (jsonObject.getString("side") == "b") Side.B else Side.A
     }
+    if (jsonObject.has("otherFaceIds")) {
+        val otherFaceIdsJ = jsonObject.getJSONArray("otherFaceIds")
+        for (i in 0 until otherFaceIdsJ.length()){
+            card.otherFaceIds.add(otherFaceIdsJ.getString(i))
+        }
+    }
     return card
 }

@@ -17,14 +17,11 @@ class MTGCardDataSource(
 
     @Suppress("MagicNumber")
     enum class STANDARD(var setId: Int, var set: String) {
-        CORE_21(3, "Core Set 2021"),
-        IKORIA(5, "Ikoria: Lair of Behemoths"),
-        THEROS_BEYOND_DEATH(11, "Theros Beyond Death"),
-        THRONE_OF_ELDRAINE(17, "Throne of Eldraine"),
-        CORE_20(20, "Core Set 2020"),
-        WAR_OF_THE_SPARK(22, "War of the Spark"),
-        RAVNICA_ALLEGIANCE(23, "Ravnica Allegiance"),
-        GUILDS_OF_RAVNICA(25, "Guilds of Ravnica");
+        ZENDIKAR_RISING(1, "Core Set 2021"),
+        CORE_21(7, "Core Set 2021"),
+        IKORIA(9, "Ikoria: Lair of Behemoths"),
+        THEROS_BEYOND_DEATH(15, "Theros Beyond Death"),
+        THRONE_OF_ELDRAINE(21, "Throne of Eldraine");
 
         companion object {
 
@@ -237,6 +234,21 @@ class MTGCardDataSource(
         LOG.d("search card <$id>")
         val query = "SELECT * FROM " + CardDataSource.TABLE + " WHERE " + "_id=?"
         val selection = arrayOf(id.toString())
+        LOG.query(query)
+        val cursor = database.rawQuery(query, selection)
+        var card: MTGCard? = null
+        if (cursor.moveToFirst()) {
+            card = cardDataSource.fromCursor(cursor)
+        }
+        cursor.close()
+        return card
+    }
+
+    fun searchCardByUUID(uuid: String): MTGCard? {
+        LOG.d("search card by uuid -> <$uuid>")
+        val query =
+            ("SELECT * FROM " + CardDataSource.TABLE + " WHERE " + CardDataSource.COLUMNS.UUID.noun + "=?")
+        val selection = arrayOf(uuid)
         LOG.query(query)
         val cursor = database.rawQuery(query, selection)
         var card: MTGCard? = null

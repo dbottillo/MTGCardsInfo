@@ -9,6 +9,7 @@ import com.dbottillo.mtgsearchfree.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
 import com.nhaarman.mockito_kotlin.argumentCaptor
 import com.nhaarman.mockito_kotlin.eq
+import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
 import com.nhaarman.mockito_kotlin.whenever
@@ -192,17 +193,15 @@ class CardsStorageImplTest {
     }
 
     @Test
-    @Throws(Exception::class)
     fun shouldRetrieveOtherSideCards() {
         var result = underTest.loadOtherSide(mainSideCard)
-        assertThat(result, `is`<MTGCard>(secondSideCard))
+        assertThat(result, `is`(secondSideCard))
 
         result = underTest.loadOtherSide(secondSideCard)
         assertThat(result, `is`(mainSideCard))
     }
 
     @Test
-    @Throws(Exception::class)
     fun loadOtherSide_shouldReturnTheSameCard_IfCardIsNotDouble() {
         whenever(mainSideCard.names).thenReturn(listOf())
         val result = underTest.loadOtherSide(mainSideCard)
@@ -211,6 +210,17 @@ class CardsStorageImplTest {
         whenever(mainSideCard.names).thenReturn(listOf("One"))
         val result2 = underTest.loadOtherSide(mainSideCard)
         assertThat(result2, `is`(mainSideCard))
+    }
+
+    @Test
+    fun `should return other side of cards based on other face id`() {
+        val otherFaceCard = mock<MTGCard>()
+        whenever(mtgCardDataSource.searchCardByUUID("UUID-2")).thenReturn(otherFaceCard)
+        whenever(mainSideCard.otherFaceIds).thenReturn(mutableListOf("UUID-2"))
+
+        val result = underTest.loadOtherSide(mainSideCard)
+
+        assertThat(result, `is`(otherFaceCard))
     }
 }
 

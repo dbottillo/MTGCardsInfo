@@ -99,6 +99,9 @@ class CardsInfoDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
             db.execSQL(CardDataSource.SQL_ADD_COLUMN_IS_MTGO)
             db.execSQL(CardDataSource.SQL_ADD_COLUMN_SIDE)
         }
+        if (!columns.contains(CardDataSource.COLUMNS.OTHER_FACE_IDS.noun)) {
+            db.execSQL(CardDataSource.SQL_ADD_COLUMN_OTHER_FACE_IDS)
+        }
     }
 
     @Suppress("EmptyFunctionBlock")
@@ -132,4 +135,4 @@ class CardsInfoDbHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_N
     }
 }
 
-private const val DATABASE_VERSION = 12
+private const val DATABASE_VERSION = 13

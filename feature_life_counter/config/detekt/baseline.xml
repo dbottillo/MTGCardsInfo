@@ -17,6 +17,6 @@
     <ID>NewLineAtEndOfFile:PlayerInteractor.kt$com.dbottillo.mtgsearchfree.lifecounter.PlayerInteractor.kt</ID>
     <ID>ReturnCount:LifeCounterAdapter.kt$LifeCounterAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
     <ID>ReturnCount:LifeCounterAdapter.kt$LifeCounterAdapter$private fun getColorOfPosition(context: Context, position: Int): Int</ID>
-    <ID>TooManyFunctions:LifeCounterFragment.kt$LifeCounterFragment$LifeCounterFragment</ID>
+    <ID>TooManyFunctions:LifeCounterFragment.kt$LifeCounterFragment : BaseHomeFragmentLifeCounterViewOnLifeCounterListener</ID>
   </CurrentIssues>
 </SmellBaseline>

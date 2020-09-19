@@ -100,12 +100,12 @@
     <ID>TooGenericExceptionCaught:FileUtil.kt$FileUtil$e: Exception</ID>
     <ID>TooGenericExceptionCaught:FileUtil.kt$e: Exception</ID>
     <ID>TooGenericExceptionCaught:LOG.kt$LOG$e: Exception</ID>
-    <ID>TooManyFunctions:DeckCollection.kt$DeckCollection$DeckCollection</ID>
-    <ID>TooManyFunctions:DeckDataSource.kt$DeckDataSource$DeckDataSource</ID>
-    <ID>TooManyFunctions:MTGCard.kt$MTGCard$MTGCard</ID>
-    <ID>TooManyFunctions:Navigator.kt$Navigator$Navigator</ID>
-    <ID>TooManyFunctions:QueryComposer.kt$QueryComposer$QueryComposer</ID>
-    <ID>TooManyFunctions:TrackingManager.kt$TrackingManager$TrackingManager</ID>
+    <ID>TooManyFunctions:DeckCollection.kt$DeckCollection</ID>
+    <ID>TooManyFunctions:DeckDataSource.kt$DeckDataSource</ID>
+    <ID>TooManyFunctions:MTGCard.kt$MTGCard</ID>
+    <ID>TooManyFunctions:Navigator.kt$Navigator</ID>
+    <ID>TooManyFunctions:QueryComposer.kt$QueryComposer</ID>
+    <ID>TooManyFunctions:TrackingManager.kt$TrackingManager</ID>
     <ID>TooManyFunctions:UIUtil.kt$com.dbottillo.mtgsearchfree.util.UIUtil.kt</ID>
   </CurrentIssues>
 </SmellBaseline>
