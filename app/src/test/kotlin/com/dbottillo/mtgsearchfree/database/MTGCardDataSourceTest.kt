@@ -198,7 +198,9 @@ class MTGCardDataSourceTest {
             val cards = underTest.searchCards(searchParams)
             assertThat(cards).isNotEmpty()
             for (card in cards) {
-                element.assertOperator(Integer.parseInt(card.power))
+                if (card.power != "1+*") {
+                    element.assertOperator(card.power.toInt())
+                }
             }
         }
         searchParams.power = PTParam("", -1)
