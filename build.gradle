@@ -10,17 +10,17 @@ buildscript {
         apply from: 'dependencies-versions.gradle'
         apply from: 'dependencies-all.gradle'
 
-        classpath 'com.android.tools.build:gradle:4.0.1'
-        classpath 'com.google.gms:google-services:4.3.3'
+        classpath 'com.android.tools.build:gradle:4.0.2'
+        classpath 'com.google.gms:google-services:4.3.4'
         classpath "com.google.firebase:firebase-crashlytics-gradle:$versions.crashlyticsPlugin"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
         classpath "com.github.ben-manes:gradle-versions-plugin:0.33.0"
-        classpath "com.diffplug.spotless:spotless-plugin-gradle:5.5.2"
+        classpath "com.diffplug.spotless:spotless-plugin-gradle:5.6.1"
     }
 }
 
 plugins {
-    id "io.gitlab.arturbosch.detekt" version "1.13.1"
+    id "io.gitlab.arturbosch.detekt" version "1.14.1"
 }
 
 allprojects {
