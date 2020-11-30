@@ -21,7 +21,7 @@ class ReleaseNotePresenter constructor(
             view.showItems(it)
         }, {
             logger.logNonFatal(it)
-            view.showError(it.localizedMessage)
+            view.showError(it.localizedMessage ?: "")
         }))
     }
 
