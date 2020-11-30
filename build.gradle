@@ -10,17 +10,17 @@ buildscript {
         apply from: 'dependencies-versions.gradle'
         apply from: 'dependencies-all.gradle'
 
-        classpath 'com.android.tools.build:gradle:4.0.2'
+        classpath 'com.android.tools.build:gradle:4.1.1'
         classpath 'com.google.gms:google-services:4.3.4'
         classpath "com.google.firebase:firebase-crashlytics-gradle:$versions.crashlyticsPlugin"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
-        classpath "com.github.ben-manes:gradle-versions-plugin:0.33.0"
-        classpath "com.diffplug.spotless:spotless-plugin-gradle:5.6.1"
+        classpath "com.github.ben-manes:gradle-versions-plugin:0.36.0"
+        classpath "com.diffplug.spotless:spotless-plugin-gradle:5.8.2"
     }
 }
 
 plugins {
-    id "io.gitlab.arturbosch.detekt" version "1.14.1"
+    id "io.gitlab.arturbosch.detekt" version "1.14.2"
 }
 
 allprojects {
@@ -149,8 +149,8 @@ apply plugin: 'com.github.ben-manes.versions'
 dependencyUpdates.resolutionStrategy {
     componentSelection { rules ->
         rules.all { ComponentSelection selection ->
-            boolean rejected = ['alpha', 'beta', 'rc', 'cr', 'm', 'atlassian'].any { qualifier ->
-                selection.candidate.version ==~ /(?i).*[.-]${qualifier}[.\d-]*/
+            boolean rejected = ['alpha', 'beta', 'rc', 'atlassian', 'm1', 'm2', 'm3'].any { qualifier ->
+                selection.candidate.version.toLowerCase().contains(qualifier)
             }
             if (rejected) {
                 selection.reject('Release candidate')
