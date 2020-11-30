@@ -1244,5 +1244,35 @@
     "totalSetSize": 392,
     "type": "expansion",
     "v5": true
+  },
+  {
+    "baseSetSize": 301,
+    "code": "KLR",
+    "isFoilOnly": false,
+    "isOnlineOnly": true,
+    "keyruneCode": "DEFAULT",
+    "name": "Kaladesh Remastered",
+    "releaseDate": "2020-11-12",
+    "totalSetSize": 302,
+    "translations": {},
+    "type": "masters",
+    "v5": true
+  },
+  {
+    "baseSetSize": 361,
+    "code": "CMR",
+    "isFoilOnly": false,
+    "isOnlineOnly": false,
+    "keyruneCode": "CMR",
+    "mcmId": 3454,
+    "mcmName": "Commander Legends",
+    "mtgoCode": "CMR",
+    "name": "Commander Legends",
+    "releaseDate": "2020-11-20",
+    "tcgplayerGroupId": 2708,
+    "totalSetSize": 718,
+    "translations": {},
+    "type": "draft_innovation",
+    "v5": true
   }
 ]
