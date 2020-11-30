@@ -54,7 +54,6 @@ ext.deps = [
         'leakCanary': "com.squareup.leakcanary:leakcanary-android:$versions.leak_canary",
         'leakCanaryNoOp': "com.squareup.leakcanary:leakcanary-android-no-op:$versions.leak_canary",
         'junit': "junit:junit:$versions.junit",
-        'hamcrest': "org.hamcrest:hamcrest-library:$versions.hamcrest",
         'mockito': "org.mockito:mockito-core:$versions.mockito",
         'mockitoKotlin': "com.nhaarman:mockito-kotlin:$versions.mockito_kotlin",
         'mockitoAndroid': "org.mockito:mockito-android:$versions.mockito_android",

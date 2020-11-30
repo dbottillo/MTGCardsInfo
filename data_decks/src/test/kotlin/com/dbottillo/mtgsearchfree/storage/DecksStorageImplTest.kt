@@ -8,13 +8,11 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.database.DeckDataSource
 import com.dbottillo.mtgsearchfree.util.FileUtil
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.google.common.truth.Truth.assertThat
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.verify
 import com.nhaarman.mockito_kotlin.verifyNoMoreInteractions
 import com.nhaarman.mockito_kotlin.whenever
-import org.hamcrest.CoreMatchers.`is`
-import org.junit.Assert.assertNotNull
-import org.junit.Assert.assertThat
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -58,8 +56,8 @@ class DecksStorageImplTest {
     fun testLoad() {
         val decksLoaded = underTest.load()
 
-        assertNotNull(decksLoaded)
-        assertThat(decksLoaded, `is`(decks))
+        assertThat(decksLoaded).isNotNull()
+        assertThat(decksLoaded).isEqualTo(decks)
         verify(deckDataSource).decks
         verifyNoMoreInteractions(fileUtil, deckDataSource, generalData)
     }
@@ -79,7 +77,7 @@ class DecksStorageImplTest {
 
         verify(deckDataSource).deleteDeck(deck)
         verify(deckDataSource).decks
-        assertThat(decksLoaded, `is`(decks))
+        assertThat(decksLoaded).isEqualTo(decks)
         verifyNoMoreInteractions(fileUtil, deckDataSource, generalData)
     }
 
@@ -88,7 +86,7 @@ class DecksStorageImplTest {
         val cards = underTest.loadDeck(DECK_ID)
 
         verify(deckDataSource).getCards(DECK_ID)
-        assertThat(cards.allCards(), `is`(deckCards))
+        assertThat(cards.allCards()).isEqualTo(deckCards)
         verifyNoMoreInteractions(fileUtil, deckDataSource, generalData)
     }
 
@@ -97,7 +95,7 @@ class DecksStorageImplTest {
         val deck = underTest.loadDeckById(DECK_ID)
 
         verify(deckDataSource).getDeck(DECK_ID)
-        assertThat(deck, `is`(deck))
+        assertThat(deck).isEqualTo(deck)
         verifyNoMoreInteractions(fileUtil, deckDataSource, generalData)
     }
 
@@ -109,7 +107,7 @@ class DecksStorageImplTest {
 
         verify(deckDataSource).renameDeck(DECK_ID, "new")
         verify(deckDataSource).getDeck(DECK_ID)
-        assertThat(deck, `is`(editedDeck))
+        assertThat(deck).isEqualTo(editedDeck)
         verifyNoMoreInteractions(fileUtil, deckDataSource, generalData)
     }
 
@@ -118,7 +116,7 @@ class DecksStorageImplTest {
         val cards = underTest.addCard(deck, card, 2)
 
         verify(deckDataSource).addCardToDeck(DECK_ID, card, 2)
-        assertThat(cards.allCards(), `is`(deckCards))
+        assertThat(cards.allCards()).isEqualTo(deckCards)
         verify(generalData).lastDeckSelected = DECK_ID
         verify(deckDataSource).getCards(DECK_ID)
         verifyNoMoreInteractions(fileUtil, deckDataSource, generalData)
@@ -131,7 +129,7 @@ class DecksStorageImplTest {
         verify(deckDataSource).addDeck("deck2")
         verify(deckDataSource).addCardToDeck(DECK_ID, card, 2)
         verify(deckDataSource).getCards(DECK_ID)
-        assertThat(cards.allCards(), `is`(deckCards))
+        assertThat(cards.allCards()).isEqualTo(deckCards)
         verify(generalData).lastDeckSelected = DECK_ID
         verifyNoMoreInteractions(fileUtil, deckDataSource, generalData)
     }
@@ -142,7 +140,7 @@ class DecksStorageImplTest {
 
         verify(deckDataSource).addCardToDeck(DECK_ID, card, -1)
         verify(deckDataSource).getCards(DECK_ID)
-        assertThat(cards.allCards(), `is`(deckCards))
+        assertThat(cards.allCards()).isEqualTo(deckCards)
         verifyNoMoreInteractions(fileUtil, deckDataSource, generalData)
     }
 
@@ -152,7 +150,7 @@ class DecksStorageImplTest {
 
         verify(deckDataSource).moveCardFromSideBoard(DECK_ID, card, 2)
         verify(deckDataSource).getCards(DECK_ID)
-        assertThat(cards.allCards(), `is`(deckCards))
+        assertThat(cards.allCards()).isEqualTo(deckCards)
         verifyNoMoreInteractions(fileUtil, deckDataSource, generalData)
     }
 
@@ -162,7 +160,7 @@ class DecksStorageImplTest {
 
         verify(deckDataSource).moveCardToSideBoard(DECK_ID, card, 2)
         verify(deckDataSource).getCards(DECK_ID)
-        assertThat(cards.allCards(), `is`(deckCards))
+        assertThat(cards.allCards()).isEqualTo(deckCards)
         verifyNoMoreInteractions(fileUtil, deckDataSource, generalData)
     }
 
@@ -172,7 +170,7 @@ class DecksStorageImplTest {
 
         verify(deckDataSource).removeCardFromDeck(DECK_ID, card)
         verify(deckDataSource).getCards(DECK_ID)
-        assertThat(cards.allCards(), `is`(deckCards))
+        assertThat(cards.allCards()).isEqualTo(deckCards)
         verifyNoMoreInteractions(fileUtil, deckDataSource, generalData)
     }
 
@@ -186,8 +184,8 @@ class DecksStorageImplTest {
 
         verify(deckDataSource).addDeck(cardsBucket)
         verify(deckDataSource).decks
-        assertNotNull(decksLoaded)
-        assertThat(decksLoaded, `is`(decks))
+        assertThat(decksLoaded).isNotNull()
+        assertThat(decksLoaded).isEqualTo(decks)
         verify(fileUtil).readFileContent(uri)
         verifyNoMoreInteractions(fileUtil, deckDataSource, generalData)
     }
@@ -212,7 +210,7 @@ class DecksStorageImplTest {
 
         verify(deckDataSource).copy(deck)
         verify(deckDataSource).decks
-        assertThat(result, `is`(decks))
+        assertThat(result).isEqualTo(decks)
         verifyNoMoreInteractions(fileUtil, deckDataSource, generalData)
     }
 }

@@ -51,7 +51,6 @@ ext {
         testImplementation deps.junit
         testImplementation deps.mockito
         testImplementation deps.mockitoKotlin
-        testImplementation deps.hamcrest
         testImplementation deps.fest
         testImplementation deps.truth
         lintChecks project(":lint-rules")
@@ -60,7 +59,6 @@ ext {
         testImplementation deps.robolectric
     }
     instrumentation = Group {
-        androidTestImplementation deps.hamcrest
         androidTestImplementation deps.google.testSupport.runner
         androidTestImplementation deps.google.espresso.core
         androidTestImplementation deps.google.espresso.contrib

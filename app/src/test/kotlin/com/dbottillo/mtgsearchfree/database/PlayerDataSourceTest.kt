@@ -1,10 +1,8 @@
 package com.dbottillo.mtgsearchfree.database
 
 import com.dbottillo.mtgsearchfree.model.Player
-import org.hamcrest.CoreMatchers.`is`
+import com.google.common.truth.Truth.assertThat
 import org.junit.After
-import org.junit.Assert.assertNotNull
-import org.junit.Assert.assertThat
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -32,8 +30,8 @@ class PlayerDataSourceTest {
     @Test
     fun generate_table_is_correct() {
         val query = PlayerDataSource.generateCreateTable()
-        assertNotNull(query)
-        assertThat(query, `is`("CREATE TABLE IF NOT EXISTS MTGPlayer (_id INTEGER PRIMARY KEY, name TEXT,life INT,poison INT)"))
+        assertThat(query).isNotNull()
+        assertThat(query).isEqualTo("CREATE TABLE IF NOT EXISTS MTGPlayer (_id INTEGER PRIMARY KEY, name TEXT,life INT,poison INT)")
     }
 
     @Test
@@ -41,11 +39,11 @@ class PlayerDataSourceTest {
         val player = generatePlayer()
         val id = underTest.savePlayer(player)
         val cursor = cardsInfoDbHelper.readableDatabase.rawQuery("select * from " + PlayerDataSource.TABLE + " where rowid =?", arrayOf(id.toString() + ""))
-        assertNotNull(cursor)
-        assertThat(cursor.count, `is`(1))
+        assertThat(cursor).isNotNull()
+        assertThat(cursor.count).isEqualTo(1)
         cursor.moveToFirst()
         val playerFromDb = underTest.fromCursor(cursor)
-        assertNotNull(playerFromDb)
+        assertThat(playerFromDb).isNotNull()
         assertPlayer(playerFromDb, player)
         cursor.close()
     }
@@ -56,8 +54,8 @@ class PlayerDataSourceTest {
         val id = underTest.savePlayer(player)
         underTest.removePlayer(player)
         val cursor = cardsInfoDbHelper.readableDatabase.rawQuery("select * from " + PlayerDataSource.TABLE + " where rowid =?", arrayOf(id.toString() + ""))
-        assertNotNull(cursor)
-        assertThat(cursor.count, `is`(0))
+        assertThat(cursor).isNotNull()
+        assertThat(cursor.count).isEqualTo(0)
         cursor.close()
     }
 
@@ -69,13 +67,13 @@ class PlayerDataSourceTest {
         val id = underTest.savePlayer(player)
         val player2 = generatePlayer(uniqueId, "Jayce", 18, 4)
         val id2 = underTest.savePlayer(player2)
-        assertThat(id, `is`(id2))
+        assertThat(id).isEqualTo(id2)
         val cursor = db.rawQuery("select * from " + PlayerDataSource.TABLE + " where _id =?", arrayOf(uniqueId.toString() + ""))
-        assertNotNull(cursor)
-        assertThat(cursor.count, `is`(1))
+        assertThat(cursor).isNotNull()
+        assertThat(cursor.count).isEqualTo(1)
         cursor.moveToFirst()
         val playerFromDb = underTest.fromCursor(cursor)
-        assertNotNull(playerFromDb)
+        assertThat(playerFromDb).isNotNull()
         assertPlayer(playerFromDb, player2)
         cursor.close()
     }
@@ -89,8 +87,8 @@ class PlayerDataSourceTest {
         val player3 = generatePlayer(30, "Garruk", 12, 3)
         underTest.savePlayer(player3)
         val player = underTest.players
-        assertNotNull(player)
-        assertThat(player.size, `is`(3))
+        assertThat(player).isNotNull()
+        assertThat(player.size).isEqualTo(3)
         assertPlayer(player[0], player1)
         assertPlayer(player[1], player2)
         assertPlayer(player[2], player3)
@@ -101,9 +99,9 @@ class PlayerDataSourceTest {
     }
 
     private fun assertPlayer(one: Player, two: Player) {
-        assertThat(one.id, `is`(two.id))
-        assertThat(one.name, `is`(two.name))
-        assertThat(one.life, `is`(two.life))
-        assertThat(one.poisonCount, `is`(two.poisonCount))
+        assertThat(one.id).isEqualTo(two.id)
+        assertThat(one.name).isEqualTo(two.name)
+        assertThat(one.life).isEqualTo(two.life)
+        assertThat(one.poisonCount).isEqualTo(two.poisonCount)
     }
 }

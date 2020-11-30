@@ -1,8 +1,7 @@
 package com.dbottillo.mtgsearchfree.database
 
+import com.google.common.truth.Truth.assertThat
 import com.google.gson.Gson
-import org.hamcrest.MatcherAssert.assertThat
-import org.hamcrest.Matchers.`is`
 import org.junit.After
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
@@ -41,7 +40,7 @@ class FavouritesDataSourceTest {
     fun generate_table_is_correct() {
         val query = FavouritesDataSource.generateCreateTable()
         assertNotNull(query)
-        assertThat(query, `is`("CREATE TABLE IF NOT EXISTS Favourites (_id INTEGER PRIMARY KEY)"))
+        assertThat(query).isEqualTo("CREATE TABLE IF NOT EXISTS Favourites (_id INTEGER PRIMARY KEY)")
     }
 
     @Test
@@ -51,7 +50,7 @@ class FavouritesDataSourceTest {
             underTest.saveFavourites(card)
         }
         val favouritesCard = underTest.getCards(true)
-        assertThat(favouritesCard.size, `is`(cards.size))
+        assertThat(favouritesCard.size).isEqualTo(cards.size)
         assertTrue(cards.containsAll(favouritesCard))
         assertTrue(favouritesCard.containsAll(cards))
     }
@@ -64,7 +63,7 @@ class FavouritesDataSourceTest {
         }
         underTest.removeFavourites(cards[0])
         val favouritesCard = underTest.getCards(true)
-        assertThat(favouritesCard.size, `is`(2))
+        assertThat(favouritesCard.size).isEqualTo(2)
         assertTrue(cards.containsAll(favouritesCard))
         assertFalse(favouritesCard.contains(cards[0]))
     }

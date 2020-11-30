@@ -1,8 +1,6 @@
 package com.dbottillo.mtgsearchfree.model
 
-import org.junit.Assert.assertTrue
-import org.hamcrest.CoreMatchers.`is`
-import org.junit.Assert.assertThat
+import com.google.common.truth.Truth.assertThat
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -71,55 +69,55 @@ class DeckBucketTest {
 
     @Test
     fun createsBucketProperly() {
-        assertThat(underTest.numberOfCards(), `is`(NUMBER_OF_TOTAL_CARDS))
-        assertThat(underTest.numberOfUniqueCards(), `is`(NUMBER_OF_UNIQUE_CARDS))
-        assertThat(underTest.numberOfCardsInSideboard(), `is`(5))
-        assertThat(underTest.numberOfCardsWithoutSideboard(), `is`(NUMBER_OF_TOTAL_CARDS - 5))
-        assertThat(underTest.numberOfUniqueCardsInSideboard(), `is`(1))
+        assertThat(underTest.numberOfCards()).isEqualTo(NUMBER_OF_TOTAL_CARDS)
+        assertThat(underTest.numberOfUniqueCards()).isEqualTo(NUMBER_OF_UNIQUE_CARDS)
+        assertThat(underTest.numberOfCardsInSideboard()).isEqualTo(5)
+        assertThat(underTest.numberOfCardsWithoutSideboard()).isEqualTo(NUMBER_OF_TOTAL_CARDS - 5)
+        assertThat(underTest.numberOfUniqueCardsInSideboard()).isEqualTo(1)
 
-        assertThat(underTest.other.size, `is`(3))
-        assertThat(underTest.other[0], `is`(generic))
-        assertThat(underTest.other[1], `is`(generic2))
-        assertThat(underTest.other[2], `is`(generic3))
+        assertThat(underTest.other.size).isEqualTo(3)
+        assertThat(underTest.other[0]).isEqualTo(generic)
+        assertThat(underTest.other[1]).isEqualTo(generic2)
+        assertThat(underTest.other[2]).isEqualTo(generic3)
 
-        assertThat(underTest.lands.size, `is`(2))
-        assertThat(underTest.lands[0], `is`(land))
-        assertThat(underTest.lands[1], `is`(land2))
+        assertThat(underTest.lands.size).isEqualTo(2)
+        assertThat(underTest.lands[0]).isEqualTo(land)
+        assertThat(underTest.lands[1]).isEqualTo(land2)
 
-        assertThat(underTest.creatures.size, `is`(3))
-        assertThat(underTest.creatures[0], `is`(creature))
-        assertThat(underTest.creatures[1], `is`(creature2))
-        assertThat(underTest.creatures[2], `is`(creature3))
+        assertThat(underTest.creatures.size).isEqualTo(3)
+        assertThat(underTest.creatures[0]).isEqualTo(creature)
+        assertThat(underTest.creatures[1]).isEqualTo(creature2)
+        assertThat(underTest.creatures[2]).isEqualTo(creature3)
 
-        assertThat(underTest.instantAndSorceries.size, `is`(3))
-        assertThat(underTest.instantAndSorceries[0], `is`(instant))
-        assertThat(underTest.instantAndSorceries[1], `is`(instant2))
-        assertThat(underTest.instantAndSorceries[2], `is`(sorcery))
+        assertThat(underTest.instantAndSorceries.size).isEqualTo(3)
+        assertThat(underTest.instantAndSorceries[0]).isEqualTo(instant)
+        assertThat(underTest.instantAndSorceries[1]).isEqualTo(instant2)
+        assertThat(underTest.instantAndSorceries[2]).isEqualTo(sorcery)
 
-        assertThat(underTest.side.size, `is`(1))
-        assertThat(underTest.side[0], `is`(generic4))
+        assertThat(underTest.side.size).isEqualTo(1)
+        assertThat(underTest.side[0]).isEqualTo(generic4)
     }
 
     @Test
     fun returnsCorrectSizeOfEachTypeOfCards() {
-        assertThat(underTest.numberOfUniqueCreatures, `is`(3))
-        assertThat(underTest.numberOfCreatures, `is`(5))
+        assertThat(underTest.numberOfUniqueCreatures).isEqualTo(3)
+        assertThat(underTest.numberOfCreatures).isEqualTo(5)
 
-        assertThat(underTest.numberOfUniqueInstantAndSorceries, `is`(3))
-        assertThat(underTest.numberOfInstantAndSorceries, `is`(6))
+        assertThat(underTest.numberOfUniqueInstantAndSorceries).isEqualTo(3)
+        assertThat(underTest.numberOfInstantAndSorceries).isEqualTo(6)
 
-        assertThat(underTest.numberOfUniqueLands, `is`(2))
-        assertThat(underTest.numberOfLands, `is`(11))
+        assertThat(underTest.numberOfUniqueLands).isEqualTo(2)
+        assertThat(underTest.numberOfLands).isEqualTo(11)
 
-        assertThat(underTest.numberOfUniqueOther, `is`(3))
-        assertThat(underTest.numberOfOther, `is`(3))
+        assertThat(underTest.numberOfUniqueOther).isEqualTo(3)
+        assertThat(underTest.numberOfOther).isEqualTo(3)
     }
 
     @Test
     fun returnsSameCards() {
         val output = underTest.cards
         for (card in output) {
-            assertTrue(input.contains(card))
+            assertThat(input.contains(card)).isTrue()
         }
     }
 }

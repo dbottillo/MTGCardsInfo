@@ -5,17 +5,13 @@ import com.dbottillo.mtgsearchfree.model.Color
 import com.dbottillo.mtgsearchfree.model.Rarity
 import com.dbottillo.mtgsearchfree.model.Side
 import com.dbottillo.mtgsearchfree.util.LOG
+import com.google.common.truth.Truth.assertThat
 import com.google.gson.Gson
 import com.nhaarman.mockito_kotlin.whenever
-import org.hamcrest.MatcherAssert.assertThat
-import org.hamcrest.Matchers.`is`
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 import org.junit.After
-import org.junit.Assert.assertFalse
-import org.junit.Assert.assertNotNull
-import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -33,10 +29,10 @@ class CardDataSourceIntegrationTest {
     @Mock
     lateinit var cursor: Cursor
 
-    lateinit var mtgCardDataSource: MTGCardDataSource
-    lateinit var cardsInfoDbHelper: CardsInfoDbHelper
-    lateinit var mtgDatabaseHelper: MTGDatabaseHelper
-    lateinit var underTest: CardDataSource
+    private lateinit var mtgCardDataSource: MTGCardDataSource
+    private lateinit var cardsInfoDbHelper: CardsInfoDbHelper
+    private lateinit var mtgDatabaseHelper: MTGDatabaseHelper
+    private lateinit var underTest: CardDataSource
 
     @Before
     fun setup() {
@@ -56,35 +52,21 @@ class CardDataSourceIntegrationTest {
     @Test
     fun test_generate_table_is_correct() {
         val query = CardDataSource.generateCreateTable()
-        assertNotNull(query)
+        assertThat(query).isNotNull()
         assertThat(
-            query,
-            `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT,colorIdentity TEXT,uuid TEXT,scryfallId TEXT,tcgplayerProductId INTEGER,tcgplayerPurchaseUrl TEXT,faceConvertedManaCost INTEGER,isArena INTEGER,isMtgo INTEGER,cardSide TEXT,otherFaceIds TEXT)")
-        )
+            query).isEqualTo("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT,colorIdentity TEXT,uuid TEXT,scryfallId TEXT,tcgplayerProductId INTEGER,tcgplayerPurchaseUrl TEXT,faceConvertedManaCost INTEGER,isArena INTEGER,isMtgo INTEGER,cardSide TEXT,otherFaceIds TEXT)")
         assertThat(
-            CardDataSource.generateCreateTable(1),
-            `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT)")
-        )
+            CardDataSource.generateCreateTable(1)).isEqualTo("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT)")
         assertThat(
-            CardDataSource.generateCreateTable(2),
-            `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT)")
-        )
+            CardDataSource.generateCreateTable(2)).isEqualTo("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT)")
         assertThat(
-            CardDataSource.generateCreateTable(3),
-            `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT)")
-        )
+            CardDataSource.generateCreateTable(3)).isEqualTo("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT)")
         assertThat(
-            CardDataSource.generateCreateTable(10),
-            `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT,colorIdentity TEXT,uuid TEXT,scryfallId TEXT,tcgplayerProductId INTEGER)")
-        )
+            CardDataSource.generateCreateTable(10)).isEqualTo("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT,colorIdentity TEXT,uuid TEXT,scryfallId TEXT,tcgplayerProductId INTEGER)")
         assertThat(
-            CardDataSource.generateCreateTable(11),
-            `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT,colorIdentity TEXT,uuid TEXT,scryfallId TEXT,tcgplayerProductId INTEGER,tcgplayerPurchaseUrl TEXT)")
-        )
+            CardDataSource.generateCreateTable(11)).isEqualTo("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT,colorIdentity TEXT,uuid TEXT,scryfallId TEXT,tcgplayerProductId INTEGER,tcgplayerPurchaseUrl TEXT)")
         assertThat(
-            CardDataSource.generateCreateTable(12),
-            `is`("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT,colorIdentity TEXT,uuid TEXT,scryfallId TEXT,tcgplayerProductId INTEGER,tcgplayerPurchaseUrl TEXT,faceConvertedManaCost INTEGER,isArena INTEGER,isMtgo INTEGER,cardSide TEXT)")
-        )
+            CardDataSource.generateCreateTable(12)).isEqualTo("CREATE TABLE IF NOT EXISTS MTGCard (_id INTEGER PRIMARY KEY, name TEXT,type TEXT,types TEXT,subtypes TEXT,colors TEXT,cmc INTEGER,rarity TEXT,power TEXT,toughness TEXT,manaCost TEXT,text TEXT,multicolor INTEGER,land INTEGER,artifact INTEGER,multiVerseId INTEGER,setId INTEGER,setName TEXT,rulings TEXT,layout TEXT,setCode TEXT,number TEXT,names TEXT,supertypes TEXT,flavor TEXT,artist TEXT,loyalty INTEGER,printings TEXT,legalities TEXT,originalText TEXT,colorIdentity TEXT,uuid TEXT,scryfallId TEXT,tcgplayerProductId INTEGER,tcgplayerPurchaseUrl TEXT,faceConvertedManaCost INTEGER,isArena INTEGER,isMtgo INTEGER,cardSide TEXT)")
     }
 
     @Test
@@ -95,79 +77,79 @@ class CardDataSourceIntegrationTest {
             "select * from " + CardDataSource.TABLE + " where rowid =?",
             arrayOf(id.toString() + "")
         )
-        assertNotNull(cursor)
-        assertThat(cursor.count, `is`(1))
+        assertThat(cursor).isNotNull()
+        assertThat(cursor.count).isEqualTo(1)
         cursor.moveToFirst()
         val cardFromDb = underTest.fromCursor(cursor, true)
-        assertNotNull(cardFromDb)
-        assertThat(cardFromDb.name, `is`(card.name))
-        assertThat(cardFromDb.type, `is`(card.type))
-        assertThat(cardFromDb.subTypes.size, `is`(card.subTypes.size))
+        assertThat(cardFromDb).isNotNull()
+        assertThat(cardFromDb.name).isEqualTo(card.name)
+        assertThat(cardFromDb.type).isEqualTo(card.type)
+        assertThat(cardFromDb.subTypes.size).isEqualTo(card.subTypes.size)
         for (i in 0 until cardFromDb.subTypes.size) {
-            assertThat(cardFromDb.subTypes[i], `is`(card.subTypes[i]))
+            assertThat(cardFromDb.subTypes[i]).isEqualTo(card.subTypes[i])
         }
-        assertThat(cardFromDb.colorsDisplay.size, `is`(card.colorsDisplay.size))
+        assertThat(cardFromDb.colorsDisplay.size).isEqualTo(card.colorsDisplay.size)
         for (i in cardFromDb.colorsDisplay.indices) {
-            assertThat(cardFromDb.colorsDisplay[i], `is`(card.colorsDisplay[i]))
+            assertThat(cardFromDb.colorsDisplay[i]).isEqualTo(card.colorsDisplay[i])
         }
-        assertThat(cardFromDb.cmc, `is`(card.cmc))
-        assertThat(cardFromDb.rarity, `is`(card.rarity))
-        assertThat(cardFromDb.power, `is`(card.power))
-        assertThat(cardFromDb.toughness, `is`(card.toughness))
-        assertThat(cardFromDb.manaCost, `is`(card.manaCost))
-        assertThat(cardFromDb.text, `is`(card.text))
-        assertThat(cardFromDb.isMultiColor, `is`(card.isMultiColor))
-        assertThat(cardFromDb.isLand, `is`(card.isLand))
-        assertThat(cardFromDb.isArtifact, `is`(card.isArtifact))
-        assertThat(cardFromDb.isEldrazi, `is`(card.isEldrazi))
-        assertThat(cardFromDb.set, `is`(card.set))
-        assertThat(cardFromDb.layout, `is`(card.layout))
-        assertThat<String>(cardFromDb.number, `is`<String>(card.number))
-        assertThat(cardFromDb.rulings.size, `is`(card.rulings.size))
+        assertThat(cardFromDb.cmc).isEqualTo(card.cmc)
+        assertThat(cardFromDb.rarity).isEqualTo(card.rarity)
+        assertThat(cardFromDb.power).isEqualTo(card.power)
+        assertThat(cardFromDb.toughness).isEqualTo(card.toughness)
+        assertThat(cardFromDb.manaCost).isEqualTo(card.manaCost)
+        assertThat(cardFromDb.text).isEqualTo(card.text)
+        assertThat(cardFromDb.isMultiColor).isEqualTo(card.isMultiColor)
+        assertThat(cardFromDb.isLand).isEqualTo(card.isLand)
+        assertThat(cardFromDb.isArtifact).isEqualTo(card.isArtifact)
+        assertThat(cardFromDb.isEldrazi).isEqualTo(card.isEldrazi)
+        assertThat(cardFromDb.set).isEqualTo(card.set)
+        assertThat(cardFromDb.layout).isEqualTo(card.layout)
+        assertThat<String>(cardFromDb.number).isEqualTo(card.number)
+        assertThat(cardFromDb.rulings.size).isEqualTo(card.rulings.size)
         for (i in 0 until cardFromDb.rulings.size) {
-            assertThat(cardFromDb.rulings[i], `is`(card.rulings[i]))
+            assertThat(cardFromDb.rulings[i]).isEqualTo(card.rulings[i])
         }
 
-        assertThat(cardFromDb.names.size, `is`(card.names.size))
+        assertThat(cardFromDb.names.size).isEqualTo(card.names.size)
         for (i in cardFromDb.names.indices) {
-            assertThat(cardFromDb.names[i], `is`(card.names[i]))
+            assertThat(cardFromDb.names[i]).isEqualTo(card.names[i])
         }
 
-        assertThat(cardFromDb.superTypes.size, `is`(card.superTypes.size))
+        assertThat(cardFromDb.superTypes.size).isEqualTo(card.superTypes.size)
         for (i in cardFromDb.superTypes.indices) {
-            assertThat(cardFromDb.superTypes[i], `is`(card.superTypes[i]))
+            assertThat(cardFromDb.superTypes[i]).isEqualTo(card.superTypes[i])
         }
-        assertThat(cardFromDb.loyalty, `is`(card.loyalty))
-        assertThat(cardFromDb.artist, `is`(card.artist))
-        assertThat<String>(cardFromDb.flavor, `is`<String>(card.flavor))
+        assertThat(cardFromDb.loyalty).isEqualTo(card.loyalty)
+        assertThat(cardFromDb.artist).isEqualTo(card.artist)
+        assertThat<String>(cardFromDb.flavor).isEqualTo(card.flavor)
 
-        assertThat(cardFromDb.printings, `is`(card.printings))
+        assertThat(cardFromDb.printings).isEqualTo(card.printings)
         for (i in cardFromDb.printings.indices) {
-            assertThat(cardFromDb.printings[i], `is`(card.printings[i]))
+            assertThat(cardFromDb.printings[i]).isEqualTo(card.printings[i])
         }
-        assertThat(cardFromDb.originalText, `is`(card.originalText))
+        assertThat(cardFromDb.originalText).isEqualTo(card.originalText)
 
-        assertThat<List<Color>>(cardFromDb.colorsIdentity, `is`<List<Color>>(card.colorsIdentity))
+        assertThat(cardFromDb.colorsIdentity).isEqualTo(card.colorsIdentity)
 
-        assertThat(cardFromDb.rulings.size, `is`(card.rulings.size))
+        assertThat(cardFromDb.rulings.size).isEqualTo(card.rulings.size)
         for (i in 0 until cardFromDb.rulings.size) {
-            assertThat(cardFromDb.rulings[i], `is`(card.rulings[i]))
+            assertThat(cardFromDb.rulings[i]).isEqualTo(card.rulings[i])
         }
-        assertThat(cardFromDb.legalities.size, `is`(card.legalities.size))
+        assertThat(cardFromDb.legalities.size).isEqualTo(card.legalities.size)
         for (i in 0 until cardFromDb.legalities.size) {
-            assertThat(cardFromDb.legalities[i].format, `is`(card.legalities[i].format))
-            assertThat(cardFromDb.legalities[i].legality, `is`(card.legalities[i].legality))
+            assertThat(cardFromDb.legalities[i].format).isEqualTo(card.legalities[i].format)
+            assertThat(cardFromDb.legalities[i].legality).isEqualTo(card.legalities[i].legality)
         }
-        assertThat(cardFromDb.uuid, `is`(card.uuid))
-        assertThat(cardFromDb.scryfallId, `is`(card.scryfallId))
-        assertThat(cardFromDb.tcgplayerProductId, `is`(card.tcgplayerProductId))
-        assertThat(cardFromDb.tcgplayerPurchaseUrl, `is`(card.tcgplayerPurchaseUrl))
+        assertThat(cardFromDb.uuid).isEqualTo(card.uuid)
+        assertThat(cardFromDb.scryfallId).isEqualTo(card.scryfallId)
+        assertThat(cardFromDb.tcgplayerProductId).isEqualTo(card.tcgplayerProductId)
+        assertThat(cardFromDb.tcgplayerPurchaseUrl).isEqualTo(card.tcgplayerPurchaseUrl)
 
-        assertThat(cardFromDb.faceConvertedManaCost, `is`(card.faceConvertedManaCost))
-        assertThat(cardFromDb.isArena, `is`(card.isArena))
-        assertThat(cardFromDb.isMtgo, `is`(card.isMtgo))
-        assertThat(cardFromDb.side, `is`(card.side))
-        assertThat(cardFromDb.otherFaceIds, `is`(card.otherFaceIds))
+        assertThat(cardFromDb.faceConvertedManaCost).isEqualTo(card.faceConvertedManaCost)
+        assertThat(cardFromDb.isArena).isEqualTo(card.isArena)
+        assertThat(cardFromDb.isMtgo).isEqualTo(card.isMtgo)
+        assertThat(cardFromDb.side).isEqualTo(card.side)
+        assertThat(cardFromDb.otherFaceIds).isEqualTo(card.otherFaceIds)
 
         cursor.close()
     }
@@ -180,9 +162,9 @@ class CardDataSourceIntegrationTest {
         }
 
         val cards = underTest.cards
-        assertNotNull(cards)
-        assertThat(cards.size, `is`(cardsToAdd.size))
-        assertThat(cards, `is`(cardsToAdd))
+        assertThat(cards).isNotNull()
+        assertThat(cards.size).isEqualTo(cardsToAdd.size)
+        assertThat(cards).isEqualTo(cardsToAdd)
     }
 
     @Test
@@ -190,84 +172,81 @@ class CardDataSourceIntegrationTest {
         setupCursorCard()
         val card = underTest.fromCursor(cursor)
 
-        assertThat(card.id, `is`(2))
-        assertThat(card.multiVerseId, `is`(1001))
-        assertThat(card.tcgplayerProductId, `is`(129859))
-        assertThat(card.uuid, `is`("9b1c7f07-8d39-425b-8ae9-b3ab317cc0fe"))
-        assertThat(card.scryfallId, `is`("05e2a5e6-3aaa-4096-bdd0-fcc1afe5a36c"))
-        assertThat(card.name, `is`("name"))
-        assertThat(card.type, `is`("type"))
-        assertThat(card.types, `is`(listOf("Artifact", "Creature")))
-        assertThat(card.subTypes, `is`(listOf("Creature", "Artifact")))
+        assertThat(card.id).isEqualTo(2)
+        assertThat(card.multiVerseId).isEqualTo(1001)
+        assertThat(card.tcgplayerProductId).isEqualTo(129859)
+        assertThat(card.uuid).isEqualTo("9b1c7f07-8d39-425b-8ae9-b3ab317cc0fe")
+        assertThat(card.scryfallId).isEqualTo("05e2a5e6-3aaa-4096-bdd0-fcc1afe5a36c")
+        assertThat(card.name).isEqualTo("name")
+        assertThat(card.type).isEqualTo("type")
+        assertThat(card.types).isEqualTo(listOf("Artifact", "Creature"))
+        assertThat(card.subTypes).isEqualTo(listOf("Creature", "Artifact"))
 
-        assertThat(card.colorsDisplay, `is`(listOf("U", "W")))
-        assertThat(card.cmc, `is`(1))
-        assertThat(card.rarity, `is`(Rarity.RARE))
-        assertThat(card.power, `is`("2"))
-        assertThat(card.toughness, `is`("3"))
+        assertThat(card.colorsDisplay).isEqualTo(listOf("U", "W"))
+        assertThat(card.cmc).isEqualTo(1)
+        assertThat(card.rarity).isEqualTo(Rarity.RARE)
+        assertThat(card.power).isEqualTo("2")
+        assertThat(card.toughness).isEqualTo("3")
 
-        assertThat(card.manaCost, `is`("3{U}{B}"))
-        assertThat(card.text, `is`("text"))
+        assertThat(card.manaCost).isEqualTo("3{U}{B}")
+        assertThat(card.text).isEqualTo("text")
 
-        assertFalse(card.isMultiColor)
-        assertTrue(card.isLand)
-        assertFalse(card.isArtifact)
+        assertThat(card.isMultiColor).isFalse()
+        assertThat(card.isLand).isTrue()
+        assertThat(card.isArtifact).isFalse()
 
-        assertThat(card.set?.id, `is`(10))
-        assertThat(card.set?.name, `is`("Commander 2016"))
-        assertThat(card.set?.code, `is`("C16"))
+        assertThat(card.set?.id).isEqualTo(10)
+        assertThat(card.set?.name).isEqualTo("Commander 2016")
+        assertThat(card.set?.code).isEqualTo("C16")
 
-        assertNotNull(card.rulings)
-        assertThat(card.rulings.size, `is`(1))
-        assertThat(
-            card.rulings[0],
-            `is`("If a spell or ability has you draw multiple cards, Hoofprints of the Stag's ability triggers that many times.")
-        )
+        assertThat(card.rulings).isNotNull()
+        assertThat(card.rulings.size).isEqualTo(1)
+        assertThat(card.rulings[0]).isEqualTo("If a spell or ability has you draw multiple cards, Hoofprints of the Stag's ability triggers that many times.")
 
-        assertThat(card.layout, `is`("layout"))
-        assertThat(card.number, `is`("29"))
+        assertThat(card.layout).isEqualTo("layout")
+        assertThat(card.number).isEqualTo("29")
 
-        assertNotNull(card.names)
-        assertThat(card.names.size, `is`(2))
-        assertThat(card.names[0], `is`("Order"))
-        assertThat(card.names[1], `is`("Chaos"))
+        assertThat(card.names).isNotNull()
+        assertThat(card.names.size).isEqualTo(2)
+        assertThat(card.names[0]).isEqualTo("Order")
+        assertThat(card.names[1]).isEqualTo("Chaos")
 
-        assertNotNull(card.superTypes)
-        assertThat(card.superTypes.size, `is`(2))
-        assertThat(card.superTypes[0], `is`("Creature"))
-        assertThat(card.superTypes[1], `is`("Artifact"))
+        assertThat(card.superTypes).isNotNull()
+        assertThat(card.superTypes.size).isEqualTo(2)
+        assertThat(card.superTypes[0]).isEqualTo("Creature")
+        assertThat(card.superTypes[1]).isEqualTo("Artifact")
 
-        assertThat(card.flavor, `is`("flavor"))
-        assertThat(card.artist, `is`("artist"))
-        assertThat(card.loyalty, `is`(4))
+        assertThat(card.flavor).isEqualTo("flavor")
+        assertThat(card.artist).isEqualTo("artist")
+        assertThat(card.loyalty).isEqualTo(4)
 
-        assertNotNull(card.printings)
-        assertThat(card.printings.size, `is`(2))
-        assertThat(card.printings[0], `is`("C16"))
-        assertThat(card.printings[1], `is`("C17"))
+        assertThat(card.printings).isNotNull()
+        assertThat(card.printings.size).isEqualTo(2)
+        assertThat(card.printings[0]).isEqualTo("C16")
+        assertThat(card.printings[1]).isEqualTo("C17")
 
-        assertThat(card.originalText, `is`("original text"))
+        assertThat(card.originalText).isEqualTo("original text")
 
-        assertNotNull(card.colorsIdentity)
-        assertThat(card.colorsIdentity.size, `is`(2))
-        assertThat(card.colorsIdentity[0], `is`(Color.BLUE))
-        assertThat(card.colorsIdentity[1], `is`(Color.WHITE))
+        assertThat(card.colorsIdentity).isNotNull()
+        assertThat(card.colorsIdentity.size).isEqualTo(2)
+        assertThat(card.colorsIdentity[0]).isEqualTo(Color.BLUE)
+        assertThat(card.colorsIdentity[1]).isEqualTo(Color.WHITE)
 
-        assertNotNull(card.legalities)
-        assertThat(card.legalities.size, `is`(2))
-        assertThat(card.legalities[0].format, `is`("Legacy"))
-        assertThat(card.legalities[0].legality, `is`("Banned"))
-        assertThat(card.legalities[1].format, `is`("Vintage"))
-        assertThat(card.legalities[1].legality, `is`("Restricted"))
+        assertThat(card.legalities).isNotNull()
+        assertThat(card.legalities.size).isEqualTo(2)
+        assertThat(card.legalities[0].format).isEqualTo("Legacy")
+        assertThat(card.legalities[0].legality).isEqualTo("Banned")
+        assertThat(card.legalities[1].format).isEqualTo("Vintage")
+        assertThat(card.legalities[1].legality).isEqualTo("Restricted")
 
-        assertThat(card.tcgplayerPurchaseUrl, `is`("tcg_player_url"))
+        assertThat(card.tcgplayerPurchaseUrl).isEqualTo("tcg_player_url")
 
-        assertThat(card.faceConvertedManaCost, `is`(4))
-        assertTrue(card.isArena == true)
-        assertTrue(card.isMtgo == true)
-        assertThat(card.side, `is`(Side.B))
+        assertThat(card.faceConvertedManaCost).isEqualTo(4)
+        assertThat(card.isArena == true).isTrue()
+        assertThat(card.isMtgo == true).isTrue()
+        assertThat(card.side).isEqualTo(Side.B)
 
-        assertThat(card.otherFaceIds, `is`(listOf("UUID-1", "UUID-2")))
+        assertThat(card.otherFaceIds).isEqualTo(listOf("UUID-1", "UUID-2"))
     }
 
     @Test
@@ -275,81 +254,53 @@ class CardDataSourceIntegrationTest {
         val card = mtgCardDataSource.getRandomCard(1)[0]
         val contentValues = underTest.createContentValue(card)
 
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.UUID.noun), `is`(card.uuid))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.UUID.noun)).isEqualTo(card.uuid)
         assertThat(
-            contentValues.getAsString(CardDataSource.COLUMNS.SCRYFALLID.noun),
-            `is`(card.scryfallId)
-        )
+            contentValues.getAsString(CardDataSource.COLUMNS.SCRYFALLID.noun)).isEqualTo(card.scryfallId)
         assertThat(
-            contentValues.getAsInteger(CardDataSource.COLUMNS.TCG_PLAYER_PRODUCT_ID.noun),
-            `is`(card.tcgplayerProductId)
-        )
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.NAME.noun), `is`(card.name))
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.TYPE.noun), `is`(card.type))
+            contentValues.getAsInteger(CardDataSource.COLUMNS.TCG_PLAYER_PRODUCT_ID.noun)).isEqualTo(card.tcgplayerProductId)
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.NAME.noun)).isEqualTo(card.name)
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.TYPE.noun)).isEqualTo(card.type)
 
         assertThat(
-            contentValues.getAsInteger(CardDataSource.COLUMNS.SET_ID.noun),
-            `is`(card.set?.id)
-        )
+            contentValues.getAsInteger(CardDataSource.COLUMNS.SET_ID.noun)).isEqualTo(card.set?.id)
         assertThat(
-            contentValues.getAsString(CardDataSource.COLUMNS.SET_NAME.noun),
-            `is`(card.set?.name)
-        )
+            contentValues.getAsString(CardDataSource.COLUMNS.SET_NAME.noun)).isEqualTo(card.set?.name)
         assertThat(
-            contentValues.getAsString(CardDataSource.COLUMNS.SET_CODE.noun),
-            `is`(card.set?.code)
-        )
+            contentValues.getAsString(CardDataSource.COLUMNS.SET_CODE.noun)).isEqualTo(card.set?.code)
 
         if (card.colorsDisplay.isNotEmpty()) {
             assertThat(
-                contentValues.getAsString(CardDataSource.COLUMNS.COLORS.noun),
-                `is`(card.colorsDisplay.joinToString(","))
-            )
+                contentValues.getAsString(CardDataSource.COLUMNS.COLORS.noun)).isEqualTo(card.colorsDisplay.joinToString(","))
         }
 
         if (card.types.size > 0) {
             assertThat(
-                contentValues.getAsString(CardDataSource.COLUMNS.TYPES.noun),
-                `is`(card.types.joinToString(","))
-            )
+                contentValues.getAsString(CardDataSource.COLUMNS.TYPES.noun)).isEqualTo(card.types.joinToString(","))
         }
 
         if (card.subTypes.size > 0) {
             assertThat(
-                contentValues.getAsString(CardDataSource.COLUMNS.SUB_TYPES.noun),
-                `is`(card.subTypes.joinToString(","))
-            )
+                contentValues.getAsString(CardDataSource.COLUMNS.SUB_TYPES.noun)).isEqualTo(card.subTypes.joinToString(","))
         }
 
         assertThat(
-            contentValues.getAsString(CardDataSource.COLUMNS.MANA_COST.noun),
-            `is`(card.manaCost)
-        )
+            contentValues.getAsString(CardDataSource.COLUMNS.MANA_COST.noun)).isEqualTo(card.manaCost)
         assertThat(
-            contentValues.getAsString(CardDataSource.COLUMNS.RARITY.noun),
-            `is`(card.rarity.value)
-        )
+            contentValues.getAsString(CardDataSource.COLUMNS.RARITY.noun)).isEqualTo(card.rarity.value)
         assertThat(
-            contentValues.getAsInteger(CardDataSource.COLUMNS.MULTIVERSE_ID.noun),
-            `is`(card.multiVerseId)
-        )
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.POWER.noun), `is`(card.power))
+            contentValues.getAsInteger(CardDataSource.COLUMNS.MULTIVERSE_ID.noun)).isEqualTo(card.multiVerseId)
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.POWER.noun)).isEqualTo(card.power)
         assertThat(
-            contentValues.getAsString(CardDataSource.COLUMNS.TOUGHNESS.noun),
-            `is`(card.toughness)
-        )
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.TEXT.noun), `is`(card.text))
-        assertThat(contentValues.getAsInteger(CardDataSource.COLUMNS.CMC.noun), `is`(card.cmc))
+            contentValues.getAsString(CardDataSource.COLUMNS.TOUGHNESS.noun)).isEqualTo(card.toughness)
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.TEXT.noun)).isEqualTo(card.text)
+        assertThat(contentValues.getAsInteger(CardDataSource.COLUMNS.CMC.noun)).isEqualTo(card.cmc)
 
         assertThat(
-            contentValues.getAsBoolean(CardDataSource.COLUMNS.MULTICOLOR.noun),
-            `is`(card.isMultiColor)
-        )
-        assertThat(contentValues.getAsBoolean(CardDataSource.COLUMNS.LAND.noun), `is`(card.isLand))
+            contentValues.getAsBoolean(CardDataSource.COLUMNS.MULTICOLOR.noun)).isEqualTo(card.isMultiColor)
+        assertThat(contentValues.getAsBoolean(CardDataSource.COLUMNS.LAND.noun)).isEqualTo(card.isLand)
         assertThat(
-            contentValues.getAsBoolean(CardDataSource.COLUMNS.ARTIFACT.noun),
-            `is`(card.isArtifact)
-        )
+            contentValues.getAsBoolean(CardDataSource.COLUMNS.ARTIFACT.noun)).isEqualTo(card.isArtifact)
 
         if (card.rulings.size > 0) {
             val rules = JSONArray()
@@ -363,49 +314,30 @@ class CardDataSourceIntegrationTest {
                 }
             }
             assertThat(
-                contentValues.getAsString(CardDataSource.COLUMNS.RULINGS.noun),
-                `is`(rules.toString())
-            )
+                contentValues.getAsString(CardDataSource.COLUMNS.RULINGS.noun)).isEqualTo(rules.toString())
         }
 
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.LAYOUT.noun), `is`(card.layout))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.LAYOUT.noun)).isEqualTo(card.layout)
         assertThat(
-            contentValues.getAsString(CardDataSource.COLUMNS.NUMBER.noun),
-            `is`<String>(card.number)
-        )
+            contentValues.getAsString(CardDataSource.COLUMNS.NUMBER.noun)).isEqualTo(card.number)
 
         val gson = Gson()
         assertThat(
-            contentValues.getAsString(CardDataSource.COLUMNS.NAMES.noun),
-            `is`(gson.toJson(card.names))
-        )
+            contentValues.getAsString(CardDataSource.COLUMNS.NAMES.noun)).isEqualTo(gson.toJson(card.names))
         assertThat(
-            contentValues.getAsString(CardDataSource.COLUMNS.SUPER_TYPES.noun),
-            `is`(gson.toJson(card.superTypes))
-        )
+            contentValues.getAsString(CardDataSource.COLUMNS.SUPER_TYPES.noun)).isEqualTo(gson.toJson(card.superTypes))
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.FLAVOR.noun)).isEqualTo(card.flavor)
+        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.ARTIST.noun)).isEqualTo(card.artist)
         assertThat(
-            contentValues.getAsString(CardDataSource.COLUMNS.FLAVOR.noun),
-            `is`<String>(card.flavor)
-        )
-        assertThat(contentValues.getAsString(CardDataSource.COLUMNS.ARTIST.noun), `is`(card.artist))
+            contentValues.getAsInteger(CardDataSource.COLUMNS.LOYALTY.noun)).isEqualTo(card.loyalty)
         assertThat(
-            contentValues.getAsInteger(CardDataSource.COLUMNS.LOYALTY.noun),
-            `is`(card.loyalty)
-        )
-        assertThat(
-            contentValues.getAsString(CardDataSource.COLUMNS.PRINTINGS.noun),
-            `is`(gson.toJson(card.printings))
-        )
+            contentValues.getAsString(CardDataSource.COLUMNS.PRINTINGS.noun)).isEqualTo(gson.toJson(card.printings))
 
         assertThat(
-            contentValues.getAsString(CardDataSource.COLUMNS.ORIGINAL_TEXT.noun),
-            `is`(card.originalText)
-        )
+            contentValues.getAsString(CardDataSource.COLUMNS.ORIGINAL_TEXT.noun)).isEqualTo(card.originalText)
 
         assertThat(
-            contentValues.getAsString(CardDataSource.COLUMNS.COLORS_IDENTITY.noun),
-            `is`(gson.toJson(card.colorsIdentity.map { it.unmap() }))
-        )
+            contentValues.getAsString(CardDataSource.COLUMNS.COLORS_IDENTITY.noun)).isEqualTo(gson.toJson(card.colorsIdentity.map { it.unmap() }))
 
         if (card.legalities.size > 0) {
             val legalities = JSONArray()
@@ -420,47 +352,35 @@ class CardDataSourceIntegrationTest {
                 }
             }
             assertThat(
-                contentValues.getAsString(CardDataSource.COLUMNS.LEGALITIES.noun),
-                `is`(legalities.toString())
-            )
+                contentValues.getAsString(CardDataSource.COLUMNS.LEGALITIES.noun)).isEqualTo(legalities.toString())
         }
 
         assertThat(
-            contentValues.getAsString(CardDataSource.COLUMNS.TCG_PLAYER_PURCHASE_URL.noun),
-            `is`(card.tcgplayerPurchaseUrl)
-        )
+            contentValues.getAsString(CardDataSource.COLUMNS.TCG_PLAYER_PURCHASE_URL.noun)).isEqualTo(card.tcgplayerPurchaseUrl)
 
         assertThat(
-            contentValues.getAsInteger(CardDataSource.COLUMNS.FACE_CMC.noun),
-            `is`(card.faceConvertedManaCost)
-        )
+            contentValues.getAsInteger(CardDataSource.COLUMNS.FACE_CMC.noun)).isEqualTo(card.faceConvertedManaCost)
         val expectedIsArena = when {
             card.isArena == true -> 1
             card.isArena == false -> 0
             else -> null
         }
         assertThat(
-            contentValues.getAsInteger(CardDataSource.COLUMNS.IS_ARENA.noun),
-            `is`(expectedIsArena)
-        )
+            contentValues.getAsInteger(CardDataSource.COLUMNS.IS_ARENA.noun)).isEqualTo(expectedIsArena)
         val expectedIsMtgo = when {
             card.isArena == true -> 1
             card.isArena == false -> 0
             else -> null
         }
         contentValues.getAsInteger(CardDataSource.COLUMNS.IS_MTGO.noun)?.let {
-            assertThat(it, `is`(expectedIsMtgo))
+            assertThat(it).isEqualTo(expectedIsMtgo)
         }
         assertThat(
-            contentValues.getAsString(CardDataSource.COLUMNS.SIDE.noun),
-            `is`(if (card.side == Side.A) "A" else "B")
-        )
+            contentValues.getAsString(CardDataSource.COLUMNS.SIDE.noun)).isEqualTo(if (card.side == Side.A) "A" else "B")
 
         if (card.otherFaceIds.size > 0) {
             assertThat(
-                contentValues.getAsString(CardDataSource.COLUMNS.OTHER_FACE_IDS.noun),
-                `is`(card.otherFaceIds.joinToString(","))
-            )
+                contentValues.getAsString(CardDataSource.COLUMNS.OTHER_FACE_IDS.noun)).isEqualTo(card.otherFaceIds.joinToString(","))
         }
     }
 

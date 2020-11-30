@@ -3,6 +3,7 @@ package com.dbottillo.mtgsearchfree.lifecounter
 import com.dbottillo.mtgsearchfree.model.Player
 import com.dbottillo.mtgsearchfree.database.PlayerDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
+import com.google.common.truth.Truth.assertThat
 import com.nhaarman.mockito_kotlin.argumentCaptor
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.times
@@ -13,8 +14,6 @@ import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnit
-import org.hamcrest.CoreMatchers.`is`
-import org.junit.Assert.assertThat
 
 class PlayersStorageImplTest {
 
@@ -40,7 +39,7 @@ class PlayersStorageImplTest {
 
         verify(playerDataSource).players
 
-        assertThat(result, `is`(players))
+        assertThat(result).isEqualTo(players)
     }
 
     @Test
@@ -60,14 +59,14 @@ class PlayersStorageImplTest {
         verify(playerDataSource).savePlayer(argumentCaptor<Player>().capture())
         verify(playerDataSource, times(2)).players
 
-        assertThat(result, `is`(players))
+        assertThat(result).isEqualTo(players)
     }
 
     @Test
     fun testEditPlayer() {
         val result = underTest.editPlayer(player)
         verify(playerDataSource).savePlayer(player)
-        assertThat(result, `is`(players))
+        assertThat(result).isEqualTo(players)
     }
 
     @Test
@@ -78,13 +77,13 @@ class PlayersStorageImplTest {
         val result = underTest.editPlayers(toEdit)
         verify(playerDataSource).savePlayer(player1)
         verify(playerDataSource).savePlayer(player2)
-        assertThat(result, `is`(players))
+        assertThat(result).isEqualTo(players)
     }
 
     @Test
     fun testRemovePlayer() {
         val result = underTest.removePlayer(player)
         verify(playerDataSource).removePlayer(player)
-        assertThat(result, `is`(players))
+        assertThat(result).isEqualTo(players)
     }
 }
