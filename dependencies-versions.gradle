@@ -1,6 +1,6 @@
 ext.versions = [
         // kotlin
-        'kotlin'           : '1.4.20',
+        'kotlin'           : '1.4.21',
 
         // google
         'androidx'         : [
@@ -11,11 +11,11 @@ ext.versions = [
                 'preference': '1.1.1'
         ],
         'material'         : '1.2.1',
-        'dagger'           : '2.30.1',
+        'dagger'           : '2.31.2',
         'glide'            : '4.11.0',
         'constraint_layout': '2.0.4',
         'firebase': [
-                'core': '18.0.0',
+                'core': '18.0.1',
                 'crashlytics': '17.3.0'
         ],
         'crashlyticsPlugin': '2.4.1',
@@ -30,14 +30,14 @@ ext.versions = [
         ],
 
         // 3rd-party
-        'leak_canary'      : '2.5',
+        'leak_canary'      : '2.6',
         'gson'             : '2.8.6',
         'rx_java'          : '2.2.20',
         'rx_android'       : '2.1.1',
 
         // testing
         'espresso'         : '3.2.0',
-        'mockito'          : '3.6.28',
+        'mockito'          : '3.7.7',
         'mockito_kotlin'   : '1.6.0',
         'mockito_android'  : '3.0.0',
         'junit'            : '4.13.1',
@@ -45,6 +45,6 @@ ext.versions = [
         'support_runner'   : '1.2.0',
         'dexmaker_mockito' : '1.2',
         'robolectric'      : '4.4',
-        'truth'            : '1.1',
-        'lint'             : '27.1.1'
+        'truth'            : '1.1.1',
+        'lint'             : '27.1.2'
 ]
