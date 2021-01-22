@@ -8,7 +8,9 @@ import okhttp3.Response
 import okhttp3.Route
 import javax.inject.Inject
 
-class TokenAuthenticator @Inject constructor(private val apiAuthenticatorInterface: ApiAuthenticatorInterface) : Authenticator {
+class TokenAuthenticator @Inject constructor(
+    private val apiAuthenticatorInterface: ApiAuthenticatorInterface
+) : Authenticator {
 
     override fun authenticate(route: Route?, response: Response): Request? {
         if (responseCount(response) >= 5) {
@@ -19,10 +21,11 @@ class TokenAuthenticator @Inject constructor(private val apiAuthenticatorInterfa
             val refreshCall = apiAuthenticatorInterface.auth(
                 grantType = "client_credentials",
                 clientId = BuildConfig.TCG_CLIENT_ID,
-                clientSecret = BuildConfig.TCG_CLIENT_SECRET).blockingGet()
+                clientSecret = BuildConfig.TCG_CLIENT_SECRET
+            ).blockingGet()
             response.request.newBuilder()
-                    .header("Authorization", "Bearer ${refreshCall.access_token}")
-                    .build()
+                .header("Authorization", "Bearer ${refreshCall.access_token}")
+                .build()
         } else {
             null
         }
@@ -39,12 +42,13 @@ class TokenAuthenticator @Inject constructor(private val apiAuthenticatorInterfa
     }
 }
 
-class TCGTokenInterceptor @Inject constructor(private val tokenRepository: TokenRepository) : Interceptor {
+class TCGTokenInterceptor @Inject constructor(private val tokenRepository: TokenRepository) :
+    Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val newRequest = chain.request().newBuilder()
-                .addHeader("Authorization", "Bearer ${tokenRepository.get()}")
-                .build()
+            .addHeader("Authorization", "Bearer ${tokenRepository.get()}")
+            .build()
         return chain.proceed(newRequest)
     }
 }

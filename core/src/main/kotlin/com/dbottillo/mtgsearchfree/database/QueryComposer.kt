@@ -20,7 +20,9 @@ internal class QueryComposer(initial: String) {
         cmcParam?.let {
             checkFirstParam()
             if (it.operator == "=") {
-                if ((it.stringValues.size == 1 && it.stringValues[0].toIntOrNull() == it.numericValue) || it.stringValues.isEmpty()) {
+                if ((it.stringValues.size == 1 && it.stringValues[0].toIntOrNull() == it.numericValue)
+                    || it.stringValues.isEmpty()
+                ) {
                     stringBuilder.append("cmc").append(it.operator).append("?")
                     addSelection(it.operator, it.numericValue.toString())
                 } else {

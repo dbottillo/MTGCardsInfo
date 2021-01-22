@@ -97,6 +97,7 @@ class DebugActivity : DaggerAppCompatActivity() {
         })
     }
 
+    @Suppress("MaxLineLength")
     private fun copyDBToSdCard() {
         requestPermission(PermissionAvailable.WriteStorage, object : PermissionUtil.PermissionListener {
             override fun permissionGranted() {

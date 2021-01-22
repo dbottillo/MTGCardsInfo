@@ -12,7 +12,10 @@ import com.dbottillo.mtgsearchfree.ui.views.FilterPickerView
 import dagger.android.support.AndroidSupportInjection
 import javax.inject.Inject
 
-class CardsConfiguratorFragment : BottomSheetDialogFragment(), CardsConfiguratorView, FilterPickerView.OnFilterPickerListener {
+class CardsConfiguratorFragment : BottomSheetDialogFragment(),
+    CardsConfiguratorView,
+    FilterPickerView.OnFilterPickerListener
+{
 
     interface CardsConfiguratorListener {
         fun onConfigurationChange()

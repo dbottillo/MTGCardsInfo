@@ -11,7 +11,11 @@ import com.dbottillo.mtgsearchfree.core.R
 import com.dbottillo.mtgsearchfree.model.CardFilter
 import com.dbottillo.mtgsearchfree.util.LOG
 
-class FilterPickerView(context: Context, attrs: AttributeSet?, defStyle: Int) : LinearLayout(context, attrs, defStyle), View.OnClickListener {
+class FilterPickerView(
+    context: Context,
+    attrs: AttributeSet?,
+    defStyle: Int
+) : LinearLayout(context, attrs, defStyle), View.OnClickListener {
 
     private val filterPanelContainer by lazy(LazyThreadSafetyMode.NONE) { findViewById<View>(R.id.filter_panel_container) }
     private val filterTitle by lazy(LazyThreadSafetyMode.NONE) { findViewById<View>(R.id.filter_title) }

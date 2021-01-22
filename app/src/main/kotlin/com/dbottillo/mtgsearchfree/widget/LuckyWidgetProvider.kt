@@ -29,7 +29,8 @@ class LuckyWidgetProvider : AppWidgetProvider() {
         if (intent?.action.equals(REFRESH_ACTION)) {
             val manager = AppWidgetManager.getInstance(context)
             val cn = ComponentName(context, LuckyWidgetProvider::class.java)
-            val appWidgetIds = intent?.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID)?.let { intArrayOf(it) }
+            val appWidgetIds = intent?.getIntExtra(AppWidgetManager.EXTRA_APPWIDGET_ID,
+                AppWidgetManager.INVALID_APPWIDGET_ID)?.let { intArrayOf(it) }
                     ?: manager.getAppWidgetIds(cn)
             onUpdate(context, manager, appWidgetIds)
         }

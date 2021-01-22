@@ -129,7 +129,7 @@ class DeckDataSource(
         return deck
     }
 
-    @Suppress("MagicNumber")
+    @Suppress("MagicNumber", "MaxLineLength")
     private fun getInfoFromCards(deckId: Long): Triple<Int, Int, List<Color>> {
         // val query = "select DC.side,DC.quantity,DC.colorIdentity from deck_card DC left join decks D on (D._id = DC.deck_id) where deck_id=$deckId"
         val query = "select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)"

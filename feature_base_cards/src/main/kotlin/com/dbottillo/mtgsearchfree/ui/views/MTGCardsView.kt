@@ -58,7 +58,14 @@ class MTGCardsView @JvmOverloads constructor(
                 menu = R.menu.card_option))
     }
 
-    fun loadCards(cards: List<MTGCard>, listener: OnCardListener, title: String, cardFilter: CardFilter?, menuOption: Int) {
+    @Suppress("LongParameterList")
+    fun loadCards(
+        cards: List<MTGCard>,
+        listener: OnCardListener,
+        title: String,
+        cardFilter: CardFilter?,
+        menuOption: Int
+    ) {
         loadCards(cards, listener, cardFilter, CardAdapterConfiguration(
                 title = title,
                 isGrid = grid,

@@ -141,7 +141,8 @@ class ToolbarRevealScrollHelper @JvmOverloads constructor(
                 // after a backstack or a full restore we don't need to do anything
                 oldCurrentScroll
             } else {
-                // after a rotation change the offset it's different because the maximum scroll is different (depends on the app bar height)
+                // after a rotation change the offset it's different because
+                // the maximum scroll is different (depends on the app bar height)
                 val interval = oldCurrentScroll.toFloat() / oldMaximumScroll.toFloat()
                 (maximumScroll * interval).toInt()
             }

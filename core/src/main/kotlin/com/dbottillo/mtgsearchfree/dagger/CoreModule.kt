@@ -64,7 +64,10 @@ class CoreModule {
 
     @Provides
     @Singleton
-    fun provideMTGCardDataSource(@Named("cardsDB") database: SQLiteDatabase, cardDataSource: CardDataSource): MTGCardDataSource {
+    fun provideMTGCardDataSource(
+        @Named("cardsDB") database: SQLiteDatabase,
+        cardDataSource: CardDataSource
+    ): MTGCardDataSource {
         return MTGCardDataSource(database, cardDataSource)
     }
 

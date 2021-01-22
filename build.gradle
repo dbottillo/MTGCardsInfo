@@ -98,12 +98,14 @@ allprojects {
                 includeGroup "org.easymock"
                 includeGroup "org.smali"
                 includeGroup "cglib"
+                includeGroupByRegex "com.fasterxml.*"
             }
         }
         maven {
             url 'https://plugins.gradle.org/m2/'
             content {
                 includeGroup "io.gitlab.arturbosch.detekt"
+                includeGroup "io.github.detekt.sarif4j"
             }
         }
         jcenter {

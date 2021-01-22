@@ -62,7 +62,10 @@ open class DataModule {
 
     @Provides
     @Singleton
-    fun provideFavouritesDataSource(@Named("storageDB") database: SQLiteDatabase, cardDataSource: CardDataSource): FavouritesDataSource {
+    fun provideFavouritesDataSource(
+        @Named("storageDB") database: SQLiteDatabase,
+        cardDataSource: CardDataSource
+    ): FavouritesDataSource {
         return FavouritesDataSource(database, cardDataSource)
     }
 
@@ -111,7 +114,12 @@ open class DataModule {
 
     @Provides
     @Singleton
-    fun provideDecksStorage(fileUtil: FileUtil, deckDataSource: DeckDataSource, generalData: GeneralData, logger: Logger): DecksStorage {
+    fun provideDecksStorage(
+        fileUtil: FileUtil,
+        deckDataSource: DeckDataSource,
+        generalData: GeneralData,
+        logger: Logger
+    ): DecksStorage {
         return DecksStorageImpl(fileUtil, deckDataSource, generalData, logger)
     }
 
