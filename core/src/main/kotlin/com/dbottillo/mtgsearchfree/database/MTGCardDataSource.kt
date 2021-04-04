@@ -17,12 +17,12 @@ class MTGCardDataSource(
 
     @Suppress("MagicNumber")
     enum class STANDARD(var setId: Int, var set: String) {
-        KALDHEIM(1, "Kaldheim"),
-        ZENDIKAR_RISING(4, "Zendikar Rising"),
-        CORE_21(11, "Core Set 2021"),
-        IKORIA(13, "Ikoria: Lair of Behemoths"),
-        THEROS_BEYOND_DEATH(19, "Theros Beyond Death"),
-        THRONE_OF_ELDRAINE(25, "Throne of Eldraine");
+        KALDHEIM(6, "Kaldheim"),
+        ZENDIKAR_RISING(10, "Zendikar Rising"),
+        CORE_21(16, "Core Set 2021"),
+        IKORIA(18, "Ikoria: Lair of Behemoths"),
+        THEROS_BEYOND_DEATH(24, "Theros Beyond Death"),
+        THRONE_OF_ELDRAINE(30, "Throne of Eldraine");
 
         companion object {
 

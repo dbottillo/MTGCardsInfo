@@ -238,8 +238,10 @@ class MTGCardDataSourceTest {
             searchParams.tough = operator.generatePTParam()
             val cards = underTest.searchCards(searchParams)
             assertThat(cards).isNotEmpty()
-            cards.forEach {
-                operator.assertOperator(it.toughness.toInt())
+            cards.forEach { card ->
+                if (card.toughness != "1+*") {
+                    operator.assertOperator(card.toughness.toInt())
+                }
             }
         }
         searchParams.tough = PTParam("", -1)
@@ -581,7 +583,7 @@ class MTGCardDataSourceTest {
     fun `should search cards by id`() {
         val card = underTest.searchCardById(5)
         assertThat(card).isNotNull()
-        assertThat(card?.name).isEqualTo("Bound in Gold")
+        assertThat(card?.name).isEqualTo("Ephemerate")
     }
 
     @Test
