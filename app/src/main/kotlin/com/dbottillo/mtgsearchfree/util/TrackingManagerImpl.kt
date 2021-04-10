@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.FirebaseAnalytics.Event.SCREEN_VIEW
 import com.google.firebase.analytics.FirebaseAnalytics.Event.VIEW_ITEM
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 
@@ -44,6 +45,10 @@ class TrackingManagerImpl constructor(
     private val UA_ACTION_MOVE_ALL = "moveAll"
     private val UA_ACTION_EXPORT = "export"
 
+    private val firebase by lazy {
+        FirebaseAnalytics.getInstance(context)
+    }
+
     override fun trackCard(setName: String, position: Int) {
         trackEvent(UA_CATEGORY_CARD, UA_ACTION_SELECT, "$setName pos:$position")
     }
@@ -51,8 +56,8 @@ class TrackingManagerImpl constructor(
     @SuppressLint("MissingPermission")
     override fun trackPage(page: String?) {
         if (page != null) {
-            val bundle = Bundle().also { it.putString(FirebaseAnalytics.Param.ITEM_NAME, page) }
-            FirebaseAnalytics.getInstance(context).logEvent(VIEW_ITEM, bundle)
+            val bundle = Bundle().also { it.putString(FirebaseAnalytics.Param.SCREEN_NAME, page) }
+            firebase.logEvent(SCREEN_VIEW, bundle)
         }
     }
 
@@ -62,7 +67,7 @@ class TrackingManagerImpl constructor(
             it.putString("action", action)
             it.putString("label", label)
         }
-        FirebaseAnalytics.getInstance(context).logEvent("event", bundle)
+        firebase.logEvent("event", bundle)
     }
 
     override fun trackImage(url: String?) {
@@ -70,7 +75,7 @@ class TrackingManagerImpl constructor(
             it.putString("type", if (url?.contains("gatherer") == true) "gatherer" else "cardsInfo")
             it.putString("url", url)
         }
-        FirebaseAnalytics.getInstance(context).logEvent("Image", bundle)
+        firebase.logEvent("Image", bundle)
     }
 
     /*override fun trackSet(gameSet: MTGSet, mtgSet: MTGSet) {
