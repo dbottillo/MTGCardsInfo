@@ -15,7 +15,7 @@ buildscript {
         classpath "com.google.firebase:firebase-crashlytics-gradle:$versions.crashlyticsPlugin"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
         classpath "com.github.ben-manes:gradle-versions-plugin:0.38.0"
-        classpath "com.diffplug.spotless:spotless-plugin-gradle:5.11.1"
+        classpath "com.diffplug.spotless:spotless-plugin-gradle:5.12.4"
     }
 }
 
