@@ -2,6 +2,17 @@
 <SmellBaseline>
   <ManuallySuppressedIssues></ManuallySuppressedIssues>
   <CurrentIssues>
+    <ID>MaxLineLength:DirectColorDetectorTest.kt$DirectColorDetectorTest$ |res/layout/toolbar.xml:5: Error: Avoid direct use of colors in XML files. This will cause issues with different theme (eg. dark) support [DirectColorUse]</ID>
+    <ID>MaxLineLength:DirectColorDetectorTest.kt$DirectColorDetectorTest$ |res/layout/toolbar.xml:6: Error: Avoid direct use of colors in XML files. This will cause issues with different theme (eg. dark) support [DirectColorUse]</ID>
     <ID>MaxLineLength:IssueRegistry.kt$"Avoid non semantic use of colors in XML files. This will cause issues with different theme (eg. dark) support. "</ID>
+    <ID>MaxLineLength:IssueRegistryTest.kt$IssueRegistryTest$ - **DirectColorUse** - Avoid direct use of colors in XML files. This will cause issues with different theme (eg. dark) support</ID>
+    <ID>MaxLineLength:IssueRegistryTest.kt$IssueRegistryTest$ - **MissingNightColor** - Night color value for this color resource seems to be missing. If your app supports dark theme, then you should add an equivalent color resource for it in the night values folder.</ID>
+    <ID>MaxLineLength:IssueRegistryTest.kt$IssueRegistryTest$ - **NonSemanticColorUse** - Avoid non semantic use of colors in XML files. This will cause issues with different theme (eg. dark) support. For example, use primary instead of black.</ID>
+    <ID>MaxLineLength:MissingNightColorDetectorTest.kt$MissingNightColorDetectorTest$ |res/values/colors.xml:4: Error: Night color value for this color resource seems to be missing. If your app supports dark theme, then you should add an equivalent color resource for it in the night values folder. [MissingNightColor]</ID>
+    <ID>MaxLineLength:NonSemanticColorDetectorTest.kt$NonSemanticColorDetectorTest$ |res/layout/toolbar.xml:5: Error: Avoid non semantic use of colors in XML files. This will cause issues with different theme (eg. dark) support. For example, use primary instead of black. [NonSemanticColorUse]</ID>
+    <ID>MaxLineLength:NonSemanticColorDetectorTest.kt$NonSemanticColorDetectorTest$ |res/layout/toolbar.xml:6: Error: Avoid non semantic use of colors in XML files. This will cause issues with different theme (eg. dark) support. For example, use primary instead of black. [NonSemanticColorUse]</ID>
+    <ID>NewLineAtEndOfFile:DirectColorDetectorTest.kt$com.dbottillo.mtgsearchfree.lintrules.DirectColorDetectorTest.kt</ID>
+    <ID>NewLineAtEndOfFile:MissingNightColorDetectorTest.kt$com.dbottillo.mtgsearchfree.lintrules.MissingNightColorDetectorTest.kt</ID>
+    <ID>NewLineAtEndOfFile:NonSemanticColorDetectorTest.kt$com.dbottillo.mtgsearchfree.lintrules.NonSemanticColorDetectorTest.kt</ID>
   </CurrentIssues>
 </SmellBaseline>

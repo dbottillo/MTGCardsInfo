@@ -3,17 +3,29 @@
   <ManuallySuppressedIssues></ManuallySuppressedIssues>
   <CurrentIssues>
     <ID>ComplexMethod:CardsHelper.kt$@Suppress("LongMethod") private fun List&lt;MTGCard&gt;.filterWith(filter: CardFilter): List&lt;MTGCard&gt;</ID>
+    <ID>LongParameterList:CardsHelperTest.kt$CardsHelperTest$( name: String = "Card", cost: String = "WU", number: String, rarity: Rarity = Rarity.COMMON, colors: List&lt;String&gt; = listOf(), colorsIdentity: List&lt;Color&gt; = listOf(), isLand: Boolean = false, isArtifact: Boolean = false, isMulticolor: Boolean = false )</ID>
     <ID>MaxLineLength:CardsPreferencesImpl.kt$CardsPreferencesImpl$private val sharedPreferences: SharedPreferences by lazy(LazyThreadSafetyMode.NONE) { context.getSharedPreferences(PREFS_NAME, 0) }</ID>
     <ID>MaxLineLength:CardsStorageImpl.kt$CardsStorageImpl$?:</ID>
     <ID>MaxLineLength:CardsStorageImpl.kt$CardsStorageImpl$return mtgCardDataSource.searchCard(name) ?: throw UnsupportedOperationException("can't find other side of $card")</ID>
     <ID>MaxLineLength:CardsStorageImpl.kt$CardsStorageImpl$return mtgCardDataSource.searchCardById(id) ?: throw UnsupportedOperationException("can't find card with id $id")</ID>
+    <ID>MaxLineLength:TCGCardTCGPriceMapperTest.kt$TCGCardTCGPriceMapperTest$assertThat(result).isEqualTo(CardPriceResult.Data(TCGCardPrice(hiPrice = "130.0", avgPrice = "140.0", lowprice = "123.0")))</ID>
+    <ID>MaxLineLength:TCGCardTCGPriceMapperTest.kt$TCGCardTCGPriceMapperTest$assertThat(result).isEqualTo(CardPriceResult.Data(TCGCardPrice(hiPrice = "30.0", avgPrice = "40.0", lowprice = "23.0")))</ID>
     <ID>NewLineAtEndOfFile:CardFilterInteractor.kt$com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor.kt</ID>
+    <ID>NewLineAtEndOfFile:CardFilterInteractorImplTest.kt$com.dbottillo.mtgsearchfree.interactors.CardFilterInteractorImplTest.kt</ID>
     <ID>NewLineAtEndOfFile:CardPriceException.kt$com.dbottillo.mtgsearchfree.repository.CardPriceException.kt</ID>
     <ID>NewLineAtEndOfFile:CardPriceMapper.kt$com.dbottillo.mtgsearchfree.repository.CardPriceMapper.kt</ID>
+    <ID>NewLineAtEndOfFile:CardPriceMapperTest.kt$com.dbottillo.mtgsearchfree.repository.CardPriceMapperTest.kt</ID>
     <ID>NewLineAtEndOfFile:CardRepository.kt$com.dbottillo.mtgsearchfree.repository.CardRepository.kt</ID>
+    <ID>NewLineAtEndOfFile:CardRepositoryTest.kt$com.dbottillo.mtgsearchfree.repository.CardRepositoryTest.kt</ID>
     <ID>NewLineAtEndOfFile:CardsHelper.kt$com.dbottillo.mtgsearchfree.storage.CardsHelper.kt</ID>
+    <ID>NewLineAtEndOfFile:CardsHelperTest.kt$com.dbottillo.mtgsearchfree.storage.CardsHelperTest.kt</ID>
     <ID>NewLineAtEndOfFile:CardsInteractor.kt$com.dbottillo.mtgsearchfree.interactors.CardsInteractor.kt</ID>
+    <ID>NewLineAtEndOfFile:CardsInteractorImplTest.kt$com.dbottillo.mtgsearchfree.interactors.CardsInteractorImplTest.kt</ID>
+    <ID>NewLineAtEndOfFile:CardsStorageImplTest.kt$com.dbottillo.mtgsearchfree.storage.CardsStorageImplTest.kt</ID>
     <ID>NewLineAtEndOfFile:SavedCardsInteractor.kt$com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor.kt</ID>
+    <ID>NewLineAtEndOfFile:SavedCardsInteractorImplTest.kt$com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractorImplTest.kt</ID>
+    <ID>NewLineAtEndOfFile:SavedCardsStorageImplTest.kt$com.dbottillo.mtgsearchfree.storage.SavedCardsStorageImplTest.kt</ID>
+    <ID>NewLineAtEndOfFile:TCGCardTCGPriceMapperTest.kt$com.dbottillo.mtgsearchfree.repository.TCGCardTCGPriceMapperTest.kt</ID>
     <ID>ReturnCount:CardsStorageImpl.kt$CardsStorageImpl$override fun loadOtherSide(card: MTGCard): MTGCard</ID>
     <ID>TooManyFunctions:CardsInteractor.kt$CardsInteractor</ID>
     <ID>TooManyFunctions:CardsInteractorImpl.kt$CardsInteractorImpl : CardsInteractor</ID>

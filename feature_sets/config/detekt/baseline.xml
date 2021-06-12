@@ -2,7 +2,9 @@
 <SmellBaseline>
   <ManuallySuppressedIssues></ManuallySuppressedIssues>
   <CurrentIssues>
+    <ID>NewLineAtEndOfFile:SetPickerPresenterImplTest.kt$com.dbottillo.mtgsearchfree.sets.SetPickerPresenterImplTest.kt</ID>
     <ID>NewLineAtEndOfFile:SetsFragment.kt$com.dbottillo.mtgsearchfree.sets.SetsFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:SetsFragmentPresenterImplTest.kt$com.dbottillo.mtgsearchfree.ui.sets.SetsFragmentPresenterImplTest.kt</ID>
     <ID>NewLineAtEndOfFile:SetsFragmentView.kt$com.dbottillo.mtgsearchfree.sets.SetsFragmentView.kt</ID>
     <ID>TooManyFunctions:SetsFragment.kt$SetsFragment : BaseHomeFragmentSetsFragmentViewOnCardListener</ID>
   </CurrentIssues>

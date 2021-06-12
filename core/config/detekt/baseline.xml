@@ -12,11 +12,6 @@
     <ID>LongMethod:CardDataSource.kt$CardDataSource$fun createContentValue(card: MTGCard): ContentValues</ID>
     <ID>LongMethod:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
     <ID>LongMethod:MTGCardDataSource.kt$MTGCardDataSource$@Suppress("SpreadOperator", "ComplexMethod") fun searchCards(searchParams: SearchParams): List&lt;MTGCard&gt;</ID>
-    <ID>LongParameterList:CardViewHolder.kt$ListCardViewHolder$( context: Context, card: MTGCard, position: Int, menuRes: Int, onCardListener: OnCardListener? )</ID>
-    <ID>LongParameterList:DeckDataSource.kt$DeckDataSource$(deckId: Long, card: MTGCard, quantity: Int, fromDeckToSide: Boolean)</ID>
-    <ID>LongParameterList:DeckDataSource.kt$DeckDataSource$(deckId: Long, quantity: Int, multiverseId: Int, sid: Int)</ID>
-    <ID>LongParameterList:DialogUtil.kt$DialogUtil$(layoutId: Int, editTextId: Int, player: Player, listener: (newName: String) -&gt; Unit)</ID>
-    <ID>LongParameterList:QueryComposer.kt$QueryComposer$(name: String?, operator: String, paramOperator: String, vararg values: String)</ID>
     <ID>MagicNumber:AnimationUtil.kt$AnimationUtil$250</ID>
     <ID>MagicNumber:CardDataSource.kt$CardDataSource.Companion$6</ID>
     <ID>MagicNumber:CardMigratorService.kt$CardMigratorService$107</ID>
@@ -37,35 +32,49 @@
     <ID>MaxLineLength:CardMigratorService.kt$CardMigratorService$val mtgCardDataSource = MTGCardDataSource(MTGDatabaseHelper(applicationContext).readableDatabase, cardDataSource)</ID>
     <ID>MaxLineLength:CardViewHolder.kt$ListCardViewHolder$moveAll.setTitle(if (card.isSideboard) R.string.move_all_card_to_deck else R.string.move_all_card_to_sideboard)</ID>
     <ID>MaxLineLength:CardViewHolder.kt$ListCardViewHolder$moveOne.setTitle(if (card.isSideboard) R.string.move_card_to_deck else R.string.move_card_to_sideboard)</ID>
-    <ID>MaxLineLength:CoreModule.kt$CoreModule$@Provides @Singleton fun provideMTGCardDataSource(@Named("cardsDB") database: SQLiteDatabase, cardDataSource: CardDataSource): MTGCardDataSource</ID>
     <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val args = arrayOf(quantity.toString(), deckId.toString() + "", multiverseId.toString() + "", sid.toString() + "")</ID>
     <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val cardsCursor = database.rawQuery(query, arrayOf(deckId.toString() + "", card.multiVerseId.toString() + "", sid.toString() + ""))</ID>
     <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ? and P.multiVerseId = ? and H.side == ?)"</ID>
     <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)"</ID>
-    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)"</ID>
-    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource${ // val query = "select DC.side,DC.quantity,DC.colorIdentity from deck_card DC left join decks D on (D._id = DC.deck_id) where deck_id=$deckId" val query = "select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)" logger.query(query) val cursor = database.rawQuery(query, arrayOf(deckId.toString())) cursor.moveToFirst() var cards = 0 var side = 0 val colors = mutableListOf&lt;ColorMapperType&gt;() while (!cursor.isAfterLast) { val sideboard = cursor.getInt(0) == 1 val quantity = cursor.getInt(1) val colorsIdentity: String? = cursor.getString(2) if (sideboard) { side += quantity } else { cards += quantity } colorsIdentity?.let { colors.add(ColorMapperType.Identity(it)) } ?: run { cursor.getString(3)?.let { colors.add(ColorMapperType.Display(it)) } } cursor.moveToNext() } cursor.close() return Triple(cards, side, deckColorMapper.convert(colors)) }</ID>
+    <ID>MaxLineLength:DeckDataSourceTest.kt$DeckDataSourceTest$verify(database).rawQuery("select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)", arrayOf("1"))</ID>
+    <ID>MaxLineLength:DeckDataSourceTest.kt$DeckDataSourceTest$verify(database).rawQuery("select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)", arrayOf("2"))</ID>
+    <ID>MaxLineLength:DeckDataSourceTest.kt$DeckDataSourceTest$verify(deckColorMapper).convert(listOf(ColorMapperType.Display("W"), ColorMapperType.Display("W"), ColorMapperType.Display("R,G")))</ID>
+    <ID>MaxLineLength:DeckDataSourceTest.kt$DeckDataSourceTest$verify(deckColorMapper).convert(listOf(ColorMapperType.Identity("[W]"), ColorMapperType.Identity("[W]"), ColorMapperType.Identity("[R,G]")))</ID>
+    <ID>MaxLineLength:DeckDataSourceTest.kt$DeckDataSourceTest$whenever(database.rawQuery("select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)", arrayOf("1"))).thenReturn(firstCardCursor)</ID>
+    <ID>MaxLineLength:DeckDataSourceTest.kt$DeckDataSourceTest$whenever(database.rawQuery("select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)", arrayOf("2"))).thenReturn(secondCardCursor)</ID>
+    <ID>MaxLineLength:DeckDataSourceTest.kt$DeckDataSourceTest$whenever(deckColorMapper.convert(listOf(ColorMapperType.Display("W"), ColorMapperType.Display("U,B")))).thenReturn(firstDeckColors)</ID>
+    <ID>MaxLineLength:DeckDataSourceTest.kt$DeckDataSourceTest$whenever(deckColorMapper.convert(listOf(ColorMapperType.Display("W"), ColorMapperType.Display("W"), ColorMapperType.Display("R,G")))).thenReturn(secondDeckColors)</ID>
+    <ID>MaxLineLength:DeckDataSourceTest.kt$DeckDataSourceTest$whenever(deckColorMapper.convert(listOf(ColorMapperType.Identity("[W]"), ColorMapperType.Identity("[U,B]")))).thenReturn(firstDeckColors)</ID>
+    <ID>MaxLineLength:DeckDataSourceTest.kt$DeckDataSourceTest$whenever(deckColorMapper.convert(listOf(ColorMapperType.Identity("[W]"), ColorMapperType.Identity("[W]"), ColorMapperType.Identity("[R,G]")))).thenReturn(secondDeckColors)</ID>
     <ID>MaxLineLength:FavouritesDataSource.kt$FavouritesDataSource$val current = database.rawQuery("select * from MTGCard where multiVerseId=?", arrayOf(card.multiVerseId.toString() + ""))</ID>
-    <ID>MaxLineLength:FilterPickerView.kt$FilterPickerView : LinearLayoutOnClickListener</ID>
     <ID>MaxLineLength:FilterPickerView.kt$FilterPickerView$private val filterPanelContainer by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;View&gt;(R.id.filter_panel_container) }</ID>
     <ID>MaxLineLength:GeneralPreferences.kt$GeneralPreferences$private val sharedPreferences: SharedPreferences by lazy(LazyThreadSafetyMode.NONE) { context.getSharedPreferences("General", Context.MODE_PRIVATE) }</ID>
     <ID>MaxLineLength:MTGCardDataSource.kt$MTGCardDataSource$"SELECT * FROM " + CardDataSource.TABLE + " WHERE " + CardDataSource.COLUMNS.SET_CODE.noun + " = '" + set.code + "';"</ID>
     <ID>MaxLineLength:MTGCardDataSource.kt$MTGCardDataSource$"SELECT * FROM ${CardDataSource.TABLE} WHERE ${CardDataSource.COLUMNS.NAME.noun}=? AND ${CardDataSource.COLUMNS.MULTIVERSE_ID.noun} IS NOT NULL"</ID>
     <ID>MaxLineLength:QueryComposer.kt$QueryComposer$addSelection(it.operator, it.stringValues.flatMap { it.toList() }.fold("") { total, next -&gt; "$total{$next}" })</ID>
-    <ID>MaxLineLength:QueryComposer.kt$QueryComposer$if ((it.stringValues.size == 1 &amp;&amp; it.stringValues[0].toIntOrNull() == it.numericValue) || it.stringValues.isEmpty()) { stringBuilder.append("cmc").append(it.operator).append("?") addSelection(it.operator, it.numericValue.toString()) } else { stringBuilder.append("manaCost").append(" ").append(it.operator).append(" ?") addSelection(it.operator, it.stringValues.flatMap { it.toList() }.fold("") { total, next -&gt; "$total{$next}" }) }</ID>
+    <ID>MaxLineLength:QueryComposerTest.kt$QueryComposerTest$assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(CMC as integer) &gt; ? AND CMC != '') AND NAME = ?")</ID>
+    <ID>MaxLineLength:QueryComposerTest.kt$QueryComposerTest$assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(power as integer) &lt; ? AND power GLOB '*[0-9]*')")</ID>
+    <ID>MaxLineLength:QueryComposerTest.kt$QueryComposerTest$assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(power as integer) = ? AND power GLOB '*[0-9]*')")</ID>
+    <ID>MaxLineLength:QueryComposerTest.kt$QueryComposerTest$assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(toughness as integer) = ? AND toughness GLOB '*[0-9]*')")</ID>
+    <ID>MaxLineLength:QueryComposerTest.kt$QueryComposerTest$assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(toughness as integer) &gt;= ? AND toughness GLOB '*[0-9]*')")</ID>
+    <ID>MaxLineLength:QueryComposerTest.kt$QueryComposerTest$assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE NAME = ? AND (CAST(CMC as integer) &lt;= ? AND CMC != '')")</ID>
+    <ID>MaxLineLength:QueryComposerTest.kt$QueryComposerTest$assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE cmc&gt;=? AND manaCost LIKE ? AND manaCost LIKE ? AND manaCost LIKE ?")</ID>
     <ID>MaxLineLength:SQLiteAssetHelper.kt$SQLiteAssetHelper$throw SQLiteAssetException("Missing $mAssetPath file (or .zip, .gz archive) in assets, or target folder not writable")</ID>
     <ID>MaxLineLength:ToolbarRevealScrollHelper.kt$ToolbarRevealScrollHelper$elevationInterpolator = AnimationUtil.createLinearInterpolator().fromValue(0.0f).toValue(context.resources.getDimension(R.dimen.default_elevation_toolbar))</ID>
     <ID>MaxLineLength:ToolbarRevealScrollHelper.kt$ToolbarRevealScrollHelper$translationTitle = AnimationUtil.createLinearInterpolator().fromValue(translationStart.toFloat()).toValue(translationEnd.toFloat())</ID>
-    <ID>MaxLineLength:ToolbarRevealScrollHelper.kt$ToolbarRevealScrollHelper${ // after a rotation change the offset it's different because the maximum scroll is different (depends on the app bar height) val interval = oldCurrentScroll.toFloat() / oldMaximumScroll.toFloat() (maximumScroll * interval).toInt() }</ID>
     <ID>MaxLineLength:UIExtension.kt$return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value.toFloat(), this.resources.displayMetrics).toInt()</ID>
     <ID>NestedBlockDepth:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
     <ID>NestedBlockDepth:QueryComposer.kt$QueryComposer$fun addCMCParam(cmcParam: CMCParam?)</ID>
     <ID>NewLineAtEndOfFile:ActivityScope.kt$com.dbottillo.mtgsearchfree.ActivityScope.kt</ID>
     <ID>NewLineAtEndOfFile:AppPreferences.kt$com.dbottillo.mtgsearchfree.AppPreferences.kt</ID>
     <ID>NewLineAtEndOfFile:BasicActivityModule.kt$com.dbottillo.mtgsearchfree.ui.BasicActivityModule.kt</ID>
+    <ID>NewLineAtEndOfFile:CMCParamTest.kt$com.dbottillo.mtgsearchfree.model.CMCParamTest.kt</ID>
     <ID>NewLineAtEndOfFile:CardDataSource.kt$com.dbottillo.mtgsearchfree.database.CardDataSource.kt</ID>
+    <ID>NewLineAtEndOfFile:CardDataSourceTest.kt$com.dbottillo.mtgsearchfree.database.CardDataSourceTest.kt</ID>
     <ID>NewLineAtEndOfFile:CardFilter.kt$com.dbottillo.mtgsearchfree.model.CardFilter.kt</ID>
     <ID>NewLineAtEndOfFile:CardPrice.kt$com.dbottillo.mtgsearchfree.model.CardPrice.kt</ID>
     <ID>NewLineAtEndOfFile:CardViewHolder.kt$com.dbottillo.mtgsearchfree.ui.cards.CardViewHolder.kt</ID>
+    <ID>NewLineAtEndOfFile:CardsBucketTest.kt$com.dbottillo.mtgsearchfree.model.CardsBucketTest.kt</ID>
     <ID>NewLineAtEndOfFile:CardsCollection.kt$com.dbottillo.mtgsearchfree.model.CardsCollection.kt</ID>
     <ID>NewLineAtEndOfFile:CardsInfoDbHelper.kt$com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper.kt</ID>
     <ID>NewLineAtEndOfFile:Constants.kt$com.dbottillo.mtgsearchfree.Constants.kt</ID>
@@ -73,9 +82,12 @@
     <ID>NewLineAtEndOfFile:CursorUtil.kt$com.dbottillo.mtgsearchfree.util.CursorUtil.kt</ID>
     <ID>NewLineAtEndOfFile:Deck.kt$com.dbottillo.mtgsearchfree.model.Deck.kt</ID>
     <ID>NewLineAtEndOfFile:DeckColorMapper.kt$com.dbottillo.mtgsearchfree.database.DeckColorMapper.kt</ID>
+    <ID>NewLineAtEndOfFile:DeckColorMapperTest.kt$com.dbottillo.mtgsearchfree.database.DeckColorMapperTest.kt</ID>
     <ID>NewLineAtEndOfFile:DeckDataSource.kt$com.dbottillo.mtgsearchfree.database.DeckDataSource.kt</ID>
+    <ID>NewLineAtEndOfFile:DeckDataSourceTest.kt$com.dbottillo.mtgsearchfree.database.DeckDataSourceTest.kt</ID>
     <ID>NewLineAtEndOfFile:DialogUtil.kt$com.dbottillo.mtgsearchfree.util.DialogUtil.kt</ID>
     <ID>NewLineAtEndOfFile:FileManager.kt$com.dbottillo.mtgsearchfree.util.FileManager.kt</ID>
+    <ID>NewLineAtEndOfFile:GeneralPreferencesTest.kt$com.dbottillo.mtgsearchfree.storage.GeneralPreferencesTest.kt</ID>
     <ID>NewLineAtEndOfFile:ImageUtil.kt$com.dbottillo.mtgsearchfree.util.ImageUtil.kt</ID>
     <ID>NewLineAtEndOfFile:IntParam.kt$com.dbottillo.mtgsearchfree.model.IntParam.kt</ID>
     <ID>NewLineAtEndOfFile:MTGCard.kt$com.dbottillo.mtgsearchfree.model.MTGCard.kt</ID>
@@ -84,8 +96,10 @@
     <ID>NewLineAtEndOfFile:MTGLoader.kt$com.dbottillo.mtgsearchfree.ui.views.MTGLoader.kt</ID>
     <ID>NewLineAtEndOfFile:Navigator.kt$com.dbottillo.mtgsearchfree.Navigator.kt</ID>
     <ID>NewLineAtEndOfFile:OnCardListener.kt$com.dbottillo.mtgsearchfree.ui.cards.OnCardListener.kt</ID>
+    <ID>NewLineAtEndOfFile:PTParamTest.kt$com.dbottillo.mtgsearchfree.model.PTParamTest.kt</ID>
     <ID>NewLineAtEndOfFile:PermissionUtil.kt$com.dbottillo.mtgsearchfree.util.PermissionUtil.kt</ID>
     <ID>NewLineAtEndOfFile:SchedulerProvider.kt$com.dbottillo.mtgsearchfree.interactor.SchedulerProvider.kt</ID>
+    <ID>NewLineAtEndOfFile:SearchParamsTest.kt$com.dbottillo.mtgsearchfree.model.SearchParamsTest.kt</ID>
     <ID>NewLineAtEndOfFile:StringUtil.kt$com.dbottillo.mtgsearchfree.util.StringUtil.kt</ID>
     <ID>NewLineAtEndOfFile:ToolbarRevealScrollHelper.kt$com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper.kt</ID>
     <ID>NewLineAtEndOfFile:UIExtension.kt$com.dbottillo.mtgsearchfree.util.UIExtension.kt</ID>
