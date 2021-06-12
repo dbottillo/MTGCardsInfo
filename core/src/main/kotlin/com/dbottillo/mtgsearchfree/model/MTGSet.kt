@@ -16,7 +16,7 @@ data class MTGSet(
     var type: SetType = EXPANSION
 ) : Parcelable {
 
-    val magicCardsInfoCode: String
+    @Suppress("DEPRECATION") val magicCardsInfoCode: String
         get() {
             for (entry in CARDSINFOMAP.values()) {
                 if (entry.set.equals(code, ignoreCase = true)) {

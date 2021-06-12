@@ -105,7 +105,7 @@ class MTGLoader : View {
         maxRadius = size / 6f
     }
 
-    private class MTGLoaderHandler internal constructor(loader: MTGLoader) : Handler() {
+    private class MTGLoaderHandler(loader: MTGLoader) : Handler() {
 
         private var loader: WeakReference<MTGLoader> = WeakReference(loader)
 

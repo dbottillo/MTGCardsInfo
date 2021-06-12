@@ -57,7 +57,6 @@ ext.deps = [
         'mockito': "org.mockito:mockito-core:$versions.mockito",
         'mockitoKotlin': "com.nhaarman:mockito-kotlin:$versions.mockito_kotlin",
         'mockitoAndroid': "org.mockito:mockito-android:$versions.mockito_android",
-        'fest': "org.easytesting:fest-assert-core:$versions.fest",
         'robolectric': "org.robolectric:robolectric:$versions.robolectric",
         'truth': "com.google.truth:truth:$versions.truth"
 ]

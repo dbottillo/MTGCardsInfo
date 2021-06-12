@@ -27,7 +27,7 @@ import java.lang.ref.WeakReference
  * handle the transition to reveal the toolbar during the scroll
  */
 @Suppress("LargeClass")
-class ToolbarRevealScrollHelper @JvmOverloads constructor(
+class ToolbarRevealScrollHelper constructor(
     baseFragment: BasicFragment,
     private val scrollviewID: Int,
     private val toolbarId: Int,

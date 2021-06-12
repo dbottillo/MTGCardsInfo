@@ -51,7 +51,6 @@ ext {
         testImplementation deps.junit
         testImplementation deps.mockito
         testImplementation deps.mockitoKotlin
-        testImplementation deps.fest
         testImplementation deps.truth
         lintChecks project(":lint-rules")
     }

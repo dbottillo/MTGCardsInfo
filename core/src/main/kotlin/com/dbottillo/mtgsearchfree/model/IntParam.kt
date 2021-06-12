@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.model
 
+import android.annotation.SuppressLint
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 import java.lang.Integer.parseInt
@@ -10,6 +11,7 @@ data class CMCParam(val operator: String, val numericValue: Int, val stringValue
 @Parcelize
 data class PTParam(val operator: String, val value: Int) : Parcelable
 
+@SuppressLint("DefaultLocale")
 fun cmcParamCreator(operator: String, value: String?): CMCParam? {
     if (value == null || value.isEmpty()) return null
     val input = value.toUpperCase()

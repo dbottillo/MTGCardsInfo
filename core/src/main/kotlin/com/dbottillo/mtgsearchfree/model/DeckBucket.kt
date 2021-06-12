@@ -73,6 +73,6 @@ data class DeckBucket(
     }
 
     private fun totalQuantityOfList(list: List<MTGCard>): Int {
-        return list.sumBy { it.quantity }
+        return list.sumOf { it.quantity }
     }
 }
