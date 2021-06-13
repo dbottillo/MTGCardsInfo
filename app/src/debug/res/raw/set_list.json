@@ -1401,5 +1401,38 @@
     "translations": {},
     "type": "commander",
     "v5": true
+  },
+  {
+    "baseSetSize": 25,
+    "code": "HA5",
+    "isFoilOnly": false,
+    "isOnlineOnly": true,
+    "keyruneCode": "HA1",
+    "name": "Historic Anthology 5",
+    "releaseDate": "2021-05-27",
+    "totalSetSize": 25,
+    "translations": {},
+    "type": "box",
+    "v5": true
+  },
+  {
+    "baseSetSize": 313,
+    "code": "MH2",
+    "isFoilOnly": false,
+    "isOnlineOnly": false,
+    "isPartialPreview": true,
+    "keyruneCode": "MH2",
+    "mcmId": 4219,
+    "mcmIdExtras": 4244,
+    "mcmName": "Modern Horizons 2",
+    "mtgoCode": "MH2",
+    "name": "Modern Horizons 2",
+    "releaseDate": "2021-06-18",
+    "sealedProduct": [],
+    "tcgplayerGroupId": 2809,
+    "totalSetSize": 492,
+    "translations": {},
+    "type": "draft_innovation",
+    "v5": true
   }
 ]

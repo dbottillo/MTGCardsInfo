@@ -101,6 +101,9 @@ allprojects {
                 includeGroupByRegex "com.fasterxml.*"
                 includeGroupByRegex "io.gitlab.arturbosch.*"
                 includeGroupByRegex "io.github.detekt.*"
+                includeGroupByRegex "jakarta.*"
+                includeGroupByRegex "xerces.*"
+                includeGroupByRegex "xml-apis.*"
             }
         }
         jcenter {

@@ -9,8 +9,8 @@ android {
     defaultConfig {
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 158
-        versionName "4.13.0"
+        versionCode 159
+        versionName "4.14.0"
         // this is still required to avoid generating PNGs even if min sdk is 21
         vectorDrawables.useSupportLibrary = true
     }
@@ -35,14 +35,6 @@ android {
         exclude 'META-INF/services/javax.annotation.processing.Processor'
         exclude 'META-INF/rxjava.properties'
         exclude 'META-INF/io.netty.versions.properties'
-    }
-
-    lintOptions {
-        xmlReport false
-        checkAllWarnings true
-        checkReleaseBuilds false
-        lintConfig file("$rootDir/config/lint/lint.xml")
-        ignore 'RtlHardcoded', 'RtlEnabled', 'RtlSymmetry', 'SelectableText', 'RestrictedApi'
     }
 
     sourceSets {

@@ -68,6 +68,14 @@ android {
             includeAndroidResources = true
         }
     }
+
+    lintOptions {
+        xmlReport false
+        checkAllWarnings true
+        checkReleaseBuilds false
+        lintConfig file("$rootDir/config/lint/lint.xml")
+        ignore 'RtlHardcoded', 'RtlEnabled', 'RtlSymmetry', 'SelectableText', 'RestrictedApi'
+    }
 }
 
 dependencies {

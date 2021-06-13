@@ -17,13 +17,13 @@ class MTGCardDataSource(
 
     @Suppress("MagicNumber")
     enum class STANDARD(var setId: Int, var set: String) {
-        STRIXHAVEN(2, "Strixhaven: School of Mages"),
-        KALDHEIM(8, "Kaldheim"),
-        ZENDIKAR_RISING(11, "Zendikar Rising"),
-        CORE_21(18, "Core Set 2021"),
-        IKORIA(20, "Ikoria: Lair of Behemoths"),
-        THEROS_BEYOND_DEATH(26, "Theros Beyond Death"),
-        THRONE_OF_ELDRAINE(32, "Throne of Eldraine");
+        STRIXHAVEN(4, "Strixhaven: School of Mages"),
+        KALDHEIM(10, "Kaldheim"),
+        ZENDIKAR_RISING(13, "Zendikar Rising"),
+        CORE_21(20, "Core Set 2021"),
+        IKORIA(22, "Ikoria: Lair of Behemoths"),
+        THEROS_BEYOND_DEATH(28, "Theros Beyond Death"),
+        THRONE_OF_ELDRAINE(34, "Throne of Eldraine");
 
         companion object {
 

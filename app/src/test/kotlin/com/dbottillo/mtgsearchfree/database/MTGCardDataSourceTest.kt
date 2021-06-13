@@ -74,6 +74,13 @@ class MTGCardDataSourceTest {
     }
 
     @Test
+    fun `should search cards by id`() {
+        val card = underTest.searchCardById(5)
+        assertThat(card).isNotNull()
+        assertThat(card?.name).isEqualTo("Barbed Spike")
+    }
+
+    @Test
     fun getsRandomCards() {
         val cards = underTest.getRandomCard(10)
         assertThat(cards.size).isEqualTo(10)
@@ -577,13 +584,6 @@ class MTGCardDataSourceTest {
         val card = underTest.searchCard(420621)
         assertThat(card).isNotNull()
         assertThat(card?.name).isEqualTo("Selfless Squire")
-    }
-
-    @Test
-    fun `should search cards by id`() {
-        val card = underTest.searchCardById(5)
-        assertThat(card).isNotNull()
-        assertThat(card?.name).isEqualTo("Gyome, Master Chef")
     }
 
     @Test
