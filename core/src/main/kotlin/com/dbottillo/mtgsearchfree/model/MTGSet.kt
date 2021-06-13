@@ -4,7 +4,7 @@ import android.os.Parcelable
 import com.dbottillo.mtgsearchfree.model.SetType.EXPANSION
 import com.dbottillo.mtgsearchfree.model.SetType.PREVIEW
 import kotlinx.android.parcel.IgnoredOnParcel
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 import java.util.Locale
 
 @Suppress("EqualsOrHashCode")

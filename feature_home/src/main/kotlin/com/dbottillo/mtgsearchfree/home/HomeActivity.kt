@@ -4,11 +4,11 @@ import android.os.Bundle
 import androidx.transition.ChangeBounds
 import androidx.transition.TransitionManager
 import com.dbottillo.mtgsearchfree.AppPreferences
+import com.dbottillo.mtgsearchfree.home.databinding.ActivityHomeBinding
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.ui.BasicFragment
 import com.dbottillo.mtgsearchfree.util.gone
 import com.dbottillo.mtgsearchfree.util.show
-import kotlinx.android.synthetic.main.activity_home.*
 import java.lang.ref.WeakReference
 import javax.inject.Inject
 
@@ -20,13 +20,17 @@ class HomeActivity : BasicActivity() {
 
     @Inject lateinit var appPreferences: AppPreferences
 
+    private lateinit var binding: ActivityHomeBinding
+
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
-        setContentView(R.layout.activity_home)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         bottomTabsHeight = resources.getDimensionPixelSize(R.dimen.bottom_tabs_height)
 
-        bottom_tabs.setBottomTabsListener(object : BottomTabs.BottomTabsListener {
+        binding.bottomTabs.setBottomTabsListener(object : BottomTabs.BottomTabsListener {
             override fun tabSelected(selection: Int) {
                 when (selection) {
                     0 -> checkAndReplace("sets")
@@ -42,18 +46,18 @@ class HomeActivity : BasicActivity() {
         }
 
         if (appPreferences.shouldShowNewUpdateBanner()) {
-            update_banner.show()
-            banner_shadow.show()
-            update_banner.closeListener = {
-                TransitionManager.beginDelayedTransition(main_activity_home, ChangeBounds())
-                update_banner.gone()
-                banner_shadow.gone()
+            binding.updateBanner.show()
+            binding.bannerShadow.show()
+            binding.updateBanner.closeListener = {
+                TransitionManager.beginDelayedTransition(binding.mainActivityHome, ChangeBounds())
+                binding.updateBanner.gone()
+                binding.bannerShadow.gone()
             }
-            update_banner.actionListener = {
+            binding.updateBanner.actionListener = {
                 navigator.openReleaseNoteScreen(this)
-                TransitionManager.beginDelayedTransition(main_activity_home, ChangeBounds())
-                update_banner.gone()
-                banner_shadow.gone()
+                TransitionManager.beginDelayedTransition(binding.mainActivityHome, ChangeBounds())
+                binding.updateBanner.gone()
+                binding.bannerShadow.gone()
             }
         }
     }
@@ -83,7 +87,7 @@ class HomeActivity : BasicActivity() {
     override fun onBackPressed() {
         if (!navigator.isSetsFragment(supportFragmentManager.findFragmentById(R.id.fragment_container))) {
             checkAndReplace("sets")
-            bottom_tabs.setSelection(0)
+            binding.bottomTabs.setSelection(0)
         } else {
             super.onBackPressed()
         }

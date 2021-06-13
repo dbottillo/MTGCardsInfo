@@ -14,7 +14,7 @@ import com.dbottillo.mtgsearchfree.decks.deck.DECK_KEY
 import com.dbottillo.mtgsearchfree.decks.R
 import com.dbottillo.mtgsearchfree.ui.BasicFragment
 import dagger.android.support.AndroidSupportInjection
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 import javax.inject.Inject
 
 class DeckStartingHandFragment : BasicFragment(), StartingHandView {

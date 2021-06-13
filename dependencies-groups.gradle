@@ -27,6 +27,9 @@ ext {
         implementation deps.google.androidx.design
         implementation deps.google.androidx.constraintLayout
         implementation deps.google.androidx.preference
+        implementation deps.google.lifecycle.viewmodelKtx
+        implementation deps.google.lifecycle.common
+        implementation deps.google.lifecycle.extensions
     }
     monitoring = Group {
         implementation deps.google.firebase.core

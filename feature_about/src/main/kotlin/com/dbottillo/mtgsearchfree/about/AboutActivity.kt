@@ -14,14 +14,12 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import com.dbottillo.mtgsearchfree.Constants
+import com.dbottillo.mtgsearchfree.about.databinding.ActivityAboutBinding
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.util.LOG
-import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.dbottillo.mtgsearchfree.util.addBold
 import com.dbottillo.mtgsearchfree.util.toHtml
-import com.google.android.material.appbar.MaterialToolbar
 import dagger.android.AndroidInjection
-import kotlinx.android.synthetic.main.activity_about.*
 import java.util.Calendar
 
 class AboutActivity : BasicActivity(), View.OnTouchListener {
@@ -34,12 +32,16 @@ class AboutActivity : BasicActivity(), View.OnTouchListener {
     private lateinit var versionName: String
     private var firstTap: Long = 0
 
+    private lateinit var binding: ActivityAboutBinding
+
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(bundle: Bundle?) {
         AndroidInjection.inject(this)
         super.onCreate(bundle)
 
-        setContentView(R.layout.activity_about)
+        binding = ActivityAboutBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.let {
@@ -49,7 +51,7 @@ class AboutActivity : BasicActivity(), View.OnTouchListener {
 
         try {
             versionName = packageManager.getPackageInfo(packageName, 0).versionName
-            about_version.text = SpannableStringBuilder().apply {
+            binding.aboutVersion.text = SpannableStringBuilder().apply {
                 addBold(getString(R.string.version))
                 append(" ")
                 append(versionName)
@@ -58,7 +60,7 @@ class AboutActivity : BasicActivity(), View.OnTouchListener {
             LOG.e(e)
         }
 
-        about_version.setOnTouchListener(this)
+        binding.aboutVersion.setOnTouchListener(this)
         findViewById<View>(R.id.send_feedback).setOnClickListener {
             sendFeedback()
         }
@@ -119,7 +121,7 @@ class AboutActivity : BasicActivity(), View.OnTouchListener {
                 val diff = Calendar.getInstance().timeInMillis - firstTap
                 val seconds = diff / 1000
                 if (seconds < 5) {
-                    about_version.setOnTouchListener(null)
+                    binding.aboutVersion.setOnTouchListener(null)
                     generalData.setDebug()
                     Toast.makeText(this, R.string.debug_mode_active, Toast.LENGTH_LONG).show()
                 }
@@ -131,7 +133,7 @@ class AboutActivity : BasicActivity(), View.OnTouchListener {
         return true
     }
 
-    override fun getPageTrack(): String? {
+    override fun getPageTrack(): String {
         return "/about"
     }
 

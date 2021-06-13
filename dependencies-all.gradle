@@ -24,6 +24,11 @@ ext.deps = [
                         'core': "androidx.test.espresso:espresso-core:$versions.espresso",
                         'contrib': "androidx.test.espresso:espresso-contrib:$versions.espresso"
                 ],
+                'lifecycle': [
+                        'viewmodelKtx': "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle.common",
+                        'common': "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycle.common",
+                        'extensions': "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle.extension",
+                ]
         ],
         'glide': [
                 'core': "com.github.bumptech.glide:glide:$versions.glide",

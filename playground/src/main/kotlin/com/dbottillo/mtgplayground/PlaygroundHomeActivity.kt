@@ -2,22 +2,26 @@ package com.dbottillo.mtgplayground
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import com.dbottillo.mtgplayground.databinding.ActivityPlaygroundBinding
 import com.dbottillo.mtgsearchfree.network.MKMApiInterface
 import dagger.android.support.DaggerAppCompatActivity
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_playground.*
 import javax.inject.Inject
 
 class PlaygroundHomeActivity : DaggerAppCompatActivity() {
 
     @Inject lateinit var api: MKMApiInterface
 
+    private lateinit var binding: ActivityPlaygroundBinding
+
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
-        setContentView(R.layout.activity_playground)
+        binding = ActivityPlaygroundBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-        do_request.setOnClickListener {
+        binding.doRequest.setOnClickListener {
             doRequest()
         }
     }
@@ -30,9 +34,9 @@ class PlaygroundHomeActivity : DaggerAppCompatActivity() {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    output.text = it.toString()
+                    binding.output.text = it.toString()
                 }, {
-                    output.text = it.localizedMessage
+                    binding.output.text = it.localizedMessage
                 })
     }
 }

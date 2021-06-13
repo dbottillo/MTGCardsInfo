@@ -1,6 +1,6 @@
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-parcelize'
 
 android {
     compileSdkVersion 30
@@ -42,10 +42,15 @@ android {
         test.java.srcDirs += 'src/test/kotlin'
         test.resources.srcDirs += ['src/test/resources']
     }
-}
 
-androidExtensions {
-    experimental = true // Added so we can use @Parcelize
+    buildFeatures {
+        buildConfig = true
+        aidl = false
+        renderScript = false
+        resValues = false
+        shaders = false
+        viewBinding = true
+    }
 }
 
 kapt {

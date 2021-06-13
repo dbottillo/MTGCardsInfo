@@ -14,6 +14,10 @@ ext.versions = [
         'dagger'           : '2.37',
         'glide'            : '4.12.0',
         'constraint_layout': '2.0.4',
+        'lifecycle': [
+                'common': '2.3.1',
+                'extension': '2.2.0'
+        ],
         'firebase': [
                 'core': '19.0.0',
                 'crashlytics': '18.0.1'

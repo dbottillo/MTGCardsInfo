@@ -9,6 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.Spinner
+import android.widget.TextView
+import androidx.appcompat.widget.AppCompatCheckBox
+import androidx.appcompat.widget.AppCompatEditText
 import com.dbottillo.mtgsearchfree.decks.R
 import com.dbottillo.mtgsearchfree.model.Deck
 import com.dbottillo.mtgsearchfree.model.MTGCard
@@ -17,7 +22,6 @@ import com.dbottillo.mtgsearchfree.util.TrackingManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import javax.inject.Inject
 import dagger.android.support.AndroidSupportInjection
-import kotlinx.android.synthetic.main.fragment_add_to_deck.*
 
 @Suppress("EmptyFunctionBlock")
 class AddToDeckFragment : BottomSheetDialogFragment(), AddToDeckView {
@@ -28,6 +32,18 @@ class AddToDeckFragment : BottomSheetDialogFragment(), AddToDeckView {
 
     @Inject lateinit var presenter: AddToDeckPresenter
     @Inject lateinit var trackingManager: TrackingManager
+
+    private lateinit var addToDeckSave: Button
+    private lateinit var quantityPlus: Button
+    private lateinit var quantityMinus: Button
+    private lateinit var quantityIndicator: TextView
+    private lateinit var chooseDeck: Spinner
+    private lateinit var newDeckInputLayout: View
+    private lateinit var addCardTitle: TextView
+    private lateinit var quantityContainer: View
+    private lateinit var addToDeckSideboard: AppCompatCheckBox
+    private lateinit var newDeckName: AppCompatEditText
+    private lateinit var errorText: TextView
 
     override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
@@ -40,7 +56,19 @@ class AddToDeckFragment : BottomSheetDialogFragment(), AddToDeckView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        add_to_deck_save.setOnClickListener { addToDeck() }
+        addToDeckSave = view.findViewById(R.id.add_to_deck_save)
+        quantityPlus = view.findViewById(R.id.quantity_plus)
+        quantityMinus = view.findViewById(R.id.quantity_minus)
+        quantityIndicator = view.findViewById(R.id.quantity_indicator)
+        chooseDeck = view.findViewById(R.id.choose_deck)
+        newDeckInputLayout = view.findViewById(R.id.new_deck_name_input_layout)
+        addCardTitle = view.findViewById(R.id.add_card_title)
+        quantityContainer = view.findViewById(R.id.quantity_container)
+        addToDeckSideboard = view.findViewById(R.id.add_to_deck_sideboard)
+        newDeckName = view.findViewById(R.id.new_deck_name)
+        errorText = view.findViewById(R.id.error_text)
+
+        addToDeckSave.setOnClickListener { addToDeck() }
 
         setupQuantity()
 
@@ -59,11 +87,11 @@ class AddToDeckFragment : BottomSheetDialogFragment(), AddToDeckView {
 
     private fun setupQuantity() {
         LOG.d()
-        quantity_plus.setOnClickListener {
+        quantityPlus.setOnClickListener {
             quantity++
             updateQuantityIndicator()
         }
-        quantity_minus.setOnClickListener {
+        quantityMinus.setOnClickListener {
             quantity--
             if (quantity < 1) {
                 quantity = 1
@@ -74,7 +102,7 @@ class AddToDeckFragment : BottomSheetDialogFragment(), AddToDeckView {
     }
 
     private fun updateQuantityIndicator() {
-        quantity_indicator.text = quantity.toString()
+        quantityIndicator.text = quantity.toString()
     }
 
     private fun setupDecksSpinner(decks: List<Deck>, selectedDeck: Long) {
@@ -86,14 +114,14 @@ class AddToDeckFragment : BottomSheetDialogFragment(), AddToDeckView {
         decksChoose.add(getString(R.string.deck_new))
         val adapter = ArrayAdapter<CharSequence>(activity as FragmentActivity, R.layout.add_to_deck_spinner_item, decksChoose.toTypedArray())
         adapter.setDropDownViewResource(R.layout.add_to_deck_dropdown_item)
-        choose_deck.adapter = adapter
-        choose_deck.setSelection(decks.indexOf(decks.find { it.id == selectedDeck }) + 1)
-        choose_deck.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        chooseDeck.adapter = adapter
+        chooseDeck.setSelection(decks.indexOf(decks.find { it.id == selectedDeck }) + 1)
+        chooseDeck.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                 if (position == decks.size + 1) {
-                    choose_deck.visibility = View.GONE
-                    new_deck_name_input_layout.visibility = View.VISIBLE
-                    new_deck_name.requestFocus()
+                    chooseDeck.visibility = View.GONE
+                    newDeckInputLayout.visibility = View.VISIBLE
+                    newDeckName.requestFocus()
                 }
             }
 
@@ -104,15 +132,15 @@ class AddToDeckFragment : BottomSheetDialogFragment(), AddToDeckView {
 
     private fun addToDeck() {
         LOG.d()
-        if (choose_deck.visibility == View.VISIBLE && choose_deck.selectedItemPosition > 0) {
-            val deck = decks[choose_deck.selectedItemPosition - 1]
-            val side = add_to_deck_sideboard.isChecked
+        if (chooseDeck.visibility == View.VISIBLE && chooseDeck.selectedItemPosition > 0) {
+            val deck = decks[chooseDeck.selectedItemPosition - 1]
+            val side = addToDeckSideboard.isChecked
             saveCard(quantity, deck, side)
             dismiss()
         }
-        if (choose_deck.visibility == View.GONE && new_deck_name.text?.isNotEmpty() == true) {
-            val side = add_to_deck_sideboard.isChecked
-            saveCard(quantity, new_deck_name.text.toString(), side)
+        if (chooseDeck.visibility == View.GONE && newDeckName.text?.isNotEmpty() == true) {
+            val side = addToDeckSideboard.isChecked
+            saveCard(quantity, newDeckName.text.toString(), side)
             dismiss()
         }
     }
@@ -131,21 +159,21 @@ class AddToDeckFragment : BottomSheetDialogFragment(), AddToDeckView {
     }
 
     override fun showError(message: String) {
-        add_card_title.visibility = View.GONE
-        new_deck_name_input_layout.visibility = View.GONE
-        quantity_indicator.visibility = View.GONE
-        quantity_container.visibility = View.GONE
-        quantity_minus.visibility = View.GONE
-        quantity_plus.visibility = View.GONE
-        choose_deck.visibility = View.GONE
-        add_to_deck_sideboard.visibility = View.GONE
-        error_text.visibility = View.VISIBLE
-        add_to_deck_save.setText(android.R.string.ok)
-        add_to_deck_save.setOnClickListener { this.dismiss() }
+        addCardTitle.visibility = View.GONE
+        newDeckInputLayout.visibility = View.GONE
+        quantityIndicator.visibility = View.GONE
+        quantityContainer.visibility = View.GONE
+        quantityMinus.visibility = View.GONE
+        quantityPlus.visibility = View.GONE
+        chooseDeck.visibility = View.GONE
+        addToDeckSideboard.visibility = View.GONE
+        errorText.visibility = View.VISIBLE
+        addToDeckSave.setText(android.R.string.ok)
+        addToDeckSave.setOnClickListener { this.dismiss() }
     }
 
     override fun setCardTitle(cardName: String) {
-        add_card_title.text = getString(R.string.add_to_deck_title, cardName)
+        addCardTitle.text = getString(R.string.add_to_deck_title, cardName)
     }
 
     override fun decksLoaded(decks: List<Deck>, selectedDeck: Long) {

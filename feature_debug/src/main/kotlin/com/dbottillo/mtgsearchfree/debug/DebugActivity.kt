@@ -8,6 +8,7 @@ import android.widget.Toast
 import com.dbottillo.mtgsearchfree.AppPreferences
 import com.dbottillo.mtgsearchfree.Navigator
 import com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper
+import com.dbottillo.mtgsearchfree.debug.databinding.ActivityDebugBinding
 import com.dbottillo.mtgsearchfree.interactor.SchedulerProvider
 import com.dbottillo.mtgsearchfree.model.helper.CreateDecksAsyncTask
 import com.dbottillo.mtgsearchfree.util.PermissionAvailable
@@ -18,7 +19,6 @@ import com.dbottillo.mtgsearchfree.util.copyDbToSdCard
 import com.dbottillo.mtgsearchfree.util.request
 import com.google.android.material.snackbar.Snackbar
 import dagger.android.support.DaggerAppCompatActivity
-import kotlinx.android.synthetic.main.activity_debug.*
 import javax.inject.Inject
 
 class DebugActivity : DaggerAppCompatActivity() {
@@ -31,39 +31,44 @@ class DebugActivity : DaggerAppCompatActivity() {
 
     private val debugInteractor by lazy(LazyThreadSafetyMode.NONE) { DebugInteractor(cardsInfoDbHelper) }
 
+    private lateinit var binding: ActivityDebugBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_debug)
 
-        setSupportActionBar(toolbar)
+        binding = ActivityDebugBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+
+        setSupportActionBar(binding.toolbar)
         supportActionBar?.let {
             it.setDisplayHomeAsUpEnabled(true)
             it.setDisplayHomeAsUpEnabled(true)
         }
 
-        clear_preferences.setOnClickListener {
+        binding.clearPreferences.setOnClickListener {
             appPreferences.clear()
         }
-        create_db.setOnClickListener {
+        binding.createDb.setOnClickListener {
             recreateDb()
         }
-        fill_decks.setOnClickListener {
+        binding.fillDecks.setOnClickListener {
             CreateDecksAsyncTask(applicationContext).execute()
         }
-        create_fav.setOnClickListener {
+        binding.createFav.setOnClickListener {
             AddFavouritesAsyncTask(applicationContext).execute()
         }
-        crash.setOnClickListener {
+        binding.crash.setOnClickListener {
             throw RuntimeException("This is a crash")
         }
-        send_db.setOnClickListener {
+        binding.sendDb.setOnClickListener {
             copyDBToSdCard()
         }
-        copy_db.setOnClickListener {
+        binding.copyDb.setOnClickListener {
             val copied = applicationContext.copyDbFromSdCard(CardsInfoDbHelper.DATABASE_NAME)
             Toast.makeText(applicationContext, if (copied) "database copied" else "database not copied", Toast.LENGTH_LONG).show()
         }
-        delete_favs.setOnClickListener {
+        binding.deleteFavs.setOnClickListener {
             debugInteractor.deleteSavedCards()
                     .subscribeOn(schedulerProvider.io())
                     .observeOn(schedulerProvider.ui())
@@ -73,7 +78,7 @@ class DebugActivity : DaggerAppCompatActivity() {
                         Toast.makeText(this@DebugActivity, it.localizedMessage, Toast.LENGTH_SHORT).show()
                     })
         }
-        delete_decks.setOnClickListener {
+        binding.deleteDecks.setOnClickListener {
             debugInteractor.deleteDecks()
                     .subscribeOn(schedulerProvider.io())
                     .observeOn(schedulerProvider.ui())

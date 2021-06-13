@@ -1,8 +1,6 @@
 package com.dbottillo.mtgsearchfree.search
 
 import android.content.Context
-import android.graphics.BlendMode
-import android.graphics.ColorFilter
 import android.graphics.PorterDuff
 import androidx.appcompat.widget.AppCompatCheckBox
 import androidx.appcompat.widget.AppCompatEditText
@@ -17,8 +15,8 @@ import com.dbottillo.mtgsearchfree.model.cmcParamCreator
 import com.dbottillo.mtgsearchfree.model.ptParamCreator
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.themeColor
-import kotlinx.android.synthetic.main.search_form_view.view.*
 
+@Suppress("MaxLineLength")
 class MTGSearchView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
@@ -26,36 +24,40 @@ class MTGSearchView @JvmOverloads constructor(
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
 
     private var operators = arrayOf("=", ">", "<", ">=", "<=")
-    private var sets = mutableListOf(MTGSet(-1, "", resources.getString(R.string.search_set_all)), MTGSet(-2, "", resources.getString(R.string.search_set_standard)))
+    private var sets = mutableListOf(
+        MTGSet(-1, "", resources.getString(R.string.search_set_all)),
+        MTGSet(-2, "", resources.getString(R.string.search_set_standard))
+    )
     private var colorsHow = arrayOf(
         context.getString(R.string.search_colors_exactly),
         context.getString(R.string.search_colors_including),
         context.getString(R.string.search_colors_at_most),
         context.getString(R.string.search_colors_excluding_others))
 
-    private val name: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatEditText>(R.id.search_name) }
-    private val types: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatEditText>(R.id.search_types) }
-    private val text: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatEditText>(R.id.search_text) }
-    private val cmc: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatEditText>(R.id.search_cmc) }
-    private val power: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatEditText>(R.id.search_power) }
-    private val tough: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatEditText>(R.id.search_tough) }
-    private val powerOp: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById<Spinner>(R.id.search_power_operator) }
-    private val toughOp: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById<Spinner>(R.id.search_toughness_operator) }
-    private val cmcOp: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById<Spinner>(R.id.search_cmc_operator) }
-    private val white: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_w) }
-    private val blue: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_u) }
-    private val black: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_b) }
-    private val red: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_r) }
-    private val green: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_g) }
-    private val colorsSpecification: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById<Spinner>(R.id.search_colors_how) }
-    private val land: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_l) }
-    private val common: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_common) }
-    private val uncommon: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_uncommon) }
-    private val rare: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_rare) }
-    private val mythic: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_mythic) }
-    private val set: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById<Spinner>(R.id.search_set) }
-    private val noDuplicates: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_no_duplicates) }
-    private val sortAZ: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById<AppCompatCheckBox>(R.id.search_az) }
+    private val name: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_name) }
+    private val types: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_types) }
+    private val text: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_text) }
+    private val cmc: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_cmc) }
+    private val power: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_power) }
+    private val tough: AppCompatEditText by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_tough) }
+    private val powerOp: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_power_operator) }
+    private val toughOp: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_toughness_operator) }
+    private val cmcOp: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_cmc_operator) }
+    private val white: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_w) }
+    private val blue: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_u) }
+    private val black: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_b) }
+    private val red: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_r) }
+    private val green: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_g) }
+    private val colorsSpecification: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_colors_how) }
+    private val land: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_l) }
+    private val common: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_common) }
+    private val uncommon: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_uncommon) }
+    private val rare: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_rare) }
+    private val mythic: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_mythic) }
+    private val set: Spinner by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_set) }
+    private val noDuplicates: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_no_duplicates) }
+    private val sortAZ: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_az) }
+    private val searchColorless: AppCompatCheckBox by lazy(LazyThreadSafetyMode.NONE) { findViewById(R.id.search_colorless) }
 
     private var searchSetAdapter: SearchSetAdapter? = null
 
@@ -83,16 +85,16 @@ class MTGSearchView @JvmOverloads constructor(
             searchParams.isRare = rare.isChecked
             searchParams.isMythic = mythic.isChecked
             searchParams.setId = sets[set.selectedItemPosition].id
-            searchParams.colorless = search_colorless.isChecked
+            searchParams.colorless = searchColorless.isChecked
             searchParams.duplicates = !noDuplicates.isChecked
             searchParams.sortAZ = sortAZ.isChecked
             return searchParams
         }
 
     private val disableColorlessCheckedChangeListener: CompoundButton.OnCheckedChangeListener = CompoundButton.OnCheckedChangeListener { _, _ ->
-        search_colorless.setOnCheckedChangeListener(null)
-        search_colorless.isChecked = false
-        search_colorless.setOnCheckedChangeListener(colorlessCheckedChangeListener)
+        searchColorless.setOnCheckedChangeListener(null)
+        searchColorless.isChecked = false
+        searchColorless.setOnCheckedChangeListener(colorlessCheckedChangeListener)
     }
 
     private val colorlessCheckedChangeListener: CompoundButton.OnCheckedChangeListener = CompoundButton.OnCheckedChangeListener { _, _ ->
@@ -147,7 +149,7 @@ class MTGSearchView @JvmOverloads constructor(
         blue.setOnCheckedChangeListener(disableColorlessCheckedChangeListener)
         green.setOnCheckedChangeListener(disableColorlessCheckedChangeListener)
         black.setOnCheckedChangeListener(disableColorlessCheckedChangeListener)
-        search_colorless.setOnCheckedChangeListener(colorlessCheckedChangeListener)
+        searchColorless.setOnCheckedChangeListener(colorlessCheckedChangeListener)
     }
 
     fun refreshSets(sets: List<MTGSet>) {
