@@ -110,7 +110,7 @@ internal class CreateDBAsyncTask(
         }
     }
 
-    @Suppress("UNUSED_VARIABLE")
+    @Suppress("UNUSED_VARIABLE", "TooGenericExceptionCaught", "NestedBlockDepth")
     private fun loadSetV5(context: Context, db: SQLiteDatabase, setDataSource: SetDataSource, setJ: JSONObject) {
         try {
             val setToLoad = setToLoad(context, setJ.getString("code"))
@@ -129,18 +129,25 @@ internal class CreateDBAsyncTask(
                 type.toSetType())
             // for (int k=0; k<1; k++){
 
+            var totalCards = 0
             (0 until cards.length()).forEach { index ->
                 val cardJ = cards.getJSONObject(index)
                 // Log.e("MTG", "cardJ $cardJ")
 
                 if (!cardJ.has("isAlternative") || !cardJ.getBoolean("isAlternative")) {
+                    try {
                     val newRowId2 = db.insert(CardDataSource.TABLE, null, createContentValueFromJSON(cardJ, set))
+                        totalCards++
+                    } catch (e: Exception){
+                        Log.e("MTG", "${cardJ.getString("name")} error: ${e.localizedMessage}")
+                    }
                 } else {
                     Log.e("MTG", "${cardJ.getString("name")} skipped in ${set.name} because is alternative")
                 }
                 // Log.e("MTG", "row id card $newRowId2")
                 // result.add(MTGCard.createCardFromJson(i, cardJ));
             }
+            LOG.e("$totalCards added for " + setJ.getString("code"))
         } catch (e: Resources.NotFoundException) {
             LOG.e(setJ.getString("code") + " file not found")
         }

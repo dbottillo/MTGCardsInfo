@@ -410,4 +410,16 @@ class QueryComposerTest {
         assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE COLORS IS ''")
         assertThat(output.selection).isEmpty()
     }
+
+    @Test
+    fun `should allow to search in lists`() {
+        val queryComposer = QueryComposer("SELECT * from TABLE")
+        queryComposer.addListParam("field", listOf("one", "two"))
+        queryComposer.addListParam("field2", listOf("three"))
+
+        val output = queryComposer.build()
+
+        assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE field IN ('one', 'two') AND field2 IN ('three')")
+        assertThat(output.selection).isEqualTo(listOf("SKIP", "SKIP"))
+    }
 }

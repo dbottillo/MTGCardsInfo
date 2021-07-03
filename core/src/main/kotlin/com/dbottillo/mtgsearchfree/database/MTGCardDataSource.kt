@@ -15,25 +15,6 @@ class MTGCardDataSource(
     private val cardDataSource: CardDataSource
 ) {
 
-    @Suppress("MagicNumber")
-    enum class STANDARD(var setId: Int, var set: String) {
-        STRIXHAVEN(4, "Strixhaven: School of Mages"),
-        KALDHEIM(10, "Kaldheim"),
-        ZENDIKAR_RISING(13, "Zendikar Rising"),
-        CORE_21(20, "Core Set 2021"),
-        IKORIA(22, "Ikoria: Lair of Behemoths"),
-        THEROS_BEYOND_DEATH(28, "Theros Beyond Death"),
-        THRONE_OF_ELDRAINE(34, "Throne of Eldraine");
-
-        companion object {
-
-            val setIds: Array<String>
-                get() {
-                    return values().map { it.setId.toString() }.toTypedArray()
-                }
-        }
-    }
-
     fun getSet(set: MTGSet): List<MTGCard> {
         LOG.d("get set  $set")
         val query =
@@ -78,11 +59,9 @@ class MTGCardDataSource(
             queryComposer.addParam(CardDataSource.COLUMNS.SET_ID.noun, "==", searchParams.setId)
         }
         if (searchParams.setId == -2) {
-            queryComposer.addMultipleParam(
-                CardDataSource.COLUMNS.SET_ID.noun,
-                "==",
-                "OR",
-                *STANDARD.setIds
+            queryComposer.addListParam(
+                CardDataSource.COLUMNS.SET_CODE.noun,
+                STANDARD_SET_CODES
             )
         }
         if (searchParams.atLeastOneColor) {
@@ -157,11 +136,7 @@ class MTGCardDataSource(
         queryComposer.append("ORDER BY " + CardDataSource.COLUMNS.MULTIVERSE_ID.noun + " DESC LIMIT " + LIMIT)
 
         val output = queryComposer.build()
-        val sel = Arrays.copyOf<String, Any>(
-            output.selection.toTypedArray(),
-            output.selection.size,
-            Array<String>::class.java
-        )
+        val sel = output.selection.filter { it != "SKIP" }.toTypedArray()
         LOG.query(output.query, *sel)
 
         val cursor = database.rawQuery(output.query, sel)
@@ -263,3 +238,4 @@ class MTGCardDataSource(
 }
 
 private const val LIMIT = 400
+val STANDARD_SET_CODES = listOf("STX", "KHM", "ZNR", "M21", "IKO", "THB", "ELD")

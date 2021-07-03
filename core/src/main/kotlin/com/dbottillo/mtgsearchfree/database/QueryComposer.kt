@@ -112,6 +112,20 @@ internal class QueryComposer(initial: String) {
         stringBuilder.append(")")
     }
 
+    fun addListParam(name: String, params: List<String>) {
+        if (params.isEmpty()) throw UnsupportedOperationException("no params to search in list")
+        checkFirstParam()
+        stringBuilder.append(name).append(" IN (")
+        params.forEachIndexed { i, param ->
+            stringBuilder.append("'").append(param).append("'")
+            if (i < params.size - 1){
+                stringBuilder.append(", ")
+            }
+        }
+        stringBuilder.append(")")
+        selection.add("SKIP")
+    }
+
     fun append(path: String) {
         stringBuilder.append(" ")
         stringBuilder.append(path)

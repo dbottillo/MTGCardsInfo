@@ -512,7 +512,7 @@ class MTGCardDataSourceTest {
         val cards = underTest.searchCards(searchParams)
         assertThat(cards).isNotEmpty()
         for (card in cards) {
-            assertThat(MTGCardDataSource.STANDARD.values().map { it.set }.contains(card.set?.name)).isTrue()
+            assertThat(card.set!!.code).isIn(STANDARD_SET_CODES)
         }
     }
 
