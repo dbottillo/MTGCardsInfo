@@ -37,7 +37,7 @@ class MTGCardDataSource(
         return cards
     }
 
-    @Suppress("SpreadOperator", "ComplexMethod")
+    @Suppress("SpreadOperator", "ComplexMethod", "MagicNumber", "LongMethod")
     fun searchCards(searchParams: SearchParams): List<MTGCard> {
         LOG.d("search cards  $searchParams")
         val queryComposer = QueryComposer("SELECT * FROM " + CardDataSource.TABLE)
@@ -62,6 +62,12 @@ class MTGCardDataSource(
             queryComposer.addListParam(
                 CardDataSource.COLUMNS.SET_CODE.noun,
                 STANDARD_SET_CODES
+            )
+        }
+        if (searchParams.setId == -3) {
+            queryComposer.addListParam(
+                CardDataSource.COLUMNS.SET_CODE.noun,
+                STANDARD_2022_SET_CODES
             )
         }
         if (searchParams.atLeastOneColor) {
@@ -238,4 +244,5 @@ class MTGCardDataSource(
 }
 
 private const val LIMIT = 400
-val STANDARD_SET_CODES = listOf("STX", "KHM", "ZNR", "M21", "IKO", "THB", "ELD")
+val STANDARD_SET_CODES = listOf("AFR", "STX", "KHM", "ZNR", "M21", "IKO", "THB", "ELD")
+val STANDARD_2022_SET_CODES = listOf("AFR", "STX", "KHM", "ZNR")

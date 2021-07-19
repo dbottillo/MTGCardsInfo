@@ -77,7 +77,7 @@ class MTGCardDataSourceTest {
     fun `should search cards by id`() {
         val card = underTest.searchCardById(5)
         assertThat(card).isNotNull()
-        assertThat(card?.name).isEqualTo("Barbed Spike")
+        assertThat(card?.name).isEqualTo("Celestial Unicorn")
     }
 
     @Test

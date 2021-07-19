@@ -1434,5 +1434,41 @@
     "translations": {},
     "type": "draft_innovation",
     "v5": true
+  },
+  {
+    "baseSetSize": 331,
+    "code": "AFC",
+    "isFoilOnly": false,
+    "isOnlineOnly": false,
+    "isPartialPreview": true,
+    "keyruneCode": "AFR",
+    "name": "Forgotten Realms Commander",
+    "parentCode": "AFR",
+    "releaseDate": "2021-07-23",
+    "sealedProduct": [],
+    "tcgplayerGroupId": 2870,
+    "totalSetSize": 331,
+    "translations": {},
+    "type": "commander",
+    "v5": true
+  },
+  {
+    "baseSetSize": 281,
+    "code": "AFR",
+    "isFoilOnly": false,
+    "isOnlineOnly": false,
+    "isPartialPreview": true,
+    "keyruneCode": "AFR",
+    "mcmId": 4259,
+    "mcmIdExtras": 4260,
+    "mcmName": "Adventures in the Forgotten Realms",
+    "mtgoCode": "AFR",
+    "name": "Adventures in the Forgotten Realms",
+    "releaseDate": "2021-07-23",
+    "tcgplayerGroupId": 2823,
+    "totalSetSize": 402,
+    "translations": {},
+    "type": "expansion",
+    "v5": true
   }
 ]

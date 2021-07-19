@@ -26,7 +26,8 @@ class MTGSearchView @JvmOverloads constructor(
     private var operators = arrayOf("=", ">", "<", ">=", "<=")
     private var sets = mutableListOf(
         MTGSet(-1, "", resources.getString(R.string.search_set_all)),
-        MTGSet(-2, "", resources.getString(R.string.search_set_standard))
+        MTGSet(-2, "", resources.getString(R.string.search_set_standard)),
+        MTGSet(-3, "", resources.getString(R.string.search_set_standard_twenty_twentytwo))
     )
     private var colorsHow = arrayOf(
         context.getString(R.string.search_colors_exactly),
