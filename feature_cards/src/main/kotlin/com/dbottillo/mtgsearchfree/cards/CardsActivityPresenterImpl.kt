@@ -160,7 +160,7 @@ class CardsActivityPresenterImpl(
 
     private fun showError(throwable: Throwable) {
         logger.e(throwable)
-        view.showError(throwable.localizedMessage)
+        view.showError(throwable.localizedMessage ?: "")
     }
 
     override fun shareImage(bitmap: Bitmap) {

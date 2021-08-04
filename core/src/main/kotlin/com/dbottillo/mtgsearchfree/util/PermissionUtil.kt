@@ -10,9 +10,7 @@ import androidx.core.app.ActivityCompat
 object PermissionUtil {
 
     fun permissionGranted(context: Context, permission: PermissionAvailable): Boolean {
-        return if (Build.VERSION.SDK_INT < 23) {
-            true
-        } else context.checkSelfPermission(permission.value) == PackageManager.PERMISSION_GRANTED
+        return context.checkSelfPermission(permission.value) == PackageManager.PERMISSION_GRANTED
     }
 
     interface PermissionListener {

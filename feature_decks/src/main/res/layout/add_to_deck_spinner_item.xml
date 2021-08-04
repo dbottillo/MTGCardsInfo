@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="40dp"
     android:ellipsize="marquee"
-    android:gravity="center|left"
-    android:paddingLeft="16dp"
+    android:gravity="center|start"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
     android:singleLine="true"
     android:textColor="?attr/colorPrimary"/>

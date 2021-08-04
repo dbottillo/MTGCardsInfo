@@ -86,7 +86,7 @@ private fun Context.isEuUser(): Boolean {
             "BE", "EL", "LT", "PT", "BG", "ES", "LU", "RO", "CZ", "FR", "HU", "SI", "DK", "HR",
             "MT", "SK", "DE", "IT", "NL", "FI", "EE", "CY", "AT", "SE", "IE", "LV", "PL", "UK",
             "CH", "NO", "IS", "LI", "GB"
-    ).contains((tm.simCountryIso ?: Locale.getDefault().country).toUpperCase(Locale.getDefault()))
+    ).contains((tm.simCountryIso ?: Locale.getDefault().country).uppercase())
 }
 
 private const val PRICE_PROVIDER_PREFERENCE_KEY = "price_provider"

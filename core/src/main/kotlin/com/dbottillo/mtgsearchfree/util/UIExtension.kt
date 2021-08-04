@@ -25,9 +25,7 @@ fun Context.dpToPx(value: Int): Int {
 }
 
 fun Activity?.setLightStatusBar() {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-        this?.window?.decorView?.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
-    }
+    this?.window?.decorView?.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
 }
 
 fun Activity?.setDarkStatusBar() {

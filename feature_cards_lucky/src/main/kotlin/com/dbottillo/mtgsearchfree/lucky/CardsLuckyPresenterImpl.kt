@@ -142,7 +142,7 @@ class CardsLuckyPresenterImpl(
         disposable.add(cardsInteractor.getArtworkUri(bitmap).subscribe({
             view.shareUri(it)
         }, {
-            view.showError(it.localizedMessage)
+            view.showError(it.localizedMessage ?: "")
             logger.logNonFatal(it)
         }))
     }

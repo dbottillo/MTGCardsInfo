@@ -43,7 +43,7 @@ class MTGCardDataSource(
         val queryComposer = QueryComposer("SELECT * FROM " + CardDataSource.TABLE)
         queryComposer.addLikeParam(
             CardDataSource.COLUMNS.NAME.noun,
-            searchParams.name.trim { it <= ' ' }.toLowerCase(Locale.getDefault())
+            searchParams.name.trim { it <= ' ' }.lowercase()
         )
         if (searchParams.types.isNotEmpty()) {
             val types = searchParams.types.split(" ").toTypedArray()

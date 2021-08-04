@@ -5,7 +5,7 @@ import java.util.Locale
 
 @Suppress("ComplexMethod")
 fun String?.adjustCode(): String? {
-    val stringToLoad = this?.toLowerCase(Locale.getDefault())
+    val stringToLoad = this?.lowercase()
     return when {
         stringToLoad.equals("10e", ignoreCase = true) -> "e10"
         stringToLoad.equals("9ed", ignoreCase = true) -> "ed9"

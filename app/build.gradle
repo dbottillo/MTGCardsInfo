@@ -53,10 +53,6 @@ android {
         }
     }
 
-    dexOptions {
-        preDexLibraries = false
-    }
-
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'src/test/kotlin'
@@ -71,10 +67,9 @@ android {
 
     lintOptions {
         xmlReport false
-        checkAllWarnings true
-        checkReleaseBuilds false
+        ignoreTestSources true
+        checkDependencies true
         lintConfig file("$rootDir/config/lint/lint.xml")
-        ignore 'RtlHardcoded', 'RtlEnabled', 'RtlSymmetry', 'SelectableText', 'RestrictedApi'
     }
 }
 

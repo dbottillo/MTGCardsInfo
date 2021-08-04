@@ -14,7 +14,7 @@ data class PTParam(val operator: String, val value: Int) : Parcelable
 @SuppressLint("DefaultLocale")
 fun cmcParamCreator(operator: String, value: String?): CMCParam? {
     if (value == null || value.isEmpty()) return null
-    val input = value.toUpperCase()
+    val input = value.uppercase()
 
     val numbers = mutableListOf<String>()
     val letters = mutableMapOf<String, Int>()

@@ -9,7 +9,7 @@ buildscript {
         apply from: 'dependencies-versions.gradle'
         apply from: 'dependencies-all.gradle'
 
-        classpath 'com.android.tools.build:gradle:4.2.2'
+        classpath 'com.android.tools.build:gradle:7.0.0'
         classpath 'com.google.gms:google-services:4.3.8'
         classpath "com.google.firebase:firebase-crashlytics-gradle:$versions.crashlyticsPlugin"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
@@ -54,8 +54,6 @@ subprojects {
 
     }
 
-    apply plugin: 'pmd'
-    apply plugin: 'checkstyle'
 }
 
 apply plugin: 'com.github.ben-manes.versions'
@@ -69,32 +67,6 @@ dependencyUpdates.resolutionStrategy {
                 selection.reject('Release candidate')
             }
         }
-    }
-}
-
-def checkstyleConfigDir = new File("$rootDir/config/checkstyle")
-task checkstyle(type: Checkstyle) {
-    configFile = new File(checkstyleConfigDir, "checkstyle.xml")
-    configProperties.checkstyleConfigDir = checkstyleConfigDir
-    source 'src'
-    include '**/*.java'
-    exclude '**/gen/**'
-    classpath = files()
-}
-
-
-task pmd(type: Pmd) {
-
-    description 'Run pmd'
-    group 'verification'
-
-    ruleSetFiles = files("./config/pmd/pmd-ruleset.xml")
-    ruleSets = []
-    source = fileTree('src/main/java')
-
-    reports {
-        xml.enabled = false
-        html.enabled = true
     }
 }
 
