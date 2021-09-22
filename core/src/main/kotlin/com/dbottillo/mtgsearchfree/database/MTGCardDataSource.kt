@@ -244,5 +244,5 @@ class MTGCardDataSource(
 }
 
 private const val LIMIT = 400
-val STANDARD_SET_CODES = listOf("AFR", "STX", "KHM", "ZNR", "M21", "IKO", "THB", "ELD")
+val STANDARD_SET_CODES = listOf("MID", "AFR", "STX", "KHM", "ZNR")
 val STANDARD_2022_SET_CODES = listOf("AFR", "STX", "KHM", "ZNR")
