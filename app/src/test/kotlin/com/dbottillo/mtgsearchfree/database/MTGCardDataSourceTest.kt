@@ -240,13 +240,12 @@ class MTGCardDataSourceTest {
     @Test
     fun searchCardsByToughness() {
         val searchParams = SearchParams()
-        for (element in OPERATOR.values()) {
-            val operator = element
+        for (operator in OPERATOR.values()) {
             searchParams.tough = operator.generatePTParam()
             val cards = underTest.searchCards(searchParams)
             assertThat(cards).isNotEmpty()
             cards.forEach { card ->
-                if (card.toughness != "1+*") {
+                if (card.toughness != "1+*" && card.toughness != "*+1") {
                     operator.assertOperator(card.toughness.toInt())
                 }
             }
