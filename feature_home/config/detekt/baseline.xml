@@ -1,12 +1,10 @@
-<?xml version="1.0" ?>
+<?xml version='1.0' encoding='UTF-8'?>
 <SmellBaseline>
-  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <ManuallySuppressedIssues/>
   <CurrentIssues>
     <ID>MagicNumber:BottomTabs.kt$BottomTabs$0.7f</ID>
     <ID>MagicNumber:BottomTabs.kt$BottomTabs$1.2f</ID>
     <ID>MagicNumber:BottomTabs.kt$BottomTabs$3</ID>
-    <ID>MagicNumber:HomeActivity.kt$HomeActivity.&lt;no name provided&gt;$3</ID>
-    <ID>NewLineAtEndOfFile:BaseHomeFragment.kt$com.dbottillo.mtgsearchfree.home.BaseHomeFragment.kt</ID>
-    <ID>NewLineAtEndOfFile:HomeActivity.kt$com.dbottillo.mtgsearchfree.home.HomeActivity.kt</ID>
+    <ID>MagicNumber:HomeActivity.kt$HomeActivity.&lt;no name provided>$3</ID>
   </CurrentIssues>
 </SmellBaseline>

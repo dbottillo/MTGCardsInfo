@@ -1,10 +1,7 @@
-<?xml version="1.0" ?>
+<?xml version='1.0' encoding='UTF-8'?>
 <SmellBaseline>
-  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <ManuallySuppressedIssues/>
   <CurrentIssues>
-    <ID>NewLineAtEndOfFile:SetDataSource.kt$com.dbottillo.mtgsearchfree.storage.SetDataSource.kt</ID>
-    <ID>NewLineAtEndOfFile:SetsInteractor.kt$com.dbottillo.mtgsearchfree.interactors.SetsInteractor.kt</ID>
-    <ID>NewLineAtEndOfFile:SetsInteractorImplTest.kt$com.dbottillo.mtgsearchfree.interactors.SetsInteractorImplTest.kt</ID>
     <ID>SpreadOperator:SetDataSource.kt$SetDataSource$(query, *args)</ID>
   </CurrentIssues>
 </SmellBaseline>

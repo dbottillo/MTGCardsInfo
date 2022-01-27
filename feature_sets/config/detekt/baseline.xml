@@ -1,11 +1,7 @@
-<?xml version="1.0" ?>
+<?xml version='1.0' encoding='UTF-8'?>
 <SmellBaseline>
-  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <ManuallySuppressedIssues/>
   <CurrentIssues>
-    <ID>NewLineAtEndOfFile:SetPickerPresenterImplTest.kt$com.dbottillo.mtgsearchfree.sets.SetPickerPresenterImplTest.kt</ID>
-    <ID>NewLineAtEndOfFile:SetsFragment.kt$com.dbottillo.mtgsearchfree.sets.SetsFragment.kt</ID>
-    <ID>NewLineAtEndOfFile:SetsFragmentPresenterImplTest.kt$com.dbottillo.mtgsearchfree.ui.sets.SetsFragmentPresenterImplTest.kt</ID>
-    <ID>NewLineAtEndOfFile:SetsFragmentView.kt$com.dbottillo.mtgsearchfree.sets.SetsFragmentView.kt</ID>
-    <ID>TooManyFunctions:SetsFragment.kt$SetsFragment : BaseHomeFragmentSetsFragmentViewOnCardListener</ID>
+    <ID>InvalidPackageDeclaration:SetsFragmentPresenterImplTest.kt$package com.dbottillo.mtgsearchfree.ui.sets</ID>
   </CurrentIssues>
 </SmellBaseline>

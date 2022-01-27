@@ -1,14 +1,7 @@
-<?xml version="1.0" ?>
+<?xml version='1.0' encoding='UTF-8'?>
 <SmellBaseline>
-  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <ManuallySuppressedIssues/>
   <CurrentIssues>
     <ID>ForbiddenComment:CardsLuckyPresenterImpl.kt$CardsLuckyPresenterImpl$// TODO: this need testing</ID>
-    <ID>MaxLineLength:CardsLuckyPresenterImplTest.kt$CardsLuckyPresenterImplTest$fun</ID>
-    <ID>NewLineAtEndOfFile:CardLuckyActivity.kt$com.dbottillo.mtgsearchfree.lucky.CardLuckyActivity.kt</ID>
-    <ID>NewLineAtEndOfFile:CardsLuckyPresenter.kt$com.dbottillo.mtgsearchfree.lucky.CardsLuckyPresenter.kt</ID>
-    <ID>NewLineAtEndOfFile:CardsLuckyPresenterImpl.kt$com.dbottillo.mtgsearchfree.lucky.CardsLuckyPresenterImpl.kt</ID>
-    <ID>NewLineAtEndOfFile:CardsLuckyPresenterImplTest.kt$com.dbottillo.mtgsearchfree.lucky.CardsLuckyPresenterImplTest.kt</ID>
-    <ID>NewLineAtEndOfFile:CardsLuckyView.kt$com.dbottillo.mtgsearchfree.lucky.CardsLuckyView.kt</ID>
-    <ID>TooManyFunctions:CardLuckyActivity.kt$CardLuckyActivity : CommonCardsActivityCardsLuckyView</ID>
   </CurrentIssues>
 </SmellBaseline>

@@ -1,6 +1,6 @@
-<?xml version="1.0" ?>
+<?xml version='1.0' encoding='UTF-8'?>
 <SmellBaseline>
-  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <ManuallySuppressedIssues/>
   <CurrentIssues>
     <ID>MagicNumber:LifeCounterAdapter.kt$LifeCounterAdapter$3</ID>
     <ID>MagicNumber:LifeCounterAdapter.kt$LifeCounterAdapter$5</ID>
@@ -8,17 +8,7 @@
     <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$15</ID>
     <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$20</ID>
     <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$30</ID>
-    <ID>MaxLineLength:LifeCounterAdapter.kt$LifeCounterAdapter$holder.name.text = holder.itemView.context.getString(R.string.row_life_counter_name, player.name, player.diceResult)</ID>
-    <ID>MaxLineLength:LifeCounterAdapter.kt$LifeCounterAdapter$return FooterViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.life_counter_footer, parent, false))</ID>
-    <ID>MaxLineLength:LifeCounterAdapter.kt$LifeCounterAdapter$return HeaderViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.life_counter_header, parent, false))</ID>
-    <ID>NewLineAtEndOfFile:LifeCounterModule.kt$com.dbottillo.mtgsearchfree.dagger.LifeCounterModule.kt</ID>
-    <ID>NewLineAtEndOfFile:LifeCounterPresenter.kt$com.dbottillo.mtgsearchfree.lifecounter.LifeCounterPresenter.kt</ID>
-    <ID>NewLineAtEndOfFile:LifeCounterPresenterImplTest.kt$com.dbottillo.mtgsearchfree.lifecounter.LifeCounterPresenterImplTest.kt</ID>
-    <ID>NewLineAtEndOfFile:LifeCounterView.kt$com.dbottillo.mtgsearchfree.lifecounter.LifeCounterView.kt</ID>
-    <ID>NewLineAtEndOfFile:PlayerInteractor.kt$com.dbottillo.mtgsearchfree.lifecounter.PlayerInteractor.kt</ID>
-    <ID>NewLineAtEndOfFile:PlayerInteractorImplTest.kt$com.dbottillo.mtgsearchfree.lifecounter.PlayerInteractorImplTest.kt</ID>
     <ID>ReturnCount:LifeCounterAdapter.kt$LifeCounterAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
     <ID>ReturnCount:LifeCounterAdapter.kt$LifeCounterAdapter$private fun getColorOfPosition(context: Context, position: Int): Int</ID>
-    <ID>TooManyFunctions:LifeCounterFragment.kt$LifeCounterFragment : BaseHomeFragmentLifeCounterViewOnLifeCounterListener</ID>
   </CurrentIssues>
 </SmellBaseline>

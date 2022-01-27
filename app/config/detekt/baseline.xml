@@ -1,72 +1,13 @@
-<?xml version="1.0" ?>
+<?xml version='1.0' encoding='UTF-8'?>
 <SmellBaseline>
-  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <ManuallySuppressedIssues/>
   <CurrentIssues>
+    <ID>CollapsibleIfStatements:MTGApp.kt$MTGApp$if (!isTesting()) { if (BuildConfig.DEBUG) { StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.Builder() .detectAll() .penaltyLog() .build()) StrictMode.setVmPolicy(StrictMode.VmPolicy.Builder() .detectLeakedSqlLiteObjects() .detectLeakedClosableObjects() .penaltyLog() .build()) } }</ID>
     <ID>ComplexMethod:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$@Test fun createsContentValuesProperly()</ID>
     <ID>ComplexMethod:FileHelper.kt$@Throws(JSONException::class) private fun cardFromJSON(jsonObject: JSONObject, set: MTGSet): MTGCard</ID>
     <ID>EmptyFunctionBlock:GeneralPreferencesForTest.kt$GeneralPreferencesForTest${ }</ID>
-    <ID>LongMethod:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$@Test fun createsContentValuesProperly()</ID>
-    <ID>LongMethod:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$@Test fun parsesCardFromCursor()</ID>
-    <ID>LongMethod:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$@Test fun test_card_can_be_saved_in_database()</ID>
-    <ID>LongMethod:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$private fun setupCursorCard()</ID>
-    <ID>LongMethod:FileHelper.kt$@Throws(JSONException::class) private fun cardFromJSON(jsonObject: JSONObject, set: MTGSet): MTGCard</ID>
-    <ID>MaxLineLength:AppNavigator.kt$AppNavigator$override fun openCardsLuckyScreen(origin: Activity)</ID>
-    <ID>MaxLineLength:AppNavigator.kt$AppNavigator$override fun openReleaseNoteScreen(origin: Activity)</ID>
-    <ID>MaxLineLength:AppNavigator.kt$AppNavigator$override fun openSettingsScreen(origin: Activity)</ID>
-    <ID>MaxLineLength:AppPreferencesImpl.kt$AppPreferencesImpl$private val sharedPreferences: SharedPreferences by lazy(LazyThreadSafetyMode.NONE) { context.getSharedPreferences(PREFS_NAME, 0) }</ID>
-    <ID>MaxLineLength:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$CardDataSource.generateCreateTable(1)</ID>
-    <ID>MaxLineLength:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$CardDataSource.generateCreateTable(10)</ID>
-    <ID>MaxLineLength:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$CardDataSource.generateCreateTable(11)</ID>
-    <ID>MaxLineLength:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$CardDataSource.generateCreateTable(12)</ID>
-    <ID>MaxLineLength:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$CardDataSource.generateCreateTable(2)</ID>
-    <ID>MaxLineLength:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$CardDataSource.generateCreateTable(3)</ID>
-    <ID>MaxLineLength:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$assertThat(card.rulings[0]).isEqualTo("If a spell or ability has you draw multiple cards, Hoofprints of the Stag's ability triggers that many times.")</ID>
-    <ID>MaxLineLength:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$contentValues.getAsInteger(CardDataSource.COLUMNS.TCG_PLAYER_PRODUCT_ID.noun)</ID>
-    <ID>MaxLineLength:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$contentValues.getAsString(CardDataSource.COLUMNS.COLORS.noun)</ID>
-    <ID>MaxLineLength:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$contentValues.getAsString(CardDataSource.COLUMNS.COLORS_IDENTITY.noun)</ID>
-    <ID>MaxLineLength:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$contentValues.getAsString(CardDataSource.COLUMNS.OTHER_FACE_IDS.noun)</ID>
-    <ID>MaxLineLength:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$contentValues.getAsString(CardDataSource.COLUMNS.SIDE.noun)</ID>
-    <ID>MaxLineLength:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$contentValues.getAsString(CardDataSource.COLUMNS.SUB_TYPES.noun)</ID>
-    <ID>MaxLineLength:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$contentValues.getAsString(CardDataSource.COLUMNS.TCG_PLAYER_PURCHASE_URL.noun)</ID>
-    <ID>MaxLineLength:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$query</ID>
-    <ID>MaxLineLength:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$whenever(cursor.getString(20)).thenReturn("[{\"date\":\"2007-10-01\",\"text\":\"If a spell or ability has you draw multiple cards, Hoofprints of the Stag's ability triggers that many times.\"}]")</ID>
-    <ID>MaxLineLength:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$whenever(cursor.getString(29)).thenReturn("[{\"format\":\"Legacy\", \"legality\" : \"Banned\" }, { \"format\" : \"Vintage\", \"legality\" : \"Restricted\" } ]")</ID>
-    <ID>MaxLineLength:DeckDataSourceIntegrationTest.kt$DeckDataSourceIntegrationTest$assertThat(query).isEqualTo("CREATE TABLE IF NOT EXISTS decks (_id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT not null,color TEXT,archived INT)")</ID>
-    <ID>MaxLineLength:DeckDataSourceIntegrationTest.kt$DeckDataSourceIntegrationTest$assertThat(queryJoin).isEqualTo("CREATE TABLE IF NOT EXISTS deck_card (deck_id INT not null,card_id INT not null,quantity INT not null,side INT)")</ID>
-    <ID>MaxLineLength:DeckDataSourceIntegrationTest.kt$DeckDataSourceIntegrationTest$underTest = DeckDataSource(cardsInfoDbHelper.writableDatabase, cardDataSource, mtgCardDataSource, DeckColorMapper(Gson()), Logger())</ID>
-    <ID>MaxLineLength:DeckDataSourceIntegrationTest.kt$DeckDataSourceIntegrationTest$val cursor = cardsInfoDbHelper.readableDatabase.rawQuery("select * from " + CardDataSource.TABLE + " where multiVerseId =?", arrayOf(card.multiVerseId.toString() + ""))</ID>
-    <ID>MaxLineLength:DecksStorageIntegrationTest.kt$DecksStorageIntegrationTest$val deckDataSource = DeckDataSource(cardsInfoDbHelper.writableDatabase, cardDataSource, mtgCardDataSource, deckColorMapper, Logger())</ID>
-    <ID>MaxLineLength:FileHelper.kt$sets.add(MTGSet(id = i, name = setJ.getString("name"), code = setJ.getString("code"), type = type.toSetType()))</ID>
-    <ID>MaxLineLength:FileHelper.kt$val identifiers: JSONObject = if (jsonObject.has("identifiers")) jsonObject.getJSONObject("identifiers") else jsonObject</ID>
-    <ID>MaxLineLength:LegacyActivityBuilder.kt$CardsActivityModule$return CardsActivityPresenterImpl(cardsInteractor, savedCardsInteractor, decksInteractor, cardsPreferences, logger)</ID>
-    <ID>MaxLineLength:LuckyWidgetProvider.kt$LuckyWidgetProvider$val pendingIntent = PendingIntent.getActivity(context, appWidgetId, openIntent, PendingIntent.FLAG_UPDATE_CURRENT)</ID>
-    <ID>MaxLineLength:LuckyWidgetProvider.kt$LuckyWidgetProvider$val refreshPendingIntent = PendingIntent.getBroadcast(context, appWidgetId, refreshIntent, PendingIntent.FLAG_UPDATE_CURRENT)</ID>
-    <ID>MaxLineLength:MTGCardDataSourceTest.kt$MTGCardDataSourceTest$assertThat(card.type.toLowerCase(Locale.getDefault()).contains("creature") &amp;&amp; card.type.toLowerCase(Locale.getDefault()).contains("angel") &amp;&amp; card.type.toLowerCase(Locale.getDefault()).contains("ally")).isTrue()</ID>
-    <ID>MaxLineLength:MTGCardDataSourceTest.kt$MTGCardDataSourceTest$assertThat(card.type.toLowerCase(Locale.getDefault()).contains("creature") &amp;&amp; card.type.toLowerCase(Locale.getDefault()).contains("angel")).isTrue()</ID>
-    <ID>MaxLineLength:MTGCardDataSourceTest.kt$MTGCardDataSourceTest$assertWithMessage(card.toString()).that((card.isWhite || card.isGreen) &amp;&amp; card.type.contains("elf", ignoreCase = true)).isTrue()</ID>
-    <ID>MaxLineLength:MTGCardDataSourceTest.kt$MTGCardDataSourceTest$val toTest = arrayOf("Wasteland", "Ulamog, the Ceaseless Hunger", "Urborg, Tomb of Yawgmoth", "Engineered Explosives")</ID>
-    <ID>MaxLineLength:PlayerDataSourceTest.kt$PlayerDataSourceTest$assertThat(query).isEqualTo("CREATE TABLE IF NOT EXISTS MTGPlayer (_id INTEGER PRIMARY KEY, name TEXT,life INT,poison INT)")</ID>
-    <ID>MaxLineLength:PlayerDataSourceTest.kt$PlayerDataSourceTest$val cursor = cardsInfoDbHelper.readableDatabase.rawQuery("select * from " + PlayerDataSource.TABLE + " where rowid =?", arrayOf(id.toString() + ""))</ID>
-    <ID>MaxLineLength:PlayerDataSourceTest.kt$PlayerDataSourceTest$val cursor = db.rawQuery("select * from " + PlayerDataSource.TABLE + " where _id =?", arrayOf(uniqueId.toString() + ""))</ID>
-    <ID>MaxLineLength:SetDataSourceTest.kt$SetDataSourceTest$assertThat(query).isEqualTo("CREATE TABLE IF NOT EXISTS MTGSet (_id INTEGER PRIMARY KEY, name TEXT,code TEXT,type TEXT)")</ID>
-    <ID>MaxLineLength:SetDataSourceTest.kt$SetDataSourceTest$val cursor = mtgDatabaseHelper.readableDatabase.rawQuery("select * from " + SetDataSource.TABLE + " where rowid =?", arrayOf(id.toString() + ""))</ID>
-    <ID>NewLineAtEndOfFile:ActivityBuilder.kt$com.dbottillo.mtgsearchfree.dagger.ActivityBuilder.kt</ID>
-    <ID>NewLineAtEndOfFile:AppComponent.kt$com.dbottillo.mtgsearchfree.dagger.AppComponent.kt</ID>
-    <ID>NewLineAtEndOfFile:AppModule.kt$com.dbottillo.mtgsearchfree.dagger.AppModule.kt</ID>
-    <ID>NewLineAtEndOfFile:AppNavigator.kt$com.dbottillo.mtgsearchfree.AppNavigator.kt</ID>
-    <ID>NewLineAtEndOfFile:AppPreferencesImpl.kt$com.dbottillo.mtgsearchfree.AppPreferencesImpl.kt</ID>
-    <ID>NewLineAtEndOfFile:CardsInfoDbHelperTest.kt$com.dbottillo.mtgsearchfree.database.CardsInfoDbHelperTest.kt</ID>
-    <ID>NewLineAtEndOfFile:CardsPreferencesImplTest.kt$com.dbottillo.mtgsearchfree.storage.CardsPreferencesImplTest.kt</ID>
-    <ID>NewLineAtEndOfFile:DataModule.kt$com.dbottillo.mtgsearchfree.dagger.DataModule.kt</ID>
-    <ID>NewLineAtEndOfFile:DeckDataSourceIntegrationTest.kt$com.dbottillo.mtgsearchfree.database.DeckDataSourceIntegrationTest.kt</ID>
-    <ID>NewLineAtEndOfFile:DecksStorageIntegrationTest.kt$com.dbottillo.mtgsearchfree.storage.DecksStorageIntegrationTest.kt</ID>
-    <ID>NewLineAtEndOfFile:FragmentBuilder.kt$com.dbottillo.mtgsearchfree.dagger.FragmentBuilder.kt</ID>
-    <ID>NewLineAtEndOfFile:LuckyWidgetProvider.kt$com.dbottillo.mtgsearchfree.widget.LuckyWidgetProvider.kt</ID>
-    <ID>NewLineAtEndOfFile:MTGApp.kt$com.dbottillo.mtgsearchfree.MTGApp.kt</ID>
-    <ID>NewLineAtEndOfFile:TestMTGApp.kt$com.dbottillo.mtgsearchfree.TestMTGApp.kt</ID>
-    <ID>TooManyFunctions:AppNavigator.kt$AppNavigator : Navigator</ID>
-    <ID>TooManyFunctions:DataModule.kt$DataModule</ID>
-    <ID>TooManyFunctions:TrackingManagerImpl.kt$TrackingManagerImpl : TrackingManager</ID>
+    <ID>StringLiteralDuplication:AppPreferencesImpl.kt$AppPreferencesImpl$"VersionCode"</ID>
+    <ID>SwallowedException:FileHelper.kt$e: IOException</ID>
     <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_ADD_CARD = "addCard"</ID>
     <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_CLOSE = "close"</ID>
     <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_DELETE = "delete"</ID>

@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.core.content.ContextCompat
 import com.dbottillo.mtgsearchfree.core.R
 
+@Suppress("DataClassShouldBeImmutable", "DataClassContainsFunctions")
 data class MTGCard(
     var id: Int = 0,
     var uuid: String = "",
@@ -110,7 +111,7 @@ data class MTGCard(
             Rarity.MYTHIC -> R.color.mythic
         }
 
-    @Suppress("MaxLineLength")
+    @Suppress("MaxLineLength", "MaximumLineLength")
     val scryfallImage
         get() = when {
             scryfallId.isNotEmpty() && scryfallSupported -> "https://api.scryfall.com/cards/$scryfallId?format=image&version=border_crop${if (side == Side.B) "&face=back" else ""}"
@@ -235,6 +236,6 @@ enum class Side {
     A, B
 }
 
-enum class PriceProvider{
+enum class PriceProvider {
     TCG, MKM
 }

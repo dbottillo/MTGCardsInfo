@@ -1,13 +1,7 @@
-<?xml version="1.0" ?>
+<?xml version='1.0' encoding='UTF-8'?>
 <SmellBaseline>
-  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <ManuallySuppressedIssues/>
   <CurrentIssues>
-    <ID>MaxLineLength:ReleaseNoteActivity.kt$ReleaseNoteActivity$private val releaseNoteList: RecyclerView by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;RecyclerView&gt;(R.id.release_note_list) }</ID>
-    <ID>NewLineAtEndOfFile:ReleaseNoteInteractorTest.kt$com.dbottillo.mtgsearchfree.releasenote.ReleaseNoteInteractorTest.kt</ID>
-    <ID>NewLineAtEndOfFile:ReleaseNoteModule.kt$com.dbottillo.mtgsearchfree.dagger.ReleaseNoteModule.kt</ID>
-    <ID>NewLineAtEndOfFile:ReleaseNotePresenterTest.kt$com.dbottillo.mtgsearchfree.releasenote.ReleaseNotePresenterTest.kt</ID>
-    <ID>NewLineAtEndOfFile:ReleaseNoteStorage.kt$com.dbottillo.mtgsearchfree.releasenote.ReleaseNoteStorage.kt</ID>
-    <ID>NewLineAtEndOfFile:ReleaseNoteStorageTest.kt$com.dbottillo.mtgsearchfree.releasenote.ReleaseNoteStorageTest.kt</ID>
     <ID>TooGenericExceptionCaught:ReleaseNoteStorage.kt$ReleaseNoteStorage$e: Exception</ID>
   </CurrentIssues>
 </SmellBaseline>

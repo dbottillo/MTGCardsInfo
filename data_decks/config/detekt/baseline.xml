@@ -1,14 +1,9 @@
-<?xml version="1.0" ?>
+<?xml version='1.0' encoding='UTF-8'?>
 <SmellBaseline>
-  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <ManuallySuppressedIssues/>
   <CurrentIssues>
-    <ID>NewLineAtEndOfFile:DecksInteractor.kt$com.dbottillo.mtgsearchfree.interactors.DecksInteractor.kt</ID>
-    <ID>NewLineAtEndOfFile:DecksInteractorImplTest.kt$com.dbottillo.mtgsearchfree.interactors.DecksInteractorImplTest.kt</ID>
+    <ID>SwallowedException:DecksStorageImpl.kt$DecksStorageImpl$e: Exception</ID>
     <ID>TooGenericExceptionCaught:DecksInteractorImpl.kt$DecksInteractorImpl$throwable: Throwable</ID>
     <ID>TooGenericExceptionCaught:DecksStorageImpl.kt$DecksStorageImpl$e: Exception</ID>
-    <ID>TooManyFunctions:DecksInteractor.kt$DecksInteractor</ID>
-    <ID>TooManyFunctions:DecksInteractorImpl.kt$DecksInteractorImpl : DecksInteractor</ID>
-    <ID>TooManyFunctions:DecksStorage.kt$DecksStorage</ID>
-    <ID>TooManyFunctions:DecksStorageImpl.kt$DecksStorageImpl : DecksStorage</ID>
   </CurrentIssues>
 </SmellBaseline>

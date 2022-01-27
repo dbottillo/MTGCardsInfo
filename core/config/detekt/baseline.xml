@@ -1,17 +1,81 @@
-<?xml version="1.0" ?>
+<?xml version='1.0' encoding='UTF-8'?>
 <SmellBaseline>
-  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <ManuallySuppressedIssues/>
   <CurrentIssues>
+    <ID>CollapsibleIfStatements:MTGSet.kt$MTGSet$if (other is MTGSet) { if (this.code == other.code &amp;&amp; this.name == other.name &amp;&amp; this.type == other.type) { return true } }</ID>
     <ID>ComplexCondition:LOG.kt$LOG$element.className != LOG::class.java.name &amp;&amp; element.className != BasicActivity::class.java.name &amp;&amp; element.className != BasicFragment::class.java.name &amp;&amp; element.className != Logger::class.java.name &amp;&amp; element.className != Instrumentation::class.java.name</ID>
     <ID>ComplexMethod:CardDataSource.kt$CardDataSource$fun createContentValue(card: MTGCard): ContentValues</ID>
     <ID>ComplexMethod:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
     <ID>ComplexMethod:FilterPickerView.kt$FilterPickerView$override fun onClick(view: View)</ID>
+    <ID>DataClassContainsFunctions:CardsBucket.kt$CardsBucket$fun isValid(otherKey: String): Boolean</ID>
+    <ID>DataClassContainsFunctions:DeckBucket.kt$DeckBucket$fun numberOfCards(): Int</ID>
+    <ID>DataClassContainsFunctions:DeckBucket.kt$DeckBucket$fun numberOfCardsInSideboard(): Int</ID>
+    <ID>DataClassContainsFunctions:DeckBucket.kt$DeckBucket$fun numberOfCardsWithoutSideboard(): Int</ID>
+    <ID>DataClassContainsFunctions:DeckBucket.kt$DeckBucket$fun numberOfUniqueCards(): Int</ID>
+    <ID>DataClassContainsFunctions:DeckBucket.kt$DeckBucket$fun numberOfUniqueCardsInSideboard(): Int</ID>
+    <ID>DataClassContainsFunctions:Player.kt$Player$fun changeLife(value: Int)</ID>
+    <ID>DataClassContainsFunctions:Player.kt$Player$fun changePoisonCount(value: Int)</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var artifact: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var black: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var blue: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var common: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var eldrazi: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var green: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var land: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var mythic: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var rare: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var red: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var sortSetNumber: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var uncommon: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var white: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardPrice.kt$MKMCardPrice$var low: String</ID>
+    <ID>DataClassShouldBeImmutable:CardPrice.kt$MKMCardPrice$var trend: String</ID>
+    <ID>DataClassShouldBeImmutable:CardPrice.kt$MKMCardPrice$var url: String</ID>
+    <ID>DataClassShouldBeImmutable:CardPrice.kt$TCGCardPrice$var avgPrice: String</ID>
+    <ID>DataClassShouldBeImmutable:CardPrice.kt$TCGCardPrice$var hiPrice: String</ID>
+    <ID>DataClassShouldBeImmutable:CardPrice.kt$TCGCardPrice$var lowprice: String</ID>
+    <ID>DataClassShouldBeImmutable:CardsBucket.kt$CardsBucket$var cards: List&lt;MTGCard> = listOf()</ID>
+    <ID>DataClassShouldBeImmutable:DeckBucket.kt$DeckBucket$var cards: List&lt;MTGCard> get() { return creatures + instantAndSorceries + other + lands + side } set(cards) { for (card in cards) { if (card.isSideboard) { side.add(card) } else if (card.isLand) { lands.add(card) } else if (card.types.contains("Creature")) { creatures.add(card) } else if (card.types.contains("Instant") || card.types.contains("Sorcery")) { instantAndSorceries.add(card) } else { other.add(card) } } }</ID>
+    <ID>DataClassShouldBeImmutable:MTGSet.kt$MTGSet$var code: String? = null</ID>
+    <ID>DataClassShouldBeImmutable:MTGSet.kt$MTGSet$var id: Int</ID>
+    <ID>DataClassShouldBeImmutable:MTGSet.kt$MTGSet$var name: String</ID>
+    <ID>DataClassShouldBeImmutable:MTGSet.kt$MTGSet$var type: SetType = EXPANSION</ID>
+    <ID>DataClassShouldBeImmutable:Player.kt$Player$var diceResult: Int = 0</ID>
+    <ID>DataClassShouldBeImmutable:Player.kt$Player$var life: Int = 20</ID>
+    <ID>DataClassShouldBeImmutable:Player.kt$Player$var name: String</ID>
+    <ID>DataClassShouldBeImmutable:Player.kt$Player$var poisonCount: Int = 10</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var atMostColors: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var cmc: CMCParam? = null</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var colorless: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var duplicates: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var exactlyColors: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var excludingOtherColors: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var includingColors: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var isBlack: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var isBlue: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var isCommon: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var isGreen: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var isLand: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var isMythic: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var isRare: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var isRed: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var isUncommon: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var isWhite: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var name: String = ""</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var power: PTParam? = null</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var setId: Int = -1</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var sortAZ: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var text: String = ""</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var tough: PTParam? = null</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var types: String = ""</ID>
     <ID>EmptySecondaryConstructor:FilterPickerView.kt$FilterPickerView${}</ID>
     <ID>ForbiddenComment:CardMigratorService.kt$CardMigratorService$// TODO: before re-using this class it needs to create a channel</ID>
     <ID>FunctionOnlyReturningConstant:BasicFragment.kt$BasicFragment$fun onBackPressed(): Boolean</ID>
+    <ID>ImplicitDefaultLocale:LOG.kt$LOG$String.format("%s [%s:%s:%s] %s", message, classNameOnly, methodName, lineNumber, thread)</ID>
+    <ID>ImplicitDefaultLocale:LOG.kt$LOG$String.format("=== %s:%s:%s -> %s", classNameOnly, methodName, lineNumber, message)</ID>
+    <ID>ImplicitDefaultLocale:LOG.kt$LOG$String.format("=== %s:%s:%s", classNameOnly, methodName, lineNumber)</ID>
     <ID>LongMethod:CardDataSource.kt$CardDataSource$fun createContentValue(card: MTGCard): ContentValues</ID>
     <ID>LongMethod:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
-    <ID>LongMethod:MTGCardDataSource.kt$MTGCardDataSource$@Suppress("SpreadOperator", "ComplexMethod") fun searchCards(searchParams: SearchParams): List&lt;MTGCard&gt;</ID>
     <ID>MagicNumber:AnimationUtil.kt$AnimationUtil$250</ID>
     <ID>MagicNumber:CardDataSource.kt$CardDataSource.Companion$6</ID>
     <ID>MagicNumber:CardMigratorService.kt$CardMigratorService$107</ID>
@@ -22,104 +86,37 @@
     <ID>MagicNumber:CardsInfoDbHelper.kt$CardsInfoDbHelper$4</ID>
     <ID>MagicNumber:FileManager.kt$FileManager$100</ID>
     <ID>MagicNumber:FileManager.kt$FileManager$1024</ID>
-    <ID>MagicNumber:MTGCardDataSource.kt$MTGCardDataSource$2</ID>
     <ID>MagicNumber:MTGLoader.kt$MTGLoader$3</ID>
     <ID>MagicNumber:MTGLoader.kt$MTGLoader$4</ID>
     <ID>MagicNumber:MTGLoader.kt$MTGLoader$6f</ID>
-    <ID>MagicNumber:PermissionUtil.kt$PermissionUtil$23</ID>
     <ID>MagicNumber:SQLiteAssetHelper.kt$1024</ID>
     <ID>MagicNumber:UIUtil.kt$0.8</ID>
-    <ID>MaxLineLength:CardMigratorService.kt$CardMigratorService$val mtgCardDataSource = MTGCardDataSource(MTGDatabaseHelper(applicationContext).readableDatabase, cardDataSource)</ID>
-    <ID>MaxLineLength:CardViewHolder.kt$ListCardViewHolder$moveAll.setTitle(if (card.isSideboard) R.string.move_all_card_to_deck else R.string.move_all_card_to_sideboard)</ID>
-    <ID>MaxLineLength:CardViewHolder.kt$ListCardViewHolder$moveOne.setTitle(if (card.isSideboard) R.string.move_card_to_deck else R.string.move_card_to_sideboard)</ID>
-    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val args = arrayOf(quantity.toString(), deckId.toString() + "", multiverseId.toString() + "", sid.toString() + "")</ID>
-    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val cardsCursor = database.rawQuery(query, arrayOf(deckId.toString() + "", card.multiVerseId.toString() + "", sid.toString() + ""))</ID>
     <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ? and P.multiVerseId = ? and H.side == ?)"</ID>
-    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)"</ID>
-    <ID>MaxLineLength:DeckDataSourceTest.kt$DeckDataSourceTest$verify(database).rawQuery("select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)", arrayOf("1"))</ID>
-    <ID>MaxLineLength:DeckDataSourceTest.kt$DeckDataSourceTest$verify(database).rawQuery("select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)", arrayOf("2"))</ID>
-    <ID>MaxLineLength:DeckDataSourceTest.kt$DeckDataSourceTest$verify(deckColorMapper).convert(listOf(ColorMapperType.Display("W"), ColorMapperType.Display("W"), ColorMapperType.Display("R,G")))</ID>
-    <ID>MaxLineLength:DeckDataSourceTest.kt$DeckDataSourceTest$verify(deckColorMapper).convert(listOf(ColorMapperType.Identity("[W]"), ColorMapperType.Identity("[W]"), ColorMapperType.Identity("[R,G]")))</ID>
-    <ID>MaxLineLength:DeckDataSourceTest.kt$DeckDataSourceTest$whenever(database.rawQuery("select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)", arrayOf("1"))).thenReturn(firstCardCursor)</ID>
-    <ID>MaxLineLength:DeckDataSourceTest.kt$DeckDataSourceTest$whenever(database.rawQuery("select H.side,H.quantity,P.colorIdentity,P.colors from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ?)", arrayOf("2"))).thenReturn(secondCardCursor)</ID>
-    <ID>MaxLineLength:DeckDataSourceTest.kt$DeckDataSourceTest$whenever(deckColorMapper.convert(listOf(ColorMapperType.Display("W"), ColorMapperType.Display("U,B")))).thenReturn(firstDeckColors)</ID>
-    <ID>MaxLineLength:DeckDataSourceTest.kt$DeckDataSourceTest$whenever(deckColorMapper.convert(listOf(ColorMapperType.Display("W"), ColorMapperType.Display("W"), ColorMapperType.Display("R,G")))).thenReturn(secondDeckColors)</ID>
-    <ID>MaxLineLength:DeckDataSourceTest.kt$DeckDataSourceTest$whenever(deckColorMapper.convert(listOf(ColorMapperType.Identity("[W]"), ColorMapperType.Identity("[U,B]")))).thenReturn(firstDeckColors)</ID>
-    <ID>MaxLineLength:DeckDataSourceTest.kt$DeckDataSourceTest$whenever(deckColorMapper.convert(listOf(ColorMapperType.Identity("[W]"), ColorMapperType.Identity("[W]"), ColorMapperType.Identity("[R,G]")))).thenReturn(secondDeckColors)</ID>
-    <ID>MaxLineLength:FavouritesDataSource.kt$FavouritesDataSource$val current = database.rawQuery("select * from MTGCard where multiVerseId=?", arrayOf(card.multiVerseId.toString() + ""))</ID>
-    <ID>MaxLineLength:FilterPickerView.kt$FilterPickerView$private val filterPanelContainer by lazy(LazyThreadSafetyMode.NONE) { findViewById&lt;View&gt;(R.id.filter_panel_container) }</ID>
     <ID>MaxLineLength:GeneralPreferences.kt$GeneralPreferences$private val sharedPreferences: SharedPreferences by lazy(LazyThreadSafetyMode.NONE) { context.getSharedPreferences("General", Context.MODE_PRIVATE) }</ID>
-    <ID>MaxLineLength:MTGCardDataSource.kt$MTGCardDataSource$"SELECT * FROM " + CardDataSource.TABLE + " WHERE " + CardDataSource.COLUMNS.SET_CODE.noun + " = '" + set.code + "';"</ID>
     <ID>MaxLineLength:MTGCardDataSource.kt$MTGCardDataSource$"SELECT * FROM ${CardDataSource.TABLE} WHERE ${CardDataSource.COLUMNS.NAME.noun}=? AND ${CardDataSource.COLUMNS.MULTIVERSE_ID.noun} IS NOT NULL"</ID>
-    <ID>MaxLineLength:QueryComposer.kt$QueryComposer$addSelection(it.operator, it.stringValues.flatMap { it.toList() }.fold("") { total, next -&gt; "$total{$next}" })</ID>
-    <ID>MaxLineLength:QueryComposerTest.kt$QueryComposerTest$assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(CMC as integer) &gt; ? AND CMC != '') AND NAME = ?")</ID>
-    <ID>MaxLineLength:QueryComposerTest.kt$QueryComposerTest$assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(power as integer) &lt; ? AND power GLOB '*[0-9]*')")</ID>
-    <ID>MaxLineLength:QueryComposerTest.kt$QueryComposerTest$assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(power as integer) = ? AND power GLOB '*[0-9]*')")</ID>
-    <ID>MaxLineLength:QueryComposerTest.kt$QueryComposerTest$assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(toughness as integer) = ? AND toughness GLOB '*[0-9]*')")</ID>
-    <ID>MaxLineLength:QueryComposerTest.kt$QueryComposerTest$assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE (CAST(toughness as integer) &gt;= ? AND toughness GLOB '*[0-9]*')")</ID>
-    <ID>MaxLineLength:QueryComposerTest.kt$QueryComposerTest$assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE NAME = ? AND (CAST(CMC as integer) &lt;= ? AND CMC != '')")</ID>
-    <ID>MaxLineLength:QueryComposerTest.kt$QueryComposerTest$assertThat(output.query).isEqualTo("SELECT * from TABLE WHERE cmc&gt;=? AND manaCost LIKE ? AND manaCost LIKE ? AND manaCost LIKE ?")</ID>
-    <ID>MaxLineLength:SQLiteAssetHelper.kt$SQLiteAssetHelper$throw SQLiteAssetException("Missing $mAssetPath file (or .zip, .gz archive) in assets, or target folder not writable")</ID>
     <ID>MaxLineLength:ToolbarRevealScrollHelper.kt$ToolbarRevealScrollHelper$elevationInterpolator = AnimationUtil.createLinearInterpolator().fromValue(0.0f).toValue(context.resources.getDimension(R.dimen.default_elevation_toolbar))</ID>
-    <ID>MaxLineLength:ToolbarRevealScrollHelper.kt$ToolbarRevealScrollHelper$translationTitle = AnimationUtil.createLinearInterpolator().fromValue(translationStart.toFloat()).toValue(translationEnd.toFloat())</ID>
-    <ID>MaxLineLength:UIExtension.kt$return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value.toFloat(), this.resources.displayMetrics).toInt()</ID>
     <ID>NestedBlockDepth:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
     <ID>NestedBlockDepth:QueryComposer.kt$QueryComposer$fun addCMCParam(cmcParam: CMCParam?)</ID>
-    <ID>NewLineAtEndOfFile:ActivityScope.kt$com.dbottillo.mtgsearchfree.ActivityScope.kt</ID>
-    <ID>NewLineAtEndOfFile:AppPreferences.kt$com.dbottillo.mtgsearchfree.AppPreferences.kt</ID>
-    <ID>NewLineAtEndOfFile:BasicActivityModule.kt$com.dbottillo.mtgsearchfree.ui.BasicActivityModule.kt</ID>
-    <ID>NewLineAtEndOfFile:CMCParamTest.kt$com.dbottillo.mtgsearchfree.model.CMCParamTest.kt</ID>
-    <ID>NewLineAtEndOfFile:CardDataSource.kt$com.dbottillo.mtgsearchfree.database.CardDataSource.kt</ID>
-    <ID>NewLineAtEndOfFile:CardDataSourceTest.kt$com.dbottillo.mtgsearchfree.database.CardDataSourceTest.kt</ID>
-    <ID>NewLineAtEndOfFile:CardFilter.kt$com.dbottillo.mtgsearchfree.model.CardFilter.kt</ID>
-    <ID>NewLineAtEndOfFile:CardPrice.kt$com.dbottillo.mtgsearchfree.model.CardPrice.kt</ID>
-    <ID>NewLineAtEndOfFile:CardViewHolder.kt$com.dbottillo.mtgsearchfree.ui.cards.CardViewHolder.kt</ID>
-    <ID>NewLineAtEndOfFile:CardsBucketTest.kt$com.dbottillo.mtgsearchfree.model.CardsBucketTest.kt</ID>
-    <ID>NewLineAtEndOfFile:CardsCollection.kt$com.dbottillo.mtgsearchfree.model.CardsCollection.kt</ID>
-    <ID>NewLineAtEndOfFile:CardsInfoDbHelper.kt$com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper.kt</ID>
-    <ID>NewLineAtEndOfFile:Constants.kt$com.dbottillo.mtgsearchfree.Constants.kt</ID>
-    <ID>NewLineAtEndOfFile:CoreModule.kt$com.dbottillo.mtgsearchfree.dagger.CoreModule.kt</ID>
-    <ID>NewLineAtEndOfFile:CursorUtil.kt$com.dbottillo.mtgsearchfree.util.CursorUtil.kt</ID>
-    <ID>NewLineAtEndOfFile:Deck.kt$com.dbottillo.mtgsearchfree.model.Deck.kt</ID>
-    <ID>NewLineAtEndOfFile:DeckColorMapper.kt$com.dbottillo.mtgsearchfree.database.DeckColorMapper.kt</ID>
-    <ID>NewLineAtEndOfFile:DeckColorMapperTest.kt$com.dbottillo.mtgsearchfree.database.DeckColorMapperTest.kt</ID>
-    <ID>NewLineAtEndOfFile:DeckDataSource.kt$com.dbottillo.mtgsearchfree.database.DeckDataSource.kt</ID>
-    <ID>NewLineAtEndOfFile:DeckDataSourceTest.kt$com.dbottillo.mtgsearchfree.database.DeckDataSourceTest.kt</ID>
-    <ID>NewLineAtEndOfFile:DialogUtil.kt$com.dbottillo.mtgsearchfree.util.DialogUtil.kt</ID>
-    <ID>NewLineAtEndOfFile:FileManager.kt$com.dbottillo.mtgsearchfree.util.FileManager.kt</ID>
-    <ID>NewLineAtEndOfFile:GeneralPreferencesTest.kt$com.dbottillo.mtgsearchfree.storage.GeneralPreferencesTest.kt</ID>
-    <ID>NewLineAtEndOfFile:ImageUtil.kt$com.dbottillo.mtgsearchfree.util.ImageUtil.kt</ID>
-    <ID>NewLineAtEndOfFile:IntParam.kt$com.dbottillo.mtgsearchfree.model.IntParam.kt</ID>
-    <ID>NewLineAtEndOfFile:MTGCard.kt$com.dbottillo.mtgsearchfree.model.MTGCard.kt</ID>
-    <ID>NewLineAtEndOfFile:MTGCardImageView.kt$com.dbottillo.mtgsearchfree.ui.views.MTGCardImageView.kt</ID>
-    <ID>NewLineAtEndOfFile:MTGGAppGlideModule.kt$com.dbottillo.mtgsearchfree.MTGGAppGlideModule.kt</ID>
-    <ID>NewLineAtEndOfFile:MTGLoader.kt$com.dbottillo.mtgsearchfree.ui.views.MTGLoader.kt</ID>
-    <ID>NewLineAtEndOfFile:Navigator.kt$com.dbottillo.mtgsearchfree.Navigator.kt</ID>
-    <ID>NewLineAtEndOfFile:OnCardListener.kt$com.dbottillo.mtgsearchfree.ui.cards.OnCardListener.kt</ID>
-    <ID>NewLineAtEndOfFile:PTParamTest.kt$com.dbottillo.mtgsearchfree.model.PTParamTest.kt</ID>
-    <ID>NewLineAtEndOfFile:PermissionUtil.kt$com.dbottillo.mtgsearchfree.util.PermissionUtil.kt</ID>
-    <ID>NewLineAtEndOfFile:SchedulerProvider.kt$com.dbottillo.mtgsearchfree.interactor.SchedulerProvider.kt</ID>
-    <ID>NewLineAtEndOfFile:SearchParamsTest.kt$com.dbottillo.mtgsearchfree.model.SearchParamsTest.kt</ID>
-    <ID>NewLineAtEndOfFile:StringUtil.kt$com.dbottillo.mtgsearchfree.util.StringUtil.kt</ID>
-    <ID>NewLineAtEndOfFile:ToolbarRevealScrollHelper.kt$com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper.kt</ID>
-    <ID>NewLineAtEndOfFile:UIExtension.kt$com.dbottillo.mtgsearchfree.util.UIExtension.kt</ID>
-    <ID>NewLineAtEndOfFile:UITextExtension.kt$com.dbottillo.mtgsearchfree.util.UITextExtension.kt</ID>
     <ID>ReturnCount:FileUtil.kt$fun Context.copyDbFromSdCard(name: String): Boolean</ID>
     <ID>ReturnCount:IntParam.kt$fun ptParamCreator(operator: String, value: String?): PTParam?</ID>
     <ID>ReturnCount:LOG.kt$LOG$private fun enhanced(message: String?): String</ID>
     <ID>SpreadOperator:DeckDataSource.kt$DeckDataSource$(query, *args)</ID>
     <ID>SpreadOperator:FileUtil.kt$FileUtil$(*line.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray())</ID>
+    <ID>StringLiteralDuplication:CardDataSource.kt$CardDataSource.COLUMNS.CMC$"INTEGER"</ID>
+    <ID>StringLiteralDuplication:CardDataSource.kt$CardDataSource.Companion$" ADD COLUMN "</ID>
+    <ID>StringLiteralDuplication:CardDataSource.kt$CardDataSource.Companion$"ALTER TABLE "</ID>
+    <ID>StringLiteralDuplication:CardsInfoDbHelper.kt$CardsInfoDbHelper$"DROP TABLE IF EXISTS '"</ID>
+    <ID>StringLiteralDuplication:DeckDataSource.kt$DeckDataSource.COLUMNSJOIN.DECK_ID$"INT not null"</ID>
+    <ID>StringLiteralDuplication:MTGCardDataSource.kt$MTGCardDataSource$" WHERE "</ID>
+    <ID>StringLiteralDuplication:MTGCardDataSource.kt$MTGCardDataSource$"SELECT * FROM "</ID>
+    <ID>StringLiteralDuplication:PlayerDataSource.kt$PlayerDataSource$"poison"</ID>
+    <ID>SwallowedException:BasicActivity.kt$BasicActivity$e: Throwable</ID>
+    <ID>SwallowedException:FileManager.kt$FileManager$e: IOException</ID>
+    <ID>SwallowedException:SQLiteAssetHelper.kt$SQLiteAssetHelper$e: IOException</ID>
     <ID>TooGenericExceptionCaught:BasicActivity.kt$BasicActivity$e: Throwable</ID>
     <ID>TooGenericExceptionCaught:DeckDataSource.kt$DeckDataSource$e: Exception</ID>
     <ID>TooGenericExceptionCaught:FileUtil.kt$FileUtil$e: Exception</ID>
     <ID>TooGenericExceptionCaught:FileUtil.kt$e: Exception</ID>
     <ID>TooGenericExceptionCaught:LOG.kt$LOG$e: Exception</ID>
-    <ID>TooManyFunctions:DeckCollection.kt$DeckCollection</ID>
-    <ID>TooManyFunctions:DeckDataSource.kt$DeckDataSource</ID>
-    <ID>TooManyFunctions:MTGCard.kt$MTGCard</ID>
-    <ID>TooManyFunctions:Navigator.kt$Navigator</ID>
-    <ID>TooManyFunctions:QueryComposer.kt$QueryComposer</ID>
-    <ID>TooManyFunctions:TrackingManager.kt$TrackingManager</ID>
-    <ID>TooManyFunctions:UIUtil.kt$com.dbottillo.mtgsearchfree.util.UIUtil.kt</ID>
   </CurrentIssues>
 </SmellBaseline>

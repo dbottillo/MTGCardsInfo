@@ -1,12 +1,7 @@
-<?xml version="1.0" ?>
+<?xml version='1.0' encoding='UTF-8'?>
 <SmellBaseline>
-  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <ManuallySuppressedIssues/>
   <CurrentIssues>
     <ID>MagicNumber:PlaygroundHomeActivity.kt$PlaygroundHomeActivity$403014</ID>
-    <ID>NewLineAtEndOfFile:ActivityBuilder.kt$com.dbottillo.mtgplayground.dagger.ActivityBuilder.kt</ID>
-    <ID>NewLineAtEndOfFile:AppComponent.kt$com.dbottillo.mtgplayground.dagger.AppComponent.kt</ID>
-    <ID>NewLineAtEndOfFile:AppModule.kt$com.dbottillo.mtgplayground.dagger.AppModule.kt</ID>
-    <ID>NewLineAtEndOfFile:MTGPlayground.kt$com.dbottillo.mtgplayground.MTGPlayground.kt</ID>
-    <ID>NewLineAtEndOfFile:PlaygroundHomeActivity.kt$com.dbottillo.mtgplayground.PlaygroundHomeActivity.kt</ID>
   </CurrentIssues>
 </SmellBaseline>
