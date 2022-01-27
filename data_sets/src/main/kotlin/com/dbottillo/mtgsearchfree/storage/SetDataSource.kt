@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.storage
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
@@ -19,6 +20,7 @@ import com.dbottillo.mtgsearchfree.util.getStringFromColumn
 import org.json.JSONException
 import org.json.JSONObject
 
+@SuppressLint("Range")
 class SetDataSource(private val database: SQLiteDatabase) {
 
     val sets: List<MTGSet>

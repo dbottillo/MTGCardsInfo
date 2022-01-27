@@ -21,7 +21,5 @@ task enableGitHooks(type: Exec) {
 }
 
 afterEvaluate {
-    tasks['clean'].dependsOn copyGitHooks
-    tasks['clean'].dependsOn enableGitHooks
     tasks['enableGitHooks'].mustRunAfter copyGitHooks
 }

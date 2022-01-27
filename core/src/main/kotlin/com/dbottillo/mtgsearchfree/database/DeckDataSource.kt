@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.database
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
@@ -10,6 +11,7 @@ import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.util.Logger
 import java.util.ArrayList
 
+@SuppressLint("Range")
 class DeckDataSource(
     private val database: SQLiteDatabase,
     private val cardDataSource: CardDataSource,

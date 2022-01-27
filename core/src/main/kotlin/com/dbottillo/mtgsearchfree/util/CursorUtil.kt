@@ -1,5 +1,6 @@
 package com.dbottillo.mtgsearchfree.util
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.database.Cursor
 import org.json.JSONObject
@@ -15,10 +16,12 @@ fun StringBuilder.add(name: String, type: String, last: Boolean = false) {
     }
 }
 
+@SuppressLint("Range")
 fun Cursor.getIntFromColumn(column: String): Int {
     return getInt(getColumnIndex(column))
 }
 
+@SuppressLint("Range")
 fun Cursor.getStringFromColumn(column: String): String {
     return getString(getColumnIndex(column))
 }

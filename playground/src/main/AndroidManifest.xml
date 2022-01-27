@@ -13,14 +13,17 @@
     <application
         android:name=".MTGPlayground"
         android:allowBackup="true"
-        android:fullBackupContent="true"
+        android:fullBackupContent="false"
         android:icon="@drawable/ic_launcher"
         android:label="@string/playground_app_name"
         tools:ignore="GoogleAppIndexingWarning,UnusedAttribute"
         android:theme="@style/AppTheme"
         >
-        <activity android:name=".PlaygroundHomeActivity">
-            <intent-filter>
+        <activity
+            android:name=".PlaygroundHomeActivity"
+            android:exported="true"
+            >
+            <intent-filter>FavouritesDataSourceTest.kt:53
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />

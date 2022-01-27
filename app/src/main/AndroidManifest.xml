@@ -40,7 +40,8 @@
         <receiver
             android:name=".widget.LuckyWidgetProvider"
             android:icon="@drawable/ic_launcher"
-            android:label="Lucky Widget">
+            android:label="Lucky Widget"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
