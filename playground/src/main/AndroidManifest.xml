@@ -23,7 +23,7 @@
             android:name=".PlaygroundHomeActivity"
             android:exported="true"
             >
-            <intent-filter>FavouritesDataSourceTest.kt:53
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />

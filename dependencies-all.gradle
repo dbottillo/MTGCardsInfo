@@ -14,8 +14,9 @@ ext.deps = [
                         'preference': "androidx.preference:preference:$versions.androidx.preference"
                 ],
                 'firebase': [
-                        'core': "com.google.firebase:firebase-core:$versions.firebase.core",
-                        'crashlytics': "com.google.firebase:firebase-crashlytics:$versions.firebase.crashlytics"
+                        'bom': "com.google.firebase:firebase-bom:$versions.firebase.bom",
+                        'crashlytics': "com.google.firebase:firebase-crashlytics-ktx",
+                        'analytics': "com.google.firebase:firebase-analytics-ktx"
                 ],
                 'testSupport': [
                         'runner': "androidx.test:runner:$versions.support_runner"

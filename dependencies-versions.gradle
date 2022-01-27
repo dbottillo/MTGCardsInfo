@@ -19,8 +19,7 @@ ext.versions = [
                 'extension': '2.2.0'
         ],
         'firebase': [
-                'core': '20.0.2',
-                'crashlytics': '18.2.7'
+                'bom': '29.0.4'
         ],
         'crashlyticsPlugin': '2.8.1',
         'retrofit'         : [

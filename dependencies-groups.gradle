@@ -32,8 +32,9 @@ ext {
         implementation deps.google.lifecycle.extensions
     }
     monitoring = Group {
-        implementation deps.google.firebase.core
+        implementation platform(deps.google.firebase.bom)
         implementation deps.google.firebase.crashlytics
+        implementation deps.google.firebase.analytics
     }
     image = Group {
         implementation deps.glide.core
