@@ -1,11 +1,11 @@
 package com.dbottillo.mtgsearchfree.storage
 
+import com.dbottillo.mtgsearchfree.database.FavouritesDataSource
+import com.dbottillo.mtgsearchfree.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.model.CardsCollection
 import com.dbottillo.mtgsearchfree.model.MTGCard
 import com.dbottillo.mtgsearchfree.model.MTGSet
 import com.dbottillo.mtgsearchfree.model.SearchParams
-import com.dbottillo.mtgsearchfree.database.FavouritesDataSource
-import com.dbottillo.mtgsearchfree.database.MTGCardDataSource
 import com.dbottillo.mtgsearchfree.util.Logger
 
 open class CardsStorageImpl(
@@ -68,19 +68,21 @@ open class CardsStorageImpl(
     override fun loadCard(multiverseId: Int, fallbackName: String): MTGCard {
         logger.d("do search with multiverse: $multiverseId")
         return mtgCardDataSource.searchCard(multiverseId) // try with name
-            ?: return mtgCardDataSource.searchCard(name = fallbackName, requiredMultiverseId = true) ?: throw UnsupportedOperationException("can't find card with multi-verse id $multiverseId")
+            ?: return mtgCardDataSource.searchCard(name = fallbackName, requiredMultiverseId = true)
+                ?: throw UnsupportedOperationException("can't find card with multi-verse id $multiverseId")
     }
 
     override fun loadCardById(id: Int): MTGCard {
         logger.d("do search with id: $id")
-        return mtgCardDataSource.searchCardById(id) ?: throw UnsupportedOperationException("can't find card with id $id")
+        return mtgCardDataSource.searchCardById(id)
+            ?: throw UnsupportedOperationException("can't find card with id $id")
     }
 
     override fun loadOtherSide(card: MTGCard): MTGCard {
         logger.d("do search other side card $card")
-        if (card.otherFaceIds.size > 0){
+        if (card.otherFaceIds.size > 0) {
             val otherCard = mtgCardDataSource.searchCardByUUID(card.otherFaceIds[0])
-            if (otherCard != null){
+            if (otherCard != null) {
                 return otherCard
             }
         }
@@ -91,6 +93,7 @@ open class CardsStorageImpl(
         if (name.equals(card.name, ignoreCase = true)) {
             name = card.names[1]
         }
-        return mtgCardDataSource.searchCard(name) ?: throw UnsupportedOperationException("can't find other side of $card")
+        return mtgCardDataSource.searchCard(name)
+            ?: throw UnsupportedOperationException("can't find other side of $card")
     }
 }

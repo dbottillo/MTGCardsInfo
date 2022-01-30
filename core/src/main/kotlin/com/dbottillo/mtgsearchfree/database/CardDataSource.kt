@@ -18,7 +18,6 @@ import com.google.gson.reflect.TypeToken
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
-import java.util.ArrayList
 
 @SuppressLint("Range")
 class CardDataSource(
@@ -83,7 +82,12 @@ class CardDataSource(
     }
 
     fun saveCard(card: MTGCard): Long {
-        return database.insertWithOnConflict(TABLE, null, createContentValue(card), SQLiteDatabase.CONFLICT_IGNORE)
+        return database.insertWithOnConflict(
+            TABLE,
+            null,
+            createContentValue(card),
+            SQLiteDatabase.CONFLICT_IGNORE
+        )
     }
 
     fun removeCard(card: MTGCard) {
@@ -158,7 +162,10 @@ class CardDataSource(
         values.put(COLUMNS.LOYALTY.noun, card.loyalty)
         values.put(COLUMNS.PRINTINGS.noun, gson.toJson(card.printings))
         values.put(COLUMNS.ORIGINAL_TEXT.noun, card.originalText)
-        values.put(COLUMNS.COLORS_IDENTITY.noun, gson.toJson(card.colorsIdentity.map { it.unmap() }))
+        values.put(
+            COLUMNS.COLORS_IDENTITY.noun,
+            gson.toJson(card.colorsIdentity.map { it.unmap() })
+        )
         val legalities = card.legalities
         if (legalities.size > 0) {
             val legalitiesJ = JSONArray()
@@ -190,7 +197,7 @@ class CardDataSource(
         values.put(COLUMNS.SIDE.noun, if (card.side == Side.A) "A" else "B")
 
         if (card.otherFaceIds.size > 0) {
-            values.put(COLUMNS.SUB_TYPES.noun, card.otherFaceIds.joinToString(","))
+            values.put(COLUMNS.OTHER_FACE_IDS.noun, card.otherFaceIds.joinToString(","))
         }
         return values
     }
@@ -210,7 +217,8 @@ class CardDataSource(
         card.setCardName(cursor.getString(cursor.getColumnIndex(COLUMNS.NAME.noun)))
 
         val setId = cursor.getInt(cursor.getColumnIndex(COLUMNS.SET_ID.noun))
-        val set = MTGSet(setId, null, cursor.getString(cursor.getColumnIndex(COLUMNS.SET_NAME.noun)))
+        val set =
+            MTGSet(setId, null, cursor.getString(cursor.getColumnIndex(COLUMNS.SET_NAME.noun)))
         if (cursor.getColumnIndex(COLUMNS.SET_CODE.noun) > -1) {
             set.code = cursor.getString(cursor.getColumnIndex(COLUMNS.SET_CODE.noun))
         }
@@ -322,7 +330,8 @@ class CardDataSource(
         }
 
         if (cursor.getColumnIndex(COLUMNS.COLORS_IDENTITY.noun) != -1) {
-            val colorsIdentity = cursor.getString(cursor.getColumnIndex(COLUMNS.COLORS_IDENTITY.noun))
+            val colorsIdentity =
+                cursor.getString(cursor.getColumnIndex(COLUMNS.COLORS_IDENTITY.noun))
             if (colorsIdentity != null) {
                 val colors = gson.fromJson<List<String>>(colorsIdentity, type)
                 if (colors?.isNotEmpty() == true) {
@@ -366,20 +375,23 @@ class CardDataSource(
         }
 
         if (cursor.getColumnIndex(COLUMNS.TCG_PLAYER_PRODUCT_ID.noun) != -1) {
-            card.tcgplayerProductId = cursor.getInt(cursor.getColumnIndex(COLUMNS.TCG_PLAYER_PRODUCT_ID.noun))
+            card.tcgplayerProductId =
+                cursor.getInt(cursor.getColumnIndex(COLUMNS.TCG_PLAYER_PRODUCT_ID.noun))
         }
 
         if (cursor.getColumnIndex(COLUMNS.TCG_PLAYER_PURCHASE_URL.noun) != -1) {
-            card.tcgplayerPurchaseUrl = cursor.getString(cursor.getColumnIndex(COLUMNS.TCG_PLAYER_PURCHASE_URL.noun))
+            card.tcgplayerPurchaseUrl =
+                cursor.getString(cursor.getColumnIndex(COLUMNS.TCG_PLAYER_PURCHASE_URL.noun))
                     ?: ""
         }
 
         if (cursor.getColumnIndex(COLUMNS.FACE_CMC.noun) != -1) {
-            card.faceConvertedManaCost = if (cursor.isNull(cursor.getColumnIndex(COLUMNS.FACE_CMC.noun))) {
-                null
-            } else {
-                cursor.getInt(cursor.getColumnIndex(COLUMNS.FACE_CMC.noun))
-            }
+            card.faceConvertedManaCost =
+                if (cursor.isNull(cursor.getColumnIndex(COLUMNS.FACE_CMC.noun))) {
+                    null
+                } else {
+                    cursor.getInt(cursor.getColumnIndex(COLUMNS.FACE_CMC.noun))
+                }
         }
         if (cursor.getColumnIndex(COLUMNS.IS_ARENA.noun) != -1) {
             card.isArena = if (cursor.isNull(cursor.getColumnIndex(COLUMNS.IS_ARENA.noun))) {
@@ -396,12 +408,22 @@ class CardDataSource(
             }
         }
         if (cursor.getColumnIndex(COLUMNS.SIDE.noun) != -1) {
-            card.side = if (cursor.getString(cursor.getColumnIndex(COLUMNS.SIDE.noun)) == "b") Side.B else Side.A
+            card.side =
+                if (cursor.getString(cursor.getColumnIndex(COLUMNS.SIDE.noun)) == "b") Side.B else Side.A
         }
         if (cursor.getColumnIndex(COLUMNS.OTHER_FACE_IDS.noun) != -1) {
             val otherFaceIds = cursor.getString(cursor.getColumnIndex(COLUMNS.OTHER_FACE_IDS.noun))
             otherFaceIds?.split(",")?.forEach {
                 card.otherFaceIds.add(it)
+            }
+        }
+        // there was a bug that saved other face ids inside the sub types instead
+        if (card.otherFaceIds.isEmpty() && cursor.getColumnIndex(COLUMNS.SUB_TYPES.noun) != -1) {
+            val otherFaceIds = cursor.getString(cursor.getColumnIndex(COLUMNS.SUB_TYPES.noun))
+            otherFaceIds?.split(",")?.forEach {
+                if (it.contains("-")) {
+                    card.otherFaceIds.add(it)
+                }
             }
         }
 
@@ -558,21 +580,24 @@ class CardDataSource(
             } else if ((column == COLUMNS.NUMBER || column == COLUMNS.SET_CODE) && version <= 2) {
                 addColumn = false
             } else if ((column == COLUMNS.NAMES || column == COLUMNS.SUPER_TYPES ||
-                            column == COLUMNS.FLAVOR || column == COLUMNS.ARTIST ||
-                            column == COLUMNS.LOYALTY || column == COLUMNS.PRINTINGS ||
-                            column == COLUMNS.LEGALITIES || column == COLUMNS.ORIGINAL_TEXT) && version <= 6) {
+                        column == COLUMNS.FLAVOR || column == COLUMNS.ARTIST ||
+                        column == COLUMNS.LOYALTY || column == COLUMNS.PRINTINGS ||
+                        column == COLUMNS.LEGALITIES || column == COLUMNS.ORIGINAL_TEXT) && version <= 6
+            ) {
                 addColumn = false
             } else if (column == COLUMNS.COLORS_IDENTITY && version <= SEVEN) {
                 addColumn = false
             } else if (column == COLUMNS.UUID && version <= EIGTH) {
                 addColumn = false
             } else if ((column == COLUMNS.SCRYFALLID || column == COLUMNS.TCG_PLAYER_PRODUCT_ID) &&
-                    version <= NINE) {
+                version <= NINE
+            ) {
                 addColumn = false
             } else if ((column == COLUMNS.TCG_PLAYER_PURCHASE_URL) && version <= TEN) {
                 addColumn = false
             } else if ((column == COLUMNS.FACE_CMC || column == COLUMNS.IS_ARENA ||
-                            column == COLUMNS.IS_MTGO || column == COLUMNS.SIDE) && version <= ELEVEN) {
+                        column == COLUMNS.IS_MTGO || column == COLUMNS.SIDE) && version <= ELEVEN
+            ) {
                 addColumn = false
             } else if ((column == COLUMNS.OTHER_FACE_IDS) && version <= TWELFTH) {
                 addColumn = false
