@@ -52,11 +52,11 @@ internal class CreateDBAsyncTask(
                 val jsonString = loadFile(setList)
                 val json = JSONArray(jsonString)
                 (json.length() - 1 downTo 0)
-                        .map { json.getJSONObject(it) }
-                        //.filter {  it.getString("code") == "JMP" }
-                        .forEach { setJ ->
-                            loadSet(context, db, setDataSource, setJ)
-                        }
+                    .map { json.getJSONObject(it) }
+                    //.filter {  it.getString("code") == "JMP" }
+                    .forEach { setJ ->
+                        loadSet(context, db, setDataSource, setJ)
+                    }
                 // loadSet(context, db, setDataSource, json.getJSONObject(json.length() - 1))
             } catch (e: JSONException) {
                 LOG.e("error create db async task: " + e.localizedMessage)
@@ -71,8 +71,13 @@ internal class CreateDBAsyncTask(
     }
 
     @Suppress("UNUSED_VARIABLE")
-    private fun loadSet(context: Context, db: SQLiteDatabase, setDataSource: SetDataSource, setJ: JSONObject) {
-        if (setJ.has("v5") && setJ.getBoolean("v5")){
+    private fun loadSet(
+        context: Context,
+        db: SQLiteDatabase,
+        setDataSource: SetDataSource,
+        setJ: JSONObject
+    ) {
+        if (setJ.has("v5") && setJ.getBoolean("v5")) {
             loadSetV5(context, db, setDataSource, setJ)
             return
         }
@@ -87,10 +92,12 @@ internal class CreateDBAsyncTask(
             val cards = jsonCards.getJSONArray("cards")
 
             val type = if (setJ.has("type")) setJ.getString("type") else null
-            val set = MTGSet(newRowId.toInt(),
+            val set = MTGSet(
+                newRowId.toInt(),
                 setJ.getString("code"),
                 setJ.getString("name"),
-                type.toSetType())
+                type.toSetType()
+            )
             // for (int k=0; k<1; k++){
 
             (0 until cards.length()).forEach { index ->
@@ -98,9 +105,16 @@ internal class CreateDBAsyncTask(
                 // Log.e("MTG", "cardJ $cardJ")
 
                 if (!cardJ.has("isAlternative") || !cardJ.getBoolean("isAlternative")) {
-                    val newRowId2 = db.insert(CardDataSource.TABLE, null, createContentValueFromJSON(cardJ, set))
+                    val newRowId2 = db.insert(
+                        CardDataSource.TABLE,
+                        null,
+                        createContentValueFromJSON(cardJ, set)
+                    )
                 } else {
-                    Log.e("MTG", "${cardJ.getString("name")} skipped in ${set.name} because is alternative")
+                    Log.e(
+                        "MTG",
+                        "${cardJ.getString("name")} skipped in ${set.name} because is alternative"
+                    )
                 }
                 // Log.e("MTG", "row id card $newRowId2")
                 // result.add(MTGCard.createCardFromJson(i, cardJ));
@@ -111,7 +125,12 @@ internal class CreateDBAsyncTask(
     }
 
     @Suppress("UNUSED_VARIABLE", "TooGenericExceptionCaught", "NestedBlockDepth")
-    private fun loadSetV5(context: Context, db: SQLiteDatabase, setDataSource: SetDataSource, setJ: JSONObject) {
+    private fun loadSetV5(
+        context: Context,
+        db: SQLiteDatabase,
+        setDataSource: SetDataSource,
+        setJ: JSONObject
+    ) {
         try {
             val setToLoad = setToLoad(context, setJ.getString("code"))
             val jsonSetString = loadFile(setToLoad)
@@ -123,10 +142,12 @@ internal class CreateDBAsyncTask(
             val cards = jsonCards.getJSONArray("cards")
 
             val type = if (setJ.has("type")) setJ.getString("type") else null
-            val set = MTGSet(newRowId.toInt(),
+            val set = MTGSet(
+                newRowId.toInt(),
                 setJ.getString("code"),
                 setJ.getString("name"),
-                type.toSetType())
+                type.toSetType()
+            )
             // for (int k=0; k<1; k++){
 
             var totalCards = 0
@@ -136,13 +157,20 @@ internal class CreateDBAsyncTask(
 
                 if (!cardJ.has("isAlternative") || !cardJ.getBoolean("isAlternative")) {
                     try {
-                    val newRowId2 = db.insert(CardDataSource.TABLE, null, createContentValueFromJSON(cardJ, set))
+                        val newRowId2 = db.insert(
+                            CardDataSource.TABLE,
+                            null,
+                            createContentValueFromJSON(cardJ, set)
+                        )
                         totalCards++
-                    } catch (e: Exception){
+                    } catch (e: Exception) {
                         Log.e("MTG", "${cardJ.getString("name")} error: ${e.localizedMessage}")
                     }
                 } else {
-                    Log.e("MTG", "${cardJ.getString("name")} skipped in ${set.name} because is alternative")
+                    Log.e(
+                        "MTG",
+                        "${cardJ.getString("name")} skipped in ${set.name} because is alternative"
+                    )
                 }
                 // Log.e("MTG", "row id card $newRowId2")
                 // result.add(MTGCard.createCardFromJson(i, cardJ));
@@ -189,7 +217,11 @@ internal class CreateDBAsyncTask(
     companion object {
 
         fun setToLoad(context: Context, code: String?): Int {
-            return context.resources.getIdentifier(code.adjustCode() + "_x", "raw", context.packageName)
+            return context.resources.getIdentifier(
+                code.adjustCode() + "_x",
+                "raw",
+                context.packageName
+            )
         }
 
         @Throws(JSONException::class)
@@ -244,9 +276,13 @@ internal class CreateDBAsyncTask(
             }
             values.put(CardDataSource.COLUMNS.RARITY.noun, jsonObject.getString("rarity"))
 
-            val identifiers: JSONObject = if (jsonObject.has("identifiers")) jsonObject.getJSONObject("identifiers") else jsonObject
+            val identifiers: JSONObject =
+                if (jsonObject.has("identifiers")) jsonObject.getJSONObject("identifiers") else jsonObject
             if (identifiers.has("multiverseId")) {
-                values.put(CardDataSource.COLUMNS.MULTIVERSE_ID.noun, identifiers.getInt("multiverseId"))
+                values.put(
+                    CardDataSource.COLUMNS.MULTIVERSE_ID.noun,
+                    identifiers.getInt("multiverseId")
+                )
             }
 
             var power = ""
@@ -290,7 +326,10 @@ internal class CreateDBAsyncTask(
                 values.put(CardDataSource.COLUMNS.NAMES.noun, jsonObject.getString("names"))
             }
             if (jsonObject.has("supertypes")) {
-                values.put(CardDataSource.COLUMNS.SUPER_TYPES.noun, jsonObject.getString("supertypes"))
+                values.put(
+                    CardDataSource.COLUMNS.SUPER_TYPES.noun,
+                    jsonObject.getString("supertypes")
+                )
             }
             if (jsonObject.has("flavorText")) {
                 values.put(CardDataSource.COLUMNS.FLAVOR.noun, jsonObject.getString("flavorText"))
@@ -299,20 +338,32 @@ internal class CreateDBAsyncTask(
                 values.put(CardDataSource.COLUMNS.ARTIST.noun, jsonObject.getString("artist"))
             }
             if (jsonObject.has("loyalty") && !jsonObject.isNull("loyalty")) {
-                values.put(CardDataSource.COLUMNS.LOYALTY.noun, jsonObject.getString("loyalty").toIntOrNull())
+                values.put(
+                    CardDataSource.COLUMNS.LOYALTY.noun,
+                    jsonObject.getString("loyalty").toIntOrNull()
+                )
             }
             if (jsonObject.has("printings")) {
                 values.put(CardDataSource.COLUMNS.PRINTINGS.noun, jsonObject.getString("printings"))
             }
             if (jsonObject.has("legalities")) {
-                values.put(CardDataSource.COLUMNS.LEGALITIES.noun, jsonObject.getString("legalities"))
+                values.put(
+                    CardDataSource.COLUMNS.LEGALITIES.noun,
+                    jsonObject.getString("legalities")
+                )
             }
             if (jsonObject.has("originalText")) {
-                values.put(CardDataSource.COLUMNS.ORIGINAL_TEXT.noun, jsonObject.getString("originalText"))
+                values.put(
+                    CardDataSource.COLUMNS.ORIGINAL_TEXT.noun,
+                    jsonObject.getString("originalText")
+                )
             }
             if (jsonObject.has("colorIdentity")) {
                 val colorsIdentityJ = jsonObject.getJSONArray("colorIdentity")
-                values.put(CardDataSource.COLUMNS.COLORS_IDENTITY.noun, jsonObject.getString("colorIdentity"))
+                values.put(
+                    CardDataSource.COLUMNS.COLORS_IDENTITY.noun,
+                    jsonObject.getString("colorIdentity")
+                )
                 if (colorsIdentityJ.length() > 1) {
                     multicolor = 1
                 }
@@ -321,21 +372,33 @@ internal class CreateDBAsyncTask(
                 values.put(CardDataSource.COLUMNS.UUID.noun, jsonObject.getString("uuid"))
             }
             if (identifiers.has("scryfallId")) {
-                values.put(CardDataSource.COLUMNS.SCRYFALLID.noun, identifiers.getString("scryfallId"))
+                values.put(
+                    CardDataSource.COLUMNS.SCRYFALLID.noun,
+                    identifiers.getString("scryfallId")
+                )
             }
             if (identifiers.has("tcgplayerProductId")) {
-                values.put(CardDataSource.COLUMNS.TCG_PLAYER_PRODUCT_ID.noun, identifiers.getInt("tcgplayerProductId"))
+                values.put(
+                    CardDataSource.COLUMNS.TCG_PLAYER_PRODUCT_ID.noun,
+                    identifiers.getInt("tcgplayerProductId")
+                )
             }
             if (identifiers.has("tcgplayerPurchaseUrl")) {
-                values.put(CardDataSource.COLUMNS.TCG_PLAYER_PURCHASE_URL.noun, identifiers.getString("tcgplayerPurchaseUrl"))
+                values.put(
+                    CardDataSource.COLUMNS.TCG_PLAYER_PURCHASE_URL.noun,
+                    identifiers.getString("tcgplayerPurchaseUrl")
+                )
             }
             values.put(CardDataSource.COLUMNS.MULTICOLOR.noun, multicolor)
 
             if (jsonObject.has("faceConvertedManaCost")) {
-                values.put(CardDataSource.COLUMNS.FACE_CMC.noun, jsonObject.getInt("faceConvertedManaCost"))
+                values.put(
+                    CardDataSource.COLUMNS.FACE_CMC.noun,
+                    jsonObject.getInt("faceConvertedManaCost")
+                )
             }
 
-            if (jsonObject.has("availability")){
+            if (jsonObject.has("availability")) {
                 val availabilityJ = jsonObject.getJSONArray("availability")
                 val availabilities = mutableListOf<String>()
                 for (k in 0 until availabilityJ.length()) {
@@ -369,7 +432,7 @@ internal class CreateDBAsyncTask(
             if (jsonObject.has("otherFaceIds")) {
                 val otherFaceIdsJ = jsonObject.getJSONArray("otherFaceIds")
                 val types = mutableListOf<String>()
-                for (i in 0 until otherFaceIdsJ.length()){
+                for (i in 0 until otherFaceIdsJ.length()) {
                     types.add(otherFaceIdsJ.getString(i))
                 }
                 values.put(CardDataSource.COLUMNS.OTHER_FACE_IDS.noun, types.joinToString(","))
