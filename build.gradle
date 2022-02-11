@@ -9,12 +9,12 @@ buildscript {
         apply from: 'dependencies-versions.gradle'
         apply from: 'dependencies-all.gradle'
 
-        classpath 'com.android.tools.build:gradle:7.1.0'
+        classpath 'com.android.tools.build:gradle:7.1.1'
         classpath 'com.google.gms:google-services:4.3.10'
         classpath "com.google.firebase:firebase-crashlytics-gradle:$versions.crashlyticsPlugin"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
-        classpath "com.github.ben-manes:gradle-versions-plugin:0.41.0"
-        classpath "com.diffplug.spotless:spotless-plugin-gradle:6.2.0"
+        classpath "com.github.ben-manes:gradle-versions-plugin:0.42.0"
+        classpath "com.diffplug.spotless:spotless-plugin-gradle:6.2.2"
     }
 }
 
