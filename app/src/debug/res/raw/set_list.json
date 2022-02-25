@@ -1572,6 +1572,20 @@
     "v5": true
   },
   {
+    "baseSetSize": 38,
+    "code": "NEC",
+    "isFoilOnly": false,
+    "isOnlineOnly": false,
+    "keyruneCode": "NEC",
+    "name": "Neon Dynasty Commander",
+    "parentCode": "NEO",
+    "releaseDate": "2022-02-18",
+    "totalSetSize": 180,
+    "translations": {},
+    "type": "commander",
+    "v5": true
+  },
+  {
     "baseSetSize": 302,
     "code": "NEO",
     "isFoilOnly": false,
@@ -1587,7 +1601,7 @@
     "tcgplayerGroupId": 2965,
     "totalSetSize": 553,
     "translations": {},
-    "type": "preview",
+    "type": "expansion",
     "v5": true
   }
 ]
