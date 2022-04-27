@@ -77,7 +77,7 @@ class MTGCardDataSourceTest {
     fun `should search cards by id`() {
         val card = underTest.searchCardById(5)
         assertThat(card).isNotNull()
-        assertThat(card?.name).isEqualTo("Befriending the Moths // Imperial Moth")
+        assertThat(card?.name).isEqualTo("Brokers Initiate")
     }
 
     @Test
@@ -92,7 +92,7 @@ class MTGCardDataSourceTest {
         searchParams.name = "Dragon"
         val cards = underTest.searchCards(searchParams)
         for (card in cards) {
-            assertThat(card.name.toLowerCase(Locale.getDefault()).contains("dragon"))
+            assertThat(card.name.lowercase(Locale.getDefault())).contains("dragon")
         }
     }
 
@@ -103,7 +103,7 @@ class MTGCardDataSourceTest {
         val cards = underTest.searchCards(searchParams)
         assertThat(cards.isNotEmpty()).isTrue()
         for (card in cards) {
-            assertThat(card.type.toLowerCase(Locale.getDefault()).contains("creature"))
+            assertThat(card.type.lowercase(Locale.getDefault())).contains("creature")
         }
     }
 
@@ -114,7 +114,7 @@ class MTGCardDataSourceTest {
         val cards = underTest.searchCards(searchParams)
         assertThat(cards.isNotEmpty()).isTrue()
         for (card in cards) {
-            assertThat(card.text.toLowerCase(Locale.getDefault()).contains("lifelink"))
+            assertThat(card.text.lowercase(Locale.getDefault())).contains("lifelink")
         }
     }
 
@@ -480,13 +480,13 @@ class MTGCardDataSourceTest {
         val cards = underTest.searchCards(searchParams)
         assertThat(cards).isNotEmpty()
         for (card in cards) {
-            assertThat(card.type.toLowerCase(Locale.getDefault()).contains("creature") && card.type.toLowerCase(Locale.getDefault()).contains("angel")).isTrue()
+            assertThat(card.type.lowercase(Locale.getDefault()).contains("creature") && card.type.lowercase(Locale.getDefault()).contains("angel")).isTrue()
         }
         searchParams.types = "creature angel ally"
         val cards2 = underTest.searchCards(searchParams)
         assertThat(cards).isNotEmpty()
         for (card in cards2) {
-            assertThat(card.type.toLowerCase(Locale.getDefault()).contains("creature") && card.type.toLowerCase(Locale.getDefault()).contains("angel") && card.type.toLowerCase(Locale.getDefault()).contains("ally")).isTrue()
+            assertThat(card.type.lowercase(Locale.getDefault()).contains("creature") && card.type.lowercase(Locale.getDefault()).contains("angel") && card.type.lowercase(Locale.getDefault()).contains("ally")).isTrue()
         }
     }
 
@@ -523,8 +523,8 @@ class MTGCardDataSourceTest {
         val cards = underTest.searchCards(searchParams)
         assertThat(cards).isNotEmpty()
         for (card in cards) {
-            assertThat(card.name.toLowerCase(Locale.getDefault()).contains("angel")).isTrue()
-            assertThat(card.type.toLowerCase(Locale.getDefault()).contains("creature") && card.type.toLowerCase(Locale.getDefault()).contains("angel")).isTrue()
+            assertThat(card.name.lowercase(Locale.getDefault()).contains("angel")).isTrue()
+            assertThat(card.type.lowercase(Locale.getDefault()).contains("creature") && card.type.lowercase(Locale.getDefault()).contains("angel")).isTrue()
         }
     }
 
@@ -542,8 +542,8 @@ class MTGCardDataSourceTest {
 
         assertThat(cards).isNotEmpty()
         for (card in cards) {
-            assertThat(card.name.toLowerCase(Locale.getDefault()).contains("angel")).isTrue()
-            assertThat(card.type.toLowerCase(Locale.getDefault()).contains("creature")).isTrue()
+            assertThat(card.name.lowercase(Locale.getDefault()).contains("angel")).isTrue()
+            assertThat(card.type.lowercase(Locale.getDefault()).contains("creature")).isTrue()
             assertThat(card.isWhite).isTrue()
             assertThat(card.power.toInt()).isEqualTo(4)
             assertThat(card.toughness.toInt()).isEqualTo(4)
@@ -573,7 +573,7 @@ class MTGCardDataSourceTest {
         assertThat(cards).isNotNull()
         assertThat(cards).isNotEmpty()
         for (card in cards) {
-            assertThat(card.name.toLowerCase(Locale.getDefault()).contains("island")).isTrue()
+            assertThat(card.name.lowercase(Locale.getDefault()).contains("island")).isTrue()
             assertThat(card.isLand).isTrue()
         }
     }

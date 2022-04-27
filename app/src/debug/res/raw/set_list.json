@@ -1541,6 +1541,22 @@
     "v5": true
   },
   {
+    "baseSetSize": 38,
+    "block": "Commander",
+    "code": "VOC",
+    "isFoilOnly": false,
+    "isOnlineOnly": false,
+    "keyruneCode": "VOC",
+    "name": "Crimson Vow Commander",
+    "parentCode": "VOW",
+    "releaseDate": "2021-11-19",
+    "tcgplayerGroupId": 2900,
+    "totalSetSize": 188,
+    "translations": {},
+    "type": "commander",
+    "v5": true
+  },
+  {
     "baseSetSize": 64,
     "code": "Y22",
     "isFoilOnly": false,
@@ -1602,6 +1618,25 @@
     "totalSetSize": 553,
     "translations": {},
     "type": "expansion",
+    "v5": true
+  },
+  {
+    "baseSetSize": 281,
+    "code": "SNC",
+    "isFoilOnly": false,
+    "isOnlineOnly": false,
+    "isPartialPreview": true,
+    "keyruneCode": "SNC",
+    "mcmId": 4975,
+    "mcmIdExtras": 4976,
+    "mcmName": "Streets of New Capenna",
+    "mtgoCode": "SNC",
+    "name": "Streets of New Capenna",
+    "releaseDate": "2022-04-29",
+    "tcgplayerGroupId": 3026,
+    "totalSetSize": 467,
+    "translations": {},
+    "type": "preview",
     "v5": true
   }
 ]
