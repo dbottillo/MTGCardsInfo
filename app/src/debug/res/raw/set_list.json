@@ -1621,6 +1621,34 @@
     "v5": true
   },
   {
+    "baseSetSize": 0,
+    "code": "ASNC",
+    "isFoilOnly": false,
+    "isOnlineOnly": false,
+    "keyruneCode": "SNC",
+    "name": "New Capenna Art Series",
+    "parentCode": "SNC",
+    "releaseDate": "2022-04-29",
+    "totalSetSize": 0,
+    "translations": {},
+    "type": "memorabilia"
+  },
+  {
+    "baseSetSize": 93,
+    "code": "NCC",
+    "isFoilOnly": false,
+    "isOnlineOnly": false,
+    "keyruneCode": "NCC",
+    "name": "New Capenna Commander",
+    "parentCode": "SNC",
+    "releaseDate": "2022-04-29",
+    "tcgplayerGroupId": 3031,
+    "totalSetSize": 450,
+    "translations": {},
+    "type": "commander",
+    "v5": true
+  },
+  {
     "baseSetSize": 281,
     "code": "SNC",
     "isFoilOnly": false,
@@ -1636,7 +1664,7 @@
     "tcgplayerGroupId": 3026,
     "totalSetSize": 467,
     "translations": {},
-    "type": "preview",
+    "type": "expansion",
     "v5": true
   }
 ]

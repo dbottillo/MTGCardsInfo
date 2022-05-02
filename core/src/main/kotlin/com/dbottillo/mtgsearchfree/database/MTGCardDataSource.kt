@@ -64,12 +64,6 @@ class MTGCardDataSource(
                 STANDARD_SET_CODES
             )
         }
-        if (searchParams.setId == -3) {
-            queryComposer.addListParam(
-                CardDataSource.COLUMNS.SET_CODE.noun,
-                STANDARD_2022_SET_CODES
-            )
-        }
         if (searchParams.atLeastOneColor) {
             when {
                 searchParams.exactlyColors -> {
@@ -244,5 +238,4 @@ class MTGCardDataSource(
 }
 
 private const val LIMIT = 400
-val STANDARD_SET_CODES = listOf("VOW", "MID", "AFR", "STX", "KHM", "ZNR")
-val STANDARD_2022_SET_CODES = listOf("AFR", "STX", "KHM", "ZNR")
+val STANDARD_SET_CODES = listOf("NEO", "SNC", "VOW", "MID", "AFR", "STX", "KHM", "ZNR")

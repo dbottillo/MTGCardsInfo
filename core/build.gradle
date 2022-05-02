@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply from: '../config-android.gradle'
 
-ext.database_version = 82
+ext.database_version = 83
 
 android {
     buildTypes {
