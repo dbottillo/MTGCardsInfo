@@ -1,0 +1,775 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>ChainWrapping:com.dbottillo.mtgsearchfree.database.QueryComposer.kt:24</ID>
+    <ID>CollapsibleIfStatements:MTGApp.kt$MTGApp$if (!isTesting()) { if (BuildConfig.DEBUG) { StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.Builder() .detectAll() .penaltyLog() .build()) StrictMode.setVmPolicy(StrictMode.VmPolicy.Builder() .detectLeakedSqlLiteObjects() .detectLeakedClosableObjects() .penaltyLog() .build()) } }</ID>
+    <ID>CollapsibleIfStatements:MTGSet.kt$MTGSet$if (other is MTGSet) { if (this.code == other.code &amp;&amp; this.name == other.name &amp;&amp; this.type == other.type) { return true } }</ID>
+    <ID>CommentSpacing:com.dbottillo.mtgsearchfree.debug.CreateDBAsyncTask.kt:56</ID>
+    <ID>CommentSpacing:com.dbottillo.mtgsearchfree.ui.BasicActivity.kt:73</ID>
+    <ID>ComplexCondition:LOG.kt$LOG$element.className != LOG::class.java.name &amp;&amp; element.className != BasicActivity::class.java.name &amp;&amp; element.className != BasicFragment::class.java.name &amp;&amp; element.className != Logger::class.java.name &amp;&amp; element.className != Instrumentation::class.java.name</ID>
+    <ID>ComplexMethod:CardDataSource.kt$CardDataSource$fun createContentValue(card: MTGCard): ContentValues</ID>
+    <ID>ComplexMethod:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
+    <ID>ComplexMethod:CardDataSourceIntegrationTest.kt$CardDataSourceIntegrationTest$@Test fun createsContentValuesProperly()</ID>
+    <ID>ComplexMethod:CardsActivityPresenterImpl.kt$CardsActivityPresenterImpl$override fun init(view: CardsActivityView, intent: Intent?)</ID>
+    <ID>ComplexMethod:CardsConfiguratorPresenterImpl.kt$CardsConfiguratorPresenterImpl$override fun update(type: CardFilter.TYPE, on: Boolean)</ID>
+    <ID>ComplexMethod:CardsHelper.kt$@Suppress("LongMethod") private fun List&lt;MTGCard>.filterWith(filter: CardFilter): List&lt;MTGCard></ID>
+    <ID>ComplexMethod:FileHelper.kt$@Throws(JSONException::class) private fun cardFromJSON(jsonObject: JSONObject, set: MTGSet): MTGCard</ID>
+    <ID>ComplexMethod:FilterPickerView.kt$FilterPickerView$override fun onClick(view: View)</ID>
+    <ID>ConstructorParameterNaming:MKMApiInterface.kt$MKMPriceGuideApi$val LOW: Double?</ID>
+    <ID>ConstructorParameterNaming:MKMApiInterface.kt$MKMPriceGuideApi$val SELL: Double?</ID>
+    <ID>ConstructorParameterNaming:MKMApiInterface.kt$MKMPriceGuideApi$val TREND: Double?</ID>
+    <ID>ConstructorParameterNaming:TCGApiInterface.kt$TCGAuthentication$val access_token: String</ID>
+    <ID>DataClassContainsFunctions:CardsBucket.kt$CardsBucket$fun isValid(otherKey: String): Boolean</ID>
+    <ID>DataClassContainsFunctions:DeckBucket.kt$DeckBucket$fun numberOfCards(): Int</ID>
+    <ID>DataClassContainsFunctions:DeckBucket.kt$DeckBucket$fun numberOfCardsInSideboard(): Int</ID>
+    <ID>DataClassContainsFunctions:DeckBucket.kt$DeckBucket$fun numberOfCardsWithoutSideboard(): Int</ID>
+    <ID>DataClassContainsFunctions:DeckBucket.kt$DeckBucket$fun numberOfUniqueCards(): Int</ID>
+    <ID>DataClassContainsFunctions:DeckBucket.kt$DeckBucket$fun numberOfUniqueCardsInSideboard(): Int</ID>
+    <ID>DataClassContainsFunctions:Player.kt$Player$fun changeLife(value: Int)</ID>
+    <ID>DataClassContainsFunctions:Player.kt$Player$fun changePoisonCount(value: Int)</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var artifact: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var black: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var blue: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var common: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var eldrazi: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var green: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var land: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var mythic: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var rare: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var red: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var sortSetNumber: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var uncommon: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardFilter.kt$CardFilter$var white: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:CardPrice.kt$MKMCardPrice$var low: String</ID>
+    <ID>DataClassShouldBeImmutable:CardPrice.kt$MKMCardPrice$var trend: String</ID>
+    <ID>DataClassShouldBeImmutable:CardPrice.kt$MKMCardPrice$var url: String</ID>
+    <ID>DataClassShouldBeImmutable:CardPrice.kt$TCGCardPrice$var avgPrice: String</ID>
+    <ID>DataClassShouldBeImmutable:CardPrice.kt$TCGCardPrice$var hiPrice: String</ID>
+    <ID>DataClassShouldBeImmutable:CardPrice.kt$TCGCardPrice$var lowprice: String</ID>
+    <ID>DataClassShouldBeImmutable:CardsBucket.kt$CardsBucket$var cards: List&lt;MTGCard> = listOf()</ID>
+    <ID>DataClassShouldBeImmutable:DeckBucket.kt$DeckBucket$var cards: List&lt;MTGCard> get() { return creatures + instantAndSorceries + other + lands + side } set(cards) { for (card in cards) { if (card.isSideboard) { side.add(card) } else if (card.isLand) { lands.add(card) } else if (card.types.contains("Creature")) { creatures.add(card) } else if (card.types.contains("Instant") || card.types.contains("Sorcery")) { instantAndSorceries.add(card) } else { other.add(card) } } }</ID>
+    <ID>DataClassShouldBeImmutable:MTGSet.kt$MTGSet$var code: String? = null</ID>
+    <ID>DataClassShouldBeImmutable:MTGSet.kt$MTGSet$var id: Int</ID>
+    <ID>DataClassShouldBeImmutable:MTGSet.kt$MTGSet$var name: String</ID>
+    <ID>DataClassShouldBeImmutable:MTGSet.kt$MTGSet$var type: SetType = EXPANSION</ID>
+    <ID>DataClassShouldBeImmutable:Player.kt$Player$var diceResult: Int = 0</ID>
+    <ID>DataClassShouldBeImmutable:Player.kt$Player$var life: Int = 20</ID>
+    <ID>DataClassShouldBeImmutable:Player.kt$Player$var name: String</ID>
+    <ID>DataClassShouldBeImmutable:Player.kt$Player$var poisonCount: Int = 10</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var atMostColors: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var cmc: CMCParam? = null</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var colorless: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var duplicates: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var exactlyColors: Boolean = true</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var excludingOtherColors: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var includingColors: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var isBlack: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var isBlue: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var isCommon: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var isGreen: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var isLand: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var isMythic: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var isRare: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var isRed: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var isUncommon: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var isWhite: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var name: String = ""</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var power: PTParam? = null</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var setId: Int = -1</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var sortAZ: Boolean = false</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var text: String = ""</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var tough: PTParam? = null</ID>
+    <ID>DataClassShouldBeImmutable:SearchParams.kt$SearchParams$var types: String = ""</ID>
+    <ID>EmptyFunctionBlock:GeneralPreferencesForTest.kt$GeneralPreferencesForTest${ }</ID>
+    <ID>EmptySecondaryConstructor:FilterPickerView.kt$FilterPickerView${}</ID>
+    <ID>FinalNewline:com.dbottillo.mtgplayground.MTGPlayground.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgplayground.PlaygroundHomeActivity.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgplayground.dagger.ActivityBuilder.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgplayground.dagger.AppComponent.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgplayground.dagger.AppModule.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.ActivityScope.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.AppNavigator.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.AppPreferences.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.AppPreferencesImpl.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.Constants.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.MTGApp.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.MTGGAppGlideModule.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.Navigator.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.TestMTGApp.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.about.AboutActivity.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.cards.CardsActivityPresenterImplTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.cards.CardsActivityView.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.dagger.AboutModule.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.dagger.ActivityBuilder.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.dagger.AppComponent.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.dagger.AppModule.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.dagger.CoreModule.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.dagger.DataModule.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.dagger.FragmentBuilder.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.dagger.LifeCounterModule.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.dagger.NetworkModule.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.dagger.ReleaseNoteModule.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.dagger.SavedFragmentBuilder.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.database.CardDataSourceTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.database.CardsInfoDbHelper.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.database.CardsInfoDbHelperTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.database.DeckColorMapper.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.database.DeckColorMapperTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.database.DeckDataSource.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.database.DeckDataSourceIntegrationTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.database.DeckDataSourceTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.debug.DebugActivity.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.debug.DebugInteractor.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.DeckIndicatorView.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.DecksAdapter.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.DecksFragment.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.DecksFragmentPresenter.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.DecksFragmentPresenterImpl.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.DecksFragmentPresenterImplTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.DecksFragmentView.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.addToDeck.AddToDeckInteractor.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.addToDeck.AddToDeckInteractorTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.addToDeck.AddToDeckPresenter.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.addToDeck.AddToDeckPresenterImpl.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.addToDeck.AddToDeckPresenterImplTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.addToDeck.AddToDeckView.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.deck.DeckActivity.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.deck.DeckActivityPresenter.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.deck.DeckActivityPresenterTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.deck.DeckActivityView.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.deck.DeckAdapter.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.deck.DeckFragment.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.deck.DeckPresenter.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.deck.DeckPresenterTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.deck.DeckView.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.startingHand.DeckStartingHandFragment.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.startingHand.StartingHandGridAdapter.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.startingHand.StartingHandPresenter.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.startingHand.StartingHandPresenterTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.decks.startingHand.StartingHandView.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.home.BaseHomeFragment.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.home.HomeActivity.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.interactor.SchedulerProvider.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.interactors.CardFilterInteractor.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.interactors.CardFilterInteractorImplTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.interactors.CardsInteractorImplTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.interactors.DecksInteractor.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.interactors.DecksInteractorImplTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractor.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractorImplTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.interactors.SetsInteractor.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.interactors.SetsInteractorImplTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.lifecounter.LifeCounterPresenter.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.lifecounter.LifeCounterPresenterImplTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.lifecounter.LifeCounterView.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.lifecounter.PlayerInteractor.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.lifecounter.PlayerInteractorImplTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.lintrules.DirectColorDetectorTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.lintrules.MissingNightColorDetectorTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.lintrules.NonSemanticColorDetectorTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.lucky.CardLuckyActivity.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.lucky.CardsLuckyPresenter.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.lucky.CardsLuckyPresenterImpl.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.lucky.CardsLuckyPresenterImplTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.lucky.CardsLuckyView.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.model.CMCParamTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.model.CardFilter.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.model.CardPrice.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.model.CardsBucketTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.model.CardsCollection.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.model.Deck.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.model.IntParam.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.model.PTParamTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.model.SearchParamsTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.network.MKMNetworkInterceptor.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.network.TCGApiInterface.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.network.TCGNetworkInterceptor.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.network.TokenRepository.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.releasenote.ReleaseNoteInteractorTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.releasenote.ReleaseNotePresenterTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.releasenote.ReleaseNoteStorage.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.releasenote.ReleaseNoteStorageTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.repository.CardPriceException.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.repository.CardPriceMapper.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.repository.CardPriceMapperTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.repository.CardRepository.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.repository.CardRepositoryTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.repository.TCGCardTCGPriceMapperTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.saved.SavedCardsPresenter.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.saved.SavedCardsPresenterImpl.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.saved.SavedCardsPresenterImplTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.saved.SavedCardsView.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.search.SearchActivity.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.search.SearchActivityView.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.search.SearchPresenter.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.search.SearchPresenterImpl.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.search.SearchPresenterImplTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.sets.SetPickerPresenterImplTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.sets.SetsFragment.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.sets.SetsFragmentView.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.settings.SettingsActivity.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.settings.SettingsFragment.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.storage.CardsHelper.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.storage.CardsHelperTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.storage.CardsPreferencesImplTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.storage.CardsStorageImplTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.storage.DecksStorageIntegrationTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.storage.GeneralPreferencesTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.storage.SavedCardsStorageImplTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.ui.BaseCardsView.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.ui.BasicActivityModule.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.ui.CommonCardsActivity.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.ui.cards.CardAdapterConfiguration.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.ui.cards.CardViewHolder.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.ui.cards.CardsAdapter.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.ui.cards.OnCardListener.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.ui.sets.SetsFragmentPresenterImplTest.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.ui.views.MTGCardImageView.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.ui.views.MTGLoader.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.util.CursorUtil.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.util.DialogUtil.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.util.FileManager.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.util.ImageUtil.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.util.PermissionUtil.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.util.StringUtil.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.util.UIExtension.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.util.UITextExtension.kt:1</ID>
+    <ID>FinalNewline:com.dbottillo.mtgsearchfree.view.views.CardPresenterImplTest.kt:1</ID>
+    <ID>ForbiddenComment:CardMigratorService.kt$CardMigratorService$// TODO: before re-using this class it needs to create a channel</ID>
+    <ID>ForbiddenComment:CardsActivityPresenterImpl.kt$CardsActivityPresenterImpl$// TODO: this need testing</ID>
+    <ID>ForbiddenComment:CardsLuckyPresenterImpl.kt$CardsLuckyPresenterImpl$// TODO: this need testing</ID>
+    <ID>FunctionOnlyReturningConstant:BasicFragment.kt$BasicFragment$fun onBackPressed(): Boolean</ID>
+    <ID>ImplicitDefaultLocale:LOG.kt$LOG$String.format("%s [%s:%s:%s] %s", message, classNameOnly, methodName, lineNumber, thread)</ID>
+    <ID>ImplicitDefaultLocale:LOG.kt$LOG$String.format("=== %s:%s:%s -> %s", classNameOnly, methodName, lineNumber, message)</ID>
+    <ID>ImplicitDefaultLocale:LOG.kt$LOG$String.format("=== %s:%s:%s", classNameOnly, methodName, lineNumber)</ID>
+    <ID>InvalidPackageDeclaration:CreateDecksAsyncTask.kt$package com.dbottillo.mtgsearchfree.model.helper</ID>
+    <ID>InvalidPackageDeclaration:SetsFragmentPresenterImplTest.kt$package com.dbottillo.mtgsearchfree.ui.sets</ID>
+    <ID>LongMethod:CardDataSource.kt$CardDataSource$fun createContentValue(card: MTGCard): ContentValues</ID>
+    <ID>LongMethod:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
+    <ID>MagicNumber:AboutActivity.kt$AboutActivity$1000</ID>
+    <ID>MagicNumber:AboutActivity.kt$AboutActivity$5</ID>
+    <ID>MagicNumber:AnimationUtil.kt$AnimationUtil$250</ID>
+    <ID>MagicNumber:BottomTabs.kt$BottomTabs$0.7f</ID>
+    <ID>MagicNumber:BottomTabs.kt$BottomTabs$1.2f</ID>
+    <ID>MagicNumber:BottomTabs.kt$BottomTabs$3</ID>
+    <ID>MagicNumber:CardDataSource.kt$CardDataSource.Companion$6</ID>
+    <ID>MagicNumber:CardMigratorService.kt$CardMigratorService$107</ID>
+    <ID>MagicNumber:CardPrice.kt$TCGCardPrice$5</ID>
+    <ID>MagicNumber:CardViewHolder.kt$ListCardViewHolder$3</ID>
+    <ID>MagicNumber:CardViewHolder.kt$ListCardViewHolder$4</ID>
+    <ID>MagicNumber:CardsActivity.kt$CardsActivity$0.5</ID>
+    <ID>MagicNumber:CardsActivity.kt$CardsActivity$16</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$10</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$14</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$15</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$16</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$17</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$3</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$32f</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$4</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$40f</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$8</ID>
+    <ID>MagicNumber:CardsAdapter.kt$CardsAdapter$9</ID>
+    <ID>MagicNumber:CardsInfoDbHelper.kt$CardsInfoDbHelper$3</ID>
+    <ID>MagicNumber:CardsInfoDbHelper.kt$CardsInfoDbHelper$4</ID>
+    <ID>MagicNumber:DeckAdapter.kt$DeckCardViewHolder$3</ID>
+    <ID>MagicNumber:DeckAdapter.kt$DeckCardViewHolder$4</ID>
+    <ID>MagicNumber:DeckStartingHandFragment.kt$DeckStartingHandFragment$3</ID>
+    <ID>MagicNumber:FileManager.kt$FileManager$100</ID>
+    <ID>MagicNumber:FileManager.kt$FileManager$1024</ID>
+    <ID>MagicNumber:HomeActivity.kt$HomeActivity.&lt;no name provided>$3</ID>
+    <ID>MagicNumber:LifeCounterAdapter.kt$LifeCounterAdapter$3</ID>
+    <ID>MagicNumber:LifeCounterAdapter.kt$LifeCounterAdapter$5</ID>
+    <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$10</ID>
+    <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$15</ID>
+    <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$20</ID>
+    <ID>MagicNumber:LifeCounterFragment.kt$LifeCounterFragment$30</ID>
+    <ID>MagicNumber:MTGCardsView.kt$MTGCardsView$6</ID>
+    <ID>MagicNumber:MTGCardsView.kt$MTGCardsView$60</ID>
+    <ID>MagicNumber:MTGLoader.kt$MTGLoader$3</ID>
+    <ID>MagicNumber:MTGLoader.kt$MTGLoader$4</ID>
+    <ID>MagicNumber:MTGLoader.kt$MTGLoader$6f</ID>
+    <ID>MagicNumber:MTGSearchView.kt$MTGSearchView$2</ID>
+    <ID>MagicNumber:MTGSearchView.kt$MTGSearchView$3</ID>
+    <ID>MagicNumber:PlaygroundHomeActivity.kt$PlaygroundHomeActivity$403014</ID>
+    <ID>MagicNumber:SQLiteAssetHelper.kt$1024</ID>
+    <ID>MagicNumber:SearchActivity.kt$SearchActivity$200</ID>
+    <ID>MagicNumber:SearchActivity.kt$SearchActivity$6.0f</ID>
+    <ID>MagicNumber:SearchActivity.kt$SearchActivity.&lt;no name provided>$100</ID>
+    <ID>MagicNumber:StartingHandPresenter.kt$StartingHandPresenter$7</ID>
+    <ID>MagicNumber:TCGNetworkInterceptor.kt$TokenAuthenticator$401</ID>
+    <ID>MagicNumber:TCGNetworkInterceptor.kt$TokenAuthenticator$5</ID>
+    <ID>MagicNumber:UIUtil.kt$0.8</ID>
+    <ID>MaxLineLength:AddToDeckFragment.kt$AddToDeckFragment$val adapter = ArrayAdapter&lt;CharSequence>(activity as FragmentActivity, R.layout.add_to_deck_spinner_item, decksChoose.toTypedArray())</ID>
+    <ID>MaxLineLength:DeckDataSource.kt$DeckDataSource$val query = "select H.*,P.* from MTGCard P inner join deck_card H on (H.card_id = P.multiVerseId and H.deck_id = ? and P.multiVerseId = ? and H.side == ?)"</ID>
+    <ID>MaxLineLength:DeckFragment.kt$DeckFragment$sections.add(DeckSection(getString(R.string.deck_header_creatures) + " (" + collection.getNumberOfCreatures() + ")", collection.creatures))</ID>
+    <ID>MaxLineLength:DeckFragment.kt$DeckFragment$sections.add(DeckSection(getString(R.string.deck_header_instant_sorceries) + " (" + collection.getNumberOfInstantAndSorceries() + ")", collection.instantAndSorceries))</ID>
+    <ID>MaxLineLength:DeckFragment.kt$DeckFragment$sections.add(DeckSection(getString(R.string.deck_header_sideboard) + " (" + collection.numberOfCardsInSideboard() + ")", collection.side))</ID>
+    <ID>MaxLineLength:DeckPresenter.kt$DeckPresenter$view.deckLoaded("${deck.name} (${data.second.numberOfCardsWithoutSideboard()}/${data.second.numberOfCardsInSideboard()})", data.second)</ID>
+    <ID>MaxLineLength:GeneralPreferences.kt$GeneralPreferences$private val sharedPreferences: SharedPreferences by lazy(LazyThreadSafetyMode.NONE) { context.getSharedPreferences("General", Context.MODE_PRIVATE) }</ID>
+    <ID>MaxLineLength:MTGCardDataSource.kt$MTGCardDataSource$"SELECT * FROM ${CardDataSource.TABLE} WHERE ${CardDataSource.COLUMNS.NAME.noun}=? AND ${CardDataSource.COLUMNS.MULTIVERSE_ID.noun} IS NOT NULL"</ID>
+    <ID>MaxLineLength:SavedFragment.kt$SavedFragment$mtgCardsView.loadCards(uiModel.collection.list, this, getString(R.string.action_saved), uiModel.collection.filter, R.menu.card_saved_option)</ID>
+    <ID>MaxLineLength:TokenRepository.kt$TokenRepository$private val sharedPreferences: SharedPreferences by lazy(LazyThreadSafetyMode.NONE) { context.getSharedPreferences("Token", Context.MODE_PRIVATE) }</ID>
+    <ID>MaxLineLength:ToolbarRevealScrollHelper.kt$ToolbarRevealScrollHelper$elevationInterpolator = AnimationUtil.createLinearInterpolator().fromValue(0.0f).toValue(context.resources.getDimension(R.dimen.default_elevation_toolbar))</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:204</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:340</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:446</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:473</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:57</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:59</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:61</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:63</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:65</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:67</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:69</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.DeckDataSource.kt:137</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.DeckDataSource.kt:65</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.DeckDataSourceIntegrationTest.kt:108</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.DeckDataSourceIntegrationTest.kt:46</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.DeckDataSourceIntegrationTest.kt:47</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.DeckDataSourceTest.kt:115</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.DeckDataSourceTest.kt:116</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.DeckDataSourceTest.kt:117</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.DeckDataSourceTest.kt:141</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.DeckDataSourceTest.kt:142</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.DeckDataSourceTest.kt:51</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.DeckDataSourceTest.kt:58</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.DeckDataSourceTest.kt:59</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.DeckDataSourceTest.kt:60</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.DeckDataSourceTest.kt:84</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.DeckDataSourceTest.kt:85</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.DeckDataSourceTest.kt:87</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.MTGCardDataSource.kt:181</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.MTGCardDataSourceTest.kt:483</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.MTGCardDataSourceTest.kt:489</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.MTGCardDataSourceTest.kt:527</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.PlayerDataSourceTest.kt:41</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.PlayerDataSourceTest.kt:56</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.database.SetDataSourceTest.kt:42</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.decks.addToDeck.AddToDeckFragment.kt:115</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.decks.deck.DeckFragment.kt:101</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.decks.deck.DeckFragment.kt:97</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.decks.deck.DeckFragment.kt:98</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.decks.deck.DeckPresenter.kt:37</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.model.MTGCard.kt:117</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.network.TokenRepository.kt:9</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.saved.SavedFragment.kt:93</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.search.MTGSearchView.kt:94</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.storage.DecksStorageIntegrationTest.kt:49</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.storage.GeneralPreferences.kt:11</ID>
+    <ID>MaximumLineLength:com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper.kt:102</ID>
+    <ID>MultiLineIfElse:com.dbottillo.mtgsearchfree.database.MTGCardDataSource.kt:181</ID>
+    <ID>MultiLineIfElse:com.dbottillo.mtgsearchfree.database.MTGCardDataSource.kt:183</ID>
+    <ID>MultiLineIfElse:com.dbottillo.mtgsearchfree.lintrules.MissingNightColorDetector.kt:27</ID>
+    <ID>MultiLineIfElse:com.dbottillo.mtgsearchfree.lintrules.MissingNightColorDetector.kt:37</ID>
+    <ID>MultiLineIfElse:com.dbottillo.mtgsearchfree.lintrules.MissingNightColorDetector.kt:39</ID>
+    <ID>MultiLineIfElse:com.dbottillo.mtgsearchfree.util.AndroidHelper.kt:21</ID>
+    <ID>MultiLineIfElse:com.dbottillo.mtgsearchfree.util.AndroidHelper.kt:23</ID>
+    <ID>NestedBlockDepth:CardDataSource.kt$CardDataSource$fun fromCursor(cursor: Cursor, fullCard: Boolean = true): MTGCard</ID>
+    <ID>NestedBlockDepth:QueryComposer.kt$QueryComposer$fun addCMCParam(cmcParam: CMCParam?)</ID>
+    <ID>NoBlankLineBeforeRbrace:com.dbottillo.mtgsearchfree.lintrules.NonSemanticColorDetectorTest.kt:32</ID>
+    <ID>NoBlankLineBeforeRbrace:com.dbottillo.mtgsearchfree.settings.SettingsFragment.kt:31</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.AppPreferencesImpl.kt:7</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.MTGApp.kt:8</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.database.MTGCardDataSource.kt:10</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.database.MTGCardDataSource.kt:11</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.decks.deck.DeckActivity.kt:28</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.decks.deck.DeckActivity.kt:4</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.home.BaseHomeFragment.kt:4</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.lifecounter.LifeCounterAdapter.kt:10</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.lintrules.DirectColorDetector.kt:7</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.lucky.CardLuckyActivity.kt:17</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.lucky.CardLuckyActivity.kt:21</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.releasenote.ReleaseNoteActivity.kt:10</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.saved.SavedFragment.kt:18</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.search.SearchActivity.kt:25</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.sets.SetsAdapter.kt:4</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.sets.SetsFragment.kt:19</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper.kt:11</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper.kt:12</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper.kt:14</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper.kt:19</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper.kt:20</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper.kt:21</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper.kt:4</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.toolbarereveal.ToolbarRevealScrollHelper.kt:6</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.ui.CommonCardsActivity.kt:13</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.ui.CommonCardsActivity.kt:16</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.ui.views.MTGCardsView.kt:13</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.util.FileUtil.kt:5</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.util.FileUtil.kt:7</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.util.PermissionUtil.kt:7</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.util.StringUtil.kt:3</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.util.StringUtil.kt:4</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.util.TrackingManagerImpl.kt:8</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.util.UIExtension.kt:5</ID>
+    <ID>NoUnusedImports:com.dbottillo.mtgsearchfree.util.UIUtil.kt:10</ID>
+    <ID>ReturnCount:CardsAdapter.kt$CardsAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
+    <ID>ReturnCount:CardsStorageImpl.kt$CardsStorageImpl$override fun loadOtherSide(card: MTGCard): MTGCard</ID>
+    <ID>ReturnCount:DeckActivity.kt$DeckActivity$override fun onOptionsItemSelected(item: MenuItem): Boolean</ID>
+    <ID>ReturnCount:DecksAdapter.kt$DecksAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
+    <ID>ReturnCount:FileUtil.kt$fun Context.copyDbFromSdCard(name: String): Boolean</ID>
+    <ID>ReturnCount:IntParam.kt$fun ptParamCreator(operator: String, value: String?): PTParam?</ID>
+    <ID>ReturnCount:LOG.kt$LOG$private fun enhanced(message: String?): String</ID>
+    <ID>ReturnCount:LifeCounterAdapter.kt$LifeCounterAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
+    <ID>ReturnCount:LifeCounterAdapter.kt$LifeCounterAdapter$private fun getColorOfPosition(context: Context, position: Int): Int</ID>
+    <ID>ReturnCount:StartingHandGridAdapter.kt$StartingHandGridAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder</ID>
+    <ID>SpacingAroundCurly:com.dbottillo.mtgsearchfree.database.QueryComposer.kt:121</ID>
+    <ID>SpacingAroundCurly:com.dbottillo.mtgsearchfree.debug.DebugActivity.kt:158</ID>
+    <ID>SpacingAroundCurly:com.dbottillo.mtgsearchfree.decks.startingHand.StartingHandGridAdapter.kt:78</ID>
+    <ID>SpacingAroundCurly:com.dbottillo.mtgsearchfree.settings.SettingsActivity.kt:31</ID>
+    <ID>SpacingAroundCurly:com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment.kt:18</ID>
+    <ID>SpacingAroundCurly:com.dbottillo.mtgsearchfree.util.FileHelper.kt:227</ID>
+    <ID>SpacingAroundCurly:com.dbottillo.mtgsearchfree.util.FileHelper.kt:42</ID>
+    <ID>SpacingAroundKeyword:com.dbottillo.mtgsearchfree.debug.DebugActivity.kt:158</ID>
+    <ID>SpacingAroundKeyword:com.dbottillo.mtgsearchfree.settings.SettingsActivity.kt:31</ID>
+    <ID>SpreadOperator:DeckDataSource.kt$DeckDataSource$(query, *args)</ID>
+    <ID>SpreadOperator:FileUtil.kt$FileUtil$(*line.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray())</ID>
+    <ID>SpreadOperator:SetDataSource.kt$SetDataSource$(query, *args)</ID>
+    <ID>StringLiteralDuplication:AppPreferencesImpl.kt$AppPreferencesImpl$"VersionCode"</ID>
+    <ID>StringLiteralDuplication:CardDataSource.kt$CardDataSource.COLUMNS.CMC$"INTEGER"</ID>
+    <ID>StringLiteralDuplication:CardDataSource.kt$CardDataSource.Companion$" ADD COLUMN "</ID>
+    <ID>StringLiteralDuplication:CardDataSource.kt$CardDataSource.Companion$"ALTER TABLE "</ID>
+    <ID>StringLiteralDuplication:CardsInfoDbHelper.kt$CardsInfoDbHelper$"DROP TABLE IF EXISTS '"</ID>
+    <ID>StringLiteralDuplication:CreateDBAsyncTask.kt$CreateDBAsyncTask$"isAlternative"</ID>
+    <ID>StringLiteralDuplication:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$"colorIdentity"</ID>
+    <ID>StringLiteralDuplication:CreateDBAsyncTask.kt$CreateDBAsyncTask.Companion$"loyalty"</ID>
+    <ID>StringLiteralDuplication:DeckDataSource.kt$DeckDataSource.COLUMNSJOIN.DECK_ID$"INT not null"</ID>
+    <ID>StringLiteralDuplication:DeckPresenter.kt$DeckPresenter$"${deck.name} (${it.numberOfCardsWithoutSideboard()}/${it.numberOfCardsInSideboard()})"</ID>
+    <ID>StringLiteralDuplication:MTGCardDataSource.kt$MTGCardDataSource$" WHERE "</ID>
+    <ID>StringLiteralDuplication:MTGCardDataSource.kt$MTGCardDataSource$"SELECT * FROM "</ID>
+    <ID>StringLiteralDuplication:PlayerDataSource.kt$PlayerDataSource$"poison"</ID>
+    <ID>SwallowedException:BasicActivity.kt$BasicActivity$e: Throwable</ID>
+    <ID>SwallowedException:DecksStorageImpl.kt$DecksStorageImpl$e: Exception</ID>
+    <ID>SwallowedException:FileHelper.kt$e: IOException</ID>
+    <ID>SwallowedException:FileManager.kt$FileManager$e: IOException</ID>
+    <ID>SwallowedException:SQLiteAssetHelper.kt$SQLiteAssetHelper$e: IOException</ID>
+    <ID>TooGenericExceptionCaught:BasicActivity.kt$BasicActivity$e: Throwable</ID>
+    <ID>TooGenericExceptionCaught:DeckDataSource.kt$DeckDataSource$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:DecksInteractorImpl.kt$DecksInteractorImpl$throwable: Throwable</ID>
+    <ID>TooGenericExceptionCaught:DecksStorageImpl.kt$DecksStorageImpl$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:FileUtil.kt$FileUtil$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:FileUtil.kt$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:LOG.kt$LOG$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:ReleaseNoteStorage.kt$ReleaseNoteStorage$e: Exception</ID>
+    <ID>TooGenericExceptionThrown:DebugActivity.kt$DebugActivity$throw RuntimeException("This is a crash")</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_ADD_CARD = "addCard"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_CLOSE = "close"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_DELETE = "delete"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_EXPORT = "export"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_EXTERNAL_LINK = "externalLink"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_LUCKY = "lucky"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_MOVE_ALL = "moveAll"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_MOVE_ONE = "moveOne"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_ONE_MORE = "oneMore"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_OPEN = "open"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_RATE = "rate"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_REMOVE_ALL = "removeALL"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_REMOVE_ONE = "removeOne"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_SAVE = "saved"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_SELECT = "select"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_SHARE = "share"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_TOGGLE = "toggle"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_ACTION_UNSAVED = "unsaved"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_APP_WIDGET = "appWidget"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_CARD = "card"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_DECK = "deck"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_ERROR = "error"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_FAVOURITE = "favourite"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_FILTER = "filter"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_LIFE_COUNTER = "lifeCounter"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_POPUP = "popup"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_RELEASE_NOTE = "releaseNote"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_SEARCH = "search"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_SET = "set"</ID>
+    <ID>VariableNaming:TrackingManagerImpl.kt$TrackingManagerImpl$private val UA_CATEGORY_UI = "ui"</ID>
+    <ID>Wrapping:com.dbottillo.mtgplayground.dagger.AppComponent.kt:14</ID>
+    <ID>Wrapping:com.dbottillo.mtgplayground.dagger.AppComponent.kt:18</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.AppNavigator.kt:35</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.AppNavigator.kt:38</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.AppNavigator.kt:41</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.AppNavigator.kt:44</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.AppNavigator.kt:47</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.AppNavigator.kt:50</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.AppNavigator.kt:53</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.AppNavigator.kt:56</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.MTGApp.kt:37</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.MTGApp.kt:40</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.MTGApp.kt:41</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.MTGApp.kt:45</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.about.AboutActivity.kt:109</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.about.AboutActivity.kt:110</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.about.AboutActivity.kt:30</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.cards.CardsActivity.kt:102</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.cards.CardsActivity.kt:103</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.cards.CardsActivityPresenterImpl.kt:101</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.cards.CardsActivityPresenterImpl.kt:116</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.cards.CardsActivityPresenterImpl.kt:167</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.cards.CardsActivityPresenterImpl.kt:172</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.cards.CardsActivityPresenterImpl.kt:71</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.cards.CardsActivityPresenterImpl.kt:83</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.cards.CardsActivityPresenterImpl.kt:88</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.cards.CardsActivityPresenterImpl.kt:96</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.cards.CardsActivityPresenterImplTest.kt:55</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.cards.CardsActivityPresenterImplTest.kt:56</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.dagger.AppComponent.kt:13</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.dagger.AppComponent.kt:26</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.dagger.DataModule.kt:81</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.dagger.DataModule.kt:82</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:444</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:446</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:448</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:450</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:452</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:454</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:456</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:458</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:460</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:462</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:464</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:466</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:468</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:470</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:472</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:474</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:476</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:478</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:480</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:482</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:484</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:486</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:488</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:490</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:492</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:494</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:496</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:498</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:500</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:502</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:504</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:506</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:508</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:510</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:512</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:514</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:516</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:518</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:520</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:522</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:524</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:526</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:528</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:530</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:582</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:585</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:598</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSource.kt:599</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:259</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:261</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:266</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:268</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:270</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:274</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:279</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:284</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:288</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:290</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:292</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:295</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:300</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:303</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:317</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:322</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:326</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:328</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:332</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:334</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:337</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:340</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:355</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:359</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:362</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:369</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:379</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:383</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:57</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:59</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:61</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:63</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:65</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:67</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.CardDataSourceIntegrationTest.kt:69</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.DeckColorMapper.kt:39</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.DeckColorMapperTest.kt:102</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.DeckColorMapperTest.kt:109</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.DeckColorMapperTest.kt:111</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.DeckColorMapperTest.kt:118</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.DeckColorMapperTest.kt:120</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.DeckColorMapperTest.kt:127</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.DeckColorMapperTest.kt:131</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.DeckColorMapperTest.kt:87</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.DeckColorMapperTest.kt:91</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.DeckColorMapperTest.kt:98</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.DeckDataSource.kt:255</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.DeckDataSource.kt:256</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.DeckDataSource.kt:266</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.DeckDataSource.kt:267</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.DeckDataSource.kt:286</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.DeckDataSource.kt:287</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.MTGCardDataSource.kt:54</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.MTGCardDataSourceTest.kt:327</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.MTGCardDataSourceTest.kt:328</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.MTGCardDataSourceTest.kt:346</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.MTGCardDataSourceTest.kt:347</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.PlayerDataSource.kt:56</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.database.QueryComposer.kt:136</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.debug.DebugActivity.kt:102</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.debug.DebugActivity.kt:107</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.debug.DebugActivity.kt:131</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.debug.DebugActivity.kt:94</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.DeckIndicatorView.kt:37</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.DeckIndicatorView.kt:41</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.DeckIndicatorView.kt:50</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.DeckIndicatorView.kt:51</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.DecksFragment.kt:60</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.DecksFragment.kt:72</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.DecksFragmentPresenterImpl.kt:30</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.DecksFragmentPresenterImpl.kt:35</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.DecksFragmentPresenterImpl.kt:40</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.DecksFragmentPresenterImpl.kt:45</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.DecksFragmentPresenterImpl.kt:50</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.DecksFragmentPresenterImpl.kt:55</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.DecksFragmentPresenterImpl.kt:60</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.DecksFragmentPresenterImpl.kt:65</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.DecksFragmentPresenterImpl.kt:70</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.DecksFragmentPresenterImpl.kt:75</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.addToDeck.AddToDeckInteractor.kt:32</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.addToDeck.AddToDeckPresenterImpl.kt:31</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.addToDeck.AddToDeckPresenterImpl.kt:43</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.deck.DeckActivity.kt:117</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.deck.DeckActivity.kt:118</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.deck.DeckActivityPresenter.kt:47</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.deck.DeckActivityPresenter.kt:52</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.deck.DeckActivityPresenter.kt:56</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.deck.DeckActivityPresenter.kt:61</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.deck.DeckActivityPresenter.kt:65</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.deck.DeckActivityPresenter.kt:69</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.deck.DeckFragment.kt:44</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.deck.DeckFragment.kt:50</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.deck.DeckPresenter.kt:23</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.deck.DeckPresenter.kt:32</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.deck.DeckPresenter.kt:41</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.deck.DeckPresenter.kt:45</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.deck.DeckPresenter.kt:49</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.deck.DeckPresenter.kt:53</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.deck.DeckPresenter.kt:57</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.deck.DeckPresenter.kt:61</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.deck.DeckPresenter.kt:65</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.deck.DeckPresenter.kt:69</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.deck.DeckPresenter.kt:73</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.deck.DeckPresenter.kt:77</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.startingHand.StartingHandPresenter.kt:36</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.decks.startingHand.StartingHandPresenter.kt:49</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.home.BaseHomeFragment.kt:25</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.home.BaseHomeFragment.kt:26</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractorImpl.kt:31</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.interactors.SavedCardsInteractorImpl.kt:40</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lifecounter.LifeCounterPresenterImpl.kt:29</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lifecounter.LifeCounterPresenterImpl.kt:34</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lifecounter.LifeCounterPresenterImpl.kt:39</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lifecounter.LifeCounterPresenterImpl.kt:44</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lifecounter.LifeCounterPresenterImpl.kt:49</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lifecounter.LifeCounterPresenterImpl.kt:54</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lifecounter.LifeCounterPresenterImpl.kt:59</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lifecounter.LifeCounterPresenterImpl.kt:64</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lifecounter.LifeCounterPresenterImpl.kt:69</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lifecounter.LifeCounterPresenterImpl.kt:74</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lifecounter.PlayersStorageImpl.kt:13</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lifecounter.PlayersStorageImpl.kt:14</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.DirectColorDetector.kt:18</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.DirectColorDetectorTest.kt:40</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.DirectColorDetectorTest.kt:47</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.IssueRegistry.kt:19</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.IssueRegistry.kt:29</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.IssueRegistry.kt:39</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.IssueRegistryTest.kt:14</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.IssueRegistryTest.kt:18</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.LintHelper.kt:4</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.LintHelper.kt:5</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.MissingNightColorDetectorTest.kt:11</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.MissingNightColorDetectorTest.kt:16</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.MissingNightColorDetectorTest.kt:17</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.MissingNightColorDetectorTest.kt:22</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.MissingNightColorDetectorTest.kt:32</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.MissingNightColorDetectorTest.kt:37</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.MissingNightColorDetectorTest.kt:38</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.MissingNightColorDetectorTest.kt:42</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.MissingNightColorDetectorTest.kt:47</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.MissingNightColorDetectorTest.kt:51</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.NonSemanticColorDetector.kt:17</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.NonSemanticColorDetector.kt:29</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.NonSemanticColorDetectorTest.kt:23</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lintrules.NonSemanticColorDetectorTest.kt:30</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lucky.CardsLuckyPresenterImpl.kt:142</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lucky.CardsLuckyPresenterImpl.kt:147</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lucky.CardsLuckyPresenterImpl.kt:30</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lucky.CardsLuckyPresenterImpl.kt:52</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lucky.CardsLuckyPresenterImpl.kt:56</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lucky.CardsLuckyPresenterImpl.kt:62</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lucky.CardsLuckyPresenterImpl.kt:66</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.lucky.CardsLuckyPresenterImpl.kt:76</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.model.SearchParams.kt:35</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.model.SearchParams.kt:38</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.releasenote.ReleaseNotePresenter.kt:20</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.releasenote.ReleaseNotePresenter.kt:25</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.repository.CardPriceMapperTest.kt:114</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.repository.CardPriceMapperTest.kt:119</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.repository.CardPriceMapperTest.kt:133</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.repository.CardPriceMapperTest.kt:138</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.repository.CardPriceMapperTest.kt:59</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.repository.CardPriceMapperTest.kt:63</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.repository.CardPriceMapperTest.kt:79</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.repository.CardPriceMapperTest.kt:83</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.repository.TCGCardTCGPriceMapperTest.kt:43</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.repository.TCGCardTCGPriceMapperTest.kt:45</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.repository.TCGCardTCGPriceMapperTest.kt:54</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.repository.TCGCardTCGPriceMapperTest.kt:57</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.saved.SavedCardsPresenterImpl.kt:31</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.saved.SavedCardsPresenterImpl.kt:36</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.saved.SavedCardsPresenterImpl.kt:44</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.saved.SavedCardsPresenterImpl.kt:48</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.search.MTGSearchView.kt:35</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.search.SearchPresenterImpl.kt:33</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.search.SearchPresenterImpl.kt:37</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.search.SearchPresenterImpl.kt:41</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.search.SearchPresenterImpl.kt:45</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.sets.SetPickerPresenterImpl.kt:25</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.sets.SetPickerPresenterImpl.kt:30</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.sets.SetsFragmentPresenterImpl.kt:39</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.sets.SetsFragmentPresenterImpl.kt:47</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.sets.SetsFragmentPresenterImpl.kt:58</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.sets.SetsFragmentPresenterImpl.kt:65</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.storage.CardsHelperTest.kt:197</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.storage.CardsHelperTest.kt:199</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.storage.SetDataSource.kt:65</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.storage.SetDataSource.kt:68</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment.kt:15</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorFragment.kt:46</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorPresenterImpl.kt:22</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.ui.cardsConfigurator.CardsConfiguratorPresenterImpl.kt:27</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.ui.views.MTGCardsView.kt:55</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.ui.views.MTGCardsView.kt:58</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.ui.views.MTGCardsView.kt:69</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.ui.views.MTGCardsView.kt:72</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.ui.views.MTGLoader.kt:63</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.ui.views.MTGLoader.kt:70</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.util.AnimationUtil.kt:30</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.util.AnimationUtil.kt:32</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.util.AnimationUtil.kt:38</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.util.AnimationUtil.kt:40</ID>
+    <ID>Wrapping:com.dbottillo.mtgsearchfree.util.LOG.kt:24</ID>
+  </CurrentIssues>
+</SmellBaseline>

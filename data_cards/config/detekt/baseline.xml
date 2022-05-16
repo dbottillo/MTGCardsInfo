@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<SmellBaseline>
-  <ManuallySuppressedIssues/>
-  <CurrentIssues>
-    <ID>ComplexMethod:CardsHelper.kt$@Suppress("LongMethod") private fun List&lt;MTGCard>.filterWith(filter: CardFilter): List&lt;MTGCard></ID>
-    <ID>MaxLineLength:CardsStorageImpl.kt$CardsStorageImpl$?:</ID>
-    <ID>ReturnCount:CardsStorageImpl.kt$CardsStorageImpl$override fun loadOtherSide(card: MTGCard): MTGCard</ID>
-  </CurrentIssues>
-</SmellBaseline>
