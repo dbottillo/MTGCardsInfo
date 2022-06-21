@@ -35,7 +35,7 @@
         android:textColor="?attr/colorOnPrimary"
         android:textSize="12sp"
         android:textStyle="italic"
-        android:visibility="gone"
+        android:visibility="v"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/price_link"
         app:layout_constraintStart_toStartOf="parent"

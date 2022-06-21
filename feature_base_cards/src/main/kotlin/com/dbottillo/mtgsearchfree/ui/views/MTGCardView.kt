@@ -30,6 +30,7 @@ import com.dbottillo.mtgsearchfree.util.calculateSizeCardImage
 import com.dbottillo.mtgsearchfree.util.loadInto
 import com.dbottillo.mtgsearchfree.util.newLine
 import com.dbottillo.mtgsearchfree.util.setBoldAndItalic
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import io.reactivex.disposables.Disposable
 
 class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) :
@@ -157,7 +158,7 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) :
             }
         }
 
-        loadPrice(card)
+        loadPrice()
 
         retry.visibility = View.GONE
 
@@ -172,7 +173,23 @@ class MTGCardView(context: Context, attrs: AttributeSet?, defStyle: Int) :
             if (card.isDoubleFaced || card.isTransform || card.isModalDfc) View.VISIBLE else View.GONE
     }
 
-    private fun loadPrice(card: MTGCard) {
+    private fun loadPrice() {
+        cardPrice.text = context.getString(R.string.price_not_available)
+        priceContainer.setOnClickListener {
+            showPriceNotAvailableDialog()
+        }
+    }
+
+    private fun showPriceNotAvailableDialog() {
+        MaterialAlertDialogBuilder(context)
+            .setTitle(R.string.price_not_available)
+            .setMessage(R.string.price_not_available_reason)
+            .setPositiveButton(R.string.ok_got_it, null)
+            .show()
+    }
+
+    @Suppress("unused")
+    private fun loadPriceOld(card: MTGCard) {
         val priceProviderPref =
             PreferenceManager.getDefaultSharedPreferences(context).getString("price_provider", null)
         if (priceProviderPref == "MKM") {
