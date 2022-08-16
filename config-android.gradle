@@ -9,8 +9,8 @@ android {
     defaultConfig {
         minSdkVersion 23
         targetSdkVersion 31
-        versionCode 173
-        versionName "4.25.0"
+        versionCode 175
+        versionName "4.26.1"
         // this is still required to avoid generating PNGs even if min sdk is 21
         vectorDrawables.useSupportLibrary = true
     }

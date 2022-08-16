@@ -18,6 +18,7 @@ fun String?.adjustCode(): String? {
         stringToLoad.equals("3ed", ignoreCase = true) -> "ed3"
         stringToLoad.equals("2ed", ignoreCase = true) -> "ed2"
         stringToLoad.equals("2xm", ignoreCase = true) -> "dbm"
+        stringToLoad.equals("2x2", ignoreCase = true) -> "dbm2"
         else -> stringToLoad
     }
 }

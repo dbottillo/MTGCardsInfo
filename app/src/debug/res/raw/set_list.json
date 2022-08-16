@@ -1680,5 +1680,38 @@
     "releaseDate": "2022-06-10",
     "type": "expansion",
     "v5": true
+  },
+  {
+    "baseSetSize": 430,
+    "block": "Alchemy 2022",
+    "code": "HBG",
+    "isFoilOnly": false,
+    "isNonFoilOnly": true,
+    "isOnlineOnly": true,
+    "keyruneCode": "HBG",
+    "name": "Alchemy Horizons: Baldur's Gate",
+    "releaseDate": "2022-07-07",
+    "totalSetSize": 424,
+    "translations": {},
+    "type": "alchemy",
+    "v5": true
+  },
+  {
+    "baseSetSize": 577,
+    "cardsphereSetId": 1462,
+    "code": "2X2",
+    "isFoilOnly": false,
+    "isOnlineOnly": false,
+    "keyruneCode": "2X2",
+    "mcmId": 5070,
+    "mcmIdExtras": 5071,
+    "mcmName": "Double Masters 2022",
+    "name": "Double Masters 2022",
+    "releaseDate": "2022-07-08",
+    "tcgplayerGroupId": 3070,
+    "totalSetSize": 579,
+    "translations": {},
+    "type": "masters",
+    "v5": true
   }
 ]
