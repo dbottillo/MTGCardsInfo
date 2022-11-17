@@ -58,6 +58,7 @@
         android:foreground="?android:attr/selectableItemBackground"
         android:padding="8dp"
         android:src="@drawable/ic_close"
+        android:visibility="gone"
         app:tint="?attr/colorOnPrimary"
         app:layout_constraintEnd_toEndOf="@id/bg"
         app:layout_constraintTop_toTopOf="@id/bg"/>

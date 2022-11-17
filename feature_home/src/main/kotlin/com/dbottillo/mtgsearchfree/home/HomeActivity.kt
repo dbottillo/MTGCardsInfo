@@ -1,13 +1,10 @@
 package com.dbottillo.mtgsearchfree.home
 
 import android.os.Bundle
-import androidx.transition.ChangeBounds
-import androidx.transition.TransitionManager
 import com.dbottillo.mtgsearchfree.AppPreferences
 import com.dbottillo.mtgsearchfree.home.databinding.ActivityHomeBinding
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.ui.BasicFragment
-import com.dbottillo.mtgsearchfree.util.gone
 import com.dbottillo.mtgsearchfree.util.show
 import java.lang.ref.WeakReference
 import javax.inject.Inject
@@ -45,21 +42,8 @@ class HomeActivity : BasicActivity() {
             checkAndReplace("sets")
         }
 
-        if (appPreferences.shouldShowNewUpdateBanner()) {
-            binding.updateBanner.show()
-            binding.bannerShadow.show()
-            binding.updateBanner.closeListener = {
-                TransitionManager.beginDelayedTransition(binding.mainActivityHome, ChangeBounds())
-                binding.updateBanner.gone()
-                binding.bannerShadow.gone()
-            }
-            binding.updateBanner.actionListener = {
-                navigator.openReleaseNoteScreen(this)
-                TransitionManager.beginDelayedTransition(binding.mainActivityHome, ChangeBounds())
-                binding.updateBanner.gone()
-                binding.bannerShadow.gone()
-            }
-        }
+        binding.updateBanner.show()
+        binding.bannerShadow.show()
     }
 
     private fun checkAndReplace(tag: String) {

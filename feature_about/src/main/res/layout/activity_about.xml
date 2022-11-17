@@ -38,39 +38,6 @@
             android:text="@string/copyright" />
 
         <Button
-            android:id="@+id/send_feedback"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="@dimen/base_margin"
-            android:layout_marginRight="@dimen/base_margin"
-            android:layout_marginBottom="@dimen/base_margin"
-            android:text="@string/send_feedback"
-            android:textSize="16sp" />
-
-        <Button
-            android:id="@+id/share_app"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="@dimen/base_margin"
-            android:layout_marginRight="@dimen/base_margin"
-            android:layout_marginBottom="@dimen/base_margin"
-            android:text="@string/share_app"
-            android:textSize="16sp" />
-
-        <Button
-            android:id="@+id/join_telegram"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="@dimen/base_margin"
-            android:layout_marginRight="@dimen/base_margin"
-            android:layout_marginBottom="@dimen/base_margin"
-            android:text="@string/join_telegram"
-            android:textSize="16sp" />
-
-        <Button
             android:id="@+id/privacy_policy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

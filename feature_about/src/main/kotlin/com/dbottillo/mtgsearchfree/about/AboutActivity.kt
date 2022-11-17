@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.text.SpannableStringBuilder
 import android.view.MenuItem
@@ -18,7 +17,6 @@ import com.dbottillo.mtgsearchfree.about.databinding.ActivityAboutBinding
 import com.dbottillo.mtgsearchfree.ui.BasicActivity
 import com.dbottillo.mtgsearchfree.util.LOG
 import com.dbottillo.mtgsearchfree.util.addBold
-import com.dbottillo.mtgsearchfree.util.toHtml
 import dagger.android.AndroidInjection
 import java.util.Calendar
 
@@ -27,7 +25,8 @@ class AboutActivity : BasicActivity(), View.OnTouchListener {
     private var libraries = listOf(
             DevLibrary("Picasso", "Square", "http://square.github.io/picasso/"),
             DevLibrary("LeakMemory", "Square", "https://github.com/square/leakcanary"),
-            DevLibrary("RxJava", "ReactiveX", "https://github.com/ReactiveX/RxJava"))
+            DevLibrary("RxJava", "ReactiveX", "https://github.com/ReactiveX/RxJava")
+    )
 
     private lateinit var versionName: String
     private var firstTap: Long = 0
@@ -61,26 +60,9 @@ class AboutActivity : BasicActivity(), View.OnTouchListener {
         }
 
         binding.aboutVersion.setOnTouchListener(this)
-        findViewById<View>(R.id.send_feedback).setOnClickListener {
-            sendFeedback()
-        }
-
-        findViewById<View>(R.id.join_telegram).setOnClickListener {
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(Constants.TELEGRAM_LINK)))
-        }
 
         findViewById<View>(R.id.privacy_policy).setOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(Constants.PRIVACY_POLICY)))
-        }
-
-        findViewById<View>(R.id.share_app).setOnClickListener {
-            trackingManager.trackShareApp()
-            val intent = Intent(Intent.ACTION_SEND).apply {
-                type = "text/plain"
-                putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name))
-                putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.dbottillo.mtgsearchfree")
-            }
-            startActivity(Intent.createChooser(intent, getString(R.string.share)))
         }
 
         val cardContainer = findViewById<LinearLayout>(R.id.libraries_container)
@@ -100,17 +82,6 @@ class AboutActivity : BasicActivity(), View.OnTouchListener {
                 trackingManager.trackAboutLibrary(library.link)
             }
         }
-    }
-
-    private fun sendFeedback() {
-        LOG.d()
-        trackingManager.trackOpenFeedback()
-        val emailIntent = Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", getString(R.string.email), null))
-        val text = String.format(getString(R.string.feedback_text), versionName,
-                Build.VERSION.SDK_INT.toString(), Build.DEVICE, Build.MODEL, Build.PRODUCT)
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.feedback) + " " + getString(R.string.app_name))
-        emailIntent.putExtra(Intent.EXTRA_TEXT, text.toHtml())
-        startActivity(Intent.createChooser(emailIntent, getString(R.string.send_feedback)))
     }
 
     @SuppressLint("ClickableViewAccessibility")
